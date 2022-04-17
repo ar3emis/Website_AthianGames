@@ -2648,8 +2648,8 @@ portfolio
   position: relative;
   overflow: hidden; }
   .qrt-work-item .qrt-work-descr {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
     background-color: #28292c;
     position: absolute;
     bottom: 0;
@@ -2815,7 +2815,7 @@ portfolio
   ##Screen = B/w 1025px to 1280px
 */ 
 
-@media (min-width: 769px) and (max-width: 1280px) {
+@media (min-width: 993) and (max-width: 1580px) {
   
   .qrt-4-col .qrt-grid-sizer,
 .qrt-4-col .qrt-masonry-grid-item {
@@ -2823,6 +2823,14 @@ portfolio
   
 }
 
+
+@media (min-width: 769px) and (max-width: 992px) {
+  
+  .qrt-4-col .qrt-grid-sizer,
+.qrt-4-col .qrt-masonry-grid-item {
+  width: 50%; }
+  
+}
 /* 
   ##Device = Tablets, Ipads (landscape)
   ##Screen = B/w 768px to 1024px
@@ -2836,7 +2844,7 @@ portfolio
 
 .qrt-masonry-grid-item {
   float: left;
-  padding: 10px;
+  padding: 15px;
   overflow: hidden; }
 
 .qrt-masonry-grid-item-33 {

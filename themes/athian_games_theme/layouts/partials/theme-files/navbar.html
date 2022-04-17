@@ -37,13 +37,13 @@
           </div>
       </div>
       <div class="qrt-buttons">
-        {{if .Params.buttons}}
-          {{range first 1 .Params.buttons}}
-          <a href="{{.buttonLink | absURL}}" class="qrt-btn qrt-btn-md qrt-btn-color qrt-send-request qrt-anima-link qrt-mr-20"><span>{{.buttonText}}</span></a>
-          {{end}}
-        {{else}}
+        {{/* if .Params.buttons */}}
+          {{/* range first 1 .Params.buttons */}}
+          <!-- <a href="{{/* .buttonLink | absURL */}}" class="qrt-btn qrt-btn-md qrt-btn-color qrt-send-request qrt-anima-link qrt-mr-20"><span>{{/* .buttonText */}}</span></a> -->
+          {{/* end */}}
+        {{/* else */}}
         <a href="https://www.unrealengine.com/marketplace/en-US/profile/Athian+Games" class="qrt-btn qrt-btn-md qrt-btn-color qrt-send-request qrt-anima-link qrt-mr-20"><span>Open Marketplace</span></a>
-        {{end}}
+        {{/* end */}}
         <div class="qrt-menu-btn qrt-cursor-color qrt-cursor-scale"><span></span></div>
           <!-- <div class="qrt-search-btn qrt-cursor-color qrt-cursor-scale"><i class="fas fa-search"></i></div> -->
           <div class="qrt-info-btn qrt-cursor-color qrt-cursor-scale"><span></span></div>
@@ -57,6 +57,7 @@
       </div> -->
       <div class="qrt-info" id="qrt-scroll-info">
           <div class="qrt-info-frame">
+            <i class="fas fa-envelope"></i>
             <!-- <ul class="qrt-table">
                 <li>
                   <h5>Country</h5><span>Canada</span>
