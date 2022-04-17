@@ -22,7 +22,7 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
 				{{- $linkURL := print $baseURL ($.Get "dir") "/" .Name | absURL }}<!-- absolute URL to hi-res image -->
 				{{- $thumb := .Name | replaceRE "(\\.)" ($thumbext | printf "%s.") }}<!-- filename of thumbnail image -->
 				{{- $thumbexists := where $files "Name" $thumb }}<!-- does a thumbnail image exist? --> 
-				{{- $thumbURL := print $baseURL ($.Get "dir") "/" $thumb | absURL }}<!-- absolute URL to thumbnail image -->
+				{{- $thumbURL := print $baseURL ($.Get "dir") "/" $thumb  }}<!-- absolute URL to thumbnail image -->
 
 				<div class="qrt-masonry-grid-item qrt-masonry-grid-item-50">
 					<div class="qrt-work-item">
