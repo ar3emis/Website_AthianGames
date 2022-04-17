@@ -14,13 +14,13 @@
     -->
 
 
-                <div class="qrt-masonry-grid qrt-4-col qrt-mb-40">
-                    <div class="qrt-grid-sizer"></div>
+                <div class="row">
+                    <!-- <div class="qrt-grid-sizer"></div> -->
                     {{ $paginator := .Paginate .Data.Pages }}
 
 
                     {{ range ($paginator.Pages.ByDate.Reverse) }}
-                    <div class="qrt-masonry-grid-item qrt-masonry-grid-item-50 qrt-masonry-grid-item-h-x-2 {{range .Params.plugin_categories}}{{. | urlize}}{{end}}">
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-20 {{range .Params.plugin_categories}}{{. | urlize}}{{end}}">
                         <div class="qrt-work-item"><a href="{{.Permalink}}" class="qrt-cursor-scale qrt-work-cover-frame qrt-anima-link">
                             {{if .Params.image}}
                             <img src="{{.Params.image | absURL}}" alt="Plugin Banner">
