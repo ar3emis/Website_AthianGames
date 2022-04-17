@@ -109,7 +109,7 @@ $(function() {
       overscroll: {
         effect: 'bounce',
         damping: 0.15,
-        maxOverscroll: 80
+        // maxOverscroll: 80
       },
       mobile: {
         alwaysShowTracks: false
@@ -126,7 +126,7 @@ $(function() {
       overscroll: {
         effect: 'bounce',
         damping: 0.15,
-        maxOverscroll: 80
+        // maxOverscroll: 80
       },
       mobile: {
         alwaysShowTracks: false
