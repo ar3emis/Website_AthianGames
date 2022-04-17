@@ -2,38 +2,25 @@
 
 <div class="qrt-half-content-frame">
         <div class="qrt-left">
+          <div class="qrt-just-text">
+            {{partial "theme-files/content-design" .}}
+
           <div class="row">
-            <div class="col-lg-12">
-        
-                
-              <div class="qrt-post-frame qrt-lg-post qrt-popular">
-                {{ $paginator := .Paginate .Data.Pages  }}
 
+    
 
-                {{ range first 1 ($paginator.Pages.ByDate.Reverse)  }}
-                        {{partial "functionality/post-design-popular" .}}
-                {{ end }}
-        
-        <!-- posts -->
-                
-              </div>
+            {{ $paginator := .Paginate .Data.Pages  }}
 
-            </div>
-            <div class="col-lg-12">
+          {{ range ($paginator.Pages.ByDate.Reverse)  }}
+          <div class="col-lg-4">
 
-              <h3 class="qrt-mb-40">Other {{.Section | humanize | pluralize}}</h3>
+                  {{partial "functionality/post-design" .}}
+                </div>
 
-            </div>
-            <div class="col-lg-6">
-
-
-                {{ range after 1 ($paginator.Pages.ByDate.Reverse)  }}
-                        {{partial "functionality/post-design" .}}
-                {{ end }}
-        
+          {{ end }}
+  
         <!-- posts -->
 
-            </div>
             <div class="col-lg-12">
     
         {{partial "functionality/pagination" .}}
@@ -41,6 +28,7 @@
 
           </div>
           <div class="qrt-divider qrt-space-fix-2"></div>
+          </div>
           </div>
       
 {{partial "inner-banner" .}}

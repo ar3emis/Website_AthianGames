@@ -10,7 +10,7 @@
         <div class="qrt-divider-2"></div>
         <div class="qrt-text qrt-white qrt-mb-20" style="line-height: inherit;">{{if .Params.bottomText}}{{.Params.bottomText}}{{end}}</div>
         {{range .Params.buttons}}
-        <a href="{{.buttonLink | absURL}}" class="qrt-btn qrt-btn-md qrt-btn-color qrt-anima-link m-10"><span>{{.buttonText}}</span>
+        <a href="{{.buttonLink | absURL}}" class="qrt-btn qrt-btn-md qrt-btn-color {{if in (.buttonLink | absURL) ($.Site.BaseURL)}} qrt-anima-link {{end}} m-10"><span>{{.buttonText}}</span>
         </a>
         {{end}}
       </div>

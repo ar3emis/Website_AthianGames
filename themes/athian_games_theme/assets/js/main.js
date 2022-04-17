@@ -136,7 +136,7 @@ $(function() {
 
   var fixedElem = document.getElementById('fixed');
 
-  if ($(window).width() > 1200) {
+  if ($(window).width() > 1401) {
     scrollbar.addListener(function(status) {
       var offset = status.offset;
 

@@ -155,15 +155,31 @@ table-horizontal tbody > tr:last-child > td {
     }
 }
 @media (min-width: 1401px) {
-.hide-otherwise {
+.hide-on-large {
  display: none;
 }
+
 .qrt-app .qrt-content .qrt-half-content-frame .qrt-right {
   margin-left: auto;
   position: fixed;
   right: 0;
   width: 480px;
   height: calc(100vh - 100px); }
+}
+
+@media (max-width: 1400px) {
+  .hide-on-small {
+   display: none;
+  }
+}
+
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
 }
 
 /* ==========================================================================
