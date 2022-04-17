@@ -6,7 +6,7 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
 {{- $.Page.Scratch.Add "figurecount" 1 }}
 {{ $baseURL := .Site.BaseURL }}
 
-<div class="qrt-masonry-grid">
+<div class="qrt-masonry-grid qrt-4-col qrt-mb-40">
 	<div class="qrt-grid-sizer"></div>
 		{{- with ((.Get "dir") | strings.TrimPrefix "static"  | strings.TrimPrefix "//"  )  -}}
 		<!-- If a directory was specified, generate figures for all of the images in the directory -->

@@ -2784,7 +2784,8 @@ portfolio
 /* ----- masonry grid ----- */
 .qrt-masonry-grid {
   margin: -10px;
-  min-height: 100vh !important; }
+  /* min-height: 100vh !important;  */
+}
 
 .qrt-masonry-grid:after {
   content: '';
@@ -2802,6 +2803,41 @@ portfolio
 .qrt-4-col .qrt-grid-sizer,
 .qrt-4-col .qrt-masonry-grid-item {
   width: 25%; }
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/ 
+
+@media (min-width: 769px) and (max-width: 1280px) {
+  
+  .qrt-4-col .qrt-grid-sizer,
+.qrt-4-col .qrt-masonry-grid-item {
+  width: 33%; }
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (max-width: 768px){
+  .qrt-4-col .qrt-grid-sizer,
+.qrt-4-col .qrt-masonry-grid-item {
+  width: 100%; }
+}
 
 .qrt-masonry-grid-item {
   float: left;

@@ -154,9 +154,11 @@ table-horizontal tbody > tr:last-child > td {
               transform: translateY(0%);
     }
 }
-
-
-
+@media (min-width: 1200px) {
+.hide-otherwise {
+ display: none;
+}
+}
 
 /* ==========================================================================
    Helper classes

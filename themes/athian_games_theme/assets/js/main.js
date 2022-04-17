@@ -112,7 +112,6 @@ $(function() {
         maxOverscroll: 80
       },
       mobile: {
-        speed: 0.2,
         alwaysShowTracks: false
       }
     },
@@ -130,7 +129,6 @@ $(function() {
         maxOverscroll: 80
       },
       mobile: {
-        speed: 0.2,
         alwaysShowTracks: false
       }
     },
@@ -413,6 +411,7 @@ $(function() {
     if (jQuery(e.target).closest(el).length) return;
     $('.qrt-search , .qrt-search-btn').removeClass('qrt-active');
   });
+  $('.qrt-current-page-title').empty()
 
   $('.current-menu-item a').clone().prependTo('.qrt-current-page-title');
 
@@ -776,7 +775,8 @@ $(function() {
         $('.qrt-menu , .qrt-menu-btn').removeClass('qrt-active');
       }
     });
-
+   
+    $('.qrt-current-page-title').empty()
     $('.current-menu-item a').clone().prependTo('.qrt-current-page-title');
 
     anime({

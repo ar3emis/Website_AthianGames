@@ -15,15 +15,15 @@ summaryLength = 10
 
 [menu]
     [[menu.main]]
+        identifier = "home"
+        name = "home"
+        url = "/"
+        weight = 1
+    [[menu.main]]
         identifier = "about"
         name = "About"
         url = "/about/"
-        weight = 1
-#    [[menu.main]]
-#        identifier = "blog"
-#        name = "Blog"
-#        url = "/blog/"
-#        weight = 2
+        weight = 2
     [[menu.main]]
         identifier = "plugins"
         name = "plugins"

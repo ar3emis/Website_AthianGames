@@ -3,14 +3,16 @@
   <div class="qrt-half-content-frame">
     <div class="qrt-left">
 
-      <div class="row">
-        <div class="col-lg-12">
+      <div class="row align-items-center" style="min-height: 90vh;">
+
+        <div class="col-xl-8 col-lg-12 offset-xl-2">
+          <img src="{{.Params.image | absURL}}" alt="Plugin Image">
+
           {{if .Params.topText}}
           <h2 class="qrt-mb-40">{{.Title}}</h2>
           {{end}}
 
           <!-- <div class="qrt-page-cover"> -->
-            <img src="{{.Params.image | absURL}}" alt="Plugin Image">
             <!-- <div class="qrt-about-info qrt-right-position">
               <div class="qrt-cover-info">
                 <ul class="qrt-table">
@@ -41,7 +43,7 @@
         {{partial "social-share.html" .}}
       {{else}}
 
-      <div class="row">
+      <div class="row hide-otherwise">
         <div class="col-lg-12">
           <div class="qrt-call-to-action">
             <div class="row mb-20">
@@ -52,14 +54,14 @@
             </div>
           <div class="row justify-content-center">
             {{range .Params.buttons}}
-            <a href="{{.buttonLink | absURL}}" class="qrt-btn qrt-btn-md qrt-btn-color qrt-anima-link col-md-4 m-10"><span>{{.buttonText}}</span>
+            <a href="{{.buttonLink | absURL}}" class="qrt-btn qrt-btn-md qrt-btn-color qrt-anima-link "><span>{{.buttonText}}</span>
             </a>
             {{end}}          
           </div></div>
         </div>
       </div>
       {{end}}
-      <div class="qrt-divider qrt-space-fix"></div>
+      <div class="qrt-divider qrt-space-fix hide-otherwise"></div>
 
 
     </div>
