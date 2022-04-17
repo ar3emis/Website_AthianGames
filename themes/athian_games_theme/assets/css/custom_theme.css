@@ -154,7 +154,7 @@ table-horizontal tbody > tr:last-child > td {
               transform: translateY(0%);
     }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1401px) {
 .hide-otherwise {
  display: none;
 }
