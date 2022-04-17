@@ -954,12 +954,7 @@ body {
         padding: 40px;
         position: relative;
         overflow: hidden; }
-      .qrt-app .qrt-content .qrt-half-content-frame .qrt-right {
-        margin-left: auto;
-        position: fixed;
-        right: 0;
-        width: 480px;
-        height: calc(100vh - 100px); }
+
   .qrt-app .qrt-cursor {
     z-index: 999999;
     position: fixed;
@@ -991,7 +986,7 @@ body {
       width: 100%; }
     .qrt-app .qrt-content .qrt-half-content-frame .qrt-right {
       position: relative;
-      height: 500px;
+      /* min-height: 500px; */
       width: 100%; } }
 /* ----- frame (after 992px) ----- */
 @media (max-width: 992px) {
