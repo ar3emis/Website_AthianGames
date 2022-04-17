@@ -27,7 +27,7 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
 				<div class="qrt-masonry-grid-item qrt-masonry-grid-item-50">
 					<div class="qrt-work-item">
 						<a data-fancybox="works{{$.Page.Scratch.Get "figurecount"}}" href="{{ if $thumbexists }}{{ $thumbURL }}{{ else }}{{ $linkURL }}{{ end }}" data-caption="{{ strings.TrimSuffix (path.Ext $thumb) $thumb  | humanize | title}}" class="qrt-cursor-scale qrt-work-cover-frame">
-						  <img data-src="{{ if $thumbexists }}{{ $thumbURL }}{{ else }}{{ $linkURL }}{{ end }}" class="lozad" alt="work cover">
+						  <img src="{{ if $thumbexists }}{{ $thumbURL }}{{ else }}{{ $linkURL }}{{ end }}" alt="work cover">
 							<div class="qrt-item-zoom qrt-cursor-color">
 								<i class="fas fa-expand"></i>
 						  </div>
