@@ -1,0 +1,46 @@
+
+<title>{{if .IsHome}}{{ if .Params.seotitle }}{{ .Params.seotitle }} {{else}}{{ .Site.Title }} | Home {{ end }}{{else}}{{ .Title }} | {{if (index (split .RelPermalink "/" ) 2)}} {{.Section | humanize | title}} | {{end}} {{ .Site.Title }} {{ end }}</title>
+<!-- Standard Metadata -->
+<meta name="description" content="{{ if .Params.seodescription }}{{ .Params.seodescription }}{{ else }}{{ trim (index (split .Summary ".") 0 ) " "}} {{ trim (index (split .Summary ".") 1 ) " "}}. Read More On {{.Site.Title}}{{ end }}">
+
+{{partial "theme-files/canonical-private"}}
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="{{if .IsHome}}{{ if .Params.seotitle }}{{ .Params.seotitle }} {{else}}{{ .Site.Title }} | Home {{ end }}{{else}}{{ .Title }} | {{if (index (split .RelPermalink "/" ) 2)}} {{.Section | humanize | title}} | {{end}} {{ .Site.Title }} {{ end }}"  />
+
+<meta property="og:description" content="{{ if .Params.seodescription }}{{ .Params.seodescription }}{{ else }} {{ trim (index (split .Summary ".") 0 ) " "}} {{ trim (index (split .Summary ".") 1 ) " "}}. Read More On {{.Site.Title}}{{ end }}"/>
+<meta property="og:url" content="{{ .Permalink }}" />
+
+<meta property="og:site_name" content="{{ .Site.Title}}" />
+{{ if .Params.image }}<meta property="og:image" content="{{ .Params.image | absURL }}" />
+<link itemprop="image" href="{{.Params.image | absURL}}"> 
+<meta property="og:image" itemprop="image" content="{{replace (.Params.image | absURL) "https" "http" }}" />
+<meta property="og:image:type" content="image/jpeg" />
+{{ $imgUrl := print "static/" .Params.image }}
+	{{ if fileExists $imgUrl }}
+	{{ $img := imageConfig $imgUrl }}
+	<meta content="{{$img.Width}}" property="og:image:width">
+	<meta content="{{$img.Height}}" property="og:image:height">
+	{{ else }}
+	<meta content="600" property="og:image:height">
+	<meta content="1200" property="og:image:width">
+	{{end}}
+
+{{ else }}
+
+<meta property="og:image" itemprop="image" content="{{ "images/sharer/social-share.jpg" | absURL }}" />
+<meta content="600" property="og:image:height">
+<meta content="1200" property="og:image:width"><meta property="og:image:type" content="image/jpeg" />{{end}}
+
+
+
+
+
+<!-- Twitter Protocol -->
+{{ if .Params.nofollow}}<meta name=“robots” content=“noimageindex,” “nofollow,” “nosnippet”>{{ end}}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="{{ if .Params.seodescription }}{{ .Params.seodescription }}{{ else }}{{ trim (index (split .Summary ".") 0 ) " "}} {{ trim (index (split .Summary ".") 1 ) " "}}. Read More On {{.Site.Title}}{{ end }}"/>
+<meta name="twitter:title" content="{{if .IsHome}}{{ if .Params.seotitle }}{{ .Params.seotitle }} {{else}}{{ .Site.Title }} | Home {{ end }}{{else}}{{ .Title }} | {{if (index (split .RelPermalink "/" ) 2)}} {{.Section | humanize | title}} | {{end}} {{ .Site.Title }} {{ end }}" />
+<meta name="twitter:image" content="{{ if .Params.image }}{{ .Params.image |absURL }}{{ else }}{{.Site.BaseURL}}images/sharer/social-share.jpg {{ end }}"> 

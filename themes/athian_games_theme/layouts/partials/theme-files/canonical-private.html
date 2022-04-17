@@ -1,0 +1,3 @@
+{{if .Params.canonicalurl }} <link rel="canonical" href="{{ .Params.canonicalurl }}" >{{ else }} <link rel="canonical" href="{{ .Permalink }}" /> {{ end }}
+{{ if .Params.private }} <meta name="robots" content="noindex, nofollow"> {{ end }}
+<!-- Open Graph Protocol -->

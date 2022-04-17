@@ -1,0 +1,129 @@
+---
+label: Events
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+  config:
+    required: true
+    min: '1'
+  description: Name Of Page/Post
+- type: datetime
+  name: date
+  label: Publish Date
+  default: now
+  config:
+    required: true
+    min: '1'
+  description: Select/Enter Date You Created This Post. Does not support scheduling
+    posts in a future date.
+  hidden: true
+- type: textarea
+  name: seotitle
+  label: seo title
+  config:
+    required: false
+  description: Title For SEO (Optional)
+- type: textarea
+  name: seodescription
+  label: seo description
+  config:
+    required: false
+  description: Description For SEO  (Optional)
+- type: file
+  name: image
+  label: image
+  config:
+    required: true
+    maxSize: '5'
+  description: Primary (Event) Image. Please ensure it's a square. (Also appears in
+    SEO)
+- name: event_categories
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - Workshop
+    - Training
+    - Talks
+    - Courses
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Event Category
+- type: datetime
+  name: eventStartDate
+  label: start date
+  default: now
+  config:
+    required: true
+    min: '1'
+  description: START date of the event. (MENTION START TIME TOO)
+- type: datetime
+  name: eventEndDate
+  label: end date
+  default: now
+  config:
+    required: true
+    min: '1'
+  description: END date of the event. Keep Sane As Start Date If Not Applicable. (MENTION
+    END TIME TOO)
+- name: ticketPriceLow
+  type: number
+  label: Low Ticket Price
+  default: 0
+  required: true
+  config:
+    min: 0
+    max: 
+    step: 
+    required: true
+- name: ticketPriceHigh
+  type: number
+  label: High Ticket Price
+  default: 0
+  required: true
+  config:
+    min: 0
+    max: 
+    step: 
+    required: true
+- type: text
+  name: ticketCurrency
+  label: ticket currency
+  default: Rs.
+  config:
+    required: false
+  description: Currency of ticket.
+- type: text
+  name: ticketLink
+  label: register link
+  config:
+    required: false
+  description: Ticket Website link for workshop.
+- type: text
+  name: rsvpLink
+  label: RSVP link
+  config:
+    required: false
+  description: RSVP link for workshop.
+- type: text
+  name: eventWebsite
+  label: register link
+  config:
+    required: false
+  description: Event Website link for workshop.
+- name: venueaddress
+  type: text
+  config:
+    required: false
+  label: venueAddress
+- name: venuelink
+  type: text
+  config:
+    required: false
+  label: venueLink

@@ -1,0 +1,46 @@
+
+
+
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+<div class="section-blog__wrapper-pagination">
+    <nav class="pagination">
+        <div class="nav-links">
+    {{ with $pag.First }}
+        <a class="page-numbers prev material-icons" href="{{ .URL }}">keyboard_arrow_left</a>
+
+    {{ end }}
+ 
+    <a {{ if $pag.HasPrev }}href="{{ $pag.Prev.URL }}"{{ end }} class="page-numbers" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+  
+    {{ $ellipsed := false }}
+    {{ $shouldEllipse := false }}
+    {{ range $pag.Pagers }}
+    {{ $right := sub .TotalPages .PageNumber }}
+    {{ $showNumber := or (le .PageNumber 3) (eq $right 0) }}
+    {{ $showNumber := or $showNumber (and (gt .PageNumber (sub $pag.PageNumber 2)) (lt .PageNumber (add $pag.PageNumber 2)))  }}
+    {{ if $showNumber }}
+        {{ $ellipsed = false }}
+        {{ $shouldEllipse = false }}
+    {{ else }}
+        {{ $shouldEllipse = not $ellipsed }}
+        {{ $ellipsed = true }}
+    {{ end }}
+    {{ if $showNumber }}
+    <a class="page-numbers" href="{{ .URL }}">{{ .PageNumber }}</a>
+    {{ else if $shouldEllipse }}
+    <span aria-hidden="true">&nbsp;&hellip;&nbsp;</span>
+    {{ end }}
+    {{ end }}
+    {{ if $pag.HasNext }} <a href="{{ $pag.Next.URL }}" class="page-numbers next-page" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>{{ end }}
+    {{ with $pag.Last }}
+        <a class="page-numbers next material-icons" href="{{ .URL }}">keyboard_arrow_right</a>
+
+    {{ end }}
+</div>
+</nav>
+</div>
+
+
+
+{{ end }}

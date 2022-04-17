@@ -1,0 +1,22 @@
+{
+    "kite.showWelcomeNotificationOnStartup": false,
+    "explorer.confirmDelete": false,
+    "editor.minimap.enabled": false,
+    "path-autocomplete.pathMappings": {
+        "/images/": "${folder}/static/images/", 
+        "/js/": "${folder}/assets/js/" ,
+        "/css/": "${folder}/assets/css/" 
+    },
+    "editor.wordWrap": "on",
+    "search.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "/package.json": true,
+        "/package-lock.json": true,
+        "/public": true,
+        "/resources": true,
+        "**/bower_components": true,
+        "**/tmp": true
+    },
+}
+

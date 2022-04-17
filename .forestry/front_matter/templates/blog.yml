@@ -1,0 +1,53 @@
+---
+label: Blog
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+  config:
+    required: true
+    min: '1'
+  description: Name Of Page/Post
+- type: text
+  name: summary
+  label: summary
+  config:
+    required: false
+  description: Summary of post. Overwrites any automated summary.
+- type: datetime
+  name: date
+  label: Publish Date
+  default: now
+  config:
+    required: true
+    min: '1'
+  description: Select/Enter Date You Created This Post. Does not support scheduling
+    posts in a future date.
+- type: textarea
+  name: seotitle
+  label: seo title
+  config:
+    required: false
+  description: Title For SEO
+- type: textarea
+  name: seodescription
+  label: seo description
+  config:
+    required: false
+  description: Description For SEO
+- type: file
+  name: image
+  label: image
+  config:
+    required: true
+    maxSize: '5'
+  description: Primary Image On Page (Also appears in SEO)
+- name: categories
+  type: tag_list
+  default: []
+  label: Post Categories
+- type: text
+  name: canonical
+  label: canonical
+  description: Link to canonical page.

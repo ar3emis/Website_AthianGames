@@ -1,0 +1,41 @@
+<!-- Blog Section End -->
+                   <div class="section section-padding-02">
+                    <div class="container">
+        
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h6 class="sub-title">{{.sectionTitle}}</h6>
+                            <h2 class="main-title">{{.sectionDescription}}</h2>
+                        </div>
+                        <!-- Section Title End -->
+        
+                        <!-- Blog Wrapper Start -->
+                        <div class="blog-wrapper">
+                            <div class="row gx-xxl-5">
+                                  {{$toRange:= (where .info.Site.RegularPages "Section" .sectionName)}}
+                                    {{if eq .sectionName "events"}}
+                                        {{ range $toRange.Reverse}}       
+                                            {{if .Params.eventStartDate}}
+                                                {{$t:= (time .Params.eventStartDate)}}
+                                                {{if eq ($t.After now) true}}
+                                                    {{partial "functionality/post-design" .}}
+                                                {{end}}
+                                            {{end}}
+                                        {{end}}
+                                  {{else}}
+                                  
+                                  {{ range first 5 $toRange.Reverse}}
+        
+                                  {{partial "functionality/post-design" .}}
+                  
+                              
+                                  {{end}}
+                                  {{end}}
+                                
+                            </div>
+                        </div>
+                        <!-- Blog Wrapper End -->
+        
+                    </div>
+                </div>
+                <!-- Blog Section End -->

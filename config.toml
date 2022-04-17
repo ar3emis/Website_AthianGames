@@ -1,0 +1,67 @@
+baseurl = "https://athiangames.netlify.app"
+languageCode = "en-us"
+title = "Athian Games"
+theme = "athian_games_theme"
+enableRobotsTXT= true
+disableHugoGeneratorInject = true
+TableOfContents = false
+metaDataFormat = "yaml"
+paginate = 9
+summaryLength = 10
+
+[params]
+    enableLozad = true
+    legalname = "Athian Games OPC Pvt Ltd."
+
+[menu]
+    [[menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about/"
+        weight = 1
+#    [[menu.main]]
+#        identifier = "blog"
+#        name = "Blog"
+#        url = "/blog/"
+#        weight = 2
+    [[menu.main]]
+        identifier = "plugins"
+        name = "plugins"
+        url = "/plugin/"
+        weight = 3
+    [[menu.main]]
+        identifier = "contact"
+        name = "Contact"
+        url = "/contact/"
+        weight = 4
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+plugin_category = "plugin_categories"
+
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = false
+  minifyOutput = true
+  [minify.tdewolff]
+    [minify.tdewolff.css]
+      decimals = -1
+      keepCSS2 = true
+    [minify.tdewolff.html]
+      keepConditionalComments = true
+      keepDefaultAttrVals = true
+      keepDocumentTags = true
+      keepEndTags = true
+      keepQuotes = true
+      keepWhitespace = false
+    [minify.tdewolff.js]
+    [minify.tdewolff.json]
+    [minify.tdewolff.svg]
+      decimals = -1
+    [minify.tdewolff.xml]
+      keepWhitespace = false

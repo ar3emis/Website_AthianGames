@@ -1,0 +1,1 @@
+<p {{with .Get "align" }}style="text-align:{{.}}"{{end}}>{{ with .Get "text" }}{{ . | markdownify  }}{{ end }}</p>

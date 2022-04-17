@@ -1,0 +1,106 @@
+
+
+  <div class="qrt-top-bar">
+      <a href="/" class="qrt-symbol qrt-cursor-scale qrt-anima-link"><img src="/img/logo-sm.svg" alt="Symbol"></a>
+      <a href="/" class="qrt-logo qrt-cursor-color qrt-cursor-scale qrt-anima-link">
+          <img src="/img/logo.svg" alt="Quarty">
+      </a>
+      <div class="qrt-menu">
+          <div id="qrt-dynamic-menu" class="qrt-dynamic-menu">
+            <nav>
+                  <ul>
+            {{ range .Site.Menus.main }}
+                  {{ if .HasChildren }}
+                  
+                  <li {{if eq (.URL | absURL ) ($.Permalink)}}class="current-menu-item"{{end}}>
+                  <a href="{{ .URL }}"  class="qrt-mobile-fix" >{{ .Name | safeHTML}}  
+                        
+                  </a>
+                        
+                        <ul>
+                        {{ range .Children }}
+                        <li><a href="{{ .URL }}">{{ .Name   | safeHTML }}</a></li>
+                              {{ end }}
+                        </ul>
+                        {{ else }}
+                  <li {{if eq (.URL | absURL ) ($.Permalink)}}class="current-menu-item"{{end}}>
+
+                  <a href="{{ .URL }}" >                 
+
+                    {{ .Name | safeHTML }}</a>
+                        {{ end  }}
+                  </li>
+                  {{ end }}
+
+                </ul>
+            </nav>
+          </div>
+      </div>
+      <div class="qrt-buttons">
+        {{if .Params.buttons}}
+          {{range first 1 .Params.buttons}}
+          <a href="{{.buttonLink | absURL}}" class="qrt-btn qrt-btn-md qrt-btn-color qrt-send-request qrt-anima-link qrt-mr-20"><span>{{.buttonText}}</span></a>
+          {{end}}
+        {{else}}
+        <a href="https://www.unrealengine.com/marketplace/en-US/profile/Athian+Games" class="qrt-btn qrt-btn-md qrt-btn-color qrt-send-request qrt-anima-link qrt-mr-20"><span>Open Marketplace</span></a>
+        {{end}}
+        <div class="qrt-menu-btn qrt-cursor-color qrt-cursor-scale"><span></span></div>
+          <!-- <div class="qrt-search-btn qrt-cursor-color qrt-cursor-scale"><i class="fas fa-search"></i></div> -->
+          <div class="qrt-info-btn qrt-cursor-color qrt-cursor-scale"><span></span></div>
+      </div>
+      <!-- <div class="qrt-search">
+          <form action="http://www.google.com/search?site%3Aathiangames.com" method="get">
+            <input type="text" name="site:" value="{{.Site.BaseURL}}" hidden class="d-none">
+
+            <input type="text" name="q" placeholder="Enter search query">
+          </form>
+      </div> -->
+      <div class="qrt-info" id="qrt-scroll-info">
+          <div class="qrt-info-frame">
+            <!-- <ul class="qrt-table">
+                <li>
+                  <h5>Country</h5><span>Canada</span>
+                </li>
+                <li>
+                  <h5>City</h5><span>Toronto</span>
+                </li>
+                <li>
+                  <h5>Street</h5><span>North Avenue 31B, </span>
+                </li>
+                <li>
+                  <h5>Email</h5><span><a class="qrt-cursor-scale qrt-cursor-color" href="mailto:quarty.inbox@mail.com" data-no-swup>quarty.inbox@mail.com</a></span>
+                </li>
+                <li>
+                  <h5>Phone</h5><span><a class="qrt-cursor-scale qrt-cursor-color" href="#." data-no-swup>+9 3(049) 482 95 23</a></span>
+                </li>
+            </ul>
+            <div class="qrt-divider"></div>
+             -->
+            <div class="qrt-social-links">
+                <div class="qrt-social-links">
+                  <h5 class="qrt-mb-40">Follow Us</h5>
+                  <ul class="qrt-social-list">
+                      <li><a href="#." class="qrt-cursor-scale qrt-cursor-color"><i class="fab fa-behance"></i></a></li>
+                      <li><a href="#." class="qrt-cursor-scale qrt-cursor-color"><i class="fab fa-dribbble"></i></a></li>
+                      <li><a href="#." class="qrt-cursor-scale qrt-cursor-color"><i class="fab fa-instagram"></i></a></li>
+                      <li><a href="#." class="qrt-cursor-scale qrt-cursor-color"><i class="fab fa-linkedin-in"></i></a></li>
+                  </ul>
+                </div>
+            </div>
+            <div class="qrt-divider"></div>
+
+            <!-- <div class="qrt-subscribe">
+                <h5 class="qrt-mb-40">Subscribe our newsletter</h5>
+                <form>
+                  <input type="text" placeholder="Email">
+                  <button type="submit" class="qrt-btn qrt-btn-sm"><i class="far fa-paper-plane"></i></button>
+                </form>
+            </div>
+            <div class="qrt-divider"></div> -->
+            <div class="qrt-copy">
+                <!-- author ( Please! Do not delete it. You are awesome! :) -->
+                <div> &copy; {{ now.Year }}, {{.Site.Params.legalname}} All Rights Reserved. <br>Design by <a class="qrt-cursor-scale qrt-cursor-color" href="//manikumar.in" target="_blank">Mani</a></div>
+            </div>
+          </div>
+      </div>
+    </div>

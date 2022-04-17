@@ -1,0 +1,33 @@
+---
+- name: Person 1
+  description: Testimonial 1. The example about the mattress sizing page you mentioned
+    in the last WBF can be a perfect example of new keywords and content, and broadening
+    the funnel as well. I can only imagine the sale numbers if that was the site of
+    a mattress selling company.
+  company: Company 1
+  image: ''
+  rating: 4.5
+- name: Person 2
+  description: Testimonial 2. The example about the mattress sizing page you mentioned
+    in the last WBF can be a perfect example of new keywords and content, and broadening
+    the funnel as well. I can only imagine the sale numbers if that was the site of
+    a mattress selling company.
+  company: Company 2
+  image: ''
+  rating: 3
+- name: Person 3
+  description: Testimonial 3. The example about the mattress sizing page you mentioned
+    in the last WBF can be a perfect example of new keywords and content, and broadening
+    the funnel as well. I can only imagine the sale numbers if that was the site of
+    a mattress selling company.
+  company: Company 3
+  image: ''
+  rating: 3.5
+- name: Person 3
+  description: Testimonial 3. The example about the mattress sizing page you mentioned
+    in the last WBF can be a perfect example of new keywords and content, and broadening
+    the funnel as well. I can only imagine the sale numbers if that was the site of
+    a mattress selling company.
+  company: Company 3
+  image: ''
+  rating: 3.5

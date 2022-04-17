@@ -1,0 +1,213 @@
+{{ if or (eq .Section "blog") (eq .Section "projects") }}  
+  <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ .Title }},
+  "image": {{ .Params.image | absURL }},
+  "datePublished": {{ .PublishDate }},
+  "dateModified": {{ .Lastmod }},
+  "author": {
+    "@type": "Person",
+    "name": {{.Site.Title}}
+  },
+  "mainEntityOfPage": { "@type": "WebPage" },
+    "publisher": {
+    "@type": "Organization",
+    "name": {{.Site.Title}},
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ with .Site.GetPage "/info" }}{{if .Params.logo}}{{.Params.logo |absURL}}{{else}}{{"images/logo/logo.png" | absURL}}{{end}}{{end}}
+    }
+  },
+  "description": {{ .Content | plainify }}
+} </script> {{ end }}
+{{ if eq .Section "events" }}  
+<script type="application/ld+json">{  
+	"endDate":{{if .Params.eventEndDate}}{{.Params.eventEndDate}}{{else}}{{.Params.eventStartDate}}{{end}},
+	"name":"{{ htmlEscape .Title}}",
+    "eventStatus":"EventScheduled",
+    
+    "eventAttendanceMode": "https://schema.org/{{if in (lower .Params.venueAddress) "online"}}Online{{else}}Offline{{end}}EventAttendanceMode",
+    
+    "organizer": "{{.Site.Title}} Community",
+	"url":"{{ .Permalink }}",
+	"@context":"http://schema.org",
+	"startDate":{{.Params.eventStartDate}},
+	"location":{  
+	   "@type":"Place",
+	   {{if .Params.venueAddress}}
+	   "name":"{{htmlEscape (trim (index (split .Params.venueAddress ",") 0 ) " ")}}",{{else}}
+	   "name":"Private Venue",
+	{{end}}
+	   "address":"{{ htmlEscape .Params.venueAddress}}"},
+	"offers":{  
+	   "@type":"AggregateOffer",
+	   {{ if .Params.freeEvent }}
+	   "lowPrice":0,
+	   "highPrice":0,
+	   {{else}}
+	   "lowPrice":{{.Params.ticketPriceLow}},
+	   "highPrice":{{ if .Params.ticketPriceHigh}}{{.Params.ticketPriceHigh}}{{else}}{{.Params.ticketPriceLow}}{{end}},{{end}}
+	   "offerCount":1,
+	   "offers":[  
+		  {  
+			 "@type":"Offer",
+			 "availabilityEnds":{{.Params.eventStartDate}},
+			 "url":"{{.Permalink}}",
+			 "name":"Regular Ticket",
+			 "availability":"http://schema.org/InStock",
+			 "price":{{ if .Params.freeEvent }}0, {{else}}{{if .Params.ticketPriceHigh}}{{.Params.ticketPriceLow}} - {{.Params.ticketPriceHigh}}{{else}}{{.Params.ticketPriceLow}}{{end}},{{end}}
+			 "priceCurrency":"INR",
+			 "validFrom": {{ .PublishDate }}
+		  }
+	   ],
+	   "url":"{{.Permalink}}"
+	},
+	"@type":"Event",
+	"image":"{{ .Params.image | absURL}}",
+	"description": {{.Plain}}
+ }</script>
+ {{end}}
+{{if eq .Section "services"}}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/", 
+    "@type": "Product", 
+    "name": {{.Title}},
+    "image": {{.Params.Image}},
+    "description": {{.Plain}},
+    "brand": {{.Site.Title}},
+    "sku": {{ urlize .Title }},
+    "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "10"
+        }
+  }
+  </script>
+
+{{end}}
+ {{if .IsHome}}
+<script type="application/ld+json">
+{ 
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": {{ .Site.Title }},
+  "legalName" : "{{.Site.Params.legalname}}",
+  "url": {{.Site.BaseURL}},
+  "logo": {{ with .Site.GetPage "/info" }}{{if .Params.logo}}{{.Params.logo |absURL}}{{else}}{{"images/logo/logo.png" | absURL}}{{end}}{{end}},
+  "foundingDate": "",
+  {{range $.Site.Data.team}}
+  {{range .}}
+  {{if and .name .founder}}
+  "founders": [
+    {
+    "@type": "Person",
+    "name": "{{.name}}",
+    "image": "{{.image}}"{{if .linkedin}},
+    
+    "sameAs": [{{.linkedin}}{{if .website}},{{.website}}{{end}}]
+    {{end}}
+    }],
+  {{end}}
+  {{end}}
+  {{end}}
+  {{with .Site.GetPage "/contact"}}
+  "address": {
+  "@type": "PostalAddress", 
+	{{if .Params.contactAddress}}
+	"addressLocality": "{{ .Params.contactAddress}}",
+	{{end}}
+	"addressRegion": " Some City",
+	"postalCode": "400093",
+	"addressCountry": "India"
+  },
+  {{end}}
+  {{ with .Site.GetPage "/info" }}
+  {{if .Params.aboutText}}
+  "description": {{  .Params.aboutText }},
+  {{end}}
+  {{end}}
+  "sameAs": [ 
+  {{ with .Site.GetPage "/info" }}
+    {{if .Params.socialTwitter}}
+        {{ .Params.socialTwitter}},
+    {{end}}
+  {{if .Params.socialInstagram}}
+      {{ .Params.socialInstagram}},
+{{end}}
+  {{if .Params.socialFacebook}}
+   {{ .Params.socialFacebook}},
+    {{end}}
+  {{if .Params.socialLinkedin}}
+  {{ .Params.socialLinkedin}}
+   {{end}}
+
+  {{end}}
+  ]
+}
+</script>
+{{end}}
+
+<!-- Breadcrumbs for articles --><!-- Breadcrumbs for articles -->
+{{ $urlParts := sub (len (split .RelPermalink "/")) 2 }}
+
+<!-- Post pages -->
+{{ if eq $urlParts 3 }}
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [{
+		"@type": "ListItem",
+		"position": 1,
+		"name": "{{ .Section }}",
+		"item": "{{ .CurrentSection.Parent.Permalink }}"
+	},{
+		"@type": "ListItem",
+		"position": 2,
+		"name": "{{ .CurrentSection.Title }}",
+		"item": "{{ .CurrentSection.Permalink }}"
+	},{
+		"@type": "ListItem",
+		"position": 3,
+		"name": "{{ .Title }}",
+		"item": "{{ .Permalink }}"
+	}]
+}
+</script>
+<!-- Subsection pages -->
+{{ else if eq $urlParts 2 }}
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [{
+		"@type": "ListItem",
+		"position": 1,
+		"name": "{{ .Section }}",
+		"item": "{{ .CurrentSection.Parent.Permalink }}"
+	},{
+		"@type": "ListItem",
+		"position": 2,
+		"name": "{{ .Title }}",
+		"item": "{{ .Permalink }}"
+	}]
+}
+</script>
+<!-- Check for main section pages and meta pages (about, disclaimer) -->
+{{ else if eq $urlParts 1 }}
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [{
+		"@type": "ListItem",
+		"position": 1,
+		"name": "{{ .Title }}",
+		"item": "{{ .Permalink }}"
+	}]
+}
+</script>
+{{ end }}

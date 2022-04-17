@@ -1,0 +1,49 @@
+<!--
+Put this file in /layouts/shortcodes/gallery.html
+Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
+-->
+<!-- count how many times we've called this shortcode; load the css if it's the first time -->
+{{- $.Page.Scratch.Add "figurecount" 1 }}
+{{ $baseURL := .Site.BaseURL }}
+
+<div class="qrt-masonry-grid">
+	<div class="qrt-grid-sizer"></div>
+		{{- with ((.Get "dir") | strings.TrimPrefix "static"  | strings.TrimPrefix "//"  )  -}}
+		<!-- If a directory was specified, generate figures for all of the images in the directory -->
+		
+		{{- $files := readDir (print "/static/" .) }}
+		{{- range $files -}}
+			<!-- skip files that aren't images, or that inlcude the thumb suffix in their name -->
+			{{- $thumbext := $.Get "thumb" | default "-thumb" }}
+			{{- $isthumb := .Name | findRE ($thumbext | printf "%s\\.") }}<!-- is the current file a thumbnail image? -->
+			{{- $isimg := lower .Name | findRE "\\.(gif|jpg|jpeg|tiff|png|bmp)" }}<!-- is the current file an image? -->
+			{{- if and $isimg (not $isthumb) }}
+				{{- $caption :=  .Name | replaceRE "\\..*" "" | humanize }}<!-- humanized filename without extension -->
+				{{- $linkURL := print $baseURL ($.Get "dir") "/" .Name | absURL }}<!-- absolute URL to hi-res image -->
+				{{- $thumb := .Name | replaceRE "(\\.)" ($thumbext | printf "%s.") }}<!-- filename of thumbnail image -->
+				{{- $thumbexists := where $files "Name" $thumb }}<!-- does a thumbnail image exist? --> 
+				{{- $thumbURL := print $baseURL ($.Get "dir") "/" $thumb | absURL }}<!-- absolute URL to thumbnail image -->
+
+				<div class="qrt-masonry-grid-item qrt-masonry-grid-item-50">
+					<div class="qrt-work-item">
+						<a data-fancybox="works{{$.Page.Scratch.Get "figurecount"}}" href="{{ if $thumbexists }}{{ $thumbURL }}{{ else }}{{ $linkURL }}{{ end }}" data-caption="{{ strings.TrimSuffix (path.Ext $thumb) $thumb  | humanize | title}}" class="qrt-cursor-scale qrt-work-cover-frame">
+						  <img data-src="{{ if $thumbexists }}{{ $thumbURL }}{{ else }}{{ $linkURL }}{{ end }}" class="lozad" alt="work cover">
+							<div class="qrt-item-zoom qrt-cursor-color">
+								<i class="fas fa-expand"></i>
+						  </div>
+					  </a>
+					</div>
+				  </div>
+			  
+			{{- end }}
+		{{- end }}
+	{{- else -}}
+		<!-- If no directory was specified, include any figure shortcodes called within the gallery -->
+	  {{ .Inner }}
+	{{- end }}
+</div>
+
+
+
+
+

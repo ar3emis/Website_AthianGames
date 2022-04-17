@@ -1,0 +1,720 @@
+/* ==========================================================================
+   Your custom CSS styles
+   ========================================================================== */
+
+
+   .btn__android{
+    background-color: #1bd742!important;
+}
+
+.btn__telegram{
+    background-color: #61a8de!important;
+}
+
+.btn__linkedin{
+    background-color: #0085b2!important;
+}
+
+
+.btn__pinterest{
+    background-color: #c9353d!important;
+}
+
+
+.btn__reddit{
+    background-color: #f73d17!important;
+}
+
+.btn__email{
+    background-color: #cccccc!important;
+}
+.btn__social{
+    font-weight: lighter;
+    min-width: 80px;
+    margin: 10px;
+    background-color: #37515f;
+    color: #ffffff;
+}
+
+.btn__social:hover{
+    background-color: #ffffff !important;
+    color: #37515f  !important;
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+  }
+  blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  blockquote p {
+    display: inline;
+  }
+
+
+  table {
+    /* Remove spacing between table cells (from Normalize.css) */
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #cbcbcb;
+}
+
+table caption {
+    color: #000;
+    font: italic 85%/1 arial, sans-serif;
+    padding: 1em 0;
+    text-align: center;
+}
+
+table td,
+table th {
+    border-left: 1px solid #cbcbcb;/*  inner column border */
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible; /*to make ths where the title is really long work*/
+    padding: 0.5em 1em; /* cell padding */
+}
+
+table thead {
+    background-color: #e0e0e0;
+    color: #000;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+/*
+striping:
+   even - #fff (white)
+   odd  - #f2f2f2 (light gray)
+*/
+table td {
+    background-color: transparent;
+}
+table-odd td {
+    background-color: #f2f2f2;
+}
+
+/* nth-child selector for modern browsers */
+table-striped tr:nth-child(2n-1) td {
+    background-color: #f2f2f2;
+}
+
+/* BORDERED TABLES */
+table-bordered td {
+    border-bottom: 1px solid #cbcbcb;
+}
+table-bordered tbody > tr:last-child > td {
+    border-bottom-width: 0;
+}
+
+
+/* HORIZONTAL BORDERED TABLES */
+
+table-horizontal td,
+table-horizontal th {
+    border-width: 0 0 1px 0;
+    border-bottom: 1px solid #cbcbcb;
+}
+table-horizontal tbody > tr:last-child > td {
+    border-bottom-width: 0;
+}
+
+.highlight pre{
+    padding:20px;
+}
+
+.buy-buttons button {
+    width: 100%;
+}
+
+
+
+
+
+
+/* ==========================================================================
+   Your custom CSS styles for smartphones and screens smaller than 480 px
+   ========================================================================== */
+
+@media only screen and (max-width: 1200px) {
+    /* insert styles here */
+    .qrt-work-item .qrt-work-descr {
+      -webkit-transform: translateY(0%);
+              transform: translateY(0%);
+    }
+}
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/* Clearfix
+ * Adding a 'clearfix' class will allow parent elements to contain a floated child element
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+	
+.p-0 {
+    padding: 0px;
+  }
+  
+  .p-3 {
+    padding: 3px;
+  }
+  
+  .p-5 {
+    padding: 5px;
+  }
+  
+  .p-10 {
+    padding: 10px;
+  }
+  
+  .p-15 {
+    padding: 15px;
+  }
+  
+  .p-20 {
+    padding: 20px;
+  }
+  
+  .p-25 {
+    padding: 25px;
+  }
+  
+  .p-30 {
+    padding: 30px;
+  }
+  
+  .p-35 {
+    padding: 35px;
+  }
+  
+  .p-40 {
+    padding: 40px;
+  }
+  
+  .p-45 {
+    padding: 45px;
+  }
+  
+  .p-50 {
+    padding: 50px;
+  }
+  
+  .pt-0 {
+    padding-top: 0px;
+  }
+  
+  .pt-3 {
+    padding-top: 3px;
+  }
+  
+  .pt-5 {
+    padding-top: 5px;
+  }
+  
+  .pt-10 {
+    padding-top: 10px;
+  }
+  
+  .pt-15 {
+    padding-top: 15px;
+  }
+  
+  .pt-20 {
+    padding-top: 20px;
+  }
+  
+  .pt-25 {
+    padding-top: 25px;
+  }
+  
+  .pt-30 {
+    padding-top: 30px;
+  }
+  
+  .pt-35 {
+    padding-top: 35px;
+  }
+  
+  .pt-40 {
+    padding-top: 40px;
+  }
+  
+  .pt-45 {
+    padding-top: 45px;
+  }
+  
+  .pt-50 {
+    padding-top: 50px;
+  }
+  .pt-7rem {
+    padding-top: 7rem;
+  }
+  
+  .pr-0 {
+    padding-right: 0px;
+  }
+  
+  .pr-3 {
+    padding-right: 3px;
+  }
+  
+  .pr-5 {
+    padding-right: 5px;
+  }
+  
+  .pr-10 {
+    padding-right: 10px;
+  }
+  
+  .pr-15 {
+    padding-right: 15px;
+  }
+  
+  .pr-20 {
+    padding-right: 20px;
+  }
+  
+  .pr-25 {
+    padding-right: 25px;
+  }
+  
+  .pr-30 {
+    padding-right: 30px;
+  }
+  
+  .pr-35 {
+    padding-right: 35px;
+  }
+  
+  .pr-40 {
+    padding-right: 40px;
+  }
+  
+  .pr-45 {
+    padding-right: 45px;
+  }
+  
+  .pr-50 {
+    padding-right: 50px;
+  }
+  
+  .pb-0 {
+    padding-bottom: 0px;
+  }
+  
+  .pb-3 {
+    padding-bottom: 3px;
+  }
+  
+  .pb-5 {
+    padding-bottom: 5px;
+  }
+  
+  .pb-10 {
+    padding-bottom: 10px;
+  }
+  
+  .pb-15 {
+    padding-bottom: 15px;
+  }
+  
+  .pb-20 {
+    padding-bottom: 20px;
+  }
+  
+  .pb-25 {
+    padding-bottom: 25px;
+  }
+  
+  .pb-30 {
+    padding-bottom: 30px;
+  }
+  
+  .pb-35 {
+    padding-bottom: 35px;
+  }
+  
+  .pb-40 {
+    padding-bottom: 40px;
+  }
+  
+  .pb-45 {
+    padding-bottom: 45px;
+  }
+  
+  .pb-50 {
+    padding-bottom: 50px;
+  }
+  
+  .pl-0 {
+    padding-left: 0px;
+  }
+  
+  .pl-3 {
+    padding-left: 3px;
+  }
+  
+  .pl-5 {
+    padding-left: 5px;
+  }
+  
+  .pl-10 {
+    padding-left: 10px;
+  }
+  
+  .pl-15 {
+    padding-left: 15px;
+  }
+  
+  .pl-20 {
+    padding-left: 20px;
+  }
+  
+  .pl-25 {
+    padding-left: 25px;
+  }
+  
+  .pl-30 {
+    padding-left: 30px;
+  }
+  
+  .pl-35 {
+    padding-left: 35px;
+  }
+  
+  .pl-40 {
+    padding-left: 40px;
+  }
+  
+  .pl-45 {
+    padding-left: 45px;
+  }
+  
+  .pl-50 {
+    padding-left: 50px;
+  }
+  
+  .m-0 {
+    margin: 0px;
+  }
+  
+  .m-3 {
+    margin: 3px;
+  }
+  
+  .m-5 {
+    margin: 5px;
+  }
+  
+  .m-10 {
+    margin: 10px;
+  }
+  
+  .m-15 {
+    margin: 15px;
+  }
+  
+  .m-20 {
+    margin: 20px;
+  }
+  
+  .m-25 {
+    margin: 25px;
+  }
+  
+  .m-30 {
+    margin: 30px;
+  }
+  
+  .m-35 {
+    margin: 35px;
+  }
+  
+  .m-40 {
+    margin: 40px;
+  }
+  
+  .m-45 {
+    margin: 45px;
+  }
+  
+  .m-50 {
+    margin: 50px;
+  }
+  
+  .mt-0 {
+    margin-top: 0px;
+  }
+  
+  .mt-3 {
+    margin-top: 3px;
+  }
+  
+  .mt-5 {
+    margin-top: 5px;
+  }
+  
+  .mt-10 {
+    margin-top: 10px;
+  }
+  
+  .mt-15 {
+    margin-top: 15px;
+  }
+  
+  .mt-20 {
+    margin-top: 20px;
+  }
+  
+  .mt-25 {
+    margin-top: 25px;
+  }
+  
+  .mt-30 {
+    margin-top: 30px;
+  }
+  
+  .mt-35 {
+    margin-top: 35px;
+  }
+  
+  .mt-40 {
+    margin-top: 40px;
+  }
+  
+  .mt-45 {
+    margin-top: 45px;
+  }
+  
+  .mt-50 {
+    margin-top: 50px;
+  }
+  
+  .mr-0 {
+    margin-right: 0px;
+  }
+  
+  .mr-3 {
+    margin-right: 3px;
+  }
+  
+  .mr-5 {
+    margin-right: 5px;
+  }
+  
+  .mr-10 {
+    margin-right: 10px;
+  }
+  
+  .mr-15 {
+    margin-right: 15px;
+  }
+  
+  .mr-20 {
+    margin-right: 20px;
+  }
+  
+  .mr-25 {
+    margin-right: 25px;
+  }
+  
+  .mr-30 {
+    margin-right: 30px;
+  }
+  
+  .mr-35 {
+    margin-right: 35px;
+  }
+  
+  .mr-40 {
+    margin-right: 40px;
+  }
+  
+  .mr-45 {
+    margin-right: 45px;
+  }
+  
+  .mr-50 {
+    margin-right: 50px;
+  }
+  
+  .mb-0 {
+    margin-bottom: 0px;
+  }
+  
+  .mb-3 {
+    margin-bottom: 3px;
+  }
+  
+  .mb-5 {
+    margin-bottom: 5px;
+  }
+  
+  .mb-10 {
+    margin-bottom: 10px;
+  }
+  
+  .mb-15 {
+    margin-bottom: 15px;
+  }
+  
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+  
+  .mb-25 {
+    margin-bottom: 25px;
+  }
+  
+  .mb-30 {
+    margin-bottom: 30px;
+  }
+  
+  .mb-35 {
+    margin-bottom: 35px;
+  }
+  
+  .mb-40 {
+    margin-bottom: 40px;
+  }
+  
+  .mb-45 {
+    margin-bottom: 45px;
+  }
+  
+  .mb-50 {
+    margin-bottom: 50px;
+  }
+  
+  .ml-0 {
+    margin-left: 0px;
+  }
+  
+  .ml-3 {
+    margin-left: 3px;
+  }
+  
+  .ml-5 {
+    margin-left: 5px;
+  }
+  
+  .ml-10 {
+    margin-left: 10px;
+  }
+  
+  .ml-15 {
+    margin-left: 15px;
+  }
+  
+  .ml-20 {
+    margin-left: 20px;
+  }
+  
+  .ml-25 {
+    margin-left: 25px;
+  }
+  
+  .ml-30 {
+    margin-left: 30px;
+  }
+  
+  .ml-35 {
+    margin-left: 35px;
+  }
+  
+  .ml-40 {
+    margin-left: 40px;
+  }
+  
+  .ml-45 {
+    margin-left: 45px;
+  }
+  
+  .ml-50 {
+    margin-left: 50px;
+  }
+
+  .text-center{
+    text-align: center
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  .w-100 {
+    width: 100%;
+}
+
+.stretched-link::after{
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:1;
+  pointer-events:auto;
+  content:"";
+  background-color:rgba(0,0,0,0)
+}
+
+
+a.nav-link.scroll:hover {
+  color: #df4112 !important;
+}
+
+
+::-moz-selection { /* Code for Firefox */
+  color: #ffffff;
+  background: #000000;
+}
+
+::selection {
+  color: #ffffff;
+  background: #000000;
+}
+
+.qrt-table h5, .qrt-social-links h5 {
+  color: #28292c;
+}

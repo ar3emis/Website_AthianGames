@@ -1,0 +1,8 @@
+
+
+{{ $link:= .Get "link" }}
+{{if $link}}
+<a href="{{$link | absURL}}" {{with .Get "onclick"}}onclick="{{.}}"{{end}} {{with .Get "align" }} style="display:block;text-align:{{.}};"{{end}}><button type="button" class="btn btn-primary btn-hover-white mt-10 mb-20" style=" letter-spacing: 1px; ">{{with .Get "text"}}{{.}}{{end}}</button></a>
+{{end}}
+
+

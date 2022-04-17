@@ -1,0 +1,33 @@
+{
+  "name": "hugo-boilerplate",
+  "version": "1.0.0",
+  "description": "Project Description",
+  "main": "index.js",
+  "scripts": {
+    "develop": "hugo server -D",
+    "build": "hugo --gc --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:hithismani/hugo-boilerplate.git"
+  },
+  "author": "Manikantan Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "git@github.com:hithismani/hugo-boilerplate.git"
+  },
+  "homepage": "https://github.com/hithismani/hugo-boilerplate",
+  "dependencies": {
+    "autoprefixer": "^9.5.1",
+    "browserslist": "^4.12.0",
+    "cssnano": "^4.1.10",
+    "html-minifier": "^4.0.0",
+    "postcss": "^7.0.14",
+    "postcss-cli": "^7.1.1",
+    "postcss-discard-comments": "^4.0.2",
+    "postcss-import": "^12.0.1"
+  },
+  "devDependencies": {
+    "css-declaration-sorter": "^4.0.1"
+  }
+}

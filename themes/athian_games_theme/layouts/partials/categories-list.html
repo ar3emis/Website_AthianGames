@@ -1,0 +1,13 @@
+<ul>
+    {{/* Create a list of unique tags */}}
+
+    {{ range $name, $items := .Site.Taxonomies.categories }}
+    {{if ne $name ""}}
+    <li>
+        
+        <a href="{{ $.Site.BaseURL }}categories/{{ $name | urlize | lower }}">{{ humanize  $name }} &nbsp;<span>({{ len $items }})</span>
+        </a>
+    </li>
+    {{ end }}
+    {{ end }}
+        </ul>

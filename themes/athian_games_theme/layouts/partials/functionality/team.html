@@ -1,0 +1,23 @@
+Our People
+
+{{$counter := 0 }}
+#team_{{.name | urlize}}{{$counter}}                 
+  {{range $.Site.Data.team}}
+  {{range .}}
+  {{if .name}}
+            
+           
+                  <img src="{{.image | absURL}}" alt="member img">
+                  {{if or .linkedin .website}}
+            <a href="{{.linkedin}}"></a>
+            <a href="{{.website}}"></a>
+                  {{end}}
+              
+                  {{.name}}
+                  {{.designation}}
+                    {{.description}}</p>
+            
+            {{end}}
+            {{end}}
+          {{end}}
+          {{$counter = add $counter 1}}

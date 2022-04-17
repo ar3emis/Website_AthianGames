@@ -1,0 +1,43 @@
+---
+label: Simple
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: topText
+  label: topText
+- type: text
+  name: bottomText
+  label: bottomText
+- type: text
+  name: layout
+  label: layout
+  default: simple
+  config:
+    required: true
+  hidden: true
+- type: text
+  name: seotitle
+  label: seotitle
+- type: text
+  name: seodescription
+  label: seodescription
+- type: text
+  name: canonical
+  label: canonical
+- type: boolean
+  name: private
+  label: private
+  default: true
+  hidden: true
+- type: datetime
+  name: date
+  label: date
+  default: now
+  config:
+    required: true
+  hidden: true
+pages:
+- content/disclaimer/_index.md

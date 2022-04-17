@@ -1,0 +1,4 @@
+<div class="{{with .Get "class"}}{{.}}{{end}}">
+{{with .Get "title"}}<h6>{{.}}</h6>{{end}}
+{{if .Inner}}{{ partial "theme-files/inner" . }}{{end}}
+</div>

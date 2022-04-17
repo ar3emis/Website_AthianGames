@@ -1,0 +1,23 @@
+<!-- bootstrap -->
+{{ $bootstrap := resources.Get "css/plugins/bootstrap.min.css" }}
+<!-- fontawesome -->
+{{ $fontawesome := resources.Get "css/plugins/fontawesome.min.css" }}
+<!-- swiper -->
+{{ $swiper := resources.Get "css/plugins/swiper.min.css" }}
+<!-- fancybox -->
+{{ $fancybox := resources.Get "css/plugins/fancybox.min.css" }}
+<!-- mapbox -->
+{{ $mapbox := resources.Get "css/plugins/mapboxstyle.css" }}
+<!-- main css -->
+{{ $main := resources.Get "css/style.css" }}
+
+{{ $custom_theme := resources.Get "css/custom_theme.css" }}
+
+{{- if .Site.IsServer -}}
+{{ $style := slice $bootstrap $fontawesome $swiper $fancybox $mapbox $main $custom_theme | resources.Concat "bundle.css" }}
+<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" lazyload>
+
+{{- else -}}
+{{ $style := slice $bootstrap $fontawesome $swiper $fancybox $mapbox $main $custom_theme  | resources.Concat "bundle.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" lazyload>
+{{- end }}
