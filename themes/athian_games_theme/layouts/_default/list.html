@@ -2,6 +2,13 @@
 
 <div class="qrt-half-content-frame">
         <div class="qrt-left">
+          {{if eq .Section "plugin_categories"}}
+          <div class="row">
+            <div class="qrt-filter qrt-mb-40">
+                  <a href="/plugin" class="qrt-work-category qrt-cursor-color qrt-cursor-scale qrt-anima-link">View All Plugins</a>
+          </div>
+          </div>
+          {{end}}
           <div class="qrt-just-text">
             {{partial "theme-files/content-design" .}}
 
@@ -12,7 +19,7 @@
             {{ $paginator := .Paginate .Data.Pages  }}
 
           {{ range ($paginator.Pages.ByDate.Reverse)  }}
-          <div class="col-lg-4">
+          <div class="col-md-6 col-lg-4 col-xl-3 mb-20">
 
                   {{partial "functionality/post-design" .}}
                 </div>

@@ -2401,13 +2401,14 @@ content
       box-orient: vertical; }
     .qrt-post-frame .qrt-post-descr .qrt-port-short-text {
       overflow: hidden;
-      text-overflow: ellipsis;
+      /* text-overflow: ellipsis;
       display: -moz-box;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       line-clamp: 2;
-      box-orient: vertical; }
+      box-orient: vertical;  */
+    }
     .qrt-post-frame .qrt-post-descr a {
       color: #28292c; }
       .qrt-post-frame .qrt-post-descr a:hover {

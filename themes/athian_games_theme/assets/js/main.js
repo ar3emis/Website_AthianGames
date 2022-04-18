@@ -322,16 +322,16 @@ $(function() {
   $.fancybox.defaults.hash = false;
 
   // portfolio filter
-  $('.qrt-filter a').on('click', function() {
-    $('.qrt-filter .qrt-current').removeClass('qrt-current');
-    $(this).addClass('qrt-current');
+  // $('.qrt-filter a').on('click', function() {
+  //   $('.qrt-filter .qrt-current').removeClass('qrt-current');
+  //   $(this).addClass('qrt-current');
 
-    var selector = $(this).data('filter');
-    $('.qrt-masonry-grid').isotope({
-      filter: selector
-    });
-    return false;
-  });
+  //   var selector = $(this).data('filter');
+  //   $('.qrt-masonry-grid').isotope({
+  //     filter: selector
+  //   });
+  //   return false;
+  // });
 
   $('.qrt-masonry-grid').isotope({
     filter: '*',
@@ -729,16 +729,16 @@ $(function() {
     $.fancybox.defaults.hash = false;
 
     // portfolio filter
-    $('.qrt-filter a').on('click', function() {
-      $('.qrt-filter .qrt-current').removeClass('qrt-current');
-      $(this).addClass('qrt-current');
+    // $('.qrt-filter a').on('click', function() {
+    //   $('.qrt-filter .qrt-current').removeClass('qrt-current');
+    //   $(this).addClass('qrt-current');
 
-      var selector = $(this).data('filter');
-      $('.qrt-masonry-grid').isotope({
-        filter: selector
-      });
-      return false;
-    });
+    //   var selector = $(this).data('filter');
+    //   $('.qrt-masonry-grid').isotope({
+    //     filter: selector
+    //   });
+    //   return false;
+    // });
 
     $('.qrt-masonry-grid').isotope({
       filter: '*',

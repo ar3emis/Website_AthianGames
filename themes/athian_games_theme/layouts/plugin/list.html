@@ -4,16 +4,15 @@
     <div class="qrt-left">
         {{partial "theme-files/content-design" .}}
 
-        <!-- <div class="qrt-filter qrt-mb-40">
-             <a href="#" data-filter="*"
+        <div class="qrt-filter qrt-mb-40">
+            <!-- <a href="#" data-filter="*"
                 class="qrt-work-category qrt-current qrt-filter-icon qrt-cursor-color qrt-cursor-scale"><i
-                    class="fas fa-filter"></i>All Categories</a> 
+                    class="fas fa-filter"></i>All Categories</a>  -->
             {{range .Site.Taxonomies.plugin_categories}}
             <a href="{{.Page.Permalink}}" data-filter=".{{ .Page.Title  | urlize}}"
-                class="qrt-work-category qrt-cursor-color qrt-cursor-scale">{{ .Page.Title }}</a>
+                class="qrt-work-category qrt-cursor-color qrt-cursor-scale qrt-anima-link">{{ .Page.Title }}</a>
             {{end}}
         </div>
-    -->
 
 
         <div class="row">
