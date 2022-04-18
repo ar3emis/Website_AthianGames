@@ -134,37 +134,37 @@ $(function() {
     },
   });
 
-  var fixedElem = document.getElementById('fixed');
+  // var fixedElem = document.getElementById('fixed');
 
-  if ($(window).width() > 1401) {
-    scrollbar.addListener(function(status) {
-      var offset = status.offset;
+  // if ($(window).width() > 1401) {
+  //   scrollbar.addListener(function(status) {
+  //     var offset = status.offset;
 
-      fixed.style.top = offset.y + 'px';
-      fixed.style.left = offset.x + 'px';
-    });
-  }
+  //     fixed.style.top = offset.y + 'px';
+  //     fixed.style.left = offset.x + 'px';
+  //   });
+  // }
 
-  $(window).resize(function() {
-    if ($(window).width() > 1400) {
-      scrollbar.addListener(function(status) {
-        var offset = status.offset;
+  // $(window).resize(function() {
+  //   if ($(window).width() > 1400) {
+  //     scrollbar.addListener(function(status) {
+  //       var offset = status.offset;
 
-        fixed.style.top = offset.y + 'px';
-        fixed.style.left = offset.x + 'px';
-      });
-      $(fixedElem).css('position', 'relative')
-    }
-    if ($(window).width() < 1400) {
-      scrollbar.addListener(function(status) {
-        var offset = status.offset;
+  //       fixed.style.top = offset.y + 'px';
+  //       fixed.style.left = offset.x + 'px';
+  //     });
+  //     $(fixedElem).css('position', 'relative')
+  //   }
+  //   if ($(window).width() < 1400) {
+  //     scrollbar.addListener(function(status) {
+  //       var offset = status.offset;
 
-        fixed.style.top = offset.y + 'px';
-        fixed.style.left = offset.x + 'px';
-      });
-      $(fixedElem).css('position', 'static')
-    }
-  });
+  //       fixed.style.top = offset.y + 'px';
+  //       fixed.style.left = offset.x + 'px';
+  //     });
+  //     $(fixedElem).css('position', 'static')
+  //   }
+  // });
 
   var swiper = new Swiper('.qrt-main-slider', {
     slidesPerView: 1,
@@ -541,37 +541,37 @@ $(function() {
       },
     });
 
-    var fixedElem = document.getElementById('fixed');
+    // var fixedElem = document.getElementById('fixed');
 
-    if ($(window).width() > 1200) {
-      scrollbar.addListener(function(status) {
-        var offset = status.offset;
+    // if ($(window).width() > 1200) {
+    //   scrollbar.addListener(function(status) {
+    //     var offset = status.offset;
 
-        fixed.style.top = offset.y + 'px';
-        fixed.style.left = offset.x + 'px';
-      });
-    }
+    //     fixed.style.top = offset.y + 'px';
+    //     fixed.style.left = offset.x + 'px';
+    //   });
+    // }
 
-    $(window).resize(function() {
-      if ($(window).width() > 1200) {
-        scrollbar.addListener(function(status) {
-          var offset = status.offset;
+    // $(window).resize(function() {
+    //   if ($(window).width() > 1200) {
+    //     scrollbar.addListener(function(status) {
+    //       var offset = status.offset;
 
-          fixed.style.top = offset.y + 'px';
-          fixed.style.left = offset.x + 'px';
-        });
-        $(fixedElem).css('position', 'relative')
-      }
-      if ($(window).width() < 1200) {
-        scrollbar.addListener(function(status) {
-          var offset = status.offset;
+    //       fixed.style.top = offset.y + 'px';
+    //       fixed.style.left = offset.x + 'px';
+    //     });
+    //     $(fixedElem).css('position', 'relative')
+    //   }
+    //   if ($(window).width() < 1200) {
+    //     scrollbar.addListener(function(status) {
+    //       var offset = status.offset;
 
-          fixed.style.top = offset.y + 'px';
-          fixed.style.left = offset.x + 'px';
-        });
-        $(fixedElem).css('position', 'static')
-      }
-    });
+    //       fixed.style.top = offset.y + 'px';
+    //       fixed.style.left = offset.x + 'px';
+    //     });
+    //     $(fixedElem).css('position', 'static')
+    //   }
+    // });
 
     var swiper = new Swiper('.qrt-main-slider', {
       slidesPerView: 1,

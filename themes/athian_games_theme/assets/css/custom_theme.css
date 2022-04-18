@@ -159,12 +159,12 @@ table-horizontal tbody > tr:last-child > td {
  display: none;
 }
 
-.qrt-app .qrt-content .qrt-half-content-frame .qrt-right {
+/* .qrt-app .qrt-content .qrt-half-content-frame .qrt-right {
   margin-left: auto;
   position: fixed;
   right: 0;
   width: 480px;
-  height: calc(100vh - 100px); }
+  height: calc(100vh - 100px); } */
 }
 
 @media (max-width: 1400px) {

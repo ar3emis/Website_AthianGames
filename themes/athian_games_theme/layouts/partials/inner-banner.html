@@ -5,29 +5,35 @@
     </div>
     <div class="qrt-overlay">
       <!-- <div class="qrt-scroll-hint"><span></span></div> -->
-      <div class="qrt-banner-title">
-        <h2 class="qrt-white qrt-mb-20">{{if .Params.topText}}{{.Params.topText}}{{else}}{{.Title}}{{end}}</h2>
-        <div class="qrt-divider-2"></div>
-        <div class="qrt-text qrt-white qrt-mb-20" style="line-height: inherit;">{{if .Params.bottomText}}{{.Params.bottomText}}{{end}}</div>
-        {{range .Params.buttons}}
-        <a href="{{.buttonLink | absURL}}" class="qrt-btn qrt-btn-md qrt-btn-color {{if in (.buttonLink | absURL) ($.Site.BaseURL)}} qrt-anima-link {{end}} m-10"><span>{{.buttonText}}</span>
-        </a>
-        {{end}}
+      <div class="row align-items-center">
+        <div class="col-xl-8 col-lg-12 offset-xl-2">
+          <div class="qrt-banner-title">
+            <h2 class="qrt-white qrt-mb-20">{{if .Params.topText}}{{.Params.topText}}{{else}}{{.Title}}{{end}}</h2>
+            <div class="qrt-divider-2"></div>
+            <div class="qrt-text qrt-white qrt-mb-20" style="line-height: inherit;">{{if .Params.bottomText}}{{.Params.bottomText}}{{end}}</div>
+            {{range .Params.buttons}}
+            <a href="{{.buttonLink | absURL}}" class="qrt-btn qrt-btn-md qrt-btn-color {{if in (.buttonLink | absURL) ($.Site.BaseURL)}} qrt-anima-link {{end}} m-10"><span>{{.buttonText}}</span>
+            </a>
+            {{end}}
+          </div>
+          <nav>
+            <ol class="breadcrumb" style="background-color: transparent !important;">
+              <li class="breadcrumb-item"><a href="{{" /" | absURL}}">Home</a></li>
+              {{$header2 := (index (split .Permalink "/" ) 3)}}
+              {{if $header2}}
+              <li class="breadcrumb-item"><a href="{{$header2 |absURL}}">{{$header2 | humanize | title}}</a></li>
+              {{end}}
+              {{$header3 := (index (split .Permalink "/" ) 4)}}
+              {{if $header3}}
+              <li class="breadcrumb-item active" aria-current="page">{{$header3 | humanize | title}}</li>
+              {{end}}
+            </ol>
+          </nav>
+                  
+        </div>
       </div>
-      <nav>
-        <ol class="breadcrumb" style="background-color: transparent !important;">
-          <li class="breadcrumb-item"><a href="{{" /" | absURL}}">Home</a></li>
-          {{$header2 := (index (split .Permalink "/" ) 3)}}
-          {{if $header2}}
-          <li class="breadcrumb-item"><a href="{{$header2 |absURL}}">{{$header2 | humanize | title}}</a></li>
-          {{end}}
-          {{$header3 := (index (split .Permalink "/" ) 4)}}
-          {{if $header3}}
-          <li class="breadcrumb-item active" aria-current="page">{{$header3 | humanize | title}}</li>
-          {{end}}
-        </ol>
-      </nav>
-              
+
+
     
     </div>
   </div>
