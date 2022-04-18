@@ -8,12 +8,13 @@
                 <div class="col-lg-12">
         {{partial "theme-files/content-design" .}}
         <div class="qrt-filter qrt-mb-40">
-            <!-- <a href="#" data-filter="*"
-                class="qrt-work-category qrt-current qrt-filter-icon qrt-cursor-color qrt-cursor-scale"><i
-                    class="fas fa-filter"></i>All Categories</a>  -->
+            <a href="#" data-filter="*" class="pl-2 pr-2">Filter By Category:</a> 
+
             {{range .Site.Taxonomies.plugin_categories}}
-            <a href="{{.Page.Permalink}}" data-filter=".{{ .Page.Title  | urlize}}"
-                class="qrt-work-category qrt-cursor-color qrt-cursor-scale qrt-anima-link">{{ .Page.Title }}</a>
+                <a href="{{.Page.Permalink}}" data-filter="*" class="qrt-work-category qrt-current qrt-cursor-color qrt-cursor-scale qrt-anima-link">{{ .Page.Title }}</a> 
+
+            <!-- <a href="{{.Page.Permalink}}" data-filter=".{{ .Page.Title  | urlize}}"
+                class="qrt-work-category qrt-cursor-color qrt-cursor-scale qrt-anima-link">{{ .Page.Title }}</a> -->
             {{end}}
         </div>
         <div class="row">

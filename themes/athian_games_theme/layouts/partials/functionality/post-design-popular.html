@@ -1,13 +1,13 @@
  
   <div class="qrt-post-frame qrt-lg-post qrt-popular">
+    {{if .Params.image}}
     <a href="{{.Permalink}}" class="qrt-post-thumb qrt-cursor-scale qrt-anima-link">
-      {{if .Params.image}}
       <img src="{{.Params.image | absURL}}" alt="thumbnail">
-      {{end}}      
       <div class="qrt-post-date">
         <span><i class="far fa-clock"></i> {{ dateFormat "Monday, Jan 2, 2006" .Date }}</span>
       </div>
     </a>
+    {{end}}      
     <div class="qrt-post-descr">
       <div>
         <h4 class="qrt-cursor-color qrt-post-title"><a href="{{.Permalink}}" class="qrt-anima-link">{{.Title}}</a></h4>
