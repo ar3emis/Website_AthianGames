@@ -22,53 +22,6 @@
   },
   "description": {{ .Content | plainify }}
 } </script> {{ end }}
-{{ if eq .Section "events" }}  
-<script type="application/ld+json">{  
-	"endDate":{{if .Params.eventEndDate}}{{.Params.eventEndDate}}{{else}}{{.Params.eventStartDate}}{{end}},
-	"name":"{{ htmlEscape .Title}}",
-    "eventStatus":"EventScheduled",
-    
-    "eventAttendanceMode": "https://schema.org/{{if in (lower .Params.venueAddress) "online"}}Online{{else}}Offline{{end}}EventAttendanceMode",
-    
-    "organizer": "{{.Site.Title}} Community",
-	"url":"{{ .Permalink }}",
-	"@context":"http://schema.org",
-	"startDate":{{.Params.eventStartDate}},
-	"location":{  
-	   "@type":"Place",
-	   {{if .Params.venueAddress}}
-	   "name":"{{htmlEscape (trim (index (split .Params.venueAddress ",") 0 ) " ")}}",{{else}}
-	   "name":"Private Venue",
-	{{end}}
-	   "address":"{{ htmlEscape .Params.venueAddress}}"},
-	"offers":{  
-	   "@type":"AggregateOffer",
-	   {{ if .Params.freeEvent }}
-	   "lowPrice":0,
-	   "highPrice":0,
-	   {{else}}
-	   "lowPrice":{{.Params.ticketPriceLow}},
-	   "highPrice":{{ if .Params.ticketPriceHigh}}{{.Params.ticketPriceHigh}}{{else}}{{.Params.ticketPriceLow}}{{end}},{{end}}
-	   "offerCount":1,
-	   "offers":[  
-		  {  
-			 "@type":"Offer",
-			 "availabilityEnds":{{.Params.eventStartDate}},
-			 "url":"{{.Permalink}}",
-			 "name":"Regular Ticket",
-			 "availability":"http://schema.org/InStock",
-			 "price":{{ if .Params.freeEvent }}0, {{else}}{{if .Params.ticketPriceHigh}}{{.Params.ticketPriceLow}} - {{.Params.ticketPriceHigh}}{{else}}{{.Params.ticketPriceLow}}{{end}},{{end}}
-			 "priceCurrency":"INR",
-			 "validFrom": {{ .PublishDate }}
-		  }
-	   ],
-	   "url":"{{.Permalink}}"
-	},
-	"@type":"Event",
-	"image":"{{ .Params.image | absURL}}",
-	"description": {{.Plain}}
- }</script>
- {{end}}
 {{if eq .Section "services"}}
 <script type="application/ld+json">
   {
@@ -96,7 +49,7 @@
   "name": {{ .Site.Title }},
   "legalName" : "{{.Site.Params.legalname}}",
   "url": {{.Site.BaseURL}},
-  "logo": {{ with .Site.GetPage "/info" }}{{if .Params.logo}}{{.Params.logo |absURL}}{{else}}{{"images/logo/logo.png" | absURL}}{{end}}{{end}},
+  "logo": "images/logo/logo.png",
   "foundingDate": "",
   {{range $.Site.Data.team}}
   {{range .}}

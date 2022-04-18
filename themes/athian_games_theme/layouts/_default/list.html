@@ -15,7 +15,6 @@
           </div>
           </div>
           {{end}}
-          <div class="qrt-just-text">
             {{partial "theme-files/content-design" .}}
 
           <div class="row">
@@ -25,7 +24,7 @@
             {{ $paginator := .Paginate .Data.Pages  }}
 
           {{ range ($paginator.Pages.ByDate.Reverse)  }}
-          <div class="col-md-6 col-lg-4 col-xl-3 mb-20">
+          <div class="col-md-6 col-lg-4 col-xl-4 mb-20">
 
                   {{partial "functionality/post-design" .}}
                 </div>
@@ -41,7 +40,6 @@
 
           </div>
           <div class="qrt-divider qrt-space-fix-2"></div>
-          </div>
           </div>
           </div>
           </div>
