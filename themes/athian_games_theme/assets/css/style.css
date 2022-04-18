@@ -2887,7 +2887,7 @@ portfolio
     letter-spacing: 1px;
     background-color: white;
     color: #28292c;
-    height: 40px;
+    /* height: 40px; */
     margin-right: 10px;
     letter-spacing: 2px;
     line-height: 40px;
