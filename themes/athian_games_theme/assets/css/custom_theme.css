@@ -746,3 +746,39 @@ a.nav-link.scroll:hover {
 .qrt-work-item .qrt-work-cover-frame img:hover {
   cursor: url('https://athiangames.netlify.app/uploads/cursor.png') 60 60, auto;
 }
+
+.modal {
+  padding: 0 !important; 
+}
+.modal .modal-dialog {
+  width: 100%;
+  max-width: none;
+  height: 80%;
+  margin: 0;
+}
+.modal .modal-content {
+  height: 80%;
+  border: 0;
+  border-radius: 0;
+}
+.modal .modal-body {
+  overflow-y: auto;
+}
+
+.modal.show .modal-dialog {
+  margin: auto;
+}
+
+@media (min-width: 1401px) {
+  .modal .modal-dialog {
+    width: 50%;
+    max-width: none;
+    height: 70%;
+    margin: 0;
+  }
+  .modal .modal-content {
+    height: 70%;
+    border: 0;
+    border-radius: 0;
+  }
+}
