@@ -10,7 +10,7 @@
         <div class="qrt-filter qrt-mb-40">
             <a href="#" data-filter="*" class="pl-2 pr-2">Filter By Category:</a> 
 
-            {{range .Site.Taxonomies.plugin_categories}}
+            {{range .Site.Taxonomies.product_categories}}
                 <a href="{{.Page.Permalink}}" data-filter="*" class="qrt-work-category qrt-current qrt-cursor-color qrt-cursor-scale qrt-anima-link">{{ .Page.LinkTitle  }}
 
                 </a> 
@@ -23,16 +23,16 @@
             <!-- <div class="qrt-grid-sizer"></div> -->
             {{ $paginator := .Paginate .Data.Pages }}
             {{ range ($paginator.Pages.ByDate.Reverse) }}
-            <div class="col-md-6 col-lg-4 col-xl-3 mb-20 {{range .Params.plugin_categories}}{{. | urlize}}{{end}}">
+            <div class="col-md-6 col-lg-4 col-xl-3 mb-20 {{range .Params.product_categories}}{{. | urlize}}{{end}}">
                 <div class="qrt-work-item"><a href="{{.Permalink}}"
                         class="qrt-cursor-scale qrt-work-cover-frame qrt-anima-link">
                         {{if .Params.image}}
-                        <img src="{{.Params.image | absURL}}" alt="Plugin Banner">
+                        <img src="{{.Params.image | absURL}}" alt="product Banner">
                         {{end}}
                         <!-- <div class="qrt-item-zoom qrt-cursor-color"><i class="fas fa-external-link"></i></div> -->
                         <div class="qrt-work-category">
-                            {{range .Params.plugin_categories}}
-                            <span onclick="window.open('/plugin_categories/{{. | urlize}}','_self')">{{.}}</span> &nbsp;
+                            {{range .Params.product_categories}}
+                            <span onclick="window.open('/product_categories/{{. | urlize}}','_self')">{{.}}</span> &nbsp;
                             {{end}}
                         </div>
                     </a>

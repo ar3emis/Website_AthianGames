@@ -1,10 +1,10 @@
 ---
 title: "PostgreSQL Integration for Unreal Engine 4"
 topText: ""
-bottomText: "PostgreSQL Integration is a Plugin that lets you connect your UE4 projects with PostgreSQL Server."
+bottomText: "PostgreSQL Integration is a product that lets you connect your UE4 projects with PostgreSQL Server."
 seotitle: ""
 seodescription: ""
-plugin_categories:
+product_categories:
     - "Database Integration"
 image: "/uploads/postgresql.png"
 canonical: ""

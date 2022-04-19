@@ -25,9 +25,9 @@ summaryLength = 10
         url = "/about/"
         weight = 2
     [[menu.main]]
-        identifier = "plugins"
-        name = "plugins"
-        url = "/plugin/"
+        identifier = "products"
+        name = "products"
+        url = "/product/"
         weight = 3
     [[menu.main]]
         identifier = "contact"
@@ -38,7 +38,7 @@ summaryLength = 10
 [taxonomies]
 category = "categories"
 tag = "tags"
-plugin_category = "plugin_categories"
+product_category = "product_categories"
 
 [minify]
   disableCSS = false
