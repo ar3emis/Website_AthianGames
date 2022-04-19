@@ -23,4 +23,4 @@ Give your scene a unique look and style with the customizable Post Process Mater
 Art of Shader - Stylized Post Process is a pack of more than 30 Post Process Blendable Materials that you customize and tweak to create a unique stylized look for your scene. The Blueprint Actors facilitate the easy combining, blending and grouping of the Post process materials based on certain common properties. From WaterColor, OilPaint, Aquarelle, Cartoon, ComicBook , CelShaded and many more Effects, choose, combine and customize via the parameterized material instances to suit your style.
 
 
-{{<gallery dir="/img/blog" />}}
+{{<gallery dir="/uploads/" />}}
