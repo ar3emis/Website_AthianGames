@@ -4,7 +4,7 @@
       buttonLink: "/plugin"
   showreel:
     - showreelText: "Showrreel"
-      showreelLink: "https://www.youtube.com/embed/pLcawAf9FUY"
+      showreelLink: "https://www.youtube.com/watch?v=pLcawAf9FUY&feature=emb_title"
   topText: Make Awesome Gameplay
   bottomText: Use the power of Unreal Engine 4 with our useful generic assets and code products that would greatly aid in the development of your Unreal Projects.
   bgImage: /videos/showreelbg.mp4

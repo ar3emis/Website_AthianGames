@@ -3040,7 +3040,7 @@ products customization
   opacity: 1; }
 
 .fancybox-toolbar {
-  background: #8f8f8f;
+  /* background: #8f8f8f; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
