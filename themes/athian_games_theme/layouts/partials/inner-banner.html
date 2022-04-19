@@ -17,9 +17,10 @@
             </a>
             {{end}}
           </div>
+          {{if ne .Kind "term"}}
           <nav>
             <ol class="breadcrumb" style="background-color: transparent !important;">
-              <li class="breadcrumb-item"><a href="{{" /" | absURL}}">Home</a></li>
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
               {{$header2 := (index (split .Permalink "/" ) 3)}}
               {{if $header2}}
               <li class="breadcrumb-item"><a href="{{$header2 |absURL}}">{{$header2 | humanize | title}}</a></li>
@@ -30,7 +31,7 @@
               {{end}}
             </ol>
           </nav>
-                  
+          {{end}}
         </div>
       </div>
 
