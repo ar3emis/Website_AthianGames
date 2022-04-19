@@ -45,8 +45,7 @@
                                 {{range .showreel}}
                                 {{if .showreelLink}}
                                   <!-- Button trigger modal -->
-                                  <button type="button" class="qrt-btn qrt-btn-md qrt-btn-color qrt-cursor-scale qrt-mb-20" data-toggle="modal" data-target="#exampleModalCenter" style="background: none;
-                                  border: 3px solid #ffffff;" data-fancybox data-width="1920" data-height="1060" href="{{.showreelLink}}">
+                                  <button type="button" class="qrt-btn qrt-btn-md qrt-btn-color qrt-cursor-scale qrt-mb-20" style="background: none; border: 3px solid #ffffff;" data-fancybox="video"  href="{{.showreelLink}}">
                                     <span>{{if .showreelText}}{{.showreelText}}{{else}}Showreel{{end}}</span><i class="fas fa-play"></i>
                                   </button>
                                   <!-- Modal -->
