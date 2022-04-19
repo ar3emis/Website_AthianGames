@@ -747,38 +747,46 @@ a.nav-link.scroll:hover {
   cursor: url('https://athiangames.netlify.app/uploads/cursor.png') 60 60, auto;
 }
 
-.modal {
-  padding: 0 !important; 
+.wrapper {
+  height:600px;
+  width:600px;
+  position:relative;
+  overflow:hidden;
 }
-.modal .modal-dialog {
+
+.wrapper iframe {
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+}
+
+.ratio::before {
+  display: block;
+  padding-top: var(--bs-aspect-ratio);
+  content: "";
+}
+.ratio > * {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: none;
-  height: 80%;
-  margin: 0;
-}
-.modal .modal-content {
-  height: 80%;
-  border: 0;
-  border-radius: 0;
-}
-.modal .modal-body {
-  overflow-y: auto;
+  height: 100%;
 }
 
-.modal.show .modal-dialog {
-  margin: auto;
+.ratio-1x1 {
+  --bs-aspect-ratio: 100%;
 }
 
-@media (min-width: 1401px) {
-  .modal .modal-dialog {
-    width: 50%;
-    max-width: none;
-    height: 70%;
-    margin: 0;
-  }
-  .modal .modal-content {
-    height: 70%;
-    border: 0;
-    border-radius: 0;
-  }
+.ratio-4x3 {
+  --bs-aspect-ratio: 75%;
+}
+
+.ratio-16x9 {
+  --bs-aspect-ratio: 56.25%;
+}
+
+.ratio-21x9 {
+  --bs-aspect-ratio: 42.8571428571%;
 }
