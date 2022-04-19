@@ -1,7 +1,7 @@
 ---
 - button:
-    - buttonText: "Something"
-      buttonLink: "/services"
+    - buttonText: "View Products"
+      buttonLink: "/plugin"
   showreel:
     - showreelText: "Showrreel"
       showreelLink: "https://www.youtube.com/embed/pLcawAf9FUY"
