@@ -742,3 +742,7 @@ a.nav-link.scroll:hover {
 .qrt-table h5, .qrt-social-links h5 {
   color: #28292c;
 }
+
+.qrt-work-item .qrt-work-cover-frame img:hover {
+  cursor: url('https://athiangames.netlify.app/uploads/cursor.png') 60 60, auto;
+}

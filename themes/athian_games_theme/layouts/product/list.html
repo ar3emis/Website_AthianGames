@@ -23,7 +23,7 @@
             <!-- <div class="qrt-grid-sizer"></div> -->
             {{ $paginator := .Paginate .Data.Pages }}
             {{ range ($paginator.Pages.ByDate.Reverse) }}
-            <div class="col-md-6 col-lg-4 col-xl-3 mb-20 {{range .Params.product_categories}}{{. | urlize}}{{end}}">
+            <div class="col-md-6 col-lg-4 mb-20 {{range .Params.product_categories}}{{. | urlize}}{{end}}">
                 <div class="qrt-work-item"><a href="{{.Permalink}}"
                         class="qrt-cursor-scale qrt-work-cover-frame qrt-anima-link">
                         {{if .Params.image}}
