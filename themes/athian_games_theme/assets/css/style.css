@@ -993,10 +993,11 @@ body {
       width: 100%; } 
 
     /* } */
-/* ----- frame (after 992px) ----- */
-@media (max-width: 992px) {
+/* ----- frame (after 435px) ----- */
+@media (max-width: 435px) {
   .qrt-app .qrt-top-bar .qrt-buttons .qrt-send-request {
-    /* display: none; */ } }
+    display: none; 
+  } }
 /* ----- frame (after 768px) ----- */
 @media (max-width: 768px) {
   .qrt-app {

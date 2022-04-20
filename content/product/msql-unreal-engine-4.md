@@ -1,7 +1,7 @@
 ---
 title: "MySQL Integration for Unreal Engine 4"
 topText: ""
-bottomText: "mysql Integration is a product that lets you connect your UE4 project to your mysql server/ Easily execute queries from Blueprints to store and retrieve data from your database."
+bottomText: "mysql Integration is a plugin that lets you connect your UE4 project to your mysql server/ Easily execute queries from Blueprints to store and retrieve data from your database."
 seotitle: ""
 seodescription: ""
 product_categories:

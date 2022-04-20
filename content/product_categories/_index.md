@@ -1,5 +1,5 @@
 ---
-title: "Product Categories"
+title: "Plugin Categories"
 topText: ''
 bottomText: ''
 seotitle: ""

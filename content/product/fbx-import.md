@@ -24,7 +24,7 @@ buttons:
 2. Relevant Textures(Diffuse, Normal, Specular, Opacity) are auto imported with the mesh and can be applied to the generated Procedural Mesh Components, each unique to a material index and is a child of a specific node, as read from the source file .
 3. Custom collisions can be applied in the generated mesh component via UCX_ prefix as read from the source file.
 4. Built in support for designing changeable material property layout for every Mesh Component.
-5. Every FBX scene imported is represented by a custom actor which hosts all the Procedural Mesh Components generated from the nodes read from the source file. Hence every FBX scene can have its own set of custom logic, allowing user to implement this product in number of various scenarios, from importing larger scenes, to interactive smaller props like weapons , barrels, etc.
+5. Every FBX scene imported is represented by a custom actor which hosts all the Procedural Mesh Components generated from the nodes read from the source file. Hence every FBX scene can have its own set of custom logic, allowing user to implement this plugin in number of various scenarios, from importing larger scenes, to interactive smaller props like weapons , barrels, etc.
 6. Load and Save System implemented for storing the Imported FBX Meshes in desired location in hard drive, and loading it without importing it all over again, in the next session.
 
 {{<html>}}
