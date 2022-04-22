@@ -1,7 +1,7 @@
 ---
 - button:
     - buttonText: "View Products"
-      buttonLink: "/plugin"
+      buttonLink: "/product"
   showreel:
     - showreelText: "Showrreel"
       showreelLink: "https://www.youtube.com/watch?v=JvsYoA-yP_g"
