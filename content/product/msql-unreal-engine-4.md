@@ -16,6 +16,9 @@ buttons:
     buttonText: "Documentation"   
   - buttonLink: "https://discord.gg/2sYftxg"
     buttonText: "Join Discord"
+    
+date: 2018-10-03T17:00:00+05:30
+
 ---
 
 Build your own queries and select and update data to your database directly from Blueprints. No restrictions in query formation. Any query working inside mysql Client , works here, which means you can select and update multiple data at once , use joins and sub-queries, as well as create and drop tables via Blueprints.

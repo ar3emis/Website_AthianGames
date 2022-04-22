@@ -16,6 +16,8 @@ buttons:
     buttonText: "Documentation"   
   - buttonLink: "https://discord.com/invite/BJTZSs3"
     buttonText: "Join Discord"
+date: 2018-10-02T17:00:00+05:30
+
 ---
 
 Forget dealing with the limitations of RenderTargets to design your Minimaps, which are performance heavy for larger worlds. This system can handle thousands of Points of Interest at a time without affecting the performance, and is designed keeping Open World RPGs in mind, however the flexibility and ease of implementation allows you to use this system in any kind of game you want, from archviz projects to real time strategy games. 

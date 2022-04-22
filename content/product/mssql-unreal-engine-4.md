@@ -16,6 +16,8 @@ buttons:
     buttonText: "Documentation"   
   - buttonLink: "https://discordapp.com/invite/XFaZHHP"
     buttonText: "Join Discord"
+date: 2018-10-04T17:00:00+05:30
+
 ---
 
 Easily execute queries from Blueprints to store and retrieve data from your database. Build your own queries and select and update data to your database directly from Blueprints. No restrictions in query formation. Any query working inside SQL Client , works here, which means you can select and update multiple data at once , use joins and sub-queries, as well as create and drop tables via Blueprints.

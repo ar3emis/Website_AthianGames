@@ -16,6 +16,8 @@ buttons:
     buttonText: "Documentation"   
   - buttonLink: "https://discord.com/invite/DgzRkx9"
     buttonText: "Join Discord"
+date: 2018-10-06T17:00:00+05:30
+
 ---
 
 ### Overview

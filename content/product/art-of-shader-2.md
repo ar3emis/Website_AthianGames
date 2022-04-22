@@ -14,6 +14,8 @@ buttons:
     buttonText: "Documentation"   
   - buttonLink: "https://discord.com/invite/6qh6Cuy"
     buttonText: "Join Discord"
+date: 2018-10-08T17:00:00+05:30
+
 ---
 
 Give your scene a unique look and style with the customizable Post Process Materials, with tweakable parameters and granular level of controls letting you customize the materials to suit your style, seperate objects in your scene, or your background environent, with different shaders, and even combine multiple shaders to get the effect you are looking for.
