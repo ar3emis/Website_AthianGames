@@ -1,14 +1,20 @@
 
 
   <div class="qrt-top-bar">
-      <a href="/" class="qrt-symbol qrt-cursor-scale qrt-anima-link"><img src="/img/logo-sm.svg" alt="Symbol"></a>
-      <a href="/" class="qrt-logo qrt-cursor-color qrt-cursor-scale qrt-anima-link">
-          <img src="/img/logo.svg" alt="Quarty">
+      <a href="/" class="qrt-symbol qrt-cursor-scale qrt-anima-link">
+        
+        <img src="/uploads/logo-left.png" class="d-block d-lg-none d-xl-none" alt="Logo Icon">
+      
+        <img src="/uploads/logo_light.png" class="d-none d-lg-block" alt="Logo Full">
+      
       </a>
+      <!-- <a href="/" class="qrt-logo qrt-cursor-color qrt-cursor-scale qrt-anima-link">
+      </a> -->
       <div class="qrt-menu">
           <div id="qrt-dynamic-menu" class="qrt-dynamic-menu">
             <nav>
                   <ul>
+                    <li class="{{if .IsHome}}current-menu-item{{end}} d-none"><a href="/">home</a></li>
             {{ range .Site.Menus.main }}
                   {{ if .HasChildren }}
                   
@@ -57,9 +63,9 @@
       </div> -->
       <div class="qrt-info" id="qrt-scroll-info">
           <div class="qrt-info-frame">
-            <i class="fas fa-envelope"></i>
-            <!-- <ul class="qrt-table">
-                <li>
+            <!-- <i class="fas fa-envelope"></i> -->
+            <ul class="qrt-table">
+                <!-- <li>
                   <h5>Country</h5><span>Canada</span>
                 </li>
                 <li>
@@ -67,16 +73,19 @@
                 </li>
                 <li>
                   <h5>Street</h5><span>North Avenue 31B, </span>
+                </li> -->
+                <li>
+                  <h5>Email</h5>
                 </li>
                 <li>
-                  <h5>Email</h5><span><a class="qrt-cursor-scale qrt-cursor-color" href="mailto:quarty.inbox@mail.com" data-no-swup>quarty.inbox@mail.com</a></span>
+                  <span><a class="qrt-cursor-scale qrt-cursor-color" href="mailto:sameek.kundu@athiangames.com" data-no-swup>sameek.kundu@athiangames.com</a></span>
                 </li>
-                <li>
+                <!-- <li>
                   <h5>Phone</h5><span><a class="qrt-cursor-scale qrt-cursor-color" href="#." data-no-swup>+9 3(049) 482 95 23</a></span>
-                </li>
+                </li> -->
             </ul>
             <div class="qrt-divider"></div>
-             -->
+            
             <div class="qrt-social-links">
                 <div class="qrt-social-links">
                   <h5 class="qrt-mb-40">Follow Us</h5>

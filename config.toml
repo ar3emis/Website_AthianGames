@@ -15,11 +15,6 @@ summaryLength = 10
 
 [menu]
     [[menu.main]]
-        identifier = "home"
-        name = "home"
-        url = "/"
-        weight = 1
-    [[menu.main]]
         identifier = "about"
         name = "About"
         url = "/about/"
@@ -29,11 +24,6 @@ summaryLength = 10
         name = "products"
         url = "/product/"
         weight = 3
-    [[menu.main]]
-        identifier = "contact"
-        name = "Contact"
-        url = "/contact/"
-        weight = 4
 
 [taxonomies]
 category = "categories"
