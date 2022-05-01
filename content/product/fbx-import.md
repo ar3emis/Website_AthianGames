@@ -5,7 +5,7 @@ bottomText: "Asynchronously Import FBX files in your Unreal projects, in runtime
 seotitle: ""
 seodescription: ""
 product_categories:
-    - "Category 1"
+    - ""
 image: "/uploads/fbximport.webp"
 canonical: ""
 private: ""

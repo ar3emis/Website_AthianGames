@@ -5,7 +5,7 @@ bottomText: "Take screenshots at any resolution , record and save videos in your
 seotitle: ""
 seodescription: ""
 product_categories:
-    - "Category 2"
+    - ""
 image: "/uploads/framecapturebgcover.png"
 canonical: ""
 private: ""
