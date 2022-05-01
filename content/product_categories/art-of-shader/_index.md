@@ -7,5 +7,3 @@ canonical: ""
 private: ""
 draft: false
 ---
-
-Some text.

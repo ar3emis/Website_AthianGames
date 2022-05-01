@@ -2,7 +2,7 @@
   {{if .Params.image}}
   <a href="{{.Permalink}}" class="qrt-post-thumb qrt-cursor-scale qrt-anima-link">
     <img src="{{.Params.image | absURL}}" alt="thumbnail">
-    {{if .Date}}
+    {{if and (.Date) (ne .Section "product")}}
     <div class="qrt-post-date">
       <span><i class="far fa-clock"></i> {{ dateFormat "Monday, Jan 2, 2006" .Date }}</span>
     </div>
