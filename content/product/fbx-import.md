@@ -17,6 +17,10 @@ buttons:
 date: 2018-10-01T17:00:00+05:30
 ---
 
+{{<html>}}
+<div class="col-xl-6">
+{{</html>}}
+
 ### Features
 1. Asynchronously Import FBX files in runtime.
 2. Relevant Textures(Diffuse, Normal, Specular, Opacity) are auto imported with the mesh and can be applied to the generated Procedural Mesh Components, each unique to a material index and is a child of a specific node, as read from the source file .
@@ -24,11 +28,16 @@ date: 2018-10-01T17:00:00+05:30
 4. Built in support for designing changeable material property layout for every Mesh Component.
 5. Every FBX scene imported is represented by a custom actor which hosts all the Procedural Mesh Components generated from the nodes read from the source file. Hence every FBX scene can have its own set of custom logic, allowing user to implement this plugin in number of various scenarios, from importing larger scenes, to interactive smaller props like weapons , barrels, etc.
 6. Load and Save System implemented for storing the Imported FBX Meshes in desired location in hard drive, and loading it without importing it all over again, in the next session.
+{{<html>}}
+</div>
+{{</html>}}
 
 {{<html>}}
+<div class="col-xl-6 m-auto">
 <video id="FeaturedVideo" style="display: block;" width="100%" controls="">
 
                         <source id="mp4" src="https://athiangames.com/videos/fbximport_demo.mp4" type="video/mp4">
 
                     </video>
+</div>
 {{</html>}}

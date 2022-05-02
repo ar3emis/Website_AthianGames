@@ -24,13 +24,17 @@ framecapture is a C++ based library which lets you take snapshot of your game vi
 
 
 {{<html>}}
+<div class="col-xl-6 m-auto">
 <video id="FeaturedVideo" style="display: block;" width="100%" controls="">
 
                         <source id="mp4" src="https://athiangames.com/videos/framecapture_demo.mp4" type="video/mp4">
 
                     </video>
+                    </div>
 {{</html>}}
-
+{{<html>}}
+<div class="col-xl-6">
+{{</html>}}
 ### FEATURES
 
 1. Adjust Depth of Field Settings in real-time.
@@ -41,3 +45,7 @@ framecapture is a C++ based library which lets you take snapshot of your game vi
 6. Load Image files from hard disc as texture.
 7. Built in FileOpen and FileSave dialogue windows help select a file to load , and choose the output file location, respectively.
 8. Load Image files from hard disc as texture.
+
+{{<html>}}
+</div>
+{{</html>}}
