@@ -7,7 +7,7 @@ disableHugoGeneratorInject = true
 TableOfContents = false
 metaDataFormat = "yaml"
 paginate = 9
-summaryLength = 10
+summaryLength = 5
 
 [params]
     enableLozad = true

@@ -4,8 +4,6 @@ topText: ""
 bottomText: "Take screenshots at any resolution , record and save videos in your hard disc , and adjust Depth of Field settings of your camera to give a beautiful photographic touch to your snapshots and videos."
 seotitle: ""
 seodescription: ""
-product_categories:
-    - ""
 image: "/uploads/framecapturebgcover.png"
 canonical: ""
 private: ""

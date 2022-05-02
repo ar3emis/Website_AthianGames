@@ -2709,13 +2709,14 @@ portfolio
     .qrt-work-item .qrt-work-cover-frame img {
       /* position: absolute;
       top: 0;
-      left: 0; */
-      width: 100%;
+      left: 0; 
+       width: 100%;
       height: 250px;
       -o-object-fit: cover;
          object-fit: cover;
       -o-object-position: center;
-         object-position: center; }
+         object-position: center;  */
+        }
     .qrt-work-item .qrt-work-cover-frame .qrt-item-zoom {
       -webkit-transform: translateY(-100%);
               transform: translateY(-100%);

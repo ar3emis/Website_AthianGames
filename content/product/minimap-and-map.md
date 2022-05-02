@@ -4,8 +4,6 @@ topText: ""
 bottomText: "Create customizable and optimized texture based Minimaps and Maps for your next big title."
 seotitle: ""
 seodescription: ""
-product_categories:
-    - ""
 image: "/uploads/minimap.webp"
 canonical: ""
 private: ""

@@ -4,8 +4,6 @@ topText: ""
 bottomText: "Asynchronously Import FBX files in your Unreal projects, in runtime. Highly detailed FBX scenes can be loaded very fast, and grouping of a single file into Nodes and Material sections further allows you to generate an entire scene comprising of various interactive actors, from a single FBX file."
 seotitle: ""
 seodescription: ""
-product_categories:
-    - ""
 image: "/uploads/fbximport.webp"
 canonical: ""
 private: ""
