@@ -27,10 +27,10 @@ framecapture is a C++ based library which lets you take snapshot of your game vi
 <div class="col-xl-6 m-auto">
 <video id="FeaturedVideo" style="display: block;" width="100%" controls="">
 
-                        <source id="mp4" src="https://athiangames.com/videos/framecapture_demo.mp4" type="video/mp4">
+<source id="mp4" src="https://athiangames.com/videos/framecapture_demo.mp4" type="video/mp4">
 
-                    </video>
-                    </div>
+</video>
+</div>
 {{</html>}}
 {{<html>}}
 <div class="col-xl-6">

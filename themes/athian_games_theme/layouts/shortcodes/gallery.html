@@ -5,7 +5,7 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
 <!-- count how many times we've called this shortcode; load the css if it's the first time -->
 {{- $.Page.Scratch.Add "figurecount" 1 }}
 {{ $baseURL := .Site.BaseURL }}
-
+</div>
 <div class="qrt-masonry-grid qrt-4-col qrt-mb-40">
 	<div class="qrt-grid-sizer"></div>
 		{{- with ((.Get "dir") | strings.TrimPrefix "static"  | strings.TrimPrefix "//"  )  -}}
@@ -42,6 +42,7 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
 	  {{ .Inner }}
 	{{- end }}
 </div>
+<div class="row">
 
 
 
