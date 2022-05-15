@@ -55,11 +55,9 @@ sections:
 - type: document
   path: content/about/_index.md
   label: About
-- type: directory
-  path: content/contact
+- type: document
+  path: content/contact/_index.md
   label: Contact
-  create: all
-  match: "**/*"
 upload_dir: static/images
 public_path: "/images"
 front_matter_path: ''
