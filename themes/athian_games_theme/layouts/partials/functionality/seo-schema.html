@@ -1,4 +1,4 @@
-{{ if or (eq .Section "blog") (eq .Section "projects") }}  
+{{ if or (eq .Section "blog") (eq .Section "product") }}  
   <script type="application/ld+json">
     {
   "@context": "https://schema.org",
@@ -9,7 +9,8 @@
   "dateModified": {{ .Lastmod }},
   "author": {
     "@type": "Person",
-    "name": {{.Site.Title}}
+    "name": {{.Site.Title}},
+	"url": "{{"/about" | absURL}}"
   },
   "mainEntityOfPage": { "@type": "WebPage" },
     "publisher": {
@@ -17,10 +18,10 @@
     "name": {{.Site.Title}},
     "logo": {
       "@type": "ImageObject",
-      "url": {{ with .Site.GetPage "/info" }}{{if .Params.logo}}{{.Params.logo |absURL}}{{else}}{{"images/logo/logo.png" | absURL}}{{end}}{{end}}
+      "url": {{"images/logo/logo.png" | absURL}}
     }
   },
-  "description": {{ .Content | plainify }}
+  "description": {{ .Content | plainify }},
 } </script> {{ end }}
 {{if eq .Section "services"}}
 <script type="application/ld+json">
