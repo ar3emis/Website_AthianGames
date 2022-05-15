@@ -14,7 +14,7 @@ fields:
     name: bottomText
     label: bottomText
     description: Description Text On Banner.
-  - name: bgimage
+  - name: bgImage
     type: file
     config:
       maxSize: 64
