@@ -1,0 +1,22 @@
+---
+label: No Edit
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: seotitle
+  label: seotitle
+- type: text
+  name: seodescription
+  label: seodescription
+- type: text
+  name: image
+  label: image
+- type: text
+  name: canonical
+  label: canonical
+- type: text
+  name: private
+  label: private
