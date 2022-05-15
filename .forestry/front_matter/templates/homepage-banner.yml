@@ -6,6 +6,17 @@ fields:
   name: List
   label: List
   fields:
+  - type: text
+    name: topText
+    label: topText
+    description: Top Text Of Banner.
+  - type: textarea
+    name: bottomText
+    label: bottomText
+    description: Description Text On Banner.
+  - type: text
+    name: bgImage
+    label: bgImage
   - type: field_group_list
     name: button
     label: button
@@ -13,9 +24,12 @@ fields:
     - type: text
       name: buttonText
       label: buttonText
+      description: Text To Display On Top Of Button.
     - type: text
       name: buttonLink
       label: buttonLink
+      description: Link To Hyperlink Button To.
+    description: List Of Buttons.
   - type: field_group_list
     name: showreel
     label: showreel
@@ -23,15 +37,8 @@ fields:
     - type: text
       name: showreelText
       label: showreelText
+      description: Text To Display On YouTube Video Buttons
     - type: text
       name: showreelLink
       label: showreelLink
-  - type: text
-    name: topText
-    label: topText
-  - type: textarea
-    name: bottomText
-    label: bottomText
-  - type: text
-    name: bgImage
-    label: bgImage
+      description: Link To Hyperlink YouTube Button To.
