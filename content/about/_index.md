@@ -1,10 +1,11 @@
 ---
-title: "About"
+title: About
 topText: ''
 bottomText: ''
-seotitle: ""
-seodescription: ""
-image: ""
-canonical: ""
-private: ""
+seotitle: ''
+seodescription: ''
+image: ''
+canonical: ''
+private: ''
+
 ---
