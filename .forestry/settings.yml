@@ -6,14 +6,10 @@ webhook_url:
 sections:
 - type: heading
   label: Homepage
-- type: directory
-  path: content/home-slider
-  label: Home slider
-  create: all
+- type: document
+  path: data/home_slider/list.yaml
+  label: Home Slider
   match: "**/*"
-  exclude: _index.md
-  templates:
-  - home-slider
 - type: document
   path: content/_index.md
   label: Home Page
@@ -28,33 +24,15 @@ sections:
   templates:
   - blog
 - type: directory
-  path: content/testimonials
-  label: Testimonials
+  path: content/product
+  label: Plugins / Products
   create: all
   match: "**/*"
-  exclude: _index.md
-  templates:
-  - testimonials
-- type: heading
-  label: Work
 - type: heading
   label: Other Sections
-- type: directory
-  path: content/events
-  label: Events
-  create: all
-  match: "**/*"
-  templates:
-  - events
 - type: document
   path: content/about/_index.md
   label: About
-- type: document
-  path: content/privacy-policy/_index.md
-  label: Privacy Policy
-- type: document
-  path: content/terms-conditions/_index.md
-  label: Terms & Conditions
 - type: heading
   label: Website Meta/Data
 - type: directory
@@ -69,13 +47,6 @@ sections:
   label: Site Info
 - type: heading
   label: Not Editable
-- type: directory
-  path: content/contact
-  label: Contact
-  create: all
-  match: "**/*"
-  templates:
-  - index
 upload_dir: static/images
 public_path: "/images"
 front_matter_path: ''
