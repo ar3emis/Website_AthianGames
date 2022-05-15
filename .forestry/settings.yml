@@ -27,6 +27,7 @@ sections:
   label: Plugins / Products
   create: all
   match: "**/*"
+  exclude: _index.md
   templates:
   - single-page-template
 - type: heading
