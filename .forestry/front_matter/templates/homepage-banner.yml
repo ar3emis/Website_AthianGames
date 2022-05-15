@@ -42,3 +42,5 @@ fields:
       name: showreelLink
       label: showreelLink
       description: Link To Hyperlink YouTube Button To.
+pages:
+- data/home_slider/list.yaml
