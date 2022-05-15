@@ -51,3 +51,5 @@ fields:
     name: buttonLink
     label: buttonLink
     description: Link To Hyperlink Button To.
+pages:
+- content/disclaimer/terms-and-conditions.md
