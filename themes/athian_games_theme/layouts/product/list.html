@@ -30,16 +30,24 @@
                         <img src="{{.Params.image | absURL}}" alt="product Banner">
                         {{end}}
                         <!-- <div class="qrt-item-zoom qrt-cursor-color"><i class="fas fa-external-link"></i></div> -->
+                        {{with .Params.product_categories}}
                         <div class="qrt-work-category">
-                            {{range .Params.product_categories}}
+                            {{range .}}
                             <span onclick="window.open('/product_categories/{{. | urlize}}','_self')">{{.}}</span> &nbsp;
                             {{end}}
                         </div>
+                        {{end}}
                     </a>
                     <div class="qrt-work-descr">
                         <h4 class="qrt-cursor-color qrt-white"><a href="{{.Permalink}}"
-                                class="qrt-anima-link">{{.Title}}</a></h4><a href="{{.Permalink}}"
+                                class="qrt-anima-link">{{.Title}}</a></h4>
+
+                                <a href="{{.Permalink}}"
                             class="qrt-cursor-scale qrt-work-more qrt-anima-link"><i class="fas fa-arrow-right"></i></a>
+                            
+                    </div>
+                    <div class="qrt-work-desr pl-20 pr-20 pb-20">
+                        <div class="qrt-port-short-text">{{.Summary}}</div>
                     </div>
                 </div>
             </div>

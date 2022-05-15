@@ -7,18 +7,13 @@ disableHugoGeneratorInject = true
 TableOfContents = false
 metaDataFormat = "yaml"
 paginate = 9
-summaryLength = 10
+summaryLength = 5
 
 [params]
     enableLozad = true
     legalname = "Athian Games OPC Pvt Ltd."
 
 [menu]
-    [[menu.main]]
-        identifier = "home"
-        name = "home"
-        url = "/"
-        weight = 1
     [[menu.main]]
         identifier = "about"
         name = "About"
@@ -29,11 +24,6 @@ summaryLength = 10
         name = "products"
         url = "/product/"
         weight = 3
-    [[menu.main]]
-        identifier = "contact"
-        name = "Contact"
-        url = "/contact/"
-        weight = 4
 
 [taxonomies]
 category = "categories"

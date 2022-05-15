@@ -1,18 +1,25 @@
 
 
   <div class="qrt-top-bar">
-      <a href="/" class="qrt-symbol qrt-cursor-scale qrt-anima-link"><img src="/img/logo-sm.svg" alt="Symbol"></a>
-      <a href="/" class="qrt-logo qrt-cursor-color qrt-cursor-scale qrt-anima-link">
-          <img src="/img/logo.svg" alt="Quarty">
+      <a href="/" class="qrt-symbol qrt-cursor-scale qrt-anima-link">
+        
+        <img src="/uploads/logo-left.png" class="d-block d-lg-none d-xl-none" alt="Logo Icon">
+      
+        <img src="/uploads/logo_light.png" class="d-none d-lg-block" alt="Logo Full">
+      
       </a>
+      <!-- <a href="/" class="qrt-logo qrt-cursor-color qrt-cursor-scale qrt-anima-link">
+      </a> -->
       <div class="qrt-menu">
           <div id="qrt-dynamic-menu" class="qrt-dynamic-menu">
             <nav>
                   <ul>
+                    <li class="{{if .IsHome}}current-menu-item{{end}} d-none"><a href="/">home</a></li>
+                    <li class="{{if in ($.Permalink) "product_categories"}}current-menu-item{{end}} d-none"><a href="/product">Products</a></li>
+
             {{ range .Site.Menus.main }}
                   {{ if .HasChildren }}
-                  
-                  <li {{if eq (.URL | absURL ) ($.Permalink)}}class="current-menu-item"{{end}}>
+                  <li {{if in ($.Permalink) (.URL | absURL )}}class="current-menu-item"{{end}}>
                   <a href="{{ .URL }}"  class="qrt-mobile-fix" >{{ .Name | safeHTML}}  
                         
                   </a>
@@ -23,7 +30,8 @@
                               {{ end }}
                         </ul>
                         {{ else }}
-                  <li {{if eq (.URL | absURL ) ($.Permalink)}}class="current-menu-item"{{end}}>
+
+                  <li {{if in ($.Permalink) (.URL | absURL )}}class="current-menu-item"{{end}}>
 
                   <a href="{{ .URL }}" >                 
 
@@ -57,9 +65,9 @@
       </div> -->
       <div class="qrt-info" id="qrt-scroll-info">
           <div class="qrt-info-frame">
-            <i class="fas fa-envelope"></i>
-            <!-- <ul class="qrt-table">
-                <li>
+            <!-- <i class="fas fa-envelope"></i> -->
+            <ul class="qrt-table">
+                <!-- <li>
                   <h5>Country</h5><span>Canada</span>
                 </li>
                 <li>
@@ -67,28 +75,33 @@
                 </li>
                 <li>
                   <h5>Street</h5><span>North Avenue 31B, </span>
+                </li> -->
+                <li>
+                  <h5>Email</h5>
                 </li>
                 <li>
-                  <h5>Email</h5><span><a class="qrt-cursor-scale qrt-cursor-color" href="mailto:quarty.inbox@mail.com" data-no-swup>quarty.inbox@mail.com</a></span>
+                  <span><a class="qrt-cursor-scale qrt-cursor-color" href="mailto:sameek.kundu@athiangames.com" data-no-swup>sameek.kundu@athiangames.com</a></span>
                 </li>
-                <li>
+                <!-- <li>
                   <h5>Phone</h5><span><a class="qrt-cursor-scale qrt-cursor-color" href="#." data-no-swup>+9 3(049) 482 95 23</a></span>
-                </li>
+                </li> -->
             </ul>
-            <div class="qrt-divider"></div>
-             -->
+            <div class="qrt-divider mt-30 mb-30"></div>
+            
             <div class="qrt-social-links">
                 <div class="qrt-social-links">
                   <h5 class="qrt-mb-40">Follow Us</h5>
                   <ul class="qrt-social-list">
-                      <li><a href="#." class="qrt-cursor-scale qrt-cursor-color"><i class="fab fa-behance"></i></a></li>
-                      <li><a href="#." class="qrt-cursor-scale qrt-cursor-color"><i class="fab fa-dribbble"></i></a></li>
-                      <li><a href="#." class="qrt-cursor-scale qrt-cursor-color"><i class="fab fa-instagram"></i></a></li>
-                      <li><a href="#." class="qrt-cursor-scale qrt-cursor-color"><i class="fab fa-linkedin-in"></i></a></li>
+                      <li><a href="https://www.youtube.com/channel/UCfDyVAjpn6eOyNbg9iQ7C_w" class="qrt-cursor-scale qrt-cursor-color"><i class="fab fa-youtube"></i></a></li>
+                      <li><a href="https://www.facebook.com/Athianoir/" class="qrt-cursor-scale qrt-cursor-color"><i class="fab fa-facebook"></i></a></li>
+                      <li><a href="https://in.linkedin.com/company/athiangames?trk=public_profile_experience-item_profile-section-card_subtitle-click" class="qrt-cursor-scale qrt-cursor-color"><i class="fab fa-linkedin-in"></i></a></li>
+                      <!-- <li><a href="https://unrealengine.com/marketplace/en-US/profile/Athian+Games" class="qrt-cursor-scale qrt-cursor-color"><i class="fa fa-globe"></i></a></li> -->
+
+                      
                   </ul>
                 </div>
             </div>
-            <div class="qrt-divider"></div>
+            <div class="qrt-divider mt-30 mb-30"></div>
 
             <!-- <div class="qrt-subscribe">
                 <h5 class="qrt-mb-40">Subscribe our newsletter</h5>
@@ -96,12 +109,21 @@
                   <input type="text" placeholder="Email">
                   <button type="submit" class="qrt-btn qrt-btn-sm"><i class="far fa-paper-plane"></i></button>
                 </form>
-            </div>
-            <div class="qrt-divider"></div> -->
+            </div>-->
             <div class="qrt-copy">
+              <!-- author ( Please! Do not delete it. You are awesome! :) -->
+              <div> 
+                {{with .Site.GetPage "disclaimer"}}
+                  {{range .Pages}}
+                  <a class="qrt-cursor-scale qrt-cursor-color" href="{{.Permalink}}" target="_blank">{{.Title}}</a> /
+                  {{end}}
+                {{end}}
+                </div>
+         
                 <!-- author ( Please! Do not delete it. You are awesome! :) -->
-                <div> &copy; {{ now.Year }}, {{.Site.Params.legalname}} All Rights Reserved. <br>Design by <a class="qrt-cursor-scale qrt-cursor-color" href="//manikumar.in" target="_blank">Mani</a></div>
+                <div class="mt-30"> &copy; {{ now.Year }} {{.Site.Params.legalname}} All Rights Reserved. <a class="qrt-cursor-scale qrt-cursor-color" href="//manikumar.in" target="_blank">Website Developed by Mani</a></div>
             </div>
+
           </div>
       </div>
     </div>

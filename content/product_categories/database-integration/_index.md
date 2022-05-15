@@ -8,4 +8,3 @@ private: ""
 draft: false
 ---
 
-Some text.
