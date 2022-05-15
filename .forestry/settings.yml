@@ -29,9 +29,6 @@ sections:
   match: "**/*"
 - type: heading
   label: Other Sections
-- type: document
-  path: content/about/_index.md
-  label: About
 - type: directory
   path: content/disclaimer
   label: Disclaimer
@@ -51,6 +48,14 @@ sections:
   label: Site Info
 - type: heading
   label: Not Editable
+- type: document
+  path: content/about/_index.md
+  label: About
+- type: directory
+  path: content/contact
+  label: Contact
+  create: all
+  match: "**/*"
 upload_dir: static/images
 public_path: "/images"
 front_matter_path: ''
