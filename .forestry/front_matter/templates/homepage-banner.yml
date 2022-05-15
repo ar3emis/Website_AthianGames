@@ -14,9 +14,12 @@ fields:
     name: bottomText
     label: bottomText
     description: Description Text On Banner.
-  - type: text
-    name: bgImage
-    label: bgImage
+  - name: bgimage
+    type: file
+    config:
+      maxSize: 64
+    label: BG IMAGE
+    description: Please upload either a .jpg, .png, .webp, or .mp4 only.
   - type: field_group_list
     name: button
     label: button
