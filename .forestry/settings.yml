@@ -46,7 +46,7 @@ sections:
   create: all
   match: "**/*"
   templates:
-  - scripts
+  - simple
 - type: document
   path: content/info/_index.md
   label: Site Info
