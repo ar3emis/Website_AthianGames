@@ -1,0 +1,44 @@
+---
+label: Single Page Template
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: topText
+  label: topText
+- type: text
+  name: bottomText
+  label: bottomText
+- type: text
+  name: seotitle
+  label: seotitle
+- type: text
+  name: seodescription
+  label: seodescription
+- type: list
+  name: product_categories
+  label: product_categories
+- type: file
+  name: image
+  label: image
+- type: text
+  name: canonical
+  label: canonical
+- type: text
+  name: private
+  label: private
+- type: field_group_list
+  name: buttons
+  label: buttons
+  fields:
+  - type: text
+    name: buttonLink
+    label: buttonLink
+  - type: text
+    name: buttonText
+    label: buttonText
+- type: datetime
+  name: date
+  label: date
