@@ -41,67 +41,6 @@
   </script>
 
 {{end}}
- {{if .IsHome}}
-<script type="application/ld+json">
-{ 
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": {{ .Site.Title }},
-  "legalName" : "{{.Site.Params.legalname}}",
-  "url": {{.Site.BaseURL}},
-  "logo": "images/logo/logo.png",
-  "foundingDate": "",
-  {{range $.Site.Data.team}}
-  {{range .}}
-  {{if and .name .founder}}
-  "founders": [
-    {
-    "@type": "Person",
-    "name": "{{.name}}",
-    "image": "{{.image}}"{{if .linkedin}},
-    
-    "sameAs": [{{.linkedin}}{{if .website}},{{.website}}{{end}}]
-    {{end}}
-    }],
-  {{end}}
-  {{end}}
-  {{end}}
-  {{with .Site.GetPage "/contact"}}
-  "address": {
-  "@type": "PostalAddress", 
-	{{if .Params.contactAddress}}
-	"addressLocality": "{{ .Params.contactAddress}}",
-	{{end}}
-	"addressRegion": " Some City",
-	"postalCode": "400093",
-	"addressCountry": "India"
-  },
-  {{end}}
-  {{ with .Site.GetPage "/info" }}
-  {{if .Params.aboutText}}
-  "description": {{  .Params.aboutText }},
-  {{end}}
-  {{end}}
-  "sameAs": [ 
-  {{ with .Site.GetPage "/info" }}
-    {{if .Params.socialTwitter}}
-        {{ .Params.socialTwitter}},
-    {{end}}
-  {{if .Params.socialInstagram}}
-      {{ .Params.socialInstagram}},
-{{end}}
-  {{if .Params.socialFacebook}}
-   {{ .Params.socialFacebook}},
-    {{end}}
-  {{if .Params.socialLinkedin}}
-  {{ .Params.socialLinkedin}}
-   {{end}}
-
-  {{end}}
-  ]
-}
-</script>
-{{end}}
 
 <!-- Breadcrumbs for articles --><!-- Breadcrumbs for articles -->
 {{ $urlParts := sub (len (split .RelPermalink "/")) 2 }}

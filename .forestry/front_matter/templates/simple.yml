@@ -39,3 +39,15 @@ fields:
   config:
     required: true
   hidden: true
+- type: field_group_list
+  name: buttons
+  label: buttons
+  fields:
+  - type: text
+    name: buttonText
+    label: buttonText
+    description: Text To Display On Top Of Button.
+  - type: text
+    name: buttonLink
+    label: buttonLink
+    description: Link To Hyperlink Button To.
