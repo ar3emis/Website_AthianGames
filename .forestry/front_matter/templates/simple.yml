@@ -39,5 +39,3 @@ fields:
   config:
     required: true
   hidden: true
-pages:
-- content/disclaimer/_index.md
