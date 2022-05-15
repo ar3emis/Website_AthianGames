@@ -1,0 +1,37 @@
+---
+label: Homepage Banner
+hide_body: true
+fields:
+- type: field_group_list
+  name: List
+  label: List
+  fields:
+  - type: field_group_list
+    name: button
+    label: button
+    fields:
+    - type: text
+      name: buttonText
+      label: buttonText
+    - type: text
+      name: buttonLink
+      label: buttonLink
+  - type: field_group_list
+    name: showreel
+    label: showreel
+    fields:
+    - type: text
+      name: showreelText
+      label: showreelText
+    - type: text
+      name: showreelLink
+      label: showreelLink
+  - type: text
+    name: topText
+    label: topText
+  - type: textarea
+    name: bottomText
+    label: bottomText
+  - type: text
+    name: bgImage
+    label: bgImage
