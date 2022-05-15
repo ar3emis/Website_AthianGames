@@ -21,12 +21,14 @@ sections:
   match: "**/*"
   exclude: _index.md
   templates:
-  - blog
+  - single-page-template
 - type: directory
   path: content/product
   label: Plugins / Products
   create: all
   match: "**/*"
+  templates:
+  - single-page-template
 - type: heading
   label: Other Sections
 - type: directory
@@ -34,6 +36,8 @@ sections:
   label: Disclaimer
   create: all
   match: "**/*"
+  templates:
+  - simple
 - type: heading
   label: Website Meta/Data
 - type: directory
