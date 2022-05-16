@@ -20,7 +20,6 @@ fields:
 - type: text
   name: canonical
   label: canonical
-
 pages:
 - content/_index.md
 - content/about/_index.md

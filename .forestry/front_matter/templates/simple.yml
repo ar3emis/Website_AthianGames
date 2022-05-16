@@ -52,6 +52,5 @@ fields:
 - type: text
   name: canonical
   label: canonical
-
 pages:
 - content/disclaimer/terms-and-conditions.md
