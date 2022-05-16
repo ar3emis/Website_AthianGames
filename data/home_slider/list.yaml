@@ -29,7 +29,7 @@
   bottomText: Redefine your imagination with the Procedural Vortex Tunnel, a plugin
     that lets you create a highly customizable Material Driven Vortex System along
     a given spline path.
-  bgImage: "/uploads/procedural-vortex-video.mp4"
+  bgImage: "/images/screenshot_003.png"
 - button:
   - buttonText: Learn More
     buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-stylized-post-process-pack
