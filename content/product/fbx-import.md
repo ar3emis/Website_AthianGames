@@ -1,22 +1,27 @@
 ---
-title: "Runtime FBX Import for Unreal Engine 4"
-topText: ""
-bottomText: "Asynchronously Import FBX files in your Unreal projects, in runtime. Highly detailed FBX scenes can be loaded very fast, and grouping of a single file into Nodes and Material sections further allows you to generate an entire scene comprising of various interactive actors, from a single FBX file."
-seotitle: ""
-seodescription: ""
+title: Runtime FBX Import for Unreal Engine 4
+topText: ''
+bottomText: Asynchronously Import FBX files in your Unreal projects, in runtime. Highly
+  detailed FBX scenes can be loaded very fast, and grouping of a single file into
+  Nodes and Material sections further allows you to generate an entire scene comprising
+  of various interactive actors, from a single FBX file.
+seotitle: ''
+seodescription: ''
 image: "/uploads/fbximport.webp"
-canonical: ""
-private: ""
+canonical: ''
+private: ''
 buttons:
-  - buttonLink: "https://www.unrealengine.com/marketplace/en-US/slug/runtime-fbx-import-asynchronous"
-    buttonText: "Get It Here"
-  - buttonLink: "https://docs.athiangames.com/doc_fbximport"
-    buttonText: "Documentation"   
-  - buttonLink: "https://discord.com/invite/hsejuTW"
-    buttonText: "Join Discord"
-date: 2018-10-01T17:00:00+05:30
----
+- buttonLink: https://www.unrealengine.com/marketplace/en-US/slug/runtime-fbx-import-asynchronous
+  buttonText: Get It Here
+- buttonLink: https://docs.athiangames.com/doc_fbximport
+  buttonText: Documentation
+- buttonLink: https://discord.com/invite/hsejuTW
+  buttonText: Join Discord
+date: 2018-10-01T17:00:00.000+05:30
+product_categories:
+- Miscellaneous
 
+---
 {{<html>}}
 <div class="col-xl-6">
 {{</html>}}
