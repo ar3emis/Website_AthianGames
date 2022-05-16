@@ -18,20 +18,6 @@ fields:
   config:
     required: true
   hidden: true
-- type: text
-  name: seotitle
-  label: seotitle
-- type: text
-  name: seodescription
-  label: seodescription
-- type: text
-  name: canonical
-  label: canonical
-- type: boolean
-  name: private
-  label: private
-  default: true
-  hidden: true
 - type: datetime
   name: date
   label: date
@@ -51,5 +37,21 @@ fields:
     name: buttonLink
     label: buttonLink
     description: Link To Hyperlink Button To.
+- type: text
+  name: seotitle
+  label: seotitle
+  description: SEO Title. Skip if not needed.
+- type: text
+  name: seodescription
+  label: seodescription
+  description: SEO Description. Skip if not needed.
+- type: boolean
+  name: private
+  label: private
+  default: false
+- type: text
+  name: canonical
+  label: canonical
+
 pages:
 - content/disclaimer/terms-and-conditions.md

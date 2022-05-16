@@ -15,13 +15,9 @@ fields:
   label: bottomText
   description: Bottom Text On Banner. Default's to blank.
 - type: text
-  name: seotitle
-  label: seotitle
-  description: SEO Title. Skip if not needed.
-- type: text
-  name: seodescription
-  label: seodescription
-  description: SEO Description. Skip if not needed.
+  name: summary
+  label: summary
+  description: Summary Text. This Appears in list pages.
 - type: list
   name: product_categories
   label: product_categories
@@ -47,8 +43,17 @@ fields:
   label: date
   default: now
 - type: text
+  name: seotitle
+  label: seotitle
+  description: SEO Title. Skip if not needed.
+- type: text
+  name: seodescription
+  label: seodescription
+  description: SEO Description. Skip if not needed.
+- type: boolean
   name: private
   label: private
+  default: false
 - type: text
   name: canonical
   label: canonical
