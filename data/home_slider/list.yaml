@@ -16,8 +16,8 @@
   - showreelText: Watch Trailer
     showreelLink: https://www.youtube.com/watch?v=WApWjoeoubw
   topText: 'Art of  Shader: Distortion and Glitches'
-  bottomText: From Filmic and Camera Effects to Stylized and Transitioning Shaders,
-    we got you covered.
+  bottomText: 'Add Distortion and Glitched Effects to your Scenes and Assets with
+    this pack of customizable post process materials and Niagara VFX. '
   bgImage: "/uploads/aos-banner.jpg"
 - button:
   - buttonText: Learn More
