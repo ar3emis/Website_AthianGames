@@ -26,8 +26,9 @@
   - showreelText: Watch Trailer
     showreelLink: https://www.youtube.com/watch?v=-yoDS9LK6p8
   topText: Procedural Vortex Tunnel
-  bottomText: From Filmic and Camera Effects to Stylized and Transitioning Shaders,
-    we got you covered.
+  bottomText: Redefine your imagination with the Procedural Vortex Tunnel, a plugin
+    that lets you create a highly customizable Material Driven Vortex System along
+    a given spline path.
   bgImage: "/uploads/procedural-vortex-video.mp4"
 - button:
   - buttonText: Learn More
