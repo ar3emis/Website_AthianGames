@@ -1,8 +1,8 @@
 ---
-title: 'Art of Shader: Pack 1'
+title: AOS - Stylized Post Process
 topText: ''
-bottomText: From Filmic and Camera Effects to Stylized and Transitioning Shaders,
-  we got you covered.
+bottomText: The ultimate Stylized Post Process Effect pack, with over 30 Materials
+  that can be combined and blended to give your scene a unique stylized look.
 seotitle: ''
 seodescription: ''
 product_categories:
@@ -11,6 +11,8 @@ image: "/images/aos_stylizedpostprocess_thumb.png"
 canonical: ''
 private: ''
 buttons:
+- buttonText: Get It Here
+  buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-stylized-post-process-pack
 - buttonLink: https://docs.athiangames.com/doc_artofshader
   buttonText: Documentation
 - buttonLink: https://discord.com/invite/6qh6Cuy
