@@ -2362,7 +2362,7 @@ content
     background-color: #28292c;
     margin-bottom: 15px;
     width: 100%;
-    padding-bottom: 60%;
+    /* padding-bottom: 60%; */
     position: relative;
     -webkit-filter: brightness(90%);
             filter: brightness(90%);
@@ -2371,7 +2371,7 @@ content
     .qrt-post-frame .qrt-post-thumb img {
       width: 100%;
       height: 100%;
-      position: absolute;
+      /* position: absolute; */
       top: 0;
       left: 0;
       -o-object-fit: cover;
@@ -2459,7 +2459,9 @@ content
         box-orient: vertical; }
   .qrt-post-frame.qrt-lg-post .qrt-post-thumb {
     margin-bottom: 0;
-    padding-bottom: 50%; }
+    /* padding-bottom: 50%;  */
+  
+  }
   .qrt-post-frame.qrt-lg-post .qrt-post-descr {
     display: -webkit-box;
     display: -ms-flexbox;
