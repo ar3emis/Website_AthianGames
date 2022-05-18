@@ -1,8 +1,9 @@
 ---
 title: AOS - Distortion And Glitches
 topText: ''
-bottomText: The ultimate Stylized Post Process Effect pack, with over 30 Materials
-  that can be combined and blended to give your scene a unique stylized look.
+bottomText: Distortion And Glitches is a series of customizable Shaders and Niagara
+  FX that can be combined, blended , grouped and localized to give different types
+  of distorted and glitched effect to your actors and scenes.
 seotitle: ''
 seodescription: ''
 product_categories:
@@ -18,11 +19,10 @@ buttons:
 - buttonLink: https://discord.com/invite/QYJhnvASQR
   buttonText: Join Discord
 date: 2018-10-07T17:00:00.000+05:30
-draft: true
 
 ---
 ### Art of Shader - Distortion And Glitches
 
-Distortion And Glitches is a series of customizable Shaders and Niagara FX that can be combined, blended , grouped and localized to give different types of distorted and glitched effect to your actors and scenes.
+AOS - Distortion And Glitches is a pack of 40 Customizable Shaders, that can be used in Post Process Blendable Materials , Niagara FX, as well as Mesh Materials to create a variety of distorted and glitched effect to your actors and scenes. The Blueprint Actors facilitate the easy combining, blending and grouping of the Post process materials based on certain common properties. From Artifacts, VCRGlitch, GlitcySpectrum, Wavy, InterlacedGlitch, BlockySurface, BrokenPixels and many more Effects, choose, combine and customize via the parameterized material instances to suit your style.
 
 {{<gallery dir="/uploads/" />}}
