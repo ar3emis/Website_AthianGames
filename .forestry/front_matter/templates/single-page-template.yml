@@ -17,7 +17,8 @@ fields:
 - type: text
   name: summary
   label: summary
-  description: Summary Text. This Appears in list pages. Defaults to upto first full stop of content.
+  description: Summary Text. This Appears in list pages. Defaults to upto first full
+    stop of content.
 - type: list
   name: product_categories
   label: product_categories
