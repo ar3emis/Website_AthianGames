@@ -15,7 +15,7 @@ buttons:
   buttonLink: https://www.unrealengine.com/marketplace/en-US/product/4f722193267743e3848938333b7dbd17?sessionInvalidated=true
 - buttonLink: https://docs.athiangames.com/doc_artofshader
   buttonText: Documentation
-- buttonLink: https://discord.com/invite/6qh6Cuy
+- buttonLink: https://discord.com/invite/QYJhnvASQR
   buttonText: Join Discord
 date: 2018-10-07T17:00:00.000+05:30
 draft: true
