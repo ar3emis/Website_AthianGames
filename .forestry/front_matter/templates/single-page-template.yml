@@ -58,3 +58,5 @@ fields:
 - type: text
   name: canonical
   label: canonical
+pages:
+- content/blog/courses.md
