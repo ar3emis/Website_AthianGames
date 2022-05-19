@@ -10,5 +10,9 @@ seodescription: ''
 image: ''
 canonical: ''
 private: ''
+menu:
+  main:
+    name: courses
+    weight: 3
 
 ---
