@@ -39,10 +39,9 @@ Procedurally Scatter Static Meshes along the Vortex via the VortexRepeater Actor
 5. The VortexFX Actor is designed to generate a set of NIagara FX along the path. It works in conjunction with Niagara module scripts to calculate the points where the FX will be placed and rotated to face the direction of the Vortex at any given point
 6. The VortexRepeater Actor scatters a set of static meshes procedurally, along the vortex path. Custom Repeater Data contains the parameters that controls how the meshes will be scattered. {{<html>}} </div> {{</html>}}
 
-{{<html>}} <div class="col-xl-6 m-auto"> <video id="FeaturedVideo" style="display: block;" width="100%" controls="">
-
-                        <source id="mp4" src="https://www.youtube.com/watch?v=-yoDS9LK6p8" type="video/mp4">
-    
-                    </video>
+{{<html>}} <div class="col-xl-6 m-auto">   
+<iframe width="420" height="315"  
+src="[https://www.youtube.com/watch?v=-yoDS9LK6p8](https://www.youtube.com/watch?v=-yoDS9LK6p8 "https://www.youtube.com/watch?v=-yoDS9LK6p8")">  
+ </iframe>
 
 </div> {{</html>}}
