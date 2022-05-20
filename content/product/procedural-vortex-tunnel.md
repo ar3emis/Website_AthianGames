@@ -2,7 +2,9 @@
 date: 2022-05-20T18:17:50+00:00
 title: Procedural Vortex Tunnel
 topText: ''
-bottomText: ''
+bottomText: Redefine your imagination with the Procedural Vortex Tunnel, a plugin
+  that lets you create a highly customizable Material Driven Vortex System along a
+  given spline path.
 summary: ''
 product_categories:
 - Procedural World
@@ -20,3 +22,21 @@ private: false
 canonical: ''
 
 ---
+{{<html>}} <div class="col-xl-6"> {{</html>}}
+
+### Features
+
+1. Spline Based Procedural Generation
+2. Displacement Materials using High Quality Procedural Noise Shaders
+3. The VortexTunnel Actor facilitates the generation of Material Driven Vortex Meshes along the given Spline Path.
+4. Custom Data Objects are responsible for easily swapping , combining , and randomizing between different Vortex Meshes and Materials
+5. The VortexFX Actor is designed to generate a set of NIagara FX along the path. It works in conjunction with Niagara module scripts to calculate the points where the FX will be placed and rotated to face the direction of the Vortex at any given point
+6. The VortexRepeater Actor scatters a set of static meshes procedurally, along the vortex path. Custom Repeater Data contains the parameters that controls how the meshes will be scattered. {{<html>}} </div> {{</html>}}
+
+{{<html>}} <div class="col-xl-6 m-auto"> <video id="FeaturedVideo" style="display: block;" width="100%" controls="">
+
+                        <source id="mp4" src="https://www.youtube.com/watch?v=-yoDS9LK6p8" type="video/mp4">
+    
+                    </video>
+
+</div> {{</html>}}
