@@ -1,26 +1,26 @@
 ---
-title: "MySQL Integration for Unreal Engine 4"
-topText: ""
-bottomText: "mysql Integration is a plugin that lets you connect your UE4 project to your mysql server/ Easily execute queries from Blueprints to store and retrieve data from your database."
-seotitle: ""
-seodescription: ""
+title: MySQL Integration for Unreal Engine 4
+topText: ''
+bottomText: Mysql Integration is a plugin that lets you connect your UE4 project to
+  your mysql server/ Easily execute queries from Blueprints to store and retrieve
+  data from your database.
+seotitle: ''
+seodescription: ''
 product_categories:
-    - "Database Integration"
+- Database Integration
 image: "/uploads/mysql.png"
-canonical: ""
-private: ""
+canonical: ''
+private: ''
 buttons:
-  - buttonLink: "https://www.unrealengine.com/marketplace/en-US/product/mysql-integration"
-    buttonText: "Get It Here"
-  - buttonLink: "https://docs.athiangames.com/doc_mysql"
-    buttonText: "Documentation"   
-  - buttonLink: "https://discord.gg/2sYftxg"
-    buttonText: "Join Discord"
-    
-date: 2018-10-03T17:00:00+05:30
+- buttonLink: https://www.unrealengine.com/marketplace/en-US/product/mysql-integration
+  buttonText: Get It Here
+- buttonLink: https://docs.athiangames.com/doc_mysql
+  buttonText: Documentation
+- buttonLink: https://discord.gg/2sYftxg
+  buttonText: Join Discord
+date: 2018-10-03T17:00:00.000+05:30
 
 ---
-
 Build your own queries and select and update data to your database directly from Blueprints. No restrictions in query formation. Any query working inside mysql Client , works here, which means you can select and update multiple data at once , use joins and sub-queries, as well as create and drop tables via Blueprints.
 
 ### FEATURES
