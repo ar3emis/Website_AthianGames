@@ -1,5 +1,5 @@
 ---
-title: AOS - Stylized Post Process
+title: Art Of Shader - Stylized Post Process
 topText: ''
 bottomText: The ultimate Stylized Post Process Effect pack, with over 30 Materials
   that can be combined and blended to give your scene a unique stylized look.
