@@ -1,5 +1,5 @@
 ---
-title: AOS - Film And Special Effects
+title: Art Of Shader - Film And Special Effects
 topText: ''
 bottomText: From Filmic and Camera Effects to Stylized and Transitioning Shaders,
   we got you covered.
