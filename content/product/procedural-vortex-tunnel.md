@@ -8,6 +8,8 @@ product_categories:
 - Procedural World
 image: "/images/vortextunnel_thumbnail.png"
 buttons:
+- buttonText: Join Discord
+  buttonLink: https://discord.com/invite/mEscu2vvXt
 - buttonText: Video Tutorials
   buttonLink: https://www.youtube.com/playlist?list=PLPYiOf-PXXtjTlifUoKj1hsp02nXwRIgr
 - buttonText: Get It Here
