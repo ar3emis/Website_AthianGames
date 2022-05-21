@@ -15,6 +15,6 @@
       class="qrt-cursor-scale qrt-work-more qrt-anima-link"><i class="fas fa-arrow-right"></i></a>
   </div>
   <div class="qrt-post-descr pl-20 pr-20 pb-20">
-    <div class="qrt-port-short-text">{{.Summary}}</div>
+    <div class="qrt-port-short-text">{{if .Params.summary}}{{.Params.summary}}{{else}}{{.Summary |plainify}}{{end}}</div>
 </div>
 </div>

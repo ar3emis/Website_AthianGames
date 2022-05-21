@@ -11,7 +11,7 @@
     <div class="qrt-post-descr">
       <div>
         <h4 class="qrt-cursor-color qrt-post-title"><a href="{{.Permalink}}" class="qrt-anima-link">{{.Title}}</a></h4>
-        <div class="qrt-port-short-text">{{if .Summary}}{{.Summary}}{{else}}{{.Summary |plainify}}{{end}}</div>
+        <div class="qrt-port-short-text">{{if .Params.summary}}{{.Params.summary}}{{else}}{{.Summary |plainify}}{{end}}</div>
       </div>
       <a href="{{.Permalink}}" class="qrt-cursor-scale qrt-work-more qrt-anima-link"><i class="fas fa-arrow-right"></i></a>
     </div>
