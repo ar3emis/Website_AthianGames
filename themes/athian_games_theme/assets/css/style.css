@@ -1267,7 +1267,9 @@ body {
     
     }
       .qrt-half-banner .qrt-overlay .qrt-banner-title .qrt-divider-2 {
-        margin: 0 auto 20px; } }
+        /* margin: 0 auto 20px;  */
+      }
+         }
 /* ----- half banner (after 768px) ----- */
 @media (max-width: 768px) {
   .qrt-half-banner .qrt-overlay .qrt-scroll-hint {
