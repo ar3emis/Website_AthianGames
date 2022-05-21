@@ -18,9 +18,13 @@ buttons:
 - buttonLink: https://discord.com/invite/6qh6Cuy
   buttonText: Join Discord
 date: 2018-10-07T17:00:00.000+05:30
+summary: Give your scene a unique look and style with the customizable Post Process
+  Materials, with tweakable parameters and granular level of controls letting you
+  customize the materials to suit your style, separate objects in your scene, or your
+  background environment, with different shaders, and even combine multiple shaders
+  to get the effect you are looking for.
 
 ---
-Give your scene a unique look and style with the customizable Post Process Materials, with tweakable parameters and granular level of controls letting you customize the materials to suit your style, seperate objects in your scene, or your background environment, with different shaders, and even combine multiple shaders to get the effect you are looking for.
 
 Art of Shader - Stylized Post Process is a pack of more than 30 Post Process Blendable Materials that you customize and tweak to create a unique stylized look for your scene. The Blueprint Actors facilitate the easy combining, blending and grouping of the Post process materials based on certain common properties. From WaterColor, OilPaint, Aquarelle, Cartoon, ComicBook , CelShaded and many more Effects, choose, combine and customize via the parameterized material instances to suit your style.
 
