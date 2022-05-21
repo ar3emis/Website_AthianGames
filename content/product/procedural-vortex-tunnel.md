@@ -20,6 +20,7 @@ seotitle: ''
 seodescription: ''
 private: false
 canonical: ''
+bgImage: "/images/screenshot_004.png"
 
 ---
 {{<html>}} <div class="col-xl-6"> {{</html>}}
