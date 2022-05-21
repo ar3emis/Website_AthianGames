@@ -1,5 +1,5 @@
 ---
-date: 2022-05-20T18:17:50+00:00
+date: 2022-05-20T18:17:50.000+00:00
 title: Procedural Vortex Tunnel
 topText: ''
 bottomText: Redefine your imagination with the Procedural Vortex Tunnel, a plugin
@@ -42,6 +42,6 @@ Procedurally Scatter Static Meshes along the Vortex via the VortexRepeater Actor
 6. The VortexRepeater Actor scatters a set of static meshes procedurally, along the vortex path. Custom Repeater Data contains the parameters that controls how the meshes will be scattered. {{<html>}} </div> {{</html>}}
 
 {{<html>}} <div>  
-<iframe width="1280" height="720" src="[https://www.youtube.com/embed/-yoDS9LK6p8](https://www.youtube.com/embed/-yoDS9LK6p8 "https://www.youtube.com/embed/-yoDS9LK6p8")" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/-yoDS9LK6p8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </div> {{</html>}}
