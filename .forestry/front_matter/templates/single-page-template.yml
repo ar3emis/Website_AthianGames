@@ -26,7 +26,11 @@ fields:
 - type: file
   name: image
   label: image
-  description: Featured Image
+  description: Thumbnail & SEO Image
+- type: file
+  name: bgImage
+  label: bgImage
+  description: Banner Background Image. Default's to bgImage.
 - type: field_group_list
   name: buttons
   label: buttons

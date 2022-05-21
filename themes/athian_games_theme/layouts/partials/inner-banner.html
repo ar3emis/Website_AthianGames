@@ -1,11 +1,11 @@
 <div id="fixed" class="qrt-right">
   <div class="qrt-half-banner qrt-left-align qrt-animated-show">
     <div class="qrt-image-frame">
-      <img src="{{if .Params.image}}{{.Params.image | absURL}}{{else}}/img/banners/banner3.jpg{{end}}" alt="banner">
+      <img src="{{if .Params.bgImage}}{{.Params.bgImage}}{{else}}{{if .Params.image}}{{.Params.image | absURL}}{{else}}/img/banners/banner3.jpg{{end}}{{end}}" alt="banner">
     </div>
-    <div class="qrt-overlay">
+    <div class="qrt-overlay row align-items-center m-0">
       <!-- <div class="qrt-scroll-hint"><span></span></div> -->
-      <div class="row align-items-center">
+      <!-- <div class="row align-items-center"> -->
         <div class="col-xl-8 col-lg-12 offset-xl-2">
           <div class="qrt-banner-title">
             <h2 class="qrt-white qrt-mb-20">{{if .Params.topText}}{{.Params.topText}}{{else}}{{.Title}}{{end}}</h2>
@@ -37,6 +37,6 @@
 
 
     
-    </div>
+    <!-- </div> -->
   </div>
 </div>

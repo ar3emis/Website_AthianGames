@@ -23,7 +23,7 @@ product_categories:
 
 ---
 {{<html>}}
-<div class="col-xl-6">
+<div class="col-xl-6 col-lg-12">
 {{</html>}}
 
 ### Features

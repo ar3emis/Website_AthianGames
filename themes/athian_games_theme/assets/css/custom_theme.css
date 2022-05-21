@@ -790,3 +790,13 @@ a.nav-link.scroll:hover {
 .ratio-21x9 {
   --bs-aspect-ratio: 42.8571428571%;
 }
+
+.breadcrumb-item a {
+  color: #fff;
+  font-weight: lighter;
+}
+
+.breadcrumb-item.active {
+  color: #fff;
+  /* font-weight: bold; */
+}
