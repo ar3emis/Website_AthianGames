@@ -6,7 +6,7 @@ bottomText: Take screenshots at any resolution , record and save videos in your 
   touch to your snapshots and videos.
 seotitle: ''
 seodescription: ''
-image: "/uploads/framecapturebgcover.png"
+image: "/images/coverimage.png"
 canonical: ''
 private: ''
 buttons:
