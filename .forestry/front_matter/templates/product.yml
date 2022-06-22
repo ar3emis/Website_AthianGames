@@ -1,0 +1,96 @@
+---
+label: Product
+hide_body: false
+fields:
+- type: datetime
+  name: date
+  label: date
+- type: text
+  name: title
+  label: title
+- name: topText
+  type: text
+  config:
+    required: false
+  label: topText
+  description: Baner tittle
+- type: text
+  name: summary
+  label: summary
+- type: list
+  name: product_categories
+  label: product_categories
+- name: image
+  type: file
+  config:
+    maxSize: 64
+  label: image
+- type: field_group_list
+  name: buttons
+  label: buttons
+  fields:
+  - type: text
+    name: buttonText
+    label: buttonText
+  - type: textarea
+    name: buttonLink
+    label: buttonLink
+- type: text
+  name: seotitle
+  label: seotitle
+- type: text
+  name: seodescription
+  label: seodescription
+- type: boolean
+  name: private
+  label: private
+- type: text
+  name: canonical
+  label: canonical
+- type: file
+  name: bannerImage
+  label: bannerImage
+- type: text
+  name: contentVideoId
+  label: contentVideoId
+- type: text
+  name: contentVideoThumbnail
+  label: contentVideoThumbnail
+- type: field_group_list
+  name: features
+  label: features
+  fields:
+  - type: file
+    name: image
+    label: image
+  - type: text
+    name: title
+    label: title
+  - type: textarea
+    name: description
+    label: description
+  - type: field_group_list
+    name: buttons
+    label: buttons
+    fields:
+    - type: text
+      name: buttonText
+      label: buttonText
+    - type: text
+      name: buttonLink
+      label: buttonLink
+- type: textarea
+  name: description
+  label: description
+- name: bottomText
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: bottomText
+  description: Text defined below banner title
+pages:
+- content/product/procedural-vortex-tunnel.md

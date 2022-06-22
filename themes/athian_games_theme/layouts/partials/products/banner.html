@@ -1,0 +1,12 @@
+<div
+  class="d-flex flex-column align-items-center justify-content-center py-5 product-banner-image"
+  style="background-image: url({{ .Params.bannerImage | relURL }})"
+>
+  {{if .Params.topText}}
+  <h2 class="qrt-mb-20">{{.Title}}</h2>
+  {{end}} {{if .Params.subText}}
+  <h3 class="qrt-mb-40">{{.Params.subTitle}}</h3>
+  {{end}} {{if .Params.bottomText}}
+  <p class="w-50">{{.Params.bannerDescription}}</p>
+  {{end}}
+</div>

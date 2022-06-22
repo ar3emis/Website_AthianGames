@@ -1,0 +1,33 @@
+{{ define "main" }}
+<script defer language="javascript" type="text/javascript" src="{{ " /js/product.js" | urlize | relURL }}"></script>
+{{ $videoStyles := resources.Get "/css/product_video.css" }}
+<link rel="stylesheet" defer href={{$videoStyles.RelPermalink}}>
+<div class="qrt-half-content-frame column">
+  {{partial "partials/inner-banner.html" .}}
+  {{if .Params.description}}
+  <section class="qrt-left column w-100">
+    <p>{{.Params.description}}</p>
+  </section>
+  {{end}}
+  {{if .Params.contentVideoId}}
+  <section class="d-flex flex-column align-items-center custom-cursor">
+    {{partial "partials/products/video.html" .}}
+  </section>
+  {{end}}
+  {{if .Params.features}}
+  <section class="d-flex flex-column align-items-center my-5">
+    <h2 class="mb-5">Features</h2>
+    <div class="d-flex flex-column justify-content-between">
+      {{range $index, $element := .Params.features }} 
+        {{$even := (modBool $index 2)}} 
+        {{partial "partials/products/feature.html" (dict "context" $element "even" $even)}} 
+      {{end}}
+    </div>
+  </section>
+  {{end}}
+  <section class="qrt-left column w-100">
+    {{ partial "theme-files/content" .}}
+  </section>
+</div>
+
+{{ end }}

@@ -1,91 +1,57 @@
 {{ define "main" }}
 
-  <div class="qrt-half-content-frame">
-    <div class="qrt-left">
-
-      <div class="row align-items-center">
-
-        <div class="col-xl-8 col-lg-12 offset-xl-2">
+<div class="qrt-half-content-frame">
+  <div class="qrt-left">
+    <div class="row align-items-center">
+      <div class="col-xl-8 col-lg-12 offset-xl-2">
         {{if .Params.image}}
         <div class="row d-none">
-          <img src="{{.Params.image | absURL}}" class="m-auto" alt="product Image">
-
+          <img
+            src="{{.Params.image | absURL}}"
+            class="m-auto"
+            alt="product Image"
+          />
         </div>
+        {{end}} {{if .Params.topText}}
+        <h2 class="qrt-mb-40">{{.Title}}</h2>
         {{end}}
-          {{if .Params.topText}}
-          <h2 class="qrt-mb-40">{{.Title}}</h2>
-          {{end}}
 
-          <!-- <div class="qrt-page-cover"> -->
-            <!-- <div class="qrt-about-info qrt-right-position">
-              <div class="qrt-cover-info">
-                <ul class="qrt-table">
-                  <li>
-                    <h5 class="qrt-white">Order Date:</h5><span>Canada</span>
-                  </li>
-                  <li>
-                    <h5 class="qrt-white">Final Date:</h5><span>Toronto</span>
-                  </li>
-                  <li>
-                    <h5 class="qrt-white">Client:</h5><span>Envato Market</span>
-                  </li>
-                </ul>
-              </div>
-            </div> -->
-          <!-- </div> -->
-
-          <div class="qrt-just-text row">
-  
-
-            {{ partial "theme-files/content" .}}
-
-          </div>
-          <!-- <div class="qrt-filter qrt-mb-40">
-            {{if .Params.product_categories}}
-            <a href="#" data-filter="*" class="pl-2 pr-2">Part Of:</a> 
-            {{end}}
-
-            {{range .Params.product_categories}}
-                <a href="/product_categories/{{. | urlize}}" data-filter="*" class="qrt-work-category qrt-current qrt-cursor-color qrt-cursor-scale qrt-anima-link">{{ . | humanize }}
-
-                </a> 
-            {{end}}
-        </div> -->
+        <div class="qrt-just-text row">
+          {{ partial "theme-files/content" .}}
         </div>
       </div>
+    </div>
 
-      <div class="qrt-divider qrt-space-fix"></div>
-      {{if eq .Section "blog"}}
-        {{partial "social-share.html" .}}
-      {{else}}
+    <div class="qrt-divider qrt-space-fix"></div>
+    {{if eq .Section "blog"}} {{partial "social-share.html" .}} {{else}}
 
-      <div class="row hide-on-large">
-        <div class="col-lg-12">
-          <div class="qrt-call-to-action">
-            <div class="row mb-20">
-              <div class="col">
-                <h4 style="text-align: center;margin-bottom: 0px;">Ready To Learn More?</h4>
-
-              </div>
+    <div class="row hide-on-large">
+      <div class="col-lg-12">
+        <div class="qrt-call-to-action">
+          <div class="row mb-20">
+            <div class="col">
+              <h4 style="text-align: center; margin-bottom: 0px">
+                Ready To Learn More?
+              </h4>
             </div>
+          </div>
           <div class="row justify-content-center">
             {{range .Params.buttons}}
-            <a href="{{.buttonLink | absURL}}" class="qrt-btn qrt-btn-md qrt-btn-color {{if in (.buttonLink | absURL) ($.Site.BaseURL)}} qrt-anima-link {{end}} m-10"><span>{{.buttonText}}</span>
+            <a
+              href="{{.buttonLink | absURL}}"
+              class="qrt-btn qrt-btn-md qrt-btn-color {{if in (.buttonLink | absURL) ($.Site.BaseURL)}} qrt-anima-link {{end}} m-10"
+              ><span>{{.buttonText}}</span>
             </a>
-            {{end}}          
-          </div></div>
+            {{end}}
+          </div>
         </div>
-        <div class="qrt-divider qrt-space-fix hide-otherwise"></div>
-
       </div>
-      
-      {{end}}
-
-
+      <div class="qrt-divider qrt-space-fix hide-otherwise"></div>
     </div>
-    {{partial "inner-banner" .}}
+
+    {{end}}
   </div>
-  
-  
+  {{partial "inner-banner" .}}
+</div>
 
 {{ end }}

@@ -3,8 +3,8 @@
 frame
 
 ------------------------------ */
-$panel-color: rgba(255,255,255,1);
-$panel-text-color: rgba(40,41,44,1);
+$panel-color: rgba(255, 255, 255, 1);
+$panel-text-color: rgba(40, 41, 44, 1);
 
 body {
   background-color: $white-lvl-3;
@@ -152,7 +152,7 @@ body {
             }
 
             &:after {
-              content: '';
+              content: "";
               height: 3px;
               width: 0;
               position: absolute;
@@ -163,7 +163,7 @@ body {
 
             &.current-menu-item {
               &:after {
-                content: '';
+                content: "";
                 width: 135%;
               }
             }
@@ -371,7 +371,7 @@ body {
           font-size: 14px;
           padding: 0 20px;
           color: $white-lvl-1;
-          background-color: rgba(255,255,255,.05);
+          background-color: rgba(255, 255, 255, 0.05);
 
           &:focus {
             outline: inherit;
@@ -507,7 +507,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1;
-    background-color: rgba(40,41,44,.3);
+    background-color: rgba(40, 41, 44, 0.3);
     opacity: 0;
     pointer-events: none;
     width: 100vw;

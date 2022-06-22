@@ -29,6 +29,7 @@ sections:
   match: "**/*"
   exclude: _index.md
   templates:
+  - product
   - single-page-template
 - type: heading
   label: Other Sections
