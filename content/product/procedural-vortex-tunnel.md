@@ -28,11 +28,11 @@ features:
   title: Spline Based Vortex Generation
   description: Generates the Vortex along a Spline path.
   buttons: []
-- image: "/images/screenshot_004.png"
-  title: Lorem title
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+- image: "/images/screenshot_003.png"
+  title: Advanced Displacement Materials
+  description: 'High Quality Displacement Materials using Procedural Noise Shaders,
+    with parameters to tweak via Instances, allow for much more flexibility and artistic
+    control over design. '
   buttons: []
 - image: "/images/screenshot_004.png"
   title: Lorem title
