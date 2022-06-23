@@ -22,7 +22,7 @@ private: false
 canonical: ''
 bannerImage: "/images/screenshot_004.png"
 contentVideoId: https://www.youtube.com/watch?v=-yoDS9LK6p8
-contentVideoThumbnail: "/images/screenshot_004.png"
+contentVideoThumbnail: aos_dg_thumbs.png
 features:
 - image: "/images/screenshot_004.png"
   title: Lorem title
