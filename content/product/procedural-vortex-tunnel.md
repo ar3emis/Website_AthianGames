@@ -64,5 +64,3 @@ Design and scatter custom Niagara FX along the Vortex, via the VortexFX Actor an
 
 Procedurally Scatter Static Meshes along the Vortex via the VortexRepeater Actor. The Custom Repeater Data controls how the meshes will be scattered via custom properties.
 the meshes will be scattered via custom properties.
-
-Custom Text
