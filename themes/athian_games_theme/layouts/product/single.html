@@ -4,7 +4,7 @@
 <div class="qrt-half-content-frame column">
   {{partial "partials/inner-banner.html" .}}
   {{if .Params.description}}
-  <section class="qrt-left column w-100">
+  <section class="qrt-left column product-content">
     <p>{{.Params.description}}</p>
   </section>
   {{end}}
@@ -24,8 +24,8 @@
     </div>
   </section>
   {{end}}
-  <section class="qrt-left column w-100">
-    {{ partial "theme-files/content" .}}
+  <section class="qrt-left column product-content">
+    {{ partial "theme-files/content" . }}
   </section>
 </div>
 

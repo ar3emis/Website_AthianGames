@@ -2,7 +2,7 @@
   <div class="row align-items-center">
     {{$orderData := cond .even "order-sm-1" "order-sm-2"}} 
     {{$orderImg := cond .even "order-sm-2" "order-sm-1"}}
-    <div class="col-lg-5 {{$orderData}} ">
+    <div class="col-lg-7 {{$orderData}} ">
       <div class="section-title">
         <h2>{{ .context.title | markdownify}}</h2>
         {{if .context.subtitle}}
@@ -20,7 +20,7 @@
         {{end}} {{end}}
       </div>
     </div>
-    <div class="col-lg-7 text-center text-lg-end {{$orderImg}}  ">
+    <div class="col-lg-5 text-center text-lg-end {{$orderImg}}  ">
       {{ if .context.image }}
       <img
         loading="lazy"

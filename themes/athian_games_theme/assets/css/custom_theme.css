@@ -836,3 +836,11 @@ a.nav-link.scroll:hover {
   top: 0;
   left: 0;
 }
+
+.product-content {
+  display: flex;
+  width: 95% !important;
+  justify-content: center;
+  align-self: center;
+  font-size: medium;
+}
