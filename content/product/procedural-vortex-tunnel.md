@@ -39,6 +39,19 @@ features:
   description: Custom Data Objects are responsible for easily swapping , combining
     , and randomizing between different Vortex Meshes and Materials
   buttons: []
+- image: "/images/screenshot_003.png"
+  description: The VortexFX Actor is designed to generate a set of NIagara FX along
+    the path. It works in conjunction with Niagara module scripts to calculate the
+    points where the FX will be placed and rotated to face the direction of the Vortex
+    at any given point
+  buttons: []
+  title: Niagara Actor
+- image: ''
+  title: Static Mesh Scatter
+  description: The VortexRepeater Actor scatters a set of static meshes procedurally,
+    along the vortex path. Custom Repeater Data contains the parameters that controls
+    how the meshes will be scattered.
+  buttons: []
 description: |-
   Procedural Vortex Tunnel is a plugin that lets you build a customizable Vortex Tunnel along a given Spline path procedurally through predefined sets of parameters.
 
