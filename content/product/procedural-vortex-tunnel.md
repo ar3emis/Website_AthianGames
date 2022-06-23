@@ -24,11 +24,9 @@ bannerImage: "/images/screenshot_004.png"
 contentVideoId: https://www.youtube.com/watch?v=-yoDS9LK6p8
 contentVideoThumbnail: "/images/aos_dg_thumbs.png"
 features:
-- image: "/images/screenshot_004.png"
-  title: Lorem title
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+- image: "/images/screenshot_003.png"
+  title: Spline Based Procedural Generation
+  description: Generate the Vortex Tunnel along a given Spline path
   buttons: []
 - image: "/images/screenshot_004.png"
   title: Lorem title
