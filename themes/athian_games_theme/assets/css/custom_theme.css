@@ -839,7 +839,7 @@ a.nav-link.scroll:hover {
 
 .product-content {
   display: flex;
-  width: 95% !important;
+  max-width: 1200px !important;
   justify-content: center;
   align-self: center;
   font-size: medium;
