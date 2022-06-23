@@ -24,18 +24,10 @@ bannerImage: "/images/screenshot_004.png"
 contentVideoId: "-yoDS9LK6p8"
 contentVideoThumbnail: ''
 features:
-- image: "/images/screenshot_004.png"
-  title: Lorem title
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  buttons:
-  - buttonText: asd
-    buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
-  - buttonText: asd2
-    buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
-  - buttonText: asd3
-    buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
+- image: "/images/screenshot_003.png"
+  title: Spline Based Vortex Generation
+  description: Generates the Vortex along a Spline path.
+  buttons: []
 - image: "/images/screenshot_004.png"
   title: Lorem title
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
