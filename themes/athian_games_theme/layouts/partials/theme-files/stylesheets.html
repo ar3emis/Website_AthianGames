@@ -15,9 +15,9 @@
 
 {{- if .Site.IsServer -}}
 {{ $style := slice $bootstrap $fontawesome $swiper $fancybox $mapbox $main $custom_theme | resources.Concat "bundle.css" }}
-<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" lazyload>
+<link rel="stylesheet" href="{{ $style.Permalink }}" lazyload>
 
 {{- else -}}
 {{ $style := slice $bootstrap $fontawesome $swiper $fancybox $mapbox $main $custom_theme  | resources.Concat "bundle.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" lazyload>
+<link rel="stylesheet" href="{{ $style.Permalink }}" lazyload>
 {{- end }}

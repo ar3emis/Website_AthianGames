@@ -39,15 +39,17 @@
             style="background-color: transparent !important"
           >
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            {{$header2 := (index (split .Permalink "/" ) 3)}} {{if $header2}}
-            <li class="breadcrumb-item">
-              <a href="{{$header2 |absURL}}">{{$header2 | humanize | title}}</a>
-            </li>
-            {{end}} {{$header3 := (index (split .Permalink "/" ) 4)}} {{if
-            $header3}}
-            <li class="breadcrumb-item active" aria-current="page">
-              {{$header3 | humanize | title}}
-            </li>
+            {{$header2 := (index (split .Permalink "/" ) 3)}} 
+            {{if $header2}}
+              <li class="breadcrumb-item">
+                <a href="{{$header2 |absURL}}">{{$header2 | humanize | title}}</a>
+              </li>
+            {{end}} 
+            {{$header3 := (index (split .Permalink "/" ) 4)}} 
+            {{if $header3}}
+              <li class="breadcrumb-item active" aria-current="page">
+                {{$header3 | humanize | title}}
+              </li>
             {{end}}
           </ol>
         </nav>

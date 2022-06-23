@@ -1,7 +1,6 @@
 {{ define "main" }}
-<script defer language="javascript" type="text/javascript" src="{{ " /js/product.js" | urlize | relURL }}"></script>
-{{ $videoStyles := resources.Get "/css/product_video.css" }}
-<link rel="stylesheet" defer href={{$videoStyles.RelPermalink}}>
+<script defer language="javascript" type="text/javascript" src="{{ " /js/product.js" | urlize | relURL }}">
+</script>
 <div class="qrt-half-content-frame column">
   {{partial "partials/inner-banner.html" .}}
   {{if .Params.description}}

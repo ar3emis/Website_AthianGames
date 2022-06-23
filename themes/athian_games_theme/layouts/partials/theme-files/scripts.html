@@ -33,11 +33,11 @@
 	{{- if .Site.IsServer -}}
 	{{ $script := slice $jquery $anime $swiper $progressbar $smoothscrollbar $overscroll $isotope $fancybox $swup $mapbox $main  $plugins $timeago $custom_theme_js | resources.Concat "bundle.js" }}
 	
-	<script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+	<script src="{{ $script.Permalink }}"></script>
    
     {{- else -}}
 	{{ $script := slice $jquery $anime $swiper $progressbar $smoothscrollbar $overscroll $isotope $fancybox $swup $mapbox $main  $plugins $timeago $custom_theme_js | resources.Concat "bundle.js" | minify | fingerprint }}
-	<script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+	<script src="{{ $script.Permalink }}"></script>
 	{{- end }}
 	{{ with .Site.GetPage "/scripts/footer.md" }}{{ .Content }}{{ end }}
 

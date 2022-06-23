@@ -794,3 +794,45 @@ a.nav-link.scroll:hover {
   background-color: rgba(0, 0, 0, 0.25);
   background-blend-mode: overlay;
 }
+
+.youtube-container {
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.youtube-player {
+  display: block;
+  margin: 20px auto;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.youtube-thumbnail {
+  bottom: 0;
+  display: block;
+  left: 0;
+  margin: auto;
+  max-width: 100%;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: auto;
+}
+
+.youtube-thumbnail:hover {
+  cursor: url("/uploads/play1.png") 60 60, pointer;
+}
+
+.youtube-iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
