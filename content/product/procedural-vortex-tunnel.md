@@ -8,7 +8,7 @@ bottomText: Redefine your imagination with the Procedural Vortex Tunnel, a plugi
 summary: ''
 product_categories:
 - Procedural World
-image: "/images/screenshot_004.png"
+image: "/images/vortextunnel_thumbnail.png"
 buttons:
 - buttonText: Get It Here
   buttonLink: https://www.unrealengine.com/marketplace/en-US/product/a35f1131e36843f28df349d8f63b6660?fbclid=IwAR0wbkxkffXfp_3jmHSWHid_S7mC4OmUpfmR8Sjpgg3_RzxUUCzRUn9cVx8
@@ -22,7 +22,7 @@ private: false
 canonical: ''
 bannerImage: "/images/screenshot_004.png"
 contentVideoId: "-yoDS9LK6p8"
-contentVideoThumbnail: ''
+contentVideoThumbnail: https://www.youtube.com/watch?v=-yoDS9LK6p8
 features:
 - image: "/images/screenshot_004.png"
   title: Lorem title
