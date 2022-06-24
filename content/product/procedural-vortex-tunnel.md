@@ -20,7 +20,7 @@ seotitle: ''
 seodescription: ''
 private: false
 canonical: ''
-bannerImage: "/images/screenshot_004.png"
+bannerImage: "/images/vortextunnel_thumbnail.png"
 contentVideoId: https://www.youtube.com/watch?v=-yoDS9LK6p8
 contentVideoThumbnail: ''
 features:
