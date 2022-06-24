@@ -842,5 +842,17 @@ a.nav-link.scroll:hover {
   max-width: 1200px !important;
   justify-content: center;
   align-self: center;
+  text-align: justify;
   font-size: medium;
+}
+
+.feature-title {
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 26px;
+}
+
+.feature-description {
+  padding-left: 40px;
+  padding-right: 40px;
 }

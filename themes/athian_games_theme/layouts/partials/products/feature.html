@@ -2,25 +2,31 @@
   <div class="row align-items-center">
     {{$orderData := cond .even "order-sm-1" "order-sm-2"}} 
     {{$orderImg := cond .even "order-sm-2" "order-sm-1"}}
-    <div class="col-lg-7 {{$orderData}} ">
+    <div class="col-lg-6 {{$orderData}} ">
       <div class="section-title">
-        <h2>{{ .context.title | markdownify}}</h2>
+        <h2 class="feature-title">{{ .context.title | markdownify}}</h2>
         {{if .context.subtitle}}
         <p class="text-primary text-uppercase fw-bold mb-3">
           {{ .context.subtitle | markdownify }}
         </p>
-        {{end}} {{if .context.description}}
-        <p class="lead mb-0 mt-4">{{ .context.description | markdownify}}</p>
-        {{end}} {{if .context.buttons}} {{range .context.buttons}}
-        <a
-          href="{{.buttonLink | absURL}}"
-          class="qrt-btn qrt-btn-md qrt-btn-color {{if in (.buttonLink | absURL) ($.Site.BaseURL)}} qrt-anima-link {{end}} my-3"
-          ><span>{{.buttonText}}</span>
-        </a>
-        {{end}} {{end}}
+        {{end}} 
+        {{if .context.description}}
+        <p class="feature-description lead mb-0 mt-3">{{ .context.description | markdownify}}</p>
+        {{end}} 
+        {{if .context.buttons}}
+          <div class="feature-description">
+            {{range .context.buttons}}
+              <a
+              href="{{.buttonLink | absURL}}"
+              class="qrt-btn qrt-btn-md qrt-btn-color {{if in (.buttonLink | absURL) ($.Site.BaseURL)}}   qrt-anima-link {{end}} my-3"
+              ><span>{{.buttonText}}</span>
+            </a>
+          {{end}} 
+        </div> 
+        {{end}}
       </div>
     </div>
-    <div class="col-lg-5 text-center text-lg-end {{$orderImg}}  ">
+    <div class="col-lg-6 text-center text-lg-end {{$orderImg}}">
       {{ if .context.image }}
       <img
         loading="lazy"

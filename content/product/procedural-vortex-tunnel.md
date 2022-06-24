@@ -36,13 +36,13 @@ features:
         buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
       - buttonText: asd3
         buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
-  - image: "/images/screenshot_004.png"
+  - image: "/images/aos_stylizedpostprocess_thumb.png"
     title: Lorem title
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
       nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     buttons: []
-  - image: "/images/screenshot_004.png"
+  - image: "https://placekitten.com/800/1200"
     title: Lorem title
     description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
