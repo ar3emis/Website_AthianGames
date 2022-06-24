@@ -59,7 +59,7 @@ description: |-
   the meshes will be scattered via custom properties.
 bgImage: ''
 fontFamily: Courier New
-contentFontSize: 26px
+contentFontSize: 24px
 featureTitleFontSize: 24px
 featureTextFontSize: 18px
 contentvideothumbnail: ''
