@@ -48,26 +48,20 @@ features:
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   buttons: []
-description: Combine and blend different types of Displacement Vortex Materials, created
-  using High Quality Custom Noise Shaders. The custom Data Objects let you conveniently
-  swap and randomize meshes and materials. and blend them using a distribution curve.
-  Parameterized Material Instances give each Vortex a unique look that cater to the
-  perfect output you are looking for.
+description: |-
+  Procedural Vortex Tunnel is a plugin that lets you build a customizable Vortex Tunnel along a given Spline path procedurally through predefined sets of parameters.
+
+  Combine and blend different types of Displacement Vortex Materials, created using High Quality Custom Noise Shaders. The custom Data Objects let you conveniently swap and randomize meshes and materials. and blend them using a distribution curve. Parameterized Material Instances give each Vortex a unique look that cater to the perfect output you are looking for.
+
+  Design and scatter custom Niagara FX along the Vortex, via the VortexFX Actor and the Module scripts that takes the position and alignment of the Vortex and generate the Niagara FX accordingly.
+
+  Procedurally Scatter Static Meshes along the Vortex via the VortexRepeater Actor. The Custom Repeater Data controls how the meshes will be scattered via custom properties.
+  the meshes will be scattered via custom properties.
 bgImage: ''
 fontFamily: Courier New
-contentFontSize: 25px
+contentFontSize: 40px
 featureTitleFontSize: 24px
 featureTextFontSize: 18px
 contentvideothumbnail: ''
 
 ---
-Procedural Vortex Tunnel is a plugin that lets you build a customizable Vortex Tunnel along a given Spline path procedurally through predefined sets of parameters.
-
-Combine and blend different types of Displacement Vortex Materials, created using High Quality Custom Noise Shaders. The custom Data Objects let you conveniently swap and randomize meshes and materials. and blend them using a distribution curve. Parameterized Material Instances give each Vortex a unique look that cater to the perfect output you are looking for.
-
-Design and scatter custom Niagara FX along the Vortex, via the VortexFX Actor and the Module scripts that takes the position and alignment of the Vortex and generate the Niagara FX accordingly.
-
-Procedurally Scatter Static Meshes along the Vortex via the VortexRepeater Actor. The Custom Repeater Data controls how the meshes will be scattered via custom properties.
-the meshes will be scattered via custom properties.
-
-Custom Text
