@@ -21,7 +21,7 @@ seodescription: ''
 private: false
 canonical: ''
 bannerImage: "/images/screenshot_004.png"
-contentVideoId: "-yoDS9LK6p8"
+contentVideoId: https://www.youtube.com/watch?v=-yoDS9LK6p8
 contentVideoThumbnail: ''
 features:
 - image: "/images/screenshot_004.png"
@@ -62,6 +62,6 @@ fontFamily: Courier New
 contentFontSize: 24px
 featureTitleFontSize: 24px
 featureTextFontSize: 18px
-contentvideothumbnail: ''
+contentvideothumbnail: "/images/screenshot_003.png"
 
 ---
