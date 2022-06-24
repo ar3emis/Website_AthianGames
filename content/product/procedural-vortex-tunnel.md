@@ -58,8 +58,8 @@ description: |-
   Procedurally Scatter Static Meshes along the Vortex via the VortexRepeater Actor. The Custom Repeater Data controls how the meshes will be scattered via custom properties.
   the meshes will be scattered via custom properties.
 bgImage: ''
-fontFamily: Courier New
-contentFontSize: 24px
+fontFamily: Tahoma
+contentFontSize: 22px
 featureTitleFontSize: 24px
 featureTextFontSize: 18px
 contentvideothumbnail: "/images/screenshot_003.png"
