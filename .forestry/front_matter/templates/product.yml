@@ -111,6 +111,7 @@ fields:
     required: false
   label: featureTitleFontSize
   description: Example "22px", "1rem"
+  default: '24'
 - name: featureTextFontSize
   type: text
   config:
