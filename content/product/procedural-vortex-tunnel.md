@@ -55,8 +55,8 @@ description: Combine and blend different types of Displacement Vortex Materials,
   perfect output you are looking for.
 bgImage: ''
 fontFamily: Courier New
-contentFontSize: 18px
-featureTitleFontSize: 18px
+contentFontSize: 25px
+featureTitleFontSize: 24px
 featureTextFontSize: 18px
 contentvideothumbnail: ''
 
