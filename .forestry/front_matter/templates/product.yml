@@ -94,5 +94,28 @@ fields:
       format: markdown
   label: bottomText
   description: Text defined below banner title
+- name: fontFamily
+  type: text
+  config:
+    required: false
+  label: fontFamily
+- name: contentFontSize
+  type: text
+  config:
+    required: false
+  label: contentFontSize
+  description: 'Example: "16px", "1rem"'
+- name: featureTitleFontSize
+  type: text
+  config:
+    required: false
+  label: featureTitleFontSize
+  description: Example "16px", "1rem"
+- name: featureTextFontSize
+  type: text
+  config:
+    required: false
+  label: featureTextFontSize
+  description: Example "16px", "1rem"
 pages:
 - content/product/procedural-vortex-tunnel.md

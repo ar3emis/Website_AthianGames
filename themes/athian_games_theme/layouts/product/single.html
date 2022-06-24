@@ -1,11 +1,10 @@
 {{ define "main" }}
-<script defer language="javascript" type="text/javascript" src="{{ " /js/product.js" | urlize | relURL }}">
-</script>
-<div class="qrt-half-content-frame column">
+{{$args := .Params}}
+<div class="qrt-half-content-frame column" style="font-family: {{.Params.fontFamily}};">
   {{partial "partials/inner-banner.html" .}}
   {{if .Params.description}}
   <section class="qrt-left column product-content">
-    <p>{{.Params.description}}</p>
+    <p style="font-size: {{.Params.contentFontSize}};">{{.Params.description}}</p>
   </section>
   {{end}}
   {{if .Params.contentVideoId}}
@@ -19,12 +18,12 @@
     <div class="d-flex flex-column justify-content-between">
       {{range $index, $element := .Params.features }} 
         {{$even := (modBool $index 2)}} 
-        {{partial "partials/products/feature.html" (dict "context" $element "even" $even)}} 
+        {{partial "partials/products/feature.html" (dict "context" $element "even" $even "args" $args)}} 
       {{end}}
     </div>
   </section>
   {{end}}
-  <section class="qrt-left column product-content">
+  <section class="qrt-left column product-content" style="font-size: {{.Params.contentFontSize}}">
     {{ partial "theme-files/content" . }}
   </section>
 </div>
