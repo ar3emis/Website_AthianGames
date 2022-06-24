@@ -9,9 +9,6 @@ summaryLength = 5
 theme = "athian_games_theme"
 title = "Athian Games"
 [[menu.main]]
-name = "Custom"
-weight = 4
-[[menu.main]]
 identifier = "products"
 name = "products"
 url = "/product/"
