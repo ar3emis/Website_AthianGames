@@ -49,7 +49,7 @@ features:
     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   buttons: []
 description: |-
-  Procedural Vortex Tunnel is a plugin that lets you build a customizable Vortex Tunnel along a given Spline path procedurally through predefined sets of parameters.
+  Procedural Vortex Tunnel is a plugin that lets you build a customizable Vortex Tunnel along a given Spline path procedurally through predefined sets of parameters. </br>
 
   Combine and blend different types of Displacement Vortex Materials, created using High Quality Custom Noise Shaders. The custom Data Objects let you conveniently swap and randomize meshes and materials. and blend them using a distribution curve. Parameterized Material Instances give each Vortex a unique look that cater to the perfect output you are looking for.
 
