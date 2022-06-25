@@ -1,12 +1,15 @@
 {{ define "main" }}
 {{$args := .Params}}
 <div class="qrt-half-content-frame column" style="font-family: {{.Params.fontFamily}};">
-  {{partial "partials/inner-banner.html" .}}
-  {{if .Params.description}}
-  <section class="qrt-left column product-content">
-    <p style="font-size: {{.Params.contentFontSize}};">{{.Params.description}}</p>
-  </section>
-  {{end}}
+  {{ partial "partials/inner-banner.html" . }}
+  {{ if .Params.description }}
+    {{ $splitted := split .Params.description "\n" }}
+    <section class="qrt-left column product-content">
+    {{ range $splitted }}
+        <p style="font-size: {{$args.contentFontSize}};">{{.}}</p>
+    {{ end }}
+    </section>
+  {{ end }}
   {{if .Params.contentVideoId}}
   <section class="d-flex flex-column align-items-center custom-cursor">
     {{partial "partials/products/video.html" .}}
@@ -27,5 +30,5 @@
     {{ partial "theme-files/content" . }}
   </section>
 </div>
-
+<script language="javascript" type="text/javascript" src="{{ "/js/product.js" | urlize | relURL }}"></script>
 {{ end }}
