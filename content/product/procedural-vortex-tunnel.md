@@ -60,7 +60,7 @@ description: |-
 bgImage: ''
 fontFamily: Courier New
 contentFontSize: 16px
-featureTitleFontSize: 16px
+featureTitleFontSize: 18px
 featureTextFontSize: 16px
 contentvideothumbnail: ''
 
