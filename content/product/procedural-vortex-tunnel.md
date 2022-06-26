@@ -36,7 +36,7 @@ features:
     buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
   - buttonText: asd3
     buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
-- image: "/images/aos_stylizedpostprocess_thumb.png"
+- image: "/images/highresscreenshot00030.png"
   title: Lorem title
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
