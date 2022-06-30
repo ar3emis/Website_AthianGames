@@ -35,10 +35,10 @@ features:
     and customized look that goes along with your vision.
   buttons: []
 - image: "/images/aquarelle01.png"
-  title: Lorem title
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  title: " The VortexTunnel Actor facilitates the generation of Material Driven Vortex
+    Meshes along the given Spline Path"
+  description: The VortexTunnel Actor facilitates the generation of Material Driven
+    Vortex Meshes along the given Spline Path
   buttons: []
 description: Procedural Vortex Tunnel is a plugin that lets you build a customizable
   Vortex Tunnel along a given Spline path procedurally through predefined sets of
