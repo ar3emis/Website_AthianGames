@@ -48,7 +48,9 @@ features:
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   buttons: []
-description: ''
+description: Procedural Vortex Tunnel is a plugin that lets you build a customizable
+  Vortex Tunnel along a given Spline path procedurally through predefined sets of
+  parameters.
 bgImage: ''
 fontFamily: Courier New
 contentFontSize: 16px
