@@ -517,7 +517,7 @@ $(function () {
     return (
       '<img class="youtube-thumbnail" id="youtube-thumbnail" src="' +
       url +
-      '" alt="Youtube Preview" />'
+      '" alt="Youtube Preview"><div class="youtube-play-btn"></img>'
     );
   }
 
@@ -530,7 +530,7 @@ $(function () {
     return (
       '<img class="youtube-thumbnail" id="youtube-thumbnail" src="//i.ytimg.com/vi_webp/' +
       id +
-      '/maxresdefault.webp" alt="Youtube Preview">'
+      '/maxresdefault.webp" alt="Youtube Preview"><div class="youtube-play-btn"></img>'
     );
   }
 

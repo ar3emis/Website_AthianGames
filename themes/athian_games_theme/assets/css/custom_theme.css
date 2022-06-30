@@ -829,6 +829,24 @@ a.nav-link.scroll:hover {
   cursor: url("/uploads/play1.png") 60 60, pointer;
 }
 
+.youtube-thumbnail:hover + .youtube-play-btn {
+  transition: visibility 0.1s linear;
+  visibility: hidden;
+}
+
+.youtube-play-btn {
+  height: 72px;
+  width: 72px;
+  left: 50%;
+  top: 50%;
+  margin-left: -36px;
+  margin-top: -36px;
+  position: absolute;
+  background: url("/uploads/play1.png") no-repeat center center;
+  background-size: 72px 72px;
+  cursor: pointer;
+}
+
 .youtube-iframe {
   width: 100%;
   height: 100%;

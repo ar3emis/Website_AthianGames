@@ -43,7 +43,7 @@ function createCustomThumbail(url) {
   return (
     '<img class="youtube-thumbnail" id="youtube-thumbnail" src="' +
     url +
-    '" alt="Youtube Preview" />'
+    '" alt="Youtube Preview"><div class="youtube-play-btn"></img>'
   );
 }
 
@@ -56,10 +56,9 @@ function createThumbail(id) {
   return (
     '<img class="youtube-thumbnail" id="youtube-thumbnail" src="//i.ytimg.com/vi_webp/' +
     id +
-    '/maxresdefault.webp" alt="Youtube Preview">'
+    '/maxresdefault.webp" alt="Youtube Preview"><div class="youtube-play-btn"></img>'
   );
 }
-
 /**
  * Create and load iframe in Youtube container
  **/
