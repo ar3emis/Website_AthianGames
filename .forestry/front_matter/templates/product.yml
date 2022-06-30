@@ -105,17 +105,20 @@ fields:
     required: false
   label: contentFontSize
   description: 'Example: "16px", "1rem"'
+  default: '24'
 - name: featureTitleFontSize
   type: text
   config:
     required: false
   label: featureTitleFontSize
   description: Example "16px", "1rem"
+  default: '24'
 - name: featureTextFontSize
   type: text
   config:
     required: false
   label: featureTextFontSize
   description: Example "16px", "1rem"
+  default: '18'
 pages:
 - content/product/procedural-vortex-tunnel.md
