@@ -34,7 +34,7 @@ features:
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   buttons: []
-- image: https://placekitten.com/800/1200
+- image: "/images/aquarelle01.png"
   title: Lorem title
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
