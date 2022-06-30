@@ -29,10 +29,10 @@ features:
   description: Generate the Vortex Tunnel along a given Spline path
   buttons: []
 - image: "/images/highresscreenshot00030.png"
-  title: Lorem title
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  title: Displacement Materials using High Quality Procedural Noise Shaders
+  description: Customizable Materials designed by combining multiple procedural noise
+    shaders with lots of parameters to tweak from, gives the Vortex a completely unique
+    and customized look that goes along with your vision.
   buttons: []
 - image: "/images/aquarelle01.png"
   title: Lorem title
