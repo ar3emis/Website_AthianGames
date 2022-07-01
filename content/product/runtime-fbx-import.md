@@ -14,7 +14,7 @@ seodescription: ''
 private: false
 canonical: ''
 bannerImage: "/images/assetimportcover.jpg"
-contentVideoId: https://www.youtube.com/watch?v=qrB7rDunSrM
+contentVideoId: "-qrB7rDunSrM"
 contentvideothumbnail: "/images/assetimportcover.jpg"
 features: []
 description: ''
