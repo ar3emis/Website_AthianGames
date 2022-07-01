@@ -2,7 +2,7 @@
 date: 2018-10-01T17:00:00.000+05:30
 title: Runtime FBX Import for Unreal Engine 4
 topText: Runtime FBX Import for Unreal Engine 4
-bottomText: Asynchronously Import FBX files in your Unreal projects, in runtime
+bottomText: Asynchronously Import FBX files in your Unreal projects, in runtime.
 summary: Asynchronously Import FBX files in your Unreal projects, in runtime
 product_categories:
 - Miscellaneous
@@ -18,7 +18,7 @@ seotitle: ''
 seodescription: ''
 canonical: ''
 private: false
-bannerImage: "/images/screenshot_004.png"
+bannerImage: "/images/assetimportcover.jpg"
 contentVideoId: https://athiangames.com/videos/fbximport_demo.mp4
 contentVideoThumbnail: ''
 features:
