@@ -18,21 +18,13 @@ seodescription: ''
 canonical: ''
 private: false
 bannerImage: "/images/mapsystem.png"
-contentVideoId: "-yoDS9LK6p8"
+contentVideoId: https://www.youtube.com/watch?v=qrB7rDunSrM&feature=youtu.be
 contentVideoThumbnail: ''
 features:
 - image: "/images/screenshot_004.png"
-  title: Lorem title
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  buttons:
-  - buttonText: asd
-    buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
-  - buttonText: asd2
-    buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
-  - buttonText: asd3
-    buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
+  title: Asynchronously Import FBX files in runtime
+  description: ''
+  buttons: []
 - image: "/images/screenshot_004.png"
   title: Lorem title
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -55,6 +47,7 @@ fontFamily: Courier New
 contentFontSize: 16px
 featureTitleFontSize: 16px
 featureTextFontSize: 16px
+contentvideothumbnail: "/images/assetimportcover.jpg"
 
 ---
 Forget dealing with the limitations of RenderTargets to design your Minimaps, which are performance heavy for larger worlds. This system can handle thousands of Points of Interest at a time without affecting the performance, and is designed keeping Open World RPGs in mind, however the flexibility and ease of implementation allows you to use this system in any kind of game you want, from archviz projects to real time strategy games.
