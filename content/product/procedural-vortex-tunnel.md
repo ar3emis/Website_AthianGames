@@ -48,6 +48,6 @@ fontFamily: Verdana
 contentFontSize: 16px
 featureTitleFontSize: 18px
 featureTextFontSize: 16px
-contentvideothumbnail: ''
+contentvideothumbnail: "/images/screenshot_003.png"
 
 ---
