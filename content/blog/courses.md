@@ -13,7 +13,6 @@ private: false
 canonical: ''
 menu:
   main:
-    name: courses
     weight: 3
 
 ---
