@@ -47,6 +47,7 @@ features:
     file. Hence every FBX scene can have its own set of custom logic, allowing user
     to implement this plugin in number of various scenarios, from importing larger
     scenes, to interactive smaller props like weapons , barrels, etc.
+  image: "/images/assetimportcover.jpg"
 - title: Load and Save System
   description: Load and Save System implemented for storing the Imported FBX Meshes
     in desired location in hard drive, and loading it without importing it all over
