@@ -1,61 +1,62 @@
 ---
-date: 2018-10-02T17:00:00+05:30
-title: "Minimap, Map And Navigation System"
-topText: "Minimap, Map And Navigation System"
-bottomText: Create customizable and optimized texture based Minimaps and Maps for your next big title.
-summary: ""
+date: 2018-10-02T17:00:00.000+05:30
+title: Minimap, Map And Navigation System
+topText: Minimap, Map And Navigation System
+bottomText: Create customizable and optimized texture based Minimaps and Maps for
+  your next big title.
+summary: ''
 image: "/uploads/minimap.webp"
 buttons:
-  - buttonLink: "https://www.unrealengine.com/marketplace/en-US/product/minimap-map-and-navigation-system"
-    buttonText: "Get It Here"
-  - buttonLink: "https://docs.athiangames.com/doc_minimapandmap"
-    buttonText: "Documentation"
-  - buttonLink: "https://discord.com/invite/BJTZSs3"
-    buttonText: "Join Discord"
-seotitle: ""
-seodescription: ""
-canonical: ""
+- buttonLink: https://www.unrealengine.com/marketplace/en-US/product/minimap-map-and-navigation-system
+  buttonText: Get It Here
+- buttonLink: https://docs.athiangames.com/doc_minimapandmap
+  buttonText: Documentation
+- buttonLink: https://discord.com/invite/BJTZSs3
+  buttonText: Join Discord
+seotitle: ''
+seodescription: ''
+canonical: ''
 private: false
-bannerImage: "/images/screenshot_004.png"
+bannerImage: "/images/mapsystem.png"
 contentVideoId: "-yoDS9LK6p8"
-contentVideoThumbnail: ""
+contentVideoThumbnail: ''
 features:
-  - image: "/images/screenshot_004.png"
-    title: Lorem title
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    buttons:
-      - buttonText: asd
-        buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
-      - buttonText: asd2
-        buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
-      - buttonText: asd3
-        buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
-  - image: "/images/screenshot_004.png"
-    title: Lorem title
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    buttons: []
-  - image: "/images/screenshot_004.png"
-    title: Lorem title
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    buttons: []
+- image: "/images/screenshot_004.png"
+  title: Lorem title
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  buttons:
+  - buttonText: asd
+    buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
+  - buttonText: asd2
+    buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
+  - buttonText: asd3
+    buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
+- image: "/images/screenshot_004.png"
+  title: Lorem title
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  buttons: []
+- image: "/images/screenshot_004.png"
+  title: Lorem title
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  buttons: []
 description: Combine and blend different types of Displacement Vortex Materials, created
   using High Quality Custom Noise Shaders. The custom Data Objects let you conveniently
   swap and randomize meshes and materials. and blend them using a distribution curve.
   Parameterized Material Instances give each Vortex a unique look that cater to the
   perfect output you are looking for.
-bgImage: ""
-fontFamily: "Courier New"
+bgImage: ''
+fontFamily: Courier New
 contentFontSize: 16px
 featureTitleFontSize: 16px
 featureTextFontSize: 16px
----
 
+---
 Forget dealing with the limitations of RenderTargets to design your Minimaps, which are performance heavy for larger worlds. This system can handle thousands of Points of Interest at a time without affecting the performance, and is designed keeping Open World RPGs in mind, however the flexibility and ease of implementation allows you to use this system in any kind of game you want, from archviz projects to real time strategy games.
 
 Actors represented as Points of Interest in the Minimaps and Maps are implemented via Datatable and each POI Actor class added to the Datatable has its own set of unique properties, making it simpler to add a variety of different POI having different functionalities.
