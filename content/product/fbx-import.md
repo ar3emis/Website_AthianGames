@@ -6,61 +6,61 @@ bottomText: Asynchronously Import FBX files in your Unreal projects, in runtime.
   detailed FBX scenes can be loaded very fast, and grouping of a single file into
   Nodes and Material sections further allows you to generate an entire scene comprising
   of various interactive actors, from a single FBX file.
-summary: ""
+summary: ''
 product_categories:
-  - Miscellaneous
-image: "/uploads/fbximport.webp"
+- Miscellaneous
+image: "/images/fbximport.png"
 buttons:
-  - buttonLink: https://www.unrealengine.com/marketplace/en-US/slug/runtime-fbx-import-asynchronous
-    buttonText: Get It Here
-  - buttonLink: https://docs.athiangames.com/doc_fbximport
-    buttonText: Documentation
-  - buttonLink: https://discord.com/invite/hsejuTW
-    buttonText: Join Discord
-seotitle: ""
-seodescription: ""
-canonical: ""
+- buttonLink: https://www.unrealengine.com/marketplace/en-US/slug/runtime-fbx-import-asynchronous
+  buttonText: Get It Here
+- buttonLink: https://docs.athiangames.com/doc_fbximport
+  buttonText: Documentation
+- buttonLink: https://discord.com/invite/hsejuTW
+  buttonText: Join Discord
+seotitle: ''
+seodescription: ''
+canonical: ''
 private: false
 bannerImage: "/images/screenshot_004.png"
 contentVideoId: "-yoDS9LK6p8"
-contentVideoThumbnail: ""
+contentVideoThumbnail: ''
 features:
-  - image: "/images/screenshot_004.png"
-    title: Lorem title
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    buttons:
-      - buttonText: asd
-        buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
-      - buttonText: asd2
-        buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
-      - buttonText: asd3
-        buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
-  - image: "/images/screenshot_004.png"
-    title: Lorem title
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    buttons: []
-  - image: "/images/screenshot_004.png"
-    title: Lorem title
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    buttons: []
+- image: "/images/screenshot_004.png"
+  title: Lorem title
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  buttons:
+  - buttonText: asd
+    buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
+  - buttonText: asd2
+    buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
+  - buttonText: asd3
+    buttonLink: https://www.youtube.com/embed/-yoDS9LK6p8
+- image: "/images/screenshot_004.png"
+  title: Lorem title
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  buttons: []
+- image: "/images/screenshot_004.png"
+  title: Lorem title
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  buttons: []
 description: Combine and blend different types of Displacement Vortex Materials, created
   using High Quality Custom Noise Shaders. The custom Data Objects let you conveniently
   swap and randomize meshes and materials. and blend them using a distribution curve.
   Parameterized Material Instances give each Vortex a unique look that cater to the
   perfect output you are looking for.
-bgImage: ""
-fontFamily: "Courier New"
+bgImage: ''
+fontFamily: Courier New
 contentFontSize: 16px
 featureTitleFontSize: 16px
 featureTextFontSize: 16px
----
 
+---
 {{<html>}}
 
 <div class="col-xl-6 col-lg-12">
