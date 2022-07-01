@@ -19,7 +19,7 @@ seodescription: ''
 canonical: ''
 private: false
 bannerImage: "/images/assetimportcover.jpg"
-contentVideoId: https://athiangames.com/videos/fbximport_demo.mp4
+contentVideoId: https://www.youtube.com/watch?v=qrB7rDunSrM&feature=youtu.be
 contentVideoThumbnail: ''
 features:
 - image: "/images/screenshot_004.png"
