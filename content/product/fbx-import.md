@@ -2,11 +2,8 @@
 date: 2018-10-01T17:00:00.000+05:30
 title: Runtime FBX Import for Unreal Engine 4
 topText: Runtime FBX Import for Unreal Engine 4
-bottomText: Asynchronously Import FBX files in your Unreal projects, in runtime. Highly
-  detailed FBX scenes can be loaded very fast, and grouping of a single file into
-  Nodes and Material sections further allows you to generate an entire scene comprising
-  of various interactive actors, from a single FBX file.
-summary: ''
+bottomText: Asynchronously Import FBX files in your Unreal projects, in runtime
+summary: Asynchronously Import FBX files in your Unreal projects, in runtime
 product_categories:
 - Miscellaneous
 image: "/images/fbximport.png"
@@ -54,13 +51,14 @@ features:
   description: Load and Save System implemented for storing the Imported FBX Meshes
     in desired location in hard drive, and loading it without importing it all over
     again, in the next session.
-description: Combine and blend different types of Displacement Vortex Materials, created
-  using High Quality Custom Noise Shaders. The custom Data Objects let you conveniently
-  swap and randomize meshes and materials. and blend them using a distribution curve.
-  Parameterized Material Instances give each Vortex a unique look that cater to the
-  perfect output you are looking for.
+description: 'With this plugin, you can import FBX files along with all the textures  and
+  color values. Highly detailed FBX scenes can be loaded very fast, and grouping of
+  a single file into Nodes and Material sections further allows you to generate an
+  entire scene comprising of various interactive actors, from a single FBX file.
+
+  '
 bgImage: ''
-fontFamily: Courier New
+fontFamily: Verdana
 contentFontSize: 16px
 featureTitleFontSize: 16px
 featureTextFontSize: 16px
