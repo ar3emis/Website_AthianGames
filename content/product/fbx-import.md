@@ -62,6 +62,6 @@ fontFamily: Verdana
 contentFontSize: 16px
 featureTitleFontSize: 16px
 featureTextFontSize: 16px
-contentvideothumbnail: "/images/assetimportcover.jpg"
+contentvideothumbnail: "/images/screenshot_004.png"
 
 ---
