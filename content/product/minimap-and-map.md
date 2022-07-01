@@ -18,7 +18,7 @@ seodescription: ''
 canonical: ''
 private: false
 bannerImage: "/images/mapsystem.png"
-contentVideoId: https://www.youtube.com/watch?v=qrB7rDunSrM&feature=youtu.be
+contentVideoId: https://www.youtube.com/watch?v=zTLjtnlbFjU
 contentVideoThumbnail: ''
 features:
 - image: "/images/screenshot_004.png"
@@ -47,7 +47,7 @@ fontFamily: Courier New
 contentFontSize: 16px
 featureTitleFontSize: 16px
 featureTextFontSize: 16px
-contentvideothumbnail: "/images/assetimportcover.jpg"
+contentvideothumbnail: "/images/minimapcover.png"
 
 ---
 Forget dealing with the limitations of RenderTargets to design your Minimaps, which are performance heavy for larger worlds. This system can handle thousands of Points of Interest at a time without affecting the performance, and is designed keeping Open World RPGs in mind, however the flexibility and ease of implementation allows you to use this system in any kind of game you want, from archviz projects to real time strategy games.
