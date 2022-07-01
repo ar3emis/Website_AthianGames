@@ -44,6 +44,16 @@ features:
 - description: Built in support for designing changeable material property layout
     for every Mesh Component.
   title: Changeable Material Property
+- title: Custom FBX Actor
+  description: Every FBX scene imported is represented by a custom actor which hosts
+    all the Procedural Mesh Components generated from the nodes read from the source
+    file. Hence every FBX scene can have its own set of custom logic, allowing user
+    to implement this plugin in number of various scenarios, from importing larger
+    scenes, to interactive smaller props like weapons , barrels, etc.
+- title: Load and Save System
+  description: Load and Save System implemented for storing the Imported FBX Meshes
+    in desired location in hard drive, and loading it without importing it all over
+    again, in the next session.
 description: Combine and blend different types of Displacement Vortex Materials, created
   using High Quality Custom Noise Shaders. The custom Data Objects let you conveniently
   swap and randomize meshes and materials. and blend them using a distribution curve.
@@ -57,14 +67,3 @@ featureTextFontSize: 16px
 contentvideothumbnail: "/images/assetimportcover.jpg"
 
 ---
-{{<html>}}
-
-<div class="col-xl-6 col-lg-12">
-{{</html>}}
-
-### Features
-
-1. 
-2. Every FBX scene imported is represented by a custom actor which hosts all the Procedural Mesh Components generated from the nodes read from the source file. Hence every FBX scene can have its own set of custom logic, allowing user to implement this plugin in number of various scenarios, from importing larger scenes, to interactive smaller props like weapons , barrels, etc.
-3. Load and Save System implemented for storing the Imported FBX Meshes in desired location in hard drive, and loading it without importing it all over again, in the next session.
-   
