@@ -1,0 +1,16 @@
+---
+label: Course Index Page
+hide_body: false
+fields:
+- type: datetime
+  name: date
+  label: date
+- type: text
+  name: title
+  label: title
+- type: text
+  name: enrolTitle
+  label: enrolTitle
+- type: text
+  name: mailto
+  label: mailto
