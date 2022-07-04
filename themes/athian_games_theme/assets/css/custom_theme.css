@@ -874,3 +874,49 @@ a.nav-link.scroll:hover {
   padding-left: 40px;
   padding-right: 40px;
 }
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-row {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.contact-input {
+  padding: 10px 15px;
+  border: #ccc solid 1px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+::placeholder {
+  color: white;
+}
+
+.contact-input:focus {
+  border: white solid 2px;
+  outline: none;
+}
+
+.contact-button {
+  margin-right: 0px;
+  margin-top: 30px;
+  padding: 15px;
+  width: 70%;
+}

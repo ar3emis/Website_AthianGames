@@ -1,19 +1,16 @@
 ---
 date: 2022-05-19T14:59:09.000+00:00
 title: Courses
-topText: ''
-bottomText: ''
-summary: ''
+topText: ""
+bottomText: ""
+summary: ""
 product_categories: []
-image: ''
+image: ""
 buttons: []
-seotitle: ''
-seodescription: ''
+seotitle: ""
+seodescription: ""
 private: false
-canonical: ''
-menu:
-  main:
-    weight: 3
-
+canonical: ""
 ---
+
 Courses Offered :
