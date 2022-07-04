@@ -31,6 +31,11 @@ sections:
   templates:
   - product
   - single-page-template
+- type: directory
+  path: content/courses
+  label: Courses
+  create: all
+  match: "**/*"
 - type: heading
   label: Other Sections
 - type: directory
