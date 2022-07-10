@@ -1,5 +1,5 @@
 ---
-date: 2022-05-19T14:59:08.000+00:00
+date: 
 title: An upcoming Course
 shortDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -7,7 +7,7 @@ shortDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed d
   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
   fugiat nulla pariatur.
 mainImage: "/images/aos_fse_thumb.png"
-upcoming: true
+upcoming: false
 
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
