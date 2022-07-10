@@ -1,0 +1,19 @@
+---
+label: Course
+hide_body: false
+fields:
+- type: datetime
+  name: date
+  label: date
+- type: text
+  name: title
+  label: title
+- type: textarea
+  name: shortDescription
+  label: shortDescription
+- type: file
+  name: mainImage
+  label: mainImage
+- type: boolean
+  name: upcoming
+  label: upcoming
