@@ -17,3 +17,5 @@ fields:
 - type: boolean
   name: upcoming
   label: upcoming
+pages:
+- content/courses/course2.md
