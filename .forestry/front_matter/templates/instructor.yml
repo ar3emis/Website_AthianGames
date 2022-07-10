@@ -1,4 +1,28 @@
 ---
 label: Instructor
 hide_body: false
-fields: []
+fields:
+- name: name
+  type: text
+  config:
+    required: false
+  label: name
+- name: image
+  type: file
+  config:
+    maxSize: 64
+  label: image
+- name: shortDescription
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: shortDescription
+- name: authorizedInstructorImage
+  type: file
+  config:
+    maxSize: 64
+  label: authorizedInstructorImage
