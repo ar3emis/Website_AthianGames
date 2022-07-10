@@ -36,6 +36,15 @@ sections:
   label: Courses
   create: all
   match: "**/*"
+  templates:
+  - course
+- type: directory
+  path: content/instructors
+  label: Instructors
+  create: all
+  match: "**/*"
+  templates:
+  - instructor
 - type: heading
   label: Other Sections
 - type: directory
