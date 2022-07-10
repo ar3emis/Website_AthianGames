@@ -1,0 +1,26 @@
+<div class="instructor-wrapper">
+  <img class="instructor-image" src="{{ .Params.image }}" alt="{{ .Params.name }}" />
+  <img class="instructor-certificate" src="{{ .Params.authorizedInstructorImage }}" />
+  <div class="instructor-text">
+    <h3>{{ .Params.name }}</h3>
+    <p class="instructor-short-description">{{.Params.shortDescription}}</p>
+  </div> 
+</div>
+<div class="instructor-modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <div class="instructor-image-wrapper-modal">
+      <img class="instructor-image" src="{{ .Params.image }}" alt="{{ .Params.name }}" />
+      <img class="instructor-certificate" src="{{ .Params.authorizedInstructorImage }}" />
+      <div class="instructor-text">
+        <h3>{{ .Params.name }}</h3>
+        <p class="instructor-short-description">{{.Params.shortDescription}}</p>
+      </div>
+    </div>
+    <div class="instructor-description">
+      <p>
+        {{ partial "theme-files/content" . }}
+      </p>
+    </div>
+  </div>
+</div>

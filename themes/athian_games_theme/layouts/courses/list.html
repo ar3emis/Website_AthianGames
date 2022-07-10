@@ -2,7 +2,12 @@
 <div class="qrt-half-content-frame column">
   {{ partial "inner-banner.html" . }}
   <section class="qrt-left column product-content">
-    {{ partial "courses/enrol-form.html" . }}
+    {{ partial "courses/instructors-list.html" . }}
+  </section>
+  <section class="qrt-left column product-content">
+    {{ partial "courses/courses-list.html" . }}
   </section>
 </div>
+<script language="javascript" type="text/javascript" src="{{ "/js/accordion.js" | urlize | relURL }}"></script>
+<script language="javascript" type="text/javascript" src="{{ "/js/modal.js" | urlize | relURL }}"></script>
 {{ end }}

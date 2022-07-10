@@ -1,0 +1,14 @@
+<div class="courses-list-wrapper">
+  <h2>{{.Params.coursesListTitle}}</h2>
+  {{ with site.GetPage "courses" }}
+    {{ range where .Pages.ByDate.Reverse ".Params.upcoming" false }}
+      {{ partial "courses/course-in-list.html" . }}
+    {{ end }}
+  {{ end }}
+  <h3 class="upcoming-courses-title">{{.Params.upcomingCoursesListTitle}}</h3>
+  {{ with site.GetPage "courses" }}
+    {{ range where .Pages.ByDate.Reverse ".Params.upcoming" true }}
+      {{ partial "courses/course-in-list.html" . }}
+    {{ end }}
+  {{ end }}
+</div>
