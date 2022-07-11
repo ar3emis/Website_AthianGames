@@ -17,9 +17,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 {{<html>}}
 
 <div class="col-xl-12 mt-auto px-0 py-4">
-  <video id="FeaturedVideo" style="display: block;" width="100%" controls="">
-    <source id="mp4" src="https://athiangames.com/videos/framecapture_demo.mp4" type="video/mp4">
-  </video>
+  {{< youtube w7Ft2ymGmfc >}}
 </div>
 
 {{</html>}}

@@ -923,9 +923,8 @@ a.nav-link.scroll:hover {
 
 .contact-button {
   margin-right: 0px;
-  margin-top: 30px;
   padding: 15px;
-  width: 70%;
+  width: 100%;
 }
 @media (max-width: 840px) {
   .contact-button {
@@ -1107,7 +1106,7 @@ a.nav-link.scroll:hover {
   background-color: #1e1e1e;
   margin: 35% auto;
   padding: 20px;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 60%; /* Could be more or less, depending on screen size */
   display: flex;
   flex-direction: row;
 }
@@ -1117,8 +1116,20 @@ a.nav-link.scroll:hover {
     flex-direction: column;
   }
 }
+
+.modal-text {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+@media (max-width: 840px) {
+  .modal-text {
+    max-height: fit-content;
+  }
+}
+
 .modal-close {
   position: absolute;
+  visibility: hidden;
   top: 10px;
   right: 2.5%;
   color: #aaa;
