@@ -5,8 +5,10 @@
       {{ partial "courses/course-in-list.html" . }}
     {{ end }}
   {{ end }}
-  <h3 class="upcoming-courses-title">{{.Params.upcomingCoursesListTitle}}</h3>
   {{ with site.GetPage "courses" }}
+    {{ if ne (len (where .Pages ".Params.upcoming" true)) 0 }}
+      <h3 class="upcoming-courses-title">{{.Params.upcomingCoursesListTitle}}</h3>
+    {{ end }}
     {{ range where .Pages.ByDate.Reverse ".Params.upcoming" true }}
       {{ partial "courses/course-in-list.html" . }}
     {{ end }}
