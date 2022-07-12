@@ -1121,16 +1121,6 @@ a.nav-link.scroll:hover {
   }
 }
 
-.modal-text {
-  max-height: 300px;
-  overflow: scroll;
-}
-@media (max-width: 840px) {
-  .modal-text {
-    max-height: fit-content;
-  }
-}
-
 .modal-close {
   position: absolute;
   visibility: hidden;
