@@ -11,9 +11,6 @@ fields:
 - type: text
   name: enrolTitle
   label: enrolTitle
-- type: text
-  name: formURL
-  label: formURL
 - type: field_group_list
   name: contactFields
   label: contactFields
