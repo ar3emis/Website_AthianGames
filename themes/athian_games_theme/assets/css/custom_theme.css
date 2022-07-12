@@ -924,7 +924,7 @@ a.nav-link.scroll:hover {
 .contact-button {
   margin-right: 0px;
   padding: 15px;
-  width: 100%;
+  width: 30%;
 }
 @media (max-width: 840px) {
   .contact-button {
