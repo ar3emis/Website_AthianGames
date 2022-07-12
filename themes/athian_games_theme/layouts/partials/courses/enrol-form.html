@@ -1,6 +1,7 @@
+{{ $url := .Params.formURL }}
 {{ with .Site.GetPage "/courses" }}
   <div class="contact-wrapper">
-    <form action="{{ .Params.formURL }}" method="get" class="contact-form" onsubmit="submitted=true">
+    <form action="{{ $url }}" method="get" class="contact-form" onsubmit="submitted=true">
       {{ range .Params.contactFields }}
         <div class="contact-row">
           <label class="contact-label">{{.label}}</label>
