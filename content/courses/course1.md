@@ -18,7 +18,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 {{<html>}}
 
 <div class="col-xl-12 mt-auto px-0 py-4">
-  {{< youtube -yoDS9LK6p8 >}}
+  {{< youtube -yoDS9LK6p8 "/images/vortextunnel_thumbnail.png" >}}
 </div>
 
 {{</html>}}
