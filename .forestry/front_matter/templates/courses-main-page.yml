@@ -27,5 +27,3 @@ fields:
 - type: text
   name: upcomingCoursesListTitle
   label: upcomingCoursesListTitle
-pages:
-- content/courses/courses.md
