@@ -2,8 +2,8 @@
 date: 2018-10-07T17:00:00.000+05:30
 title: Art Of Shader - Stylized Post Process
 topText: Art Of Shader - Stylized Post Process
-bottomText: The ultimate Stylized Post Process Effect pack, with over 30 Materials
-  that can be combined and blended to give your scene a unique stylized look.
+bottomText: The ultimate Stylized Post Process Effect pack, with 40 Materials that
+  can be combined and blended to give your scene a unique stylized look.
 summary: Give your scene a unique look and style with the customizable Post Process
   Materials, with tweakable parameters and granular level of controls letting you
   customize the materials to suit your style, separate objects in your scene, or your
@@ -56,6 +56,6 @@ featureTitleFontSize: 16px
 featureTextFontSize: 16px
 
 ---
-Art of Shader - Stylized Post Process is a pack of more than 30 Post Process Blendable Materials that you customize and tweak to create a unique stylized look for your scene. The Blueprint Actors facilitate the easy combining, blending and grouping of the Post process materials based on certain common properties. From WaterColor, OilPaint, Aquarelle, Cartoon, ComicBook , CelShaded and many more Effects, choose, combine and customize via the parameterized material instances to suit your style.
+Art of Shader - Stylized Post Process is a pack of 40 Post Process Blendable Materials that you customize and tweak to create a unique stylized look for your scene. The Blueprint Actors facilitate the easy combining, blending and grouping of the Post process materials based on certain common properties. From WaterColor, OilPaint, Aquarelle, Cartoon, ComicBook , CelShaded and many more Effects, choose, combine and customize via the parameterized material instances to suit your style.
 
 {{<gallery dir="/uploads/spp/" />}}
