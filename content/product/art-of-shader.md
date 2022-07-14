@@ -54,6 +54,7 @@ fontFamily: Courier New
 contentFontSize: 16px
 featureTitleFontSize: 16px
 featureTextFontSize: 16px
+contentvideothumbnail: "/images/aos_stylizedpostprocess_screensho08.jpg"
 
 ---
 Art of Shader - Stylized Post Process is a pack of 40 Post Process Blendable Materials that you customize and tweak to create a unique stylized look for your scene. The Blueprint Actors facilitate the easy combining, blending and grouping of the Post process materials based on certain common properties. From WaterColor, OilPaint, Aquarelle, Cartoon, ComicBook , CelShaded and many more Effects, choose, combine and customize via the parameterized material instances to suit your style.
