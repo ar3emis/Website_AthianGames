@@ -796,7 +796,9 @@ a.nav-link.scroll:hover {
 }
 
 .youtube-container {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 1000px;
 }
