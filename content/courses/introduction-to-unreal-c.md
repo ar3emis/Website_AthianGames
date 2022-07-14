@@ -1,12 +1,12 @@
 ---
 date: 2022-06-30T18:30:00.000+00:00
 title: Introduction to Unreal C++
-shortDescription: Hello Unreal
+shortDescription: Hello Unreal. This is test course
 mainImage: "/images/aos_dg_thumbs.png"
 upcoming: false
-formURL: ""
----
+formURL: ''
 
+---
 This is a course Preview
 
 {{<html>}}
