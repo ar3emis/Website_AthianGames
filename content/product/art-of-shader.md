@@ -24,7 +24,7 @@ seodescription: ''
 canonical: ''
 private: false
 bannerImage: "/images/aos_stylizedpostprocess_screensho01.jpg"
-contentVideoId: "-yoDS9LK6p8"
+contentVideoId: "-sbMpSzikMo0"
 contentVideoThumbnail: ''
 features:
 - image: "/images/aos_stylizedpostprocess_screensho08.jpg"
