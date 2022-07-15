@@ -24,7 +24,7 @@ private: false
 canonical: ""
 bannerImage: "/images/screenshot_004.png"
 contentVideoId: "-yoDS9LK6p8"
-contentVideoThumbnail: ""
+contentVideoThumbnail: "/images/screenshot_003.png"
 features:
   - image: "/images/screenshot_004.png"
     title: Spline Based Vortex Generation
@@ -50,5 +50,4 @@ fontFamily: Verdana
 contentFontSize: 16px
 featureTitleFontSize: 18px
 featureTextFontSize: 16px
-contentvideothumbnail: "/images/screenshot_003.png"
 ---

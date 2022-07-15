@@ -20,7 +20,7 @@ canonical: ""
 private: false
 bannerImage: "/images/assetimportcover.jpg"
 contentVideoId: "qrB7rDunSrM"
-contentVideoThumbnail: ""
+contentVideoThumbnail: "/images/assetimportcover.jpg"
 features:
   - image: "/images/screenshot_004.png"
     title: Asynchronously Import FBX files in runtime
@@ -63,5 +63,4 @@ fontFamily: Verdana
 contentFontSize: 16px
 featureTitleFontSize: 16px
 featureTextFontSize: 16px
-contentvideothumbnail: "/images/assetimportcover.jpg"
 ---
