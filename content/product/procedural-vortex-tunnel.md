@@ -32,7 +32,7 @@ features:
     each Vortex Mesh generated is determined by actual dimension of the static mesh,
     hence preventing stretching along the spline. '
   buttons: []
-- image: "/images/highresscreenshot00030.png"
+- image: "/images/pvt_displacementmaterials.png"
   title: Displacement Materials using High Quality Procedural Noise Shaders
   description: Customizable Materials designed by combining multiple procedural noise
     shaders with lots of parameters to tweak from, gives the Vortex a completely unique
