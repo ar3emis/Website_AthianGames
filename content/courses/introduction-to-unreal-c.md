@@ -16,14 +16,10 @@ formURL: ''
 ---
 {{<html>}}
 
-**<!╌** 
-
-<div class="d-flex justify-content-center mt-auto px-0 py-4"> {{< youtube -yoDS9LK6p8 >}} </div> **╌>**
-
 <div class="d-flex justify-content-center mt-auto px-0 py-4"> 
 
 <img src="/images/screenshot_004.png" style="display: block;" width="100%" />
 
-{{</html>}}
+ </div>
 
-This is footer
+{{</html>}}
