@@ -17,18 +17,10 @@ formURL: ''
 ## Course Content
 
 * Getting Started With C++ Project in Unreal Engine.
-* Extended introduction to the Unreal Engine's node-based material editor.
-* Working with object or scene specific values, such as time, surface normals, etc.
-* Introduction to using materials for effects
-* Creating a masked material
-* Creating and exploring "layered" materials
-* Creation of our first animated material
-* Creation and use of custom material functions
-* Using materials for light functions
-* Introduction to World Position Offset, Tessellation and Displacement
-* Creation of a displacement material
-* Creating a "dissolve effect" using a material function
-* Bonus: Using materials in UMG
+* Introduction to Unreal Classes in C++.
+* Extending C++ With Blueprints.
+* Introduction to Slate.
+* Editor Tools Development with C++.
 
 {{<html>}}
 
