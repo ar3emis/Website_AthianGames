@@ -37,7 +37,7 @@ features:
   description: Object Space Localization allows you to apply the shaders only to certain
     objects, or exclude certain objects from given effects, via custom depth stencils
   buttons: []
-- image: "/images/screenshot_004.png"
+- image: "/images/desktop-2020-08-21-12-07-09-06.mp4"
   title: ScreenSpace Localization
   description: ScreenSpace Localization lets you split the screen based on user defined
     shape and size, and apply multiple Blendable Materials simultaneously at different
