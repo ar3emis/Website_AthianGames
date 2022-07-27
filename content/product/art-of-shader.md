@@ -38,10 +38,10 @@ features:
     objects, or exclude certain objects from given effects, via custom depth stencils
   buttons: []
 - image: "/images/screenshot_004.png"
-  title: Lorem title
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  title: ScreenSpace Localization
+  description: ScreenSpace Localization lets you split the screen based on user defined
+    shape and size, and apply multiple Blendable Materials simultaneously at different
+    parts of the screen
   buttons: []
 description: |+
   Art of Shader - Stylized Post Process is a pack of 37 Post Process Blendable Materials that you customize and tweak to create a unique stylized look for your scene. The Blueprint Actors facilitate the easy combining, blending and grouping of the Post process materials based on certain common properties. From WaterColor, OilPaint, Aquarelle, Cartoon, ComicBook , CelShaded and many more Effects, choose, combine and customize via the parameterized material instances to suit your style.
