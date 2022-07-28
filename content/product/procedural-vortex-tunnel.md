@@ -52,6 +52,12 @@ features:
     points where the FX will be placed and rotated to face the direction of the Vortex
     at any given point
   buttons: []
+- image: "/images/pvt_features_vortexmeshes.jpg"
+  title: Static Meshes Along The Vortex
+  buttons: []
+  description: The VortexRepeater Actor scatters a set of static meshes procedurally,
+    along the vortex path. Custom Repeater Data contains the parameters that controls
+    how the meshes will be scattered
 description: Procedural Vortex Tunnel is a plugin that lets you build a customizable
   Vortex Tunnel along a given Spline path procedurally through predefined sets of
   parameters.
