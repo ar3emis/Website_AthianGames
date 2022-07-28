@@ -24,7 +24,7 @@ private: false
 canonical: ''
 bannerImage: "/images/pvt_banner.jpg"
 contentVideoId: "-yoDS9LK6p8"
-contentVideoThumbnail: "/images/pvt_banner.jpg"
+contentVideoThumbnail: "/images/screenshot_004.png"
 features:
 - image: "/images/pvt_splinebasedgeneration.png"
   title: Spline Based Vortex Generation
