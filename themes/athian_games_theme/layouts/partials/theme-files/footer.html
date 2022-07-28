@@ -1,4 +1,4 @@
-<img class="lozad" data-src="{{ with .Site.GetPage "/info" }}{{if .Params.logo}}{{.Params.logo |absURL}}{{else}}{{"images/logo/logo.png" | absURL}}{{end}}{{end}}" alt="Logo Image" />
+<img class="lozad" src="{{ with .Site.GetPage "/info" }}{{if .Params.logo}}{{.Params.logo |absURL}}{{else}}{{"images/logo/logo.png" | absURL}}{{end}}{{end}}" alt="Logo Image" />
 
 
 
