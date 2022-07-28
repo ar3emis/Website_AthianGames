@@ -58,6 +58,11 @@ features:
   description: The VortexRepeater Actor scatters a set of static meshes procedurally,
     along the vortex path. Custom Repeater Data contains the parameters that controls
     how the meshes will be scattered
+- image: "/images/screenshot_003.png"
+  buttons: []
+  title: Material Blending
+  description: Using Vortex Data, blend multiple material instances for the Vortex
+    meshes along the length of the spline, using the Material Blending feature.
 description: Procedural Vortex Tunnel is a plugin that lets you build a customizable
   Vortex Tunnel along a given Spline path procedurally through predefined sets of
   parameters.
