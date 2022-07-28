@@ -39,8 +39,7 @@ features:
     and customized look that goes along with your vision.
   buttons: []
 - image: "/images/aquarelle01.png"
-  title: " The VortexTunnel Actor facilitates the generation of Material Driven Vortex
-    Meshes along the given Spline Path"
+  title: Custom Mesh Components
   description: The VortexTunnel Actor facilitates the generation of Material Driven
     Vortex Meshes along the given Spline Path
   buttons: []
