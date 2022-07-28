@@ -45,6 +45,13 @@ features:
     the plugin which gives a lot of variations, or make your own meshes and use them
     with this plugin, for the ultimate control of the design.
   buttons: []
+- image: "/images/pvt_splinebasedgeneration.png"
+  title: Niagara FX Along the Vortex
+  description: The VortexFX Actor is designed to generate a set of NIagara FX along
+    the path. It works in conjunction with Niagara module scripts to calculate the
+    points where the FX will be placed and rotated to face the direction of the Vortex
+    at any given point
+  buttons: []
 description: Procedural Vortex Tunnel is a plugin that lets you build a customizable
   Vortex Tunnel along a given Spline path procedurally through predefined sets of
   parameters.
