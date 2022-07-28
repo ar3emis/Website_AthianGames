@@ -22,7 +22,7 @@ seotitle: ''
 seodescription: ''
 private: false
 canonical: ''
-bannerImage: "/images/screenshot_004.png"
+bannerImage: "/images/screenshot_003.png"
 contentVideoId: "-yoDS9LK6p8"
 contentVideoThumbnail: "/images/screenshot_003.png"
 features:
