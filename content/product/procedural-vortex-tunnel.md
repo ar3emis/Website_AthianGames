@@ -22,9 +22,9 @@ seotitle: ''
 seodescription: ''
 private: false
 canonical: ''
-bannerImage: "/images/screenshot_003.png"
+bannerImage: "/images/pvt_banner.jpg"
 contentVideoId: "-yoDS9LK6p8"
-contentVideoThumbnail: "/images/screenshot_003.png"
+contentVideoThumbnail: "/images/pvt_banner.jpg"
 features:
 - image: "/images/pvt_splinebasedgeneration.png"
   title: Spline Based Vortex Generation
