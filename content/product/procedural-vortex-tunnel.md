@@ -38,10 +38,12 @@ features:
     shaders with lots of parameters to tweak from, gives the Vortex a completely unique
     and customized look that goes along with your vision.
   buttons: []
-- image: "/images/aquarelle01.png"
-  title: Custom Mesh Components
+- image: "/images/pvt_features_vortexmeshes.jpg"
+  title: Custom Vortex Meshes
   description: The VortexTunnel Actor facilitates the generation of Material Driven
-    Vortex Meshes along the given Spline Path
+    Vortex Meshes along the given Spline Path. Choose from the meshes provided in
+    the plugin which gives a lot of variations, or make your own meshes and use them
+    with this plugin, for the ultimate control of the design.
   buttons: []
 description: Procedural Vortex Tunnel is a plugin that lets you build a customizable
   Vortex Tunnel along a given Spline path procedurally through predefined sets of
