@@ -52,13 +52,13 @@ features:
     points where the FX will be placed and rotated to face the direction of the Vortex
     at any given point
   buttons: []
-- image: "/images/pvt_features_vortexmeshes.jpg"
+- image: "/images/pvt_features_repeateractor.jpg"
   title: Static Meshes Along The Vortex
   buttons: []
   description: The VortexRepeater Actor scatters a set of static meshes procedurally,
     along the vortex path. Custom Repeater Data contains the parameters that controls
     how the meshes will be scattered
-- image: "/images/screenshot_003.png"
+- image: "/images/pvt_features_materialblending.jpg"
   buttons: []
   title: Material Blending
   description: Using Vortex Data, blend multiple material instances for the Vortex
