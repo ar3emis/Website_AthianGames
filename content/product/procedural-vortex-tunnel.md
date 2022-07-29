@@ -45,7 +45,7 @@ features:
     the plugin which gives a lot of variations, or make your own meshes and use them
     with this plugin, for the ultimate control of the design.
   buttons: []
-- image: "/images/pvt_splinebasedgeneration.png"
+- image: "/images/pvt_features_fxactor.jpg"
   title: Niagara FX Along the Vortex
   description: The VortexFX Actor is designed to generate a set of NIagara FX along
     the path. It works in conjunction with Niagara module scripts to calculate the
