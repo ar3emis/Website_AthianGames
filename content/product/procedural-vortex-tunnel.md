@@ -63,6 +63,13 @@ features:
   title: Material Blending
   description: Using Vortex Data, blend multiple material instances for the Vortex
     meshes along the length of the spline, using the Material Blending feature.
+- image: "/images/pvt_features_pawnmovement.jpg"
+  title: Pawn Movement Component
+  description: The PawnMovementComponent Blueprint can be used to move the pawn as
+    well as a set of custom actors along the Vortex Spline path, based on certain
+    parameters. This Blueprint also acts as an example to demonstrate how Niagara
+    FX can be generated runtime along the Vortex.
+  buttons: []
 - image: "/images/pvt_features_gravitypull.jpg"
   title: GravityPull
   description: The GravityPull Bluprint pull a set of Actors towards a given TargetPoint,
