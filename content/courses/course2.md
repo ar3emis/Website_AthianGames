@@ -17,9 +17,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {{<html>}}
 
-<div class="d-flex justify-content-center mt-auto px-0 py-4">
-  {{< youtube -yoDS9LK6p8 >}}
-</div>
+<!--<div class="d-flex justify-content-center mt-auto px-0 py-4"> {{< youtube -yoDS9LK6p8 >}} </div>-->
 
 {{</html>}}
 
