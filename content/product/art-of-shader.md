@@ -36,7 +36,7 @@ features:
     via SceneDepth. Apply different shader combination simultaneously to your main
     environment and background scene.
   image: "/images/aos_spp_features_bgshading.jpg"
-- image: "/images/aos_stylizedpostprocess_screensho08.jpg"
+- image: "/images/aos_spp_blueprintactor.jpg"
   title: AOS Blueprint Actor for Grouping and Combining
   description: The AOS Blueprint Actor for easily combining and grouping multiple
     Blendable Materials based on common properties
