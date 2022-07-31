@@ -35,6 +35,7 @@ features:
   description: Separate out the MainObjects placed in the environment from the Background
     via SceneDepth. Apply different shader combination simultaneously to your main
     environment and background scene.
+  image: "/images/aos_spp_features_bgshading.jpg"
 - image: "/images/aos_stylizedpostprocess_screensho08.jpg"
   title: AOS Blueprint Actor for Grouping and Combining
   description: The AOS Blueprint Actor for easily combining and grouping multiple
