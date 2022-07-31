@@ -27,6 +27,10 @@ bannerImage: "/images/aos_stylizedpostprocess_screensho01.jpg"
 contentVideoId: sbMpSzikMo0
 contentVideoThumbnail: "/images/aos_stylizedpostprocess_screensho08.jpg"
 features:
+- image: "/images/aquarelle01.png"
+  title: Customizable Stylized Post Process Shaders
+  description: '37 Stylized Post Process Blendable Materials, divided into 26 MainShaders
+    and 11 SceneShaders, to give a unique stylized post process effect to your scene. '
 - image: "/images/aos_stylizedpostprocess_screensho08.jpg"
   title: AOS Blueprint Actor for Grouping and Combining
   description: The AOS Blueprint Actor for easily combining and grouping multiple
