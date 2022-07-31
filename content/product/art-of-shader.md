@@ -31,6 +31,10 @@ features:
   title: Customizable Stylized Post Process Shaders
   description: '37 Stylized Post Process Blendable Materials, divided into 26 MainShaders
     and 11 SceneShaders, to give a unique stylized post process effect to your scene. '
+- title: Background Shading Via SceneDepth
+  description: Separate out the MainObjects placed in the environment from the Background
+    via SceneDepth. Apply different shader combination simultaneously to your main
+    environment and background scene.
 - image: "/images/aos_stylizedpostprocess_screensho08.jpg"
   title: AOS Blueprint Actor for Grouping and Combining
   description: The AOS Blueprint Actor for easily combining and grouping multiple
