@@ -52,6 +52,10 @@ features:
     shape and size, and apply multiple Blendable Materials simultaneously at different
     parts of the screen
   buttons: []
+- image: "/images/aos_spp_features_runtimecontrols.jpg"
+  title: Runtime Examples
+  description: AOSRuntime Blueprints and Widgets, including Dynamic UMG Based Color
+    Wheel allows you to tweak and modify the post process materials at runtime
 description: Art of Shader - Stylized Post Process is a pack of 40 Post Process Blendable
   Materials that you customize and tweak to create a unique stylized look for your
   scene. The Blueprint Actors facilitate the easy combining, blending and grouping
