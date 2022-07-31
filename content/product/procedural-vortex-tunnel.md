@@ -5,9 +5,8 @@ topText: Procedural Vortex Tunnel
 bottomText: Redefine your imagination with the Procedural Vortex Tunnel, a plugin
   that lets you create a highly customizable Material Driven Vortex System along a
   given spline path.
-summary: Redefine your imagination with the Procedural Vortex Tunnel, a plugin that
-  lets you create a highly customizable Material Driven Vortex System along a given
-  spline path.
+summary: Redefine your imagination with this highly customizable Material Driven Vortex
+  System along a given spline path.
 product_categories:
 - Procedural World
 image: "/images/pvt_thumb.jpg"
