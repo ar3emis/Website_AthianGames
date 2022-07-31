@@ -36,17 +36,17 @@ features:
     via SceneDepth. Apply different shader combination simultaneously to your main
     environment and background scene.
   image: "/images/aos_spp_features_bgshading.jpg"
-- image: "/images/aos_spp_blueprintactor.jpg"
+- image: "/images/aos_spp_features_blueprintactor.jpg"
   title: AOS Blueprint Actor for Grouping and Combining
   description: The AOS Blueprint Actor for easily combining and grouping multiple
     Blendable Materials based on common properties
   buttons: []
-- image: "/images/screenshot_004.png"
+- image: "/images/aos_spp_features_oslocalizations.jpg"
   title: Object Space Localization
   description: Object Space Localization allows you to apply the shaders only to certain
     objects, or exclude certain objects from given effects, via custom depth stencils
   buttons: []
-- image: "/images/pixelshuffle5.png"
+- image: "/images/aos_spp_features_sslocalizations.jpg"
   title: ScreenSpace Localization
   description: ScreenSpace Localization lets you split the screen based on user defined
     shape and size, and apply multiple Blendable Materials simultaneously at different
