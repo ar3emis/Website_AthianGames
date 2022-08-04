@@ -23,7 +23,6 @@ fields:
     required: false
   label: formURL
 pages:
-- content/courses/blueprints-fundamentals.md
 - content/courses/course3.md
 - content/courses/introduction-to-unreal-c.md
 - content/courses/niagara-fundamentals.md
