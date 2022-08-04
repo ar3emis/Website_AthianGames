@@ -36,7 +36,7 @@ features:
     each unique to a material index and is a child of a specific node, as read from
     the source file .
   buttons: []
-- image: "/images/screenshot_004.png"
+- image: "/images/rfbxi_features_customcollisions.jpg"
   title: Custom collisions
   description: Custom collisions can be applied in the generated mesh component via
     UCX_ prefix as read from the source file.
