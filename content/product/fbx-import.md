@@ -22,11 +22,14 @@ bannerImage: "/images/assetimportcover.jpg"
 contentVideoId: qrB7rDunSrM
 contentVideoThumbnail: "/images/assetimportcover.jpg"
 features:
-- image: "/images/screenshot_004.png"
+- image: "/images/rfbxi_features_asynchronousimport.jpg"
   title: Asynchronously Import FBX files in runtime
-  description: ''
+  description: Import FBX Files from your hard drive to your Unreal Project in Runtime.
+    The process is fully asynchronous, ensuring the game thread is not blocked, so
+    that you can perfrom other operations, like displaying a progress bar, while the
+    FBX is being loaded.
   buttons: []
-- image: "/images/screenshot_004.png"
+- image: "/images/rfbxi_features_importtextures.jpg"
   title: Auto Import Textures
   description: Relevant Textures(Diffuse, Normal, Specular, Opacity) are auto imported
     with the mesh and can be applied to the generated Procedural Mesh Components,
