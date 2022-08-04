@@ -5,7 +5,7 @@ shortDescription: 'Learn to Develop a single player action adventure game from s
   to finish. You''ll be introduced to the Unreal Engine editor and see how the editor
   interacts with C++ code while building levels and gameplay elements. Blueprints
   will be introduced as another way to visually add logic to your games. You''ll build
-  a simple game with input, collision, basic AI, User Interface and audio.
+  a simple game with input, collision, basic AI and User Interface.
 
   '
 mainImage: "/images/courses_gameprogramming_cover.jpg"
