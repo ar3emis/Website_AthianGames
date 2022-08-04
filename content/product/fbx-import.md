@@ -46,16 +46,19 @@ features:
   title: Changeable Material Property
   image: "/images/rfbxi_features_changeablematerial.jpg"
 - title: Custom FBX Actor
-  description: Every FBX scene imported is represented by a custom actor which hosts
+  description: 'Every FBX scene imported is represented by a custom actor which hosts
     all the Procedural Mesh Components generated from the nodes read from the source
     file. Hence every FBX scene can have its own set of custom logic, allowing user
     to implement this plugin in number of various scenarios, from importing larger
-    scenes, to interactive smaller props like weapons , barrels, etc.
-  image: "/images/assetimportcover.jpg"
+    scenes, to interactive smaller props like weapons , barrels, etc. You can also
+    use the custom actor to select specific fbx node section hide/isolate or update
+    materials for that section accordingly. '
+  image: "/images/rfbxi_features_customfbxactor.jpg"
 - title: Load and Save System
   description: Load and Save System implemented for storing the Imported FBX Meshes
     in desired location in hard drive, and loading it without importing it all over
     again, in the next session.
+  image: "/images/rfbxi_features_loadingandsaving.jpg"
 description: 'With this plugin, you can import FBX files along with all the textures  and
   color values. Highly detailed FBX scenes can be loaded very fast, and grouping of
   a single file into Nodes and Material sections further allows you to generate an
