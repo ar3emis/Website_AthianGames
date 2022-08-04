@@ -2,11 +2,11 @@
 
   <div class="qrt-top-bar">
       <a href="/" class="qrt-symbol qrt-cursor-scale qrt-anima-link">
-        
+
         <img src="/uploads/logo-left.png" class="d-block d-lg-none d-xl-none" alt="Logo Icon">
-      
+
         <img src="/uploads/logo_light.png" class="d-none d-lg-block" alt="Logo Full">
-      
+
       </a>
       <!-- <a href="/" class="qrt-logo qrt-cursor-color qrt-cursor-scale qrt-anima-link">
       </a> -->
@@ -20,10 +20,10 @@
             {{ range .Site.Menus.main }}
                   {{ if .HasChildren }}
                   <li {{if in ($.Permalink) (.URL | absURL )}}class="current-menu-item"{{end}}>
-                  <a href="{{ .URL }}"  class="qrt-mobile-fix" >{{ .Name | safeHTML}}  
-                        
+                  <a href="{{ .URL }}"  class="qrt-mobile-fix" >{{ .Name | safeHTML}}
+
                   </a>
-                        
+
                         <ul>
                         {{ range .Children }}
                         <li><a href="{{ .URL }}">{{ .Name   | safeHTML }}</a></li>
@@ -33,7 +33,7 @@
 
                   <li {{if in ($.Permalink) (.URL | absURL )}}class="current-menu-item"{{end}}>
 
-                  <a href="{{ .URL }}" >                 
+                  <a href="{{ .URL }}" >
 
                     {{ .Name | safeHTML }}</a>
                         {{ end  }}
@@ -87,7 +87,7 @@
                 </li> -->
             </ul>
             <div class="qrt-divider mt-30 mb-30"></div>
-            
+
             <div class="qrt-social-links">
                 <div class="qrt-social-links">
                   <h5 class="qrt-mb-40">Follow Us</h5>
@@ -97,7 +97,7 @@
                       <li><a href="https://in.linkedin.com/company/athiangames?trk=public_profile_experience-item_profile-section-card_subtitle-click" class="qrt-cursor-scale qrt-cursor-color"><i class="fab fa-linkedin-in"></i></a></li>
                       <!-- <li><a href="https://unrealengine.com/marketplace/en-US/profile/Athian+Games" class="qrt-cursor-scale qrt-cursor-color"><i class="fa fa-globe"></i></a></li> -->
 
-                      
+
                   </ul>
                 </div>
             </div>
@@ -112,16 +112,16 @@
             </div>-->
             <div class="qrt-copy">
               <!-- author ( Please! Do not delete it. You are awesome! :) -->
-              <div> 
+              <div>
                 {{with .Site.GetPage "disclaimer"}}
                   {{range .Pages}}
                   <a class="qrt-cursor-scale qrt-cursor-color" href="{{.Permalink}}" target="_blank">{{.Title}}</a> /
                   {{end}}
                 {{end}}
                 </div>
-         
+
                 <!-- author ( Please! Do not delete it. You are awesome! :) -->
-                <div class="mt-30"> &copy; {{ now.Year }} {{.Site.Params.legalname}} All Rights Reserved. <a class="qrt-cursor-scale qrt-cursor-color" href="//manikumar.in" target="_blank">Website Developed by Mani</a></div>
+                <div class="mt-30"> &copy; {{ now.Year }} {{.Site.Params.legalname}} All Rights Reserved. </div>
             </div>
 
           </div>
