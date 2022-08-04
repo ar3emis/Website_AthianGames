@@ -8,20 +8,21 @@ shortDescription: 'Learn to Develop a single player action adventure game from s
   a simple game with input, collision, basic AI, User Interface and audio.
 
   '
-mainImage: "/images/aos_fse_thumb.png"
+mainImage: "/images/courses_gameprogramming_cover.jpg"
 upcoming: false
 formURL: https://forms.gle/bUXWhDcSK8pynWZ4A
 
 ---
-Course Content
+## Course Content
 
-* Getting Started With C++ Project in Unreal Engine.
-* Introduction to Unreal Classes in C++.
-* Extending C++ With Blueprints.
-* Introduction to Slate.
-* Editor Tools Development with C++.
+* Getting Started With C++ Project in Unreal Engine
+* Introduction to Unreal Editor
+* Introduction to Blueprints
+* Extending C++ Classes in Blueprints
+* Creating Custom Character in C++ with Input Components
+* Adding  Gameplay Functionalities - Melee and Range Combats, Collision Triggers, Health and Damage System
+* Designing Simple Game UI with UMG
 
-  
 {{<html>}}
 
 <!--<div class="d-flex justify-content-center mt-auto px-0 py-4"> <video id="FeaturedVideo" style="display: block;" width="100%" controls=""> <source id="mp4" src="https://athiangames.com/videos/framecapture_demo.mp4" type="video/mp4"> </video> </div>-->
