@@ -44,6 +44,7 @@ features:
 - description: Built in support for designing changeable material property layout
     for every Mesh Component.
   title: Changeable Material Property
+  image: "/images/rfbxi_features_changeablematerial.jpg"
 - title: Custom FBX Actor
   description: Every FBX scene imported is represented by a custom actor which hosts
     all the Procedural Mesh Components generated from the nodes read from the source
