@@ -6,4 +6,4 @@ shortDescription: Unreal Authorized Instructor
 authorizedInstructorImage: "/images/authorized.svg"
 
 ---
-Sameek  has extensive knowledge on the Unreal Engine, with eight years of experience working with UE4, and now a year with UE5,  from C++ gameplay programming, to editor scripting , UI and Slate, Niagara VFX , Materials and Shaders, he is known to work on a variety of stunning projects.
+Sameek has extensive experience with the engine and a deep understanding of the source code. His journey with Unreal started back in March 2014, when Unreal Engine 4 was released, and ever since he has extensively worked on building amazing contents in UE. He has shipped over a dozen plugins in the Unreal Engine marketplace. He is a skeptical optimist who is never afraid to challenge the status quo and ask tough questions. He is an avid gamer with an appreciation for, and understanding of, story-driven gameplay.
