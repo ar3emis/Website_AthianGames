@@ -1,5 +1,5 @@
 TableOfContents = false
-baseurl = "https://athiangames.netlify.app"
+baseurl = "https://athiangames.com/"
 disableHugoGeneratorInject = true
 enableRobotsTXT = true
 languageCode = "en-us"
