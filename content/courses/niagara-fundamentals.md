@@ -5,7 +5,7 @@ shortDescription: |-
   This one-day hands-on workshop teaches the basics of particle effects using the Unreal Engine's Niagara particle system.
 
   The Niagara VFX system from Unreal Engine is a tool to realize visual effects. Breathtaking particle effects, realistic environment effects and interactive particle simulations can be realized with Niagara. The goal of the training is to teach the essential workflows to create VFX effects on your own.
-mainImage: "/images/unrealcpplogo.png"
+mainImage: "/images/courses_niagarafundamentals_cover.jpg"
 upcoming: false
 formURL: ''
 
