@@ -1,10 +1,12 @@
 ---
 date: 
 title: Niagara Fundamentals
-shortDescription: |-
-  This one-day hands-on workshop teaches the basics of particle effects using the Unreal Engine's Niagara particle system.
-
-  The Niagara VFX system from Unreal Engine is a tool to realize visual effects. Breathtaking particle effects, realistic environment effects and interactive particle simulations can be realized with Niagara. The goal of the training is to teach the essential workflows to create VFX effects on your own.
+shortDescription: With Niagara FX System, you can create high quality visual effects
+  in Unreal Engine. With Modular workflow and user friendly design interface, you
+  can get started creating breathtaking effects in no time. With Niagara you can develop
+  a variety of FX, from realistic environments, to stylized and interactive particle
+  simulations. This training focusses on covering the basics of Niagara, and strengthen
+  your fundamentals in Visual Effects in Unreal Engine.
 mainImage: "/images/courses_niagarafundamentals_cover.jpg"
 upcoming: false
 formURL: ''
@@ -12,11 +14,12 @@ formURL: ''
 ---
 ## Course Content
 
-* Cascade vs Niagara
-* Overview of Niagara Tools - Niagara terminology (modules, emitters, systems)
-* Inheritance (Overrides, Dynamic Inputs, Expressions)
-* HLSL functions in Niagara
-* Events
-* Interfaces
-* Houdini export to Niagara
-* Camera and Occlusion Queries
+* Overview of Niagara Editor - Emitters, Systems , Module Scripts
+* Understanding Niagara Stages of Simulation - Emitter Spawn, Emitter Update , Particle Spawn , Particle Update
+* Niagara Modules and Variables
+* Basic Niagara FX Example
+* Types of Renderers
+* Creating Custom Material for the FX
+* Generating Evens in Niagara
+* Creating a Custom Module Script
+* Advanced Niagara FX Example
