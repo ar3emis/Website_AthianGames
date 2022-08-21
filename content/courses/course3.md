@@ -10,7 +10,7 @@ shortDescription: 'Learn to Develop a single player action adventure game from s
   '
 mainImage: "/images/courses_gameprogramming_cover.jpg"
 upcoming: false
-formURL: https://forms.gle/bUXWhDcSK8pynWZ4A
+formURL: https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
 
 ---
 ## Course Content
