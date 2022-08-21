@@ -1,5 +1,5 @@
 ---
-title: "Plugin"
+title: "Product"
 topText: ''
 bottomText: ''
 seotitle: ""
