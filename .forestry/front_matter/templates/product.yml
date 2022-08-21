@@ -65,6 +65,7 @@ fields:
   - type: file
     name: image
     label: image
+    default: "/images/minimapcover.png"
   - type: text
     name: title
     label: title
