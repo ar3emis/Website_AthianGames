@@ -1,10 +1,10 @@
 ---
-title: "Plugin Categories"
+title: "Product Categories"
 topText: ''
 bottomText: ''
 seotitle: ""
 seodescription: ""
-image: ""
+image: "img/banners/banner1.jpg"
 canonical: ""
 private: ""
 draft: false
