@@ -25,6 +25,7 @@ fields:
   config:
     maxSize: 64
   label: image
+  default: "/images/minimapcover.png"
 - type: field_group_list
   name: buttons
   label: buttons
@@ -65,6 +66,7 @@ fields:
   - type: file
     name: image
     label: image
+    default: "/images/minimapcover.png"
   - type: text
     name: title
     label: title
