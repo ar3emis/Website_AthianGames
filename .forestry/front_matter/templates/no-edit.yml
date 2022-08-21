@@ -17,10 +17,6 @@ fields:
   name: image
   label: image
   description: Thumbnail & SEO Image
-- type: file
-  name: bgImage
-  label: bgImage
-  description: Banner Background Image. Default's to bgImage.
 - type: boolean
   name: private
   label: private

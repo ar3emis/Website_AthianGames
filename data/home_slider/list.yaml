@@ -8,7 +8,7 @@
   topText: Make Awesome Gameplay
   bottomText: Use the power of Unreal Engine 4 with our useful generic assets and
     code products that would greatly aid in the development of your Unreal Projects.
-  bgImage: "/videos/showreelbg.mp4"
+  bannerImage: "/videos/showreelbg.mp4"
 - button:
   - buttonText: Get It Here
     buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-distortion-and-glitches
@@ -18,7 +18,7 @@
   topText: 'Art of  Shader: Distortion and Glitches'
   bottomText: 'Add Distortion and Glitched Effects to your Scenes and Assets with
     this pack of customizable post process materials and Niagara VFX. '
-  bgImage: "/uploads/aos-banner.jpg"
+  bannerImage: "/uploads/aos-banner.jpg"
 - button:
   - buttonText: Get It Here
     buttonLink: https://www.unrealengine.com/marketplace/en-US/product/procedural-vortex-tunnel
@@ -29,7 +29,7 @@
   bottomText: Redefine your imagination with the Procedural Vortex Tunnel, a plugin
     that lets you create a highly customizable Material Driven Vortex System along
     a given spline path.
-  bgImage: "/images/screenshot_003.png"
+  bannerImage: "/images/screenshot_003.png"
 - button:
   - buttonText: Learn More
     buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-stylized-post-process-pack
@@ -39,7 +39,7 @@
   topText: 'Art of Shader : Stylized Post Process'
   bottomText: From Filmic and Camera Effects to Stylized and Transitioning Shaders,
     we got you covered.
-  bgImage: "/uploads/aos-banner.jpg"
+  bannerImage: "/uploads/aos-banner.jpg"
 - button:
   - buttonText: Learn More
     buttonLink: https://www.unrealengine.com/marketplace/en-US/product/runtime-fbx-import-asynchronous
@@ -48,4 +48,4 @@
     showreelLink: https://www.youtube.com/watch?v=qrB7rDunSrM&feature=youtu.be
   topText: Runtime FBX Import
   bottomText: Asynchronously Import FBX files in your Unreal projects, in runtime.
-  bgImage: "/uploads/fbximport.webp"
+  bannerImage: "/uploads/fbximport.webp"

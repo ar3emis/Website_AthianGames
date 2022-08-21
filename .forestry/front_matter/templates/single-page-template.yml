@@ -28,9 +28,9 @@ fields:
   label: image
   description: Thumbnail & SEO Image
 - type: file
-  name: bgImage
-  label: bgImage
-  description: Banner Background Image. Default's to bgImage.
+  name: bannerImage
+  label: bannerImage
+  description: Banner Background Image. Default's to ^ Thumbnail & SEO Image.
 - type: field_group_list
   name: buttons
   label: buttons

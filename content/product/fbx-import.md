@@ -65,7 +65,7 @@ description: 'With this plugin, you can import FBX files along with all the text
   entire scene comprising of various interactive actors, from a single FBX file.
 
   '
-bgImage: ''
+bannerImage: ''
 fontFamily: Verdana
 contentFontSize: 16px
 featureTitleFontSize: 18px
