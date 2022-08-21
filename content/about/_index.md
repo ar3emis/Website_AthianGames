@@ -6,6 +6,7 @@ seotitle: ''
 seodescription: ''
 image: ''
 canonical: ''
-private: ''
+private: false
+bgImage: "/images/vortextunnel_thumbnail.png"
 
 ---
