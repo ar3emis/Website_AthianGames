@@ -4,9 +4,9 @@ topText: ''
 bottomText: ''
 seotitle: ''
 seodescription: ''
-image: '/images/vortextunnel_thumbnail.png'
+image: "/images/aboutmecover.jpg"
 canonical: ''
 private: false
-bannerImage: ""
+bannerImage: ''
 
 ---
