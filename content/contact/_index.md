@@ -10,5 +10,8 @@ seodescription: ''
 image: ''
 canonical: ''
 private: ''
+menu:
+  main:
+    weight: 4
 
 ---

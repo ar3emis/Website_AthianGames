@@ -1,10 +1,10 @@
 TableOfContents = false
 baseurl = "https://athiangames.com/"
+buildFuture = true
 disableHugoGeneratorInject = true
 enableRobotsTXT = true
 languageCode = "en-us"
 metaDataFormat = "yaml"
-buildFuture = true
 paginate = 9
 summaryLength = 5
 theme = "athian_games_theme"
