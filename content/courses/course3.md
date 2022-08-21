@@ -20,6 +20,7 @@ formURL: https://forms.gle/bUXWhDcSK8pynWZ4A
 * Introduction to Blueprints
 * Extending C++ Classes in Blueprints
 * Creating Custom Character in C++ with Input Components
+* Creating AI System - Behavior Tree, AIController, Simple AI Navigation and Detection
 * Adding  Gameplay Functionalities - Melee and Range Combats, Collision Triggers, Health and Damage System
 * Designing Simple Game UI with UMG
 
