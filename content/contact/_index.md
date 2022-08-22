@@ -12,6 +12,7 @@ canonical: ''
 private: ''
 menu:
   main:
-    weight: 4
+    weight: 2
+    parent: About
 
 ---
