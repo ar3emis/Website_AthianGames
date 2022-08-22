@@ -6,6 +6,8 @@ coursesListTitle: Our Courses
 upcomingCoursesListTitle: Short Term Courses
 menu:
   main:
-    weight: 3
+    name: Unreal Courses
+    weight: 1
+    parent: Courses
 
 ---
