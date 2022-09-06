@@ -19,7 +19,7 @@
 
             {{ range .Site.Menus.main }}
                   {{ if .HasChildren }}
-                  <li {{if in ($.Permalink) (.URL | absURL )}}class="current-menu-item"{{end}}>
+                  <li {{if and (in ($.Permalink) (.URL | absURL )) (ne (len (.URL | chomp) ) 0 ) }}class="current-menu-item"{{end}}>
                   <a href="{{ .URL }}"  class="qrt-mobile-fix" >{{ .Name | safeHTML}}
 
                   </a>
@@ -31,7 +31,7 @@
                         </ul>
                         {{ else }}
 
-                  <li {{if in ($.Permalink) (.URL | absURL )}}class="current-menu-item"{{end}}>
+                  <li {{if and (in ($.Permalink) (.URL | absURL )) (ne (len (.URL | chomp) ) 0 ) }}class="current-menu-item"{{end}}>
 
                   <a href="{{ .URL }}" >
 
