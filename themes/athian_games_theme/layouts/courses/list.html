@@ -7,7 +7,23 @@
   <section class="qrt-left column product-content">
     {{ partial "courses/courses-list.html" . }}
   </section>
+  <section class="qrt-right column product-content">
+  {{ partial "courses/enrol-form.html" . }}
+  </section>
+<!--  <section class="qrt-left column product-content">-->
+<!--    <div class="col-md-12">-->
+<!--       <div class="mapouter map-container-2">-->
+<!--        <iframe-->
+<!--           src="https://maps.google.com/maps?q=Tata%20housing%20Avenida&t=&z=13&ie=UTF8&iwloc=&output=embed">-->
+<!--        </iframe>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--  </section>-->
+
 </div>
+
+
+
 <script language="javascript" type="text/javascript" src="{{ "/js/accordion.js" | urlize | relURL }}"></script>
 <script language="javascript" type="text/javascript" src="{{ "/js/modal.js" | urlize | relURL }}"></script>
 <script language="javascript" type="text/javascript" src="{{ "/js/product.js" | urlize | relURL }}"></script>

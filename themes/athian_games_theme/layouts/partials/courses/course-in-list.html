@@ -4,13 +4,13 @@
     <h3 class="course-title">{{.Title}}</h3>
     <p class="course-short-description">{{.Params.shortDescription}}</p>
     <p class="course-learn-more">Learn more &rightarrow;</p>
-  </div> 
+  </div>
 </div>
 <div class="accordion-panel">
   <div class="course-panel-description">
     {{.Content}}
   </div>
-  {{ if eq .Params.upcoming false }}
-    {{ partial "courses/enrol-form.html" . }}
-  {{ end }}
+<!--  {{ if eq .Params.upcoming false }}-->
+<!--    {{ partial "courses/enrol-form.html" . }}-->
+<!--  {{ end }}-->
 </div>
