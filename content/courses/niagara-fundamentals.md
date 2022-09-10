@@ -8,7 +8,7 @@ shortDescription: With Niagara FX System, you can create high quality visual eff
   simulations. This training focusses on covering the basics of Niagara, and strengthen
   your fundamentals in Visual Effects in Unreal Engine.
 mainImage: "/images/courses_niagarafundamentals_cover.jpg"
-upcoming: false
+upcoming: true
 formURL: https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
 
 ---
