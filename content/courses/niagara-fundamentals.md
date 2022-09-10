@@ -34,4 +34,4 @@ Unreal Engine 5
 
 ### Prerequisite 
 
-None. This course is suitable for beginners who are willing to dive into the VFX Pipeline of Unreal, as well as for advanced users hoping to improve their knowledge and skills in Niagara. 
+None. This course is suitable for beginners who are willing to dive into the VFX Pipeline of Unreal, as well as for advanced users hoping to improve their knowledge and skills in Niagara.
