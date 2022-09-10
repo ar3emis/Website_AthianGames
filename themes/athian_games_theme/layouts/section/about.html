@@ -64,7 +64,7 @@
       </div>
     </section>
 
-<!--    &lt;!&ndash; story section html starts &ndash;&gt;-->
+    <!-- story section html starts -->
 <!--    <section class="story-wrap">-->
 <!--      <div class="container">-->
 <!--        <div class="row">-->
@@ -94,9 +94,9 @@
 <!--        </div>-->
 <!--      </div>-->
 <!--    </section>-->
-<!--    &lt;!&ndash; story section html ends &ndash;&gt;-->
+<!--     story section html ends-->
 
-<!--    &lt;!&ndash; what we do section start &ndash;&gt;-->
+<!--     what we do section start-->
 <!--    <section class="what-we-do-wrap">-->
 <!--      <div class="container">-->
 <!--        <div class="row">-->
@@ -107,22 +107,16 @@
 <!--              <p>-->
 <!--                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.-->
 <!--              </p>-->
-<!--              <p>-->
-<!--                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.-->
-<!--              </p>-->
-<!--              <p>-->
-<!--                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.-->
-<!--              </p>-->
 <!--            </div>-->
 <!--          </div>-->
 
-<!--          <div class="col-md-4 p-0 video-wrapper">-->
-<!--            <div class="youtube-container">-->
-<!--              <div id="youtube-player" class="youtube-player" style="height:500px">-->
-<!--                <iframe src="" frameborder="0" allowfullscreen="true" class="youtube-iframe">-->
+<!--          <div class="col-md-4 p-0 yt-video-wrapper">-->
+<!--            <div class="yt-video-container">-->
+<!--              <div class="yt-video-player">-->
+<!--                <iframe src="" frameborder="0" allowfullscreen="true" class="yt-video-iframe">-->
 <!--                </iframe>-->
-<!--                <div class="youtube-thumb-wrap">-->
-<!--                  <img class="youtube-thumbnail" id="youtube-thumbnail" src="/img/aboutmecover.jpg" alt="Youtube Preview">-->
+<!--                <div class="yt-thumb-wrap">-->
+<!--                  <img class="yt-thumb" src="https://athiangames.com/images/pvt_videothumbnail.jpg" alt="Video Preview" data-id="-yoDS9LK6p8">-->
 <!--                  <div class="youtube-play-btn"></div>-->
 <!--                </div>-->
 <!--              </div>-->
@@ -143,13 +137,12 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- js for youtube code -->
 <script type="text/javascript">
-  jQuery(".youtube-container .youtube-thumbnail").click(function(){
+  jQuery(".yt-video-container .yt-thumb").click(function(){
 
     var iframe = jQuery(this);
     var data_Id =iframe.data("id");
-    jQuery(this).parent().siblings(".youtube-iframe").attr("src","https://www.youtube.com/embed/" + data_Id + "?autoplay=1&mute=1").show();
+    jQuery(this).parent().siblings(".yt-video-iframe").attr("src","https://www.youtube.com/embed/" + data_Id + "?autoplay=1&mute=1").show();
     jQuery(this).parent().remove();
   });
 </script>
-
 {{end}}

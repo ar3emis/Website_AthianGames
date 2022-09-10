@@ -13,11 +13,15 @@
 
 {{ $custom_theme := resources.Get "css/custom_theme.css" }}
 
+{{ $addressmap := resources.Get "css/addressmap.css" }}
+
+{{ $about := resources.Get "css/about.css" }}
+
 {{- if .Site.IsServer -}}
-{{ $style := slice $bootstrap $fontawesome $swiper $fancybox $mapbox $main $custom_theme | resources.Concat "bundle.css" }}
+{{ $style := slice $bootstrap $fontawesome $swiper $fancybox $mapbox $main $custom_theme $addressmap $about | resources.Concat "bundle.css" }}
 <link rel="stylesheet" href="{{ $style.Permalink }}" lazyload>
 
 {{- else -}}
-{{ $style := slice $bootstrap $fontawesome $swiper $fancybox $mapbox $main $custom_theme  | resources.Concat "bundle.css" | minify | fingerprint }}
+{{ $style := slice $bootstrap $fontawesome $swiper $fancybox $mapbox $main $custom_theme $addressmap $about | resources.Concat "bundle.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}" lazyload>
 {{- end }}

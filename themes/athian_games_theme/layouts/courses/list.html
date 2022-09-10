@@ -22,7 +22,47 @@
 
 </div>
 
+<div class="qrt-half-content-frame column bg-grey">
+  <section class="qrt-left column product-content">
+    <div class="contact-wrap">
+      <div class="row align-items-center">
 
+        <div class="col-md-6 mb-4">
+          <h2 class="contact-heading">Get In Touch</h2>
+          <h4 class="contact-title">Our Address</h4>
+          <address>
+            Plot No. II, G/7, Tata Avenida,  <br>
+            Dorabji Tata Road, Action Area 2, <br>
+            Newtown, Kolkata 700156, <br>
+            West Bengal, India <br>
+          </address>
+
+          <div class="contact-list">
+            <h5 class="contact-title">Email Address</h5>
+            <a href="mailto:sameek.kundu@athiangames.com">
+              <i class="fa fa-envelope"></i>sameek.kundu@athiangames.com
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class = "map-container-2" id = "gmap-holder">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.9493826367757!2d88.49415803235468!3d22.58099639804581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a020b5260fb2f63%3A0x602b2ecdbf2b73b4!2sAvenida%20Tower%20B!5e0!3m2!1sen!2sin!4v1662814547071!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>       </div>
+    </div>
+  </section>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+  $(function() {
+
+    $('#gmap-holder').click(function(e) {
+      $(this).find('iframe').css('pointer-events', 'all');
+    }).mouseleave(function(e) {
+      $(this).find('iframe').css('pointer-events', 'none');
+    });
+  })
+</script>
 
 <script language="javascript" type="text/javascript" src="{{ "/js/accordion.js" | urlize | relURL }}"></script>
 <script language="javascript" type="text/javascript" src="{{ "/js/modal.js" | urlize | relURL }}"></script>
