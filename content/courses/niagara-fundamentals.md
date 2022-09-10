@@ -24,6 +24,14 @@ formURL: https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4
 * Creating a Custom Module Script
 * Advanced Niagara FX Example
 
-<h3>Duration</h3>
+### Duration
 
 8 hours , divided into 4 sessions
+
+### Software Version
+
+Unreal Engine 5
+
+### Prerequisite 
+
+None. This course is suitable for beginners who are willing to dive into the VFX Pipeline of Unreal, as well as for advanced users hoping to improve their knowledge and skills in Niagara. 
