@@ -20,6 +20,10 @@ formURL: https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4
 * Basic Niagara FX Example
 * Types of Renderers
 * Creating Custom Material for the FX
-* Generating Evens in Niagara
+* Generating Events in Niagara
 * Creating a Custom Module Script
 * Advanced Niagara FX Example
+
+<h3>Duration</h3>
+
+8 hours , divided into 4 sessions
