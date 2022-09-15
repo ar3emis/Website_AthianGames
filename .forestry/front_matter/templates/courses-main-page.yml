@@ -29,6 +29,4 @@ fields:
   label: upcomingCoursesListTitle
 - type: text
   name: formURL
- config:
-     required: false
- label: formURL
+  label: formURL
