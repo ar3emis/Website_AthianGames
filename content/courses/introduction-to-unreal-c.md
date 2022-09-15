@@ -10,7 +10,7 @@ shortDescription: "Learn to create awesome gameplay with Unreal C++. In this cou
   right practices and methodologies that our instructors have spent years in mastering
   and perfecting. "
 mainImage: "/images/unrealcpplogo.png"
-upcoming: false
+upcoming: true
 formURL: https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
 
 ---
@@ -19,8 +19,8 @@ formURL: https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4
 * Getting Started With C++ Project in Unreal Engine.
 * Introduction to Unreal Classes in C++.
 * Extending C++ With Blueprints.
-* Introduction to Slate.
-* Editor Tools Development with C++.
+* Implementing Gameplay functionalities using Unreal C++.
+* Basics of Editor Tools Development with C++.
 
 {{<html>}}
 
@@ -31,3 +31,15 @@ formURL: https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4
 </div>
 
 {{</html>}}
+
+### Duration
+
+6 hours , divided into 3 sessions
+
+### Software Version
+
+Unreal Engine 5
+
+### Prerequisite
+
+Basic Knowledge in Programming, specially C++ or similar languages that support Object Oriented Programming. This course is suitable for beginners willing to get the most out of Unreal Engine using C++ and Blueprints.
