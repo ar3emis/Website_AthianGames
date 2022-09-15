@@ -17,11 +17,7 @@ fields:
 - type: boolean
   name: upcoming
   label: upcoming
-- name: formURL
-  type: text
-  config:
-    required: false
-  label: formURL
+
 pages:
 - content/courses/course3.md
 - content/courses/introduction-to-unreal-c.md
