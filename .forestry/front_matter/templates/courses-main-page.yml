@@ -27,3 +27,8 @@ fields:
 - type: text
   name: upcomingCoursesListTitle
   label: upcomingCoursesListTitle
+- type: text
+  name: formURL
+ config:
+     required: false
+ label: formURL
