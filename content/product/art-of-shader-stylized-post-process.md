@@ -16,8 +16,8 @@ buttons:
   buttonText: Documentation
 - buttonLink: https://discord.com/invite/6qh6Cuy
   buttonText: Join Discord
-seotitle: ''
-seodescription: ''
+seotitle: Art of Shader
+seodescription: Shader hlsl post process materials FX Unreal engine
 canonical: ''
 private: false
 bannerImage: "/images/aos_stylizedpostprocess_screensho08.jpg"
