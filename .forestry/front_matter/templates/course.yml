@@ -17,7 +17,6 @@ fields:
 - type: boolean
   name: upcoming
   label: upcoming
-
 pages:
 - content/courses/course3.md
 - content/courses/introduction-to-unreal-c.md
