@@ -5,12 +5,11 @@ topText: Art Of Shader - Distortion And Glitches
 bottomText: A series of customizable Shaders and Niagara FX that can be combined,
   blended , grouped and localized to give different types of distorted and glitched
   effect to your actors and scenes.
-summary: Distortion And Glitches is a series of customizable Shaders and Niagara FX
-  that can be combined, blended , grouped and localized to give different types of
-  distorted and glitched effect to your actors and scenes.
+summary: A series of customizable Shaders and Niagara FX that gives distorted and
+  glitched effects to your actors and scenes.
 product_categories:
 - Art Of Shader
-image: "/images/aos_stylizedpostprocess_thumb.png"
+image: "/images/aos_dg_thumbs.png"
 buttons:
 - buttonText: Get It Here
   buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-stylized-post-process-pack
@@ -22,9 +21,9 @@ seotitle: ''
 seodescription: ''
 canonical: ''
 private: false
-bannerImage: "/images/aos_stylizedpostprocess_screensho08.jpg"
+bannerImage: "/images/aos_dg.png"
 contentVideoId: WApWjoeoubw
-contentVideoThumbnail: "/images/aos_stylizedpostprocess_screensho08.jpg"
+contentVideoThumbnail: "/images/aos_dg.png"
 features:
 - image: "/images/aos_spp_features_ppmaterials.jpg"
   title: Customizable Post Process Shaders
@@ -32,7 +31,7 @@ features:
 - title: Multiple Functionalities and usecases for every shader
   description: Each Effect can be used as Post Process Blendable Material , Niagara
     FX , and Mesh Material with World Displacement.
-  image: "/images/aos_spp_features_bgshading.jpg"
+  image: "/images/aos_dg_multiplefunctionalities.jpg"
 - image: "/images/minimapcover.png"
   title: Background Shading via SceneDepth
   description: Separate out the MainObjects placed in the environment from the Background
