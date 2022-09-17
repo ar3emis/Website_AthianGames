@@ -23,7 +23,7 @@ seodescription: ''
 canonical: ''
 private: false
 bannerImage: "/images/aos_stylizedpostprocess_screensho08.jpg"
-contentVideoId: sbMpSzikMo0
+contentVideoId: WApWjoeoubw
 contentVideoThumbnail: "/images/aos_stylizedpostprocess_screensho08.jpg"
 features:
 - image: "/images/aos_spp_features_ppmaterials.jpg"
@@ -33,6 +33,11 @@ features:
   description: Each Effect can be used as Post Process Blendable Material , Niagara
     FX , and Mesh Material with World Displacement.
   image: "/images/aos_spp_features_bgshading.jpg"
+- image: "/images/minimapcover.png"
+  title: Background Shading via SceneDepth
+  description: Separate out the MainObjects placed in the environment from the Background
+    via SceneDepth. Apply different shader combination simultaneously to your main
+    environment and background scene.
 - image: "/images/aos_spp_features_blueprintactor.jpg"
   title: AOS Blueprint Actor for Grouping and Combining
   description: The AOS Blueprint Actor for easily combining and grouping multiple
@@ -65,7 +70,6 @@ fontFamily: Courier New
 contentFontSize: 16px
 featureTitleFontSize: 18px
 featureTextFontSize: 16px
-draft: true
 
 ---
 {{<html>}}
