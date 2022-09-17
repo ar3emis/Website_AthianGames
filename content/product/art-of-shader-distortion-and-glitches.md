@@ -47,6 +47,10 @@ features:
   description: Object Space Localization allows you to apply the shaders only to certain
     objects, or exclude certain objects from given effects, via custom depth stencils
   buttons: []
+- image: "/images/aos_dg_localizationwithniagara.jpg"
+  title: Object Space Localization with Niagara
+  description: Glitch and Distort individual Actors in Scene with the extremely powerful
+    Niagara System
 - image: "/images/aos_spp_features_sslocalizations.jpg"
   title: ScreenSpace Localization
   description: ScreenSpace Localization lets you split the screen based on user defined
