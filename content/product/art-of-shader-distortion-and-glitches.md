@@ -1,11 +1,13 @@
 ---
 date: 2018-10-07T17:00:00.000+05:30
 title: Art Of Shader - Distortion And Glitches
-topText: Art Of Shader - Stylized Post Process
-bottomText: The ultimate Stylized Post Process Effect pack, with 40 Materials that
-  can be combined and blended to give your scene a unique stylized look.
-summary: Give your scene a unique stylized look with this customizable Post Process
-  Shader Pack
+topText: Art Of Shader - Distortion And Glitches
+bottomText: A series of customizable Shaders and Niagara FX that can be combined,
+  blended , grouped and localized to give different types of distorted and glitched
+  effect to your actors and scenes.
+summary: Distortion And Glitches is a series of customizable Shaders and Niagara FX
+  that can be combined, blended , grouped and localized to give different types of
+  distorted and glitched effect to your actors and scenes.
 product_categories:
 - Art Of Shader
 image: "/images/aos_stylizedpostprocess_thumb.png"
@@ -25,13 +27,11 @@ contentVideoId: sbMpSzikMo0
 contentVideoThumbnail: "/images/aos_stylizedpostprocess_screensho08.jpg"
 features:
 - image: "/images/aos_spp_features_ppmaterials.jpg"
-  title: Customizable Stylized Post Process Shaders
-  description: '40 Stylized Post Process Blendable Materials, divided into 26 MainShaders
-    and 11 SceneShaders, to give a unique stylized post process effect to your scene. '
-- title: Background Shading Via SceneDepth
-  description: Separate out the MainObjects placed in the environment from the Background
-    via SceneDepth. Apply different shader combination simultaneously to your main
-    environment and background scene.
+  title: Customizable Post Process Shaders
+  description: 40 Different Types of Parameterized Distortion And Glitched Effects.
+- title: Multiple Functionalities and usecases for every shader
+  description: Each Effect can be used as Post Process Blendable Material , Niagara
+    FX , and Mesh Material with World Displacement.
   image: "/images/aos_spp_features_bgshading.jpg"
 - image: "/images/aos_spp_features_blueprintactor.jpg"
   title: AOS Blueprint Actor for Grouping and Combining
@@ -53,12 +53,14 @@ features:
   title: Runtime Examples
   description: AOSRuntime Blueprints and Widgets, including Dynamic UMG Based Color
     Wheel allows you to tweak and modify the post process materials at runtime
-description: Art of Shader - Stylized Post Process is a pack of 40 Post Process Blendable
-  Materials that you customize and tweak to create a unique stylized look for your
-  scene. The Blueprint Actors facilitate the easy combining, blending and grouping
-  of the Post process materials based on certain common properties. From WaterColor,
-  OilPaint, Aquarelle, Cartoon, ComicBook , CelShaded and many more Effects, choose,
-  combine and customize via the parameterized material instances to suit your style.
+description: Art of Shader - Distortion And Glitches is a pack of 40 Customizable
+  Shaders, that can be used in Post Process Blendable Materials , Niagara FX, as well
+  as Mesh Materials to create a variety of distorted and glitched effect to your actors
+  and scenes. The Blueprint Actors facilitate the easy combining, blending and grouping
+  of the Post process materials based on certain common properties. From Artifacts,
+  VCRGlitch, GlitcySpectrum, Wavy, InterlacedGlitch, BlockySurface, BrokenPixels and
+  many more Effects, choose, combine and customize via the parameterized material
+  instances to suit your style.
 fontFamily: Courier New
 contentFontSize: 16px
 featureTitleFontSize: 18px
