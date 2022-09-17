@@ -9,7 +9,7 @@ summary: A series of customizable Shaders and Niagara FX that gives distorted an
   glitched effects to your actors and scenes.
 product_categories:
 - Art Of Shader
-image: "/images/aos_dg_thumbs.png"
+image: "/images/aos_dg_thumb.jpg"
 buttons:
 - buttonText: Get It Here
   buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-stylized-post-process-pack
