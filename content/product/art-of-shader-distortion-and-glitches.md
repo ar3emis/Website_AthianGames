@@ -43,7 +43,7 @@ features:
     Blendable Materials based on common properties
   buttons: []
 - image: "/images/aos_spp_features_oslocalizations.jpg"
-  title: Object Space Localization
+  title: Object Space Localization via Depth Stencil
   description: Object Space Localization allows you to apply the shaders only to certain
     objects, or exclude certain objects from given effects, via custom depth stencils
   buttons: []
