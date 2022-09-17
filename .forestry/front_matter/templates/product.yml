@@ -51,6 +51,7 @@ fields:
 - type: file
   name: bannerImage
   label: bannerImage
+  default: "/images/minimapcover.png"
 - type: text
   name: contentVideoId
   label: contentVideoId
