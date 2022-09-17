@@ -4,8 +4,8 @@ title: Art Of Shader - Stylized Post Process
 topText: Art Of Shader - Stylized Post Process
 bottomText: The ultimate Stylized Post Process Effect pack, with 40 Materials that
   can be combined and blended to give your scene a unique stylized look.
-summary: Give your scene a unique stylized look with this customizable Post Process
-  Shader Pack
+summary: Give a unique stylized look to your actors and scenes with this customizable
+  Post Process Shader Pack
 product_categories:
 - Art Of Shader
 image: "/images/aos_stylizedpostprocess_thumb.png"
