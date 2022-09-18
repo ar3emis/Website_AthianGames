@@ -32,7 +32,7 @@ features:
   description: Each Effect can be used as Post Process Blendable Material , Niagara
     FX , and Mesh Material with World Displacement.
   image: "/images/aos_dg_multiplefunctionalities.jpg"
-- image: "/images/minimapcover.png"
+- image: "/images/aos_spp_features_bgshading.jpg"
   title: Background Shading via SceneDepth
   description: Separate out the MainObjects placed in the environment from the Background
     via SceneDepth. Apply different shader combination simultaneously to your main
