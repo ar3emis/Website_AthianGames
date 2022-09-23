@@ -1,7 +1,7 @@
 ---
 date: '2022-05-19T14:59:10.000+00:00'
 name: Sameek Kundu
-image: "/images/directorpic.jpg"
+image: "/images/profilepic.png"
 shortDescription: Unreal Authorized Instructor
 authorizedInstructorImage: "/images/authorized.svg"
 
