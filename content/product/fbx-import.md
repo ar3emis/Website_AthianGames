@@ -40,7 +40,9 @@ features:
   title: Custom collisions
   description: Custom collisions can be applied in the generated mesh component via
     UCX_ prefix as read from the source file.
-  buttons: []
+  buttons:
+  - buttonText: Learn More
+    buttonLink: https://docs.athiangames.com/doc_fbximport#CreatingCollisions
 - description: Built in support for designing changeable material property layout
     for every Mesh Component.
   title: Changeable Material Property
