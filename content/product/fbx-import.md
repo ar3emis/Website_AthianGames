@@ -28,7 +28,9 @@ features:
     The process is fully asynchronous, ensuring the game thread is not blocked, so
     that you can perfrom other operations, like displaying a progress bar, while the
     FBX is being loaded.
-  buttons: []
+  buttons:
+  - buttonText: Learn More
+    buttonLink: https://docs.athiangames.com/doc_fbximport#TheImportFunction
 - image: "/images/rfbxi_features_importtextures.jpg"
   title: Auto Import Textures
   description: Relevant Textures(Diffuse, Normal, Specular, Opacity) are auto imported
