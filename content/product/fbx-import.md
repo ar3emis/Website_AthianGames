@@ -18,7 +18,7 @@ seotitle: ''
 seodescription: ''
 canonical: ''
 private: false
-bannerImage: "/images/assetimportcover.jpg"
+bannerImage: ''
 contentVideoId: qrB7rDunSrM
 contentVideoThumbnail: "/images/assetimportcover.jpg"
 features:
@@ -59,13 +59,15 @@ features:
     in desired location in hard drive, and loading it without importing it all over
     again, in the next session.
   image: "/images/rfbxi_features_loadingandsaving.jpg"
+  buttons:
+  - buttonText: Learn More
+    buttonLink: https://docs.athiangames.com/doc_fbximport#LoadingAndSaving
 description: 'With this plugin, you can import FBX files along with all the textures  and
   color values. Highly detailed FBX scenes can be loaded very fast, and grouping of
   a single file into Nodes and Material sections further allows you to generate an
   entire scene comprising of various interactive actors, from a single FBX file.
 
   '
-bannerImage: ''
 fontFamily: Verdana
 contentFontSize: 16px
 featureTitleFontSize: 18px
