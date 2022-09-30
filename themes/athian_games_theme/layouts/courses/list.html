@@ -7,31 +7,37 @@
   <section class="qrt-left column product-content">
     {{ partial "courses/courses-list.html" . }}
   </section>
-  <section class="qrt-right column product-content">
-  {{ partial "courses/enrol-form.html" . }}
-  </section>
-<!--  <section class="qrt-left column product-content">-->
-<!--    <div class="col-md-12">-->
-<!--       <div class="mapouter map-container-2">-->
-<!--        <iframe-->
-<!--           src="https://maps.google.com/maps?q=Tata%20housing%20Avenida&t=&z=13&ie=UTF8&iwloc=&output=embed">-->
-<!--        </iframe>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--  </section>-->
 
-</div>
+
+  </div>
 
 <div class="qrt-half-content-frame column bg-grey">
   <section class="qrt-left column product-content">
     <div class="contact-wrap">
       <div class="row align-items-center">
+        <h3>Upcoming Trainings</h3>
+        <div style="border: 1px inset silver; margin:15px 25px 5px 1px; padding: 15px;">
+          <div class="row" style="padding: 5px">
+<!--          <img src="/images/courseschedulingicon.png" alt="" height="100" width="85"/>-->
+          <h4 style="color: gray; font-family: 'Josefin Sans', sans-serif">We are currently preparing schedules for our
+            upcoming sessions. Enrol now and we will notify you when we schedule a session.</h4>
+          </div>
+          {{ partial "courses/enrol-form.html" . }}
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="qrt-left column product-content">
+    <div class="contact-wrap">
+      <div class="row align-items-center">
 
         <div class="col-md-6 mb-4">
-          <h2 class="contact-heading">Get In Touch</h2>
+          <h3 class="contact-heading">Get In Touch</h3>
           <h4 class="contact-title">Our Address</h4>
           <address>
-            Plot No. II, G/7, Tata Avenida,  <br>
+            Plot No. II, G/7, Tata Avenida, <br>
             Dorabji Tata Road, Action Area 2, <br>
             Newtown, Kolkata 700156, <br>
             West Bengal, India <br>
@@ -46,8 +52,14 @@
         </div>
 
         <div class="col-md-6 mb-4">
-          <div class = "map-container-2" id = "gmap-holder">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.9493826367757!2d88.49415803235468!3d22.58099639804581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a020b5260fb2f63%3A0x602b2ecdbf2b73b4!2sAvenida%20Tower%20B!5e0!3m2!1sen!2sin!4v1662814547071!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>       </div>
+          <div class="map-container-2" id="gmap-holder">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.9493826367757!2d88.49415803235468!3d22.58099639804581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a020b5260fb2f63%3A0x602b2ecdbf2b73b4!2sAvenida%20Tower%20B!5e0!3m2!1sen!2sin!4v1662814547071!5m2!1sen!2sin"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </div>
