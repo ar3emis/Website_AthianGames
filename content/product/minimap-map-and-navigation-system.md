@@ -9,7 +9,8 @@ title: Minimap, Map and Navigation System
 topText: Minimap, Map and Navigation System
 summary: Build a fully customized and texture based Minimap, Map and Navigation System
   for your next big title.
-product_categories: []
+product_categories:
+- GamePlay
 buttons:
 - buttonText: Get It Here
   buttonLink: https://www.unrealengine.com/marketplace/en-US/product/minimap-map-and-navigation-system
@@ -35,7 +36,8 @@ description: MInimap, Map and Navigation System is a plugin designed to create c
   via Datatable and each POI Actor class added to the Datatable has its own set of
   unique properties, making it simple to add a variety of different POI having different
   functionalities.
-bottomText: ''
+bottomText: Build a fully customized and texture based Minimap, Map and Navigation
+  System for your next big title.
 fontFamily: ''
 draft: true
 
