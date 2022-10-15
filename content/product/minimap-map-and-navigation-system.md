@@ -25,9 +25,12 @@ canonical: ''
 contentVideoId: zTLjtnlbFjU
 contentVideoThumbnail: "/images/minimapandnavigation_featured.jpg"
 features:
-- image: "/images/minimapcover.png"
+- image: "/images/minimap_texturebased.jpg"
   title: Texture Based Minimap System
-  description: ''
+  description: Your map is mapped to a custom texture that you can either design externally
+    or take a snapshot of the topview of your bounds area. Either way, Texture based
+    minimap ensures fastest performance as it eliminates the need of using a scene
+    capture component.
   buttons: []
 - image: "/images/minimapcover.png"
   title: Transition between multiple Map regions in same level
