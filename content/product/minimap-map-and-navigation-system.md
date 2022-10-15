@@ -1,5 +1,5 @@
 ---
-image: "/images/minimapcover.png"
+image: "/images/mapsystem.png"
 bannerImage: "/images/minimapcover.png"
 contentFontSize: "16"
 featureTitleFontSize: "18"
@@ -22,8 +22,8 @@ seotitle: ''
 seodescription: ''
 private: false
 canonical: ''
-contentVideoId: ''
-contentVideoThumbnail: ''
+contentVideoId: zTLjtnlbFjU
+contentVideoThumbnail: "/images/minimapandnavigation_featured.jpg"
 features:
 - image: "/images/minimapcover.png"
   title: Texture Based Minimap System
