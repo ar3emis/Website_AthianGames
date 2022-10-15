@@ -24,7 +24,52 @@ private: false
 canonical: ''
 contentVideoId: ''
 contentVideoThumbnail: ''
-features: []
+features:
+- image: "/images/minimapcover.png"
+  title: Texture Based Minimap System
+  description: ''
+  buttons: []
+- image: "/images/minimapcover.png"
+  title: Transition between multiple Map regions in same level
+  description: ''
+  buttons: []
+- image: "/images/minimapcover.png"
+  title: Datatable driven Static and Dynamic Points of Interest
+  description: ''
+  buttons: []
+- image: "/images/minimapcover.png"
+  title: Rectangular and Circular Minimap, with AutoRotate feature to rotate the map
+    with player rotation
+  description: ''
+  buttons: []
+- image: "/images/minimapcover.png"
+  title: Minimap Texture masking for non rectangular Bounds
+  description: ''
+  buttons: []
+- image: "/images/minimapcover.png"
+  title: Interactive Map , with Zoom and Pan functionalities
+  description: ''
+  buttons: []
+- image: "/images/minimapcover.png"
+  title: Customizable Navigation system, allowing user to add one or many Navigation
+    Markers in the world, to display the location of the destination
+  description: ''
+  buttons: []
+- image: "/images/minimapcover.png"
+  title: Navigation Out of Bounds notification, to display custom markers when player
+    camera view is not looking at the destination
+  description: ''
+  buttons: []
+- image: "/images/minimapcover.png"
+  title: Custom destination actors can be added to highlight the destination from
+    a distance
+  description: ''
+  buttons: []
+- image: "/images/minimapcover.png"
+  title: Navigation Exit actors as optional local destinations, when target is at
+    a different Bounds area
+  description: ''
+  buttons: []
 description: MInimap, Map and Navigation System is a plugin designed to create customizable
   and optimized texture based Minimaps and Maps for your next big title. Forget dealing
   with the limitations of RenderTargets to design your Minimaps, which are performance
