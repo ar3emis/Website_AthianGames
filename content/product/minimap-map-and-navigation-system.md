@@ -84,6 +84,5 @@ description: MInimap, Map and Navigation System is a plugin designed to create c
 bottomText: Build a fully customized and texture based Minimap, Map and Navigation
   System for your next big title.
 fontFamily: Verdana
-draft: true
 
 ---
