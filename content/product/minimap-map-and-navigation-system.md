@@ -1,9 +1,9 @@
 ---
 image: "/images/mapsystem.png"
 bannerImage: "/images/minimapcover.png"
-contentFontSize: "16"
-featureTitleFontSize: "18"
-featureTextFontSize: "16"
+contentFontSize: 16px
+featureTitleFontSize: 18px
+featureTextFontSize: 16px
 date: 
 title: Minimap, Map and Navigation System
 topText: Minimap, Map and Navigation System
