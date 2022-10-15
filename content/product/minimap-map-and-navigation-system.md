@@ -1,9 +1,9 @@
 ---
 image: "/images/minimapcover.png"
 bannerImage: "/images/minimapcover.png"
-contentFontSize: "24"
-featureTitleFontSize: "24"
-featureTextFontSize: "18"
+contentFontSize: "16"
+featureTitleFontSize: "18"
+featureTextFontSize: "16"
 date: 
 title: Minimap, Map and Navigation System
 topText: Minimap, Map and Navigation System
@@ -38,7 +38,7 @@ description: MInimap, Map and Navigation System is a plugin designed to create c
   functionalities.
 bottomText: Build a fully customized and texture based Minimap, Map and Navigation
   System for your next big title.
-fontFamily: ''
+fontFamily: Verdana
 draft: true
 
 ---
