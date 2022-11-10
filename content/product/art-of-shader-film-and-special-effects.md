@@ -15,7 +15,7 @@ buttons:
   buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-film-and-special-effects
 - buttonLink: https://docs.athiangames.com/doc_artofshader
   buttonText: Documentation
-- buttonLink: https://discord.com/invite/6qh6Cuy
+- buttonLink: https://discord.gg/DmZZbCj
   buttonText: Join Discord
 seotitle: Art of Shader
 seodescription: Shader hlsl post process materials FX Unreal engine
