@@ -34,8 +34,14 @@ features:
   buttons: []
 - image: "/images/minimapcover.png"
   title: Transition between multiple Map regions in same level
-  description: ''
-  buttons: []
+  description: 'The MapBounds Actor represents Bounds area corresponding to a given
+    Minimap. So having more than one MapBounds in a scene indicates switching between
+    multiple Minimaps depending on position of the player. This is very useful for
+    large or open world scenes, where you often need to switch your Minimap while
+    moving inside a different Bounds, like a cave, or a house interior. '
+  buttons:
+  - buttonText: Learn More
+    buttonLink: https://docs.athiangames.com/doc_minimapandmap.html#MapBoundsActor
 - image: "/images/minimapcover.png"
   title: Datatable driven Static and Dynamic Points of Interest
   description: ''
