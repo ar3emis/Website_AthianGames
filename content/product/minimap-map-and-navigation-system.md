@@ -32,7 +32,7 @@ features:
     minimap ensures fastest performance as it eliminates the need of using a scene
     capture component.
   buttons: []
-- image: "/images/minimapcover.png"
+- image: "/images/minimap_mapboundsactor.png"
   title: Transition between multiple Map regions in same level
   description: 'The MapBounds Actor represents Bounds area corresponding to a given
     Minimap. So having more than one MapBounds in a scene indicates switching between
