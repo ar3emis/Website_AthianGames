@@ -42,7 +42,7 @@ features:
   buttons:
   - buttonText: Learn More
     buttonLink: https://docs.athiangames.com/doc_minimapandmap.html#MapBoundsActor
-- image: "/images/minimapcover.png"
+- image: "/images/minimap_poielementtable.png"
   title: Datatable driven Static and Dynamic Points of Interest
   description: 'The actors which are displayed as Icons in Minimap as well as Map,
     also known as the Points of Interest(POI), are defined in a Datatable, derived
