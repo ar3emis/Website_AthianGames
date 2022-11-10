@@ -44,8 +44,17 @@ features:
     buttonLink: https://docs.athiangames.com/doc_minimapandmap.html#MapBoundsActor
 - image: "/images/minimapcover.png"
   title: Datatable driven Static and Dynamic Points of Interest
-  description: ''
-  buttons: []
+  description: 'The actors which are displayed as Icons in Minimap as well as Map,
+    also known as the Points of Interest(POI), are defined in a Datatable, derived
+    from the structure POIElement. Each row in our POIElement table represents a specific
+    Actor class that we want to highlight in our Minimap or Map or both. The POIActors
+    can either be static or dynamic, and is not limited to what it can represent.
+    It can be a pickup item, an NPC, enemies, or simply a Fast Travel system, the
+    applications are infinite. Each POIActor entry in the POIElement table has its
+    own sets of properties that increase further customization. '
+  buttons:
+  - buttonText: Learn More
+    buttonLink: https://docs.athiangames.com/doc_minimapandmap.html#POIElement
 - image: "/images/minimapcover.png"
   title: Rectangular and Circular Minimap, with AutoRotate feature to rotate the map
     with player rotation
