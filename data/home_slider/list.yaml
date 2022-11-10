@@ -18,7 +18,7 @@
   topText: 'Art of  Shader: Distortion and Glitches'
   bottomText: 'Add Distortion and Glitched Effects to your Scenes and Assets with
     this pack of customizable post process materials and Niagara VFX. '
-  bannerImage: "/uploads/aos-banner.jpg"
+  bannerImage: "/images/aos_dg.png"
 - button:
   - buttonText: Get It Here
     buttonLink: https://www.unrealengine.com/marketplace/en-US/product/procedural-vortex-tunnel
