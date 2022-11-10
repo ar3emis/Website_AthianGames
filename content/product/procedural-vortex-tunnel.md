@@ -21,7 +21,7 @@ seotitle: ''
 seodescription: ''
 private: false
 canonical: ''
-bannerImage: "/images/pvt_banner.jpg"
+bannerImage: ''
 contentVideoId: "-yoDS9LK6p8"
 contentVideoThumbnail: "/images/pvt_videothumbnail.jpg"
 features:
@@ -79,8 +79,7 @@ features:
 description: Procedural Vortex Tunnel is a plugin that lets you build a customizable
   Vortex Tunnel along a given Spline path procedurally through predefined sets of
   parameters.
-bannerImage: ''
-fontFamily: Verdana
+fontFamily: Courier New
 contentFontSize: 16px
 featureTitleFontSize: 18px
 featureTextFontSize: 16px
