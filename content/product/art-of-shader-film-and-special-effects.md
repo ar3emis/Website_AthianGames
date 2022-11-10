@@ -1,17 +1,18 @@
 ---
 date: 2018-10-07T17:00:00.000+05:30
 title: Art Of Shader - Film And Special Effects
-topText: Art Of Shader - Stylized Post Process
+topText: Art Of Shader - Film And Special Effects
 bottomText: The ultimate Stylized Post Process Effect pack, with 40 Materials that
   can be combined and blended to give your scene a unique stylized look.
-summary: Give a unique stylized look to your actors and scenes with this customizable
-  Post Process Shader Pack
+summary: Film and Special Effects is a series of customizable Post Process Materials
+  that can be combined, blended , grouped and localized to give advanced and useful
+  post process effects to your scene.
 product_categories:
 - Art Of Shader
-image: "/images/aos_stylizedpostprocess_thumb.png"
+image: "/images/fse_thumbnail.jpg"
 buttons:
 - buttonText: Get It Here
-  buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-stylized-post-process-pack
+  buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-film-and-special-effects
 - buttonLink: https://docs.athiangames.com/doc_artofshader
   buttonText: Documentation
 - buttonLink: https://discord.com/invite/6qh6Cuy
