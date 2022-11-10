@@ -5,9 +5,8 @@ topText: Art Of Shader - Film And Special Effects
 bottomText: Series of customizable Post Process Materials that can be combined, blended
   , grouped and localized to give advanced and useful post process effects to your
   scene.
-summary: Film and Special Effects is a series of customizable Post Process Materials
-  that can be combined, blended , grouped and localized to give advanced and useful
-  post process effects to your scene.
+summary: Give your scene the unltimate post process cinematic look with this shader
+  pack.
 product_categories:
 - Art Of Shader
 image: "/images/fse_thumbnail.jpg"
