@@ -2,8 +2,9 @@
 date: 2018-10-07T17:00:00.000+05:30
 title: Art Of Shader - Film And Special Effects
 topText: Art Of Shader - Film And Special Effects
-bottomText: The ultimate Stylized Post Process Effect pack, with 40 Materials that
-  can be combined and blended to give your scene a unique stylized look.
+bottomText: Series of customizable Post Process Materials that can be combined, blended
+  , grouped and localized to give advanced and useful post process effects to your
+  scene.
 summary: Film and Special Effects is a series of customizable Post Process Materials
   that can be combined, blended , grouped and localized to give advanced and useful
   post process effects to your scene.
@@ -53,12 +54,14 @@ features:
   title: Runtime Examples
   description: AOSRuntime Blueprints and Widgets, including Dynamic UMG Based Color
     Wheel allows you to tweak and modify the post process materials at runtime
-description: Art of Shader - Stylized Post Process is a pack of 40 Post Process Blendable
-  Materials that you customize and tweak to create a unique stylized look for your
-  scene. The Blueprint Actors facilitate the easy combining, blending and grouping
-  of the Post process materials based on certain common properties. From WaterColor,
-  OilPaint, Aquarelle, Cartoon, ComicBook , CelShaded and many more Effects, choose,
-  combine and customize via the parameterized material instances to suit your style.
+description: Art of Shader - Film and Special Effects is a pack of 47 Post Process
+  Blendable Materials that you can customize and tweak to give a desired post process
+  effect to your scene. The Blueprint Actors facilitate the easy combining, blending
+  and grouping of the Post process materials based on certain common properties. From
+  simple color tone effects including SplitTone, LinearTone, ColorShift, ACESToneMapping
+  and Sepia, to advanced special effects including RainShader, Wobbly, DisplacedGlass,
+  Ripple, Camouflage, NightVision and many more, choose, combine and customize via
+  the parameterized material instances to suit your style.
 fontFamily: Courier New
 contentFontSize: 16px
 featureTitleFontSize: 18px
