@@ -56,8 +56,7 @@ features:
   - buttonText: Learn More
     buttonLink: https://docs.athiangames.com/doc_minimapandmap.html#POIElement
 - image: "/images/minimapcover.png"
-  title: Rectangular and Circular Minimap, with AutoRotate feature to rotate the map
-    with player rotation
+  title: Rectangular and Circular Minimap
   description: ''
   buttons: []
 - image: "/images/minimapcover.png"
