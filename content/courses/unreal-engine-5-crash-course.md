@@ -7,7 +7,7 @@ shortDescription: This course is a quick good start for who would like to get qu
   and implement user interfaces and learn basics of lighting inside unreal engine,
   after the course you will have the basic experience & knowledge to make simple game
   projects / applications with unreal engine.
-mainImage: "/images/unrealcpplogo.png"
+mainImage: "/images/courses_uecrashcourse_cover.jpg"
 upcoming: true
 formURL: https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
 draft: true
