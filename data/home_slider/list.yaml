@@ -15,7 +15,7 @@
   showreel: []
   topText: Unreal Engine Training
   bottomText: 'We are honored to be an Unreal Authorized Training Institute. '
-  bannerImage: "/images/courses_uecrashcourse_cover.jpg"
+  bannerImage: "/images/aboutmecover.jpg"
 - button:
   - buttonText: Get It Here
     buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-distortion-and-glitches
