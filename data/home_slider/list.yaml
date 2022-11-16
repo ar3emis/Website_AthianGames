@@ -13,8 +13,8 @@
   - buttonText: Learn More
     buttonLink: "/Courses"
   showreel: []
-  topText: Runtime FBX Import
-  bottomText: Asynchronously Import FBX files in your Unreal projects, in runtime.
+  topText: Unreal Engine Training
+  bottomText: 'We are honored to be an Unreal Authorized Training Institute. '
   bannerImage: "/images/courses_uecrashcourse_cover.jpg"
 - button:
   - buttonText: Get It Here
