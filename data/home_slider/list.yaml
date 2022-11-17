@@ -1,6 +1,16 @@
 ---
 - button:
   - buttonText: Learn More
+    buttonLink: "/Courses"
+  showreel: []
+  topText: Unreal Engine Training
+  bottomText: We are honored to be an Unreal Authorized Training Institute. As a UATC,
+    we aim to deliver industry standard trainings, in game development and real time
+    graphics,  to studios making a leap towards Unreal Engine, and individuals willing
+    to learn and build games.
+  bannerImage: "/images/aboutmecover.jpg"
+- button:
+  - buttonText: Learn More
     buttonLink: https://www.unrealengine.com/marketplace/en-US/profile/Athian+Games
   showreel:
   - showreelText: Watch Trailer
@@ -9,13 +19,6 @@
   bottomText: Use the power of Unreal Engine with our useful generic assets and code
     plugins that would greatly aid in the development of your Unreal Projects.
   bannerImage: "/videos/showreelbg.mp4"
-- button:
-  - buttonText: Learn More
-    buttonLink: "/Courses"
-  showreel: []
-  topText: Unreal Engine Training
-  bottomText: 'We are honored to be an Unreal Authorized Training Institute. '
-  bannerImage: "/images/aboutmecover.jpg"
 - button:
   - buttonText: Get It Here
     buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-distortion-and-glitches
