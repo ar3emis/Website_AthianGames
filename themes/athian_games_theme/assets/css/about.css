@@ -155,7 +155,7 @@
 }
 
 .story-wrap .container{
-   box-shadow: 1px 3px 2px rgba(1,0,0,0.9);
+  border:2px solid #101010;
  }
 
 
