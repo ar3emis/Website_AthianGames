@@ -11,7 +11,7 @@
         </p>
         {{end}} 
         {{if .context.description}}
-        <p class="feature-description lead mb-0 mt-3" style="font-size: {{.args.featureTextFontSize}};">{{ .context.description | markdownify}}</p>
+        <p class="feature-description lead mb-0 mt-3" id="product_p" style="font-size: {{.args.featureTextFontSize}};">{{ .context.description | markdownify}}</p>
         {{end}} 
         {{if .context.buttons}}
           <div class="feature-description">
@@ -29,7 +29,7 @@
     <div class="col-lg-6 text-center text-lg-end {{$orderImg}}">
       {{ if .context.image }}
       <img
-        class="lozad"
+        class="lozad image_Product"
         src="{{.context.image}}"
         alt="{{.context.title}}"
       />

@@ -3,6 +3,7 @@
   - buttonText: Learn More
     buttonLink: "/Courses"
   showreel: []
+  imageText : "/images/athr-image.png"
   topText: Unreal Engine Training
   bottomText: We are honored to be an Unreal Authorized Training Institute. As a UATC,
     we aim to deliver industry standard trainings, in game development and real time
@@ -15,6 +16,7 @@
   showreel:
   - showreelText: Watch Trailer
     showreelLink: https://www.youtube.com/watch?v=pLcawAf9FUY
+  imageText : "/images/athr-image.png"
   topText: Make Awesome Gameplay
   bottomText: Use the power of Unreal Engine with our useful generic assets and code
     plugins that would greatly aid in the development of your Unreal Projects.
@@ -25,6 +27,7 @@
   showreel:
   - showreelText: Watch Trailer
     showreelLink: https://www.youtube.com/watch?v=WApWjoeoubw
+  imageText : "/images/athr-image.png"
   topText: 'Art of  Shader: Distortion and Glitches'
   bottomText: 'Add Distortion and Glitched Effects to your Scenes and Assets with
     this pack of customizable post process materials and Niagara VFX. '
@@ -35,6 +38,7 @@
   showreel:
   - showreelText: Watch Trailer
     showreelLink: https://www.youtube.com/watch?v=-yoDS9LK6p8
+  imageText : "/images/athr-image.png"
   topText: Procedural Vortex Tunnel
   bottomText: Redefine your imagination with the Procedural Vortex Tunnel, a plugin
     that lets you create a highly customizable Material Driven Vortex System along
@@ -46,6 +50,7 @@
   showreel:
   - showreelText: Watch Trailer
     showreelLink: https://www.youtube.com/watch?v=Bpvj075xnkA
+  imageText : "/images/athr-image.png"
   topText: 'Art of Shader : Stylized Post Process'
   bottomText: From Filmic and Camera Effects to Stylized and Transitioning Shaders,
     we got you covered.

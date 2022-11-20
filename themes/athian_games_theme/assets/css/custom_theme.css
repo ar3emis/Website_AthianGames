@@ -1161,7 +1161,34 @@ a.nav-link.scroll:hover {
   }
 }
 
+.image_Text {
 
+  float:left;
+  margin-top: 0px;
+  margin-right: 25px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  height: 75px;
+  width: 235px;
+  max-width: 20%;
+}
+
+.image_Product {
+  width: 1200px;
+    height: 400px;
+    object-fit: cover;
+    object-position: 50% 0px;
+    transition: all 0.3s ease 0s;
+    opacity: 1;
+
+}
+.image_Product:hover{  
+  transform: scale(1.1);
+}
+
+#product_p {
+  font-size: 25px;
+}
 
 
 

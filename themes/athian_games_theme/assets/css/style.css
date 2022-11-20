@@ -263,8 +263,8 @@ blockquote:after {
 .qrt-divider-2 {
   background: #05a1c7;
   width: 90px;
-  margin: 0 0 20px;
-  height: 2px;
+  margin: 10px 0 20px;
+  height: 0;
   border-radius: 1px;
 }
 
@@ -3912,5 +3912,6 @@ products customization
     transform: scale(1.2) translateY(0);
   }
 }
+
 
 /*# sourceMappingURL=style.css.map */
