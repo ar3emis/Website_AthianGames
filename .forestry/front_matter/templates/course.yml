@@ -20,5 +20,6 @@ fields:
 pages:
 - content/courses/course3.md
 - content/courses/introduction-to-unreal-c.md
+- content/courses/lighting-fundamentals-with-unreal-engine-5.md
 - content/courses/niagara-fundamentals.md
 - content/courses/unreal-engine-5-crash-course.md
