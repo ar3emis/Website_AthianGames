@@ -1162,23 +1162,20 @@ a.nav-link.scroll:hover {
 }
 
 .image_Text {
-
   float:left;
-  margin-top: 0px;
-  margin-right: 25px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  height: 75px;
-  width: 235px;
-  max-width: 20%;
+  margin: 0 25px 25px 10px;
+  height: auto;
+  width: 20%;
+  max-width: 15%;
+
 }
 
 .image_Product {
    width: 1200px;
     height: auto;
     object-fit: cover;
-    object-position: 50% 0px;
     transition: all 0.3s ease 0s;
+    padding: 10px;
     opacity: 1;
 
 }
