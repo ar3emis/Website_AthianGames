@@ -65,10 +65,14 @@ features:
   buttons:
   - buttonText: Learn More
     buttonLink: https://docs.athiangames.com/doc_minimapandmap.html#CircularMinimap
-- image: "/images/minimapcover.png"
+- image: "/images/minimap_texturemasking.png"
   title: Minimap Texture masking for non rectangular Bounds
-  description: ''
-  buttons: []
+  description: Minimap Texture Masking ensures that your minimap can transition smoothly
+    when player navigates in and out of it, and can be added to the corresponding
+    MapBoundsActor placed in the Scene.
+  buttons:
+  - buttonText: Learn More
+    buttonLink: https://docs.athiangames.com/doc_minimapandmap.html#MinimapMasking
 - image: "/images/minimapcover.png"
   title: Interactive Map , with Zoom and Pan functionalities
   description: ''
