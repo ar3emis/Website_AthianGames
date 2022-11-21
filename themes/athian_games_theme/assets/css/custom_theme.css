@@ -1174,15 +1174,15 @@ a.nav-link.scroll:hover {
 }
 
 .image_Product {
-  width: 1200px;
-    height: 400px;
+   width: 1200px;
+    height: auto;
     object-fit: cover;
     object-position: 50% 0px;
     transition: all 0.3s ease 0s;
     opacity: 1;
 
 }
-.image_Product:hover{  
+.image_Product:hover{
   transform: scale(1.1);
 }
 
