@@ -81,7 +81,7 @@ description: Procedural Vortex Tunnel is a plugin that lets you build a customiz
   parameters.
 fontFamily: Courier New
 contentFontSize: 16px
-featureTitleFontSize: 18px
-featureTextFontSize: 16px
+featureTitleFontSize: 24px
+featureTextFontSize: 20px
 
 ---
