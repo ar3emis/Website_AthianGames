@@ -55,10 +55,15 @@ features:
   buttons:
   - buttonText: Learn More
     buttonLink: https://docs.athiangames.com/doc_minimapandmap.html#POIElement
-- image: "/images/minimapcover.png"
+- image: "/images/minimap_circularandrectangularmaps.jpg"
   title: Rectangular and Circular Minimap
-  description: ''
-  buttons: []
+  description: Control the Shape of your MInimap using the AllowCircleMask parameter
+    in your Minimap UMG. This not only uses a circular opacity mask in the material,
+    but it adjusts the positions of the Players and the Points of Interest accordingly,
+    ensuring they stay within the bounding region of the minimap.
+  buttons:
+  - buttonText: Learn More
+    buttonLink: https://docs.athiangames.com/doc_minimapandmap.html#CircularMinimap
 - image: "/images/minimapcover.png"
   title: Minimap Texture masking for non rectangular Bounds
   description: ''
