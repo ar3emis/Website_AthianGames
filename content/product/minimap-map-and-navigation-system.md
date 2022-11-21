@@ -56,11 +56,12 @@ features:
   - buttonText: Learn More
     buttonLink: https://docs.athiangames.com/doc_minimapandmap.html#POIElement
 - image: "/images/minimap_circularandrectangularmaps.jpg"
-  title: Rectangular and Circular Minimap
+  title: Rectangular and Circular Minimap, with AutoRotate feature
   description: Control the Shape of your MInimap using the AllowCircleMask parameter
     in your Minimap UMG. This not only uses a circular opacity mask in the material,
     but it adjusts the positions of the Players and the Points of Interest accordingly,
-    ensuring they stay within the bounding region of the minimap.
+    ensuring they stay within the bounding region of the minimap. The Auto Rotate
+    feature allows the minimap to rotate along with the player camera.
   buttons:
   - buttonText: Learn More
     buttonLink: https://docs.athiangames.com/doc_minimapandmap.html#CircularMinimap
