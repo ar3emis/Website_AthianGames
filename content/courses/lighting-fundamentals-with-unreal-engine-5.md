@@ -1,10 +1,10 @@
 ---
 date: 
 title: Lighting Fundamentals with Unreal Engine 5
-shortDescription: |-
-  With the release of Unreal Engine 5, we get to experience the very new Lumen lighting engine, a fully dynamic global illumination and reflection system, specifically designed for the next generation consoles. However, it is very essential to understand and master the different lighting tools, techniques and workflows inside the Editor, in order to bring the most out of a project that relies heavily on real time lighting.
-
-  In this course, we cover the fundamentals of lighting through setting up an example scene, with advanced features like Real Time Global Illumination with Lumen, Ray Tracing and Path Tracing, Volumetric Lighting.  Project files will be provided at the end of the course.
+shortDescription: "In this course, we cover the fundamentals of lighting through setting
+  up an example scene, with advanced features like Real Time Global Illumination with
+  Lumen, Ray Tracing and Path Tracing, Volumetric Lighting.  \n\nProject files will
+  be provided at the end of the course."
 mainImage: "/images/courses_lightingfundamentals.jpg"
 upcoming: true
 formURL: https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
