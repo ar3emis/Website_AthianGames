@@ -38,10 +38,6 @@ features:
   description: A set of parameterized scripts that can be used as the building blocks
     for creating custom FX from scratch.
   buttons: []
-- image: "/images/minimapcover.png"
-  title: Shape and pattern control
-  description: The ability to create FX that follow specific shapes and patterns.
-  buttons: []
 - image: "/images/cs_feature_easycreation.jpg"
   title: Quick and easy creation
   description: The Asset Pack provides you with the Emitters and corresponding Niagara
