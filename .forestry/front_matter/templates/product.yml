@@ -125,4 +125,5 @@ fields:
   default: '18'
 pages:
 - content/product/minimap-map-and-navigation-system.md
+- content/product/niagara-curves-and-surfaces.md
 - content/product/procedural-vortex-tunnel.md
