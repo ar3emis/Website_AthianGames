@@ -1,9 +1,9 @@
 ---
 image: "/images/cs_thumb.jpg"
 bannerImage: "/images/cs_screenshot01.jpg"
-contentFontSize: "24"
-featureTitleFontSize: "24"
-featureTextFontSize: "18"
+contentFontSize: 16px
+featureTitleFontSize: 18px
+featureTextFontSize: 16px
 date: 
 title: Niagara Curves and Surfaces
 topText: Niagara Curves and Surfaces
@@ -22,10 +22,26 @@ private: false
 canonical: ''
 contentVideoId: xc_9VG08v2w
 contentVideoThumbnail: "/images/cs_screenshot02.jpg"
-features: []
-description: ''
-bottomText: ''
-fontFamily: ''
+features:
+- image: "/images/cs_screenshot05.jpg"
+  title: High quality Niagara FX
+  description: A selection of professional-grade visual effects that are ready to
+    be used or customized in your projects
+  buttons: []
+description: |
+  The Asset Pack includes a collection of high quality Niagara FX that you can use as a starting point for your own creations. Additionally, the pack comes with a set of parameterized Module Scripts that can help you build custom FX from the ground up, allowing you to create effects that follow specific shapes and patterns.
+
+  The Shapes can be categorized into following types -
+
+  1. Curves - These are geometrical shapes that are defined by Polynomial Functions. Some of the basic curves are Circles, Ellipse, and Parabolas. Few examples of Curves from this pack include Star, Helix, Cardioid, Heart.
+  2. Primitives - These are the most basic and fundamental geometrical shapes. Examples include Polygons, like Quadrilaterals, Triangles, Hexagon, etc.
+  3. Surfaces - These are geometrical Shapes which are defined by a set of points in 3D space, and each surface has a shape and a size that are determined by the position and orientation of these points. Examples include Ellipsoid, Sphere, Cylinder. Few examples of Surfaces from this pack include Astroidal Ellipsoid, Corkscrew, Funnel, Helicoid.
+
+
+  With the Asset Pack, you'll have access to a range of Niagara FX that are ready to be customized and adapted to your needs. Whether you want to use them as is or modify them to fit your vision, you'll have plenty of options to choose from. And if you want to create your own FX from scratch, the included Module Scripts provide a solid foundation for building effects that adhere to a specific design. With this Asset Pack, you'll have all the tools you need to quickly and easily create stunning visual effects
+bottomText: Elevate your VFX to the next level with this pack of highly customizable
+  geometrical shapes
+fontFamily: Courier New
 draft: true
 
 ---
