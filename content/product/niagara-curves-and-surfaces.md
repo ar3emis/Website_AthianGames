@@ -23,7 +23,7 @@ canonical: ''
 contentVideoId: xc_9VG08v2w
 contentVideoThumbnail: "/images/cs_screenshot02.jpg"
 features:
-- image: "/images/cs_feature_highqualityfx.png"
+- image: "/images/cs_feature_highqualityfx.jpg"
   title: High quality Niagara FX
   description: A selection of professional-grade visual effects that are ready to
     be used or customized in your projects
@@ -33,13 +33,14 @@ features:
   description: " The ability to tweak and adjust the included FX to suit your specific
     needs."
   buttons: []
-- image: "/images/minimapcover.png"
-  title: ''
-  description: ''
+- image: "/images/cs_feature_modulescripts.jpg"
+  title: Module Scripts
+  description: A set of parameterized scripts that can be used as the building blocks
+    for creating custom FX from scratch.
   buttons: []
 - image: "/images/minimapcover.png"
-  title: ''
-  description: ''
+  title: Shape and pattern control
+  description: The ability to create FX that follow specific shapes and patterns.
   buttons: []
 - image: "/images/minimapcover.png"
   title: ''
