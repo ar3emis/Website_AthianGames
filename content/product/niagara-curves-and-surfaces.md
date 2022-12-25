@@ -1,6 +1,6 @@
 ---
-image: "/images/minimapcover.png"
-bannerImage: "/images/minimapcover.png"
+image: "/images/cs_thumb.jpg"
+bannerImage: "/images/cs_screenshot01.jpg"
 contentFontSize: "24"
 featureTitleFontSize: "24"
 featureTextFontSize: "18"
@@ -21,7 +21,7 @@ seodescription: ''
 private: false
 canonical: ''
 contentVideoId: xc_9VG08v2w
-contentVideoThumbnail: ''
+contentVideoThumbnail: "/images/cs_screenshot02.jpg"
 features: []
 description: ''
 bottomText: ''
