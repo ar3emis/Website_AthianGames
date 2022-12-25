@@ -42,9 +42,11 @@ features:
   title: Shape and pattern control
   description: The ability to create FX that follow specific shapes and patterns.
   buttons: []
-- image: "/images/minimapcover.png"
-  title: ''
-  description: ''
+- image: "/images/cs_feature_easycreation.jpg"
+  title: Quick and easy creation
+  description: The Asset Pack provides you with the Emitters and corresponding Niagara
+    Systems derived from them, as starting points to quickly start developing your
+    own FX from a given shape.
   buttons: []
 description: |
   The Asset Pack includes a collection of high quality Niagara FX that you can use as a starting point for your own creations. Additionally, the pack comes with a set of parameterized Module Scripts that can help you build custom FX from the ground up, allowing you to create effects that follow specific shapes and patterns.
