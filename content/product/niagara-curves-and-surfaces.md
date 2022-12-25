@@ -23,10 +23,27 @@ canonical: ''
 contentVideoId: xc_9VG08v2w
 contentVideoThumbnail: "/images/cs_screenshot02.jpg"
 features:
-- image: "/images/cs_screenshot05.jpg"
+- image: "/images/cs_feature_highqualityfx.png"
   title: High quality Niagara FX
   description: A selection of professional-grade visual effects that are ready to
     be used or customized in your projects
+  buttons: []
+- image: "/images/cs_feature_customization.jpg"
+  title: Customization options
+  description: " The ability to tweak and adjust the included FX to suit your specific
+    needs."
+  buttons: []
+- image: "/images/minimapcover.png"
+  title: ''
+  description: ''
+  buttons: []
+- image: "/images/minimapcover.png"
+  title: ''
+  description: ''
+  buttons: []
+- image: "/images/minimapcover.png"
+  title: ''
+  description: ''
   buttons: []
 description: |
   The Asset Pack includes a collection of high quality Niagara FX that you can use as a starting point for your own creations. Additionally, the pack comes with a set of parameterized Module Scripts that can help you build custom FX from the ground up, allowing you to create effects that follow specific shapes and patterns.
@@ -42,6 +59,5 @@ description: |
 bottomText: Elevate your VFX to the next level with this pack of highly customizable
   geometrical shapes
 fontFamily: Courier New
-draft: true
 
 ---
