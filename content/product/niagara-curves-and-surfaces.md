@@ -1,5 +1,5 @@
 ---
-image: "/images/curvesandsurfaces_thumb.jpg"
+image: ''
 bannerImage: "/images/cs_screenshot01.jpg"
 contentFontSize: 16px
 featureTitleFontSize: 18px
