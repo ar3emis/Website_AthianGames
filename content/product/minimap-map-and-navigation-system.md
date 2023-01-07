@@ -1,5 +1,5 @@
 ---
-image: "/images/mapsystem.png"
+image: ''
 bannerImage: "/images/minimapcover.png"
 contentFontSize: 16px
 featureTitleFontSize: 18px
