@@ -37,7 +37,7 @@ fields:
   - type: text
     name: title
     label: Title
-  - type: text
+  - type: image
     name: thumbnail
     label: Thumbnail
   - type: text
