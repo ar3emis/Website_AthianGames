@@ -44,5 +44,9 @@ fields:
     name: trainer
     label: Trainer
   - type: text
+<<<<<<< HEAD
     name: registerLink
+=======
+    name: RegisterLink
+>>>>>>> d095b3f08b66b84cc1b1c72770fdc069870d14ba
     label: Register Link
