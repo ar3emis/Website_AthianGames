@@ -18,13 +18,13 @@
                 <h3>Upcoming Trainings</h3>
                 <div class="row">
                     {{ range .Params.UpcomingTrainings }}
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <div class="card">
-                            <img src="{{ .Thumbnail }}" class="card-img-top" alt="...">
+                            <img src="{{ .thumbnail }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">{{ .Title }}</h5>
-                                <p class="card-text">Trainer: {{ .Trainer }}</p>
-                                <a href="{{ .RegisterLink }}" class="btn btn-primary">Register</a>
+                                <h5 class="card-title">{{ .title }}</h5>
+                                <p class="card-text">Trainer: {{ .trainer }}</p>
+                                <a href="{{ .registerLink }}" class="btn btn-primary">Register</a>
                             </div>
                         </div>
                     </div>

@@ -35,14 +35,14 @@ fields:
   label: Upcoming Trainings
   fields:
   - type: text
-    name: title
+    name: Title
     label: Title
   - type: file
-    name: thumbnail
+    name: Thumbnail
     label: Thumbnail
   - type: text
-    name: trainer
+    name: Trainer
     label: Trainer
   - type: text
-    name: registerLink
+    name: RegisterLink
     label: Register Link
