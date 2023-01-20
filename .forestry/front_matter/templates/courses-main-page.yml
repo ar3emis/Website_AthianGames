@@ -30,19 +30,19 @@ fields:
 - type: text
   name: formURL
   label: formURL
-- type: list
+- type: field_group_list
   name: UpcomingTrainings
   label: Upcoming Trainings
   fields:
   - type: text
-    name: Title
+    name: title
     label: Title
   - type: text
-    name: Thumbnail
+    name: thumbnail
     label: Thumbnail
   - type: text
-    name: Trainer
+    name: trainer
     label: Trainer
   - type: text
-    name: RegisterLink
+    name: registerLink
     label: Register Link
