@@ -20,7 +20,7 @@ seotitle: ''
 seodescription: ''
 private: false
 canonical: ''
-contentVideoId: xc_9VG08v2w
+contentVideoId: tkIYZImGk84
 contentVideoThumbnail: "/images/cs_screenshot02.jpg"
 features:
 - image: "/images/cs_feature_highqualityfx.jpg"
