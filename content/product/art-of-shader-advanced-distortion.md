@@ -15,7 +15,7 @@ buttons:
   buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-advanced-distortion
 - buttonLink: https://docs.athiangames.com/doc_artofshader
   buttonText: Documentation
-- buttonLink: https://discord.com/invite/6qh6Cuy
+- buttonLink: https://discord.gg/CNFXPSM5Qe
   buttonText: Join Discord
 seotitle: ''
 seodescription: ''
