@@ -4,10 +4,8 @@ title: Game Programming with Unreal Engine
 shortDescription: This course focuses on providing a comprehensive understanding of
   Unreal Engine for game development. The course covers topics such as setting up
   Unreal Engine, understanding Unreal Engine 5's interface and blueprint system, basic
-  game development, game mechanics, and advanced game development. The course also
-  includes a final project and exam to assess the learners' understanding of Unreal
-  Engine. By the end of the course, learners will have the skills to create their
-  own games from start to finish.
+  game development, game mechanics, and advanced game development. By the end of the
+  course, learners will have the skills to create their own games from start to finish.
 mainImage: "/images/courses_gameprogramming_cover.jpg"
 upcoming: false
 formURL: https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
