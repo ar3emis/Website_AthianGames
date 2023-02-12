@@ -2,14 +2,13 @@
 date: 2018-10-07T17:00:00.000+05:30
 title: Art Of Shader - Advanced Distortion
 topText: Art Of Shader - Distortion And Glitches
-bottomText: A series of customizable Shaders and Niagara FX that can be combined,
-  blended , grouped and localized to give different types of distorted and glitched
-  effect to your actors and scenes.
+bottomText: The ultimate tool for adding dynamic and visually stunning distortions
+  to your Unreal Engine projects.
 summary: A series of customizable Shaders and Niagara FX that gives distorted and
   glitched effects to your actors and scenes.
 product_categories:
 - Art Of Shader
-image: "/images/aos_dg_thumb.jpg"
+image: "/images/aos_ad_thumbnail.png"
 buttons:
 - buttonText: Get It Here
   buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-advanced-distortion
@@ -21,9 +20,9 @@ seotitle: ''
 seodescription: ''
 canonical: ''
 private: false
-bannerImage: "/images/aos_dg.png"
-contentVideoId: WApWjoeoubw
-contentVideoThumbnail: "/images/aos_dg.png"
+bannerImage: "/images/aos_ad_screenshot01.jpg"
+contentVideoId: S9oDuFZA0Lo
+contentVideoThumbnail: "/images/aos_ad_youtubethumbnail.jpg"
 features:
 - image: "/images/aos_spp_features_ppmaterials.jpg"
   title: Customizable Post Process Shaders
@@ -61,19 +60,16 @@ features:
   title: Runtime Examples
   description: AOSRuntime Blueprints and Widgets, including Dynamic UMG Based Color
     Wheel allows you to tweak and modify the post process materials at runtime
-description: Art of Shader - Distortion And Glitches is a pack of 40 Customizable
-  Shaders, that can be used in Post Process Blendable Materials , Niagara FX, as well
-  as Mesh Materials to create a variety of distorted and glitched effect to your actors
-  and scenes. The Blueprint Actors facilitate the easy combining, blending and grouping
-  of the Post process materials based on certain common properties. From Artifacts,
-  VCRGlitch, GlitcySpectrum, Wavy, InterlacedGlitch, BlockySurface, BrokenPixels and
-  many more Effects, choose, combine and customize via the parameterized material
-  instances to suit your style.
+description: |-
+  The Art of Shader - Advanced Distortion pack includes a wide range of effects, from subtle distortions to intense and chaotic effects, making it suitable for a variety of applications and genres. The pack features a powerful and intuitive interface, allowing you to easily adjust the distortion strength, color, noise, and other parameters with just a few clicks.
+
+  Whether you're creating a futuristic sci-fi world, a creepy horror game, or just want to add a touch of style to your scenes, the Art of Shader - Advanced Distortion pack has got you covered. The materials are highly optimized and easy to use, allowing you to quickly apply the effects to your actors and scenes without sacrificing performance.
+
+  With a range of presets and customization options, the Art of Shader - Advanced Distortion pack offers a wide range of possibilities for your projects. Whether you're a beginner or an experienced artist, you'll be able to create stunning and dynamic distortions that will enhance your scenes and bring your work to the next level.
 fontFamily: Courier New
 contentFontSize: 16px
 featureTitleFontSize: 18px
 featureTextFontSize: 16px
-draft: true
 
 ---
 {{<html>}}
