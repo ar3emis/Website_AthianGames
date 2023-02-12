@@ -12,7 +12,7 @@ product_categories:
 image: "/images/aos_dg_thumb.jpg"
 buttons:
 - buttonText: Get It Here
-  buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-stylized-post-process-pack
+  buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-advanced-distortion
 - buttonLink: https://docs.athiangames.com/doc_artofshader
   buttonText: Documentation
 - buttonLink: https://discord.com/invite/6qh6Cuy
