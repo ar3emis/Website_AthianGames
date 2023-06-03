@@ -1,5 +1,5 @@
 ---
-title: About
+title: About us
 topText: ''
 bottomText: ''
 seotitle: ''
@@ -8,6 +8,5 @@ image: /images/aboutmecover.jpg
 canonical: ''
 private: false
 bannerImage: ''
-_template: no_edit
 ---
 
