@@ -5,8 +5,8 @@ contentFontSize: 16px
 featureTitleFontSize: 18px
 featureTextFontSize: 16px
 date: 1970-01-01T00:00:00.000Z
-title: Niagara Curves and Surfaces demo
-topText: Niagara Curves and Surfaces demo
+title: Niagara Curves and Surfaces
+topText: Niagara Curves and Surfaces
 summary: >-
   Elevate your VFX to the next level with this pack of highly customizable
   geometrical shapes.
