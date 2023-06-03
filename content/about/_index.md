@@ -1,5 +1,5 @@
 ---
-title: About us
+title: About
 topText: ''
 bottomText: ''
 seotitle: ''
