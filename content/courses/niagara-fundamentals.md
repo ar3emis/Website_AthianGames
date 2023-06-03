@@ -1,6 +1,6 @@
 ---
-date: null
-title: Niagara Fundamentals
+date: 1970-01-01T00:00:00.000Z
+title: Niagara Fundamentals demo
 shortDescription: >-
   With Niagara FX System, you can create high quality visual effects in Unreal
   Engine. With Modular workflow and user friendly design interface, you can get
@@ -35,6 +35,6 @@ _template: course
 
 Unreal Engine 5
 
-### Prerequisite 
+### Prerequisite
 
 None. This course is suitable for beginners who are willing to dive into the VFX Pipeline of Unreal, as well as for advanced users hoping to improve their knowledge and skills in Niagara.
