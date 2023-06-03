@@ -7,7 +7,7 @@ bottomText: The ultimate Stylized Post Process Effect pack, with 40 Materials th
 summary: Give a unique stylized look to your actors and scenes with this customizable
   Post Process Shader Pack
 product_categories:
-- Art Of Shader
+- category: Art Of Shader
 image: "/images/aos_stylizedpostprocess_thumb.png"
 buttons:
 - buttonText: Get It Here

@@ -11,7 +11,7 @@ summary: >-
   Build a fully customized and texture based Minimap, Map and Navigation System
   for your next big title.
 product_categories:
-  - GamePlay
+  - category: GamePlay
 buttons:
   - buttonText: Get It Here
     buttonLink: >-

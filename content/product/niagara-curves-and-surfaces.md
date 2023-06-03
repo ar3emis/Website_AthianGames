@@ -11,7 +11,7 @@ summary: >-
   Elevate your VFX to the next level with this pack of highly customizable
   geometrical shapes.
 product_categories:
-  - Niagara FX
+  - category: Niagara FX
 buttons:
   - buttonText: Get It Here
     buttonLink: >-

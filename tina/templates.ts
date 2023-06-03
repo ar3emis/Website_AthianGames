@@ -261,10 +261,17 @@ export function productFields() {
       label: "summary",
     },
     {
-      type: "string",
+      type: "object",
       name: "product_categories",
       label: "product_categories",
-      
+      list: true,
+      fields: [
+        {
+          type: "string",
+          name: "category",
+          label: "Category",
+        },
+      ],
     },
     {
       type: "image",

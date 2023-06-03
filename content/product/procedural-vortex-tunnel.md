@@ -10,7 +10,7 @@ summary: >-
   Redefine your imagination with this highly customizable Material Driven Vortex
   System along a given spline path.
 product_categories:
-  - Procedural World
+  - category: Procedural World
 image: /images/pvt_thumb.jpg
 buttons:
   - buttonText: Get It Here

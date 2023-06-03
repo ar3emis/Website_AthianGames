@@ -5,7 +5,7 @@ topText: Runtime FBX Import for Unreal Engine
 bottomText: Asynchronously Import FBX files in your Unreal projects, in runtime.
 summary: Asynchronously Import FBX files in your Unreal projects, in runtime
 product_categories:
-- Miscellaneous
+- category: Miscellaneous
 image: "/images/fbximport.png"
 buttons:
 - buttonLink: https://www.unrealengine.com/marketplace/en-US/slug/runtime-fbx-import-asynchronous
