@@ -4,8 +4,8 @@ bannerImage: /images/cs_screenshot01.jpg
 contentFontSize: 16px
 featureTitleFontSize: 18px
 featureTextFontSize: 16px
-date: null
-title: Niagara Curves and Surfaces
+date: 1970-01-01T00:00:00.000Z
+title: Niagara Curves and Surfaces demo
 topText: Niagara Curves and Surfaces
 summary: >-
   Elevate your VFX to the next level with this pack of highly customizable
