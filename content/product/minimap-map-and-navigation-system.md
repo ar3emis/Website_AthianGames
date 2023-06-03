@@ -4,14 +4,14 @@ bannerImage: /images/minimapcover.png
 contentFontSize: 16px
 featureTitleFontSize: 18px
 featureTextFontSize: 16px
-date: null
+date: 1970-01-01T00:00:00.000Z
 title: 'Minimap, Map and Navigation System'
 topText: 'Minimap, Map and Navigation System'
 summary: >-
   Build a fully customized and texture based Minimap, Map and Navigation System
   for your next big title.
 product_categories:
-  - category: GamePlay
+  - GamePlay
 buttons:
   - buttonText: Get It Here
     buttonLink: >-

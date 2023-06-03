@@ -8,7 +8,7 @@ bottomText: Series of customizable Post Process Materials that can be combined, 
 summary: Transform your scene into a cinematic visual experience with a series of
   highly customizable post process materials.
 product_categories:
-- category: Art Of Shader
+- Art Of Shader
 image: "/images/fse_thumbnail.jpg"
 buttons:
 - buttonText: Get It Here

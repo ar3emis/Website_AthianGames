@@ -261,18 +261,13 @@ export function productFields() {
       label: "summary",
     },
     {
-      type: "object",
+      type: "string",
       name: "product_categories",
       label: "product_categories",
       list: true,
-      fields: [
-        {
-          type: "string",
-          name: "category",
-          label: "Category",
-        },
-      ],
-    },
+      
+    }
+    ,
     {
       type: "image",
       name: "image",
@@ -507,12 +502,7 @@ export function single_page_templateFields() {
       name: "summary",
       label: "summary",
     },
-    {
-      type: "string",
-      name: "product_categories",
-      label: "product_categories",
-      list: true,
-    },
+    
     {
       type: "image",
       name: "image",

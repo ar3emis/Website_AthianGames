@@ -8,7 +8,7 @@ bottomText: A series of customizable Shaders and Niagara FX that can be combined
 summary: A series of customizable Shaders and Niagara FX that gives distorted and
   glitched effects to your actors and scenes.
 product_categories:
-- category: Art Of Shader
+- Art Of Shader
 image: "/images/aos_dg_thumb.jpg"
 buttons:
 - buttonText: Get It Here
