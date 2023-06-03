@@ -1,17 +1,26 @@
 ---
-date: 
+date: null
 title: Introduction to Cinematics
-shortDescription: "Create Production Ready Cinematics with Unreal Engine's Sequencer
-  tool,  a multi-track editor used for creating and previewing cinematic sequences
-  in real time.\n\nThis workshop will teach you the fundamentals of Sequencer that
-  will help you understand how to create level fly-throughs with animated cameras,
-  animate lights, objects and characters, render output sequences, create in-game
-  cut-scenes, and more.\n\nProject Files will be provided at the end of the sessions. "
-mainImage: "/images/courses_cinematics_cover.jpg"
-upcoming: true
-formURL: https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
+shortDescription: >-
+  Create Production Ready Cinematics with Unreal Engine's Sequencer tool,  a
+  multi-track editor used for creating and previewing cinematic sequences in
+  real time.
 
+
+  This workshop will teach you the fundamentals of Sequencer that will help you
+  understand how to create level fly-throughs with animated cameras, animate
+  lights, objects and characters, render output sequences, create in-game
+  cut-scenes, and more.
+
+
+  Project Files will be provided at the end of the sessions. 
+mainImage: /images/courses_cinematics_cover.jpg
+upcoming: true
+formURL: >-
+  https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
+_template: course
 ---
+
 ## Course Content
 
 * Introduction to Sequencer and Cameras

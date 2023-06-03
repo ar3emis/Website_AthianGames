@@ -6,5 +6,6 @@ image: ""
 canonical: ""
 private: ""
 draft: false
+_template: ''
 ---
 

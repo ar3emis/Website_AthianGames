@@ -1,16 +1,19 @@
 ---
-date: 2022-06-30T18:30:00+00:00
+date: 2022-06-30T18:30:00.000Z
 title: Unreal Engine 5 Crash Course
-shortDescription: 'This course is designed specifically for those who want to quickly
-  get started with Unreal Engine 5. This will cover the basics of Unreal Engine, and
-  give a brief introdution to various features in UE that you will essentially need
-  to develop a complete game. At the end of the course, you will have a working knowledge
-  in how to use Unreal for creating a game from start to finish. '
-mainImage: "/images/courses_uecrashcourse_cover.jpg"
+shortDescription: >-
+  This course is designed specifically for those who want to quickly get started
+  with Unreal Engine 5. This will cover the basics of Unreal Engine, and give a
+  brief introdution to various features in UE that you will essentially need to
+  develop a complete game. At the end of the course, you will have a working
+  knowledge in how to use Unreal for creating a game from start to finish. 
+mainImage: /images/courses_uecrashcourse_cover.jpg
 upcoming: true
-formURL: https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
-
+formURL: >-
+  https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
+_template: course
 ---
+
 ## Course Content
 
 * Installing Unreal Engine and Creating Project from Templates

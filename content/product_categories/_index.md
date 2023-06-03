@@ -1,14 +1,14 @@
 ---
-title: "Plugin Categories"
+title: Plugin Categories
 topText: ''
 bottomText: ''
-seotitle: ""
-seodescription: ""
-image: ""
-canonical: ""
-private: ""
+seotitle: ''
+seodescription: ''
+image: ''
+canonical: ''
+private: ''
 draft: false
-
+_template: ''
 ---
 
 

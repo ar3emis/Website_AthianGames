@@ -2,8 +2,8 @@
 title: Contact
 topText: ''
 bottomText: ''
-contactEmail: 
-contactAddress: 
+contactEmail: null
+contactAddress: null
 contactPhone: ''
 seotitle: ''
 seodescription: ''
@@ -13,5 +13,6 @@ private: ''
 menu:
   main:
     weight: 4
-
+_template: no_edit
 ---
+

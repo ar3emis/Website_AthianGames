@@ -1,15 +1,20 @@
 ---
-date: 
+date: null
 title: Lighting Fundamentals with Unreal Engine 5
-shortDescription: "In this course, we cover the fundamentals of lighting through setting
-  up an example scene, with advanced features like Real Time Global Illumination with
-  Lumen, Ray Tracing and Path Tracing, Volumetric Lighting.  \n\nProject files will
-  be provided at the end of the course."
-mainImage: "/images/courses_lightingfundamentals.jpg"
-upcoming: true
-formURL: https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
+shortDescription: >-
+  In this course, we cover the fundamentals of lighting through setting up an
+  example scene, with advanced features like Real Time Global Illumination with
+  Lumen, Ray Tracing and Path Tracing, Volumetric Lighting.  
 
+
+  Project files will be provided at the end of the course.
+mainImage: /images/courses_lightingfundamentals.jpg
+upcoming: true
+formURL: >-
+  https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
+_template: course
 ---
+
 ## Course Content
 
 * Project Setup and a brief overview of Lighting

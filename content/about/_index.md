@@ -4,9 +4,10 @@ topText: ''
 bottomText: ''
 seotitle: ''
 seodescription: ''
-image: "/images/aboutmecover.jpg"
+image: /images/aboutmecover.jpg
 canonical: ''
 private: false
 bannerImage: ''
-
+_template: no_edit
 ---
+
