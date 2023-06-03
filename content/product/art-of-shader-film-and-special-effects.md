@@ -65,7 +65,7 @@ fontFamily: Courier New
 contentFontSize: 16px
 featureTitleFontSize: 18px
 featureTextFontSize: 16px
-
+_template: product
 ---
 {{<html>}}
 

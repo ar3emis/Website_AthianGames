@@ -8,7 +8,7 @@ summary: A series of customizable Shaders and Niagara FX that gives distorted an
   glitched effects to your actors and scenes.
 product_categories:
 - Art Of Shader
-image: "/images/aos_ad_thumbnail.png"
+image: /images/aos_ad_thumbnail.png
 buttons:
 - buttonText: Get It Here
   buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-advanced-distortion
@@ -20,43 +20,43 @@ seotitle: ''
 seodescription: ''
 canonical: ''
 private: false
-bannerImage: "/images/aos_ad_screenshot01.jpg"
+bannerImage: /images/aos_ad_screenshot01.jpg
 contentVideoId: S9oDuFZA0Lo
-contentVideoThumbnail: "/images/aos_ad_youtubethumbnail.jpg"
+contentVideoThumbnail: /images/aos_ad_youtubethumbnail.jpg
 features:
-- image: "/images/aos_spp_features_ppmaterials.jpg"
+- image: /images/aos_spp_features_ppmaterials.jpg
   title: Customizable Post Process Shaders
   description: 40 Different Types of Parameterized Distortion And Glitched Effects.
 - title: Multiple Functionalities and usecases for every shader
   description: Each Effect can be used as Post Process Blendable Material , Niagara
     FX , and Mesh Material with World Displacement.
-  image: "/images/aos_dg_multiplefunctionalities.jpg"
-- image: "/images/aos_spp_features_bgshading.jpg"
+  image: /images/aos_dg_multiplefunctionalities.jpg
+- image: /images/aos_spp_features_bgshading.jpg
   title: Background Shading via SceneDepth
   description: Separate out the MainObjects placed in the environment from the Background
     via SceneDepth. Apply different shader combination simultaneously to your main
     environment and background scene.
-- image: "/images/aos_spp_features_blueprintactor.jpg"
+- image: /images/aos_spp_features_blueprintactor.jpg
   title: AOS Blueprint Actor for Grouping and Combining
   description: The AOS Blueprint Actor for easily combining and grouping multiple
     Blendable Materials based on common properties
   buttons: []
-- image: "/images/aos_spp_features_oslocalizations.jpg"
+- image: /images/aos_spp_features_oslocalizations.jpg
   title: Object Space Localization via Depth Stencil
   description: Object Space Localization allows you to apply the shaders only to certain
     objects, or exclude certain objects from given effects, via custom depth stencils
   buttons: []
-- image: "/images/aos_dg_localizationwithniagara.jpg"
+- image: /images/aos_dg_localizationwithniagara.jpg
   title: Object Space Localization with Niagara
   description: Glitch and Distort individual Actors in Scene with the extremely powerful
     Niagara System
-- image: "/images/aos_spp_features_sslocalizations.jpg"
+- image: /images/aos_spp_features_sslocalizations.jpg
   title: ScreenSpace Localization
   description: ScreenSpace Localization lets you split the screen based on user defined
     shape and size, and apply multiple Blendable Materials simultaneously at different
     parts of the screen
   buttons: []
-- image: "/images/aos_spp_features_runtimecontrols.jpg"
+- image: /images/aos_spp_features_runtimecontrols.jpg
   title: Runtime Examples
   description: AOSRuntime Blueprints and Widgets, including Dynamic UMG Based Color
     Wheel allows you to tweak and modify the post process materials at runtime
@@ -70,7 +70,7 @@ fontFamily: Courier New
 contentFontSize: 16px
 featureTitleFontSize: 18px
 featureTextFontSize: 16px
-
+_template: product
 ---
 {{<html>}}
 
