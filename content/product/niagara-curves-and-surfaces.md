@@ -8,8 +8,8 @@ date: 1970-01-01T00:00:00.000Z
 title: Niagara Curves and Surfaces
 topText: Niagara Curves and Surfaces
 summary: >-
-  Elevate your VFX to the next level with this pack of highly customizable
-  geometrical shapes.
+  Elevate your VFX to the next level with this pack of customizable geometrical
+  shapes.
 product_categories:
   - Niagara FX
 buttons:
@@ -64,8 +64,8 @@ description: >
   a specific design. With this Asset Pack, you'll have all the tools you need to
   quickly and easily create stunning visual effects
 bottomText: >-
-  Elevate your VFX to the next level with this pack of highly customizable
-  geometrical shapes
+  Elevate your VFX to the next level with this pack of customizable geometrical
+  shapes
 fontFamily: Courier New
 _template: product
 ---
