@@ -1,57 +1,71 @@
----
-- button:
-  - buttonText: Learn More
-    buttonLink: "/Courses"
+'0':
+  button:
+    - buttonText: Learn More
+      buttonLink: /Courses
   showreel: []
-  imageText : "/images/athr-image.png"
+  imageText: /images/athr-image.png
   topText: Unreal Engine Training
-  bottomText: We are honored to be an Unreal Authorized Training Institute. As a UATC,
-    we aim to deliver industry standard trainings, in game development and real time
-    graphics,  to studios making a leap towards Unreal Engine, and individuals willing
-    to learn and build games.
-  bannerImage: "/images/aboutmecover.jpg"
-- button:
-  - buttonText: Learn More
-    buttonLink: https://www.unrealengine.com/marketplace/en-US/profile/Athian+Games
+  bottomText: >-
+    We are honored to be an Unreal Authorized Training Institute. As a UATC, we
+    aim to deliver industry standard trainings, in game development and real
+    time graphics,  to studios making a leap towards Unreal Engine, and
+    individuals willing to learn and build games.
+  bannerImage: /images/aboutmecover.jpg
+'1':
+  button:
+    - buttonText: Learn More
+      buttonLink: 'https://www.unrealengine.com/marketplace/en-US/profile/Athian+Games'
   showreel:
-  - showreelText: Watch Trailer
-    showreelLink: https://www.youtube.com/watch?v=pLcawAf9FUY
-  imageText : ""
+    - showreelText: Watch Trailer
+      showreelLink: 'https://www.youtube.com/watch?v=pLcawAf9FUY'
+  imageText: ''
   topText: Make Awesome Gameplay
-  bottomText: Use the power of Unreal Engine with our useful generic assets and code
+  bottomText: >-
+    Use the power of Unreal Engine with our useful generic assets and code
     plugins that would greatly aid in the development of your Unreal Projects.
-  bannerImage: "/videos/showreelbg.mp4"
-- button:
-  - buttonText: Get It Here
-    buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-distortion-and-glitches
+  bannerImage: /videos/showreelbg.mp4
+'2':
+  button:
+    - buttonText: Get It Here
+      buttonLink: >-
+        https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-distortion-and-glitches
   showreel:
-  - showreelText: Watch Trailer
-    showreelLink: https://www.youtube.com/watch?v=WApWjoeoubw
-  imageText : ""
+    - showreelText: Watch Trailer
+      showreelLink: 'https://www.youtube.com/watch?v=WApWjoeoubw'
+  imageText: ''
   topText: 'Art of  Shader: Distortion and Glitches'
-  bottomText: 'Add Distortion and Glitched Effects to your Scenes and Assets with
-    this pack of customizable post process materials and Niagara VFX. '
-  bannerImage: "/images/aos_dg.png"
-- button:
-  - buttonText: Get It Here
-    buttonLink: https://www.unrealengine.com/marketplace/en-US/product/procedural-vortex-tunnel
+  bottomText: >-
+    Add Distortion and Glitched Effects to your Scenes and Assets with this pack
+    of customizable post process materials and Niagara VFX. 
+  bannerImage: /images/aos_dg.png
+'3':
+  button:
+    - buttonText: Get It Here
+      buttonLink: >-
+        https://www.unrealengine.com/marketplace/en-US/product/procedural-vortex-tunnel
   showreel:
-  - showreelText: Watch Trailer
-    showreelLink: https://www.youtube.com/watch?v=-yoDS9LK6p8
-  imageText : ""
+    - showreelText: Watch Trailer
+      showreelLink: 'https://www.youtube.com/watch?v=-yoDS9LK6p8'
+  imageText: ''
   topText: Procedural Vortex Tunnel
-  bottomText: Redefine your imagination with the Procedural Vortex Tunnel, a plugin
-    that lets you create a highly customizable Material Driven Vortex System along
-    a given spline path.
-  bannerImage: "/images/screenshot_003.png"
-- button:
-  - buttonText: Learn More
-    buttonLink: https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-stylized-post-process-pack
+  bottomText: >-
+    Redefine your imagination with the Procedural Vortex Tunnel, a plugin that
+    lets you create a highly customizable Material Driven Vortex System along a
+    given spline path.
+  bannerImage: /images/screenshot_003.png
+'4':
+  button:
+    - buttonText: Learn More
+      buttonLink: >-
+        https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-stylized-post-process-pack
   showreel:
-  - showreelText: Watch Trailer
-    showreelLink: https://www.youtube.com/watch?v=Bpvj075xnkA
-  imageText : ""
+    - showreelText: Watch Trailer
+      showreelLink: 'https://www.youtube.com/watch?v=Bpvj075xnkA'
+  imageText: ''
   topText: 'Art of Shader : Stylized Post Process'
-  bottomText: From Filmic and Camera Effects to Stylized and Transitioning Shaders,
-    we got you covered.
-  bannerImage: "/uploads/aos-banner.jpg"
+  bottomText: >-
+    From Filmic and Camera Effects to Stylized and Transitioning Shaders, we got
+    you covered.
+  bannerImage: /uploads/aos-banner.jpg
+List:
+  - {}
