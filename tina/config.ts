@@ -56,6 +56,11 @@ export default defineConfig({
                 label: "topText",
               },
               {
+                type: "image",
+                name: "imageText",
+                label: "imageText",
+              },
+              {
                 type: "string",
                 name: "bottomText",
                 label: "bottomText",

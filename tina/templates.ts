@@ -125,6 +125,11 @@ export function homepage_bannerFields() {
           label: "topText",
         },
         {
+          type: "image",
+          name: "imageText",
+          label: "imageText",
+        },
+        {
           type: "string",
           name: "bottomText",
           label: "bottomText",
