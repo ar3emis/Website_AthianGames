@@ -66,7 +66,7 @@ description: >
 bottomText: >-
   Elevate your VFX to the next level with this pack of customizable geometrical
   shapes
-fontFamily: Courier New
+fontFamily: Source Sans Pro
 _template: product
 ---
 

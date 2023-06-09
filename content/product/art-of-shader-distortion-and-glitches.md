@@ -69,10 +69,10 @@ description: Art of Shader - Distortion And Glitches is a pack of 40 Customizabl
   VCRGlitch, GlitcySpectrum, Wavy, InterlacedGlitch, BlockySurface, BrokenPixels and
   many more Effects, choose, combine and customize via the parameterized material
   instances to suit your style.
-fontFamily: Courier New
-contentFontSize: 16px
+fontFamily: Source Sans Pro
+contentFontSize: 20px
 featureTitleFontSize: 18px
-featureTextFontSize: 16px
+featureTextFontSize: 18px
 _template: product
 ---
 {{<html>}}

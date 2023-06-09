@@ -61,10 +61,10 @@ description: Art of Shader - Film and Special Effects is a pack of 47 Post Proce
   and Sepia, to advanced special effects including RainShader, Wobbly, DisplacedGlass,
   Ripple, Camouflage, NightVision and many more, choose, combine and customize via
   the parameterized material instances to suit your style.
-fontFamily: Courier New
-contentFontSize: 16px
+fontFamily: Source Sans Pro
+contentFontSize: 20px
 featureTitleFontSize: 18px
-featureTextFontSize: 16px
+featureTextFontSize: 18px
 _template: product
 ---
 {{<html>}}
