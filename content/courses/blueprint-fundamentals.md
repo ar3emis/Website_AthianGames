@@ -2,17 +2,12 @@
 date: 1970-01-01T00:00:00.000Z
 title: Blueprint Fundamentals in Unreal Engine 5
 shortDescription: >-
-  This course is an all-inclusive, comprehensive program designed to introduce
-  and solidify your understanding of the Blueprint Scripting System in Unreal
-  Engine 5. This course, suitable for beginners to intermediate users, is
-  crafted to transform you from an Unreal Engine novice to a competent game
-  developer. Over four detailed sessions spanning 8 hours, you'll dive deep into
-  the concepts and application of Blueprints, explore game logic and scripting,
-  learn to create AI with Blueprints, and even apply these skills in practical
-  scenarios. By course completion, you'll not only be comfortable navigating the
-  Blueprint system, but also be capable of designing and implementing complex
-  gameplay elements in Unreal Engine 5. Get ready to empower your game
-  development journey with this immersive and hands-on learning experience.
+  This is an 8-hour, beginner-friendly course, structured over four sessions. It
+  provides a comprehensive introduction to the Blueprint Scripting System in
+  Unreal Engine 5. You'll learn to navigate the system, script game logic,
+  create AI, and apply these skills practically. By the end, you'll be
+  well-equipped to design intricate gameplay elements in Unreal Engine 5,
+  setting a strong foundation for your game development journey.
 mainImage: /Courses/cc_BlueprintsFundamentals.png
 upcoming: true
 formURL: >-
