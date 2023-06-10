@@ -125,15 +125,10 @@ description: >-
 bottomText: >-
   Build a fully customized and texture based Minimap, Map and Navigation System
   for your next big title.
-<<<<<<< HEAD
-<<<<<<< HEAD
-fontFamily: Brutal
-=======
-fontFamily: Verdana
->>>>>>> parent of 9d1ffc0 (Product page enhancement)
-=======
-fontFamily: Source Sans Pro
->>>>>>> parent of 64412d1 (product page enhancement)
+fontFamily: Courier New
+contentFontSize: 20px
+featureTitleFontSize: 18px
+featureTextFontSize: 16px
 _template: product
 ---
 

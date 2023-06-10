@@ -91,7 +91,7 @@ description: >-
   projects. Whether you're a beginner or an experienced artist, you'll be able
   to create stunning and dynamic distortions that will enhance your scenes and
   bring your work to the next level.
-fontFamily: Source Sans Pro
+fontFamily: Courier New
 contentFontSize: 20px
 featureTitleFontSize: 18px
 featureTextFontSize: 16px

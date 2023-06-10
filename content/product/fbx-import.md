@@ -69,20 +69,9 @@ features:
 description: 'With this plugin, you can import FBX files along with all the textures  and
   color values. Highly detailed FBX scenes can be loaded very fast, and grouping of
   a single file into Nodes and Material sections further allows you to generate an
-  entire scene comprising of various interactive actors, from a single FBX file.
-  '
-<<<<<<< HEAD
-<<<<<<< HEAD
-fontFamily: Brutal
-contentFontSize: 18px
-=======
+  entire scene comprising of various interactive actors, from a single FBX file.'
 fontFamily: Courier New
-contentFontSize: 16px
->>>>>>> parent of 9d1ffc0 (Product page enhancement)
-=======
-fontFamily: Source Sans Pro
 contentFontSize: 20px
->>>>>>> parent of 64412d1 (product page enhancement)
 featureTitleFontSize: 18px
 featureTextFontSize: 16px
 _template: product
