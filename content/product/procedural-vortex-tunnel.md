@@ -92,9 +92,15 @@ description: >-
   Tunnel along a given Spline path procedurally through predefined sets of
   parameters.
 <<<<<<< HEAD
+<<<<<<< HEAD
 fontFamily: Brutal
 contentFontSize: 18px
 featureTitleFontSize: 18px
+=======
+fontFamily: Source Sans Pro
+contentFontSize: 20px
+featureTitleFontSize: 22px
+>>>>>>> parent of 64412d1 (product page enhancement)
 featureTextFontSize: 18px
 =======
 fontFamily: Courier New

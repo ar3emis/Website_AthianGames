@@ -72,12 +72,17 @@ description: 'With this plugin, you can import FBX files along with all the text
   entire scene comprising of various interactive actors, from a single FBX file.
   '
 <<<<<<< HEAD
+<<<<<<< HEAD
 fontFamily: Brutal
 contentFontSize: 18px
 =======
 fontFamily: Courier New
 contentFontSize: 16px
 >>>>>>> parent of 9d1ffc0 (Product page enhancement)
+=======
+fontFamily: Source Sans Pro
+contentFontSize: 20px
+>>>>>>> parent of 64412d1 (product page enhancement)
 featureTitleFontSize: 18px
 featureTextFontSize: 16px
 _template: product
