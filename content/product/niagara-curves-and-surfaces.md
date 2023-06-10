@@ -66,7 +66,11 @@ description: >
 bottomText: >-
   Elevate your VFX to the next level with this pack of customizable geometrical
   shapes
+<<<<<<< HEAD
 fontFamily: Brutal
+=======
+fontFamily: Courier New
+>>>>>>> parent of 9d1ffc0 (Product page enhancement)
 _template: product
 ---
 

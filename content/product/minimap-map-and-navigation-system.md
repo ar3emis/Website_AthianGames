@@ -125,7 +125,11 @@ description: >-
 bottomText: >-
   Build a fully customized and texture based Minimap, Map and Navigation System
   for your next big title.
+<<<<<<< HEAD
 fontFamily: Brutal
+=======
+fontFamily: Verdana
+>>>>>>> parent of 9d1ffc0 (Product page enhancement)
 _template: product
 ---
 

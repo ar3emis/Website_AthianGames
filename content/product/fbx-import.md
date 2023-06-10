@@ -71,9 +71,14 @@ description: 'With this plugin, you can import FBX files along with all the text
   a single file into Nodes and Material sections further allows you to generate an
   entire scene comprising of various interactive actors, from a single FBX file.
   '
+<<<<<<< HEAD
 fontFamily: Brutal
 contentFontSize: 18px
+=======
+fontFamily: Courier New
+contentFontSize: 16px
+>>>>>>> parent of 9d1ffc0 (Product page enhancement)
 featureTitleFontSize: 18px
-featureTextFontSize: 18px
+featureTextFontSize: 16px
 _template: product
 ---
