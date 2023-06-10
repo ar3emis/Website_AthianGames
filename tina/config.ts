@@ -240,20 +240,7 @@ export default defineConfig({
           include: "**/*",
         },
         templates: [
-          {
-            fields: [
-              {
-                type: "rich-text",
-                name: "body",
-                label: "Body of Document",
-                description: "This is the markdown body",
-                isBody: true,
-              },
-              ...courses_main_pageFields(),
-            ],
-            label: "courses-main-page",
-            name: "courses_main_page",
-          },
+          
           {
             fields: [
               {
