@@ -1,5 +1,5 @@
 ---
-date: 1970-01-01T00:00:00.000Z
+date: 2023-06-09T18:30:00.000Z
 title: Blueprint Fundamentals in Unreal Engine 5
 shortDescription: >-
   This is an 8-hour, beginner-friendly course, structured over four sessions. It
