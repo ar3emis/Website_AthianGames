@@ -92,7 +92,7 @@ description: >-
   to create stunning and dynamic distortions that will enhance your scenes and
   bring your work to the next level.
 fontFamily: Brutal
-contentFontSize: 20px
+contentFontSize: 18px
 featureTitleFontSize: 18px
 featureTextFontSize: 18px
 _template: product

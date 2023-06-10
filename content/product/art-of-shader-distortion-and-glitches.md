@@ -70,7 +70,7 @@ description: Art of Shader - Distortion And Glitches is a pack of 40 Customizabl
   many more Effects, choose, combine and customize via the parameterized material
   instances to suit your style.
 fontFamily: Brutal
-contentFontSize: 20px
+contentFontSize: 18px
 featureTitleFontSize: 18px
 featureTextFontSize: 18px
 _template: product

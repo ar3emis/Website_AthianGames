@@ -62,7 +62,7 @@ description: Art of Shader - Film and Special Effects is a pack of 47 Post Proce
   Ripple, Camouflage, NightVision and many more, choose, combine and customize via
   the parameterized material instances to suit your style.
 fontFamily: Brutal
-contentFontSize: 20px
+contentFontSize: 18px
 featureTitleFontSize: 18px
 featureTextFontSize: 18px
 _template: product
