@@ -13,11 +13,11 @@ shortDescription: >-
   Blueprint system, but also be capable of designing and implementing complex
   gameplay elements in Unreal Engine 5. Get ready to empower your game
   development journey with this immersive and hands-on learning experience.
-mainImage: /images/courses_niagarafundamentals_cover.jpg
+mainImage: /Courses/cc_BlueprintsFundamentals.png
 upcoming: true
 formURL: >-
   https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
-draft: true
+draft: false
 _template: course
 ---
 
@@ -38,7 +38,6 @@ Session 1: Understanding Unreal Engine 5 and Blueprint Basics (2 hours)
   * Blueprint Variables and Types
   * Basic Blueprint Operations
 * Lab: Creating a Simple Object Interaction Using Blueprints
-
 
 Session 2: Blueprint Scripting and Logic (2 hours)
 
@@ -71,7 +70,6 @@ Session 2: Blueprint Scripting and Logic (2 hours)
   * Debugging and Troubleshooting AI in Blueprint
 * Lab: Implementing AI Behaviors in a Blueprint Project
 
-
 Session 4: Practical Blueprint Applications and Case Studies (2 hours)
 
 * Practical Blueprint Applications
@@ -96,4 +94,3 @@ Unreal Engine 5
 ### Prerequisite
 
 This course is ideal for individuals of all skill levels. From absolute beginners eager to kick-start their journey in Unreal Engine programming, to intermediate users looking to expand their skills, the Blueprint Scripting System provides an intuitive interface suitable for all. No prior experience is required; only a willingness to explore and learn is necessary.
-
