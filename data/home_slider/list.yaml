@@ -2,10 +2,12 @@ List:
   - topText: Unreal Engine Training
     imageText: /images/athr-image.png
     bottomText: >-
-      We are honored to be an Unreal Authorized Training Institute. As a UATC,
-      we aim to deliver industry standard trainings, in game development and
-      real time graphics,  to studios making a leap towards Unreal Engine, and
-      individuals willing to learn and build games.
+      We are immensely privileged to be recognized as an Unreal Authorized
+      Training Center (UATC). Our objective as a UATC is to provide exemplary,
+      industry-standard training in game development and real-time graphics. Our
+      target audience encompasses both studios taking the momentous leap toward
+      integrating Unreal Engine into their workflow, and ambitious individuals
+      who are eager to acquire knowledge and expertise in game creation.
     bannerImage: /images/aboutmecover.jpg
     button:
       - buttonText: Learn More
@@ -14,8 +16,10 @@ List:
       - {}
   - topText: ' Make Awesome Gameplay'
     bottomText: >-
-      Use the power of Unreal Engine with our useful generic assets and code
-      plugins that would greatly aid in the development of your Unreal Projects.
+      Leverage the robust capabilities of Unreal Engine by integrating our
+      versatile, high-quality assets and code plugins. These handy resources are
+      designed to efficiently streamline and enhance the development process of
+      your Unreal Projects.
     bannerImage: /videos/showreelbg.mp4
     button:
       - buttonText: Learn More
