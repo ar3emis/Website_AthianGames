@@ -18,7 +18,7 @@ _template: course
 
 ## Course Content
 
-Session 1: Understanding Unreal Engine 5 and Blueprint Basics (2 hours)
+##### **Session 1: Understanding Unreal Engine 5 and Blueprint Basics (2 hours)**
 
 * Introduction to Unreal Engine 5
   * Overview of the Engine
@@ -34,7 +34,7 @@ Session 1: Understanding Unreal Engine 5 and Blueprint Basics (2 hours)
   * Basic Blueprint Operations
 * Lab: Creating a Simple Object Interaction Using Blueprints
 
-Session 2: Blueprint Scripting and Logic (2 hours)
+##### **Session 2: Blueprint Scripting and Logic (2 hours)**
 
 * Blueprint Scripting Basics
   * Understanding Event Graphs
@@ -50,7 +50,7 @@ Session 2: Blueprint Scripting and Logic (2 hours)
   * Creating and Using Interfaces
 * Lab: Building a Basic Gameplay Loop with Blueprints
 
-###### Session 3: Introduction to AI in Blueprint (2 hours)
+##### **Session 3: Introduction to AI in Blueprint (2 hours)**
 
 * Introduction to AI in Unreal Engine 5
   * AI Terminology and Concepts in Unreal Engine 5
@@ -65,7 +65,7 @@ Session 2: Blueprint Scripting and Logic (2 hours)
   * Debugging and Troubleshooting AI in Blueprint
 * Lab: Implementing AI Behaviors in a Blueprint Project
 
-Session 4: Practical Blueprint Applications and Case Studies (2 hours)
+##### **Session 4: Practical Blueprint Applications and Case Studies (2 hours)**
 
 * Practical Blueprint Applications
   * Procedural Generation with Blueprints
