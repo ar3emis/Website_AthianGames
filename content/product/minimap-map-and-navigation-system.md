@@ -125,7 +125,7 @@ description: >-
 bottomText: >-
   Build a fully customized and texture based Minimap, Map and Navigation System
   for your next big title.
-fontFamily: Source Sans Pro
+fontFamily: Brutal
 _template: product
 ---
 

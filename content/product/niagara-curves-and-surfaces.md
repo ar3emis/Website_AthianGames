@@ -66,7 +66,7 @@ description: >
 bottomText: >-
   Elevate your VFX to the next level with this pack of customizable geometrical
   shapes
-fontFamily: Source Sans Pro
+fontFamily: Brutal
 _template: product
 ---
 

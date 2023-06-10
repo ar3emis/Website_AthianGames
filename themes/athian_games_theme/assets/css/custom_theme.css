@@ -829,6 +829,7 @@ a.nav-link.scroll:hover {
 
 .youtube-thumbnail:hover {
   cursor: url("/uploads/play1.png") 60 60, pointer;
+  transform: scale(1.05);
 }
 
 .youtube-thumbnail:hover + .youtube-play-btn {
@@ -867,14 +868,15 @@ a.nav-link.scroll:hover {
 }
 
 .feature-title {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
   font-size: 26px;
 }
 
 .feature-description {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: justify;
 }
 
 .contact-wrapper {
@@ -1171,17 +1173,37 @@ a.nav-link.scroll:hover {
 }
 
 .image_Product {
-   width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: all 0.3s ease 0s;
-    padding: 10px;
-    opacity: 1;
+  width: 100%;
+  height: 400px; /* Adjust the height as per your preference */
+  object-fit: cover;
+  transition: all 0.3s ease 0s;
+  padding: 10px;
+  opacity: 1;
+  -webkit-font-smoothing: antialiased;
+}
 
+.image_Product:hover {
+  transform: scale(1.05); /* Adjust the scale factor as per your preference */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a box shadow for a subtle effect */
 }
-.image_Product:hover{
-  transform: scale(1.1);
+
+.image_Product::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Add a semi-transparent overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
+
+.image_Product:hover::after {
+  opacity: 1; /* Show the overlay on hover */
+}
+
 
 #product_p {
   font-size: 25px;
