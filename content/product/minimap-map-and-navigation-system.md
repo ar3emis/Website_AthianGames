@@ -125,10 +125,7 @@ description: >-
 bottomText: >-
   Build a fully customized and texture based Minimap, Map and Navigation System
   for your next big title.
-fontFamily: Courier New
-contentFontSize: 20px
-featureTitleFontSize: 18px
-featureTextFontSize: 16px
+fontFamily: Verdana
 _template: product
 ---
 
