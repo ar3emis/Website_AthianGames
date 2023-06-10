@@ -16,8 +16,10 @@ List:
       - {}
   - topText: ' Make Awesome Gameplay'
     bottomText: >-
-      Use the power of Unreal Engine with our useful generic assets and code
-      plugins that would greatly aid in the development of your Unreal Projects.
+      Leverage the robust capabilities of Unreal Engine by integrating our
+      versatile, high-quality assets and code plugins. These handy resources are
+      designed to efficiently streamline and enhance the development process of
+      your Unreal Projects.
     bannerImage: /videos/showreelbg.mp4
     button:
       - buttonText: Learn More
