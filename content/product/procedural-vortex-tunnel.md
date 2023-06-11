@@ -31,7 +31,7 @@ features:
   - image: /images/pvt_splinebasedgeneration.png
     title: Spline Based Vortex Generation
     description: >-
-      Generate the Vortex Tunnel along a given Spline path. The Size of each
+      MetaHuman Creator Generate the Vortex Tunnel along a given Spline path. The Size of each
       Vortex Mesh generated is determined by actual dimension of the static
       mesh, hence preventing stretching along the spline. 
     buttons: []
@@ -91,7 +91,7 @@ description: >-
   Procedural Vortex Tunnel is a plugin that lets you build a customizable Vortex
   Tunnel along a given Spline path procedurally through predefined sets of
   parameters.
-fontFamily: Courier New
+fontFamily: Brutal Type
 contentFontSize: 20px
 featureTitleFontSize: 18px
 featureTextFontSize: 16px

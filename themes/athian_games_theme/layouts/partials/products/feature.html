@@ -2,7 +2,7 @@
   <div class="row align-items-center">
     {{$orderData := cond .even "order-sm-1" "order-sm-2"}}
     {{$orderImg := cond .even "order-sm-2" "order-sm-1"}}
-    <div class="col-lg-6 {{$orderData}} p-30">
+    <div class="col-lg-4 {{$orderData}} p-30">
       <div class="section-title">
         <h2 class="feature-title" style="font-size: {{.args.featureTitleFontSize}};">{{ .context.title | markdownify}}</h2>
         {{if .context.subtitle}}
@@ -26,7 +26,7 @@
         {{end}}
       </div>
     </div>
-    <div class="col-lg-6 text-center text-lg-end {{$orderImg}}">
+    <div class="col-lg-8 text-center text-lg-end {{$orderImg}}">
       {{ if .context.image }}
       <img
         class="lozad image_Product"

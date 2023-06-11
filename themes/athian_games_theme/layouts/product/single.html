@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{$args := .Params}}
-<div class="qrt-half-content-frame column" style="font-family: {{.Params.fontFamily}};">
+<div class="qrt-half-content-frame-single column" style="font-family: {{.Params.fontFamily}};">
   {{ partial "partials/inner-banner.html" . }}
   {{ if .Params.description }}
     {{ $splitted := split .Params.description "\n" }}
