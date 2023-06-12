@@ -31,7 +31,7 @@ features:
   - image: /images/pvt_splinebasedgeneration.png
     title: Spline Based Vortex Generation
     description: >-
-      MetaHuman Creator Generate the Vortex Tunnel along a given Spline path. The Size of each
+      Generate the Vortex Tunnel along a given Spline path. The Size of each
       Vortex Mesh generated is determined by actual dimension of the static
       mesh, hence preventing stretching along the spline. 
     buttons: []
@@ -93,7 +93,7 @@ description: >-
   parameters.
 fontFamily: Brutal Type
 contentFontSize: 20px
-featureTitleFontSize: 18px
+featureTitleFontSize: 34px
 featureTextFontSize: 16px
 _template: product
 ---
