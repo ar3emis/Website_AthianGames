@@ -4,7 +4,7 @@ topText: ''
 bottomText: ''
 seotitle: ''
 seodescription: ''
-image: /images/aboutmecover.jpg
+image: /images/TurnBasedCover.png
 canonical: ''
 private: false
 bannerImage: ''
