@@ -86,7 +86,8 @@ features:
       which would replicate the effect of objects being pulled inside the
       Vortex, when the TargetPoint location is set along the length of the
       Vortex Spline via the Pawn Movement Component Blueprint.
-       <a class="button" href="https://example.com/learn-more">Learn More</a>
+
+      <a class="button" href="https://example.com/learn-more">Learn More</a>
     buttons: []
 description: >-
   Procedural Vortex Tunnel is a plugin that lets you build a customizable Vortex
