@@ -47,6 +47,8 @@ features:
       The Asset Pack provides you with the Emitters and corresponding Niagara
       Systems derived from them, as starting points to quickly start developing
       your own FX from a given shape.
+
+      <a class="button" href="https://example.com/learn-more">Learn More</a>
     buttons: []
 description: >
   The Asset Pack includes a collection of high quality Niagara FX that you can
