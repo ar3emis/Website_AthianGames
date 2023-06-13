@@ -60,17 +60,17 @@ features:
     buttons: []
   - image: /images/pvt_features_repeateractor.jpg
     title: Static Meshes Along The Vortex
-    buttons: []
     description: >-
       The VortexRepeater Actor scatters a set of static meshes procedurally,
       along the vortex path. Custom Repeater Data contains the parameters that
       controls how the meshes will be scattered
-  - image: /images/pvt_features_materialblending.jpg
     buttons: []
+  - image: /images/pvt_features_materialblending.jpg
     title: Material Blending
     description: >-
       Using Vortex Data, blend multiple material instances for the Vortex meshes
       along the length of the spline, using the Material Blending feature.
+    buttons: []
   - image: /images/pvt_features_pawnmovement.jpg
     title: Pawn Movement Component
     description: >-
@@ -81,11 +81,12 @@ features:
     buttons: []
   - image: /images/pvt_features_gravitypull.jpg
     title: GravityPull
-    description: >-
+    description: >
       The GravityPull Bluprint pull a set of Actors towards a given TargetPoint,
       which would replicate the effect of objects being pulled inside the
       Vortex, when the TargetPoint location is set along the length of the
       Vortex Spline via the Pawn Movement Component Blueprint.
+       <a class="button" href="https://example.com/learn-more">Learn More</a>
     buttons: []
 description: >-
   Procedural Vortex Tunnel is a plugin that lets you build a customizable Vortex
