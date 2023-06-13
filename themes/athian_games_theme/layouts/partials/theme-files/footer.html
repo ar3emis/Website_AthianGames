@@ -1,25 +1,9 @@
-<img class="lozad" src="{{ with .Site.GetPage "/info" }}{{if .Params.logo}}{{.Params.logo |absURL}}{{else}}{{"images/logo/logo.png" | absURL}}{{end}}{{end}}" alt="Logo Image" />
-
-
-
-    {{ with .Site.GetPage "/info" }}
-{{if .Params.aboutText}}
- <p>{{ .Params.aboutText}}</p>
- {{ end }}
- {{ end }}
-
-
-
- {{ with .Site.GetPage "/info" }}
- {{if .Params.socialTwitter}}
- <a href="{{ .Params.socialTwitter}}" target="_blank"><i class="fab fa-twitter"></i></a>
- {{end}}
- {{if .Params.socialInstagram}}
- <a href="{{ .Params.socialInstagram}}" target="_blank"><i class="fab fa-instagram"></i></a>
- {{end}}
- {{if .Params.socialFacebook}}
- <a href="{{ .Params.socialFacebook}}" target="_blank"><i class="fab fa-facebook-square"></i></a>
- {{end}}
- {{end}}
-
-
+<div class="col-lg-12" style="text-align: center; margin: 1.5rem; font-weight: 500; font-family:'Trebuchet MS';">
+    <div >
+      <p>
+        {{ .Site.Params.copyright  }}
+      
+      </p>
+     
+    </div>
+  </div>
