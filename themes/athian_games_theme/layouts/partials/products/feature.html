@@ -4,14 +4,14 @@
     {{$orderImg := cond .even "order-sm-2" "order-sm-1"}}
     <div class="col-lg-4 {{$orderData}} p-150">
       <div class="section-title">
-        <h3 class="feature-title" style="font-size: {{.args.featureTitleFontSize}};">{{ .context.title | markdownify}}</h3>
+        <h3 class="feature-title" style="font-size: 34px;">{{ .context.title | markdownify}}</h3>
         {{if .context.subtitle}}
         <p class="text-primary text-uppercase fw-bold mb-3">
           {{ .context.subtitle | markdownify }}
         </p>
         {{end}}
         {{if .context.description}}
-        <p class="feature-description lead mb-0 mt-3" id="product_p" style="font-size: {{.args.featureTextFontSize}};">{{ .context.description | markdownify}}</p>
+        <p class="feature-description lead mb-0 mt-3" id="product_p" style="font-size: 16px;">{{ .context.description | markdownify}}</p>
         {{end}}
         {{if .context.buttons}}
           <div class="feature-description">

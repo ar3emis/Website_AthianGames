@@ -68,7 +68,7 @@ description: >
 bottomText: >-
   Elevate your VFX to the next level with this pack of customizable geometrical
   shapes
-fontFamily: Courier New
+
 _template: product
 ---
 

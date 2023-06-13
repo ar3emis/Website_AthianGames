@@ -59,10 +59,9 @@ description: Art of Shader - Stylized Post Process is a pack of 40 Post Process 
   of the Post process materials based on certain common properties. From WaterColor,
   OilPaint, Aquarelle, Cartoon, ComicBook , CelShaded and many more Effects, choose,
   combine and customize via the parameterized material instances to suit your style.
-fontFamily: Courier New
+
 contentFontSize: 20px
-featureTitleFontSize: 18px
-featureTextFontSize: 16px
+
 _template: product
 ---
 {{<html>}}

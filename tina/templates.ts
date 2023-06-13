@@ -402,23 +402,8 @@ export function productFields() {
     },
     {
       type: "string",
-      name: "fontFamily",
-      label: "fontFamily",
-    },
-    {
-      type: "string",
       name: "contentFontSize",
       label: "contentFontSize",
-    },
-    {
-      type: "string",
-      name: "featureTitleFontSize",
-      label: "featureTitleFontSize",
-    },
-    {
-      type: "string",
-      name: "featureTextFontSize",
-      label: "featureTextFontSize",
     },
   ] as TinaField[];
 }

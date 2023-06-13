@@ -869,7 +869,8 @@ a.nav-link.scroll:hover {
 .feature-title {
   padding-left: 40px;
   padding-right: 40px;
-  font-size: 26px;
+  font-family: 'Brutal Type';
+  font-size: 34px;
   font-weight: 300;
   line-height: 42px;
   -webkit-letter-spacing: 0;
@@ -880,6 +881,7 @@ a.nav-link.scroll:hover {
 
 .feature-description {
   font-weight: 400;
+  font-family: 'Brutal Type';
   letter-spacing: 0px;
   padding-left: 40px;
   padding-right: 40px;
