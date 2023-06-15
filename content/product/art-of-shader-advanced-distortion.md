@@ -91,9 +91,7 @@ description: >-
   projects. Whether you're a beginner or an experienced artist, you'll be able
   to create stunning and dynamic distortions that will enhance your scenes and
   bring your work to the next level.
-
 contentFontSize: 20px
-
 _template: product
 ---
 
