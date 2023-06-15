@@ -7,7 +7,7 @@ summary: >-
   A set of post-process blendable materials designed to give your Unreal Engine
   projects a unique toon-style look.
 product_categories:
-  - ''
+  - Art of Shader
 image: /images/aos_dg_thumb.jpg
 description: >-
   It offers a wealth of customization options, allowing you to fine-tune the
