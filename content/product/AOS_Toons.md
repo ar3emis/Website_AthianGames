@@ -36,7 +36,7 @@ _template: product
 ---
 
 The Art of Shader: Toons is a series of post-process blendable materials
- that brings a unique and visually stunning toon-style look to your 
-Unreal Engine projects. With this asset, you can easily create a range 
+that brings a unique and visually stunning toon-style look to your
+Unreal Engine projects. With this asset, you can easily create a range
 of stylized environments, characters, and scenes that stand out from the
 crowd and capture the attention of your audience.
