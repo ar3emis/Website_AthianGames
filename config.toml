@@ -49,9 +49,7 @@ keepWhitespace = false
 [params]
 enableLozad = true
 legalname = "Athian Games OPC Pvt Ltd."
-copyright = "© 2023, All right reserved. Athian Games OPC Pvt Ltd."
 [taxonomies]
 category = "categories"
 product_category = "product_categories"
 tag = "tags"
-
