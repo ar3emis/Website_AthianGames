@@ -33,6 +33,8 @@ description: >-
   toon-style environments and characters without sacrificing performance or
   running into technical issues.
 bannerImage: /images/TurnBasedCover.png
+features:
+  - {}
 _template: product
 ---
 
