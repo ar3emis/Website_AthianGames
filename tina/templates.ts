@@ -276,9 +276,18 @@ export function productFields() {
       name: "product_categories",
       label: "product_categories",
       list: true,
-      
-    }
-    ,
+      ui: {
+        component: "select",
+        options: [
+          { label: "Art Of Shader", value: "Art Of Shader" },
+          { label: "Miscellaneous", value: "Miscellaneous" },
+          { label: "GamePlay", value: "GamePlay" },
+          { label: "Niagara FX", value: "Niagara FX" },
+          { label: "Procedural World", value: "Procedural World" },
+          // Add more categories here
+        ],
+      },
+    },
     {
       type: "image",
       name: "image",
