@@ -32,6 +32,7 @@ description: >-
   hardware configurations. This means that you can create visually stunning
   toon-style environments and characters without sacrificing performance or
   running into technical issues.
+bannerImage: /images/TurnBasedCover.png
 _template: product
 ---
 
