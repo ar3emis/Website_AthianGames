@@ -35,6 +35,7 @@ description: >-
 bannerImage: /images/TurnBasedCover.png
 features:
   - {}
+seotitle: demo
 _template: product
 ---
 
