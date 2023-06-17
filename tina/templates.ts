@@ -264,7 +264,7 @@ export function productFields() {
       type: "string",
       name: "product_categories",
       label: "product_categories",
-      
+      list: true,
     },
     {
       type: "image",

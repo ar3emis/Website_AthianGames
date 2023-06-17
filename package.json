@@ -18,20 +18,18 @@
   },
   "homepage": "https://github.com/hithismani/hugo-boilerplate",
   "dependencies": {
-    "@tinacms/cli": "^1.5.15",
+    "@tinacms/cli": "^1.5.16",
     "autoprefixer": "^9.5.1",
     "browserslist": "^4.12.0",
     "cssnano": "^4.1.10",
-    "graphql": "^16.6.0",
     "html-minifier": "^4.0.0",
     "postcss": "^7.0.14",
     "postcss-cli": "^7.1.1",
     "postcss-discard-comments": "^4.0.2",
     "postcss-import": "^12.0.1",
-    "tinacms": "^1.5.7"
+    "tinacms": "^1.5.8"
   },
   "devDependencies": {
-    "css-declaration-sorter": "^4.0.1",
-    "graphql-cli": "^4.1.0"
+    "css-declaration-sorter": "^4.0.1"
   }
 }
