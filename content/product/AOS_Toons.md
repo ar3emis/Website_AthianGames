@@ -1,5 +1,5 @@
 ---
-title: Art of Shader - Toons
+title: 'Art of Shader - '
 topText: >-
   A set of post-process blendable materials designed to give your Unreal Engine
   projects a unique toon-style look.
