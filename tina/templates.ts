@@ -29,12 +29,6 @@ export function courseFields() {
       name: "upcoming",
       label: "upcoming",
     },
-    {
-      type: "boolean",
-      name: "draft",
-      label: "Draft",
-      description: "Set to true if the course is a draft and should not be published",
-    },
   ] as TinaField[];
 }
 export function courses_main_pageFields() {
@@ -129,11 +123,6 @@ export function homepage_bannerFields() {
           type: "string",
           name: "topText",
           label: "topText",
-        },
-        {
-          type: "image",
-          name: "imageText",
-          label: "imageText",
         },
         {
           type: "string",
@@ -275,18 +264,7 @@ export function productFields() {
       type: "string",
       name: "product_categories",
       label: "product_categories",
-      list: true,
-      ui: {
-        component: "select",
-        options: [
-          { label: "Art Of Shader", value: "Art Of Shader" },
-          { label: "Miscellaneous", value: "Miscellaneous" },
-          { label: "GamePlay", value: "GamePlay" },
-          { label: "Niagara FX", value: "Niagara FX" },
-          { label: "Procedural World", value: "Procedural World" },
-          // Add more categories here
-        ],
-      },
+      
     },
     {
       type: "image",
@@ -411,8 +389,23 @@ export function productFields() {
     },
     {
       type: "string",
+      name: "fontFamily",
+      label: "fontFamily",
+    },
+    {
+      type: "string",
       name: "contentFontSize",
       label: "contentFontSize",
+    },
+    {
+      type: "string",
+      name: "featureTitleFontSize",
+      label: "featureTitleFontSize",
+    },
+    {
+      type: "string",
+      name: "featureTextFontSize",
+      label: "featureTextFontSize",
     },
   ] as TinaField[];
 }
@@ -507,7 +500,12 @@ export function single_page_templateFields() {
       name: "summary",
       label: "summary",
     },
-    
+    {
+      type: "string",
+      name: "product_categories",
+      label: "product_categories",
+      list: true,
+    },
     {
       type: "image",
       name: "image",
