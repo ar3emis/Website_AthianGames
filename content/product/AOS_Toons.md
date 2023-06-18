@@ -8,7 +8,7 @@ summary: >-
   projects a unique toon-style look.
 product_categories:
   - Art of Shader
-image: /images/aos_dg_thumb.jpg
+image: /images//aos_toons_thumb.png
 description: >-
   It offers a wealth of customization options, allowing you to fine-tune the
   intensity of the toon effect to create the perfect look for your project.
