@@ -29,6 +29,12 @@ export function courseFields() {
       name: "upcoming",
       label: "upcoming",
     },
+    {
+      type: "boolean",
+      name: "draft",
+      label: "Draft",
+      description: "Set to true if the course is a draft and should not be published",
+    },
   ] as TinaField[];
 }
 export function courses_main_pageFields() {

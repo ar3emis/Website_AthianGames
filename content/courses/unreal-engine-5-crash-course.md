@@ -11,6 +11,7 @@ mainImage: /images/courses_uecrashcourse_cover.jpg
 upcoming: true
 formURL: >-
   https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
+draft: false
 _template: course
 ---
 
@@ -32,7 +33,9 @@ _template: course
 
 <div class="d-flex justify-content-center mt-auto px-0 py-4">
 
-    <!--<img src="/images/screenshot_004.png" style="display: block;" width="100%" />-->
+```
+<!--<img src="/images/screenshot_004.png" style="display: block;" width="100%" />-->
+```
 
 </div>
 
