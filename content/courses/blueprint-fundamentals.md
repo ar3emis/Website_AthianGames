@@ -20,7 +20,7 @@ _template: course
 
 ##### **Session 1: Understanding Unreal Engine 5 and Blueprint Basics (2 hours)**
 
-* Introduction to Unreal Engine
+* Introduction to Unreal Engine 5
   * Overview of the Engine
   * Navigating the Interface
   * Understanding the Asset Pipeline
