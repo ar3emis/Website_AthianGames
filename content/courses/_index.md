@@ -11,5 +11,5 @@ menu:
     name: Unreal Courses
     weight: 1
     parent: Courses
-
+_template: course
 ---
