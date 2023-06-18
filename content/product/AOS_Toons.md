@@ -36,7 +36,12 @@ bannerImage: /images/TurnBasedCover.png
 features:
   - {}
 seotitle: demo
-private: true
+private: false
+buttons:
+  - buttonText: Get It Here
+    buttonLink: 'https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-toons'
+  - {}
+  - {}
 _template: product
 ---
 
