@@ -1,6 +1,6 @@
 ---
 date: 1970-01-01T00:00:00.000Z
-title: Game Programming with Unreal Engine
+title: Game Programming with Unreal Engine 5
 shortDescription: >-
   This course focuses on providing a comprehensive understanding of Unreal
   Engine for game development. The course covers topics such as setting up
