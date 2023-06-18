@@ -1,5 +1,5 @@
 ---
-title: 'Art of Shader - '
+title: Art of Shader - Toons
 topText: >-
   A set of post-process blendable materials designed to give your Unreal Engine
   projects a unique toon-style look.
@@ -36,6 +36,7 @@ bannerImage: /images/TurnBasedCover.png
 features:
   - {}
 seotitle: demo
+private: true
 _template: product
 ---
 
