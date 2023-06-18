@@ -30,7 +30,9 @@ features:
     description: >-
       A selection of professional-grade visual effects that are ready to be used
       or customized in your projects
-    buttons: []
+    buttons:
+      - buttonText: Learn More
+        buttonLink: 'https://example.com/'
   - image: /images/cs_feature_customization.jpg
     title: Customization options
     description: ' The ability to tweak and adjust the included FX to suit your specific needs.'
@@ -68,7 +70,6 @@ description: >
 bottomText: >-
   Elevate your VFX to the next level with this pack of customizable geometrical
   shapes
-
 _template: product
 ---
 
