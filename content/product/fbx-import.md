@@ -58,6 +58,9 @@ features:
       <a
       href="https://docs.athiangames.com/doc_fbximport#UsingParameterizedMaterials">Learn
       More</a>
+    buttons:
+      - buttonText: Learn More
+        buttonLink: 'https://docs.athiangames.com/doc_fbximport#UsingParameterizedMaterials'
   - image: /images/rfbxi_features_customfbxactor.jpg
     title: Custom FBX Actor
     description: >-
