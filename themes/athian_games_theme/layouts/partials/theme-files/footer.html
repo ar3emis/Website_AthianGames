@@ -1,24 +1,19 @@
-<div class="qrt-bottom-bar text-center py-3">
+<div class="qrt-bottom-bar text-center py-2">
   <div class="col">
     <p>
       {{ .Site.Params.copyright }}
     </p>
   </div>
-
   <div class="col">
-    {{ if .Site.Params.socialTwitter }}
-      <a href="{{ .Site.Params.socialTwitter }}" target="_blank"><i class="fab fa-twitter" style="margin-right: 20px; color: white;"></i></a>
-    {{ end }}
-    
+    {{ if .Site.Params.socialYouTube }}
+    <a href="{{ .Site.Params.socialYouTube }}" target="_blank" class="qrt-cursor-scale qrt-cursor-color"><i class="fab fa-youtube" style="margin-right: 20px; color: white;"></i></a>
+  {{ end }}
     {{ if .Site.Params.socialFacebook }}
-      <a href="{{ .Site.Params.socialFacebook }}" target="_blank"><i class="fab fa-facebook" style="margin-right: 20px; color: white;"></i></a>
+      <a href="{{ .Site.Params.socialFacebook }}" target="_blank"  class="qrt-cursor-scale qrt-cursor-color"><i class="fab fa-facebook" style="margin-right: 20px; color: white;"></i></a>
     {{ end }}
-    
-    {{ if .Site.Params.socialInstagram }}
-      <a href="{{ .Site.Params.socialInstagram }}" target="_blank"><i class="fab fa-instagram" style="margin-right: 20px; color: white;"></i></a>
-    {{ end }}
-    {{ if .Site.Params.socialGitHub }}
-      <a href="{{ .Site.Params.socialGitHub }}" target="_blank"><i class="fab fa-github" style="margin-right: 20px; color: white;"></i></a>
+  
+    {{ if .Site.Params.socialLinkedIn }}
+      <a href="{{ .Site.Params.socialLinkedIn }}" target="_blank" class="qrt-cursor-scale qrt-cursor-color"><i class="fab fa-linkedin" style="margin-right: 20px; color: white;"></i></a>
     {{ end }}
   </div>
 </div>
