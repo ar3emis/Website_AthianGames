@@ -73,11 +73,20 @@
               
 			{{ end }}
 		  </div>
+		  <div class="qrt-bottom-bar text-center py-4">
+			<div class="qrt-slider-pagination">
+				<div class="swiper-pagination swiper-main-pagination"></div>
+			  </div>
+			<p>
+			  {{ .Site.Params.copyright }}
+			</p>
+		  </div>
+		 
 		</div>
 	  </div>
 
 
-		{{partial "theme-files/footer" . }}
+		{{/*partial "theme-files/footer" . */}}
 
 		{{ partial "theme-files/scripts" . }}
 		{{ partial "functionality/seo-schema" . }}

@@ -994,6 +994,16 @@ body {
   -webkit-box-shadow: 0 1px 2px 0 rgba(45, 45, 60, 0.1);
   box-shadow: 0 1px 2px 0 rgba(45, 45, 60, 0.1);
 }
+.qrt-app .qrt-bottom-bar {
+  position: relative;
+  z-index: 9;
+  width: auto;
+  height: 80px;
+  border-radius: 5px 0 0 5px;
+  background-color: #28292c;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(45, 45, 60, 0.1);
+  box-shadow: 0 1px 2px 0 rgba(45, 45, 60, 0.1);
+}
 .qrt-app .qrt-left-bar .qrt-current-page-title {
   pointer-events: none;
   text-align: right;
