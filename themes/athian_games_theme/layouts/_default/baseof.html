@@ -70,14 +70,15 @@
 		  <div class="qrt-content" id="qrt-scroll-content" >
 	
 			{{ block "main" . }}
-              
+           
 			{{ end }}
+			{{partial "theme-files/footer" . }}
 		  </div>
 		</div>
 	  </div>
+	  {{partial "theme-files/footer" . }}
 
-
-		{{partial "theme-files/footer" . }}
+		
 
 		{{ partial "theme-files/scripts" . }}
 		{{ partial "functionality/seo-schema" . }}
