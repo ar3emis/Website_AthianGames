@@ -1646,9 +1646,9 @@ body {
 .qrt-main-slider,
 .qrt-main-slider-onepage {
   position: relative;
-  overflow: hidden;
+  overflow:hidden;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(86vh - 90px);
   background-color: #28292c;
 }
 .qrt-main-slider .qrt-project-cover,
