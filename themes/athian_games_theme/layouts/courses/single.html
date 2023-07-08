@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+<div class="qrt-half-content-frame">
+  <div class="qrt-left">
+    <div class="row align-items-center">
+      <div class="col-xl-8 col-lg-12 offset-xl-2">
+        {{if .Params.image}}
+        <div class="row d-none">
+          <img
+            src="{{.Params.image | absURL}}"
+            class="m-auto"
+            alt="product Image"
+          />
+        </div>
+        {{end}} {{if .Params.topText}}
+        <h2 class="qrt-mb-40">{{.Title}}</h2>
+        {{end}}
+      </div>
+    </div>
+    <div class="course-panel-description">
+        {{.Content}}
+      </div>
+    
+    {{if eq .Section "blog"}} {{partial "social-share.html" .}} {{else}}
+    
+    {{end}}
+  </div>
+  {{partial "inner-banner" .}}
+</div>
+
+{{ end }}

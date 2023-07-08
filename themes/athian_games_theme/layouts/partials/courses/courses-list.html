@@ -8,7 +8,7 @@
         <div class="course-text">
           <h3 class="course-title">{{.Title}}</h3>
           <p class="course-short-description">{{.Params.shortDescription}}</p>
-          <p class="course-learn-more">Learn more &rightarrow;</p>
+          <a href="{{ .Permalink }}" class="course-learn-more">Learn more &rightarrow;</a>
         </div>
       </div>
     {{ end }}
@@ -26,7 +26,7 @@
   <div class="course-text">
     <h3 class="course-title">{{.Title}}</h3>
     <p class="course-short-description">{{.Params.shortDescription}}</p>
-    <p class="course-learn-more">Learn more &rightarrow;</p>
+    <a href="{{ .Permalink }}" class="course-learn-more">Learn more &rightarrow;</a>
   </div>
 </div>
     {{ end }}

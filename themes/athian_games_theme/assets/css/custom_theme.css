@@ -1012,6 +1012,10 @@ a.nav-link.scroll:hover {
 .course-learn-more {
   font-size: 18px;
   font-weight: 600;
+  color:#ffffff;
+}
+.course-learn-more:hover {
+  color: #fff; /* Replace with your desired hover color */
 }
 
 .course-panel-description {
