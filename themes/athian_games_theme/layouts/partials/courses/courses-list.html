@@ -1,16 +1,34 @@
-<div class="courses-list-wrapper">
+
   <h2>{{.Params.coursesListTitle}}</h2>
-  {{ with site.GetPage "courses" }}
+  <div class="courses-list-wrapper">
+    {{ with site.GetPage "courses" }}
     {{ range where .Pages.ByDate.Reverse ".Params.upcoming" false }}
-      {{ partial "courses/course-in-list.html" . }}
+      <div class="course-wrapper">
+        <img class="course-image" src="{{.Params.mainImage}}" alt="{{.Title}}" />
+        <div class="course-text">
+          <h3 class="course-title">{{.Title}}</h3>
+          <p class="course-short-description">{{.Params.shortDescription}}</p>
+          <p class="course-learn-more">Learn more &rightarrow;</p>
+        </div>
+      </div>
     {{ end }}
   {{ end }}
+  </div>
+  {{ if ne (len (where .Pages ".Params.upcoming" true)) 0 }}
+  <h3 class="upcoming-courses-title">{{.Params.upcomingCoursesListTitle}}</h3>
+  {{ end }}
+ <div class="courses-list-wrapper">
   {{ with site.GetPage "courses" }}
-    {{ if ne (len (where .Pages ".Params.upcoming" true)) 0 }}
-      <h3 class="upcoming-courses-title">{{.Params.upcomingCoursesListTitle}}</h3>
-    {{ end }}
+   
     {{ range where .Pages.ByDate.Reverse ".Params.upcoming" true }}
-      {{ partial "courses/course-in-list.html" . }}
+      <div class="course-wrapper">
+  <img class="course-image" src="{{.Params.mainImage}}" alt="{{.Title}}" />
+  <div class="course-text">
+    <h3 class="course-title">{{.Title}}</h3>
+    <p class="course-short-description">{{.Params.shortDescription}}</p>
+    <p class="course-learn-more">Learn more &rightarrow;</p>
+  </div>
+</div>
     {{ end }}
   {{ end }}
 </div>

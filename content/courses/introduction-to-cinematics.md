@@ -15,7 +15,7 @@ shortDescription: >-
 
   Project Files will be provided at the end of the sessions. 
 mainImage: /images/courses_cinematics_cover.jpg
-upcoming: true
+upcoming: false
 formURL: >-
   https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
 _template: course
