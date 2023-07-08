@@ -15,14 +15,15 @@
         {{end}} {{if .Params.topText}}
         <h2 class="qrt-mb-40">{{.Title}}</h2>
         {{end}}
-      </div>
+    </div>
     </div>
     <div class="course-panel-description">
         {{.Content}}
-      </div>
-    
+                <!-- Add enrollment button and PayPal registration option -->
+                <a href="https://www.paypal.com" class="qrt-btn qrt-btn-md qrt-btn-color"><span>Enroll Now</span></a>
+    </div>
     {{if eq .Section "blog"}} {{partial "social-share.html" .}} {{else}}
-    
+
     {{end}}
   </div>
   {{partial "inner-banner" .}}
