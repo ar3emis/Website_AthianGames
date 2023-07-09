@@ -4,12 +4,14 @@
     {{ with site.GetPage "courses" }}
     {{ range where .Pages.ByDate.Reverse ".Params.upcoming" false }}
       <div class="course-wrapper">
-        <img class="course-image" src="{{.Params.mainImage}}" alt="{{.Title}}" />
-        <div class="course-text">
-          <h3 class="course-title">{{.Title}}</h3>
-          <p class="course-short-description">{{.Params.shortDescription}}</p>
-          <a href="{{ .Permalink }}" class="course-learn-more">Learn more &rightarrow;</a>
-        </div>
+        <a href="{{ .Permalink }}" class="course-link">
+          <img class="course-image" src="{{.Params.mainImage}}" alt="{{.Title}}" />
+          <div class="course-text">
+            <h3 class="course-title">{{.Title}}</h3>
+            <p class="course-short-description">{{.Params.shortDescription}}</p>
+            <a href="{{ .Permalink }}" class="course-learn-more">Learn more &rightarrow;</a>
+          </div>
+        </a>
       </div>
     {{ end }}
   {{ end }}
@@ -18,17 +20,21 @@
   <h3 class="upcoming-courses-title">{{.Params.upcomingCoursesListTitle}}</h3>
   {{ end }}
  <div class="courses-list-wrapper">
+  
   {{ with site.GetPage "courses" }}
-   
+ 
     {{ range where .Pages.ByDate.Reverse ".Params.upcoming" true }}
-      <div class="course-wrapper">
-  <img class="course-image" src="{{.Params.mainImage}}" alt="{{.Title}}" />
-  <div class="course-text">
-    <h3 class="course-title">{{.Title}}</h3>
-    <p class="course-short-description">{{.Params.shortDescription}}</p>
-    <a href="{{ .Permalink }}" class="course-learn-more">Learn more &rightarrow;</a>
-  </div>
-</div>
+    <div class="course-wrapper">
+      <a href="{{ .Permalink }}" class="course-link">
+        <img class="course-image" src="{{.Params.mainImage}}" alt="{{.Title}}" />
+        <div class="course-text">
+          <h3 class="course-title">{{.Title}}</h3>
+          <p class="course-short-description">{{.Params.shortDescription}}</p>
+          <a href="{{ .Permalink }}" class="course-learn-more">Learn more &rightarrow;</a>
+        </div>
+      </a>
+    </div>
+    
     {{ end }}
   {{ end }}
 </div>

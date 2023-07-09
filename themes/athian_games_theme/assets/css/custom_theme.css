@@ -1017,6 +1017,12 @@ a.nav-link.scroll:hover {
 .course-learn-more:hover {
   color: #fff; /* Replace with your desired hover color */
 }
+.course-link {
+  color:#ffffff;
+}
+.course-link:hover {
+  color: #fff; /* Replace with your desired hover color */
+}
 
 .course-panel-description {
   padding: 30px;
