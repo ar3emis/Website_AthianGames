@@ -20,7 +20,7 @@
     <div class="course-panel-description">
         {{.Content}}
                 <!-- Add enrollment button and PayPal registration option -->
-                <a href="https://www.paypal.com" class="qrt-btn qrt-btn-md qrt-btn-color"><span>Enroll Now</span></a>
+                {{ partial "courses/enrol-form.html" . }}
     </div>
     {{if eq .Section "blog"}} {{partial "social-share.html" .}} {{else}}
 
