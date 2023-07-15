@@ -10,6 +10,9 @@ shortDescription: >-
   setting a strong foundation for your game development journey.
 mainImage: /Courses/cc_BlueprintsFundamentals.png
 upcoming: true
+course_categories:
+  - category1
+  - category2
 formURL: >-
   https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
 draft: false

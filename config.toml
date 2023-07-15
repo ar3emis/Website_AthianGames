@@ -47,6 +47,9 @@ decimals = -1
 [minify.tdewolff.xml]
 keepWhitespace = false
 [params]
+[params.categoryThumbnails]
+    Category1 = "/Courses/cc_BlueprintsFundamentals.png"
+    Category2 = "/images/courses_cinematics_cover.jpg"
 enableLozad = true
 legalname = "Athian Games OPC Pvt Ltd."
 copyright = "Copyright © 2023, Athian Games OPC Pvt Ltd. All right reserved."
@@ -56,4 +59,5 @@ socialLinkedIn = "https://in.linkedin.com/company/athiangames?trk=public_profile
 [taxonomies]
 category = "categories"
 product_category = "product_categories"
+course_category = "course_categories"
 tag = "tags"
