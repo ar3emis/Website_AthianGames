@@ -16,7 +16,8 @@ shortDescription: >-
 mainImage: /images/unrealcpplogo.png
 upcoming: true
 course_categories:
-  - category2
+  - Cinematics
+  - Game Programming
 formURL: >-
   https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
 _template: course

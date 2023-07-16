@@ -47,15 +47,20 @@ decimals = -1
 [minify.tdewolff.xml]
 keepWhitespace = false
 [params]
-[params.categoryThumbnails]
-    Category1 = "/Courses/cc_BlueprintsFundamentals.png"
-    Category2 = "/images/courses_cinematics_cover.jpg"
 enableLozad = true
 legalname = "Athian Games OPC Pvt Ltd."
 copyright = "Copyright © 2023, Athian Games OPC Pvt Ltd. All right reserved."
 socialYouTube = "https://www.youtube.com/channel/UCfDyVAjpn6eOyNbg9iQ7C_w"
 socialFacebook = "https://www.facebook.com/Athianoir/"
 socialLinkedIn = "https://in.linkedin.com/company/athiangames?trk=public_profile_experience-item_profile-section-card_subtitle-click"
+
+[params.categoryThumbnails]
+    "Game Programming" = "/Courses/cc_BlueprintsFundamentals.png"
+    "Cinematics" = "/images/unrealcpplogo.png"
+    "unreal engine" = "/Courses/cc_BlueprintsFundamentals.png"
+    "Programming" = "/Courses/cc_BlueprintsFundamentals.png"
+    "Blueprint" = "/Courses/cc_BlueprintsFundamentals.png"
+    
 [taxonomies]
 category = "categories"
 product_category = "product_categories"

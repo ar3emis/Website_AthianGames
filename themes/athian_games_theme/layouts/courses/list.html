@@ -6,26 +6,29 @@
     </section>
 
 
-    <div class="row">
-        <div class="col-xl-8 offset-xl-2 col-lg-12">
-
-            <div class="qrt-filter qrt-mb-40">
-                <a href="#" data-filter="*" class="pl-2 pr-2">Filter By Category:</a>
+    <div class="qrt-left">
+        <div class="row">
+            <h2 class="qrt-left">{{.Params.coursesListTitle}}</h2>
+            <div class="courses-list-wrapper qrt-left qrt-mb-40">
                 
-                {{ $categories := .Site.Taxonomies.course_categories }}
-{{ $categoryThumbnails := index .Site.Params "categoryThumbnails" }}
 
-{{ range $categories }}
-  {{ $category := .Page.LinkTitle }}
-  {{ $thumbnail := index $categoryThumbnails $category }}
-  {{ if $thumbnail }}
-    <a href="{{.Page.Permalink}}" data-filter="*"
-       class="qrt-work-category qrt-current qrt-cursor-color qrt-cursor-scale qrt-anima-link courses-list-wrapper">
-      <img src="{{ $thumbnail | absURL }}" alt="{{ $category }}" />
-      {{ $category }}
-    </a>
-  {{ end }}
-{{ end }}
+                {{ $categories := .Site.Taxonomies.course_categories }}
+                {{ $categoryThumbnails := index .Site.Params "categoryThumbnails" }}
+
+                {{ range $categories }}
+                {{ $category := .Page.LinkTitle }}
+                {{ $thumbnail := index $categoryThumbnails $category }}
+                {{ if $thumbnail }}
+                <a href="{{.Page.Permalink}}" data-filter="*"
+                    class="course-title">
+                    <div  class="course-image" >
+                        <img  src="{{ $thumbnail | absURL }}" alt="{{ $category }}" />
+                    </div>
+                    
+                    {{ $category }}
+                </a>
+                {{ end }}
+                {{ end }}
 
 
             </div>

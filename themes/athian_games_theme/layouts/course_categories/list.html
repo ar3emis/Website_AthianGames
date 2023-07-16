@@ -1,0 +1,49 @@
+{{ define "main"}}
+
+<div class="qrt-half-content-frame">
+    <div class="qrt-left">
+        <div class="row">
+            {{partial "theme-files/content-design" .}}
+            <div class="courses-top-wrapper">
+                <!-- <div class="qrt-grid-sizer"></div> -->
+                {{/* $paginator := .Site.Pages */}}
+                {{/* range ($paginator.Pages.ByDate) */}}
+                {{range .Data.Pages.ByDate.Reverse}}
+                <div class="course-text">
+                    <a href="{{.Permalink}}">
+                        {{if .Params.mainImage}}
+                        <div class="courses-image">
+                            <img src="{{.Params.mainImage | absURL}}" alt="product Banner">
+                        </div>
+                        {{end}}
+                        <!-- <div class="qrt-item-zoom qrt-cursor-color"><i class="fas fa-external-link"></i></div> -->
+                        <h4><a class="courses-title" href="{{.Permalink}}">{{.Title}}</a></h4>
+                        <div class="course-short-description">
+                            <div class="description-content">
+                            {{if .Params.shortDescription}}
+                            {{.Params.shortDescription}}
+                            {{else}}
+                            {{.shortDescription |plainify}}{{end}}
+                            </div>
+                            <div class="course-learn-more">
+                                <a href="{{ .Permalink }}" class="course-learn-more">Learn more</a>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+                {{ end }}
+            </div>
+            <div class="col-lg-12">
+                {{/*partial "functionality/pagination" . */}}
+            </div>
+            <div class="qrt-divider qrt-space-fix-2"></div>
+        </div>
+
+
+    </div>
+    {{partial "inner-banner" .}}
+</div>
+
+
+{{end}}
