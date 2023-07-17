@@ -4,12 +4,12 @@
     <div class="qrt-left">
         <div class="row">
             {{partial "theme-files/content-design" .}}
-            <div class="courses-top-wrapper qrt-left">
+            <div class="courses-top-wrapper qrt-left col-xl-8 offset-xl-2 col-lg-12">
                 <!-- <div class="qrt-grid-sizer"></div> -->
                 {{/* $paginator := .Site.Pages */}}
                 {{/* range ($paginator.Pages.ByDate) */}}
                 {{range .Data.Pages.ByDate.Reverse}}
-                <div class="course-text ">
+                <div class=" ">
                     <a href="{{.Permalink}}">
                         {{if .Params.mainImage}}
                         <div class="courses-image">
