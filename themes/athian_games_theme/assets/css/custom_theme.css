@@ -950,7 +950,7 @@ a.nav-link.scroll:hover {
   grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
   grid-gap: 20px;
   justify-items: center;
-  background-color: whitesmoke;
+  background-color: white;
 
 }
 

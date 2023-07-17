@@ -12,12 +12,12 @@
                 <div class=" ">
                     <a href="{{.Permalink}}">
                         {{if .Params.mainImage}}
-                        <div class="courses-image">
+                        <div class="courses-image ">
                             <img src="{{.Params.mainImage | absURL}}" alt="product Banner">
                         </div>
                         {{end}}
                         <!-- <div class="qrt-item-zoom qrt-cursor-color"><i class="fas fa-external-link"></i></div> -->
-                        <h4><a class="courses-title" href="{{.Permalink}}">{{.Title}}</a></h4>
+                        <h4><a class="courses-title qrt-cursor-color qrt-cursor-scale qrt-anima-link" href="{{.Permalink}}">{{.Title}}</a></h4>
                         <div class="course-short-description">
                             <div class="description-content">
 
@@ -26,7 +26,7 @@
                             {{ end }}
                         </div>
                             <div class="course-learn-more">
-                                <a href="{{ .Permalink }}" class="course-learn-more">Learn more</a>
+                                <a href="{{ .Permalink }}" class="course-learn-more qrt-cursor-color qrt-cursor-scale qrt-anima-link">Learn more</a>
                             </div>
                         </div>
                     </a>
