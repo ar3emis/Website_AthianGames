@@ -1,48 +1,50 @@
-{{ define "main"}}
+{{ define "main" }}
 
-<div class="qrt-half-content-frame">
+<div class="qrt-half-content-frame column">
+    {{ partial "inner-banner.html" . }}
     <div class="qrt-left">
         <div class="row">
-            {{partial "theme-files/content-design" .}}
-            <div class="courses-top-wrapper qrt-left col-xl-8 offset-xl-2 col-lg-12">
-                <!-- <div class="qrt-grid-sizer"></div> -->
-                {{/* $paginator := .Site.Pages */}}
-                {{/* range ($paginator.Pages.ByDate) */}}
-                {{range .Data.Pages.ByDate.Reverse}}
-                <div class=" ">
-                    <a href="{{.Permalink}}">
-                        {{if .Params.mainImage}}
-                        <div class="courses-image ">
-                            <img src="{{.Params.mainImage | absURL}}" alt="product Banner">
-                        </div>
-                        {{end}}
-                        <!-- <div class="qrt-item-zoom qrt-cursor-color"><i class="fas fa-external-link"></i></div> -->
-                        <h4><a class="courses-title qrt-cursor-color qrt-cursor-scale qrt-anima-link" href="{{.Permalink}}">{{.Title}}</a></h4>
-                        <div class="course-short-description">
-                            <div class="description-content">
+            <div class="col-xl-8 offset-xl-2 col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        {{partial "theme-files/content-design" .}}
+                        <div class="row">
+                            {{ range .Data.Pages.ByDate.Reverse }}
+                            <div class="col-md-6 col-lg-4 mb-20">
+                                <div class="qrt-work-item">
+                                    <a href="{{ .Permalink }}">
+                                        {{ if .Params.mainImage }}
+                                        <div class="">
+                                            <img src="{{ .Params.mainImage | absURL }}" alt="product Banner">
+                                        </div>
+                                        {{ end }}
+                                        <!-- <div class="qrt-item-zoom qrt-cursor-color"><i class="fas fa-external-link"></i></div> -->
+                                        <div class="qrt-work-descr">
+                                            <h4 class="qrt-cursor-color qrt-white"><a class="qrt-anima-link"
+                                                    href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                                            <a href="{{.Permalink}}"
+                                                class="qrt-cursor-scale qrt-work-more qrt-anima-link"><i
+                                                    class="fas fa-arrow-right"></i></a>
+                                        </div>
 
-                            {{ if .Params.shortDescription }}
-                            {{ .Params.shortDescription }}
+                                        <div class="qrt-work-desr pl-20 pr-20 pb-20">
+                                            <div class="description-content">
+                                                {{ if .Params.shortDescription }}{{ .Params.shortDescription }}{{ end }}
+                                            </div>
+                                        </div>
+                                        
+                                    </a>
+                                </div>
+                            </div>
                             {{ end }}
                         </div>
-                            <div class="course-learn-more">
-                                <a href="{{ .Permalink }}" class="course-learn-more qrt-cursor-color qrt-cursor-scale qrt-anima-link">Learn more</a>
-                            </div>
-                        </div>
-                    </a>
+                    </div>
                 </div>
-                {{ end }}
             </div>
-            <div class="col-lg-12">
-                {{/*partial "functionality/pagination" . */}}
-            </div>
-            <div class="qrt-divider qrt-space-fix-2"></div>
         </div>
-
-
     </div>
-    {{partial "inner-banner" .}}
 </div>
 
 
-{{end}}
+
+{{ end }}
