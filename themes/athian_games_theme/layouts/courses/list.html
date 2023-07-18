@@ -5,38 +5,53 @@
         {{ partial "courses/instructors-list.html" . }}
     </section>
 
-
-    <div class="qrt-left ">
+    <!-- grid start -->
+    <div class="qrt-left">
         <div class="row">
-            <h2 class="qrt-left">{{.Params.coursesListTitle}}</h2>
-            <div class="courses-list-wrapper qrt-left qrt-mb-40 col-xl-8 offset-xl-2 col-lg-12">
+            <div class="col-xl-8 offset-xl-2 col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        
+                        <div class="row">
+                            <h2 class="qrt-left">{{.Params.coursesListTitle}}</h2>
+                            <!-- <div class="qrt-grid-sizer"></div> -->
+                            {{ $categories := .Site.Taxonomies.course_categories }}
+                            {{ $categoryThumbnails := index .Site.Params "categoryThumbnails" }}
+                        
+                            {{ range $categories }}
+                            {{ $category := .Page.LinkTitle }}
+                            {{ $thumbnail := index $categoryThumbnails $category }}
+                            {{ if $thumbnail }}
+                            <div class="col-md-6 col-lg-4 mb-20">
+                                <div class="qrt-work-item">
+                                    <a href="{{.Page.Permalink}}" data-filter="*"
+                                        class="qrt-cursor-color qrt-cursor-scale qrt-anima-link">
+                                        <div class="course-image">
+                                            <img src="{{ $thumbnail | absURL }}" alt="{{ $category }}" />
+                                        </div>
+                                        <div class="qrt-white">
+                                            {{ $category }}
+                                        </div>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                        
+                        
                 
 
-                {{ $categories := .Site.Taxonomies.course_categories }}
-                {{ $categoryThumbnails := index .Site.Params "categoryThumbnails" }}
-
-                {{ range $categories }}
-                {{ $category := .Page.LinkTitle }}
-                {{ $thumbnail := index $categoryThumbnails $category }}
-                {{ if $thumbnail }}
-                <div>
-                    <a href="{{.Page.Permalink}}" data-filter="*"
-                    class="course-title qrt-cursor-color qrt-cursor-scale qrt-anima-link">
-                    <div  class="course-image" >
-                        <img  src="{{ $thumbnail | absURL }}" alt="{{ $category }}" />
                     </div>
-                    
-                    {{ $category }}
-                </a>
                 </div>
-                
-                {{ end }}
-                {{ end }}
-
-
             </div>
         </div>
     </div>
+
+
+    <!-- grid end -->
+
 
     <div class="qrt-half-content-frame column bg-grey">
         <section class="qrt-left column product-content">
