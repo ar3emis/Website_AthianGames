@@ -1070,7 +1070,7 @@ a.nav-link.scroll:hover {
 }
 .description-content {
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limit to three lines */
+  -webkit-line-clamp: 5; /* Limit to three lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
