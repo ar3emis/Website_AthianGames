@@ -946,43 +946,25 @@ a.nav-link.scroll:hover {
 }
 
 .courses-list-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
-  grid-gap: 20px;
-  justify-items: center;
-  background-color: white;
-
-}
-
-@media (max-width: 425px) {
-  .courses-list-wrapper {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 426px) and (max-width: 768px) {
-  .courses-list-wrapper {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media (min-width: 769px) {
-  .courses-list-wrapper {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-.course-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  justify-content: center;
+
+}
+
+
+
+
+.course-wrapper {
+  margin-top: 30px;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 @media (max-width: 840px) {
   .course-wrapper {
-    flex-direction: column;
-    padding-right: 0px;
-    align-items: center;
+    flex-direction: row;
   }
 }
 .course-wrapper:hover {
@@ -1004,6 +986,11 @@ a.nav-link.scroll:hover {
   overflow: hidden;
   
  
+}
+.course-list-image {
+  width: 280px;
+  object-fit: cover;
+  height: 280px;
 }
 
 .course-image img {

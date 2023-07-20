@@ -8,33 +8,18 @@
                 <div class="row">
                     <div class="col-lg-12">
                         {{partial "theme-files/content-design" .}}
-                        <div class="row">
+                        <div class="">
                             {{ range .Data.Pages.ByDate.Reverse }}
-                            <div class="col-md-6 col-lg-4 mb-20">
-                                <div class="qrt-work-item">
-                                    <a href="{{ .Permalink }}">
-                                        {{ if .Params.mainImage }}
-                                        <div class="course-image">
-                                            <img src="{{ .Params.mainImage | absURL }}" alt="product Banner">
-                                        </div>
-                                        {{ end }}
-                                        <!-- <div class="qrt-item-zoom qrt-cursor-color"><i class="fas fa-external-link"></i></div> -->
-                                        <div class="qrt-work-descr">
-                                            <h4 class="qrt-cursor-color qrt-white"><a class="qrt-anima-link"
-                                                    href="{{ .Permalink }}">{{ .Title }}</a></h4>
-                                            <a href="{{.Permalink}}"
-                                                class="qrt-cursor-scale qrt-work-more qrt-anima-link"><i
-                                                    class="fas fa-arrow-right"></i></a>
-                                        </div>
-
-                                        <div class="qrt-work-desr pl-20 pr-20 pb-20">
-                                            <div class="description-content">
-                                                {{ if .Params.shortDescription }}{{ .Params.shortDescription }}{{ end }}
-                                            </div>
-                                        </div>
-                                        
-                                    </a>
-                                </div>
+                            <div class="courses-list-wrapper">
+                                <div class="course-wrapper">
+                                    <img class="course-list-image" src="{{.Params.mainImage}}" alt="{{.Title}}" />
+                                    <div class="course-text">
+                                      <h3 class="course-title">{{.Title}}</h3>
+                                      <p class="course-short-description">{{.Params.shortDescription}}</p>
+                                     
+                                      <a class="qrt-anima-link course-learn-more" href="{{ .Permalink }}">Learn more &rightarrow;</a>
+                                    </div>
+                                  </div>
                             </div>
                             {{ end }}
                         </div>
