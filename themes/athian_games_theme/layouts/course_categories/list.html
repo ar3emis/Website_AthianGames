@@ -8,18 +8,20 @@
                 <div class="row">
                     <div class="col-lg-12">
                         {{partial "theme-files/content-design" .}}
-                        <div class="">
+                        <div class="row">
                             {{ range .Data.Pages.ByDate.Reverse }}
+
                             <div class="courses-list-wrapper">
-                                <div class="course-wrapper">
+                                <div class="course-wrapper accordion"> 
                                     <img class="course-list-image" src="{{.Params.mainImage}}" alt="{{.Title}}" />
                                     <div class="course-text">
-                                      <h3 class="course-title">{{.Title}}</h3>
-                                      <p class="course-short-description">{{.Params.shortDescription}}</p>
-                                     
-                                      <a class="qrt-anima-link course-learn-more" href="{{ .Permalink }}">Learn more &rightarrow;</a>
+                                        <h3 class="course-title">{{.Title}}</h3>
+                                        <p class="description-content">{{.Params.shortDescription}}</p>
+
+                                        <a class="qrt-anima-link course-learn-more" href="{{ .Permalink }}">Learn more
+                                            &rightarrow;</a>
                                     </div>
-                                  </div>
+                                </div>
                             </div>
                             {{ end }}
                         </div>
