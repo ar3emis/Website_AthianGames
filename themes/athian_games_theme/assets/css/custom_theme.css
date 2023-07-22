@@ -970,10 +970,7 @@ a.nav-link.scroll:hover {
   }
 }
 
-.course-wrapper:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  cursor: pointer;
-}
+
 
 
 .courses-image {
@@ -1066,6 +1063,7 @@ a.nav-link.scroll:hover {
 .course-learn-more:hover {
   color: #2196f3;
 }
+
 
 .course-panel-description {
   padding: 30px;
