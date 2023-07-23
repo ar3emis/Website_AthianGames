@@ -12,16 +12,30 @@
                             {{ range .Data.Pages.ByDate.Reverse }}
 
                             <div class="courses-list-wrapper">
-                                <div class="course-wrapper accordion"> 
+                                <div class="course-wrapper accordion">
                                     <img class="course-list-image" src="{{.Params.mainImage}}" alt="{{.Title}}" />
                                     <div class="course-text">
                                         <h3 class="course-title">{{.Title}}</h3>
                                         <p class="description-content">{{.Params.shortDescription}}</p>
 
-                                        <a class="qrt-cursor-scale qrt-work-more qrt-anima-link  course-learn-more" href="{{ .Permalink }}">Learn more
-                                            &rightarrow;</a>
-                
+
+                                        <p class="qrt-cursor-scale qrt-work-more course-learn-more">Learn more
+                                            &rightarrow;</p>
+
                                     </div>
+                                </div>
+                                <div class="accordion-panel">
+                                    <div class="description-content">
+                                        {{.Content}}
+                                        
+                                    </div>
+                                    {{ partial "courses/view-course.html" . }}
+                                    
+                                    <!-- Add a button with a link to the course page -->
+                                    
+                                    <!--  {{ if eq .Params.upcoming false }}-->
+                                    <!--    {{ partial "courses/enrol-form.html" . }}-->
+                                    <!--  {{ end }}-->
                                 </div>
                             </div>
                             {{ end }}
