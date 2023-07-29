@@ -16,7 +16,7 @@ shortDescription: >-
 mainImage: /images/unrealcpplogo.png
 upcoming: true
 course_categories:
-  - Game Programming
+  - Programming
 formURL: >-
   https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
 _template: course
@@ -34,7 +34,9 @@ _template: course
 
 <div class="d-flex justify-content-center mt-auto px-0 py-4">
 
-    <!--<img src="/images/screenshot_004.png" style="display: block;" width="100%" />-->
+```
+<!--<img src="/images/screenshot_004.png" style="display: block;" width="100%" />-->
+```
 
 </div>
 

@@ -11,10 +11,7 @@ shortDescription: >-
 mainImage: /Courses/cc_BlueprintsFundamentals.png
 upcoming: true
 course_categories:
-  - Game Programming
   - Blueprint
-  - Blueprint Program
-  
 formURL: >-
   https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
 draft: false

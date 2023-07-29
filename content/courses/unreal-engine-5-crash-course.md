@@ -10,7 +10,7 @@ shortDescription: >-
 mainImage: /images/courses_uecrashcourse_cover.jpg
 upcoming: true
 course_categories:
-  - unreal engine
+  - Cinematics
 formURL: >-
   https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
 draft: false

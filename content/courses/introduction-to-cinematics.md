@@ -1,5 +1,5 @@
 ---
-date: null
+date: 1970-01-01T00:00:00.000Z
 title: Introduction to Cinematics
 shortDescription: >-
   Create Production Ready Cinematics with Unreal Engine's Sequencer tool,  a
@@ -17,7 +17,7 @@ shortDescription: >-
 mainImage: /images/courses_cinematics_cover.jpg
 upcoming: false
 course_categories:
-  - Game Programming
+  - Blueprint Program
 formURL: >-
   https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
 _template: course

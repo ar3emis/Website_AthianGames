@@ -1,5 +1,5 @@
 ---
-date: null
+date: 1970-01-01T00:00:00.000Z
 title: Lighting Fundamentals with Unreal Engine 5
 shortDescription: >-
   In this course, we cover the fundamentals of lighting through setting up an
@@ -11,7 +11,7 @@ shortDescription: >-
 mainImage: /images/courses_lightingfundamentals.jpg
 upcoming: true
 course_categories:
-  - Cinematics
+  - unreal engine
 formURL: >-
   https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
 _template: course
