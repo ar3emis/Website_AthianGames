@@ -15,11 +15,11 @@
                         <div class="row">
                             <h2 class="qrt-left">{{ .Params.coursesListTitle }}</h2>
                             <!-- <div class="qrt-grid-sizer"></div> -->
-                            {{ $categories := .Site.Taxonomies.course_categories }}
-                            {{ $categoryThumbnails := .Params.categoryThumbnails }}
-                            {{ $courseDescriptions := .Site.Params.courseDescriptions }}
+                            {{ $courseData := .Site.Data.course_list }}
+                            {{ $categoryThumbnails := $courseData.categoryThumbnails }}
+                            {{ $courseDescriptions := $courseData.courseDescriptions }}
                             
-                            {{ range $categories }}
+                            {{ range .Site.Taxonomies.course_categories }}
                                 {{ $category := .Page.LinkTitle }}
                                 {{ $thumbnail := index $categoryThumbnails $category }}
                                 {{ $description := index $courseDescriptions $category }}
