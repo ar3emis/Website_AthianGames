@@ -11,7 +11,7 @@ shortDescription: >-
 mainImage: /Courses/cc_BlueprintsFundamentals.png
 upcoming: true
 course_categories:
-  - Blueprint
+  - Unreal Crash Courses
 formURL: >-
   https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
 draft: false

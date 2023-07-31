@@ -11,7 +11,7 @@ shortDescription: >-
 mainImage: /images/courses_niagarafundamentals_cover.jpg
 upcoming: false
 course_categories:
-  - Cinematics
+  - VFX
 formURL: >-
   https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
 _template: course

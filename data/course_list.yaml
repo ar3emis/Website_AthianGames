@@ -1,22 +1,17 @@
 categoryThumbnails:
-  Game Programming: '/images/courses_niagarafundamentals_cover.jpg'
-  Cinematics: '/images/unrealcpplogo.png'
-  unreal engine: '/images/courses_lightingfundamentals.jpg'
-  Programming: '/Courses/cc_BlueprintsFundamentals.png'
-  Blueprint: '/Courses/cc_BlueprintsFundamentals.png'
-  Blueprint Program: '/Courses/cc_BlueprintsFundamentals.png'
+  Unreal Crash Courses: '/images/courses_niagarafundamentals_cover.jpg'
+  Game Development: '/images/unrealcpplogo.png'
+  Unreal C++: '/images/courses_lightingfundamentals.jpg'
+  VFX: '/images/courses_niagarafundamentals_cover.jpg'
+ 
 
 courseDescriptions:
-  Game Programming: >-
+  Unreal Crash Courses: >-
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, earum? Numquam, dolorem! Quisquam debitis corrupti saepe praesentium at ipsa asperiores iure aliquid accusantium. Odio iure blanditiis quasi iste officiis voluptatum!
-  Blueprint Program: >-
+  Game Development: >-
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, earum? Numquam, dolorem! Quisquam debitis corrupti saepe praesentium at ipsa asperiores iure aliquid accusantium. Odio iure blanditiis quasi iste officiis voluptatum!
-  Cinematics: >-
+  Unreal C++: >-
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, earum? Numquam, dolorem! Quisquam debitis corrupti saepe praesentium at ipsa asperiores iure aliquid accusantium. Odio iure blanditiis quasi iste officiis voluptatum!
-  unreal engine: >-
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, earum? Numquam, dolorem! Quisquam debitis corrupti saepe praesentium at ipsa asperiores iure aliquid accusantium. Odio iure blanditiis quasi iste officiis voluptatum!
-  Programming: >-
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, earum? Numquam, dolorem! Quisquam debitis corrupti saepe praesentium at ipsa asperiores iure aliquid accusantium. Odio iure blanditiis quasi iste officiis voluptatum!
-  Blueprint: >-
+  VFX: >-
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, earum? Numquam, dolorem! Quisquam debitis corrupti saepe praesentium at ipsa asperiores iure aliquid accusantium. Odio iure blanditiis quasi iste officiis voluptatum!
     
