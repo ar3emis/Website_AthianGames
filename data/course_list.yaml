@@ -1,17 +1,19 @@
 categoryThumbnails:
-  Unreal Crash Courses: '/images/courses_niagarafundamentals_cover.jpg'
-  Game Development: '/images/unrealcpplogo.png'
-  Unreal C++: '/images/courses_lightingfundamentals.jpg'
-  VFX: '/images/courses_niagarafundamentals_cover.jpg'
- 
-
+  Unreal Crash Courses: /images/courses_niagarafundamentals_cover.jpg
+  Game Development: /images/unrealcpplogo.png
+  Unreal C++: /images/courses_lightingfundamentals.jpg
+  VFX: /images/courses_niagarafundamentals_cover.jpg
 courseDescriptions:
   Unreal Crash Courses: >-
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, earum? Numquam, dolorem! Quisquam debitis corrupti saepe praesentium at ipsa asperiores iure aliquid accusantium. Odio iure blanditiis quasi iste officiis voluptatum!
+    A comprehensive guide to the key features of Unreal Engine. From asset
+    creation to blueprint scripting, this course lays the groundwork for your
+    projects.
   Game Development: >-
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, earum? Numquam, dolorem! Quisquam debitis corrupti saepe praesentium at ipsa asperiores iure aliquid accusantium. Odio iure blanditiis quasi iste officiis voluptatum!
+    Create immersive games using Unreal Engine. Covering all aspects of
+    development from concept to publishing, turn your game ideas into reality.
   Unreal C++: >-
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, earum? Numquam, dolorem! Quisquam debitis corrupti saepe praesentium at ipsa asperiores iure aliquid accusantium. Odio iure blanditiis quasi iste officiis voluptatum!
+    Enhance your game development skills by learning to code in Unreal Engine's
+    powerful C++ language. Dive into custom mechanics, AI behaviors, and more.
   VFX: >-
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, earum? Numquam, dolorem! Quisquam debitis corrupti saepe praesentium at ipsa asperiores iure aliquid accusantium. Odio iure blanditiis quasi iste officiis voluptatum!
-    
+    Discover and apply Unreal Engine's visual effects. Master particle systems,
+    material creation, and post-processing effects with hands-on projects.
