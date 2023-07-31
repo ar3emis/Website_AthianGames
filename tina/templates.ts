@@ -598,3 +598,33 @@ export function single_page_templateFields() {
     },
   ] as TinaField[];
 }
+export function course_list() {
+  return [
+
+    {
+      type: "image",
+      name: "categoryThumbnails",
+      label: "Unreal Crash Courses",
+    },
+    {
+      type: "image",
+      name: "categoryThumbnails",
+      label: "Game Development",
+    },
+    {
+      type: "image",
+      name: "categoryThumbnails",
+      label: "Unreal C++",
+    },
+    {
+      type: "image",
+      name: "categoryThumbnails",
+      label: "VFX",
+    },
+    {
+      type: "string",
+      name: "courseDescriptions",
+    },
+
+  ] as TinaField[];
+}

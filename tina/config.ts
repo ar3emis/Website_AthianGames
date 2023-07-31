@@ -7,6 +7,7 @@ import { no_editFields } from "./templates";
 import { productFields } from "./templates";
 import { simpleFields } from "./templates";
 import { single_page_templateFields } from "./templates";
+import { course_list } from "./templates";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
@@ -460,6 +461,88 @@ export default defineConfig({
           },
         ],
       },
+      {
+        format: "yaml",
+        label: "Course List",
+        name: "course_list",
+        path: "data", // Replace this with the actual path to your YAML file
+        frontmatterFormat: "yaml",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        match: {
+          include: "course_list",
+        },
+        fields: [
+          {
+            type: "object",
+            name: "categoryThumbnails",
+            label: "Category Thumbnails",
+            
+            fields: [
+              {
+                type: "image",
+                name: "Unreal_Crash_Courses",
+                nameOverride: "Unreal Crash Courses",
+                label: "Unreal Crash Courses",
+              },
+              {
+                type: "image",
+                name: "Game_Development",
+                nameOverride: "Game Development",
+                label: "Game Development",
+              },
+              {
+                type: "image",
+                name: "Unreal_C__",
+                nameOverride: "Unreal C++",
+                label: "Unreal C++",
+              },
+              
+              {
+                type: "image",
+                name: "VFX",
+                label: "VFX",
+              },
+            ],
+          },
+
+          {
+            type: "object",
+            name: "courseDescriptions",
+            label: "Course Descriptions",
+            fields: [
+              {
+                type: "string",
+                name: "Unreal_Crash_Courses",
+                nameOverride: "Unreal Crash Courses",
+                label: "Unreal Crash Courses",
+              },
+              {
+                type: "string",
+                name: "Game_Development",
+                nameOverride: "Game Development",
+                label: "Game Development",
+              },
+               {
+                type: "string",
+                name: "Unreal_C__",
+                nameOverride: "Unreal C++",
+                label: "Unreal C++",
+              },
+              {
+                type: "string",
+                name: "VFX",
+                label: "VFX",
+              },
+             
+            ],
+          }
+        ],
+      }
     ],
   },
 });
