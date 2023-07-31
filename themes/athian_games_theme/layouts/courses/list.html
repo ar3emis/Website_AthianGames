@@ -24,13 +24,15 @@
                                 {{ $thumbnail := index $categoryThumbnails $category }}
                                 {{ $description := index $courseDescriptions $category }}
                                 
-                                {{ if and $thumbnail $description }}
+                                
                                 <div class="col-md-6 col-lg-4 mb-20">
                                     <div class="qrt-work-item">
                                         <a href="{{ .Page.Permalink }}" data-filter="*" class="qrt-cursor-color qrt-cursor-scale qrt-anima-link">
+                                            {{ if $thumbnail }}
                                             <div class="course-image">
                                                 <img src="{{ $thumbnail | absURL }}" alt="{{ $category }}" />
                                             </div>
+                                            {{ end }}
                                             <div class="qrt-work-descr">
                                                 <h4 class="qrt-cursor-color qrt-white">
                                                     <a class="qrt-anima-link" href="{{ .Page.Permalink }}">{{ $category }}</a>
@@ -39,15 +41,17 @@
                                                 class="qrt-cursor-scale qrt-work-more qrt-anima-link"><i
                                                     class="fas fa-arrow-right"></i></a>
                                             </div>
+                                            {{ if $description }}
                                             <div class="qrt-work-desr pl-20 pr-20 pb-20 ">
                                                 <div class="description-content qrt-white">
                                                 {{ $description }}
                                                 </div>
                                             </div>
+                                            {{ end }}
                                         </a>
                                     </div>
                                 </div>
-                                {{ end }}
+                                
                             {{ end }}
                         </div>
                         
