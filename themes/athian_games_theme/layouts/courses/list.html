@@ -28,7 +28,7 @@
                                 <div class="col-md-6 col-lg-4 mb-20">
                                     <div class="qrt-work-item">
                                         <a href="{{ .Page.Permalink }}" data-filter="*" class="qrt-cursor-color qrt-cursor-scale qrt-anima-link">
-                                            {{ if $thumbnail }}
+                                            {{ with $thumbnail }}
                                             <div class="course-image">
                                                 <img src="{{ $thumbnail | absURL }}" alt="{{ $category }}" />
                                             </div>
@@ -41,7 +41,7 @@
                                                 class="qrt-cursor-scale qrt-work-more qrt-anima-link"><i
                                                     class="fas fa-arrow-right"></i></a>
                                             </div>
-                                            {{ if $description }}
+                                            {{ with $description }}
                                             <div class="qrt-work-desr pl-20 pr-20 pb-20 ">
                                                 <div class="description-content qrt-white">
                                                 {{ $description }}
