@@ -32,16 +32,7 @@ export function courseFields() {
       label: "course_categories",
       list: true,
       ui: {
-        component: "select",
-        options: [
-          { label: "Game Programming", value: "Game Programming" },
-          { label: "Blueprint", value: "Blueprint" },
-          { label: "Blueprint Program", value: "Blueprint Program" },
-          { label: "Programming", value: "Programming" },
-          { label: "Cinematics", value: "Cinematics" },
-          { label: "unreal engine", value: "unreal engine" },
-          // Add more categories here
-        ],
+        component: "text",
       },
     },
     {
