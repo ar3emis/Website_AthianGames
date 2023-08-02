@@ -479,70 +479,36 @@ export default defineConfig({
         fields: [
           {
             type: "object",
-            name: "categoryThumbnails",
-            label: "Category Thumbnails",
-            
+            name: "category",
+            label: "Category",
+            list: true,
             fields: [
               {
-                type: "image",
-                name: "Unreal_Crash_Courses",
-                nameOverride: "Unreal Crash Courses",
-                label: "Unreal Crash Courses",
+                type: "string",
+                name: "course_categories",
+                label: "Category",
+                description: "Enter the course category",
               },
               {
                 type: "image",
-                name: "Game_Development",
-                nameOverride: "Game Development",
-                label: "Game Development",
+                name: "thumbnail",
+                label: "Thumbnail",
+                description: "Upload the category thumbnail image",
               },
               {
-                type: "image",
-                name: "Unreal_C__",
-                nameOverride: "Unreal C++",
-                label: "Unreal C++",
-              },
-              
-              {
-                type: "image",
-                name: "VFX",
-                label: "VFX",
+                type: "string",
+                name: "description",
+                label: "Description",
+                description: "Enter the course description",
+                ui: {
+                  component: "textarea",
+                },
               },
             ],
           },
-
-          {
-            type: "object",
-            name: "courseDescriptions",
-            label: "Course Descriptions",
-            fields: [
-              {
-                type: "string",
-                name: "Unreal_Crash_Courses",
-                nameOverride: "Unreal Crash Courses",
-                label: "Unreal Crash Courses",
-              },
-              {
-                type: "string",
-                name: "Game_Development",
-                nameOverride: "Game Development",
-                label: "Game Development",
-              },
-               {
-                type: "string",
-                name: "Unreal_C__",
-                nameOverride: "Unreal C++",
-                label: "Unreal C++",
-              },
-              {
-                type: "string",
-                name: "VFX",
-                label: "VFX",
-              },
-             
-            ],
-          }
+         
         ],
-      }
+      },
     ],
   },
 });
