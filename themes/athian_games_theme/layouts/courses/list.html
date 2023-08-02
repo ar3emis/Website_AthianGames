@@ -26,7 +26,7 @@
                                         {{ $course = . }}
                                     {{ end }}
                                 {{ end }}
-                        
+                                {{ if $course }}
                                 {{ $thumbnail := $course.thumbnail }}
                                 {{ $description := $course.description }}
                         
@@ -56,6 +56,7 @@
                                         </a>
                                     </div>
                                 </div>
+                                {{ end }}
                             {{ end }}
                         </div>
                         
