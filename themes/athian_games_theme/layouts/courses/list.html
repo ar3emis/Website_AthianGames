@@ -16,7 +16,7 @@
                             <h2 class="qrt-left">{{ .Params.coursesListTitle }}</h2>
                             <!-- <div class="qrt-grid-sizer"></div> -->
                         
-                            {{ $courseData := .Site.Data.course_list }}
+                            {{ $courseData := .Site.Data.course_list.category  }}
                         
                             {{ range .Site.Taxonomies.course_categories }}
                                 {{ $category := .Page.LinkTitle }}
