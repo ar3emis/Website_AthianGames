@@ -15,45 +15,53 @@
                         <div class="row">
                             <h2 class="qrt-left">{{ .Params.coursesListTitle }}</h2>
                             <!-- <div class="qrt-grid-sizer"></div> -->
+                        
                             {{ $courseData := .Site.Data.course_list }}
-                            {{ $categoryThumbnails := $courseData.categoryThumbnails }}
-                            {{ $courseDescriptions := $courseData.courseDescriptions }}
-                            
+                        
                             {{ range .Site.Taxonomies.course_categories }}
                                 {{ $category := .Page.LinkTitle }}
-                                {{ $thumbnail := index $categoryThumbnails $category }}
-                                {{ $description := index $courseDescriptions $category }}
-                                
-                                
+                                {{ $course := slice }}
+                                {{ range $courseData }}
+                                    {{ if eq .course_categories $category }}
+                                        {{ $course = . }}
+                                    {{ end }}
+                                {{ end }}
+                        
+                                {{ $thumbnail := $course.thumbnail }}
+                                {{ $description := $course.description }}
+                        
                                 <div class="col-md-6 col-lg-4 mb-20">
                                     <div class="qrt-work-item">
                                         <a href="{{ .Page.Permalink }}" data-filter="*" class="qrt-cursor-color qrt-cursor-scale qrt-anima-link">
                                             {{ with $thumbnail }}
-                                            <div class="course-image">
-                                                <img src="{{ $thumbnail | absURL }}" alt="{{ $category }}" />
-                                            </div>
+                                                <div class="course-image">
+                                                    <img src="{{ $thumbnail | absURL }}" alt="{{ $category }}" />
+                                                </div>
                                             {{ end }}
                                             <div class="qrt-work-descr">
                                                 <h4 class="qrt-cursor-color qrt-white">
-                                                    <a class="qrt-anima-link" href="{{ .Page.Permalink }}">{{ $category }}</a>
+                                                    <a class="qrt-anima-link" href="#">{{ $category }}</a>
                                                 </h4>
-                                                <a href="{{.Page.Permalink}}"
-                                                class="qrt-cursor-scale qrt-work-more qrt-anima-link"><i
-                                                    class="fas fa-arrow-right"></i></a>
+                                                <a href="{{ .Page.Permalink }}" class="qrt-cursor-scale qrt-work-more qrt-anima-link">
+                                                    <i class="fas fa-arrow-right"></i>
+                                                </a>
                                             </div>
                                             {{ with $description }}
-                                            <div class="qrt-work-desr pl-20 pr-20 pb-20 ">
-                                                <div class="description-content qrt-white">
-                                                {{ $description }}
+                                                <div class="qrt-work-desr pl-20 pr-20 pb-20">
+                                                    <div class="description-content qrt-white">
+                                                        {{ $description }}
+                                                    </div>
                                                 </div>
-                                            </div>
                                             {{ end }}
                                         </a>
                                     </div>
                                 </div>
-                                
                             {{ end }}
                         </div>
+                        
+                                              
+                        
+                        
                         
                         
                 
