@@ -1,7 +1,11 @@
 category:
-  - course_categories: Testing
-    thumbnail: /Courses/cc_BlueprintsFundamentals.png
-    description: testing
+  - course_categories: Cinematics
+    thumbnail: /images/courses_cinematics_cover.jpg
+    description: >-
+      A comprehensive guide to the key features of Unreal Engine. From asset
+      creation to blueprint scripting, this course lays the groundwork for your
+      projects.
+           
   - course_categories: Unreal Crash Courses
     thumbnail: /images/HighresScreenshot00006.png
     description: >-
