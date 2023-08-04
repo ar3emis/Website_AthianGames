@@ -41,6 +41,12 @@ export function courseFields() {
       label: "upcoming",
     },
     {
+      type: "string",
+      name: "formURL",
+      label: "Enroll Button URL",
+      description: "Enter the URL for the enrolment form",
+    },
+    {
       type: "boolean",
       name: "draft",
       label: "Draft",
