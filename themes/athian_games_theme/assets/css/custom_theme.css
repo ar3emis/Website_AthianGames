@@ -1071,10 +1071,72 @@ a.nav-link.scroll:hover {
 }
 
 
+/* Styling for the .course-panel-description class */
 .course-panel-description {
   padding: 30px;
-  
 }
+
+/* Styling for the Course Content heading */
+.course-panel-description h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Styling for the session headings (e.g., Session 1) */
+.course-panel-description h3 h4 h5 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* Styling for the subheadings (e.g., Introduction to Unreal Engine 5) */
+.course-panel-description li {
+  font-size: 14px; /* Decreased font size for the list items */
+  margin-top: 8px;
+}
+
+/* Styling for the main list items */
+.course-panel-description ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling for the sub list items */
+.course-panel-description ul ul {
+  list-style-type: none;
+  margin-left: 20px;
+}
+
+/* Styling for list item bullet points */
+.course-panel-description li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 8px;
+}
+
+/* Custom bullet style for main list items */
+.course-panel-description li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 3px; /* Adjusted top position for the bullet */
+  font-size: 12px; /* Decreased font size for the bullet */
+  font-weight: bold;
+}
+
+/* Custom bullet style for sub list items */
+.course-panel-description ul ul li:before {
+  content: "◦";
+  position: absolute;
+  left: 0;
+  top: 3px; /* Adjusted top position for the bullet */
+  font-size: 10px; /* Decreased font size for the bullet */
+  font-weight: bold;
+}
+
 
 .instructors-list-title,
 .upcoming-courses-title {
