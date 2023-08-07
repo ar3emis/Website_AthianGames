@@ -10,6 +10,8 @@ shortDescription: >-
   Project files will be provided at the end of the course.
 mainImage: /images/courses_lightingfundamentals.jpg
 upcoming: true
+font_size: 16px
+font_family: Brutal Type
 course_categories:
   - Unreal Crash Courses
 formURL: >-
