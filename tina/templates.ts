@@ -28,6 +28,16 @@ export function courseFields() {
     },
     {
       type: "string",
+      name: "font_size",
+      label: "Font Size",
+    },
+    {
+      type: "string",
+      name: "font_family",
+      label: "Font Family",
+    },
+    {
+      type: "string",
       name: "course_categories",
       label: "course_categories",
       list: true,
