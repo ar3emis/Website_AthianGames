@@ -15,8 +15,6 @@ shortDescription: >-
   perfecting. 
 mainImage: /images/unrealcpplogo.png
 upcoming: true
-font_size: 16px
-font_family: Brutal Type
 course_categories:
   - Unreal C++
 formURL: >-

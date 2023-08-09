@@ -16,8 +16,6 @@ shortDescription: >-
   Project Files will be provided at the end of the sessions. 
 mainImage: /images/courses_cinematics_cover.jpg
 upcoming: false
-font_size: 16px
-font_family: Brutal Type
 course_categories:
   - Cinematics
 formURL: >-

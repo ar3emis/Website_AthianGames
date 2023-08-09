@@ -10,8 +10,6 @@ shortDescription: >-
   Niagara, and strengthen your fundamentals in Visual Effects in Unreal Engine.
 mainImage: /images/courses_niagarafundamentals_cover.jpg
 upcoming: false
-font_size: 16px
-font_family: Brutal Type
 course_categories:
   - VFX
 formURL: >-
