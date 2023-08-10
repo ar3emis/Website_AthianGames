@@ -10,7 +10,7 @@
                         {{partial "theme-files/content-design" .}}
                         <div class="row">
                             {{ range .Data.Pages.ByDate.Reverse }}
-                            {{ $fontConfig := .Site.GetPage "/courses/font.md" }}
+                            {{ $fontConfig := .Site.GetPage "course_font.md" }}
 
                             <style>
                                 .course-panel-description {
