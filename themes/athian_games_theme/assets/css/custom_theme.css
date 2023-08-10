@@ -1087,6 +1087,12 @@ a.nav-link.scroll:hover {
     margin-bottom: 10px;
 }
 
+.course-panel-description ul,
+.course-panel-description li{
+ 
+  font-size: var(--custom-font-size);
+  font-family: var(--custom-font-family);
+}
 
 .instructors-list-title,
 .upcoming-courses-title {
