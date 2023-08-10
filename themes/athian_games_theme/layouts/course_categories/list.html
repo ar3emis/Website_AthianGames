@@ -10,13 +10,21 @@
                         {{partial "theme-files/content-design" .}}
                         <div class="row">
                             {{ range .Data.Pages.ByDate.Reverse }}
+                            {{ $fontConfig := .Site.GetPage "/courses/font.md" }}
+
+                            <style>
+                                .course-panel-description {
+                                    --custom-font-size: {{ $fontConfig.Params.font_size | safeCSS }};
+                                    --custom-font-family: {{ $fontConfig.Params.font_family | safeCSS }};
+                                }
+                            </style>
 
                             <div class="courses-list-wrapper">
                                 <div class="course-wrapper accordion">
                                     <img class="course-list-image" src="{{.Params.mainImage}}" alt="{{.Title}}" />
                                     <div class="course-text col-xl-6">
                                         <h3 class="course-title">{{.Title}}</h3>
-                                        <p class="description-content" style="font-size: {{ .Params.font_size | safeCSS }}; font-family: {{ .Params.font_family | safeCSS }}">{{.Params.shortDescription}}</p>
+                                        <p class="description-content">{{.Params.shortDescription}}</p>
 
 
                                         <p class="course-learn-more">Learn more
@@ -26,8 +34,8 @@
                                 </div>
                                 <div class="accordion-panel">
                                    
-                                    <div class="course-panel-description" style="font-size: {{ .Params.font_size | safeCSS }}; font-family: {{ .Params.font_family | safeCSS }}">
-                                        {{.Content }}
+                                    <div class="course-panel-description">
+                                        {{ .Content | safeHTML }}
 
                                         
 
