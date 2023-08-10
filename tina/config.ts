@@ -8,6 +8,7 @@ import { productFields } from "./templates";
 import { simpleFields } from "./templates";
 import { single_page_templateFields } from "./templates";
 import { course_list } from "./templates";
+import { course_font_style } from "./templates";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
@@ -507,6 +508,40 @@ export default defineConfig({
             ],
           },
          
+        ],
+      },
+
+      {
+        format: "md",
+        label: "Course Font ",
+        name: "course_font",  // Use the base name of your file without the extension
+        path: "content",
+        frontmatterFormat: "yaml",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        match: {
+          include: "course_font", // Specify the file you want to include
+        },
+       
+        fields: [
+          
+          {
+            type: "string",
+            name: "font_size",
+            label: "Font Size",
+           
+            
+          },
+          {
+            type: "string",
+            name: "font_family",
+            label: "Font Family",
+          
+          },
         ],
       },
     ],

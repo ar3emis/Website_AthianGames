@@ -622,3 +622,20 @@ export function course_list() {
 
   ] as TinaField[];
 }
+export function course_font_style() {
+  return [
+    {
+      type: "string",
+      label: "Font Size",
+      name: "font_size",
+      description: "Enter font size in pixel example: 15px",
+    },
+    {
+      type: "string",
+      label: "Font Family",
+      name: "font_family",
+      description: "Enter Font Family Name example: Arial",
+    },
+  
+  ] as TinaField[];
+}
