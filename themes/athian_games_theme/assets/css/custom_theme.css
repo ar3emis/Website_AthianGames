@@ -949,6 +949,7 @@ a.nav-link.scroll:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
 
 }
 
@@ -1021,8 +1022,11 @@ a.nav-link.scroll:hover {
 .course-text {
   display: flex;
   flex-direction: column;
-  padding: 30px 0;
+  padding: 0;
   margin-left: 30px;
+  margin-top: 5px;
+
+  
 
 }
 @media (max-width: 840px) {
@@ -1041,8 +1045,9 @@ a.nav-link.scroll:hover {
 }
 
 .course-title {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-family: var(--custom-font-family);
+  font-size: var(--custom-font-size);
+  margin-bottom: 5px;
 }
 
 .course-short-description {
@@ -1057,13 +1062,20 @@ a.nav-link.scroll:hover {
   
 }
 .description-content {
-  margin-top: 15px;
+  line-height: 24px;
+  -webkit-font-smoothing:antialiased;
+  margin-top: 10px;
+  overflow: hidden;
+  max-height: 9.5em; /* Three lines of text */
+  font-family: var(--custom-font-family);
+  font-size: var(--custom-font-size);
 }
 
 .course-learn-more {
   
   color: #2196f3;
-  font-size: 18px;
+  font-family: var(--custom-font-family);
+  font-size: var(--custom-font-size);
   font-weight: 600;
 }
 .course-learn-more:hover {
