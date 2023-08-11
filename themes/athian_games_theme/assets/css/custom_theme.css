@@ -1106,6 +1106,12 @@ a.nav-link.scroll:hover {
   font-family: var(--custom-font-family);
 }
 
+.course-panel-description p {
+ 
+  font-size: var(--custom-font-size);
+  font-family: var(--custom-font-family);
+}
+
 .instructors-list-title,
 .upcoming-courses-title {
   font-size: 28px;
