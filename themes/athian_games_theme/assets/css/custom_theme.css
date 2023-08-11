@@ -1046,7 +1046,7 @@ a.nav-link.scroll:hover {
 
 .course-title {
   font-family: var(--custom-font-family);
-  font-size: var(--custom-font-size);
+  
   margin-bottom: 5px;
 }
 
