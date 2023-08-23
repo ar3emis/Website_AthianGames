@@ -11,29 +11,30 @@
                         <div class="row">
                             {{ range .Data.Pages.ByDate.Reverse }}
                             {{ $fontConfig := .Site.GetPage "course_font.md" }}
+                            {{ $fontSize := $fontConfig.Params.font_size }}
+                            {{ $fontFamily := $fontConfig.Params.font_family }}
 
                             <div class="courses-list-wrapper">
                                 <div class="course-wrapper accordion">
                                     <img class="course-list-image" src="{{.Params.mainImage}}" alt="{{.Title}}" />
                                     <div class="course-text col-xl-6">
                                         <h3 class="course-title">{{.Title}}</h3>
-                                        <p class="description-content">{{.Params.shortDescription}}</p>
+                                        <p class="description-content" style="font-size: {{$fontSize}}; font-family: {{$fontFamily}};">{{.Params.shortDescription}}</p>
 
 
-                                        <p class="course-learn-more">Learn more
+                                        <p class="course-learn-more" style="font-size: {{$fontSize}}; font-family: {{$fontFamily}};">Learn more
                                             &rightarrow;</p>
 
                                     </div>
                                 </div>
                                 <div class="accordion-panel">
                                    
-                                    <div class="course-panel-description">
+                                    <div class="course-panel-description" style="font-size: {{$fontSize}}; font-family: {{$fontFamily}};">
                                         {{ .Content | safeHTML }}
 
                                         
 
                                     </div>
-                                
                                     {{ partial "courses/enrol-form.html" . }}
 
                                     <!-- Add a button with a link to the course page -->
