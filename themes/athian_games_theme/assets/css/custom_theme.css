@@ -1045,9 +1045,8 @@ a.nav-link.scroll:hover {
 }
 
 .course-title {
-  font-family: var(--custom-font-family);
-  
-  margin-bottom: 5px;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
 .course-short-description {
@@ -1067,15 +1066,12 @@ a.nav-link.scroll:hover {
   margin-top: 10px;
   overflow: hidden;
   max-height: 9.5em; /* Three lines of text */
-  font-family: var(--custom-font-family);
-  font-size: var(--custom-font-size);
 }
 
 .course-learn-more {
   
   color: #2196f3;
-  font-family: var(--custom-font-family);
-  font-size: var(--custom-font-size);
+  font-size: 18px;
   font-weight: 600;
 }
 .course-learn-more:hover {
@@ -1088,29 +1084,7 @@ a.nav-link.scroll:hover {
   padding: 30px;
 }
 
-.course-panel-description h1,
-.course-panel-description h2,
-.course-panel-description h3,
-.course-panel-description h4,
-.course-panel-description h5,
-.course-panel-description h6 {
-    font-size: var(--custom-font-size);
-    font-family: var(--custom-font-family);
-    margin-bottom: 10px;
-}
 
-.course-panel-description ul,
-.course-panel-description li{
- 
-  font-size: var(--custom-font-size);
-  font-family: var(--custom-font-family);
-}
-
-.course-panel-description p {
- 
-  font-size: var(--custom-font-size);
-  font-family: var(--custom-font-family);
-}
 
 .instructors-list-title,
 .upcoming-courses-title {

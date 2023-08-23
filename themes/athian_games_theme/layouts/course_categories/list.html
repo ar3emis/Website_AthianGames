@@ -12,27 +12,6 @@
                             {{ range .Data.Pages.ByDate.Reverse }}
                             {{ $fontConfig := .Site.GetPage "course_font.md" }}
 
-                            <style>
-                                .course-panel-description {
-                                    --custom-font-size: {{ $fontConfig.Params.font_size | safeCSS }};
-                                    --custom-font-family: {{ $fontConfig.Params.font_family | safeCSS }};
-                                }
-                                .description-content {
-                                    --custom-font-family: {{ $fontConfig.Params.font_family | safeCSS }};
-                                    --custom-font-size: {{ $fontConfig.Params.font_size | safeCSS }};
-                                }
-                                .course-title {
-                                    --custom-font-family: {{ $fontConfig.Params.font_family | safeCSS }};
-                                    
-
-                                }
-                                .course-learn-more {
-                                    --custom-font-family: {{ $fontConfig.Params.font_family | safeCSS }};
-                                    --custom-font-size: {{ $fontConfig.Params.font_size | safeCSS }};
-
-                                }
-                            </style>
-
                             <div class="courses-list-wrapper">
                                 <div class="course-wrapper accordion">
                                     <img class="course-list-image" src="{{.Params.mainImage}}" alt="{{.Title}}" />
