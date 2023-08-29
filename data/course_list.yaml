@@ -6,12 +6,11 @@ category:
       creation to blueprint scripting, this course lays the groundwork for your
       projects.
            
-  - course_categories: Unreal Crash Courses
-    thumbnail: /images/HighresScreenshot00006.png
+  - course_categories: Unreal C++ Programming
+    thumbnail: /Courses//unrealcpplogo.png
     description: >-
-      A comprehensive guide to the key features of Unreal Engine. From asset
-      creation to blueprint scripting, this course lays the groundwork for your
-      projects.
+      Dive into the powerful combination of C++ and Unreal, exploring the
+      intricate coding aspects of game development. 
   - course_categories: Game Development
     thumbnail: /images/TurnBasedCover.png
     description: >-
