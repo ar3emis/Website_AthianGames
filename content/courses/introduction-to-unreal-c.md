@@ -1,12 +1,13 @@
 ---
 date: 2022-06-30T18:30:00.000Z
-title: Introduction to Unreal C++
+title: Foundations of Unreal C++ Programming
 shortDescription: >-
-  Learn to create awesome gameplay with Unreal C++. In this course, we will be
-  looking into how to create actor classes, code plugins, gameplay system in C++
-  , and expose and extend them in Blueprints in a more usable way, with examples
-  that give you extensive idea to how best to use the power of both C++ and
-  Blueprint for developing your awesome projects.
+  Dive deep into Unreal's C++ foundation, covering basics and setting up C++
+  projects. In this course, we will be looking into how to create actor classes,
+  code plugins, gameplay system in C++ , and expose and extend them in
+  Blueprints in a more usable way, with examples that give you extensive idea to
+  how best to use the power of both C++ and Blueprint for developing your
+  awesome projects.
 
 
   This course is designed for absolute beginners, but even if you have knowledge
@@ -16,7 +17,7 @@ shortDescription: >-
 mainImage: /images/unrealcpplogo.png
 upcoming: true
 course_categories:
-  - Unreal C++
+  - Unreal C++ Programming
 formURL: >-
   https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
 _template: course
