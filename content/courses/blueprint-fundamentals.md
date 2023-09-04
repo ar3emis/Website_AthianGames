@@ -10,6 +10,7 @@ shortDescription: >-
   setting a strong foundation for your game development journey.
 mainImage: /Courses/cc_BlueprintsFundamentals.png
 upcoming: true
+trainer: Trainer1
 course_categories:
   - Unreal Crash Courses
 formURL: >-

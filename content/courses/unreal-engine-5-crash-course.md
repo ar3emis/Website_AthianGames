@@ -9,6 +9,7 @@ shortDescription: >-
   knowledge in how to use Unreal for creating a game from start to finish. 
 mainImage: /images/courses_uecrashcourse_cover.jpg
 upcoming: true
+trainer: Trainer3
 course_categories:
   - Unreal Crash Courses
 formURL: >-

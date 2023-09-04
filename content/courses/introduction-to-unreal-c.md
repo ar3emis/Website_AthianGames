@@ -16,6 +16,7 @@ shortDescription: >-
   perfecting. 
 mainImage: /images/unrealcpplogo.png
 upcoming: true
+trainer: Trainer2
 course_categories:
   - Unreal C++ Programming
 formURL: >-

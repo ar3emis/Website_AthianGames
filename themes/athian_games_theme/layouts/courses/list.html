@@ -78,24 +78,31 @@
 
 
     <div class="qrt-half-content-frame column bg-grey">
-        <section class="qrt-left column product-content">
-            <div class="contact-wrap">
-                <div class="row align-items-center">
-                    <h2>Upcoming Trainings</h2>
+        <section class="col-xl-8 offset-xl-2 col-lg-12">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="qrt-left">Upcoming Trainings</h2>
                     <div class="row">
-                        {{ range .Params.UpcomingTrainings }}
-                        <div class="col-md-5">
-                            <div class="card">
-                                <img src="{{ .thumbnail }}" class="card-img-top" alt="...">
+                        {{ $upcomingCourses := where .Site.RegularPages "Params.upcoming" true }}
+                        {{ if $upcomingCourses }}
+                        {{ range $upcomingCourses }}
+                        <div class="col-md-6 col-lg-4 mb-20">
+                            <div class="qrt-work-item">
+                                <div class="course-image">
+                                    <img src="{{ .Params.mainImage }}"  alt="...">
+                                </div>
+                               
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ .title }}</h5>
-                                    <p class="card-text">Trainer: {{ .trainer }}</p>
-                                    <a href="{{ .registerLink }}" class="btn btn-primary">Register</a>
+                                    <h5 class="card-title">{{ .Params.title }}</h5>
+                                    <p class="card-text">Trainer: {{ .Params.trainer }}</p>
+                                    <a href="{{ .Params.formURL }}" class="btn btn-primary">Register</a>
                                 </div>
                             </div>
                         </div>
                         {{ end }}
+                        {{ end }}
                     </div>
+                    {{ if not $upcomingCourses }}
                     <div style="border: 1px inset silver; margin:15px 25px 5px 1px; padding: 15px;">
                         <div class="row" style="padding: 5px">
                             <h4 style="color: gray; font-family: 'Josefin Sans', sans-serif">We are currently preparing
@@ -104,6 +111,7 @@
                         </div>
                         {{ partial "courses/enrol-form.html" . }}
                     </div>
+                    {{ end }}
                 </div>
             </div>
         </section>
