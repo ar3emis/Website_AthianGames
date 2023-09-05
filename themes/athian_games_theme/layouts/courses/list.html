@@ -96,7 +96,8 @@
                                     <h5 class="card-title">{{ .Params.title }}</h5>
                                     <p class="card-text">Trainer: {{ .Params.trainer }}</p>
                                     <p class="card-text">Date: {{ .Params.date.Format "02/01/2006" }}</p>
-                                    <a href="{{ .Params.formURL }}" class="btn btn-primary">Register</a>
+                                    {{ $url := .Params.formURL }}
+                                    <a href="{{ $url | safeURL  }}" class="btn btn-primary">Register</a>
                                 </div>
                             </div>
                         </div>
