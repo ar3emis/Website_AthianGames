@@ -95,6 +95,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ .Params.title }}</h5>
                                     <p class="card-text">Trainer: {{ .Params.trainer }}</p>
+                                    <p class="card-text">Date: {{ .Params.date.Format "02/01/2006" }}</p>
                                     <a href="{{ .Params.formURL }}" class="btn btn-primary">Register</a>
                                 </div>
                             </div>
