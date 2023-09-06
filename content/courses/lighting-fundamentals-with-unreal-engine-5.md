@@ -1,5 +1,5 @@
 ---
-date: 1970-01-01T00:00:00.000Z
+date: 2023-08-31T18:30:00.000Z
 title: Lighting Fundamentals with Unreal Engine 5
 shortDescription: >-
   In this course, we cover the fundamentals of lighting through setting up an
@@ -9,7 +9,7 @@ shortDescription: >-
 
   Project files will be provided at the end of the course.
 mainImage: /images/courses_lightingfundamentals.jpg
-upcoming: true
+upcoming: false
 course_categories:
   - Unreal Crash Courses
 formURL: >-
