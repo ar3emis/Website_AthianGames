@@ -34,7 +34,7 @@
                                     <div class="qrt-work-item">
                                         <a href="{{ .Page.Permalink }}" data-filter="*" class="qrt-cursor-color qrt-cursor-scale qrt-anima-link">
                                             {{ with $thumbnail }}
-                                                <div class="course-image">
+                                                <div class="m-auto">
                                                     <img src="{{ $thumbnail | absURL }}" alt="{{ $category }}" />
                                                 </div>
                                             {{ end }}
@@ -88,7 +88,7 @@
                         {{ range $upcomingCourses }}
                         <div class="col-md-6 col-lg-3 mb-20">
                             <div class="qrt-work-item qrt-cursor-color qrt-cursor-scale">
-                                <div class="course-image">
+                                <div class="m-auto">
                                     <img src="{{ .Params.mainImage }}"  alt="...">
                                 </div>
                                
