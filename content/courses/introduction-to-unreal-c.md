@@ -15,7 +15,7 @@ shortDescription: >-
   methodologies that our instructors have spent years in mastering and
   perfecting. 
 mainImage: /images/unrealcpplogo.png
-upcoming: true
+upcoming: false
 trainer: Trainer2
 course_categories:
   - Unreal C++ Programming
