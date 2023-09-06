@@ -9,7 +9,7 @@ shortDescription: >-
   well-equipped to design intricate gameplay elements in Unreal Engine 5,
   setting a strong foundation for your game development journey.
 mainImage: /Courses/cc_BlueprintsFundamentals.png
-upcoming: true
+upcoming: false
 trainer: Trainer1
 course_categories:
   - Unreal Crash Courses
