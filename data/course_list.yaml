@@ -16,12 +16,6 @@ category:
     description: >-
       Create immersive games using Unreal Engine. Covering all aspects of
       development from concept to publishing, turn your game ideas into reality.
-  - course_categories: Unreal C++
-    thumbnail: /images/courses_lightingfundamentals.jpg
-    description: >-
-      Enhance your game development skills by learning to code in Unreal
-      Engine's powerful C++ language. Dive into custom mechanics, AI behaviors,
-      and more.
   - course_categories: VFX
     thumbnail: /images/courses_niagarafundamentals_cover.jpg
     description: >-
