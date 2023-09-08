@@ -1,6 +1,6 @@
 ---
 date: 2022-06-30T18:30:00.000Z
-title: Unreal Engine 5 Crash Course
+title: Introduction to Unreal Engine 5
 shortDescription: >-
   This course is designed specifically for those who want to quickly get started
   with Unreal Engine 5. This will cover the basics of Unreal Engine, and give a
