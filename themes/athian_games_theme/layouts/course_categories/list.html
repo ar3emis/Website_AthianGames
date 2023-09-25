@@ -15,34 +15,21 @@
                             {{ $fontFamily := $fontConfig.Params.font_family }}
 
                             <div class="courses-list-wrapper">
-                                <div class="course-wrapper accordion">
+                                <div class="course-wrapper">
                                     <img class="course-list-image" src="{{.Params.mainImage}}" alt="{{.Title}}" />
-                                    <div class="course-text col-xl-6">
+                                    <div class="course-text col-xl-6" >
                                         <h3 class="course-title">{{.Title}}</h3>
                                         <p class="description-content" style="font-size: {{$fontSize}}; font-family: {{$fontFamily}};">{{.Params.shortDescription}}</p>
 
+                                        <a href="{{ .Permalink }}" class="course-learn-more qrt-cursor-scale"  style="font-size: {{$fontSize}}; font-family: {{$fontFamily}};">
+                                        Learn more &rightarrow;
 
-                                        <p class="course-learn-more" style="font-size: {{$fontSize}}; font-family: {{$fontFamily}};">Learn more
-                                            &rightarrow;</p>
+
+                                        </a>
 
                                     </div>
                                 </div>
-                                <div class="accordion-panel">
-                                   
-                                    <div class="course-panel-description" style="font-size: {{$fontSize}}; font-family: {{$fontFamily}};">
-                                        {{ .Content | safeHTML }}
-
-                                        
-
-                                    </div>
-                                    {{ partial "courses/enrol-form.html" . }}
-
-                                    <!-- Add a button with a link to the course page -->
-
-                                    <!--  {{ if eq .Params.upcoming false }}-->
-                                    <!--    {{ partial "courses/enrol-form.html" . }}-->
-                                    <!--  {{ end }}-->
-                                </div>
+                                
                             </div>
                             {{ end }}
                         </div>
