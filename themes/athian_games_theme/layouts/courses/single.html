@@ -8,7 +8,7 @@
   
 </section>
 
-<div class="container my-5">
+<div class="container my-5" >
 
   <!-- Course Details -->
   <div class="mb-4">
@@ -98,10 +98,56 @@
 <!-- Include Bootstrap CSS -->
 
 <style>
-  .card-hover:hover {
-  transform: translateY(-10px); /* Adjust the value to control the hover effect */
-  transition: transform 0.3s ease; /* Add a smooth transition for the effect */
+  .card.bg-light {
+    background: linear-gradient(to right, #f9f9f9, #e9ecef);
 }
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+.cover {
+    position: relative;
+    overflow: hidden;
+}
+
+.cover-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card {
+    border: none;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.btn {
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+ .pricing-card {
+        border: none;
+        background-color: rgba(0, 123, 255, 0.1); /* This color is a lightened version of Bootstrap's primary blue. You can adjust as needed. */
+    }
+
+    .price-display {
+        font-size: 3rem;
+        margin-bottom: 16px;
+    }
 </style>
 
 <!-- Include Bootstrap JS (with Popper.js) -->
