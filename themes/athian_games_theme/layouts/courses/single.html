@@ -12,14 +12,13 @@
 
   <!-- Course Details -->
   <div class="mb-4">
-    <h2 class="mb-3">Course Details</h2>
-    <p>Here you can provide a brief description of the course.</p>
+    <p> {{ .Content }} </p>
   </div>
 
   <!-- Duration -->
   <div class="mb-4">
     <h2 class="mb-3">Duration</h2>
-    <p>3 Months (Example Duration)</p>
+    <p>{{ .Params.duration }}</p>
   </div>
 
   <!-- Modules -->
@@ -27,6 +26,8 @@
     <h2 class="mb-3">Course Modules</h2>
 
     <!-- Module 1 -->
+    {{ with .Params.module1 }}
+      {{ range . }}
     <div>
       <div class="card bg-dark mb-4 rounded shadow card-hover">
         <div class="card-body" id="headingModule1" data-bs-toggle="collapse" data-bs-target="#collapseModule1"
@@ -34,19 +35,26 @@
           <div class="d-flex align-items-start">
             <i class="fas fa-book fa-2x text-primary me-3" style="margin-right: 15px;"></i>
             <div>
-              <h4>Module 1: Introduction to the Topic</h4>
+              <h4>{{ .title }}</h4>
               <ul>
-                <li>Topic 1.1: Subtopic Description</li>
-                <li>Topic 1.2: Subtopic Description</li>
+                {{ with .topics }}
+                  {{ range . }}
+                    <li>{{ .title }}: {{ .description }}</li>
+                  {{ end }}
+                {{ end }}
               </ul>
             </div>
           </div>
         </div>
       </div>
       <div id="collapseModule1" class="collapse mb-4">
-        <p>Additional text content for Module 1.</p>
+        {{ with .content }}
+            <p>{{ . }}</p>
+          {{ end }}
       </div>
     </div>
+    {{ end }}
+    {{ end }}
 
     <!-- Module 2 -->
     <div>

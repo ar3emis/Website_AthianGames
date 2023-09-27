@@ -10,6 +10,15 @@ shortDescription: >-
   setting a strong foundation for your game development journey.
 mainImage: /Courses/cc_BlueprintsFundamentals.png
 upcoming: false
+duration: 8 hours , divided into 4 sessions
+module1:
+  - title: Module 1:Introduction
+    topics:
+      - title: Topic 1.1
+        description: Subtopic one
+      - title: Topic 1.2
+        description: Subtopic two
+    content: Additional text
 trainer: Trainer1
 course_categories:
   - Unreal Crash Courses
@@ -81,9 +90,6 @@ _template: course
 * Final Lab: Creating an Interactive Level with Advanced Blueprint Features
 * Q\&A and Course Wrap-Up
 
-### Duration
-
-8 hours , divided into 4 sessions
 
 ### Software Version
 

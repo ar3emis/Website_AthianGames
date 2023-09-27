@@ -10,6 +10,15 @@ shortDescription: >-
   Project files will be provided at the end of the course.
 mainImage: /images/courses_lightingfundamentals.jpg
 upcoming: false
+duration: 3 Months
+module1:
+  - title: Module 1:Introduction
+    topics:
+      - title: Topic 1.1
+        description: Subtopic one
+      - title: Topic 1.2
+        description: Subtopic two
+    content: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 course_categories:
   - Unreal Crash Courses
 formURL: >-
@@ -34,9 +43,6 @@ _template: course
 * IES Profiles and Light Functions
 * Post Processing
 
-### Duration
-
-3 hours , single session
 
 ### Software Version
 
