@@ -57,6 +57,8 @@
     {{ end }}
 
     <!-- Module 2 -->
+    {{ with .Params.module2 }}
+    {{ range . }}
     <div>
       <div class="card bg-dark mb-4 rounded shadow card-hover">
         <div class="card-body" id="headingModule2" data-bs-toggle="collapse" data-bs-target="#collapseModule2"
@@ -64,19 +66,26 @@
           <div class="d-flex align-items-start">
             <i class="fas fa-video fa-2x text-primary me-3" style="margin-right: 15px;"></i>
             <div>
-              <h4>Module 2: Deep Dive into Sub-topic</h4>
+              <h4>{{ .title }}</h4>
               <ul>
-                <li>Topic 2.1: Subtopic Description</li>
-                <li>Topic 2.2: Subtopic Description</li>
+                {{ with .topics }}
+                  {{ range . }}
+                    <li>{{ .title }}: {{ .description }}</li>
+                  {{ end }}
+                {{ end }}
               </ul>
             </div>
           </div>
         </div>
       </div>
       <div id="collapseModule2" class="collapse mb-4">
-        <p>Additional text content for Module 2.</p>
+        {{ with .content }}
+        <p>{{ . }}</p>
+      {{ end }}
       </div>
     </div>
+    {{ end }}
+    {{ end }}
   </div>
 
 
@@ -93,7 +102,8 @@
               <h3 class="card-title">Standard Course</h3>
               <h2 class="price-display">$100</h2>
               <p class="card-text">Full access to all course materials and support.</p>
-              <a href="#enroll" class="btn btn-primary btn-lg mt-4">Enroll Now</a>
+              <a href="{{ .Params.formURL }}" class="btn btn-primary btn-lg mt-4">Enroll Now</a>
+              
             </div>
           </div>
         </div>
