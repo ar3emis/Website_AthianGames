@@ -41,6 +41,80 @@ export function courseFields() {
       label: "upcoming",
     },
     {
+      type: "object",
+      name: "module1",
+      label: "Module1",
+      list: true, 
+      fields: [
+        {
+          type: "string",
+          name: "title",
+          label: "Module Title",
+        },
+        {
+          type: "object",
+          name: "topics",
+          label: "Module Topics",
+          list: true, // If you want to allow multiple topics
+          fields: [
+            {
+              type: "string",
+              name: "title",
+              label: "Topic Title",
+            },
+            {
+              type: "string",
+              name: "description",
+              label: "Topic Description",
+            },
+          ],
+        },
+        {
+          type: "string",
+          name: "content",
+          label: "Module Addiotnal text",
+        },
+      ],
+    },
+
+    {
+      type: "object",
+      name: "module2",
+      label: "Module2",
+      list: true, 
+      fields: [
+        {
+          type: "string",
+          name: "title",
+          label: "Module Title",
+        },
+        {
+          type: "object",
+          name: "topics",
+          label: "Module Topics",
+          list: true, // If you want to allow multiple topics
+          fields: [
+            {
+              type: "string",
+              name: "title",
+              label: "Topic Title",
+            },
+            {
+              type: "string",
+              name: "description",
+              label: "Topic Description",
+            },
+          ],
+        },
+        {
+          type: "string",
+          name: "content",
+          label: "Module Addiotnal text",
+        },
+      ],
+    },
+    
+    {
       type: "string",
       name: "formURL",
       label: "Enroll Button URL",
