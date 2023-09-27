@@ -37,8 +37,7 @@ module2:
 trainer: Trainer1
 course_categories:
   - Unreal Crash Courses
-formURL: >-
-  https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
+formURL: 'https://calendly.com/athiangames/blueprint-fundamentals-in-unreal-engine-5'
 draft: false
 _template: course
 ---
