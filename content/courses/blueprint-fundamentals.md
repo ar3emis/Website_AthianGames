@@ -10,9 +10,9 @@ shortDescription: >-
   setting a strong foundation for your game development journey.
 mainImage: /Courses/cc_BlueprintsFundamentals.png
 upcoming: false
-duration: 8 hours , divided into 4 sessions
+duration: '8 hours , divided into 4 sessions'
 module1:
-  - title: Module 1:Introduction
+  - title: 'Module 1:Introduction'
     topics:
       - title: Topic 1.1
         description: Subtopic one
@@ -20,13 +20,20 @@ module1:
         description: Subtopic two
     content: Additional text
 module2:
-  - title: Module 1:Introduction
+  - title: 'Module 1:Introduction'
     topics:
       - title: Topic 1.1
         description: Subtopic one
       - title: Topic 1.2
         description: Subtopic two
-    content: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    content: >-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum
 trainer: Trainer1
 course_categories:
   - Unreal Crash Courses
@@ -36,68 +43,11 @@ draft: false
 _template: course
 ---
 
-## Course Content
+## Course Details
 
-#### **Session 1: Understanding Unreal Engine 5 and Blueprint Basics (2 hours)**
+Delve deep into the dynamic world of visual scripting with Unreal Engine 5's Blueprint system. This comprehensive course offers a blend of foundational concepts, hands-on exercises, and real-world applications, ensuring participants gain a robust understanding of Blueprints and their potential in game development.
 
-* Introduction to Unreal Engine 5
-  * Overview of the Engine
-  * Navigating the Interface
-  * Understanding the Asset Pipeline
-* Introduction to Blueprints in Unreal Engine 5
-  * Overview of Blueprints
-  * Understanding the Blueprint Editor
-  * Blueprint Nodes and Components
-* Creating Your First Blueprint
-  * Structuring and Organizing Blueprints
-  * Blueprint Variables and Types
-  * Basic Blueprint Operations
-* Lab: Creating a Simple Object Interaction Using Blueprints
-
-#### **Session 2: Blueprint Scripting and Logic (2 hours)**
-
-* Blueprint Scripting Basics
-  * Understanding Event Graphs
-  * Blueprint Flow Control: Conditionals and Loops
-  * Basic Math Operations in Blueprint
-* Creating Gameplay Elements with Blueprints
-  * Player Input and Controller Setup
-  * Actor Interaction and Movement
-  * Creating HUD and User Interface Elements
-* Understanding Object-Oriented Concepts in Blueprints
-  * Overview of Class Hierarchy
-  * Using Inheritance in Blueprints
-  * Creating and Using Interfaces
-* Lab: Building a Basic Gameplay Loop with Blueprints
-
-#### **Session 3: Introduction to AI in Blueprint (2 hours)**
-
-* Introduction to AI in Unreal Engine 5
-  * AI Terminology and Concepts in Unreal Engine 5
-  * Overview of AI Components: AI Controller, Perception Systems, Blackboard, Behavior Tree
-* Creating Basic AI with Blueprints
-  * Setting Up AI Controllers and Characters
-  * Creating AI Behavior with Blueprint
-  * Manipulating AI Perception and Decision Making
-* Advanced AI Concepts in Blueprint
-  * Using the Environment Query System (EQS)
-  * Setting Up Advanced AI Behaviors
-  * Debugging and Troubleshooting AI in Blueprint
-* Lab: Implementing AI Behaviors in a Blueprint Project
-
-#### **Session 4: Practical Blueprint Applications and Case Studies (2 hours)**
-
-* Practical Blueprint Applications
-  * Procedural Generation with Blueprints
-  * Physics and Animation Control with Blueprints
-  * Creating Interactive Environments
-* Case Studies: Analyzing Blueprint Use in Popular Games
-  * Case Study 1: Action-Adventure Game
-  * Case Study 2: First-Person Shooter
-  * Case Study 3: Open-World RPG
-* Final Lab: Creating an Interactive Level with Advanced Blueprint Features
-* Q\&A and Course Wrap-Up
-
+Tailored for both beginners and those with some prior Unreal Engine experience, this course prioritizes a practical approach. Participants will learn not only the "how" but also the "why" behind various Blueprint techniques, enabling them to make informed decisions in their projects.
 
 ### Software Version
 
