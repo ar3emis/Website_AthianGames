@@ -43,7 +43,7 @@ draft: false
 _template: course
 ---
 
-## Course Details
+## **Course Details**
 
 Delve deep into the dynamic world of visual scripting with Unreal Engine 5's Blueprint system. This comprehensive course offers a blend of foundational concepts, hands-on exercises, and real-world applications, ensuring participants gain a robust understanding of Blueprints and their potential in game development.
 
@@ -51,7 +51,7 @@ Tailored for both beginners and those with some prior Unreal Engine experience, 
 
 ### Software Version
 
-Unreal Engine 5
+**Unreal Engine 5**
 
 ### Prerequisite
 
