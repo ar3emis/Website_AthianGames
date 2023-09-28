@@ -53,20 +53,34 @@ learningOutcomes:
       underscoring your readiness to apply Blueprint skills in real-world
       projects.
 courseModulesTitle: Course Modules
-courseModulesDescription: |
-  Every module features a dedicated 2-hour live session with a
-  seasoned instructor.
+courseModulesDescription: >-
+  Every module features a dedicated 2-hour live session with a seasoned
+  instructor.
 module:
-  - title: 'Module 1: Module Title'
-    description: >
-      Placeholder text here for the general module description. This text gives
-      a brief
-
-      overview of what's covered in this module.
+  - title: 'Module 1: Introduction to Blueprints and Basic Concepts'
+    description: >-
+      Delve into the basics of Unreal Engine 5 and its Blueprint system to
+      kickstart your journey in game development. Familiarize yourself with
+      fundamental concepts and tools to create interactive experiences.
     topics:
-      - 'Topic 1: Placeholder text for topic details and overview'
-      - 'Topic 2: Placeholder text for topic details and overview'
-      - 'Topic 3: Placeholder text for topic details and overview'
+      - >-
+        Introduction to Unreal Engine 5: Explore the latest version of Unreal
+        Engine and its new features.
+      - >-
+        Blueprint Significance: Uncover the importance of Blueprints in creating
+        interactive experiences.
+      - >-
+        Overview of Blueprint Types: Differentiate between Level Blueprint,
+        Blueprint Class, and Blueprint Interface.
+      - >-
+        Navigating the Blueprint Interface: A walkthrough of the Blueprint
+        Editor Interface and its various components.
+      - >-
+        Understanding Variables: Introduction to variables and common data types
+        used in Blueprints.
+      - >-
+        Basic Logic and Flow Control: Grasp the basics of conditional checks and
+        loops to control the flow of execution.
   - title: 'Module 2: Module Title'
     description: >
       Placeholder text here for the general module description. This text gives
