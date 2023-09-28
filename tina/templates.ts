@@ -41,17 +41,11 @@ export function courseFields() {
       label: "upcoming",
     },
     {
-      type: "object",
+      type: "string",
       name: "prerequisites",
       label: "Prerequisites",
       list: true,
-      fields: [
-        {
-          type: "string",
-          name: "item",
-          label: "Prerequisite Item",
-        },
-      ],
+
     },
     {
       type: "object",
@@ -90,47 +84,21 @@ export function courseFields() {
       ],
     },
     {
-      type: "object",
-      name: "module1",
-      label: "Module1",
-      list: true, 
-      fields: [
-        {
-          type: "string",
-          name: "title",
-          label: "Module Title",
-        },
-        {
-          type: "object",
-          name: "topics",
-          label: "Module Topics",
-          list: true, // If you want to allow multiple topics
-          fields: [
-            {
-              type: "string",
-              name: "title",
-              label: "Topic Title",
-            },
-            {
-              type: "string",
-              name: "description",
-              label: "Topic Description",
-            },
-          ],
-        },
-        {
-          type: "string",
-          name: "content",
-          label: "Module Addiotnal text",
-        },
-      ],
+      type: "string",
+      name: "courseModulesTitle",
+      label: "Course Modules Title",
     },
-
+    {
+      type: "string",
+      name: "courseModulesDescription",
+      label: "Course Modules Description",
+    },
+    
     {
       type: "object",
-      name: "module2",
-      label: "Module2",
-      list: true, 
+      name: "module",
+      label: "Module",
+      list: true,
       fields: [
         {
           type: "string",
@@ -138,30 +106,22 @@ export function courseFields() {
           label: "Module Title",
         },
         {
-          type: "object",
-          name: "topics",
-          label: "Module Topics",
-          list: true, // If you want to allow multiple topics
-          fields: [
-            {
-              type: "string",
-              name: "title",
-              label: "Topic Title",
-            },
-            {
-              type: "string",
-              name: "description",
-              label: "Topic Description",
-            },
-          ],
+          type: "string",
+          name: "description",
+          label: "Module Description",
         },
         {
           type: "string",
-          name: "content",
-          label: "Module Addiotnal text",
+          name: "topics",
+          label: "Module Topics",
+          list: true, // Allow multiple topics
         },
+        
       ],
     },
+    
+
+    
     {
       type: "object",
       name: "pricingAndEnrollment",

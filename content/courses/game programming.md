@@ -24,22 +24,26 @@ learningOutcomes:
     description: Master the fundamentals of XYZ.
   - title: Outcome 2
     description: Understand and implement ABC techniques.
-courseModulesTitle: 'Course Modules'
+courseModulesTitle: Course Modules
 courseModulesDescription: |
   Every module features a dedicated 2-hour live session with a
   seasoned instructor.
 module:
   - title: 'Module 1: Module Title'
-    description: |
-      Placeholder text here for the general module description. This text gives a brief
+    description: >
+      Placeholder text here for the general module description. This text gives
+      a brief
+
       overview of what's covered in this module.
     topics:
       - 'Topic 1: Placeholder text for topic details and overview'
       - 'Topic 2: Placeholder text for topic details and overview'
       - 'Topic 3: Placeholder text for topic details and overview'
   - title: 'Module 2: Module Title'
-    description: |
-      Placeholder text here for the general module description. This text gives a brief
+    description: >
+      Placeholder text here for the general module description. This text gives
+      a brief
+
       overview of what's covered in this module.
     topics:
       - 'Topic 1: Placeholder text for topic details and overview'
