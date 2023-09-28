@@ -25,7 +25,7 @@ learningOutcomes:
   - title: Outcome 2
     description: Understand and implement ABC techniques.
 module1:
-  - title: 'Module 1:Introduction'
+  - title: 'Module 1 : Introduction to Unreal Engine 5 and Blueprints '
     topics:
       - title: Topic 1.1
         description: Subtopic one
