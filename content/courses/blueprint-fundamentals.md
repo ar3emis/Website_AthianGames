@@ -38,10 +38,20 @@ whoShouldAttend:
       Artists with a knack for technology, aiming to bridge the gap between art
       and code by harnessing the capabilities of Blueprints.
 learningOutcomes:
-  - title: Outcome 1
-    description: Master the fundamentals of XYZ.
-  - title: Outcome 2
-    description: Understand and implement ABC techniques.
+  - title: Blueprint Fluency from Basics to Advanced
+    description: >-
+      Develop a solid foundation and then ascend to advanced techniques,
+      enabling the creation of intricate game mechanisms solely with visual
+      scripting.
+  - title: Accelerated Game Prototyping
+    description: >-
+      Achieve the proficiency to swiftly transform game ideas into playable
+      prototypes using Blueprint, reducing the time from concept to testing.
+  - title: Course Completion Certification
+    description: >-
+      Secure a tangible testament to your expertise with a certification,
+      underscoring your readiness to apply Blueprint skills in real-world
+      projects.
 courseModulesTitle: Course Modules
 courseModulesDescription: |
   Every module features a dedicated 2-hour live session with a
