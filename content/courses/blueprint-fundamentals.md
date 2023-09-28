@@ -12,34 +12,56 @@ mainImage: /Courses/cc_BlueprintsFundamentals.png
 upcoming: false
 duration: '8 hours , divided into 4 sessions'
 prerequisites:
-  - Basic understanding of XYZ technology.
-  - Experience with ABC tools or software.
+  - A working installation of Unreal Engine 5 on a compatible PC.
+  - Basic understanding of Unreal Engine's interface and tools.
 whoShouldAttend:
-  - title: Beginners
-    description: Those looking to start with XYZ.
-  - title: Intermediate Learners
-    description: Users of ABC wanting to enhance their skills.
+  - title: Aspiring Game Developers
+    description: >-
+      Individuals looking to dive into the world of game development with Unreal
+      Engine, aiming to leverage the power of Blueprints for rapid game
+      prototyping and mechanics design.
+  - title: Game Designers
+    description: >-
+      Professionals or hobbyists who are familiar with game design principles
+      and wish to bring their concepts to life without delving deep into
+      traditional programming.
+  - title: 3D Artists and Animators
+    description: >-
+      Those who wish to integrate and control their assets within Unreal Engine
+      using Blueprints to create dynamic, interactive elements.
+  - title: Educators and Trainers
+    description: >-
+      Individuals who teach game development, looking to understand and impart
+      knowledge about the Blueprint system in Unreal Engine.
+  - title: Technical Artists
+    description: >-
+      Artists with a knack for technology, aiming to bridge the gap between art
+      and code by harnessing the capabilities of Blueprints.
 learningOutcomes:
   - title: Outcome 1
     description: Master the fundamentals of XYZ.
   - title: Outcome 2
     description: Understand and implement ABC techniques.
-courseModulesTitle: 'Course Modules'
+courseModulesTitle: Course Modules
 courseModulesDescription: |
   Every module features a dedicated 2-hour live session with a
   seasoned instructor.
 module:
   - title: 'Module 1: Module Title'
-    description: |
-      Placeholder text here for the general module description. This text gives a brief
+    description: >
+      Placeholder text here for the general module description. This text gives
+      a brief
+
       overview of what's covered in this module.
     topics:
       - 'Topic 1: Placeholder text for topic details and overview'
       - 'Topic 2: Placeholder text for topic details and overview'
       - 'Topic 3: Placeholder text for topic details and overview'
   - title: 'Module 2: Module Title'
-    description: |
-      Placeholder text here for the general module description. This text gives a brief
+    description: >
+      Placeholder text here for the general module description. This text gives
+      a brief
+
       overview of what's covered in this module.
     topics:
       - 'Topic 1: Placeholder text for topic details and overview'
@@ -69,7 +91,3 @@ Tailored for both beginners and those with some prior Unreal Engine experience, 
 ### Software Version
 
 **Unreal Engine 5**
-
-### Prerequisite
-
-This course is ideal for individuals of all skill levels. From absolute beginners eager to kick-start their journey in Unreal Engine programming, to intermediate users looking to expand their skills, the Blueprint Scripting System provides an intuitive interface suitable for all. No prior experience is required; only a willingness to explore and learn is necessary.
