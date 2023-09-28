@@ -46,70 +46,33 @@
   </div>
 
   <!-- Modules -->
-  <div class="mb-4">
-    <h2 class="mb-3">Course Modules</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <h2 class="text-center">{{ .Params.courseModulesTitle }}</h2>
+      <p class="mb-4 text-center">{{ .Params.courseModulesDescription | markdownify }}</p>
 
-    <!-- Module 1 -->
-    {{ with .Params.module1 }}
-    {{ range . }}
-    <div>
-      <div class="card bg-dark mb-4 rounded shadow card-hover">
-        <div class="card-body" id="headingModule1" data-bs-toggle="collapse" data-bs-target="#collapseModule1"
-          aria-expanded="true" aria-controls="collapseModule1">
-          <div class="d-flex align-items-start">
-            <i class="fas fa-book fa-2x text-primary me-3" style="margin-right: 15px;"></i>
-            <div>
-              <h4>{{ .title }}</h4>
-              <ul>
-                {{ with .topics }}
-                {{ range . }}
-                <li>{{ .title }}: {{ .description }}</li>
-                {{ end }}
-                {{ end }}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="collapseModule1" class="collapse mb-4">
-        {{ with .content }}
-        <p>{{ . }}</p>
-        {{ end }}
-      </div>
-    </div>
-    {{ end }}
-    {{ end }}
 
-    <!-- Module 2 -->
-    {{ with .Params.module2 }}
-    {{ range . }}
-    <div>
-      <div class="card bg-dark mb-4 rounded shadow card-hover">
-        <div class="card-body" id="headingModule2" data-bs-toggle="collapse" data-bs-target="#collapseModule2"
-          aria-expanded="false" aria-controls="collapseModule2">
-          <div class="d-flex align-items-start">
-            <i class="fas fa-video fa-2x text-primary me-3" style="margin-right: 15px;"></i>
-            <div>
-              <h4>{{ .title }}</h4>
-              <ul>
-                {{ with .topics }}
-                {{ range . }}
-                <li>{{ .title }}: {{ .description }}</li>
-                {{ end }}
-                {{ end }}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="collapseModule2" class="collapse mb-4">
-        {{ with .content }}
-        <p>{{ . }}</p>
+      <!-- Module 1 -->
+      {{ with .Params.module }}
+      {{ range . }}
+      <div class="module-card mb-5 p-5 bg-dark rounded shadow">
+        <h3 class="module-title mb-4">{{ .title }}</h3>
+        <p class="module-description mb-4">{{ .description | markdownify }}</p>
+        <ul class="module-list pl-4">
+          {{ with .topics }}
+          {{ range . }}
+          {{ $split := split . ":" }}
+          <li class="mb-2"><strong>{{ index $split 0 }}:</strong> {{ index $split 1 }}</li>
         {{ end }}
+          {{ end }}
+        </ul>
       </div>
+      {{ end }}
+      {{ end }}
+
+
+
     </div>
-    {{ end }}
-    {{ end }}
   </div>
 
 
@@ -119,12 +82,12 @@
       <h2 class="mb-4">Prerequisites</h2>
       <ul>
         {{ with .Params.prerequisites }}
-          {{ range . }}
-            <li>{{ . }}</li>
-          {{ end }}
+        {{ range . }}
+        <li>{{ . }}</li>
+        {{ end }}
         {{ end }}
       </ul>
-      
+
     </div>
 
     <!-- Who Should Attend Section -->
@@ -180,19 +143,19 @@
 <style>
   .card.bg-light {
     background: linear-gradient(to right, #f9f9f9, #e9ecef);
-}
+  }
 
-body {
+  body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-}
+  }
 
-.cover {
+  .cover {
     position: relative;
     overflow: hidden;
-}
+  }
 
-.cover-content {
+  .cover-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -200,49 +163,50 @@ body {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
-}
+  }
 
-.card {
+  .card {
     border: none;
     transition: transform 0.2s;
-}
+  }
 
-.card:hover {
+  .card:hover {
     transform: translateY(-10px);
-}
+  }
 
-.btn {
+  .btn {
     transition: transform 0.2s;
-}
+  }
 
-.btn:hover {
+  .btn:hover {
     transform: translateY(-2px);
-}
+  }
 
-.pricing-card {
+  .pricing-card {
     border-color: #333;
-}
+  }
 
-.exclusive-course {
+  .exclusive-course {
     font-weight: 600;
-    color: #0069ff; /* Matched with the Calendly button color for consistency */
-}
+    color: #0069ff;
+    /* Matched with the Calendly button color for consistency */
+  }
 
 
-.pricing-enrolment-section {
-    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.12),rgba(0, 0, 0, 0.12));
-}
+  .pricing-enrolment-section {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12));
+  }
 
-.pricing-card {
+  .pricing-card {
     border-radius: 15px;
-}
+  }
 
-.price-display {
+  .price-display {
     font-size: 3rem;
     font-weight: bold;
-}
+  }
 
-.btn-primary {
+  .btn-primary {
     background: linear-gradient(90deg, #007bff, #0069ff);
     border: none;
     border-radius: 30px;
@@ -250,19 +214,19 @@ body {
     font-weight: 600;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-}
+  }
 
-.btn-primary:hover {
+  .btn-primary:hover {
     background: linear-gradient(90deg, #0069ff, #0058e2);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.12);
     transform: scale(1.02);
-}
+  }
 
-.btn-primary:active {
+  .btn-primary:active {
     background: linear-gradient(90deg, #0058e2, #004bc7);
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
     transform: scale(0.98);
-}
+  }
 </style>
 
 <!-- Include Bootstrap JS (with Popper.js) -->
