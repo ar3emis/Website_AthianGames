@@ -11,6 +11,19 @@ shortDescription: >-
 mainImage: /images/courses_lightingfundamentals.jpg
 upcoming: false
 duration: 3 Months
+prerequisites:
+  - Basic understanding of XYZ technology.
+  - Experience with ABC tools or software.
+whoShouldAttend:
+  - title: Beginners
+    description: Those looking to start with XYZ.
+  - title: Intermediate Learners
+    description: Users of ABC wanting to enhance their skills.
+learningOutcomes:
+  - title: Outcome 1
+    description: Master the fundamentals of XYZ.
+  - title: Outcome 2
+    description: Understand and implement ABC techniques.
 module1:
   - title: Module 1:Introduction
     topics:
@@ -27,6 +40,13 @@ module2:
       - title: Topic 1.2
         description: Subtopic two
     content: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+pricingAndEnrollment:
+  - title: Course Enrollment
+    description: Empower your skills with our comprehensive course.
+    courses:
+      - title: Standard Course
+        price: $100
+        description: Full access to all course materials and support
 course_categories:
   - Unreal Crash Courses
 formURL: >-

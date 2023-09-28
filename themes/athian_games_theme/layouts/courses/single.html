@@ -5,10 +5,10 @@
 <section>
 
   {{partial "inner-banner" .}}
-  
+
 </section>
 
-<div class="container my-5" >
+<div class="container my-5">
 
   <!-- Course Details -->
   <div class="mb-4">
@@ -27,7 +27,7 @@
 
     <!-- Module 1 -->
     {{ with .Params.module1 }}
-      {{ range . }}
+    {{ range . }}
     <div>
       <div class="card bg-dark mb-4 rounded shadow card-hover">
         <div class="card-body" id="headingModule1" data-bs-toggle="collapse" data-bs-target="#collapseModule1"
@@ -38,9 +38,9 @@
               <h4>{{ .title }}</h4>
               <ul>
                 {{ with .topics }}
-                  {{ range . }}
-                    <li>{{ .title }}: {{ .description }}</li>
-                  {{ end }}
+                {{ range . }}
+                <li>{{ .title }}: {{ .description }}</li>
+                {{ end }}
                 {{ end }}
               </ul>
             </div>
@@ -49,8 +49,8 @@
       </div>
       <div id="collapseModule1" class="collapse mb-4">
         {{ with .content }}
-            <p>{{ . }}</p>
-          {{ end }}
+        <p>{{ . }}</p>
+        {{ end }}
       </div>
     </div>
     {{ end }}
@@ -69,9 +69,9 @@
               <h4>{{ .title }}</h4>
               <ul>
                 {{ with .topics }}
-                  {{ range . }}
-                    <li>{{ .title }}: {{ .description }}</li>
-                  {{ end }}
+                {{ range . }}
+                <li>{{ .title }}: {{ .description }}</li>
+                {{ end }}
                 {{ end }}
               </ul>
             </div>
@@ -81,7 +81,7 @@
       <div id="collapseModule2" class="collapse mb-4">
         {{ with .content }}
         <p>{{ . }}</p>
-      {{ end }}
+        {{ end }}
       </div>
     </div>
     {{ end }}
@@ -95,17 +95,21 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8 text-center">
-          <h2 class="mb-4">Course Enrollment</h2>
-          <p class="mb-4">Empower your skills with our comprehensive course.</p>
+          {{ range .Params.pricingAndEnrollment }}
+          <h2 class="mb-4">{{ .title }}</h2>
+          <p class="mb-4">{{ .description }}</p>
+          {{ range .courses }}
           <div class="card bg-dark pricing-card mb-4 shadow card-hover">
             <div class="card-body">
-              <h3 class="card-title">Standard Course</h3>
-              <h2 class="price-display">$100</h2>
-              <p class="card-text">Full access to all course materials and support.</p>
-              <a href="{{ .Params.formURL }}" id="calendlyTrigger" class="btn btn-primary btn-lg mt-4">Enroll Now</a>
-              
+              <h3 class="card-title">{{ .title }}</h3>
+              <h2 class="price-display">{{ .price }}</h2>
+              <p class="card-text">{{ .description }}</p>
+              <a href="{{ $.Params.formURL }}" id="calendlyTrigger"  class="btn btn-primary btn-lg mt-4">Enroll Now</a>
+
             </div>
           </div>
+          {{ end }}
+          {{ end }}
         </div>
       </div>
     </div>
@@ -114,71 +118,59 @@
   <!-- Prerequisites Section -->
   <div class="mb-4">
     <div class="col-md-8">
-        <h2 class="mb-4">Prerequisites</h2>
-        <ul>
-            <li>Basic understanding of XYZ technology.</li>
-            <li>Experience with ABC tools or software.</li>
-            <!-- Add more prerequisites as needed -->
-        </ul>
+      <h2 class="mb-4">Prerequisites</h2>
+      <ul>
+        {{ range .Params.prerequisites }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
     </div>
 
     <!-- Who Should Attend Section -->
     <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <h2 class="mb-4 text-center">Who Should Attend</h2>
-                <div class="row d-flex">
-                    <div class="col-md-6 mb-4 d-flex">
-                        <div class="card bg-dark rounded flex-fill">
-                            <div class="card-body">
-                                <h5 class="card-title">Beginners</h5>
-                                <p class="card-text">Those looking to start with XYZ.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4 d-flex">
-                        <div class="card bg-dark rounded flex-fill">
-                            <div class="card-body">
-                                <h5 class="card-title">Intermediate Learners</h5>
-                                <p class="card-text">Users of ABC wanting to enhance their skills.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more cards as needed -->
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <h2 class="mb-4 text-center">Who Should Attend</h2>
+          <div class="row d-flex">
+            {{ range .Params.whoShouldAttend }}
+            <div class="col-md-6 mb-4 d-flex">
+              <div class="card bg-dark rounded flex-fill">
+                <div class="card-body">
+                  <h5 class="card-title">{{ .title }}</h5>
+                  <p class="card-text">{{ .description }}</p>
                 </div>
+              </div>
             </div>
+            {{ end }}
+            <!-- Add more cards as needed -->
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Learning Outcomes Section -->
     <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <h2 class="mb-4 text-center">Learning Outcomes</h2>
-                <div class="row d-flex">
-                    <div class="col-md-6 mb-4 d-flex">
-                        <div class="card bg-dark rounded flex-fill">
-                            <div class="card-body">
-                                <h5 class="card-title">Outcome 1</h5>
-                                <p class="card-text">Master the fundamentals of XYZ.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4 d-flex">
-                        <div class="card bg-dark rounded flex-fill">
-                            <div class="card-body">
-                                <h5 class="card-title">Outcome 2</h5>
-                                <p class="card-text">Understand and implement ABC techniques.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more cards as needed -->
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <h2 class="mb-4 text-center">Learning Outcomes</h2>
+          <div class="row d-flex">
+            {{ range .Params.learningOutcomes }}
+            <div class="col-md-6 mb-4 d-flex">
+              <div class="card bg-dark rounded flex-fill">
+                <div class="card-body">
+                  <h5 class="card-title">{{ .title }}</h5>
+                  <p class="card-text">{{ .description }}</p>
                 </div>
+              </div>
             </div>
+            {{ end }}
+            <!-- Add more cards as needed -->
+          </div>
         </div>
+      </div>
     </div>
 
-</div>
+  </div>
 
 
 </div>
@@ -187,19 +179,19 @@
 <style>
   .card.bg-light {
     background: linear-gradient(to right, #f9f9f9, #e9ecef);
-}
+  }
 
-body {
+  body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-}
+  }
 
-.cover {
+  .cover {
     position: relative;
     overflow: hidden;
-}
+  }
 
-.cover-content {
+  .cover-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -207,34 +199,35 @@ body {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
-}
+  }
 
-.card {
+  .card {
     border: none;
     transition: transform 0.2s;
-}
+  }
 
-.card:hover {
+  .card:hover {
     transform: translateY(-10px);
-}
+  }
 
-.btn {
+  .btn {
     transition: transform 0.2s;
-}
+  }
 
-.btn:hover {
+  .btn:hover {
     transform: translateY(-2px);
-}
+  }
 
- .pricing-card {
-        border: none;
-        background-color: rgba(0, 123, 255, 0.1); /* This color is a lightened version of Bootstrap's primary blue. You can adjust as needed. */
-    }
+  .pricing-card {
+    border: none;
+    background-color: rgba(0, 123, 255, 0.1);
+    /* This color is a lightened version of Bootstrap's primary blue. You can adjust as needed. */
+  }
 
-    .price-display {
-        font-size: 3rem;
-        margin-bottom: 16px;
-    }
+  .price-display {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
 </style>
 
 <!-- Include Bootstrap JS (with Popper.js) -->
@@ -246,9 +239,9 @@ body {
 
 <script type="text/javascript">
   document.getElementById("calendlyTrigger").addEventListener("click", function (event) {
-      event.preventDefault();
-      var calendlyLink = event.target.href;
-      Calendly.showPopupWidget(calendlyLink);
+    event.preventDefault();
+    var calendlyLink = event.target.href;
+    Calendly.showPopupWidget(calendlyLink);
   });
 </script>
 
