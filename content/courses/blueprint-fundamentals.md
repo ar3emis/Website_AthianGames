@@ -117,7 +117,21 @@ module:
       - >-
         Casting and Blueprint Communication: Understand casting and various ways
         to reference and interact with other Blueprints.
-  - {}
+  - title: 'Module 4: Real-world Applications and Q&A'
+    description: >-
+      Apply the acquired Blueprint knowledge in creating a basic game mechanic.
+      Understand how Blueprints interact with other UE5 features and engage in
+      an open Q&A to clarify doubts and troubleshoot issues.
+    topics:
+      - >-
+        Creating a Basic Game Mechanic: Walkthrough of developing a specific
+        game mechanic using Blueprints.
+      - >-
+        Integrating Blueprint with Other UE5 Features: Discover how Blueprints
+        interact with AI, Physics, Materials, and more.
+      - >-
+        Open Q&A and Troubleshooting: Address participants’ queries and provide
+        solutions to common challenges faced during the course.
 trainer: Trainer1
 pricingAndEnrollment:
   - title: Course Enrollment
