@@ -12,8 +12,8 @@ mainImage: /images/courses_niagarafundamentals_cover.jpg
 upcoming: false
 duration: 3 Months
 prerequisites:
-  - item: Basic understanding of XYZ technology.
-  - item: Experience with ABC tools or software.
+  - Basic understanding of XYZ technology.
+  - Experience with ABC tools or software.
 whoShouldAttend:
   - title: Beginners
     description: Those looking to start with XYZ.

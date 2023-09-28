@@ -21,6 +21,30 @@
     <p>{{ .Params.duration }}</p>
   </div>
 
+  <!-- Enrollment Section -->
+  <div class="pricing-enrolment-section py-5 bg-dark">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          {{ range .Params.pricingAndEnrollment }}
+          <h2 class="mb-4">{{ .title }}</h2>
+          <p class="mb-4">{{ .description }}</p>
+          {{ range .courses }}
+          <div class="card pricing-card mb-4 shadow bg-dark">
+            <div class="card-body">
+              <h3 class="card-title">{{ .title }}</h3>
+              <h2 class="price-display">{{ .price }}</h2>
+              <p class="card-text">{{ .description }}</p>
+              <a href="{{ $.Params.formURL }}" id="calendlyTrigger" class="btn btn-primary btn-lg mt-4">Enroll Now</a>
+            </div>
+          </div>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Modules -->
   <div class="mb-4">
     <h2 class="mb-3">Course Modules</h2>
@@ -89,41 +113,18 @@
   </div>
 
 
-
-  <!-- Pricing & Enrolment -->
-  <div class="pricing-enrolment-section py-5">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8 text-center">
-          {{ range .Params.pricingAndEnrollment }}
-          <h2 class="mb-4">{{ .title }}</h2>
-          <p class="mb-4">{{ .description }}</p>
-          {{ range .courses }}
-          <div class="card bg-dark pricing-card mb-4 shadow card-hover">
-            <div class="card-body">
-              <h3 class="card-title">{{ .title }}</h3>
-              <h2 class="price-display">{{ .price }}</h2>
-              <p class="card-text">{{ .description }}</p>
-              <a href="{{ $.Params.formURL }}" id="calendlyTrigger"  class="btn btn-primary btn-lg mt-4">Enroll Now</a>
-
-            </div>
-          </div>
-          {{ end }}
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Prerequisites Section -->
   <div class="mb-4">
     <div class="col-md-8">
       <h2 class="mb-4">Prerequisites</h2>
       <ul>
-        {{ range .Params.prerequisites }}
-        <li>{{ . }}</li>
+        {{ with .Params.prerequisites }}
+          {{ range . }}
+            <li>{{ . }}</li>
+          {{ end }}
         {{ end }}
       </ul>
+      
     </div>
 
     <!-- Who Should Attend Section -->
@@ -179,19 +180,19 @@
 <style>
   .card.bg-light {
     background: linear-gradient(to right, #f9f9f9, #e9ecef);
-  }
+}
 
-  body {
+body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-  }
+}
 
-  .cover {
+.cover {
     position: relative;
     overflow: hidden;
-  }
+}
 
-  .cover-content {
+.cover-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -199,35 +200,69 @@
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
-  }
+}
 
-  .card {
+.card {
     border: none;
     transition: transform 0.2s;
-  }
+}
 
-  .card:hover {
+.card:hover {
     transform: translateY(-10px);
-  }
+}
 
-  .btn {
+.btn {
     transition: transform 0.2s;
-  }
+}
 
-  .btn:hover {
+.btn:hover {
     transform: translateY(-2px);
-  }
+}
 
-  .pricing-card {
-    border: none;
-    background-color: rgba(0, 123, 255, 0.1);
-    /* This color is a lightened version of Bootstrap's primary blue. You can adjust as needed. */
-  }
+.pricing-card {
+    border-color: #333;
+}
 
-  .price-display {
+.exclusive-course {
+    font-weight: 600;
+    color: #0069ff; /* Matched with the Calendly button color for consistency */
+}
+
+
+.pricing-enrolment-section {
+    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.12),rgba(0, 0, 0, 0.12));
+}
+
+.pricing-card {
+    border-radius: 15px;
+}
+
+.price-display {
     font-size: 3rem;
-    margin-bottom: 16px;
-  }
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #007bff, #0069ff);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 40px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #0069ff, #0058e2);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.12);
+    transform: scale(1.02);
+}
+
+.btn-primary:active {
+    background: linear-gradient(90deg, #0058e2, #004bc7);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transform: scale(0.98);
+}
 </style>
 
 <!-- Include Bootstrap JS (with Popper.js) -->
@@ -236,6 +271,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
 <!-- Calendly badge widget begin -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <script type="text/javascript">
   document.getElementById("calendlyTrigger").addEventListener("click", function (event) {
