@@ -81,16 +81,26 @@ module:
       - >-
         Basic Logic and Flow Control: Grasp the basics of conditional checks and
         loops to control the flow of execution.
-  - title: 'Module 2: Module Title'
-    description: >
-      Placeholder text here for the general module description. This text gives
-      a brief
-
-      overview of what's covered in this module.
+  - title: 'Module 2: Intermediate Blueprint Concepts'
+    description: >-
+      Advance your knowledge by diving into user input handling, reusability of
+      code, and managing complex data. This module also introduces the concept
+      of components and inheritance in Blueprints.
     topics:
-      - 'Topic 1: Placeholder text for topic details and overview'
-      - 'Topic 2: Placeholder text for topic details and overview'
-      - 'Topic 3: Placeholder text for topic details and overview'
+      - >-
+        User Input and Events: Learn to handle various input types and create
+        interactive responses.
+      - >-
+        Functions, Macros, and Custom Events: Delve into reusable code blocks
+        and understand their different use cases.
+      - >-
+        Advanced Data Types: Get acquainted with arrays, sets, and maps to
+        handle multiple data points.
+      - >-
+        Components and Child Blueprints: Learn to add components and understand
+        the concept of inheritance in Blueprints.
+  - {}
+  - {}
 trainer: Trainer1
 pricingAndEnrollment:
   - title: Course Enrollment
