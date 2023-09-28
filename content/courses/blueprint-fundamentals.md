@@ -25,15 +25,13 @@ learningOutcomes:
   - title: Outcome 2
     description: Understand and implement ABC techniques.
 module1:
-  - title: 'Module 1:Introduction'
+  - {}
+  - title: Blueprint Variables and Data Types (30 minutes)
     topics:
-      - title: Topic 1.1
-        description: Subtopic one
-      - title: Topic 1.2
-        description: Subtopic two
-    content: Additional text
+      - {}
 module2:
-  - title: 'Module 1:Introduction'
+  - {}
+  - title: 'Module 2: Navigating the Blueprint Interface'
     topics:
       - title: Topic 1.1
         description: Subtopic one
