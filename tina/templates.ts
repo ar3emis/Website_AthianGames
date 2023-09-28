@@ -42,6 +42,55 @@ export function courseFields() {
     },
     {
       type: "object",
+      name: "prerequisites",
+      label: "Prerequisites",
+      list: true,
+      fields: [
+        {
+          type: "string",
+          name: "item",
+          label: "Prerequisite Item",
+        },
+      ],
+    },
+    {
+      type: "object",
+      name: "whoShouldAttend",
+      label: "Who Should Attend",
+      list: true,
+      fields: [
+        {
+          type: "string",
+          name: "title",
+          label: "Title",
+        },
+        {
+          type: "string",
+          name: "description",
+          label: "Description",
+        },
+      ],
+    },
+    {
+      type: "object",
+      name: "learningOutcomes",
+      label: "Learning Outcomes",
+      list: true,
+      fields: [
+        {
+          type: "string",
+          name: "title",
+          label: "Outcome Title",
+        },
+        {
+          type: "string",
+          name: "description",
+          label: "Outcome Description",
+        },
+      ],
+    },
+    {
+      type: "object",
       name: "module1",
       label: "Module1",
       list: true, 
@@ -113,6 +162,48 @@ export function courseFields() {
         },
       ],
     },
+    {
+      type: "object",
+      name: "pricingAndEnrollment",
+      label: "Pricing and Enrollment",
+      list: true,
+      fields: [
+        {
+          type: "string",
+          name: "title",
+          label: "Course Title",
+        },
+        {
+          type: "string",
+          name: "description",
+          label: "Course Description",
+        },
+        {
+          type: "object",
+          name: "courses",
+          label: "Courses",
+          list: true,
+          fields: [
+            {
+              type: "string",
+              name: "title",
+              label: "Course Title",
+            },
+            {
+              type: "string",
+              name: "price",
+              label: "Course Price",
+            },
+            {
+              type: "string",
+              name: "description",
+              label: "Course Description",
+            },
+          ],
+        },
+      ],
+    },
+    
     
     {
       type: "string",

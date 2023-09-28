@@ -12,8 +12,8 @@ mainImage: /Courses/cc_BlueprintsFundamentals.png
 upcoming: false
 duration: '8 hours , divided into 4 sessions'
 prerequisites:
-  - Basic understanding of XYZ technology.
-  - Experience with ABC tools or software.
+  - item: Basic understanding of XYZ technology.
+  - item: Experience with ABC tools or software.
 whoShouldAttend:
   - title: Beginners
     description: Those looking to start with XYZ.
