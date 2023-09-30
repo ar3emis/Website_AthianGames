@@ -84,7 +84,7 @@ pricingAndEnrollment:
     description: Empower your skills with our comprehensive course.
     courses:
       - title: Standard Course
-        price: $100
+        price: $150
         description: Full access to all course materials and support
 course_categories:
   - VFX
