@@ -10,6 +10,7 @@ shortDescription: >-
   setting a strong foundation for your game development journey.
 mainImage: /Courses/cc_BlueprintsFundamentals.png
 logoImage: /images/UATC-Logo-2023.png
+coverImage: /images/pvt_features_vortexmeshes.jpg
 upcoming: false
 duration: '8 hours , divided into 4 sessions'
 prerequisites:

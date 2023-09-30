@@ -3,8 +3,48 @@
 
 <!-- Cover Section -->
 <section>
-
-  {{partial "inner-banner" .}}
+  <div id="fixed" class="qrt-right">
+    <div class="qrt-half-banner qrt-left-align qrt-animated-show">
+      <div class="qrt-image-frame">
+        {{/* Todo: set this as a variable. Dont do conditional logic inside src
+        */}}
+        <img
+          src="{{ .Params.coverImage }}"
+          alt="banner"
+        />
+      </div>
+      <div class="qrt-overlay row align-items-center m-0">
+        <!-- <div class="qrt-scroll-hint"><span></span></div> -->
+        <!-- <div class="row align-items-center"> -->
+        <div class="col-xl-8 col-lg-12 offset-xl-2">
+          <div class="qrt-banner-title">
+            <h2 class="qrt-white qrt-mb-20">
+              {{if .Params.topText}}{{.Params.topText}}{{else}}{{.Title}}{{end}}
+            </h2>
+  
+            <div class="qrt-divider-2"></div>
+            <div
+              class="qrt-text qrt-white qrt-mb-20"
+              style="line-height: inherit"
+            >
+              {{if .Params.bottomText}}{{.Params.bottomText}}{{end}}
+            </div>
+            {{range .Params.buttons}}
+            <a
+              href="{{.buttonLink | absURL}}"
+              class="qrt-btn qrt-btn-md qrt-btn-color {{if in (.buttonLink | absURL) ($.Site.BaseURL)}} qrt-anima-link {{end}} m-10"
+              ><span>{{.buttonText}}</span>
+            </a>
+            {{end}}
+          </div>
+        </div>
+      </div>
+  
+      <!-- </div> -->
+    </div>
+  </div>
+  
+  
 
 </section>
 

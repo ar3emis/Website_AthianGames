@@ -10,6 +10,7 @@ shortDescription: >-
   Niagara, and strengthen your fundamentals in Visual Effects in Unreal Engine.
 mainImage: /images/courses_niagarafundamentals_cover.jpg
 logoImage: /images/UATC-Logo-2023.png
+coverImage: /images/pvt_features_vortexmeshes.jpg
 upcoming: false
 duration: 3 Months
 prerequisites:
