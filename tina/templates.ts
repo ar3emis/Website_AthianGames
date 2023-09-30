@@ -18,6 +18,11 @@ export function courseFields() {
       label: "Add badge",
     },
     {
+      type: "image",
+      name: "coverImage",
+      label: "add Cover Image",
+    },
+    {
       type: "string",
       name: "shortDescription",
       label: "shortDescription",
