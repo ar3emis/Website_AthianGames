@@ -80,7 +80,7 @@ module:
       - 'Topic 2: Placeholder text for topic details and overview'
       - 'Topic 3: Placeholder text for topic details and overview'
 pricingAndEnrollment:
-  - title: 'Course Enrollmhttps://athiangames.com/admin/#/collections/courses/~ent'
+  - title: Course Enrollment
     description: Empower your skills with our comprehensive course.
     courses:
       - title: Standard Course
