@@ -14,8 +14,8 @@ coverImage: /CoverArt_MasteringNiagara.png
 upcoming: false
 duration: 4 weeks
 prerequisites:
-  - Basic understanding of XYZ technology.
-  - Experience with ABC tools or software.
+  - A working installation of Unreal Engine 5 on a compatible PC.
+  - Basic understanding of Unreal Engine's interface and tools.
 whoShouldAttend:
   - title: Beginners
     description: Those looking to start with XYZ.
