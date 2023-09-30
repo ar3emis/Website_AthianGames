@@ -12,7 +12,11 @@ export function courseFields() {
       label: "title",
     },
 
-    
+    {
+      type: "image",
+      name: "logoImage",
+      label: "Add badge",
+    },
     {
       type: "string",
       name: "shortDescription",
@@ -26,6 +30,7 @@ export function courseFields() {
       name: "mainImage",
       label: "mainImage",
     },
+    
     {
       type: "string",
       name: "course_categories",
@@ -64,6 +69,9 @@ export function courseFields() {
           label: "Description",
         },
       ],
+      itemProps: (item) => ({
+        label: item.title, // Use the title as the display label
+      }),
     },
     {
       type: "object",
@@ -82,6 +90,9 @@ export function courseFields() {
           label: "Outcome Description",
         },
       ],
+      itemProps: (item) => ({
+        label: item.title, // Use the title as the display label
+      }),
     },
     {
       type: "string",
@@ -118,6 +129,9 @@ export function courseFields() {
         },
         
       ],
+      itemProps: (item) => ({
+        label: item.title, // Use the title as the display label
+      }),
     },
     
 
@@ -162,7 +176,11 @@ export function courseFields() {
           ],
         },
       ],
+      itemProps: (item) => ({
+        label: item.title, // Use the title as the display label
+      }),
     },
+    
     
     
     {
