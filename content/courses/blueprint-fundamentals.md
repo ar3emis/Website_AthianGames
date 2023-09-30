@@ -12,7 +12,7 @@ mainImage: /Courses/cc_BlueprintsFundamentals.png
 logoImage: /images/UATC-Logo-2023.png
 coverImage: /images/pvt_features_vortexmeshes.jpg
 upcoming: false
-duration: '8 hours , divided into 4 sessions'
+duration: 4 weeks
 prerequisites:
   - A working installation of Unreal Engine 5 on a compatible PC.
   - Basic understanding of Unreal Engine's interface and tools.
@@ -154,7 +154,3 @@ _template: course
 Delve deep into the dynamic world of visual scripting with Unreal Engine 5's Blueprint system. This comprehensive course offers a blend of foundational concepts, hands-on exercises, and real-world applications, ensuring participants gain a robust understanding of Blueprints and their potential in game development.
 
 Tailored for both beginners and those with some prior Unreal Engine experience, this course prioritizes a practical approach. Participants will learn not only the "how" but also the "why" behind various Blueprint techniques, enabling them to make informed decisions in their projects.
-
-### Software Version
-
-**Unreal Engine 5**
