@@ -80,7 +80,7 @@ module:
       - 'Topic 2: Placeholder text for topic details and overview'
       - 'Topic 3: Placeholder text for topic details and overview'
 pricingAndEnrollment:
-  - title: Course Enrollment
+  - title: 'Course Enrollmhttps://athiangames.com/admin/#/collections/courses/~ent'
     description: Empower your skills with our comprehensive course.
     courses:
       - title: Standard Course
@@ -89,7 +89,7 @@ pricingAndEnrollment:
 course_categories:
   - VFX
 formURL: >-
-  https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
+  https://calendly.com/athiangames/mastering-niagara-visual-effects-in-unreal-engine
 _template: course
 ---
 
