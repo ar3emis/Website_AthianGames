@@ -2,6 +2,11 @@ import type { TinaField } from "tinacms";
 export function courseFields() {
   return [
     {
+      type: "string",
+      name: "duration",
+      label: "duration",
+    },
+    {
       type: "datetime",
       name: "date",
       label: "date",
@@ -30,6 +35,7 @@ export function courseFields() {
         component: "textarea",
       },
     },
+   
     {
       type: "image",
       name: "mainImage",
