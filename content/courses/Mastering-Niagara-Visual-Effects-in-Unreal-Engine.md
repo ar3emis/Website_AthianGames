@@ -39,8 +39,10 @@ whoShouldAttend:
       Individuals who want to teach game development or visual effects and need
       a deep understanding of the tool.
 learningOutcomes:
-  - title: Outcome 1
-    description: Master the fundamentals of XYZ.
+  - title: Proficiency in the Niagara Interface
+    description: >-
+      Participants will have a thorough understanding of the tools, settings,
+      and features within the Niagara Editor
   - title: Outcome 2
     description: Understand and implement ABC techniques.
 courseModulesTitle: Course Modules
