@@ -81,9 +81,9 @@
 
         <!-- Modules Section -->
         <div class="row justify-content-center">
-          <div class="col-md-10">
+          <div class="col-md-12">
             <h2 class="text-center">{{ .Params.courseModulesTitle }}</h2>
-            <p class="mb-4 text-center">{{ .Params.courseModulesDescription | markdownify }}</p>
+            <p class="mb-5 text-center">{{ .Params.courseModulesDescription | markdownify }}</p>
             {{ with .Params.module }}
             {{ range . }}
             <div class="module-card mb-5 p-5 bg-dark rounded shadow">
