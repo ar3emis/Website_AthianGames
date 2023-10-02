@@ -14,7 +14,7 @@
             <img src="{{ .Params.logoImage }}" alt="Course Logo" class="img-fluid" style="max-width: 150px;">
           </div>
           <!-- Title and Description Area -->
-          <div class="col-md-8">
+          <div class="col-md-10">
             <h1 class="mb-3 text-white">{{.Title}}</h1>
             <p class="lead text-light">A short description about the course. This should give users a quick
               understanding of what the course is about.</p>
@@ -30,11 +30,11 @@
   <!-- Course Cover -->
   <div class="container ">
     <div class="row justify-content-center">
-      <div class="col-md-8">
+      <div class="col-md-10">
 
         <!-- Course Details -->
         <div class="row justify-content-center">
-          <div class="col-md-8">
+          <div class="col-md-10">
             <h2 class="text-center">Course Details</h2>
             <p>{{ .Content }}</p>
           </div>
@@ -42,7 +42,7 @@
 
         <!-- Prerequisites Section -->
         <div class="row justify-content-center">
-          <div class="col-md-8">
+          <div class="col-md-10">
             <h2 class="text-center">Prerequisites</h2>
             <ul>
               {{ with .Params.prerequisites }}
@@ -58,7 +58,7 @@
         <div class="pricing-enrolment-section py-5">
           <div class="container">
             <div class="row justify-content-center">
-              <div class="col-md-8 text-center">
+              <div class="col-md-10 text-center">
                 <h2>Course Enrollment</h2>
                 <h3 class="mb-2">Duration: <strong>{{ .Params.duration }}</strong></h3>
                 {{ range .Params.pricingAndEnrollment }}
@@ -233,13 +233,13 @@
     line-height: 1.6;
     /* Improved readability */
     margin-bottom: 20px;
-    
+
   }
 
   .section ul {
     padding-left: 20px;
     /* Space bullets from the edge */
-  
+
   }
 
   .cover {
