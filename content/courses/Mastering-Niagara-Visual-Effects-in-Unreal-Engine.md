@@ -17,6 +17,10 @@ prerequisites:
   - A working installation of Unreal Engine 5 on a compatible PC.
   - Basic understanding of Unreal Engine's interface and tools.
 whoShouldAttend:
+  - title: Multimedia Professionals
+    description: >-
+      Those in film, advertisement, or virtual production who wish to leverage
+      game engine technology for visual effects
   - title: Indie Game Developers
     description: >-
       Small teams or solo developers seeking to integrate high-quality VFX
