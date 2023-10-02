@@ -10,7 +10,7 @@ shortDescription: >-
   setting a strong foundation for your game development journey.
 mainImage: /Courses/cc_BlueprintsFundamentals.png
 logoImage: /images/UATC-Logo-2023.png
-coverImage: /images/pvt_features_vortexmeshes.jpg
+coverImage: /Courses//course_Blueprints_cover.png
 upcoming: false
 duration: 1 month
 prerequisites:
@@ -148,7 +148,6 @@ formURL: 'https://calendly.com/athiangames/blueprint-fundamentals-in-unreal-engi
 draft: false
 _template: course
 ---
-
 
 Delve deep into the dynamic world of visual scripting with Unreal Engine 5's Blueprint system. This comprehensive course offers a blend of foundational concepts, hands-on exercises, and real-world applications, ensuring participants gain a robust understanding of Blueprints and their potential in game development.
 
