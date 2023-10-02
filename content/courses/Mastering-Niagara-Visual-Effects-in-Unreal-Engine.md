@@ -79,16 +79,24 @@ module:
       - >-
         Particle Collisions: Understand and implement particle-world and
         particle-particle interactions.
-  - title: 'Module 2: Module Title'
-    description: >
-      Placeholder text here for the general module description. This text gives
-      a brief
-
-      overview of what's covered in this module.
+  - title: 'Module 3: Integration, Optimization, and Real-world Application'
+    description: >-
+      Master the art of embedding your visual effects within game scenes,
+      focusing on real-world applications, advanced scripting, and resolving
+      common challenges.
     topics:
-      - 'Topic 1: Placeholder text for topic details and overview'
-      - 'Topic 2: Placeholder text for topic details and overview'
-      - 'Topic 3: Placeholder text for topic details and overview'
+      - >-
+        Blueprints and Niagara: Learn to integrate and trigger effects in your
+        game via Blueprints.
+      - >-
+        Optimizing VFX Performance: Tips and strategies to make sure your visual
+        effects are both stunning and resource-efficient.
+      - >-
+        Advanced Scripting in Niagara: Delve deeper into custom modules and
+        intricate scripting techniques.
+      - >-
+        Decoding Real-world VFX: Analyze popular game or film effects and
+        understand their creation in Niagara.
 pricingAndEnrollment:
   - title: Course Enrollment
     description: Empower your skills with our comprehensive course.
