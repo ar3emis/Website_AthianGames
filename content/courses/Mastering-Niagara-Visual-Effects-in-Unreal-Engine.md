@@ -17,8 +17,11 @@ prerequisites:
   - A working installation of Unreal Engine 5 on a compatible PC.
   - Basic understanding of Unreal Engine's interface and tools.
 whoShouldAttend:
-  - title: Beginners
-    description: Those looking to start with XYZ.
+  - title: Aspiring Game Designers
+    description: >-
+      Those looking to add dynamic visual effects to their games to enhance
+      immersion and aestheticsThose looking to add dynamic visual effects to
+      their games to enhance immersion and aesthetics.
   - title: Intermediate Learners
     description: Users of ABC wanting to enhance their skills.
 learningOutcomes:
