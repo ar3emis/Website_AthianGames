@@ -43,8 +43,10 @@ learningOutcomes:
     description: >-
       Participants will have a thorough understanding of the tools, settings,
       and features within the Niagara Editor
-  - title: Outcome 2
-    description: Understand and implement ABC techniques.
+  - title: Particle System Design
+    description: >-
+      Participants will develop the skills to design both basic and advanced
+      particle systems, tailoring them for various dynamics and interactions
 courseModulesTitle: Course Modules
 courseModulesDescription: |
   Every module features a dedicated 2-hour live session with a
