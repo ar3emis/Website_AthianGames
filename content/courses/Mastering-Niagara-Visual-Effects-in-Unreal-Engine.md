@@ -47,6 +47,8 @@ learningOutcomes:
     description: >-
       Participants will develop the skills to design both basic and advanced
       particle systems, tailoring them for various dynamics and interactions
+  - title: Course Completion Certification
+    description: ' Upon successful completion of the course, participants will receive a  certification, affirming their expertise in the domain.'
 courseModulesTitle: Course Modules
 courseModulesDescription: |
   Every module features a dedicated 2-hour live session with a
