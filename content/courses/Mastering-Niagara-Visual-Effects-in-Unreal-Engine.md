@@ -17,10 +17,6 @@ prerequisites:
   - A working installation of Unreal Engine 5 on a compatible PC.
   - Basic understanding of Unreal Engine's interface and tools.
 whoShouldAttend:
-  - title: Educators and Trainers
-    description: >-
-      Individuals who want to teach game development or visual effects and need
-      a deep understanding of the tool.
   - title: Aspiring Game Designers
     description: >-
       Those looking to add dynamic visual effects to their games to enhance
@@ -38,6 +34,10 @@ whoShouldAttend:
     description: >-
       Those in film, advertisement, or virtual production who wish to leverage
       game engine technology for visual effects
+  - title: Educators and Trainers
+    description: >-
+      Individuals who want to teach game development or visual effects and need
+      a deep understanding of the tool.
 learningOutcomes:
   - title: Outcome 1
     description: Master the fundamentals of XYZ.
