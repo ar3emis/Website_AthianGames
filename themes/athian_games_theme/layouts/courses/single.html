@@ -8,10 +8,7 @@
       <div class="qrt-image-frame">
         {{/* Todo: set this as a variable. Dont do conditional logic inside src
         */}}
-        <img
-          src="{{ .Params.coverImage }}"
-          alt="banner"
-        />
+        <img src="{{ .Params.coverImage }}" alt="banner" />
       </div>
       <div class="qrt-overlay row align-items-center m-0">
         <!-- <div class="qrt-scroll-hint"><span></span></div> -->
@@ -20,9 +17,10 @@
           <div class="qrt-banner-title">
             <!-- Image Column -->
             <div class="col-md-2 text-center m-0">
-              <img src="{{ .Params.logoImage }}" alt="Primere UATC" class="m-auto" style="height: 80px; object-fit: contain">
+              <img src="{{ .Params.logoImage }}" alt="Primere UATC" class="m-auto"
+                style="height: 80px; object-fit: contain">
             </div>
-            
+
             <!-- Title Column -->
             <div class="col-md-10 text-left">
               <!-- Title -->
@@ -30,154 +28,147 @@
                 {{.Title}}
               </h2>
             </div>
-      
-          
-            
-            
+
+
+
+
           </div>
         </div>
       </div>
-      
-  
+
+
       <!-- </div> -->
     </div>
   </div>
-  
-  
+
+
 
 </section>
 
-<div class="container my-5">
+<div class="section">
 
+  <!-- Course Cover -->
+  <div class="container ">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
 
-  <!-- Course Details -->
-  <div class="mb-4">
-    <p> {{ .Content }} </p>
-  </div>
-
-  <!-- Duration -->
-  <div class="mb-4">
-    <h2 class="mb-3">Duration</h2>
-    <p>{{ .Params.duration }}</p>
-  </div>
-
-  <!-- Enrollment Section -->
-  <div class="pricing-enrolment-section py-5 bg-dark">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8 text-center">
-          {{ range .Params.pricingAndEnrollment }}
-          <h2 class="mb-4">{{ .title }}</h2>
-          <p class="mb-4">{{ .description }}</p>
-          {{ range .courses }}
-          <div class="card pricing-card mb-4 shadow bg-dark">
-            <div class="card-body">
-              <h3 class="card-title">{{ .title }}</h3>
-              <h2 class="price-display">{{ .price }}</h2>
-              <p class="card-text">{{ .description }}</p>
-              <a href="{{ $.Params.formURL }}" id="calendlyTrigger" class="btn btn-primary btn-lg mt-4">Enroll Now</a>
-            </div>
+        <!-- Course Details -->
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <h2 class="text-center">Course Details</h2>
+            <p>{{ .Content }}</p>
           </div>
-          {{ end }}
-          {{ end }}
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Modules -->
-  <div class="row justify-content-center">
-    <div class="col-md-10">
-      <h2 class="text-center">{{ .Params.courseModulesTitle }}</h2>
-      <p class="mb-4 text-center">{{ .Params.courseModulesDescription | markdownify }}</p>
+        <!-- Prerequisites Section -->
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <h2 class="text-center">Prerequisites</h2>
+            <ul>
+              {{ with .Params.prerequisites }}
+              {{ range . }}
+              <li>{{ . }}</li>
+              {{ end }}
+              {{ end }}
+            </ul>
+          </div>
+        </div>
 
-
-      <!-- Module 1 -->
-      {{ with .Params.module }}
-      {{ range . }}
-      <div class="module-card mb-5 p-5 bg-dark rounded shadow">
-        <h3 class="module-title mb-4">{{ .title }}</h3>
-        <p class="module-description mb-4">{{ .description | markdownify }}</p>
-        <ul class="module-list pl-4">
-          {{ with .topics }}
-          {{ range . }}
-          {{ $split := split . ":" }}
-          <li class="mb-2"><strong>{{ index $split 0 }}:</strong> {{ index $split 1 }}</li>
-        {{ end }}
-          {{ end }}
-        </ul>
-      </div>
-      {{ end }}
-      {{ end }}
-
-
-
-    </div>
-  </div>
-
-
-  <!-- Prerequisites Section -->
-  <div class="mb-4">
-    <div class="col-md-8">
-      <h2 class="mb-4">Prerequisites</h2>
-      <ul>
-        {{ with .Params.prerequisites }}
-        {{ range . }}
-        <li>{{ . }}</li>
-        {{ end }}
-        {{ end }}
-      </ul>
-
-    </div>
-
-    <!-- Who Should Attend Section -->
-    <div class="container my-5">
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <h2 class="mb-4 text-center">Who Should Attend</h2>
-          <div class="row d-flex">
-            {{ range .Params.whoShouldAttend }}
-            <div class="col-md-6 mb-4 d-flex">
-              <div class="card bg-dark rounded flex-fill">
-                <div class="card-body">
-                  <h5 class="card-title">{{ .title }}</h5>
-                  <p class="card-text">{{ .description }}</p>
+        <!-- Enrollment Section -->
+        <div class="pricing-enrolment-section py-5">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-8 text-center">
+                <h2>Course Enrollment</h2>
+                <h3 class="mb-2">Duration: <strong>{{ .Params.duration }}</strong></h3>
+                <p class="mb-4">{{ .Params.enrollmentDescription }}</p>
+                {{ range .Params.pricingAndEnrollment }}
+                <div class="card pricing-card mb-4 shadow bg-dark">
+                  <div class="card-body">
+                    <h3 class="card-title">{{ .title }}</h3>
+                    <h1 class="price-display">{{ .price }}</h1>
+                    <p class="card-text">{{ .description }}</p>
+                    <a href="{{ $.Params.formURL }}" id="calendlyTrigger" class="btn btn-primary btn-lg mt-4">Enroll Now</a>
+                  </div>
                 </div>
+                {{ end }}
               </div>
             </div>
-            {{ end }}
-            <!-- Add more cards as needed -->
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Learning Outcomes Section -->
-    <div class="container my-5">
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <h2 class="mb-4 text-center">Learning Outcomes</h2>
-          <div class="row d-flex">
-            {{ range .Params.learningOutcomes }}
-            <div class="col-md-6 mb-4 d-flex">
-              <div class="card bg-dark rounded flex-fill">
-                <div class="card-body">
-                  <h5 class="card-title">{{ .title }}</h5>
-                  <p class="card-text">{{ .description }}</p>
-                </div>
-              </div>
+        <!-- Modules Section -->
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <h2 class="text-center">{{ .Params.courseModulesTitle }}</h2>
+            <p class="mb-4 text-center">{{ .Params.courseModulesDescription | markdownify }}</p>
+            {{ with .Params.module }}
+            {{ range . }}
+            <div class="module-card mb-5 p-5 bg-dark rounded shadow">
+              <h3 class="module-title mb-4">{{ .title }}</h3>
+              <p class="module-description mb-4">{{ .description | markdownify }}</p>
+              <ul class="module-list pl-4">
+                {{ with .topics }}
+                {{ range . }}
+                {{ $split := split . ":" }}
+                <li class="mb-2"><strong>{{ index $split 0 }}:</strong> {{ index $split 1 }}</li>
+                {{ end }}
+                {{ end }}
+              </ul>
             </div>
             {{ end }}
-            <!-- Add more cards as needed -->
+            {{ end }}
           </div>
         </div>
+
+        <!-- Who Should Attend Section -->
+        <div class="container my-5">
+          <div class="row justify-content-center">
+            <div class="col-md-10">
+              <h2 class="mb-4 text-center">Who Should Attend</h2>
+              <div class="row d-flex">
+                {{ range .Params.whoShouldAttend }}
+                <div class="col-md-6 mb-4 d-flex">
+                  <div class="card bg-dark rounded flex-fill">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ .title }}</h5>
+                      <p class="card-text">{{ .description }}</p>
+                    </div>
+                  </div>
+                </div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning Outcomes Section -->
+        <div class="container my-5">
+          <div class="row justify-content-center">
+            <div class="col-md-10">
+              <h2 class="mb-4 text-center">Learning Outcomes</h2>
+              <div class="row d-flex">
+                {{ range .Params.learningOutcomes }}
+                <div class="col-md-6 mb-4 d-flex">
+                  <div class="card bg-dark rounded flex-fill">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ .title }}</h5>
+                      <p class="card-text">{{ .description }}</p>
+                    </div>
+                  </div>
+                </div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-
   </div>
-
 
 </div>
+
 <!-- Include Bootstrap CSS -->
 
 <style>
@@ -187,7 +178,63 @@
 
   body {
     font-family: 'Arial', sans-serif;
+    color: #fff;
+  }
+
+  .title-section {
+    background: linear-gradient(rgba(0, 0.1, 0.1, 0), rgba(25, 25, 45, 0.93)), url('images/bg_placeholder.png');
+    background-size: cover;
+    background-position: center;
+    padding: 250px 0;
+    margin-bottom: -2px;
+    /* To help further reduce any visible seams */
+  }
+
+
+  @media (max-width: 767px) {
+    .title-section {
+      padding: 150px 0;
+      /* Reduce padding on small devices */
+    }
+  }
+
+  .content-section {
+    background-color: #fff;
+    /* or the color of your page's main content background */
+    padding: 50px 0;
+  }
+
+  .section {
+    padding: 60px 0;
+    font-family: Arial, sans-serif !important;
+    color: #fff;
+    /* Example font. Use your desired font family. */
+    
+  }
+
+  .section h2 {
+    font-size: 35px;
+    color: #fff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    /* subtle underline to demarcate sections */
+    padding-bottom: 10px;
+    font-variant-caps: all-petite-caps;
+  }
+
+  .section p,
+  .section li {
+    font-size: 16px;
+    color: #fff;
+    /* Lighter than heading color */
     line-height: 1.6;
+    /* Improved readability */
+    margin-bottom: 20px;
+  }
+
+  .section ul {
+    padding-left: 20px;
+    /* Space bullets from the edge */
   }
 
   .cover {
@@ -196,13 +243,21 @@
   }
 
   .cover-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    margin-bottom: -50px;
+    /* Overlap amount */
+  }
+
+  .content-section {
+    background-color: #fff;
+    padding: 50px 0;
+    position: relative;
+    z-index: 1;
     border-radius: 10px;
+    /* Optional: to match with cover-content border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Optional: for a slight elevation effect */
   }
 
   .card {
@@ -233,9 +288,7 @@
   }
 
 
-  .pricing-enrolment-section {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12));
-  }
+  
 
   .pricing-card {
     border-radius: 15px;

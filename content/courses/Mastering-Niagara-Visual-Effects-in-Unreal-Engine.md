@@ -93,6 +93,5 @@ formURL: >-
 _template: course
 ---
 
-## Course Details
 
-* Dive into the mesmerizing world of visual effects with Unreal Engine's Niagara system. This course offers an immersive experience, from fundamental concepts to advanced techniques, empowering participants to craft stunning VFX for games, simulations, and multimedia projects. Whether you're a budding artist or a seasoned developer, "Mastering Niagara" will elevate your visual storytelling, transforming your ideas into captivating on-screen magic.
+Dive into the mesmerizing world of visual effects with Unreal Engine's Niagara system. This course offers an immersive experience, from fundamental concepts to advanced techniques, empowering participants to craft stunning VFX for games, simulations, and multimedia projects. Whether you're a budding artist or a seasoned developer, "Mastering Niagara" will elevate your visual storytelling, transforming your ideas into captivating on-screen magic.
