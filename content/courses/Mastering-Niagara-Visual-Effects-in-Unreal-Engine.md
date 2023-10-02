@@ -59,16 +59,26 @@ module:
       - >-
         Material Fundamentals for Particles: Delve into creating materials that
         synchronize flawlessly with particle systems.
-  - title: 'Module 1: Module Title'
-    description: >
-      Placeholder text here for the general module description. This text gives
-      a brief
-
-      overview of what's covered in this module.
+  - title: 'Module 2: Advanced Particle Dynamics and Interactions'
+    description: >-
+      Advance your skills by exploring complex particle behaviors, interactions,
+      and advanced rendering techniques.
     topics:
-      - 'Topic 1: Placeholder text for topic details and overview'
-      - 'Topic 2: Placeholder text for topic details and overview'
-      - 'Topic 3: Placeholder text for topic details and overview'
+      - >-
+        Interactive Particles: Make particles react to in-game actions, events,
+        and environmental triggers.
+      - >-
+        Beyond Basic Forces: Discover vortex forces, magnetic influences, and
+        more to add depth to your simulations.
+      - >-
+        3D Particle Elements: Dive into Mesh and Ribbon particles for advanced
+        visual effects.
+      - >-
+        Parameters and Bindings: Dynamically control and modify your effects in
+        real-time.
+      - >-
+        Particle Collisions: Understand and implement particle-world and
+        particle-particle interactions.
   - title: 'Module 2: Module Title'
     description: >
       Placeholder text here for the general module description. This text gives
@@ -92,6 +102,5 @@ formURL: >-
   https://calendly.com/athiangames/mastering-niagara-visual-effects-in-unreal-engine
 _template: course
 ---
-
 
 Dive into the mesmerizing world of visual effects with Unreal Engine's Niagara system. This course offers an immersive experience, from fundamental concepts to advanced techniques, empowering participants to craft stunning VFX for games, simulations, and multimedia projects. Whether you're a budding artist or a seasoned developer, "Mastering Niagara" will elevate your visual storytelling, transforming your ideas into captivating on-screen magic.
