@@ -17,14 +17,10 @@ prerequisites:
   - A working installation of Unreal Engine 5 on a compatible PC.
   - Basic understanding of Unreal Engine's interface and tools.
 whoShouldAttend:
-  - title: Multimedia Professionals
+  - title: Educators and Trainers
     description: >-
-      Those in film, advertisement, or virtual production who wish to leverage
-      game engine technology for visual effects
-  - title: Indie Game Developers
-    description: >-
-      Small teams or solo developers seeking to integrate high-quality VFX
-      without a large studio
+      Individuals who want to teach game development or visual effects and need
+      a deep understanding of the tool.
   - title: Aspiring Game Designers
     description: >-
       Those looking to add dynamic visual effects to their games to enhance
@@ -34,6 +30,14 @@ whoShouldAttend:
     description: >-
       Professionals or hobbyists wanting to understand and master the Niagara
       system for more than just games
+  - title: Indie Game Developers
+    description: >-
+      Small teams or solo developers seeking to integrate high-quality VFX
+      without a large studio
+  - title: Multimedia Professionals
+    description: >-
+      Those in film, advertisement, or virtual production who wish to leverage
+      game engine technology for visual effects
 learningOutcomes:
   - title: Outcome 1
     description: Master the fundamentals of XYZ.
