@@ -17,6 +17,10 @@ prerequisites:
   - A working installation of Unreal Engine 5 on a compatible PC.
   - Basic understanding of Unreal Engine's interface and tools.
 whoShouldAttend:
+  - title: Indie Game Developers
+    description: >-
+      Small teams or solo developers seeking to integrate high-quality VFX
+      without a large studio
   - title: Aspiring Game Designers
     description: >-
       Those looking to add dynamic visual effects to their games to enhance
