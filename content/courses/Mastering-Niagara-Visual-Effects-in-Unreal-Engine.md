@@ -22,8 +22,10 @@ whoShouldAttend:
       Those looking to add dynamic visual effects to their games to enhance
       immersion and aestheticsThose looking to add dynamic visual effects to
       their games to enhance immersion and aesthetics.
-  - title: Intermediate Learners
-    description: Users of ABC wanting to enhance their skills.
+  - title: VFX Artists
+    description: >-
+      Professionals or hobbyists wanting to understand and master the Niagara
+      system for more than just games
 learningOutcomes:
   - title: Outcome 1
     description: Master the fundamentals of XYZ.
