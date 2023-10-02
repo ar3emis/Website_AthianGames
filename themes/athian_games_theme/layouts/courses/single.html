@@ -1,49 +1,28 @@
 {{ define "main" }}
 
 
-<!-- Cover Section -->
-<section>
-  <div id="fixed" class="qrt-right">
-    <div class="qrt-half-banner qrt-left-align qrt-animated-show">
-      <div class="qrt-image-frame">
-        {{/* Todo: set this as a variable. Dont do conditional logic inside src
-        */}}
-        <img src="{{ .Params.coverImage }}" alt="banner" />
-      </div>
-      <div class="qrt-overlay row align-items-center m-0">
-        <!-- <div class="qrt-scroll-hint"><span></span></div> -->
-        <!-- <div class="row align-items-center"> -->
-        <div class="col-xl-8 col-lg-12 offset-xl-2">
-          <div class="qrt-banner-title">
-            <!-- Image Column -->
-            <div class="col-md-2 text-center m-0">
-              <img src="{{ .Params.logoImage }}" alt="Primere UATC" class="m-auto"
-                style="height: 80px; object-fit: contain">
-            </div>
-
-            <!-- Title Column -->
-            <div class="col-md-10 text-left">
-              <!-- Title -->
-              <h2 class="qrt-white qrt-mb-20">
-                {{.Title}}
-              </h2>
-            </div>
-
-
-
-
+    
+<div class="cover">
+  <div class="cover-content">
+    <!-- Title Section with Background -->
+    <div class="title-section" style="background: linear-gradient(rgba(0, 0.1, 0.1, 0), rgba(25, 25, 45, 0.93)), url('{{ .Params.coverImage }}'); background-size: cover; background-position: center center; padding: 250px 0; margin-bottom: -2px;">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <!-- Logo Area -->
+          <div class="col-md-2 text-center">
+            <img src="{{ .Params.logoImage }}" alt="Course Logo" class="img-fluid" style="max-width: 150px;">
+          </div>
+          <!-- Title and Description Area -->
+          <div class="col-md-8">
+            <h1 class="mb-3 text-white">{{.Title}}</h1>
+            <p class="lead text-light">A short description about the course. This should give users a quick
+              understanding of what the course is about.</p>
           </div>
         </div>
       </div>
-
-
-      <!-- </div> -->
     </div>
   </div>
-
-
-
-</section>
+</div>
 
 <div class="section">
 
@@ -88,7 +67,8 @@
                     <h3 class="card-title">{{ .title }}</h3>
                     <h1 class="price-display">{{ .price }}</h1>
                     <p class="card-text">{{ .description }}</p>
-                    <a href="{{ $.Params.formURL }}" id="calendlyTrigger" class="btn btn-primary btn-lg mt-4">Enroll Now</a>
+                    <a href="{{ $.Params.formURL }}" id="calendlyTrigger" class="btn btn-primary btn-lg mt-4">Enroll
+                      Now</a>
                   </div>
                 </div>
                 {{ end }}
@@ -182,7 +162,6 @@
   }
 
   .title-section {
-    background: linear-gradient(rgba(0, 0.1, 0.1, 0), rgba(25, 25, 45, 0.93)), url('images/bg_placeholder.png');
     background-size: cover;
     background-position: center;
     padding: 250px 0;
@@ -209,7 +188,7 @@
     font-family: Arial, sans-serif !important;
     color: #fff;
     /* Example font. Use your desired font family. */
-    
+
   }
 
   .section h2 {
@@ -221,6 +200,7 @@
     padding-bottom: 10px;
     font-variant-caps: all-petite-caps;
   }
+
 
   .section p,
   .section li {
@@ -288,7 +268,7 @@
   }
 
 
-  
+
 
   .pricing-card {
     border-radius: 15px;
