@@ -9,7 +9,7 @@ shortDescription: >-
   particle simulations. This training focusses on covering the basics of
   Niagara, and strengthen your fundamentals in Visual Effects in Unreal Engine.
 mainImage: /images/courses_niagarafundamentals_cover.jpg
-logoImage: /images/UATC-Logo-2023.png
+#logoImage: /images/UATC-Logo-2023.png
 coverImage: /CoverArt_MasteringNiagara.png
 upcoming: false
 duration: 4 weeks

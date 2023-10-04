@@ -5,13 +5,14 @@
 <div class="cover">
   <div class="cover-content">
     <!-- Title Section with Background -->
+    {{ $coursesIndex := .Site.GetPage "section" "courses" }}
     <div class="title-section"
       style="background: linear-gradient(rgba(0, 0.1, 0.1, 0), rgba(25, 25, 45, 0.93)), url('{{ .Params.coverImage }}'); background-size: cover; background-position: center center; padding: 250px 0; margin-bottom: -2px;">
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <!-- Logo Area -->
           <div class="col-md-2 text-center">
-            <img src="{{ .Params.logoImage }}" alt="Course Logo" class="img-fluid" style="max-width: 150px;">
+            <img src="{{ with $coursesIndex }}{{ .Params.logoImage }}{{ end }}" alt="Course Logo" class="img-fluid" style="max-width: 150px;">
           </div>
           <!-- Title and Description Area -->
           <div class="col-md-10">

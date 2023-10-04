@@ -9,7 +9,7 @@ shortDescription: >-
   well-equipped to design intricate gameplay elements in Unreal Engine 5,
   setting a strong foundation for your game development journey.
 mainImage: /Courses/cc_BlueprintsFundamentals.png
-logoImage: /images/UATC-Logo-2023.png
+#logoImage: /images/UATC-Logo-2023.png
 coverImage: /Courses/course_Blueprints_cover.png
 upcoming: false
 duration: 1 month
