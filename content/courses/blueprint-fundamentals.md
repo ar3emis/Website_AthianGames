@@ -12,7 +12,7 @@ mainImage: /Courses/cc_BlueprintsFundamentals.png
 #logoImage: /images/UATC-Logo-2023.png
 coverImage: /Courses/course_Blueprints_cover.png
 upcoming: false
-duration: 1 month
+duration: 4 weeks
 prerequisites:
   - A working installation of Unreal Engine 5 on a compatible PC.
   - Basic understanding of Unreal Engine's interface and tools.
