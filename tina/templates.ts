@@ -16,12 +16,6 @@ export function courseFields() {
       name: "title",
       label: "title",
     },
-
-    {
-      type: "image",
-      name: "logoImage",
-      label: "Add badge",
-    },
     {
       type: "image",
       name: "coverImage",

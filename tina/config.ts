@@ -260,6 +260,11 @@ export default defineConfig({
                 description: "This is the markdown body",
                 isBody: true,
               },
+              {
+                type: "image",
+                name: "logoImage",
+                label: "Add badge",
+              },
               ...courseFields(),
             ],
             label: "course",
