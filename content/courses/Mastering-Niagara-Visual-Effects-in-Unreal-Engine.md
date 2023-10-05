@@ -1,6 +1,9 @@
 ---
+duration: 3 weeks
 date: 1970-01-01T00:00:00.000Z
 title: 'Mastering Niagara: Visual Effects in Unreal Engine'
+coverImage: >-
+  /Courses//sameek_cover_art_green_poisonous_portal_effect_niagara_particle_9fd29345-26ba-469f-a433-51994e3069ef.png
 shortDescription: >-
   With Niagara FX System, you can create high quality visual effects in Unreal
   Engine. With Modular workflow and user friendly design interface, you can get
@@ -9,10 +12,9 @@ shortDescription: >-
   particle simulations. This training focusses on covering the basics of
   Niagara, and strengthen your fundamentals in Visual Effects in Unreal Engine.
 mainImage: /images/courses_niagarafundamentals_cover.jpg
-#logoImage: /images/UATC-Logo-2023.png
-coverImage: /Courses//course_masteringniagara_cover.jpg
+course_categories:
+  - VFX
 upcoming: false
-duration: 3 weeks
 prerequisites:
   - A working installation of Unreal Engine 5 on a compatible PC.
   - Basic understanding of Unreal Engine's interface and tools.
@@ -127,8 +129,6 @@ pricingAndEnrollment:
       - title: Standard Course
         price: $150
         description: Full access to all course materials and support
-course_categories:
-  - VFX
 formURL: >-
   https://calendly.com/athiangames/mastering-niagara-visual-effects-in-unreal-engine
 _template: course
