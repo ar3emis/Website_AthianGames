@@ -2,8 +2,7 @@
 duration: 3 weeks
 date: 1970-01-01T00:00:00.000Z
 title: 'Mastering Niagara: Visual Effects in Unreal Engine'
-coverImage: >-
-  /Courses//sameek_cover_art_green_poisonous_portal_effect_niagara_particle_9fd29345-26ba-469f-a433-51994e3069ef.png
+coverImage: /Courses/courses_masteringniagara_cover.png
 shortDescription: >-
   With Niagara FX System, you can create high quality visual effects in Unreal
   Engine. With Modular workflow and user friendly design interface, you can get
@@ -11,7 +10,7 @@ shortDescription: >-
   a variety of FX, from realistic environments, to stylized and interactive
   particle simulations. This training focusses on covering the basics of
   Niagara, and strengthen your fundamentals in Visual Effects in Unreal Engine.
-mainImage: /images/courses_niagarafundamentals_cover.jpg
+mainImage: /Courses/courses_masteringniagara_thumbnail.png
 course_categories:
   - VFX
 upcoming: false
