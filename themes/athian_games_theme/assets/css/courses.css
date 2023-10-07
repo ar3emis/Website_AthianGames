@@ -1,3 +1,47 @@
+.short-term-course-wrapper .qrt-work-item {
+  max-width: 90%; /* This sets the maximum width of each card. Adjust the percentage as you see fit. */
+  margin: 0 auto; /* This will centralize the card within its container. */
+}
+
+.short-term-course-wrapper .row {
+  justify-content: center; /* This ensures that the entire row of cards is centered within the larger container. */
+}
+
+.short-term-course-wrapper {
+  max-width: 70%; /* Adjust this value based on how much smaller you want the entire section to be. */
+  margin: 0 auto; /* This centralizes the section on the page. */
+}
+
+.course-thumbnail {
+  display: block; /* Ensures no whitespace below the image */
+  object-fit: contain; /* Ensures the image covers the area without stretching */
+  width: 100%;
+}
+
+.card {
+  border: 1px solid #ddd;
+  align-items: center;
+  background-color:#383d41;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensures the image fills the card width */
+  height: 100%; /* Keeps the original image aspect ratio */
+  padding: 2px;
+ }
+
+
+
+
+.card, .card-body, .course-thumbnail {
+  box-sizing: content-box;
+}
+
+/* If there's an additional container around the thumbnail, adjust its padding/margin */
+.thumbnail-container {
+  padding: 10px; /* Adjust as necessary */
+  margin: 0; /* Adjust as necessary */
+}
+
+
 .qrt-work-item {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
