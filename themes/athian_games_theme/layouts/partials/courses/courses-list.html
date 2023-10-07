@@ -20,9 +20,9 @@
   <h3 class="upcoming-courses-title">{{.Params.upcomingCoursesListTitle}}</h3>
   {{ end }}
  <div class="courses-list-wrapper">
-  
+
   {{ with site.GetPage "courses" }}
- 
+
     {{ range where .Pages.ByDate.Reverse ".Params.upcoming" true }}
     <div class="course-wrapper">
       <a href="{{ .Permalink }}" class="course-link">
@@ -34,7 +34,7 @@
         </div>
       </a>
     </div>
-    
+
     {{ end }}
   {{ end }}
 </div>

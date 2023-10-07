@@ -11,13 +11,13 @@
             <div class="col-xl-8 offset-xl-2 col-lg-12">
                 <div class="row">
                     <div class="col-lg-12">
-                        
-                        <div class="row">
-                            <h2 class="qrt-left">{{ .Params.coursesListTitle }}</h2>
+
+                      <div class="row justify-content-center">
+                          <h2 class="qrt-left course-title">Our Courses</h2>
                             <!-- <div class="qrt-grid-sizer"></div> -->
-                        
+
                             {{ $courseData := .Site.Data.course_list.category  }}
-                        
+
                             {{ range .Site.Taxonomies.course_categories }}
                                 {{ $category := .Page.LinkTitle }}
                                 {{ $course := slice }}
@@ -29,7 +29,7 @@
                                 {{ if $course }}
                                 {{ $thumbnail := $course.thumbnail }}
                                 {{ $description := $course.description }}
-                        
+
                                 <div class="col-md-6 col-lg-4 mb-20">
                                     <div class="qrt-work-item">
                                         <a href="{{ .Page.Permalink }}" data-filter="*" class="qrt-cursor-color qrt-cursor-scale qrt-work-cover-frame qrt-anima-link">
@@ -59,64 +59,53 @@
                                 {{ end }}
                             {{ end }}
                         </div>
-                        
-                                              
-                        
-                        
-                        
-                        
-                
-
-                    </div>
+               </div>
                 </div>
             </div>
         </div>
     </div>
-
-
     <!-- grid end -->
 
-
     <div class="qrt-half-content-frame column bg-grey">
-        <section class="col-xl-8 offset-xl-2 col-lg-12">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="qrt-left">Upcoming Trainings</h2>
-                    <div class="row">
-                        {{ $upcomingCourses := where .Site.RegularPages "Params.upcoming" true }}
-                        {{ if $upcomingCourses }}
-                        {{ range $upcomingCourses }}
-                        <div class="col-md-6 col-lg-3 mb-20">
-                            <div class="qrt-work-item qrt-cursor-color qrt-cursor-scale">
-                                <div class="m-auto">
-                                    <img src="{{ .Params.mainImage }}"  alt="...">
-                                </div>
-                               
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ .Params.title }}</h5>
-                                    <p class="card-text">Trainer: {{ .Params.trainer }}</p>
-                                    <p class="card-text">Date: {{ .Params.date.Format "02/01/2006" }}</p>
-                                    {{ $url := .Params.formURL }}
-                                    <a href="{{ $url | safeURL  }}" class="btn btn-primary">Register</a>
-                                </div>
-                            </div>
-                        </div>
-                        {{ end }}
-                        {{ end }}
-                    </div>
-                    {{ if not $upcomingCourses }}
-                    <div style="border: 1px inset silver; margin:15px 25px 5px 1px; padding: 15px;">
-                        <div class="row" style="padding: 5px">
-                            <h4 style="color: gray; font-family: 'Josefin Sans', sans-serif">We are currently preparing
-                                schedules for our upcoming sessions. Enroll now and we will notify you when we schedule
-                                a session.</h4>
-                        </div>
-                        {{ partial "courses/enrol-form.html" . }}
-                    </div>
-                    {{ end }}
-                </div>
-            </div>
-        </section>
+<!--        <section class="col-xl-8 offset-xl-2 col-lg-12">-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-12">-->
+<!--                  <h2 class="qrt-left course-title">Upcoming Trainings</h2>-->
+<!--                    <div class="row">-->
+<!--                        {{ $upcomingCourses := where .Site.RegularPages "Params.upcoming" true }}-->
+<!--                        {{ if $upcomingCourses }}-->
+<!--                        {{ range $upcomingCourses }}-->
+<!--                        <div class="col-md-6 col-lg-3 mb-20">-->
+<!--                            <div class="qrt-work-item qrt-cursor-color qrt-cursor-scale">-->
+<!--                                <div class="m-auto">-->
+<!--                                    <img src="{{ .Params.mainImage }}"  alt="...">-->
+<!--                                </div>-->
+
+<!--                                <div class="card-body">-->
+<!--                                    <h5 class="card-title">{{ .Params.title }}</h5>-->
+<!--                                    <p class="card-text">Trainer: {{ .Params.trainer }}</p>-->
+<!--                                    <p class="card-text">Date: {{ .Params.date.Format "02/01/2006" }}</p>-->
+<!--                                    {{ $url := .Params.formURL }}-->
+<!--                                    <a href="{{ $url | safeURL  }}" class="btn btn-primary">Register</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        {{ end }}-->
+<!--                        {{ end }}-->
+<!--                    </div>-->
+<!--                    {{ if not $upcomingCourses }}-->
+<!--                    <div style="border: 1px inset silver; margin:15px 25px 5px 1px; padding: 15px;">-->
+<!--                        <div class="row" style="padding: 5px">-->
+<!--                            <h4 style="color: gray; font-family: 'Josefin Sans', sans-serif">We are currently preparing-->
+<!--                                schedules for our upcoming sessions. Enroll now and we will notify you when we schedule-->
+<!--                                a session.</h4>-->
+<!--                        </div>-->
+<!--                        {{ partial "courses/enrol-form.html" . }}-->
+<!--                    </div>-->
+<!--                    {{ end }}-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
 
         <section class="qrt-left column product-content">
             <div class="contact-wrap">
@@ -152,7 +141,6 @@
             </div>
         </section>
     </div>
-
 
     <script language="javascript" type="text/javascript">
         $(function () {

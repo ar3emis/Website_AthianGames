@@ -17,11 +17,13 @@
 
 {{ $about := resources.Get "css/about.css" }}
 
+{{ $courses := resources.Get "css/courses.css" }}
+
 {{- if .Site.IsServer -}}
-{{ $style := slice $bootstrap $fontawesome $swiper $fancybox $mapbox $main $custom_theme $addressmap $about | resources.Concat "bundle.css" }}
+{{ $style := slice $bootstrap $fontawesome $swiper $fancybox $mapbox $main $custom_theme $addressmap $about $courses | resources.Concat "bundle.css" }}
 <link rel="stylesheet" href="{{ $style.Permalink }}" lazyload>
 
 {{- else -}}
-{{ $style := slice $bootstrap $fontawesome $swiper $fancybox $mapbox $main $custom_theme $addressmap $about | resources.Concat "bundle.css" | minify | fingerprint }}
+{{ $style := slice $bootstrap $fontawesome $swiper $fancybox $mapbox $main $custom_theme $addressmap $about $courses | resources.Concat "bundle.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}" lazyload>
 {{- end }}

@@ -5,7 +5,6 @@ category:
       A comprehensive guide to the key features of Unreal Engine. From asset
       creation to blueprint scripting, this course lays the groundwork for your
       projects.
-           
   - course_categories: Unreal C++ Programming
     thumbnail: /Courses/course_unrealC++.png
     description: >-
