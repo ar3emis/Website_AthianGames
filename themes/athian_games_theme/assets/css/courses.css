@@ -23,12 +23,9 @@
   align-items: center;
   background-color:#383d41;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Ensures the image fills the card width */
-  height: 100%; /* Keeps the original image aspect ratio */
+  width: 100%;
   padding: 2px;
  }
-
-
 
 
 .card, .card-body, .course-thumbnail {
