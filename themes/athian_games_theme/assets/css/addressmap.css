@@ -4,6 +4,23 @@
   padding-bottom: 30px;
 }
 
+.blur-background {
+  filter: blur(20px); /* Adjust the value as per your preference */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url('/images/contactuscover.jpg') no-repeat center center;
+  background-size: cover;
+  background-color: #dddddd;
+  z-index: -1;
+}
+
+.scroll-content {
+  height: 100%;
+}
+
 address{
   margin-bottom: 20px;
   text-transform: capitalize;
@@ -44,6 +61,7 @@ address{
   position:relative;
   height:0;
 }
+
 .map-container-2 iframe{
   left:0;
   top:0;
