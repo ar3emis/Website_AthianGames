@@ -11,7 +11,7 @@ shortDescription: >-
   create AI, and apply these skills practically. By the end, you'll be
   well-equipped to design intricate gameplay elements in Unreal Engine 5,
   setting a strong foundation for your game development journey.
-mainImage: /Courses/cc_BlueprintsFundamentals.png
+mainImage: /courses/cc_BlueprintsFundamentals.png
 course_categories:
   - Unreal Crash Courses
 upcoming: false

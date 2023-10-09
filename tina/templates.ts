@@ -107,35 +107,33 @@ export function courseFields() {
       name: "courseModulesDescription",
       label: "Course Modules Description",
     },
-    {
-      type: "object",
-      name: "module",
-      label: "Module",
-      list: true,
-      fields: [
-        {
-          type: "string",
-          name: "title",
-          label: "Module Title",
-        },
-        {
-          type: "string",
-          name: "description",
-          label: "Module Description",
-        },
-        {
-          type: "string",
-          name: "topics",
-          label: "Module Topics",
-          list: true, // Allow multiple topics
-        },
-
-      ],
-      itemProps: (item) => ({
-        label: item.title, // Use the title as the display label
-      }),
-    },
-    {
+      {
+          type: "object",
+          name: "module",
+          label: "Module",
+          list: true,
+          fields: [
+              {
+                  type: "string",
+                  name: "title",
+                  label: "Module Title",
+              },
+              {
+                  type: "string",
+                  name: "description",
+                  label: "Module Description",
+              },
+              {
+                  type: "string",
+                  name: "topics",
+                  label: "Module Topics (comma-separated)",
+              },
+          ],
+          itemProps: (item) => ({
+              label: item.title, // Use the title as the display label
+          }),
+      },
+      {
       type: "string",
       name: "formURL",
       label: "Enroll Button URL",
