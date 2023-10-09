@@ -124,9 +124,9 @@ export function courseFields() {
                   label: "Module Description",
               },
               {
-                  type: "string",
+                  type: "text",
                   name: "topics",
-                  label: "Module Topics (comma-separated)",
+                  label: "Module Topics (separate by new lines)",
               },
           ],
           itemProps: (item) => ({

@@ -67,76 +67,42 @@ module:
       Delve into the basics of Unreal Engine 5 and its Blueprint system to
       kickstart your journey in game development. Familiarize yourself with
       fundamental concepts and tools to create interactive experiences.
-    topics:
-      - >-
-        Introduction to Unreal Engine 5: Explore the latest version of Unreal
-        Engine and its new features.
-      - >-
-        Blueprint Significance: Uncover the importance of Blueprints in creating
-        interactive experiences.
-      - >-
-        Overview of Blueprint Types: Differentiate between Level Blueprint,
-        Blueprint Class, and Blueprint Interface.
-      - >-
-        Navigating the Blueprint Interface: A walkthrough of the Blueprint
-        Editor Interface and its various components.
-      - >-
-        Understanding Variables: Introduction to variables and common data types
-        used in Blueprints.
-      - >-
-        Basic Logic and Flow Control: Grasp the basics of conditional checks and
-        loops to control the flow of execution.
+    topics: |
+        **Introduction to Unreal Engine 5:** Explore the latest version of UnrealEngine and its new features.
+        **Blueprint Significance:** Uncover the importance of Blueprints in creatinginteractive experiences.
+        **Overview of Blueprint Types:** Differentiate between Level Blueprint,Blueprint Class, and Blueprint Interface.
+        **Navigating the Blueprint Interface:** A walkthrough of the Blueprint Editor Interface and its various components.
+        **Understanding Variables:** Introduction to variables and common data types used in Blueprints.
+        **Basic Logic and Flow Control: Grasp the basics of conditional checks and loops to control the flow of execution.
   - title: 'Module 2: Intermediate Blueprint Concepts'
     description: >-
       Advance your knowledge by diving into user input handling, reusability of
       code, and managing complex data. This module also introduces the concept
       of components and inheritance in Blueprints.
-    topics:
-      - >-
-        User Input and Events: Learn to handle various input types and create
-        interactive responses.
-      - >-
-        Functions, Macros, and Custom Events: Delve into reusable code blocks
-        and understand their different use cases.
-      - >-
-        Advanced Data Types: Get acquainted with arrays, sets, and maps to
-        handle multiple data points.
-      - >-
-        Components and Child Blueprints: Learn to add components and understand
-        the concept of inheritance in Blueprints.
+    topics: |
+        **User Input and Events:** Learn to handle various input types and create interactive responses.
+        **Functions, Macros, and Custom Events:** Delve into reusable code blocks and understand their different use cases.
+        **Advanced Data Types:** Get acquainted with arrays, sets, and maps to handle multiple data points.
+        **Components and Child Blueprints:** Learn to add components and understandthe concept of inheritance in Blueprints.
   - title: 'Module 3: Advanced Blueprint Techniques'
     description: >-
       Enhance your Blueprint skills further with timelines, animations, and
       interfaces. This module also covers crucial debugging and optimization
       techniques to improve your game's performance.
-    topics:
-      - >-
-        Timelines and Animation: Utilize timelines to drive animations and
-        manipulate actors over time.
-      - >-
-        Blueprint Interfaces: Explore Blueprint Interfaces for efficient
-        communication between Blueprints.
-      - >-
-        Debugging and Optimization: Learn to debug and optimize your Blueprints
-        for better performance.
-      - >-
-        Casting and Blueprint Communication: Understand casting and various ways
-        to reference and interact with other Blueprints.
+    topics: |
+        **Timelines and Animation:** Utilize timelines to drive animations and manipulate actors over time.
+        **Blueprint Interfaces:** Explore Blueprint Interfaces for efficient communication between Blueprints.
+        **Debugging and Optimization:** Learn to debug and optimize your Blueprints for better performance.
+        **Casting and Blueprint Communication:** Understand casting and various ways to reference and interact with other Blueprints.
   - title: 'Module 4: Real-world Applications and Q&A'
     description: >-
       Apply the acquired Blueprint knowledge in creating a basic game mechanic.
       Understand how Blueprints interact with other UE5 features and engage in
       an open Q&A to clarify doubts and troubleshoot issues.
-    topics:
-      - >-
-        Creating a Basic Game Mechanic: Walkthrough of developing a specific
-        game mechanic using Blueprints.
-      - >-
-        Integrating Blueprint with Other UE5 Features: Discover how Blueprints
-        interact with AI, Physics, Materials, and more.
-      - >-
-        Open Q&A and Troubleshooting: Address participants’ queries and provide
-        solutions to common challenges faced during the course.
+    topics: |
+        **Creating a Basic Game Mechanic:** Walkthrough of developing a specific game mechanic using Blueprints.
+        **Integrating Blueprint with Other UE5 Features:** Discover how Blueprints interact with AI, Physics, Materials, and more.
+        **Open Q&A and Troubleshooting:** Address participants’ queries and provide solutions to common challenges faced during the course.
 formURL: 'https://book.stripe.com/00g5lDbF52kx2cg3cf'
 draft: false
 _template: course
