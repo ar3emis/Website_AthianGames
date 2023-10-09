@@ -17,6 +17,7 @@ upcoming: false
 prerequisites:
   - A working installation of Unreal Engine 5 on a compatible PC.
   - Basic understanding of Unreal Engine's interface and tools.
+price: $119
 whoShouldAttend:
   - title: Aspiring Game Designers
     description: >-
@@ -121,13 +122,6 @@ module:
       - >-
         Decoding Real-world VFX: Analyze popular game or film effects and
         understand their creation in Niagara.
-pricingAndEnrollment:
-  - title: Course Enrollment
-    description: Empower your skills with our comprehensive course.
-    courses:
-      - title: Standard Course
-        price: $119
-        description: Full access to all course materials and support
 formURL: 'https://book.stripe.com/8wM3dveRhcZb5osaEI'
 _template: course
 ---

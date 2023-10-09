@@ -18,6 +18,7 @@ upcoming: false
 prerequisites:
   - A working installation of Unreal Engine 5 on a compatible PC.
   - Basic understanding of Unreal Engine's interface and tools.
+price: $99
 whoShouldAttend:
   - title: Aspiring Game Developers
     description: >-
@@ -136,13 +137,6 @@ module:
       - >-
         Open Q&A and Troubleshooting: Address participants’ queries and provide
         solutions to common challenges faced during the course.
-pricingAndEnrollment:
-  - title: Course Enrollment
-    description: Empower your skills with our comprehensive course.
-    courses:
-      - title: Standard Course
-        price: $99
-        description: Full access to all course materials and support
 formURL: 'https://book.stripe.com/00g5lDbF52kx2cg3cf'
 draft: false
 _template: course

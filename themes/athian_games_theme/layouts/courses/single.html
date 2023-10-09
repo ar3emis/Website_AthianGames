@@ -76,7 +76,6 @@
           </div>
         </div>
 
-
         <!-- Modules Section -->
         <div class="row justify-content-center">
           <div class="col-md-12">
@@ -88,10 +87,11 @@
               <h3 class="module-title mb-4">{{ .title }}</h3>
               <p class="module-description mb-4">{{ .description | markdownify }}</p>
               <ul class="module-list pl-4">
-                {{ $topics := split .topics "," }}
-                {{ range $topics }}
+                {{ with .topics }}
+                {{ range . }}
                 {{ $split := split . ":" }}
                 <li class="mb-2"><strong>{{ index $split 0 }}:</strong> {{ index $split 1 }}</li>
+                {{ end }}
                 {{ end }}
               </ul>
             </div>
@@ -99,7 +99,6 @@
             {{ end }}
           </div>
         </div>
-
 
         <!-- Who Should Attend Section -->
         <div class="container my-5">
