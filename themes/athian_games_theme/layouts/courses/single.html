@@ -61,21 +61,17 @@
               <div class="col-md-10 text-center">
                 <h2>Course Enrollment</h2>
                 <h3 class="mb-2">Duration: <strong>{{ .Params.duration }}</strong></h3>
-                {{ range .Params.pricingAndEnrollment }}
-                <p class="card-text">{{ .description }}</p>
-                {{ range .courses }}
+                <p class="card-text">Empower your skills with our comprehensive course</p>
                 <div class="card pricing-card mb-4 shadow bg-dark">
                   <div class="card-body">
-                    <h3 class="card-title">{{ .title }}</h3>
-                    <h1 class="price-display">{{ .price }}</h1>
-                    <p class="card-text">{{ .description }}</p>
-                    <a href="{{ $.Params.formURL }}" id="calendlyTrigger" class="btn btn-primary btn-lg mt-4">Enroll
+                    <h3 class="card-title">Standard Course</h3>
+                    <h1 class="price-display">{{ .Params.price }}</h1>
+                    <p class="card-text">Full access to all course materials and support</p>
+                    <a href="{{ $.Params.formURL }}" id="courselinktrigger" class="btn btn-primary btn-lg mt-4">Enroll
                       Now</a>
                   </div>
                 </div>
-                {{ end }}
-                {{ end }}
-              </div>
+               </div>
             </div>
           </div>
         </div>
@@ -337,7 +333,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <script type="text/javascript">
-  document.getElementById("calendlyTrigger").addEventListener("click", function (event) {
+  document.getElementById("courselinktrigger").addEventListener("click", function (event) {
     event.preventDefault();
     var calendlyLink = event.target.href;
     Calendly.showPopupWidget(calendlyLink);

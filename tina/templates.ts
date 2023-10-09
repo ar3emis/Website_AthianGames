@@ -7,15 +7,15 @@ export function courseFields() {
       label: "duration",
     },
     {
-      type: "datetime",
-      name: "date",
-      label: "date",
-    },
-    {
       type: "string",
       name: "title",
       label: "title",
     },
+  {
+      type: "string",
+      name: "price",
+      label: "price",
+  },
     {
       type: "image",
       name: "coverImage",
@@ -29,13 +29,11 @@ export function courseFields() {
         component: "textarea",
       },
     },
-   
     {
       type: "image",
       name: "mainImage",
       label: "mainImage",
     },
-    
     {
       type: "string",
       name: "course_categories",
@@ -109,7 +107,6 @@ export function courseFields() {
       name: "courseModulesDescription",
       label: "Course Modules Description",
     },
-    
     {
       type: "object",
       name: "module",
@@ -132,62 +129,12 @@ export function courseFields() {
           label: "Module Topics",
           list: true, // Allow multiple topics
         },
-        
-      ],
-      itemProps: (item) => ({
-        label: item.title, // Use the title as the display label
-      }),
-    },
-    
 
-    
-    {
-      type: "object",
-      name: "pricingAndEnrollment",
-      label: "Pricing and Enrollment",
-      list: true,
-      fields: [
-        {
-          type: "string",
-          name: "title",
-          label: "Course Title",
-        },
-        {
-          type: "string",
-          name: "description",
-          label: "Course Description",
-        },
-        {
-          type: "object",
-          name: "courses",
-          label: "Courses",
-          list: true,
-          fields: [
-            {
-              type: "string",
-              name: "title",
-              label: "Course Title",
-            },
-            {
-              type: "string",
-              name: "price",
-              label: "Course Price",
-            },
-            {
-              type: "string",
-              name: "description",
-              label: "Course Description",
-            },
-          ],
-        },
       ],
       itemProps: (item) => ({
         label: item.title, // Use the title as the display label
       }),
     },
-    
-    
-    
     {
       type: "string",
       name: "formURL",
@@ -784,6 +731,6 @@ export function course_font_style() {
       name: "font_family",
       description: "Enter Font Family Name example: Arial",
     },
-  
+
   ] as TinaField[];
 }
