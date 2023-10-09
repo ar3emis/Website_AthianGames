@@ -1,6 +1,9 @@
 ---
+trainer: Trainer1
+duration: 4 weeks
 date: 2023-06-09T18:30:00.000Z
 title: Blueprint Fundamentals in Unreal Engine 5
+coverImage: /Courses/course_Blueprints_cover.png
 shortDescription: >-
   This is an 8-hour, beginner-friendly course, structured over four sessions. It
   provides a comprehensive introduction to the Blueprint Scripting System in
@@ -9,10 +12,9 @@ shortDescription: >-
   well-equipped to design intricate gameplay elements in Unreal Engine 5,
   setting a strong foundation for your game development journey.
 mainImage: /Courses/cc_BlueprintsFundamentals.png
-#logoImage: /images/UATC-Logo-2023.png
-coverImage: /Courses/course_Blueprints_cover.png
+course_categories:
+  - Unreal Crash Courses
 upcoming: false
-duration: 4 weeks
 prerequisites:
   - A working installation of Unreal Engine 5 on a compatible PC.
   - Basic understanding of Unreal Engine's interface and tools.
@@ -134,7 +136,6 @@ module:
       - >-
         Open Q&A and Troubleshooting: Address participants’ queries and provide
         solutions to common challenges faced during the course.
-trainer: Trainer1
 pricingAndEnrollment:
   - title: Course Enrollment
     description: Empower your skills with our comprehensive course.
@@ -142,9 +143,7 @@ pricingAndEnrollment:
       - title: Standard Course
         price: $150
         description: Full access to all course materials and support
-course_categories:
-  - Unreal Crash Courses
-formURL: 'https://calendly.com/athiangames/blueprint-fundamentals-in-unreal-engine-5'
+formURL: 'https://book.stripe.com/00g5lDbF52kx2cg3cf'
 draft: false
 _template: course
 ---
