@@ -128,8 +128,7 @@ pricingAndEnrollment:
       - title: Standard Course
         price: $150
         description: Full access to all course materials and support
-formURL: >-
-  https://calendly.com/athiangames/mastering-niagara-visual-effects-in-unreal-engine
+formURL: 'https://book.stripe.com/8wM3dveRhcZb5osaEI'
 _template: course
 ---
 
