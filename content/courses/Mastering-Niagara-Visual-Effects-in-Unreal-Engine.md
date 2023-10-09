@@ -126,7 +126,7 @@ pricingAndEnrollment:
     description: Empower your skills with our comprehensive course.
     courses:
       - title: Standard Course
-        price: $150
+        price: $119
         description: Full access to all course materials and support
 formURL: 'https://book.stripe.com/8wM3dveRhcZb5osaEI'
 _template: course
