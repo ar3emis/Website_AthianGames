@@ -127,7 +127,7 @@ module:
 
       * The Future of AI & Gaming: Speculating what’s next and how developers
       can stay ahead of the curve.
-draft: true
+draft: false
 _template: course
 ---
 
