@@ -12,6 +12,7 @@ shortDescription: >-
 mainImage: /courses/courses_generaitveaiunreal_thumbnail.png
 course_categories:
   - Unreal Crash Courses
+upcoming: false
 prerequisites:
   - A working installation of Unreal Engine 5 on a compatible PC.
   - Basic understanding of Unreal Engine's interface and tools.
@@ -132,4 +133,4 @@ draft: false
 _template: course
 ---
 
-Traverse into the uncharted territories where Generative AI meets game development. This course is designed for Unreal developers seeking to amplify their creative and coding prowess. Over four sessions, participants will learn how AI tools can be their brainstorming partner, helping craft deeper narratives, generate game ideas, and even navigate the intricacies of Unreal C++ programming. 
+Traverse into the uncharted territories where Generative AI meets game development. This course is designed for Unreal developers seeking to amplify their creative and coding prowess. Over four sessions, participants will learn how AI tools can be their brainstorming partner, helping craft deeper narratives, generate game ideas, and even navigate the intricacies of Unreal C++ programming.
