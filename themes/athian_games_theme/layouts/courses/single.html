@@ -86,16 +86,13 @@
             <div class="module-card mb-5 p-5 bg-dark rounded shadow">
               <h3 class="module-title mb-4">{{ .title }}</h3>
               <p class="module-description mb-4">{{ .description | markdownify }}</p>
-              <div class="module-list">
-                {{ range .topics }}
-                {{ . | markdownify }}
-                {{ end }}
-              </div>
+              <div class="module-list">{{ .topics | markdownify }}</div>
             </div>
             {{ end }}
             {{ end }}
           </div>
         </div>
+
 
 
         <!-- Who Should Attend Section -->
