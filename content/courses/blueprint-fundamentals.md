@@ -18,7 +18,7 @@ upcoming: false
 prerequisites:
   - A working installation of Unreal Engine 5 on a compatible PC.
   - Basic understanding of Unreal Engine's interface and tools.
-price: $99
+price: 99
 whoShouldAttend:
   - title: Aspiring Game Developers
     description: >-

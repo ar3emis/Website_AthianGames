@@ -98,16 +98,6 @@ export function courseFields() {
       }),
     },
     {
-      type: "string",
-      name: "courseModulesTitle",
-      label: "Course Modules Title",
-    },
-    {
-      type: "string",
-      name: "courseModulesDescription",
-      label: "Course Modules Description",
-    },
-      {
           type: "object",
           name: "module",
           label: "Module",

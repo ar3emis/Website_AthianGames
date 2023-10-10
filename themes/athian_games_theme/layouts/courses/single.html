@@ -65,7 +65,7 @@
                 <div class="card pricing-card mb-4 shadow bg-dark">
                   <div class="card-body">
                     <h3 class="card-title">Standard Course</h3>
-                    <h1 class="price-display">{{ .Params.price }}</h1>
+                    <h1 class="price-display">${{ .Params.price }}</h1>
                     <p class="card-text">Full access to all course materials and support</p>
                     <a href="{{ $.Params.formURL }}" id="courselinktrigger" class="btn btn-primary btn-lg mt-4">Enroll
                       Now</a>
@@ -79,8 +79,8 @@
         <!-- Modules Section -->
         <div class="row justify-content-center">
           <div class="col-md-12">
-            <h2 class="text-center">{{ .Params.courseModulesTitle }}</h2>
-            <p class="mb-5 text-center">{{ .Params.courseModulesDescription | markdownify }}</p>
+            <h2 class="text-center">Course Modules</h2>
+            <p class="mb-5 text-center">Every module features a dedicated 2-hour live session with a seasoned instructor.</p>
             {{ with .Params.module }}
             {{ range . }}
             <div class="module-card mb-5 p-5 bg-dark rounded shadow">

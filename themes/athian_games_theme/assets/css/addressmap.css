@@ -55,22 +55,52 @@ address{
 }
 
 
-.map-container-2{
-  overflow:hidden;
-  padding-bottom:56.25%;
-  position:relative;
-  height:0;
+.map-container-2 {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
 
-.map-container-2 iframe{
-  left:0;
-  top:0;
-  height:100%;
-  width:100%;
-  border-radius:10px;
-  border: #c1c1c1;
-  position:absolute;
+.map-container-2 iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1; /* Fixed border declaration */
+  position: absolute;
+}
 
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: row;
+  }
+
+  .map-container-2 {
+    position: relative;
+    height: 0;
+  }
+
+  .map-container-2 iframe {
+    display: flex;
+    flex-direction: row-reverse;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+
+  }
+
+
+  .contact-intro h2, .contact-intro h4 {
+    font-size: 20px;
+  }
+
+  .qrt-text {
+    font-size: 16px;
+  }
 }
 
 .mapouter
