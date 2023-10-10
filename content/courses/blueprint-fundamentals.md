@@ -3,7 +3,7 @@ trainer: Trainer1
 duration: 4 weeks
 date: 2023-06-09T18:30:00.000Z
 title: Blueprint Fundamentals in Unreal Engine 5
-coverImage: /Courses/course_Blueprints_cover.png
+coverImage: /courses/course_Blueprints_cover.png
 shortDescription: >-
   This is an 8-hour, beginner-friendly course, structured over four sessions. It
   provides a comprehensive introduction to the Blueprint Scripting System in

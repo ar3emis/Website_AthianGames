@@ -114,16 +114,16 @@ export function courseFields() {
                   label: "Module Description",
               },
               {
-                  type: "string",
+                  type: "rich-text",
                   name: "topics",
-                  label: "Module Topics (comma-separated)",
+                  label: "Module Topics"
               },
           ],
           itemProps: (item) => ({
               label: item.title, // Use the title as the display label
           }),
       },
-      {
+     {
       type: "string",
       name: "formURL",
       label: "Enroll Button URL",
