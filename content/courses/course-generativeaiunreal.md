@@ -12,6 +12,7 @@ shortDescription: >-
   processes.
 course_categories:
   - Unreal Crash Courses
+draft: true
 _template: course
 ---
 
