@@ -2,14 +2,14 @@
 duration: 4 weeks
 title: Generative AI for Game Development in Unreal
 price: '129'
-coverImage: /Courses//courses_generaitveaiunreal_cover.png
+coverImage: /courses/courses_generaitveaiunreal_cover.png
 shortDescription: >-
   Explore the transformative potential of Generative AI in the game development
   realm. This course emphasizes the power of tools like ChatGPT and midjourney
   in assisting Unreal developers with ideation, narrative crafting, and C++
   programming challenges. Delve into the auxiliary capabilities of AI, allowing
   for more expansive, dynamic, and streamlined game creation processes.
-mainImage: /courses//courses_generaitveaiunreal_thumbnail.png
+mainImage: /courses/courses_generaitveaiunreal_thumbnail.png
 course_categories:
   - Unreal Crash Courses
 prerequisites:
