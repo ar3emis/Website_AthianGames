@@ -57,10 +57,6 @@ learningOutcomes:
       Secure a tangible testament to your expertise with a certification,
       underscoring your readiness to apply Blueprint skills in real-world
       projects.
-courseModulesTitle: Course Modules
-courseModulesDescription: >-
-  Every module features a dedicated 2-hour live session with a seasoned
-  instructor.
 module:
   - title: 'Module 1: Introduction to Blueprints and Basic Concepts'
     description: >-
