@@ -60,8 +60,65 @@ learningOutcomes:
       their newfound skills and knowledge, and enhancing their professional
       credibility in the game development community.
 module:
+  - title: 'Module 1: Generative AI in the Gaming Landscape'
+    description: >-
+      Dive deep into the foundation of Generative AI, its evolution, and its
+      transformative potential in game development. This module sets the stage
+      for understanding the broad capabilities before diving into specifics.
+    topics: >+
+      * Evolution of Generative AI: Tracing the roots and understanding its
+      growth.
+
+      * Introduction to ChatGPT & Midjourney: Discover their potential beyond
+      traditional applications.
+
+      * AI's Role in Game Development: A broad view of how AI is reshaping game
+      design and development.
+
+      * Benefits & Limitations: A balanced view of what AI offers and its
+      current constraints.
+
+
+
+  - title: 'Module 2: Ideation, Narrative Crafting & AI'
+    description: >-
+      Venture into the world of AI-driven creativity. This module focuses on
+      leveraging AI for brainstorming game ideas, expanding lore, and crafting
+      dynamic narratives.
+    topics: >+
+      * Prompt-Driven Ideation: Kickstarting the AI's creativity.
+
+      * Expanding Game Universes: Using AI to flesh out backstories and deeper
+      lore.
+
+      * Branching Storylines & Quests: Crafting diverse narratives with AI
+      assistance.
+
+      * Review & Refinement: Ensuring AI-generated content resonates with game
+      objectives.
+
+
+
+  - title: 'Module 3: AI Assistance in Unreal C++ Challenges'
+    description: >-
+      Unpack the technical side of the course. Here, the emphasis is on how AI
+      can guide developers through common Unreal C++ challenges, offering
+      solutions, optimizations, and more.
+    topics: >+
+      * Common Coding Obstacles: Identifying frequent challenges in Unreal C++.
+
+      * AI-Driven Problem Solving: Seeking AI's guidance for coding issues.
+
+      * Adapting AI Solutions: Implementing AI's suggestions into actual game
+      code.
+
+      * Optimization & Debugging: Streamlining code and troubleshooting with AI
+      insights.
+
+
+
   - {}
-draft: true
+draft: false
 _template: course
 ---
 
