@@ -127,8 +127,9 @@ module:
 
       * The Future of AI & Gaming: Speculating what’s next and how developers
       can stay ahead of the curve.
+formURL: 'https://book.stripe.com/3cs01j6kL2kx048aEJ'
 draft: false
 _template: course
 ---
 
-Traverse into the uncharted territories where Generative AI meets game development. This course is designed for Unreal developers seeking to amplify their creative and coding prowess. Over four sessions, participants will learn how AI tools can be their brainstorming partner, helping craft deeper narratives, generate game ideas, and even navigate the intricacies of Unreal C++ programming. While the course doesn't focus on direct AI integration into games, it emphasizes the immense peripheral benefits AI offers in game creation. By its conclusion, developers will have a fresh toolkit of strategies, leveraging AI to make their game development journey more innovative and efficient.
+Traverse into the uncharted territories where Generative AI meets game development. This course is designed for Unreal developers seeking to amplify their creative and coding prowess. Over four sessions, participants will learn how AI tools can be their brainstorming partner, helping craft deeper narratives, generate game ideas, and even navigate the intricacies of Unreal C++ programming. 
