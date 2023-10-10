@@ -43,6 +43,22 @@ whoShouldAttend:
       Professionals in the educational sector who are looking to update their
       curriculum or training programs with the latest trends and tools in game
       development.
+learningOutcomes:
+  - title: Understand the Potential of Generative AI
+    description: ' Gain a detailed understanding of how tools like ChatGPT and midjourney can be utilized in the game development process.'
+  - title: Apply AI Insights to Gameplay
+    description: >-
+      Be equipped to convert AI-driven narratives and ideas into actionable game
+      mechanics and features within Unreal.
+  - title: Stay Ahead in the Industry
+    description: >-
+      Grasp the future implications of AI in game development, positioning
+      themselves at the vanguard of emerging trends and technologies.
+  - title: Course Completion Certification
+    description: >-
+      Attain a recognized certificate upon completion, serving as a testament to
+      their newfound skills and knowledge, and enhancing their professional
+      credibility in the game development community.
 draft: true
 _template: course
 ---
