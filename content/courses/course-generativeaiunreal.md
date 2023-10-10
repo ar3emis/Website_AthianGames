@@ -2,12 +2,14 @@
 duration: 4 weeks
 title: Generative AI for Game Development in Unreal
 price: '129'
+coverImage: /courses/courses_generaitveaiunreal_cover.png
 shortDescription: >-
   Explore the transformative potential of Generative AI in the game development
   realm. This course emphasizes the power of tools like ChatGPT and midjourney
   in assisting Unreal developers with ideation, narrative crafting, and C++
   programming challenges. Delve into the auxiliary capabilities of AI, allowing
   for more expansive, dynamic, and streamlined game creation processes.
+mainImage: /courses/courses_generaitveaiunreal_thumbnail.png
 course_categories:
   - Unreal Crash Courses
 prerequisites:
@@ -60,8 +62,84 @@ learningOutcomes:
       their newfound skills and knowledge, and enhancing their professional
       credibility in the game development community.
 module:
-  - {}
-draft: true
+  - title: 'Module 1: Generative AI in the Gaming Landscape'
+    description: >-
+      Dive deep into the foundation of Generative AI, its evolution, and its
+      transformative potential in game development. This module sets the stage
+      for understanding the broad capabilities before diving into specifics.
+    topics: >+
+      * Evolution of Generative AI: Tracing the roots and understanding its
+      growth.
+
+      * Introduction to ChatGPT & Midjourney: Discover their potential beyond
+      traditional applications.
+
+      * AI's Role in Game Development: A broad view of how AI is reshaping game
+      design and development.
+
+      * Benefits & Limitations: A balanced view of what AI offers and its
+      current constraints.
+
+
+
+  - title: 'Module 2: Ideation, Narrative Crafting & AI'
+    description: >-
+      Venture into the world of AI-driven creativity. This module focuses on
+      leveraging AI for brainstorming game ideas, expanding lore, and crafting
+      dynamic narratives.
+    topics: >+
+      * Prompt-Driven Ideation: Kickstarting the AI's creativity.
+
+      * Expanding Game Universes: Using AI to flesh out backstories and deeper
+      lore.
+
+      * Branching Storylines & Quests: Crafting diverse narratives with AI
+      assistance.
+
+      * Review & Refinement: Ensuring AI-generated content resonates with game
+      objectives.
+
+
+
+  - title: 'Module 3: AI Assistance in Unreal C++ Challenges'
+    description: >-
+      Unpack the technical side of the course. Here, the emphasis is on how AI
+      can guide developers through common Unreal C++ challenges, offering
+      solutions, optimizations, and more.
+    topics: >+
+      * Common Coding Obstacles: Identifying frequent challenges in Unreal C++.
+
+      * AI-Driven Problem Solving: Seeking AI's guidance for coding issues.
+
+      * Adapting AI Solutions: Implementing AI's suggestions into actual game
+      code.
+
+      * Optimization & Debugging: Streamlining code and troubleshooting with AI
+      insights.
+
+
+
+  - title: 'Module 4: Bringing AI Insights to Life in Unreal'
+    description: >-
+      Bridge the gap between AI's theoretical suggestions and practical game
+      development. This module will guide participants in translating AI-driven
+      narratives and ideas into tangible game mechanics within Unreal.
+    topics: >+
+      * Mapping Narratives to Mechanics: Turning stories into playable
+      experiences.
+
+      * AI-Inspired Procedural Content: Deriving in-game events, dialogues, and
+      quests from AI suggestions.
+
+      * Feedback Loops & Iterations: Refining game elements based on player
+      interactions.
+
+      * The Future of AI & Gaming: Speculating what’s next and how developers
+      can stay ahead of the curve.
+
+
+
+draft: false
 _template: course
 ---
 
