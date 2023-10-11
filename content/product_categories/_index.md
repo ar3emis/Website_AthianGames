@@ -12,7 +12,7 @@ _template: ''
 ---
 
 {{<html>}}
-
+ 
 <script>
     window.addEventListener('load', function() {
     document.getElementById("redirect").click()
