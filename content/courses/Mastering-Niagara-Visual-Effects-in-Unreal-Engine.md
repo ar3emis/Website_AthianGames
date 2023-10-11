@@ -3,6 +3,7 @@ duration: 3 weeks
 date: 1970-01-01T00:00:00.000Z
 title: 'Mastering Niagara: Visual Effects in Unreal Engine'
 coverImage: /courses/courses_niagara01_cover.png
+trainer: Sameek Kundu
 shortDescription: >-
   With Niagara FX System, you can create high quality visual effects in Unreal
   Engine. With Modular workflow and user friendly design interface, you can get

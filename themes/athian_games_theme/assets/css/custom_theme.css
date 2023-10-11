@@ -133,6 +133,83 @@ table-horizontal tbody > tr:last-child > td {
   width: 100%;
 }
 
+.card-container {
+  transition: transform 0.3s;
+  perspective: 1000px;
+  display: block;
+}
+
+.card-container:hover {
+  transform: translateY(-10px) rotateX(5deg);
+}
+
+.m-auto.position-relative {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0, 128, 255, 0.7), rgba(0, 0, 255, 0.7));
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s;
+  font-size: 1.5em;
+  color: white;
+  pointer-events: none;
+
+}
+
+.overlay span {
+  display: block;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  font-size: 1.2em;
+  color: wheat;
+}
+
+.m-auto.position-relative {
+  position: relative;
+}
+
+.m-auto.position-relative::before {
+  content: "View";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 1% 100%;
+  background: linear-gradient(95deg, rgba(128, 25, 25, 0.7), rgba(0, 0, 255, 0.7));
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.m-auto.position-relative:hover::before {
+  opacity: 1;
+}
+
+
+.card-container:hover .overlay {
+  opacity: 0.5;
+}
+
+
+.qrt-work-item:hover .m-auto div {
+  display: block;
+}
+
 /* ==========================================================================
    Your custom CSS styles for smartphones and screens smaller than 480 px
    ========================================================================== */
