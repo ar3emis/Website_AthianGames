@@ -1,7 +1,7 @@
 ---
 duration: 4 weeks
 trainer: Sameek Kundu
-title: Blueprint Fundamentals
+title: Blueprint Fundamentals in Unreal Engine 5
 price: '99'
 coverImage: /courses/course_Blueprints_cover.png
 shortDescription: |-
