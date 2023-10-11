@@ -82,7 +82,26 @@ module:
 
 
 
-  - {}
+  - title: 'Module 2: Intermediate Blueprint Concepts'
+    description: >-
+      Advance your knowledge by diving into user input handling, reusability of
+      code, and managing complex data. This module also introduces the concept
+      of components and inheritance in Blueprints.
+    topics: >+
+      * User Input and Events: Learn to handle various input types and create
+      interactive responses. 
+
+      *  Functions, Macros, and Custom Events: Delve into reusable code blocks
+      and understand their different use cases.
+
+      *  Advanced Data Types: Get acquainted with arrays, sets, and maps to
+      handle multiple data points. 
+
+      *  Components and Child Blueprints: Learn to add components and understand
+      the concept of inheritance in Blueprints.
+
+
+
   - {}
   - {}
 formURL: 'https://book.stripe.com/00g5lDbF52kx2cg3cf'
