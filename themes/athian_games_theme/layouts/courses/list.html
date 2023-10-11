@@ -10,7 +10,7 @@
 
     <!-- Our Courses Section Start -->
       <div class="row justify-content-center">
-            <h2 class="qrt-left course-title">Our Courses</h2>
+            <h2 class="qrt-left course-title">Course Categories</h2>
             <!-- <div class="qrt-grid-sizer"></div> -->
 
             {{ $courseData := .Site.Data.course_list.category  }}
@@ -55,91 +55,41 @@
             </div>
             {{ end }}
             {{ end }}
-          </div>
+      </div>
     <!-- Our Coursess Section End -->
 
-<!--    <div class="short-term-course-wrapper">-->
-<!--   &lt;!&ndash; Short Term Course Section Start &ndash;&gt;-->
-<!--    <div class="row justify-content-center">-->
-<!--      <h2 class="qrt-left course-title">Short Term Courses</h2>-->
+    <div class="row justify-content-center">
+      <div class="col-md-12 text-center">
+        {{ $shorttermCourses := where .Site.RegularPages "Params.shortterm" true }}
+        {{ if $shorttermCourses }}
+        <h2 class="qrt-left course-title">Short Term Courses</h2>
+        <div class="row justify-content-center">
+          {{ range $shorttermCourses }}
+          <div class="col-md-6 col-lg-3 mb-20">
+            <a href="{{ .Permalink }}" class="card-container qrt-work-item qrt-cursor-color qrt-cursor-scale" style="text-decoration: none; color: inherit;">
+              <div class="m-auto position-relative">
+                <img src="{{ .Params.mainImage }}" alt="...">
+                <div class="overlay">
 
-<!--      {{ $courses := where .Site.Data.short_term_courses "type" "short-term" }}-->
-<!--      {{ $paginatedCourses := first 9 $courses }}-->
-
-<!--      {{ range $paginatedCourses }}-->
-<!--      <div class="col-md-6 col-lg-4 mb-20">-->
-<!--        <div class="qrt-work-item">-->
-<!--          <a href="#" class="qrt-cursor-color qrt-cursor-scale qrt-anima-link">-->
-<!--            {{ $thumbnail := .thumbnail }}-->
-<!--            {{ $courseTitle := .title }}-->
-<!--            {{ with $thumbnail }}-->
-<!--            <img src="{{ . | absURL }}" alt="{{ $courseTitle }}" class="card-img-top course-thumbnail"/>-->
-<!--            {{ end }}-->
-<!--            <div class="card">-->
-<!--              <h4 class="qrt-white card-title">-->
-<!--                <a class="qrt-anima-link" href="#">{{ $courseTitle }}</a>-->
-<!--              </h4>-->
-<!--              <p class="card-text qrt-text qrt-white">{{ .description }}</p>-->
-<!--              <p class="card-text qrt-instructor qrt-white">{{ .instructor }}</p>-->
-<!--            </div>-->
-<!--          </a>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      {{ end }}-->
-<!--    </div>-->
-<!--      &lt;!&ndash; Short Term Course Section End &ndash;&gt;-->
-<!--    </div>-->
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">{{ .Params.title }}</h5>
+                <p class="card-text">Trainer: {{ .Params.trainer }}</p>
+              </div>
+            </a>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
 
 
   </div>
   <!-- grid end -->
 
-
-
-
 </div>
-
-
-<!--&lt;!&ndash;        <section class="col-xl-8 offset-xl-2 col-lg-12">&ndash;&gt;-->
-  <!--&lt;!&ndash;            <div class="row">&ndash;&gt;-->
-  <!--&lt;!&ndash;                <div class="col-lg-12">&ndash;&gt;-->
-  <!--&lt;!&ndash;                  <h2 class="qrt-left course-title">Upcoming Trainings</h2>&ndash;&gt;-->
-  <!--&lt;!&ndash;                    <div class="row">&ndash;&gt;-->
-  <!--&lt;!&ndash;                        {{ $upcomingCourses := where .Site.RegularPages "Params.upcoming" true }}&ndash;&gt;-->
-  <!--&lt;!&ndash;                        {{ if $upcomingCourses }}&ndash;&gt;-->
-  <!--&lt;!&ndash;                        {{ range $upcomingCourses }}&ndash;&gt;-->
-  <!--&lt;!&ndash;                        <div class="col-md-6 col-lg-3 mb-20">&ndash;&gt;-->
-  <!--&lt;!&ndash;                            <div class="qrt-work-item qrt-cursor-color qrt-cursor-scale">&ndash;&gt;-->
-  <!--&lt;!&ndash;                                <div class="m-auto">&ndash;&gt;-->
-  <!--&lt;!&ndash;                                    <img src="{{ .Params.mainImage }}"  alt="...">&ndash;&gt;-->
-  <!--&lt;!&ndash;                                </div>&ndash;&gt;-->
-
-  <!--&lt;!&ndash;                                <div class="card-body">&ndash;&gt;-->
-  <!--&lt;!&ndash;                                    <h5 class="card-title">{{ .Params.title }}</h5>&ndash;&gt;-->
-  <!--&lt;!&ndash;                                    <p class="card-text">Trainer: {{ .Params.trainer }}</p>&ndash;&gt;-->
-  <!--&lt;!&ndash;                                    <p class="card-text">Date: {{ .Params.date.Format "02/01/2006" }}</p>&ndash;&gt;-->
-  <!--&lt;!&ndash;                                    {{ $url := .Params.formURL }}&ndash;&gt;-->
-  <!--&lt;!&ndash;                                    <a href="{{ $url | safeURL  }}" class="btn btn-primary">Register</a>&ndash;&gt;-->
-  <!--&lt;!&ndash;                                </div>&ndash;&gt;-->
-  <!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-  <!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-  <!--&lt;!&ndash;                        {{ end }}&ndash;&gt;-->
-  <!--&lt;!&ndash;                        {{ end }}&ndash;&gt;-->
-  <!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-  <!--&lt;!&ndash;                    {{ if not $upcomingCourses }}&ndash;&gt;-->
-  <!--&lt;!&ndash;                    <div style="border: 1px inset silver; margin:15px 25px 5px 1px; padding: 15px;">&ndash;&gt;-->
-  <!--&lt;!&ndash;                        <div class="row" style="padding: 5px">&ndash;&gt;-->
-  <!--&lt;!&ndash;                            <h4 style="color: gray; font-family: 'Josefin Sans', sans-serif">We are currently preparing&ndash;&gt;-->
-  <!--&lt;!&ndash;                                schedules for our upcoming sessions. Enroll now and we will notify you when we schedule&ndash;&gt;-->
-  <!--&lt;!&ndash;                                a session.</h4>&ndash;&gt;-->
-  <!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-  <!--&lt;!&ndash;                        {{ partial "courses/enrol-form.html" . }}&ndash;&gt;-->
-  <!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-  <!--&lt;!&ndash;                    {{ end }}&ndash;&gt;-->
-  <!--&lt;!&ndash;                </div>&ndash;&gt;-->
-  <!--&lt;!&ndash;            </div>&ndash;&gt;-->
-  <!--&lt;!&ndash;        </section>&ndash;&gt;-->
-
 
     <script language="javascript" type="text/javascript">
         $(function () {

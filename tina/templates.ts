@@ -6,6 +6,11 @@ export function courseFields() {
       name: "duration",
       label: "duration",
     },
+      {
+          type: "string",
+          name: "trainer",
+          label: "trainer",
+      },
     {
       type: "string",
       name: "title",
