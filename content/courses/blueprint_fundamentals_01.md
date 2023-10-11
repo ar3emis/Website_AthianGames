@@ -102,7 +102,26 @@ module:
 
 
 
-  - {}
+  - title: 'Module 3: Advanced Blueprint Techniques'
+    description: >-
+      Enhance your Blueprint skills further with timelines, animations, and
+      interfaces. This module also covers crucial debugging and optimization
+      techniques to improve your game’s performance.
+    topics: >+
+      * Timelines and Animation: Utilize timelines to drive animations and
+      manipulate actors over time. 
+
+      *  Blueprint Interfaces: Explore Blueprint Interfaces for efficient
+      communication between Blueprints. 
+
+      *  Debugging and Optimization: Learn to debug and optimize your Blueprints
+      for better performance. 
+
+      *  Casting and Blueprint Communication: Understand casting and various
+      ways to reference and interact with other Blueprints.
+
+
+
   - {}
 formURL: 'https://book.stripe.com/00g5lDbF52kx2cg3cf'
 _template: course
