@@ -60,49 +60,25 @@ export function courseFields() {
       list: true,
 
     },
-    {
-      type: "object",
-      name: "whoShouldAttend",
-      label: "Who Should Attend",
-      list: true,
-      fields: [
-        {
-          type: "string",
-          name: "title",
-          label: "Title",
-        },
-        {
-          type: "string",
-          name: "description",
-          label: "Description",
-        },
-      ],
-      itemProps: (item) => ({
-        label: item.title, // Use the title as the display label
-      }),
-    },
-    {
-      type: "object",
-      name: "learningOutcomes",
-      label: "Learning Outcomes",
-      list: true,
-      fields: [
-        {
-          type: "string",
-          name: "title",
-          label: "Outcome Title",
-        },
-        {
-          type: "string",
-          name: "description",
-          label: "Outcome Description",
-        },
-      ],
-      itemProps: (item) => ({
-        label: item.title, // Use the title as the display label
-      }),
-    },
-    {
+      {
+          type: "rich-text",
+          name: "whoShouldAttend",
+          label: "Who Should Attend",
+          default: "## Who Should Attend Title 1" +
+              "Description for the first point." +
+              "## Who Should Attend Title 2" +
+              "Description for the second point."
+      },
+      {
+          type: "rich-text",
+          name: "learningOutcomes",
+          label: "Learning Outcomes",
+          default: "## Learning Outcome Title 1" +
+              "Description for the first point." +
+              "## Learning Outcome Title 2" +
+              "Description for the second point."
+      },
+      {
           type: "object",
           name: "module",
           label: "Module",
