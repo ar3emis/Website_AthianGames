@@ -1,12 +1,12 @@
 
 
 
-        
+
         <div class="swiper-container qrt-main-slider">
           <div class="qrt-slider-pagination">
             <div class="swiper-pagination swiper-main-pagination"></div>
             </div>
-          
+
           <!-- <div class="qrt-slider-navigation qrt-absolute">
             <div class="qrt-slider-nav-btn qrt-main-prev qrt-cursor-scale qrt-cursor-color"><i class="fas fa-arrow-left"></i><span>prev</span></div>
             <div class="qrt-slider-nav-btn qrt-main-next qrt-cursor-scale qrt-cursor-color"><span>next</span><i class="fas fa-arrow-right"></i></div>
@@ -14,9 +14,9 @@
           <div class="swiper-wrapper">
           {{range $.Site.Data.home_slider.list }}
           {{range .}}
-          
+
           <div class="swiper-slide">
-            
+
                   <div class="qrt-project-cover">
                     <div class="qrt-image-frame">
                           {{with .bannerImage | default "img/placeholder.jpg"}}
@@ -69,15 +69,15 @@
                     </div>
                   </div>
                 </div>
-          
 
-         
-        
 
-          
+
+
+
+
           {{end}}
           {{end}}
-         
+
           </div>
         </div>
 

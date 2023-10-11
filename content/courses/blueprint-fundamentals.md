@@ -24,13 +24,13 @@ shortDescription: >-
 
   setting a strong foundation for your game development journey.
 
-mainImage: /courses/cc_BlueprintsFundamentals.png
+mainImage: /courses/course_blueprints01_thumbnail.jpg
 
 course_categories:
 
   - Unreal Crash Courses
 
-upcoming: false
+shortterm: false
 
 prerequisites:
 

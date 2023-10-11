@@ -45,8 +45,8 @@ export function courseFields() {
     },
     {
       type: "boolean",
-      name: "upcoming",
-      label: "upcoming",
+      name: "shortterm",
+      label: "shortterm",
     },
     {
       type: "string",
@@ -179,8 +179,8 @@ export function courses_main_pageFields() {
     },
     {
       type: "string",
-      name: "upcomingCoursesListTitle",
-      label: "upcomingCoursesListTitle",
+      name: "shorttermCoursesListTitle",
+      label: "shorttermCoursesListTitle",
     },
     {
       type: "string",
@@ -189,8 +189,8 @@ export function courses_main_pageFields() {
     },
     {
       type: "object",
-      name: "UpcomingTrainings",
-      label: "Upcoming Trainings",
+      name: "shorttermTrainings",
+      label: "shortterm Trainings",
       list: true,
       fields: [
         {
