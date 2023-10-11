@@ -512,7 +512,7 @@ export default defineConfig({
               },
             ],
           },
-         
+
         ],
       },
 
@@ -531,24 +531,25 @@ export default defineConfig({
         match: {
           include: "course_font", // Specify the file you want to include
         },
-       
+
         fields: [
-          
+
           {
             type: "string",
             name: "font_size",
             label: "Font Size",
-           
-            
+
+
           },
           {
             type: "string",
             name: "font_family",
             label: "Font Family",
-          
+
           },
         ],
       },
     ],
   },
 });
+
