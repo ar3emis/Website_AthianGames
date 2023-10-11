@@ -1,6 +1,6 @@
 ---
 
-trainer: Trainer1
+trainer: Sameek Kundu
 
 duration: 4 weeks
 

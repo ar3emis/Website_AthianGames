@@ -76,11 +76,28 @@
           </div>
         </div>
 
+       <!-- Modules Section -->
         <!-- Modules Section -->
         <div class="row justify-content-center">
           <div class="col-md-12">
+
+            {{ if .Params.shortterm }}
+            <h2 class="text-center">Short Term Course Topics</h2>
+            <p class="mb-5 text-center">A brief overview of our short-term course topics.</p>
+
+            {{ with .Params.topics }}
+            {{ range . }}
+            <div class="topic-card mb-5 p-5 bg-dark rounded shadow">
+              <h3 class="topic-title mb-4">{{ .title }}</h3>
+              <p class="topic-description mb-4">{{ .description | markdownify }}</p>
+            </div>
+            {{ end }}
+            {{ end }}
+
+            {{ else }}
             <h2 class="text-center">Course Modules</h2>
             <p class="mb-5 text-center">Every module features a dedicated 2-hour live session with a seasoned instructor.</p>
+
             {{ with .Params.module }}
             {{ range . }}
             <div class="module-card mb-5 p-5 bg-dark rounded shadow">
@@ -90,8 +107,12 @@
             </div>
             {{ end }}
             {{ end }}
+
+            {{ end }}
           </div>
         </div>
+
+
 
 
 
