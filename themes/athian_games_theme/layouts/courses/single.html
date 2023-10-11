@@ -76,7 +76,6 @@
           </div>
         </div>
 
-       <!-- Modules Section -->
         <!-- Modules Section -->
         <div class="row justify-content-center">
           <div class="col-md-12">
@@ -112,30 +111,30 @@
           </div>
         </div>
 
-
-
-
-
         <!-- Who Should Attend Section -->
         <div class="container my-5">
           <div class="row justify-content-center">
             <div class="col-md-12">
               <h2 class="mb-4 text-center">Who Should Attend</h2>
               <div class="row d-flex">
-                {{ range .Params.whoShouldAttend }}
+                {{ $splitContent := split .Params.whoShouldAttend "\n## " }}
+                {{ range $index, $content := $splitContent }}
+                {{ if $index }} <!-- Skip the first empty or incomplete item -->
                 <div class="col-md-6 mb-4 d-flex">
                   <div class="card bg-dark rounded flex-fill">
                     <div class="card-body">
-                      <h5 class="card-title">{{ .title }}</h5>
-                      <p class="card-text">{{ .description }}</p>
+                      <h5 class="card-title">{{ (split $content "\n" | first 1) }}</h5>
+                      <p class="card-text">{{ (delimit (slice (split $content "\n") 1) "\n") | markdownify }}</p>
                     </div>
                   </div>
                 </div>
+                {{ end }}
                 {{ end }}
               </div>
             </div>
           </div>
         </div>
+
 
         <!-- Learning Outcomes Section -->
         <div class="container my-5">
@@ -143,15 +142,18 @@
             <div class="col-md-12">
               <h2 class="mb-4 text-center">Learning Outcomes</h2>
               <div class="row d-flex">
-                {{ range .Params.learningOutcomes }}
+                {{ $splitContent := split .Params.learningOutcomes "\n## " }}
+                {{ range $index, $content := $splitContent }}
+                {{ if $index }} <!-- Skip the first empty or incomplete item -->
                 <div class="col-md-6 mb-4 d-flex">
                   <div class="card bg-dark rounded flex-fill">
                     <div class="card-body">
-                      <h5 class="card-title">{{ .title }}</h5>
-                      <p class="card-text">{{ .description }}</p>
+                      <h5 class="card-title">{{ (split $content "\n" | first 1) }}</h5>
+                      <p class="card-text">{{ (delimit (slice (split $content "\n") 1) "\n") | markdownify }}</p>
                     </div>
                   </div>
                 </div>
+                {{ end }}
                 {{ end }}
               </div>
             </div>
