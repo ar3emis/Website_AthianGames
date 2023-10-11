@@ -11,7 +11,7 @@ shortDescription: >-
 mainImage: /courses/courses_generaitveaiunreal_thumbnail.png
 course_categories:
   - Unreal Crash Courses
-upcoming: false
+shortterm: false
 prerequisites:
   - A working installation of Unreal Engine 5 on a compatible PC.
   - Basic understanding of Unreal Engine's interface and tools.

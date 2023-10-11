@@ -2,7 +2,7 @@
   <h2>{{.Params.coursesListTitle}}</h2>
   <div class="courses-list-wrapper">
     {{ with site.GetPage "courses" }}
-    {{ range where .Pages.ByDate.Reverse ".Params.upcoming" false }}
+    {{ range where .Pages.ByDate.Reverse ".Params.shortterm" false }}
       <div class="course-wrapper">
         <a href="{{ .Permalink }}" class="course-link">
           <img class="course-image" src="{{.Params.mainImage}}" alt="{{.Title}}" />
@@ -16,14 +16,14 @@
     {{ end }}
   {{ end }}
   </div>
-  {{ if ne (len (where .Pages ".Params.upcoming" true)) 0 }}
-  <h3 class="upcoming-courses-title">{{.Params.upcomingCoursesListTitle}}</h3>
+  {{ if ne (len (where .Pages ".Params.shortterm" true)) 0 }}
+  <h3 class="shortterm-courses-title">{{.Params.shorttermCoursesListTitle}}</h3>
   {{ end }}
  <div class="courses-list-wrapper">
 
   {{ with site.GetPage "courses" }}
 
-    {{ range where .Pages.ByDate.Reverse ".Params.upcoming" true }}
+    {{ range where .Pages.ByDate.Reverse ".Params.shortterm" true }}
     <div class="course-wrapper">
       <a href="{{ .Permalink }}" class="course-link">
         <img class="course-image" src="{{.Params.mainImage}}" alt="{{.Title}}" />
