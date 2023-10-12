@@ -88,7 +88,7 @@ module:
       Dive deep into the foundation of Generative AI, its evolution, and its
       transformative potential in game development. This module sets the stage
       for understanding the broad capabilities before diving into specifics.
-    topics: >+
+    topics: >
       * Evolution of Generative AI: Tracing the roots and understanding its
       growth.
 
@@ -100,15 +100,12 @@ module:
 
       * Benefits & Limitations: A balanced view of what AI offers and its
       current constraints.
-
-
-
   - title: 'Module 2: Ideation, Narrative Crafting & AI'
     description: >-
       Venture into the world of AI-driven creativity. This module focuses on
       leveraging AI for brainstorming game ideas, expanding lore, and crafting
       dynamic narratives.
-    topics: >+
+    topics: >
       * Prompt-Driven Ideation: Kickstarting the AI's creativity.
 
       * Expanding Game Universes: Using AI to flesh out backstories and deeper
@@ -119,15 +116,12 @@ module:
 
       * Review & Refinement: Ensuring AI-generated content resonates with game
       objectives.
-
-
-
   - title: 'Module 3: AI Assistance in Unreal C++ Challenges'
     description: >-
       Unpack the technical side of the course. Here, the emphasis is on how AI
       can guide developers through common Unreal C++ challenges, offering
       solutions, optimizations, and more.
-    topics: >+
+    topics: >
       * Common Coding Obstacles: Identifying frequent challenges in Unreal C++.
 
       * AI-Driven Problem Solving: Seeking AI's guidance for coding issues.
@@ -137,15 +131,12 @@ module:
 
       * Optimization & Debugging: Streamlining code and troubleshooting with AI
       insights.
-
-
-
   - title: 'Module 4: Bringing AI Insights to Life in Unreal'
     description: >-
       Bridge the gap between AI's theoretical suggestions and practical game
       development. This module will guide participants in translating AI-driven
       narratives and ideas into tangible game mechanics within Unreal.
-    topics: >+
+    topics: >
       * Mapping Narratives to Mechanics: Turning stories into playable
       experiences.
 
@@ -157,15 +148,12 @@ module:
 
       * The Future of AI & Gaming: Speculating what’s next and how developers
       can stay ahead of the curve.
-
-
-
 topics:
   - description: ''
   - description: ''
   - description: ''
   - description: ''
-formURL: 'https://example.com/enrollment/form'
+formURL: 'https://book.stripe.com/3cs01j6kL2kx048aEJ'
 draft: false
 _template: course
 ---
@@ -177,6 +165,3 @@ The course begins with a foundation in generative AI principles and its applicat
 Beyond pure content creation, the course also delves into how AI can be utilized to optimize and refine game parameters, ensuring a balanced and immersive player experience. Through a mix of theoretical discussions and hands-on exercises, attendees will experience firsthand the transformative potential of integrating AI tools and principles into their Unreal projects.
 
 By the conclusion of this course, participants will not only understand the mechanics of integrating AI into their games but also appreciate the expansive possibilities this fusion introduces to the world of game development.
-
-
-
