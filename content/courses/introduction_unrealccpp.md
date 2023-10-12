@@ -11,7 +11,7 @@ shortDescription: >-
   participants to breathe life into their game ideas. By blending hands-on
   coding exercises with foundational principles, it paves the way for a seamless
   transition into more advanced Unreal programming endeavors.
-mainImage: ''
+mainImage: /courses/course_unrealC++.png
 course_categories:
   - ''
 shortterm: true
