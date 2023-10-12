@@ -58,56 +58,54 @@ module:
       Lay the foundation by understanding the architecture, components, and role
       of Blueprints in Unreal Engine 5.
     topics: >
-      **Understanding Visual Scripting:** Discover the power and flexibility of
-      visual scripting in Unreal.
+      * **Understanding Visual Scripting:** Discover the power and flexibility
+      of visual scripting in Unreal.
 
-
-      **Blueprints vs C++:** Distinguishing between traditional coding and
+      * **Blueprints vs C++:** Distinguishing between traditional coding and
       visual scripting, highlighting the advantages and use-cases for
       Blueprints.
 
-
-      **Exploring the Blueprint Editor:** Familiarize yourself with the
+      * **Exploring the Blueprint Editor:** Familiarize yourself with the
       Blueprint interface, tools, and functionalities.
   - title: 'Module 2: Blueprint Nodes and Logic'
     description: >-
       Dive into the core functionalities of Blueprint nodes, learning how to
       implement gameplay logic and mechanics.
     topics: >
-      **Types of Nodes:** Understand the variety of Blueprint nodes and their
+      * **Types of Nodes:** Understand the variety of Blueprint nodes and their
       specific roles.
 
-      **Constructing Logic Chains:** Implement conditions, loops, and flow
+      * **Constructing Logic Chains:** Implement conditions, loops, and flow
       control in your game design.
 
-      **Event-Driven Programming:** Harness the power of events to create
+      * **Event-Driven Programming:** Harness the power of events to create
       dynamic gameplay elements.
   - title: 'Module 3: Advanced Blueprint Techniques'
     description: >-
       Master advanced functionalities and techniques, optimizing gameplay
       mechanics and interactivity.
     topics: >
-      **Custom Functions and Macros:** Simplify and optimize your Blueprint
+      * **Custom Functions and Macros:** Simplify and optimize your Blueprint
       scripts with custom functionalities.
 
-      **Communication between Blueprints:** Ensure seamless interaction between
-      different Blueprints within a game.
+      * **Communication between Blueprints:** Ensure seamless interaction
+      between different Blueprints within a game.
 
-      **Integrating C++ and Blueprints:** Combine traditional coding and visual
-      scripting for enhanced performance and functionality.
+      * **Integrating C++ and Blueprints:** Combine traditional coding and
+      visual scripting for enhanced performance and functionality.
   - title: 'Module 4: Crafting a Game Prototype'
     description: >-
       Put acquired knowledge into practice by developing a game prototype,
       implementing Blueprint mechanics and interactions.
     topics: >
-      **Designing Gameplay Elements:** Utilize Blueprints to create engaging
+      * **Designing Gameplay Elements:** Utilize Blueprints to create engaging
       gameplay mechanics and interactivity.
 
-      **Testing and Debugging:** Identify and rectify issues within the
+      * **Testing and Debugging:** Identify and rectify issues within the
       Blueprint script, ensuring smooth gameplay.
 
-      **Finalizing and Packaging:** Prepare your game prototype for presentation
-      and sharing.
+      * **Finalizing and Packaging:** Prepare your game prototype for
+      presentation and sharing.
 topics:
   - description: ''
   - description: ''
