@@ -82,58 +82,40 @@ topics:
       * C++ vs. Blueprints: A brief comparison to understand when and why to
       choose C++.
   - title: ' Setting Up: Your First Unreal C++ Project'
-    description: >+
+    description: >
       * Project Creation: Steps to initiate a new C++ project in Unreal.
 
       * Understanding the Structure: Navigating the folder hierarchy, source
       files, and generated files.
-
-
-
   - title: 'Dive into Code: Basic Class Creation'
-    description: |+
+    description: |
       * Actors and Objects: Introduction to base classes in Unreal.
       * Creating Custom Classes: Designing your first custom actor using C++.
-
-
-
   - title: 'Properties and Functions: Manipulating Game Elements'
-    description: >+
+    description: >
       * UProperty and UFunction: Understanding how to expose variables and
       methods to the editor.
 
       * Class Relationships: Parent-child relationships, inheritance, and
       overriding functionalities.
-
-
-
   - title: ' Interfacing with Blueprints: The Best of Both Worlds'
-    description: >+
+    description: >
       * BlueprintCallable Functions: Executing C++ functions from Blueprints.
 
       * Creating and Using BlueprintNativeEvent: Designing functions in C++ that
       can be overridden in Blueprints.
-
-
-
   - title: 'Player Input and Game Logic: Bringing Interactivity'
-    description: >+
+    description: >
       * Handling Player Input: Coding controls for player movements and actions.
 
       * Implementing Game Mechanics: A basic example to illustrate C++ game
       logic in action.
-
-
-
   - title: 'Debugging and Optimization: Ensuring Smooth Gameplay'
-    description: >+
+    description: >
       * Using UE\_LOG: Understanding the logging mechanism in Unreal C++.
 
       * Essential Debugging Tips: Identifying and resolving common issues in
       code.
-
-
-
   - title: Q&A Session
     description: >
       An interactive segment where participants can ask questions, clarify
@@ -144,8 +126,8 @@ draft: false
 _template: course
 ---
 
-Unreal Engine, known for its visual prowess and robust game development capabilities, also boasts a deep, code-driven core: Unreal C++. 
+Unreal Engine, renowned for its superior graphics rendering and dynamic game development suite, possesses a deeply integrated, code-based foundation in Unreal C++. This course offers a structured pathway into this profound ecosystem, tailored for newcomers and those with programming expertise in other languages.
 
-This course, designed for both beginners and those familiar with other programming languages, serves as a comprehensive primer into this world. You will learn the core concepts of Unreal C++, understanding not only the syntax but also the philosophy behind Unreal's unique approach to game logic and design. 
+Participants will embark on a methodical exploration of Unreal C++, traversing its core concepts and nuances. They will not only become proficient in the syntax, but also absorb the underlying philosophy that defines Unreal's distinct approach to game logic and functionality. With a focus on real-world application, the course intersperses theoretical understanding with tangible coding assignments, allowing participants to instantly apply and cement their learning. This ensures a well-rounded grasp of the essential components required to infuse games with customized behaviors and features.
 
-You will leave the course not just with theoretical knowledge but also with the practical skills and confidence to navigate the dynamic landscape of Unreal C++ programming.
+By the culmination of "Introduction to Unreal C++," attendees will possess a robust foundational knowledge of the engine's programming environment. They'll be primed to harness the full potential of Unreal C++, unlocking doors to further advanced modules and intricate game development projects. This is not just a cursory glance but a deep dive, designed to instill confidence and inspire a passion for game development through coding.
