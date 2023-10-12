@@ -1,5 +1,5 @@
 ---
-duration: 3 hours
+duration: 4 weeks
 trainer: Sameek Kundu
 title: Course Title
 price: 99
@@ -35,10 +35,6 @@ whoShouldAttend:
   - title: Educators in Game Development
     description: ''
 learningOutcomes:
-  - title: Engine Mastery
-    description: >-
-      Attain proficiency in navigating and utilizing the various tools and
-      features within the Unreal Engine for game development.
   - title: Advanced Scripting Skills
     description: >-
       Understand and apply the principles of Blueprints and C++ within Unreal to
@@ -65,11 +61,6 @@ module:
     topics: ''
   - title: 'Module 4 :'
     topics: ''
-topics:
-  - description: ''
-  - description: ''
-  - description: ''
-  - description: ''
 formURL: 'https://example.com/enrollment/form'
 draft: true
 _template: course
