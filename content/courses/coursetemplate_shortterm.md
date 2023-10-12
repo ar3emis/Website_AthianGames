@@ -7,8 +7,8 @@ coverImage: /path/to/cover/image.jpg
 shortDescription: This is a brief description of the course.
 mainImage: /path/to/main/image.jpg
 course_categories:
-  - Category 1
-shortterm: false
+  - ''
+shortterm: true
 prerequisites:
   - >-
     A computer that meets the minimum hardware requirements for running Unreal
@@ -35,10 +35,6 @@ whoShouldAttend:
   - title: Educators in Game Development
     description: ''
 learningOutcomes:
-  - title: Engine Mastery
-    description: >-
-      Attain proficiency in navigating and utilizing the various tools and
-      features within the Unreal Engine for game development.
   - title: Advanced Scripting Skills
     description: >-
       Understand and apply the principles of Blueprints and C++ within Unreal to
@@ -51,20 +47,6 @@ learningOutcomes:
     description: >-
       Learn strategies to enhance game performance, ensuring smooth gameplay
       experiences across various platforms.
-  - title: Course Completion Certification
-    description: >-
-      Upon successful completion of the course, participants will receive a
-      recognized certificate, endorsing their skills and proficiency in Unreal
-      Engine, enhancing their credibility in the game development community.
-module:
-  - title: 'Module 1 :'
-    topics: ''
-  - title: 'Module 2 :'
-    topics: ''
-  - title: 'Module 3 :'
-    topics: ''
-  - title: 'Module 4 :'
-    topics: ''
 topics:
   - description: ''
   - description: ''
