@@ -72,9 +72,51 @@ module:
   - title: 'Module 4 :'
     topics: ''
 topics:
-  - description: ''
-  - description: ''
-  - description: ''
+  - title: Why C++ in Unreal? An Overview
+    description: >
+      * Strengths of C++: Highlighting the performance and flexibility benefits
+      of using C++ in game development.
+
+      * C++ vs. Blueprints: A brief comparison to understand when and why to
+      choose C++.
+  - title: ' Setting Up: Your First Unreal C++ Project'
+    description: >+
+      * Project Creation: Steps to initiate a new C++ project in Unreal.
+
+      * Understanding the Structure: Navigating the folder hierarchy, source
+      files, and generated files.
+
+
+
+  - title: 'Properties and Functions: Manipulating Game Elements'
+    description: >+
+      * UProperty and UFunction: Understanding how to expose variables and
+      methods to the editor.
+
+      * Class Relationships: Parent-child relationships, inheritance, and
+      overriding functionalities.
+
+
+
+  - title: ' Interfacing with Blueprints: The Best of Both Worlds'
+    description: >+
+      * BlueprintCallable Functions: Executing C++ functions from Blueprints.
+
+      * Creating and Using BlueprintNativeEvent: Designing functions in C++ that
+      can be overridden in Blueprints.
+
+
+
+  - {}
+  - {}
+  - {}
+  - title: 'Dive into Code: Basic Class Creation'
+    description: |+
+      * Actors and Objects: Introduction to base classes in Unreal.
+      * Creating Custom Classes: Designing your first custom actor using C++.
+
+
+
   - description: ''
 formURL: 'https://book.stripe.com/4gw01j8sT5wJg36fZ5'
 draft: false
