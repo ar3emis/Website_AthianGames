@@ -234,7 +234,8 @@ export default defineConfig({
         path: "content/courses",
         frontmatterFormat: "yaml",
         match: {
-          include: "**/*",
+            include: ["**/*"],
+            exclude: "_index",
         },
         templates: [
           {

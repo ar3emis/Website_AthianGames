@@ -1,16 +1,47 @@
 ---
-date: 
-title: Courses
-enrolTitle: Enroll Now
-coursesListTitle: Our Courses
-shorttermCoursesListTitle: Short Term Courses
-logoImage: /images/UATC-Logo-2023.png
-formURL: https://docs.google.com/forms/d/e/1FAIpQLSccNZE_tNASrLNfECy1SmOKy1ZsmJ4Da9WWso27U6UZfX2M2A/viewform
-UpcomingTrainings: []  
+duration: "3 hours"
+trainer: "John Doe"
+title: "Course Title"
+price: "50 USD"
+coverImage: "/path/to/cover/image.jpg"
+shortDescription: "This is a brief description of the course."
+mainImage: "/path/to/main/image.jpg"
+course_categories: 
+  - "Category 1"
+  - "Category 2"
+shortterm: true
+prerequisites:
+  - "Prerequisite 1"
+  - "Prerequisite 2"
+whoShouldAttend:
+  - title: "Target Audience 1"
+    description: "Description for target audience 1"
+  - title: "Target Audience 2"
+    description: "Description for target audience 2"
+learningOutcomes:
+  - title: "Outcome 1"
+    description: "Description for learning outcome 1"
+  - title: "Outcome 2"
+    description: "Description for learning outcome 2"
+module:
+  - title: "Module 1"
+    description: "Description for module 1"
+    topics: "Topics covered in module 1 in rich-text format"
+  - title: "Module 2"
+    description: "Description for module 2"
+    topics: "Topics covered in module 2 in rich-text format"
+formURL: "https://example.com/enrollment/form"
+draft: false
+enrolTitle: "Enroll Now"
+coursesListTitle: "Our Courses"
+shorttermCoursesListTitle: "Short Term Courses"
+logoImage: "/images/UATC-Logo-2023.png"
 menu:
   main:
-    name: Unreal Courses
+    name: "Unreal Courses"
     weight: 1
-    parent: Courses
-_template: course
+    parent: "Courses"
+_template: "course"
 ---
+
+Course content goes here...
