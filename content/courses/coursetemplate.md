@@ -8,7 +8,7 @@ shortDescription: This is a brief description of the course.
 mainImage: /path/to/main/image.jpg
 course_categories:
   - Category 1
-shortterm: true
+shortterm: false
 prerequisites:
   - >-
     A computer that meets the minimum hardware requirements for running Unreal
