@@ -67,10 +67,84 @@ module:
   - title: 'Module 4 :'
     topics: ''
 topics:
-  - description: ''
-  - description: ''
-  - description: ''
-  - description: ''
+  - title: Introduction to Unreal Engine
+    description: >
+      * Unreal Engine Capabilities: Grasping the potential of Unreal in
+      environment design.
+
+      * Installation & Setup: Initiating your journey with the correct
+      configurations.
+
+      * Interface Navigation: A tour through the engine's primary components.
+
+      * Terminology and Basics: Foundation for the subsequent modules.
+  - title: Working with Static Meshes
+    description: |+
+      * Mesh Import Process: Bringing 3D assets into Unreal.
+      * Mesh Placement & Manipulation: Crafting your scene's basic structure.
+      * Transformations: Adjusting assets to fit your vision.
+      * Mesh Tools & Techniques: Advanced operations for meshes.
+
+
+
+  - title: Materials and Textures
+    description: |+
+      * Material Basics: Diving into Unreal's material system.
+      * Application on Meshes: Bringing color and detail to your assets.
+      * Texture and Parameters: Enhancing realism and aesthetics.
+      * Blending & Layering: Creating complex and interactive surfaces.
+
+
+
+  - title: Lighting and Atmosphere
+    description: |+
+      * Lighting in Unreal: Illuminating your scenes for mood and clarity.
+      * Different Light Sources: How and when to use them.
+      * Properties & Adjustments: Tweaking lights for the desired effect.
+      * Sky, Atmosphere & Reflections: Crafting the larger ambiance.
+
+
+
+  - title: Post-processing and Effects
+    description: |+
+      * Why Post-process?: Understanding its impact on visuals.
+      * Color Manipulation: Adjusting the mood through colors.
+      * Depth & Motion Effects: Adding realism to your scenes.
+      * Visual Flairs & Optimization: Polishing and ensuring smooth performance.
+
+
+
+  - title: ' Level Optimization Techniques'
+    description: |+
+      * Why Optimize?: Making environments performant.
+      * LOD Systems: Scaling detail based on proximity.
+      * Visibility & Light Optimizations: Ensuring efficient rendering.
+      * Advanced Techniques: Delving deeper into optimization.
+
+
+
+  - title: ' Scene Composition and Set Dressing'
+    description: |+
+      * Scene Layout: Designing with intent and purpose.
+      * Props & Asset Placement: Detailing your scenes.
+      * Foliage & Vegetation: Bringing life to environments.
+      * Decals & Particles: Final touches for immersion.
+
+
+
+  - title: Showcase and Portfolio Preparation
+    description: >+
+      * Capturing Your Work: Highlighting your environment's best angles.
+
+      * Cinematics & Animations: Making dynamic showcases.
+
+      * Effective Presentation: Selling your skills to potential employers or
+      clients.
+
+      * Portfolio Tips: Standing out in the industry.
+
+
+
 formURL: 'https://book.stripe.com/28o7tLeRhgbn9EI8wC'
 draft: false
 _template: course
