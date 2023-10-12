@@ -137,4 +137,4 @@ The course doesn't stop at static visuals. Artists will explore the dynamic real
 
 However, beauty in game design isn't just skin deep. With a dedicated module on optimization, artists will gain insights into ensuring their masterpieces run smoothly across platforms, balancing aesthetics with performance. The course culminates in the art of scene composition and set dressing, followed by guidance on presenting and showcasing one's work for the world or prospective employers.
 
-By the end of "Unreal for Environment Artist", participants will not only have enriched their technical know-how but also broadened their artistic horizons, equipped to create digital environments that resonate, captivate, and immerse.
+By the end of this course, participants will not only have enriched their technical know-how but also broadened their artistic horizons, equipped to create digital environments that resonate, captivate, and immerse.
