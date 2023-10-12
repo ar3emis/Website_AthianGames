@@ -5,12 +5,12 @@ title: 'Introduction to Unreal C++: Kickstarting Your Code-Driven Journey'
 price: 99
 coverImage: /courses/unrealcpplogo.png
 shortDescription: >-
-  Delving into Unreal's C++ framework can unlock a wealth of functionality
-  beyond blueprints. This 3-hour session is designed for those new to Unreal's
-  C++ environment, equipping them with a foundational understanding to create,
-  modify, and enhance gameplay elements with code. By the session's end,
-  participants will have a clear path forward in incorporating C++ into their
-  Unreal projects.
+  Embark on a transformative journey into the heart of Unreal Engine's
+  code-driven framework with "Introduction to Unreal C++." This course
+  illuminates the intricacies of Unreal's C++ environment, empowering
+  participants to breathe life into their game ideas. By blending hands-on
+  coding exercises with foundational principles, it paves the way for a seamless
+  transition into more advanced Unreal programming endeavors.
 mainImage: /courses/course_unrealC++.png
 course_categories:
   - ''
@@ -88,6 +88,13 @@ topics:
 
 
 
+  - title: 'Dive into Code: Basic Class Creation'
+    description: |+
+      * Actors and Objects: Introduction to base classes in Unreal.
+      * Creating Custom Classes: Designing your first custom actor using C++.
+
+
+
   - title: 'Properties and Functions: Manipulating Game Elements'
     description: >+
       * UProperty and UFunction: Understanding how to expose variables and
@@ -107,19 +114,36 @@ topics:
 
 
 
-  - {}
-  - {}
-  - {}
-  - title: 'Dive into Code: Basic Class Creation'
-    description: |+
-      * Actors and Objects: Introduction to base classes in Unreal.
-      * Creating Custom Classes: Designing your first custom actor using C++.
+  - title: 'Player Input and Game Logic: Bringing Interactivity'
+    description: >+
+      * Handling Player Input: Coding controls for player movements and actions.
+
+      * Implementing Game Mechanics: A basic example to illustrate C++ game
+      logic in action.
 
 
 
-  - description: ''
+  - title: 'Debugging and Optimization: Ensuring Smooth Gameplay'
+    description: >+
+      * Using UE\_LOG: Understanding the logging mechanism in Unreal C++.
+
+      * Essential Debugging Tips: Identifying and resolving common issues in
+      code.
+
+
+
+  - title: Q&A Session
+    description: >
+      An interactive segment where participants can ask questions, clarify
+      doubts, and gain insights from the instructor on the best ways to progress
+      in Unreal C++.
 formURL: 'https://book.stripe.com/4gw01j8sT5wJg36fZ5'
 draft: false
 _template: course
 ---
 
+Unreal Engine, known for its visual prowess and robust game development capabilities, also boasts a deep, code-driven core: Unreal C++. 
+
+This course, designed for both beginners and those familiar with other programming languages, serves as a comprehensive primer into this world. Participants will delve into the core concepts of Unreal C++, understanding not only the syntax but also the philosophy behind Unreal's unique approach to game logic and design. Through a combination of theoretical explanations and practical coding exercises, attendees will grasp the fundamental building blocks needed to integrate custom functionality into their games. 
+
+By course's end, they will be armed with the knowledge and confidence to further explore the limitless possibilities of game development with Unreal C++.
