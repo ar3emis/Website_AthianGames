@@ -1,7 +1,7 @@
 ---
 duration: 3 hours
 trainer: Sameek Kundu
-title: Mastering Niagara Particle Systems in Unreal Engine
+title: 'Mastering Niagara : Visual Effects in Unreal Engine'
 price: 129
 coverImage: /courses/courses_niagara01_cover.png
 shortDescription: >-
@@ -64,12 +64,71 @@ learningOutcomes:
       recognized certificate, endorsing their skills and proficiency in Unreal
       Engine, enhancing their credibility in the game development community.
 module:
-  - title: 'Module 1 :'
-    topics: ''
-  - title: 'Module 2 :'
-    topics: ''
-  - title: 'Module 3 :'
-    topics: ''
+  - title: 'Module 1: Introduction to Niagara and Particle Basics'
+    description: >-
+      Begin your Niagara journey by understanding its role within Unreal Engine.
+      Dive deep into the foundational concepts, and acquaint yourself with
+      creating basic particle systems.
+    topics: >+
+      * Introduction to Niagara: Uncover what Niagara is and its significance in
+      visual effects within Unreal Engine.
+
+      * The Niagara Editor Overview: Navigate through the Niagara Editor's
+      primary features and interface.
+
+      * Creating Your First Particle System: Step-by-step guide to create a
+      simple particle effect.
+
+      * Emitters and Particle Spawners: Understand the core components that give
+      life to your visual effects.
+
+      * Particle Lifecycle: Grasp the basics of particle birth, evolution, and
+      death.
+
+      * Basic Modules and Properties: Modify particle behavior through built-in
+      modules.
+
+
+
+  - title: 'Module 2 : Advanced Particle Systems and Dynamics'
+    description: >-
+      Advance into more complex particle systems, dynamics, and interactions.
+      This session covers essential techniques to craft intricate visual effects
+      using Niagara.
+    topics: >
+      * Particle Dynamics and Forces: Explore how physics and forces influence
+      particle behavior.
+
+      * Collision and Interaction: Make particles interact with the environment
+      and other actors.
+
+      * Using Sprite Renderers: Dive into rendering particles as 2D sprites for
+      varied visual effects.
+
+      * Mesh and Ribbon Particles: Understand how to use 3D meshes and ribbons
+      for complex effects.
+
+      * Parameter Bindings: Dynamically control visual effects by binding
+      parameter
+  - title: 'Module 3: Integration, Optimization, and Real-world Application'
+    description: >-
+      Conclude by integrating Niagara effects into your game, optimizing for
+      performance, and witnessing real-world application of techniques learned.
+    topics: >
+      * Integrating with Blueprints: Learn to control and trigger Niagara
+      effects using Blueprints.
+
+      * Performance and Optimization: Tips and techniques to ensure your visual
+      effects run smoothly.
+
+      * Advanced Modules and Scripting: Delve deeper into custom modules and
+      scripting within Niagara for more control.
+
+      * Case Study: Analyze a real-world game effect, understanding its
+      construction step-by-step.
+
+      * Q\&A and Recap: Address any remaining queries and consolidate learning
+      from all sessions.
   - title: 'Module 4 :'
     topics: ''
 topics:
@@ -77,7 +136,7 @@ topics:
   - description: ''
   - description: ''
   - description: ''
-formURL: 'https://example.com/enrollment/form'
+formURL: 'https://book.stripe.com/8wM3dveRhcZb5osaEI'
 draft: true
 _template: course
 ---
