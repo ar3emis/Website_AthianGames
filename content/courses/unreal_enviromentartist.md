@@ -79,61 +79,43 @@ topics:
 
       * Terminology and Basics: Foundation for the subsequent modules.
   - title: Working with Static Meshes
-    description: |+
+    description: |
       * Mesh Import Process: Bringing 3D assets into Unreal.
       * Mesh Placement & Manipulation: Crafting your scene's basic structure.
       * Transformations: Adjusting assets to fit your vision.
       * Mesh Tools & Techniques: Advanced operations for meshes.
-
-
-
   - title: Materials and Textures
-    description: |+
+    description: |
       * Material Basics: Diving into Unreal's material system.
       * Application on Meshes: Bringing color and detail to your assets.
       * Texture and Parameters: Enhancing realism and aesthetics.
       * Blending & Layering: Creating complex and interactive surfaces.
-
-
-
   - title: Lighting and Atmosphere
-    description: |+
+    description: |
       * Lighting in Unreal: Illuminating your scenes for mood and clarity.
       * Different Light Sources: How and when to use them.
       * Properties & Adjustments: Tweaking lights for the desired effect.
       * Sky, Atmosphere & Reflections: Crafting the larger ambiance.
-
-
-
   - title: Post-processing and Effects
-    description: |+
+    description: |
       * Why Post-process?: Understanding its impact on visuals.
       * Color Manipulation: Adjusting the mood through colors.
       * Depth & Motion Effects: Adding realism to your scenes.
       * Visual Flairs & Optimization: Polishing and ensuring smooth performance.
-
-
-
   - title: ' Level Optimization Techniques'
-    description: |+
+    description: |
       * Why Optimize?: Making environments performant.
       * LOD Systems: Scaling detail based on proximity.
       * Visibility & Light Optimizations: Ensuring efficient rendering.
       * Advanced Techniques: Delving deeper into optimization.
-
-
-
   - title: ' Scene Composition and Set Dressing'
-    description: |+
+    description: |
       * Scene Layout: Designing with intent and purpose.
       * Props & Asset Placement: Detailing your scenes.
       * Foliage & Vegetation: Bringing life to environments.
       * Decals & Particles: Final touches for immersion.
-
-
-
   - title: Showcase and Portfolio Preparation
-    description: >+
+    description: >
       * Capturing Your Work: Highlighting your environment's best angles.
 
       * Cinematics & Animations: Making dynamic showcases.
@@ -142,12 +124,17 @@ topics:
       clients.
 
       * Portfolio Tips: Standing out in the industry.
-
-
-
 formURL: 'https://book.stripe.com/28o7tLeRhgbn9EI8wC'
 draft: false
 _template: course
 ---
 
-Course Content
+Unreal Engine stands at the forefront of modern game development, acclaimed not just for its technical prowess but also for its visual capabilities. "Unreal for Environment Artist" is a meticulously crafted course tailored for artists eager to harness the power of Unreal Engine in creating breathtaking digital environments.
+
+Starting with a panoramic view of Unreal Engine's vast ecosystem, the course guides participants through its labyrinth of tools, ensuring a solid grounding in the engine's fundamentals. As artists navigate through the modules, they'll venture deep into the intricacies of static meshes, learning to mold and place them with precision to construct compelling scenes. The journey continues with a deep dive into the vibrant world of materials and textures, empowering artists to paint their environments with lifelike details and nuanced visual stories.
+
+The course doesn't stop at static visuals. Artists will explore the dynamic realm of lighting, understanding how to illuminate their scenes to evoke specific moods and atmospheres. Additionally, participants will be introduced to the transformative power of post-processing, mastering techniques that elevate the visual fidelity of their environments.
+
+However, beauty in game design isn't just skin deep. With a dedicated module on optimization, artists will gain insights into ensuring their masterpieces run smoothly across platforms, balancing aesthetics with performance. The course culminates in the art of scene composition and set dressing, followed by guidance on presenting and showcasing one's work for the world or prospective employers.
+
+By the end of "Unreal for Environment Artist", participants will not only have enriched their technical know-how but also broadened their artistic horizons, equipped to create digital environments that resonate, captivate, and immerse.
