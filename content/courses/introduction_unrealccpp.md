@@ -1,7 +1,7 @@
 ---
 duration: 3 hours
 trainer: Sameek Kundu
-title: 'Introduction to Unreal C++: Kickstarting Your Code-Driven Journey'
+title: Introduction to Unreal C++
 price: 49
 coverImage: /courses/unrealcpplogo.png
 shortDescription: >-
