@@ -9,7 +9,7 @@ mainImage: "/path/to/main/image.jpg"
 course_categories: 
   - "Category 1"
   - "Category 2"
-shortterm: true
+shortterm: false
 prerequisites:
   - "Prerequisite 1"
   - "Prerequisite 2"

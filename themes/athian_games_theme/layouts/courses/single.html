@@ -1,7 +1,5 @@
 {{ define "main" }}
 
-
-
 <div class="cover">
   <div class="cover-content">
     <!-- Title Section with Background -->
@@ -89,6 +87,7 @@
               <p class="topic-description mb-4">{{ .description | markdownify }}</p>
             </div>
             {{ end }}
+            {{ end }}
             {{ else }}
             <h2 class="text-center">Course Modules</h2>
             <p class="mb-5 text-center">Every module features a dedicated 2-hour live session with a seasoned instructor.</p>
@@ -122,12 +121,10 @@
                   </div>
                 </div>
                 {{ end }}
-                {{ end }}
-              </div>
+               </div>
             </div>
           </div>
         </div>
-
 
         <!-- Learning Outcomes Section -->
         <div class="container my-5">

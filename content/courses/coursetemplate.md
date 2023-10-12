@@ -1,8 +1,8 @@
 ---
 duration: 3 hours
-trainer: John Doe
+trainer: Sameek Kundu
 title: Course Title
-price: 50 USD
+price: 99
 coverImage: /path/to/cover/image.jpg
 shortDescription: This is a brief description of the course.
 mainImage: /path/to/main/image.jpg
@@ -14,6 +14,11 @@ prerequisites:
     A computer that meets the minimum hardware requirements for running Unreal
     Engine.
   - Installed version of Unreal Engine 5
+module:
+      - title: "Module 1 :"
+      - title: "Module 2 :"
+      - title: "Module 3 :"
+      - title: "Module 4 :"
 whoShouldAttend:
   - title: Aspiring Game Developers
     description: >-
@@ -58,11 +63,7 @@ learningOutcomes:
       Upon successful completion of the course, participants will receive a
       recognized certificate, endorsing their skills and proficiency in Unreal
       Engine, enhancing their credibility in the game development community.
-module:
-  - title: "Module 1 :" 
-  - title: "Module 2 :" 
-  - title: "Module 3 :" 
-  - title: "Module 4 :" 
+
 topics:
   - {}
   - {}
