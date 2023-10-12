@@ -5,8 +5,11 @@ title: Blueprint Fundamentals in Unreal Engine 5
 price: 99
 coverImage: /courses/course_Blueprints_cover.png
 shortDescription: >-
-  Dive deep into the world of Blueprint scripting in Unreal Engine 5, mastering
-  the tools and techniques essential for modern game development.
+  Dive into the intuitive world of Unreal Engine's Blueprint system, This course
+  demystifies the art of visual scripting, enabling participants to construct
+  intricate game logic without writing a single line of code. Through a blend of
+  conceptual understanding and hands-on exercises, this course lays the
+  foundation for a future of innovative and code-free game design.
 mainImage: /courses/course_blueprints01_thumbnail.jpg
 course_categories:
   - Unreal Crash Courses
