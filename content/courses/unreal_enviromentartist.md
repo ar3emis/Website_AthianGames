@@ -21,42 +21,44 @@ prerequisites:
     Engine.
   - Installed version of Unreal Engine 5
 whoShouldAttend:
-  - title: Aspiring Game Developers
+  - title: Aspiring Environment Artists
     description: >-
-      Individuals eager to dive into the world of game development, seeking a
-      robust and industry-leading engine to bring their visions to life.
-  - title: Experienced Game Designers
+      Individuals looking to break into the field of 3D environment art,
+      particularly those interested in using Unreal Engine for their projects.
+  - title: Game Developers
     description: >-
-      Professionals from other platforms or older versions of Unreal aiming to
-      update their skills and familiarize themselves with the latest Unreal
-      capabilities.
-  - title: Narrative Designers
+      Those who have a foundational understanding of game development but wish
+      to expand their skill set to include environment design in Unreal.
+  - title: 3D Artists
     description: >-
-      Storytellers wanting to understand the tools available in Unreal to create
-      immersive narratives and rich gameplay experiences.
-  - title: Technical Programmers
+      Artists familiar with other 3D software (like Blender, Maya, etc.) who are
+      keen on integrating Unreal Engine into their workflow for enhanced realism
+      and interactivity.
+  - title: Design Students
     description: >-
-      Coding experts looking to understand the intricacies of Unreal's scripting
-      and programming environment for optimized game performance.
-  - title: Educators in Game Development
-    description: ''
+      Students of game design, graphic design, or related fields who are looking
+      to add practical, engine-specific knowledge to their repertoire.
+  - title: Professionals in Related Fields
+    description: >-
+      Those in professions like architectural visualization, who could benefit
+      from Unreal Engine's advanced rendering and environmental design features.
 learningOutcomes:
-  - title: Engine Mastery
+  - title: Unreal Engine Familiarity
     description: >-
-      Attain proficiency in navigating and utilizing the various tools and
-      features within the Unreal Engine for game development.
-  - title: Advanced Scripting Skills
+      Gain a solid understanding of the Unreal Engine interface, tools, and
+      capabilities specifically focused on environmental design.
+  - title: Material and Texturing Skills
     description: >-
-      Understand and apply the principles of Blueprints and C++ within Unreal to
-      create dynamic gameplay mechanics and interactive elements.
-  - title: Narrative Implementation
+      Learn how to create and apply materials, utilize texture maps, and achieve
+      various surface effects for realism and aesthetic appeal.
+  - title: Lighting Proficiency
     description: >-
-      Harness Unreal's tools to craft and integrate compelling storylines,
-      dialogues, and cinematic sequences within games.
-  - title: Optimization Techniques
+      Understand how to use different types of lights, adjust their properties,
+      and create a visually captivating atmosphere.
+  - title: Portfolio Creation
     description: >-
-      Learn strategies to enhance game performance, ensuring smooth gameplay
-      experiences across various platforms.
+      Know how to capture and present your environment effectively, setting the
+      foundation for an impressive portfolio that stands out.
 module:
   - title: 'Module 1 :'
     topics: ''
