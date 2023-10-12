@@ -64,15 +64,6 @@ learningOutcomes:
     description: >-
       Be equipped with foundational knowledge that paves the way for advanced
       Unreal C++ topics and projects in the future.
-module:
-  - title: 'Module 1 :'
-    topics: ''
-  - title: 'Module 2 :'
-    topics: ''
-  - title: 'Module 3 :'
-    topics: ''
-  - title: 'Module 4 :'
-    topics: ''
 topics:
   - title: Why C++ in Unreal? An Overview
     description: >
