@@ -1,5 +1,5 @@
 ---
-duration: 3 hours
+duration: 3 weeks
 trainer: Sameek Kundu
 title: 'Mastering Niagara : Visual Effects in Unreal Engine'
 price: 129
@@ -72,7 +72,7 @@ module:
       Begin your Niagara journey by understanding its role within Unreal Engine.
       Dive deep into the foundational concepts, and acquaint yourself with
       creating basic particle systems.
-    topics: >+
+    topics: >
       * Introduction to Niagara: Uncover what Niagara is and its significance in
       visual effects within Unreal Engine.
 
@@ -90,9 +90,6 @@ module:
 
       * Basic Modules and Properties: Modify particle behavior through built-in
       modules.
-
-
-
   - title: 'Module 2 : Advanced Particle Systems and Dynamics'
     description: >-
       Advance into more complex particle systems, dynamics, and interactions.
@@ -138,7 +135,7 @@ topics:
   - description: ''
   - description: ''
 formURL: 'https://book.stripe.com/8wM3dveRhcZb5osaEI'
-draft: true
+draft: false
 _template: course
 ---
 
