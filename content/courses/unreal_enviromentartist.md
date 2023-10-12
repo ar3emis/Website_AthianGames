@@ -2,8 +2,8 @@
 duration: 3 hours
 trainer: Vivek Tomar
 title: Unreal for Environment Artist
-price: 99
-coverImage: /path/to/cover/image.jpg
+price: 49
+coverImage: /courses/courses_unrealforenvironmentartist_cover.png
 shortDescription: >
   Unravel the power of Unreal Engine for creating stunning virtual environments.
   This course caters to budding environment artists, focusing on the tools and
@@ -11,7 +11,7 @@ shortDescription: >
   static meshes to optimising your levels and preparing a compelling portfolio,
   this comprehensive journey ensures artists master the nuances of environment
   creation within Unreal.
-mainImage: /path/to/main/image.jpg
+mainImage: /courses/courses_unrealforenvironmentartist_thumbnail.png
 course_categories:
   - ''
 shortterm: true
@@ -57,11 +57,6 @@ learningOutcomes:
     description: >-
       Learn strategies to enhance game performance, ensuring smooth gameplay
       experiences across various platforms.
-  - title: Course Completion Certification
-    description: >-
-      Upon successful completion of the course, participants will receive a
-      recognized certificate, endorsing their skills and proficiency in Unreal
-      Engine, enhancing their credibility in the game development community.
 module:
   - title: 'Module 1 :'
     topics: ''
