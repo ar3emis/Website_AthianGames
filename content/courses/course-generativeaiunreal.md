@@ -3,7 +3,7 @@ duration: 3 weeks
 trainer: Sameek Kundu
 title: 'Generative AI for Game Development in Unreal '
 price: 129
-coverImage: /courses/courses_generaitveaiunreal_cover.png
+coverImage: /courses/courses_generaitveaiunreal_cover01.jpg
 shortDescription: >-
   Unleash the potential of AI-driven content generation in the realm of game
   development with this trailblazing course. "Generative AI for Game Development
