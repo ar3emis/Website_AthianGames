@@ -21,47 +21,49 @@ prerequisites:
     Engine.
   - Installed version of Unreal Engine 5
 whoShouldAttend:
-  - title: Aspiring Game Developers
+  - title: Absolute Beginners
+    description: ' Individuals with a passion for game development but little to no experience in programming, seeking a structured introduction to the world of C++ in Unreal.'
+  - title: Seasoned Programmers
     description: >-
-      Individuals eager to dive into the world of game development, seeking a
-      robust and industry-leading engine to bring their visions to life.
-  - title: Experienced Game Designers
+      Those familiar with other programming languages and looking to transition
+      or expand their skill set into Unreal C++.
+  - title: Game Designers
     description: >-
-      Professionals from other platforms or older versions of Unreal aiming to
-      update their skills and familiarize themselves with the latest Unreal
-      capabilities.
-  - title: Narrative Designers
+      Professionals aiming to better understand the coding backbone that powers
+      their designs, enabling more efficient communication with development
+      teams.
+  - title: Indie Game Developers
     description: >-
-      Storytellers wanting to understand the tools available in Unreal to create
-      immersive narratives and rich gameplay experiences.
-  - title: Technical Programmers
-    description: >-
-      Coding experts looking to understand the intricacies of Unreal's scripting
-      and programming environment for optimized game performance.
-  - title: Educators in Game Development
-    description: ''
+      Solo or small team developers aiming to integrate both design and code
+      aspects in their projects, enhancing their ability to bring unique game
+      visions to life.
+  - title: Students
+    description: ' Individuals pursuing a formal education in game development, seeking supplemental knowledge or a practical foundation in Unreal C++.'
 learningOutcomes:
-  - title: Engine Mastery
+  - title: C++ Foundation
     description: >-
-      Attain proficiency in navigating and utilizing the various tools and
-      features within the Unreal Engine for game development.
-  - title: Advanced Scripting Skills
+      Understand the core principles, syntax, and structures of C++ within the
+      context of Unreal Engine.
+  - title: Blueprint to C++ Transition
     description: >-
-      Understand and apply the principles of Blueprints and C++ within Unreal to
-      create dynamic gameplay mechanics and interactive elements.
-  - title: Narrative Implementation
+      Gain insights into how Blueprints correspond to C++, and how the two can
+      complement each other in game development.
+  - title: Custom Functionality Implementation
     description: >-
-      Harness Unreal's tools to craft and integrate compelling storylines,
-      dialogues, and cinematic sequences within games.
-  - title: Optimization Techniques
+      Develop the skills to integrate unique game mechanics and features using
+      Unreal C++.
+  - title: Unreal's Object-Oriented Approach
     description: >-
-      Learn strategies to enhance game performance, ensuring smooth gameplay
-      experiences across various platforms.
-  - title: Course Completion Certification
+      Grasp the modular, object-oriented approach of Unreal, promoting scalable
+      and organized game code.
+  - title: Performance Optimization
     description: >-
-      Upon successful completion of the course, participants will receive a
-      recognized certificate, endorsing their skills and proficiency in Unreal
-      Engine, enhancing their credibility in the game development community.
+      Understand best practices to write optimized code, ensuring smooth
+      gameplay across different platforms.
+  - title: Confidence to Progress
+    description: >-
+      Be equipped with foundational knowledge that paves the way for advanced
+      Unreal C++ topics and projects in the future.
 module:
   - title: 'Module 1 :'
     topics: ''
@@ -144,6 +146,6 @@ _template: course
 
 Unreal Engine, known for its visual prowess and robust game development capabilities, also boasts a deep, code-driven core: Unreal C++. 
 
-This course, designed for both beginners and those familiar with other programming languages, serves as a comprehensive primer into this world. Participants will delve into the core concepts of Unreal C++, understanding not only the syntax but also the philosophy behind Unreal's unique approach to game logic and design. Through a combination of theoretical explanations and practical coding exercises, attendees will grasp the fundamental building blocks needed to integrate custom functionality into their games. 
+This course, designed for both beginners and those familiar with other programming languages, serves as a comprehensive primer into this world. You will learn the core concepts of Unreal C++, understanding not only the syntax but also the philosophy behind Unreal's unique approach to game logic and design. 
 
-By course's end, they will be armed with the knowledge and confidence to further explore the limitless possibilities of game development with Unreal C++.
+You will leave the course not just with theoretical knowledge but also with the practical skills and confidence to navigate the dynamic landscape of Unreal C++ programming.
