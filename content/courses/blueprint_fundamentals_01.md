@@ -118,6 +118,10 @@ draft: false
 _template: course
 ---
 
-Blueprints serve as Unreal Engine's visual scripting gateway, granting developers the capability to craft game logic without traditional coding's complexity. This system, rooted in intuitiveness, stands pivotal for modern game development, offering a harmonious blend of design and code. Throughout this 4-session, 8-hour course, attendees will navigate both the rudimentary and intricate intricacies of Blueprints.
+Unreal Engine, renowned for its cutting-edge graphics and powerful toolsets, presents the Blueprint system - a revolutionary visual scripting interface that has redefined the boundaries of game development. This course offers an in-depth exploration of Blueprints, tailored to usher in both novices and seasoned developers to the realm of visual game logic creation.
 
-By the course's end, you will confidently wield the Blueprint system across varied game development endeavors.
+Commencing with a broad overview of the Blueprint environment, participants will quickly familiarize themselves with its node-based interface, recognizing the potential of connecting visual blocks to sculpt game actions and reactions. From the basics of variables, functions, and events, the course delves into more intricate constructs like Blueprint classes, empowering attendees to devise reusable components for their games. Additionally, the interplay between Blueprints and Unreal's vast ecosystem, including assets, animations, and even C++ integrations, will be covered, ensuring a holistic understanding.
+
+By prioritizing a hands-on approach, the course fosters real-world application. Attendees will be guided through the creation of mini-projects, using Blueprints to bring static game environments to life, responding to player inputs, triggering events, and crafting a dynamic gaming experience. With an emphasis on best practices, optimization techniques, and debugging, the course ensures participants are well-equipped to handle complex projects independently.
+
+In essence, this course is more than just a learning journey; it's a gateway to a world where your game ideas are limited only by imagination, not technical prowess.
