@@ -234,7 +234,7 @@ export default defineConfig({
         path: "content/courses",
         frontmatterFormat: "yaml",
         match: {
-            include: ["**/*"],
+            include: "**/*",
             exclude: "_index",
         },
         templates: [
@@ -261,11 +261,7 @@ export default defineConfig({
                 description: "This is the markdown body",
                 isBody: true,
               },
-              {
-                type: "image",
-                name: "logoImage",
-                label: "Add badge",
-              },
+
               ...courseFields(),
             ],
             label: "course",

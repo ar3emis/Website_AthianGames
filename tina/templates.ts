@@ -128,7 +128,28 @@ export function courseFields() {
               label: item.title, // Use the title as the display label
           }),
       },
-     {
+      {
+          type: "object",
+          name: "topics",
+          label: "Short Term Course Topics",
+          list: true,
+          fields: [
+              {
+                  type: "string",
+                  name: "title",
+                  label: "Topic Title",
+              },
+              {
+                  type: "rich-text",
+                  name: "description",
+                  label: "Topic Description",
+              },
+          ],
+          itemProps: (item) => ({
+              label: item.title, // Use the topic title as the display label
+          }),
+      },
+      {
       type: "string",
       name: "formURL",
       label: "Enroll Button URL",
@@ -153,11 +174,6 @@ export function courses_main_pageFields() {
       type: "string",
       name: "title",
       label: "title",
-    },
-    {
-      type: "string",
-      name: "enrolTitle",
-      label: "enrolTitle",
     },
     {
       type: "object",
