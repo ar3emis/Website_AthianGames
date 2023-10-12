@@ -4,11 +4,11 @@ trainer: Vivek Tomar
 title: Unreal for Environment Artist
 price: 49
 coverImage: /courses/courses_unrealforenvironmentartist_cover.png
-shortDescription: >
+shortDescription: >-
   Unravel the power of Unreal Engine for creating stunning virtual environments.
   This course caters to budding environment artists, focusing on the tools and
   techniques to craft breathtaking scenes from the ground up. From importing
-  static meshes to optimising your levels and preparing a compelling portfolio,
+  static meshes to optimizing your levels and preparing a compelling portfolio,
   this comprehensive journey ensures artists master the nuances of environment
   creation within Unreal.
 mainImage: /courses/courses_unrealforenvironmentartist_thumbnail.png
@@ -71,7 +71,7 @@ topics:
   - description: ''
   - description: ''
   - description: ''
-formURL: 'https://example.com/enrollment/form'
+formURL: 'https://book.stripe.com/28o7tLeRhgbn9EI8wC'
 draft: false
 _template: course
 ---
