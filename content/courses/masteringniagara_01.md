@@ -139,4 +139,8 @@ draft: false
 _template: course
 ---
 
-Course Content
+Niagara, Unreal Engine's cutting-edge visual effects toolset, offers an unprecedented canvas for artists and developers to paint their virtual worlds with dynamic, interactive, and breathtaking effects. This in-depth course serves as both an introduction and deep dive into the heart of this powerful system.
+
+Participants will start by unraveling the fundamental principles underpinning Niagara's workflow, transitioning from basic particle systems to intricate, data-driven effects that respond in real-time to the in-game environment. The course is meticulously designed to balance theory with hands-on exploration, ensuring that participants not only grasp the underlying concepts but also experience the thrill of bringing their visions to life in a visually stunning manner.
+
+As we delve deeper, attendees will be exposed to advanced techniques that empower them to craft complex simulations, harness the power of GPU-driven effects, and integrate the logic of their games with the visual wonders they create. By the culmination of this journey, participants will have a holistic understanding of Niagara, unlocking the potential to infuse their projects with visual effects that not only captivate but also seamlessly blend with their game's narrative and mechanics.
