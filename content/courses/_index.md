@@ -1,8 +1,8 @@
 ---
 duration: "3 hours"
-trainer: "John Doe"
+trainer: "Sameek Kundu"
 title: "Course Title"
-price: "50 USD"
+price: 50
 coverImage: "/path/to/cover/image.jpg"
 shortDescription: "This is a brief description of the course."
 mainImage: "/path/to/main/image.jpg"
