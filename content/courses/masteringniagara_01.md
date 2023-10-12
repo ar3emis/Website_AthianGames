@@ -22,25 +22,28 @@ prerequisites:
 whoShouldAttend:
   - title: Aspiring Game Developers
     description: >-
-      Individuals eager to dive into the world of game development, seeking a
-      robust and industry-leading engine to bring their visions to life.
-  - title: Experienced Game Designers
+      Those new to the Unreal Engine ecosystem seeking to integrate stunning
+      visual effects into their games or simulations.
+  - title: Experienced Unreal Developers
     description: >-
-      Professionals from other platforms or older versions of Unreal aiming to
-      update their skills and familiarize themselves with the latest Unreal
-      capabilities.
-  - title: Narrative Designers
+      Professionals looking to enhance their skill set by incorporating
+      Niagara's powerful particle system into their projects.
+  - title: VFX Artists
     description: >-
-      Storytellers wanting to understand the tools available in Unreal to create
-      immersive narratives and rich gameplay experiences.
-  - title: Technical Programmers
+      Individuals from other platforms or software who wish to understand and
+      utilize Unreal's Niagara system for high-quality visual effects.
+  - title: Game Designers
     description: >-
-      Coding experts looking to understand the intricacies of Unreal's scripting
-      and programming environment for optimized game performance.
-  - title: 3D Artists and Animators
+      Those aiming to elevate the sensory appeal of their games, ensuring a more
+      immersive player experience.
+  - title: Technical Artists
     description: >-
-      Visual creators aiming to utilize Unreal's suite of tools to render,
-      animate, and bring their art to life in interactive settings.
+      Those aiming to bridge the gap between art and code, seeking a deep dive
+      into a tool that allows for both creativity and technical control.
+  - title: Educators in Game Development
+    description: >-
+      Tutors and instructors who are updating their teaching curriculum to
+      include the latest VFX tools and techniques available in Unreal Engine.
 learningOutcomes:
   - title: Engine Mastery
     description: >-
@@ -129,8 +132,6 @@ module:
 
       * Q\&A and Recap: Address any remaining queries and consolidate learning
       from all sessions.
-  - title: 'Module 4 :'
-    topics: ''
 topics:
   - description: ''
   - description: ''
