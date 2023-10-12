@@ -5,7 +5,7 @@ seodescription: ""
 image: ""
 canonical: ""
 private: ""
-draft: false
+draft: true
 _template: ''
 ---
 

@@ -17,7 +17,7 @@ export function courseFields() {
       label: "title",
     },
   {
-      type: "string",
+      type: "number",
       name: "price",
       label: "price",
   },
