@@ -1,7 +1,7 @@
 ---
 duration: "3 hours"
 trainer: "Sameek Kundu"
-title: "Course Title"
+title: "Unreal Courses"
 price: 50
 coverImage: "/path/to/cover/image.jpg"
 shortDescription: "This is a brief description of the course."
