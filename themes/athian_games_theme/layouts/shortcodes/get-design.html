@@ -1,7 +1,0 @@
-{{$partial := .Get "name" }}
-{{$filePath := replace (string .Position.Filename) "\\" "/" }}
-{{$filePathSplit := split $filePath "/"}}
-{{$filePathGet := printf "%s/%s" (index $filePathSplit (sub (len $filePathSplit) 2)) (index $filePathSplit (sub (len $filePathSplit) 1))}}
-{{with .Site.GetPage $filePathGet}}
-{{partial $partial .}}
-{{end}}

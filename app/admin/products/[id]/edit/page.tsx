@@ -1,0 +1,587 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { useRouter, useParams } from "next/navigation";
+import { Card, CardHeader, CardContent } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
+import {
+  Save,
+  X,
+  Plus,
+  Trash2,
+  Upload,
+  ArrowLeft,
+  ExternalLink,
+} from "lucide-react";
+import Link from "next/link";
+import { ImageUpload } from "@/components/admin/ImageUpload";
+
+interface ProductFeature {
+  title: string;
+  description: string;
+  image?: string;
+  learnMoreUrl?: string;
+}
+
+interface ProductFormData {
+  name: string;
+  slug: string;
+  topText: string;
+  bottomText: string;
+  summary: string;
+  description: string;
+  category: string;
+  engineVersions: string[];
+  externalUrl?: string;
+  documentationUrl?: string;
+  videoId?: string;
+  bannerImage?: string;
+  thumbnail?: string;
+  videoThumbnail?: string;
+  features: ProductFeature[];
+  isExternal: boolean;
+  isFeatured: boolean;
+}
+
+export default function EditProductPage() {
+  const router = useRouter();
+  const params = useParams();
+  const productId = params?.id as string;
+
+  console.log("EditProductPage - productId from params:", productId, "params:", params);
+
+  const [formData, setFormData] = useState<ProductFormData>({
+    name: "",
+    slug: "",
+    topText: "",
+    bottomText: "",
+    summary: "",
+    description: "",
+    category: "plugins",
+    engineVersions: [],
+    features: [],
+    isExternal: false,
+    isFeatured: false,
+  });
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [message, setMessage] = useState("");
+  const [newEngineVersion, setNewEngineVersion] = useState("");
+
+  useEffect(() => {
+    if (productId && productId !== "new") {
+      fetchProduct();
+    } else {
+      setLoading(false);
+    }
+  }, [productId]);
+
+  const fetchProduct = async () => {
+    try {
+      const response = await fetch(`/api/admin/products/${productId}`);
+      const data = await response.json();
+      if (data.success && data.product) {
+        setFormData(data.product);
+      }
+    } catch (error) {
+      console.error("Failed to fetch product:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const generateSlug = (name: string) => {
+    return name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+  };
+
+  const handleNameChange = (name: string) => {
+    setFormData({
+      ...formData,
+      name,
+      slug: generateSlug(name),
+    });
+  };
+
+  const addEngineVersion = () => {
+    if (newEngineVersion && !formData.engineVersions.includes(newEngineVersion)) {
+      setFormData({
+        ...formData,
+        engineVersions: [...formData.engineVersions, newEngineVersion],
+      });
+      setNewEngineVersion("");
+    }
+  };
+
+  const removeEngineVersion = (version: string) => {
+    setFormData({
+      ...formData,
+      engineVersions: formData.engineVersions.filter((v) => v !== version),
+    });
+  };
+
+  const addFeature = () => {
+    setFormData({
+      ...formData,
+      features: [
+        ...formData.features,
+        { title: "", description: "", image: "" },
+      ],
+    });
+  };
+
+  const updateFeature = (index: number, field: keyof ProductFeature, value: string) => {
+    const newFeatures = [...formData.features];
+    newFeatures[index] = { ...newFeatures[index], [field]: value };
+    setFormData({ ...formData, features: newFeatures });
+  };
+
+  const removeFeature = (index: number) => {
+    setFormData({
+      ...formData,
+      features: formData.features.filter((_, i) => i !== index),
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSaving(true);
+    setMessage("");
+
+    try {
+      const url =
+        productId === "new"
+          ? "/api/admin/products"
+          : `/api/admin/products/${productId}`;
+      const method = productId === "new" ? "POST" : "PUT";
+
+      const response = await fetch(url, {
+        method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setMessage("Product saved successfully!");
+        setTimeout(() => {
+          router.push("/admin/products");
+        }, 1500);
+      } else {
+        setMessage(`Error: ${data.error || "Failed to save product"}`);
+      }
+    } catch (error) {
+      setMessage(`Error: ${error instanceof Error ? error.message : "Failed to save"}`);
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="max-w-5xl">
+      <div className="flex items-center gap-4 mb-8">
+        <Link href="/admin/products">
+          <Button variant="secondary" size="sm">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back
+          </Button>
+        </Link>
+        <div>
+          <h1 className="text-3xl font-bold">
+            {productId === "new" ? "Add New Product" : "Edit Product"}
+          </h1>
+          <p className="text-muted-foreground">
+            {productId === "new"
+              ? "Create a new product listing"
+              : "Update product details"}
+          </p>
+        </div>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Basic Information */}
+        <Card>
+          <CardHeader>
+            <h2 className="text-2xl font-bold">Basic Information</h2>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Product Name *
+              </label>
+              <input
+                type="text"
+                required
+                value={formData.name}
+                onChange={(e) => handleNameChange(e.target.value)}
+                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
+                placeholder="Minimap, Map and Navigation System"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                URL Slug *
+              </label>
+              <input
+                type="text"
+                required
+                value={formData.slug}
+                onChange={(e) =>
+                  setFormData({ ...formData, slug: e.target.value })
+                }
+                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none font-mono"
+                placeholder="minimap-map-and-navigation-system"
+              />
+              <p className="text-xs text-muted-foreground mt-1">
+                URL: /products/{formData.slug}
+              </p>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Category *
+              </label>
+              <select
+                required
+                value={formData.category}
+                onChange={(e) =>
+                  setFormData({ ...formData, category: e.target.value })
+                }
+                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
+              >
+                <option value="plugins">Plugins</option>
+                <option value="tools">Tools</option>
+                <option value="vfx">VFX</option>
+                <option value="materials">Materials</option>
+                <option value="blueprints">Blueprints</option>
+                <option value="assets">Assets</option>
+              </select>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={formData.isExternal}
+                  onChange={(e) =>
+                    setFormData({ ...formData, isExternal: e.target.checked })
+                  }
+                  className="w-4 h-4"
+                />
+                <span className="text-sm font-medium">External Product</span>
+              </label>
+
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={formData.isFeatured}
+                  onChange={(e) =>
+                    setFormData({ ...formData, isFeatured: e.target.checked })
+                  }
+                  className="w-4 h-4"
+                />
+                <span className="text-sm font-medium">Featured</span>
+              </label>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Descriptions */}
+        <Card>
+          <CardHeader>
+            <h2 className="text-2xl font-bold">Descriptions</h2>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Top Text
+              </label>
+              <input
+                type="text"
+                value={formData.topText}
+                onChange={(e) =>
+                  setFormData({ ...formData, topText: e.target.value })
+                }
+                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
+                placeholder="Short heading text"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Bottom Text
+              </label>
+              <input
+                type="text"
+                value={formData.bottomText}
+                onChange={(e) =>
+                  setFormData({ ...formData, bottomText: e.target.value })
+                }
+                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
+                placeholder="Subtitle or tagline"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Summary *
+              </label>
+              <textarea
+                required
+                value={formData.summary}
+                onChange={(e) =>
+                  setFormData({ ...formData, summary: e.target.value })
+                }
+                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
+                rows={3}
+                placeholder="Brief one-line summary"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Description *
+              </label>
+              <textarea
+                required
+                value={formData.description}
+                onChange={(e) =>
+                  setFormData({ ...formData, description: e.target.value })
+                }
+                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
+                rows={6}
+                placeholder="Detailed product description"
+              />
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Media */}
+        <Card>
+          <CardHeader>
+            <h2 className="text-2xl font-bold">Media</h2>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                YouTube Video ID
+              </label>
+              <input
+                type="text"
+                value={formData.videoId || ""}
+                onChange={(e) =>
+                  setFormData({ ...formData, videoId: e.target.value })
+                }
+                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
+                placeholder="zTLjtnlbFjU"
+              />
+            </div>
+
+            <ImageUpload
+              label="Thumbnail Image"
+              value={formData.thumbnail}
+              onChange={(url) => setFormData({ ...formData, thumbnail: url })}
+              aspectRatio="video"
+            />
+
+            <ImageUpload
+              label="Banner Image"
+              value={formData.bannerImage}
+              onChange={(url) => setFormData({ ...formData, bannerImage: url })}
+              aspectRatio="video"
+            />
+          </CardContent>
+        </Card>
+
+        {/* Engine Versions */}
+        <Card>
+          <CardHeader>
+            <h2 className="text-2xl font-bold">Engine Compatibility</h2>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={newEngineVersion}
+                onChange={(e) => setNewEngineVersion(e.target.value)}
+                onKeyPress={(e) => e.key === "Enter" && (e.preventDefault(), addEngineVersion())}
+                className="flex-1 px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
+                placeholder="e.g., UE 5.3+"
+              />
+              <Button type="button" onClick={addEngineVersion}>
+                <Plus className="w-4 h-4 mr-2" />
+                Add
+              </Button>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {formData.engineVersions.map((version, idx) => (
+                <Badge key={idx} variant="secondary" className="flex items-center gap-2">
+                  {version}
+                  <button
+                    type="button"
+                    onClick={() => removeEngineVersion(version)}
+                    className="hover:text-destructive"
+                  >
+                    <X className="w-3 h-3" />
+                  </button>
+                </Badge>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Links */}
+        <Card>
+          <CardHeader>
+            <h2 className="text-2xl font-bold">External Links</h2>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                External URL (Marketplace)
+              </label>
+              <input
+                type="url"
+                value={formData.externalUrl || ""}
+                onChange={(e) =>
+                  setFormData({ ...formData, externalUrl: e.target.value })
+                }
+                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
+                placeholder="https://www.unrealengine.com/marketplace/..."
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Documentation URL
+              </label>
+              <input
+                type="url"
+                value={formData.documentationUrl || ""}
+                onChange={(e) =>
+                  setFormData({ ...formData, documentationUrl: e.target.value })
+                }
+                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
+                placeholder="https://docs.athiangames.com/..."
+              />
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Features */}
+        <Card>
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <h2 className="text-2xl font-bold">Features</h2>
+              <Button type="button" onClick={addFeature}>
+                <Plus className="w-4 h-4 mr-2" />
+                Add Feature
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {formData.features.map((feature, idx) => (
+              <div key={idx} className="p-4 bg-muted rounded-lg space-y-3">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-medium">Feature {idx + 1}</h3>
+                  <Button
+                    type="button"
+                    variant="destructive"
+                    size="sm"
+                    onClick={() => removeFeature(idx)}
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </Button>
+                </div>
+
+                <input
+                  type="text"
+                  value={feature.title}
+                  onChange={(e) => updateFeature(idx, "title", e.target.value)}
+                  className="w-full px-4 py-2 bg-background rounded-lg border border-border focus:border-primary focus:outline-none"
+                  placeholder="Feature title"
+                />
+
+                <textarea
+                  value={feature.description}
+                  onChange={(e) => updateFeature(idx, "description", e.target.value)}
+                  className="w-full px-4 py-2 bg-background rounded-lg border border-border focus:border-primary focus:outline-none"
+                  rows={3}
+                  placeholder="Feature description"
+                />
+
+                <div className="mt-2">
+                  <ImageUpload
+                    label={`Feature ${idx + 1} Image`}
+                    value={feature.image}
+                    onChange={(url) => updateFeature(idx, "image", url)}
+                    aspectRatio="video"
+                  />
+                </div>
+
+                <input
+                  type="text"
+                  value={feature.learnMoreUrl || ""}
+                  onChange={(e) => updateFeature(idx, "learnMoreUrl", e.target.value)}
+                  className="w-full px-4 py-2 bg-background rounded-lg border border-border focus:border-primary focus:outline-none"
+                  placeholder="Learn more URL (optional)"
+                />
+              </div>
+            ))}
+
+            {formData.features.length === 0 && (
+              <p className="text-center text-muted-foreground py-8">
+                No features added yet. Click "Add Feature" to get started.
+              </p>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Submit */}
+        <div className="flex items-center gap-4">
+          <Button
+            type="submit"
+            disabled={saving}
+            size="lg"
+            className="flex items-center gap-2"
+          >
+            <Save className="w-5 h-5" />
+            {saving ? "Saving..." : "Save Product"}
+          </Button>
+
+          <Link href="/admin/products">
+            <Button type="button" variant="secondary" size="lg">
+              Cancel
+            </Button>
+          </Link>
+
+          {message && (
+            <p
+              className={`text-sm ${
+                message.startsWith("Error") ? "text-red-500" : "text-green-500"
+              }`}
+            >
+              {message}
+            </p>
+          )}
+        </div>
+      </form>
+    </div>
+  );
+}

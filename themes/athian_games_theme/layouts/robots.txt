@@ -1,3 +1,0 @@
-User-agent: *
-Disallow: /404{{ range .Data.Pages }}{{ if eq (lower .Params.private) "true" }}
-Disallow: {{.RelPermalink}}{{end}}{{end}}

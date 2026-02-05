@@ -1,8 +1,0 @@
-<h3 class="instructors-list-title">Meet our instructors</h3>
-{{ with site.GetPage "instructors" }}
-  <div class="instructors-list">
-    {{ range .Pages }}
-      {{ partial "courses/instructor-in-list.html" . }}
-    {{ end }}
-  </div>
-{{ end }}

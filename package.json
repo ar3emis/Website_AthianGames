@@ -1,35 +1,46 @@
 {
-  "name": "hugo-boilerplate",
+  "name": "athian-games-website",
   "version": "1.0.0",
-  "description": "Project Description",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "develop": "hugo server -D",
-    "build": "hugo --gc --minify"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "payload": "cross-env PAYLOAD_CONFIG_PATH=payload.config.ts payload",
+    "generate:types": "cross-env PAYLOAD_CONFIG_PATH=payload.config.ts payload generate:types"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com:hithismani/hugo-boilerplate.git"
-  },
-  "author": "Manikantan Kumar",
-  "license": "ISC",
-  "bugs": {
-    "url": "git@github.com:hithismani/hugo-boilerplate.git"
-  },
-  "homepage": "https://github.com/hithismani/hugo-boilerplate",
   "dependencies": {
-    "@tinacms/cli": "^1.5.19",
-    "autoprefixer": "^9.5.1",
-    "browserslist": "^4.12.0",
-    "cssnano": "^4.1.10",
-    "html-minifier": "^4.0.0",
-    "postcss": "^7.0.14",
-    "postcss-cli": "^7.1.1",
-    "postcss-discard-comments": "^4.0.2",
-    "postcss-import": "^12.0.1",
-    "tinacms": "^1.5.10"
+    "@payloadcms/db-mongodb": "^3.0.0",
+    "@payloadcms/next": "^3.0.0",
+    "@payloadcms/richtext-lexical": "^3.0.0",
+    "@stripe/stripe-js": "^3.0.0",
+    "clsx": "^2.1.0",
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.500.0",
+    "next": "^15.4.10",
+    "payload": "^3.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sharp": "^0.33.0",
+    "stripe": "^14.0.0",
+    "tailwind-merge": "^2.2.0",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
-    "css-declaration-sorter": "^4.0.1"
+    "@types/node": "^20.11.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/uuid": "^10.0.0",
+    "autoprefixer": "^10.4.0",
+    "axios": "^1.13.4",
+    "cheerio": "^1.2.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^15.4.10",
+    "postcss": "^8.4.0",
+    "puppeteer": "^24.37.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.0"
   }
 }
