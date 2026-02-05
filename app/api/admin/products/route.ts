@@ -26,7 +26,7 @@ export async function GET(req: NextRequest) {
       category: product.category,
       isExternal: product.externalUrl ? true : false,
       externalUrl: product.externalUrl,
-      isFeatured: product.isMegapack || false,
+      isFeatured: (product as any).isMegapack || false,
       thumbnail: product.thumbnail,
       shortDescription: product.summary,
       engineVersions: product.engineVersions,

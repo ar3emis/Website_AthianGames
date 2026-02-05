@@ -6,9 +6,9 @@ import { getProductBySlug } from "@/lib/products/productData";
 import { getDocumentation } from "@/lib/docs/docsData";
 
 interface DocsPageProps {
-  params: {
+  params: Promise<{
     slug?: string[];
-  };
+  }>;
 }
 
 export async function generateMetadata({

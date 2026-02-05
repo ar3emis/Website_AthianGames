@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { bookings } from "@/lib/services/bookingStore";
 
 const PAYPAL_CLIENT_ID = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;
 const PAYPAL_CLIENT_SECRET = process.env.PAYPAL_CLIENT_SECRET;
@@ -33,8 +34,6 @@ async function getPayPalAccessToken(): Promise<string> {
   return data.access_token;
 }
 
-// Store confirmed bookings (in production, use a database)
-const confirmedBookings = new Map<string, any>();
 
 export async function POST(req: NextRequest) {
   try {
@@ -108,7 +107,7 @@ export async function POST(req: NextRequest) {
     };
 
     // Store the booking
-    confirmedBookings.set(bookingId, booking);
+    bookings.set(bookingId, booking);
 
     // TODO: Send confirmation email
     // TODO: Create Google Calendar event with Meet link
@@ -136,5 +135,3 @@ export async function POST(req: NextRequest) {
   }
 }
 
-// Export for other routes to access
-export { confirmedBookings };

@@ -9,9 +9,9 @@ import { getProductBySlug } from "@/lib/products/productData";
 import { getDocumentation } from "@/lib/docs/docsData";
 
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 async function getProduct(slug: string) {
@@ -71,13 +71,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
 
         {/* Video Section */}
-        {product.videoId && (
+        {(product as any).videoId && (
           <div className="mb-16">
             <div className="aspect-video bg-muted rounded-xl overflow-hidden">
               <iframe
                 width="100%"
                 height="100%"
-                src={`https://www.youtube.com/embed/${product.videoId}`}
+                src={`https://www.youtube.com/embed/${(product as any).videoId}`}
                 title={product.name}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -103,8 +103,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 Documentation
               </Button>
             </Link>
-          ) : product.documentationUrl && (
-            <Link href={product.documentationUrl} target="_blank" rel="noopener noreferrer">
+          ) : (product as any).documentationUrl && (
+            <Link href={(product as any).documentationUrl} target="_blank" rel="noopener noreferrer">
               <Button variant="secondary" size="lg">
                 <FileText className="w-5 h-5 mr-2" />
                 Documentation
@@ -131,11 +131,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
 
         {/* Features or Sub-Products Grid */}
-        {product.isMegapack && product.subProducts ? (
+        {(product as any).isMegapack && (product as any).subProducts ? (
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-8">Included Products</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {product.subProducts.map((subProduct) => (
+              {(product as any).subProducts.map((subProduct: any) => (
                 <Link key={subProduct.slug} href={`/products/${subProduct.slug}`}>
                   <Card hover className="h-full group cursor-pointer">
                     <div className="aspect-[4/3] relative bg-muted overflow-hidden">
@@ -204,9 +204,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
                         {feature.description}
                       </p>
                     )}
-                    {feature.learnMoreUrl && (
+                    {(feature as any).learnMoreUrl && (
                       <Link
-                        href={feature.learnMoreUrl}
+                        href={(feature as any).learnMoreUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >

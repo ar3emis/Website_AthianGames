@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { bookings } from "../../book/route";
+import { bookings } from "@/lib/services/bookingStore";
 
 export async function GET(
   req: NextRequest,

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { bookings } from "../book/route";
+import { bookings } from "@/lib/services/bookingStore";
 
 const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID;
 const PAYPAL_CLIENT_SECRET = process.env.PAYPAL_CLIENT_SECRET;
@@ -90,7 +90,8 @@ export async function GET(req: NextRequest) {
   bookings.set(bookingId, booking);
 
   // Format the date nicely
-  const formattedDate = new Date(booking.date).toLocaleDateString("en-US", {
+  const bookingDate = booking.date ? new Date(booking.date) : new Date();
+  const formattedDate = bookingDate.toLocaleDateString("en-US", {
     weekday: "long",
     year: "numeric",
     month: "long",
@@ -167,7 +168,7 @@ export async function GET(req: NextRequest) {
   `;
 
   await sendEmail(
-    booking.email,
+    booking.email || "",
     `Booking Confirmed: ${booking.sessionName} on ${formattedDate}`,
     customerEmailHtml
   );

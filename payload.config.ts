@@ -1,9 +1,10 @@
-import { buildConfig } from "payload/config";
+import { buildConfig } from "payload";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import path from "path";
 
 export default buildConfig({
+  secret: process.env.PAYLOAD_SECRET || "your-secret-here",
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000",
   admin: {
     user: "users",

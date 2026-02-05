@@ -21,7 +21,7 @@ export async function GET(req: NextRequest) {
 
     const stats = {
       totalProducts: products.length,
-      featuredProducts: products.filter((p) => p.isMegapack).length,
+      featuredProducts: products.filter((p) => (p as any).isMegapack).length,
       externalProducts: products.filter((p) => p.externalUrl).length,
       categories: new Set(products.map((p) => p.category)).size,
     };

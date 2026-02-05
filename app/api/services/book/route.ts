@@ -98,7 +98,7 @@ function generateMeetLink(bookingId: string): string {
 }
 
 // Store booking in memory (in production, use a database)
-const bookings = new Map<string, any>();
+import { bookings, Booking } from "@/lib/services/bookingStore";
 
 export async function POST(req: NextRequest) {
   try {
@@ -127,7 +127,7 @@ export async function POST(req: NextRequest) {
     const bookingId = generateBookingId();
 
     // Create booking record
-    const booking = {
+    const booking: Booking = {
       id: bookingId,
       consultationType,
       sessionName: consultation.name,
@@ -182,5 +182,3 @@ export async function POST(req: NextRequest) {
   }
 }
 
-// Export bookings map for other routes to access
-export { bookings };
