@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { v4 as uuidv4 } from "uuid";
+import { bookings, Booking } from "@/lib/services/bookingStore";
 
 // PayPal configuration - you'll need to set these in your .env file
 const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID;
 const PAYPAL_CLIENT_SECRET = process.env.PAYPAL_CLIENT_SECRET;
 const PAYPAL_MODE = process.env.PAYPAL_MODE || "sandbox"; // "sandbox" or "live"
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "your-email@example.com";
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "sameek.kundu@athiangames.com";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 const PAYPAL_MERCHANT_EMAIL = process.env.PAYPAL_MERCHANT_EMAIL || "sameek.kundu@athiangames.com";
 
@@ -97,8 +98,6 @@ function generateMeetLink(bookingId: string): string {
   return `https://meet.google.com/lookup/${bookingId.toLowerCase()}`;
 }
 
-// Store booking in memory (in production, use a database)
-import { bookings, Booking } from "@/lib/services/bookingStore";
 
 export async function POST(req: NextRequest) {
   try {

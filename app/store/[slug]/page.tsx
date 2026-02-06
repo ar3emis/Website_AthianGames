@@ -96,7 +96,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left: Gallery */}
           <div>
-            <ProductGallery images={product.images} />
+            <ProductGallery 
+              images={product.images.map((img: any) => img.url)} 
+              productName={product.name}
+            />
           </div>
 
           {/* Right: Product info */}

@@ -36,3 +36,5 @@ yarn-error.log*
 
 # Payload
 /media
+
+/lib/generated/prisma

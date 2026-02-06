@@ -9,7 +9,6 @@ import {
   Clock,
   Video,
   CheckCircle,
-  Star,
   MessageSquare,
   Code,
   Lightbulb,
@@ -68,26 +67,6 @@ const consultationTypes = [
   },
 ];
 
-const testimonials = [
-  {
-    name: "Alex Chen",
-    role: "Game Developer",
-    content: "The consultation helped me solve a complex minimap implementation issue in just 30 minutes. Extremely knowledgeable!",
-    rating: 5,
-  },
-  {
-    name: "Sarah Miller",
-    role: "Tech Artist",
-    content: "Booked an extended session for shader optimization. The insights were invaluable for our production pipeline.",
-    rating: 5,
-  },
-  {
-    name: "James Wilson",
-    role: "Indie Developer",
-    content: "Clear explanations, practical solutions. Worth every penny for the time saved on my project.",
-    rating: 5,
-  },
-];
 
 export default function ServicesPage() {
   const [selectedType, setSelectedType] = useState<string | null>(null);
@@ -260,38 +239,6 @@ export default function ServicesPage() {
               <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
               <span>{topic}</span>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="container-custom mb-16">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          What Clients Say
-        </h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {testimonials.map((testimonial, idx) => (
-            <Card key={idx}>
-              <CardContent className="p-6">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-5 h-5 fill-yellow-500 text-yellow-500"
-                    />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  "{testimonial.content}"
-                </p>
-                <div>
-                  <div className="font-bold">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">
-                    {testimonial.role}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           ))}
         </div>
       </section>

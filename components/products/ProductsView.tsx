@@ -3,10 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/Card";
+import { Card, CardHeader } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
-import { ShoppingCart, ExternalLink } from "lucide-react";
 
 // Product categories
 const categories = [
@@ -33,7 +31,7 @@ const allProducts = [
     externalUrl: "https://www.unrealengine.com/marketplace/en-US/product/minimap-map-and-navigation-system",
     platform: "unreal-marketplace",
     isFeatured: true,
-    thumbnail: "/images/minimap_thumb.jpg",
+    thumbnail: "/images/products/minimap/minimap_thumb.jpg",
   },
   {
     id: "2",
@@ -47,7 +45,7 @@ const allProducts = [
     externalUrl: "https://www.unrealengine.com/marketplace/en-US/product/a35f1131e36843f28df349d8f63b6660",
     platform: "unreal-marketplace",
     isFeatured: true,
-    thumbnail: "/images/pvt_thumb.jpg",
+    thumbnail: "/images/products/procedural-vortex-tunnel/pvt_thumb.jpg",
   },
   {
     id: "3",
@@ -61,7 +59,7 @@ const allProducts = [
     externalUrl: "https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-stylized-post-process-pack",
     platform: "unreal-marketplace",
     isFeatured: true,
-    thumbnail: "/images/aos_dg_thumb.jpg",
+    thumbnail: "/images/products/art-of-shader-distortion-glitches/aos_dg_thumb.jpg",
   },
   {
     id: "4",
@@ -74,7 +72,7 @@ const allProducts = [
     isExternal: true,
     externalUrl: "https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-advanced-distortion",
     platform: "unreal-marketplace",
-    thumbnail: "/images/aos_ad_thumbnail.png",
+    thumbnail: "/images/products/art-of-shader-advanced-distortion/aos_ad_thumbnail.png",
   },
   {
     id: "5",
@@ -87,7 +85,7 @@ const allProducts = [
     isExternal: true,
     externalUrl: "https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-film-and-special-effects",
     platform: "unreal-marketplace",
-    thumbnail: "/images/aos_fse_thumb.png",
+    thumbnail: "/images/products/art-of-shader-film-special-effects/aos_fse_thumb.png",
   },
   {
     id: "6",
@@ -100,7 +98,7 @@ const allProducts = [
     isExternal: true,
     externalUrl: "https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-stylized-post-process",
     platform: "unreal-marketplace",
-    thumbnail: "/images/aos_stylizedpostprocess_thumb.png",
+    thumbnail: "/images/products/art-of-shader-stylized-post-process/aos_stylizedpostprocess_thumb.png",
   },
   {
     id: "7",
@@ -113,7 +111,7 @@ const allProducts = [
     isExternal: true,
     externalUrl: "https://www.unrealengine.com/marketplace/en-US/product/d967bdcc8ff94010acb5b84e9b82cce5",
     platform: "unreal-marketplace",
-    thumbnail: "/images/curvesandsurfaces_thumb.jpg",
+    thumbnail: "/images/products/niagara-curves-surfaces/curvesandsurfaces_thumb.jpg",
   },
   {
     id: "8",
@@ -126,20 +124,60 @@ const allProducts = [
     isExternal: true,
     externalUrl: "https://www.unrealengine.com/marketplace/en-US/slug/runtime-fbx-import-asynchronous",
     platform: "unreal-marketplace",
-    thumbnail: "/images/fbximport.png",
+    thumbnail: "/images/products/runtime-fbx-import/fbximport.png",
   },
   {
     id: "9",
-    slug: "runtime-mesh-import",
-    name: "Runtime Mesh Import",
-    shortDescription: "Import mesh files at runtime in your Unreal Engine projects",
-    price: null,
-    category: "tools",
-    engineVersions: ["UE 4.27", "UE 5.0+"],
+    slug: "volumetric-clouds-and-nebula",
+    name: "Volumetric Clouds and Nebula",
+    shortDescription: "Create stunning volumetric clouds and nebula effects with this highly customizable system",
+    price: 39.99,
+    category: "vfx",
+    engineVersions: ["UE 5.0+"],
     isExternal: true,
-    externalUrl: "https://www.unrealengine.com/marketplace/en-US/product/runtime-mesh-import",
-    platform: "unreal-marketplace",
-    thumbnail: "/images/meshimport_thumb.png",
+    externalUrl: "https://www.fab.com/sellers/Athian%20Games",
+    platform: "fab",
+    thumbnail: "/images/products/volumetric-clouds-nebula/cs_screenshot01.jpg",
+  },
+  {
+    id: "12",
+    slug: "procedural-skybox",
+    name: "Procedural Skybox",
+    shortDescription: "Fully procedural and customizable skybox system with day/night cycle support",
+    price: 29.99,
+    category: "vfx",
+    engineVersions: ["UE 5.0+"],
+    isExternal: true,
+    externalUrl: "https://www.fab.com/sellers/Athian%20Games",
+    platform: "fab",
+    thumbnail: "/images/products/procedural-skybox/cs_screenshot02.jpg",
+  },
+  {
+    id: "13",
+    slug: "volumetric-black-hole",
+    name: "Volumetric Black Hole",
+    shortDescription: "Realistic volumetric black hole effect with accretion disk, gravitational lensing and distortion",
+    price: 34.99,
+    category: "vfx",
+    engineVersions: ["UE 5.0+"],
+    isExternal: true,
+    externalUrl: "https://www.fab.com/sellers/Athian%20Games",
+    platform: "fab",
+    thumbnail: "/images/products/volumetric-black-hole/HighresScreenshot00006.png",
+  },
+  {
+    id: "14",
+    slug: "procedural-galaxy-system",
+    name: "Procedural Galaxy System",
+    shortDescription: "Generate stunning procedural galaxies with spiral arms, star clusters and cosmic dust",
+    price: 49.99,
+    category: "vfx",
+    engineVersions: ["UE 5.0+"],
+    isExternal: true,
+    externalUrl: "https://www.fab.com/sellers/Athian%20Games",
+    platform: "fab",
+    isFeatured: true,
+    thumbnail: "/images/products/procedural-galaxy-system/cs_screenshot05.jpg",
   },
   {
     id: "10",
@@ -152,7 +190,7 @@ const allProducts = [
     isExternal: true,
     externalUrl: "https://www.unrealengine.com/marketplace/en-US/product/aos-toons",
     platform: "unreal-marketplace",
-    thumbnail: "/images/aos_toons_thumb.png",
+    thumbnail: "/images/products/aos-toons/aos_toons_thumb.png",
   },
   {
     id: "11",
@@ -166,7 +204,7 @@ const allProducts = [
     externalUrl: "",
     platform: "unreal-marketplace",
     isFeatured: true,
-    thumbnail: "/images/aos_dg_thumb.jpg",
+    thumbnail: "/images/products/art-of-shader-megapack/aos_dg_thumb.jpg",
   },
 ];
 
@@ -208,18 +246,18 @@ export function ProductsView() {
       </div>
 
       {/* Products grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredProducts.map((product) => (
           <Link key={product.id} href={`/products/${product.slug}`}>
             <Card hover className="h-full group cursor-pointer">
-              <div className="aspect-[4/3] relative bg-muted overflow-hidden">
+              <div className="aspect-video relative bg-muted overflow-hidden">
                 {product.thumbnail ? (
                   <>
                     <Image
                       src={product.thumbnail}
                       alt={product.name}
                       fill
-                      className="object-contain transition-transform duration-300 group-hover:scale-105"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                     {/* Hover crosshair effect */}
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
@@ -237,18 +275,24 @@ export function ProductsView() {
                     </span>
                   </div>
                 )}
-                <div className="absolute top-4 left-4">
-                  <Badge variant="primary">
+                <div className="absolute top-3 left-3">
+                  <Badge variant="primary" className="text-xs">
                     {categories.find(c => c.id === product.category)?.name || product.category}
                   </Badge>
                 </div>
+                {/* Price badge on thumbnail */}
+                <div className="absolute bottom-3 right-3">
+                  <span className="bg-primary text-primary-foreground px-3 py-1.5 rounded-md text-sm font-bold shadow-lg">
+                    {product.price ? `$${product.price}` : "View Price"}
+                  </span>
+                </div>
               </div>
 
-              <CardHeader>
-                <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+              <CardHeader className="pb-3">
+                <h3 className="text-base font-bold mb-1 group-hover:text-primary transition-colors line-clamp-1">
                   {product.name}
                 </h3>
-                <p className="text-sm text-muted-foreground line-clamp-2">
+                <p className="text-xs text-muted-foreground line-clamp-2">
                   {product.shortDescription}
                 </p>
               </CardHeader>

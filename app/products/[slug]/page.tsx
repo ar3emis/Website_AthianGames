@@ -7,6 +7,8 @@ import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 import { ArrowLeft, ExternalLink, FileText, Play } from "lucide-react";
 import { getProductBySlug } from "@/lib/products/productData";
 import { getDocumentation } from "@/lib/docs/docsData";
+import { BuyButton } from "@/components/products/BuyButton";
+import { ProductGallery } from "@/components/products/ProductGallery";
 
 interface ProductPageProps {
   params: Promise<{
@@ -90,12 +92,25 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
         {/* CTA Buttons */}
         <div className="flex flex-wrap gap-4 mb-16">
-          <Link href={product.externalUrl} target="_blank" rel="noopener noreferrer">
-            <Button size="lg">
-              <ExternalLink className="w-5 h-5 mr-2" />
-              Get It on Marketplace
-            </Button>
-          </Link>
+          {/* Buy Button - for products with prices (sold directly on site) */}
+          {(product as any).price && (
+            <BuyButton
+              productSlug={product.slug}
+              productName={product.name}
+              price={(product as any).price}
+            />
+          )}
+          
+          {/* Marketplace Link */}
+          {product.externalUrl && (
+            <Link href={product.externalUrl} target="_blank" rel="noopener noreferrer">
+              <Button variant={(product as any).price ? "secondary" : "primary"} size="lg">
+                <ExternalLink className="w-5 h-5 mr-2" />
+                {(product as any).price ? "View on Marketplace" : "Get It on Marketplace"}
+              </Button>
+            </Link>
+          )}
+          
           {hasDocumentation ? (
             <Link href={`/docs/${slug}`}>
               <Button variant="secondary" size="lg">
@@ -129,6 +144,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </CardContent>
           </Card>
         </div>
+
+        {/* Gallery Section */}
+        {(product as any).gallery && (product as any).gallery.length > 0 && (
+          <ProductGallery 
+            images={(product as any).gallery} 
+            productName={product.name} 
+          />
+        )}
 
         {/* Features or Sub-Products Grid */}
         {(product as any).isMegapack && (product as any).subProducts ? (
