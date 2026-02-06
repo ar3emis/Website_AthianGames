@@ -10,6 +10,8 @@ import {
   AvailabilityConfig,
 } from "@/lib/availability/availabilityData";
 
+export const dynamic = 'force-dynamic';
+
 // GET - Fetch current availability config and available slots
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;

@@ -51,94 +51,92 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative pt-24 pb-16 overflow-hidden">
+    <section className="relative pt-32 pb-24 overflow-hidden bg-black">
       {/* Animated background */}
-      <div className="absolute inset-0 grid-pattern opacity-20" />
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-background" />
+      <div className="absolute inset-0 grid-pattern opacity-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 via-black to-black" />
 
       {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-900/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-900/10 rounded-full blur-3xl animate-pulse delay-1000" />
 
       <div className="container-custom relative z-10">
-        {/* Trailer Carousel */}
-        <div className="mb-16">
-          <TrailerCarousel trailerVideoId={defaultSiteConfig.trailer.videoId} />
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Left Section - Content */}
+          <div className="lg:col-span-5">
+            {/* Badge */}
+            <div className="inline-flex items-center px-4 py-2 mb-8 bg-purple-500/10 border border-purple-500/20 rounded-full">
+              <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse" />
+              <span className="text-sm font-medium text-purple-400">
+                Independent Unreal Engine Studio
+              </span>
+            </div>
 
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 mb-8 bg-primary/10 border border-primary/20 rounded-full">
-            <span className="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse" />
-            <span className="text-sm font-medium text-primary">
-              Independent Unreal Engine Studio
-            </span>
-          </div>
+            {/* Main Heading */}
+            <h1 className="mb-6 text-5xl md:text-6xl font-bold text-white leading-tight">
+              Professional Unreal Engine
+              <br />
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+                Tools & Assets
+              </span>
+            </h1>
 
-          {/* Heading */}
-          <h1 className="mb-6 text-gradient">
-            Professional Unreal Engine
-            <br />
-            Tools & Assets
-          </h1>
+            {/* Subheading */}
+            <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-xl">
+              Production-ready plugins, procedural systems, and VFX tools
+              for serious creators. No corporate fluff. Just credible,
+              technically sound solutions.
+            </p>
 
-          {/* Subheading */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Production-ready plugins, procedural systems, and VFX tools
-            for serious creators. No corporate fluff. Just credible,
-            technically sound solutions.
-          </p>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Link href="/products">
+                <Button size="lg" className="group bg-purple-600 hover:bg-purple-700 text-white">
+                  Browse Products
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link
+                href={defaultSiteConfig.patreon.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="secondary" size="lg" className="group">
+                  <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M15.386.524c-4.764 0-8.64 3.876-8.64 8.64 0 4.75 3.876 8.613 8.64 8.613 4.75 0 8.614-3.864 8.614-8.613C24 4.4 20.136.524 15.386.524M.003 23.537h4.22V.524H.003" />
+                  </svg>
+                  Patreon
+                </Button>
+              </Link>
+            </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Link href="/products">
-              <Button size="lg" className="group">
-                Browse Products
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            <Link
-              href={defaultSiteConfig.patreon.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="secondary" size="lg" className="group">
-                <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M15.386.524c-4.764 0-8.64 3.876-8.64 8.64 0 4.75 3.876 8.613 8.64 8.613 4.75 0 8.614-3.864 8.614-8.613C24 4.4 20.136.524 15.386.524M.003 23.537h4.22V.524H.003" />
-                </svg>
-                Patreon
-              </Button>
-            </Link>
-          </div>
-
-          {/* Quick stats */}
-          <div className="grid grid-cols-2 gap-8 max-w-xl mx-auto pt-12 border-t border-border">
-            <div>
-              <div className="flex items-center justify-center gap-2 mb-2">
-                <Youtube className="w-6 h-6 text-primary" />
-                <div className="text-3xl font-bold text-gradient">{youtubeStats.subscribers}</div>
+            {/* Quick stats */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-4">
+                <div className="flex items-center justify-center gap-2">
+                  <Youtube className="w-6 h-6 text-red-500" />
+                  <div className="text-3xl font-bold text-white">{youtubeStats.subscribers}</div>
+                </div>
+                <div className="text-sm text-gray-400">
+                  YouTube Subscribers
+                  {youtubeStats.isLive && (
+                    <span className="ml-2 inline-flex items-center">
+                      <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                    </span>
+                  )}
+                </div>
               </div>
-              <div className="text-sm text-muted-foreground">
-                YouTube Subscribers
-                {youtubeStats.isLive && (
-                  <span className="ml-2 inline-flex items-center">
-                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                  </span>
-                )}
+              <div className="flex items-center gap-4">
+                <div className="text-3xl font-bold text-white">{productCount}+</div>
+                <div className="text-sm text-gray-400">Published Tools</div>
               </div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-gradient mb-2">{productCount}+</div>
-              <div className="text-sm text-muted-foreground">Published Tools</div>
-            </div>
           </div>
-        </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex items-start justify-center p-2">
-          <div className="w-1 h-2 bg-primary rounded-full animate-pulse" />
+          {/* Right Section - Carousel */}
+          <div className="lg:col-span-7">
+            <TrailerCarousel trailerVideoId={defaultSiteConfig.trailer.videoId} />
+          </div>
         </div>
       </div>
     </section>

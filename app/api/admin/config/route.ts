@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
 
+export const dynamic = 'force-dynamic';
+
 const CONFIG_FILE = path.join(process.cwd(), 'lib', 'config', 'siteConfig.json');
 
 // Check if request is from localhost

@@ -34,6 +34,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Athian Games" }],
   creator: "Athian Games",
+  icons: {
+    icon: "/images/companylogo.png",
+  },
   metadataBase: new URL(process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000"),
   openGraph: {
     type: "website",

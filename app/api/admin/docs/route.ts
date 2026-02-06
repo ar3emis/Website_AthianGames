@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { productDetails } from "@/lib/products/productData";
 import { getDocumentation, getAllDocumentation } from "@/lib/docs/docsData";
 
+export const dynamic = 'force-dynamic';
+
 // Helper to check if request is from localhost
 function isLocalhost(req: NextRequest) {
   const hostname = req.headers.get("host") || "";

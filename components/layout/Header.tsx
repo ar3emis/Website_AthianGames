@@ -15,23 +15,14 @@ const baseNavigation = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [showAdmin, setShowAdmin] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    
     // Only show admin link on localhost (development)
     const isLocalhost = typeof window !== "undefined" && 
       (window.location.hostname === "localhost" || 
        window.location.hostname === "127.0.0.1");
     setShowAdmin(isLocalhost);
-    
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navigation = showAdmin 
@@ -40,28 +31,17 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-lg"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-gray-200 shadow-lg`}
     >
-      <nav className="container-custom flex items-center justify-between py-4">
+      <nav className="container-custom flex items-center justify-between py-3">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 group">
           <Image
-            src="/images/logo-sm.svg"
+            src="/images/companylogowithname.png"
             alt="Athian Games"
-            width={40}
-            height={40}
-            className="transition-transform group-hover:scale-110"
-          />
-          <Image
-            src="/images/logo.svg"
-            alt="Athian Games"
-            width={160}
-            height={41}
-            className="hidden sm:block"
+            width={180}
+            height={45}
+            className="transition-transform group-hover:scale-105 h-auto"
           />
         </Link>
 
@@ -71,10 +51,10 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+              className="text-sm font-medium text-black hover:text-gray-600 transition-colors relative group"
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300" />
             </Link>
           ))}
         </div>
@@ -85,7 +65,7 @@ export function Header() {
             href="https://www.fab.com/sellers/Athian%20Games"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="text-sm font-medium text-black hover:text-gray-600 transition-colors"
           >
             FAB Marketplace
           </Link>
@@ -93,7 +73,7 @@ export function Header() {
             href="https://youtube.com/@athiangames"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-lg text-muted-foreground hover:text-red-500 hover:bg-red-500/10 transition-colors"
+            className="p-2 rounded-lg text-black hover:text-red-500 hover:bg-red-500/10 transition-colors"
             title="YouTube Channel"
           >
             <Youtube className="h-5 w-5" />
@@ -103,7 +83,7 @@ export function Header() {
         {/* Mobile menu button */}
         <button
           type="button"
-          className="lg:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
+          className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors text-black"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
@@ -116,24 +96,24 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-xl">
+        <div className="lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-xl">
           <div className="container-custom py-4 space-y-3">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="block py-2 text-base font-medium text-black hover:text-gray-600 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="pt-4 space-y-3 border-t border-border">
+            <div className="pt-4 space-y-3 border-t border-gray-200">
               <Link
                 href="https://www.fab.com/sellers/Athian%20Games"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="block py-2 text-base font-medium text-black hover:text-gray-600 transition-colors"
               >
                 FAB Marketplace
               </Link>
@@ -141,7 +121,7 @@ export function Header() {
                 href="https://youtube.com/@athiangames"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 py-2 text-base font-medium text-muted-foreground hover:text-red-500 transition-colors"
+                className="flex items-center gap-2 py-2 text-base font-medium text-black hover:text-red-500 transition-colors"
               >
                 <Youtube className="h-5 w-5" />
                 YouTube
