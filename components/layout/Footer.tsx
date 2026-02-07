@@ -14,6 +14,7 @@ const footerLinks = {
   ],
   support: [
     { name: "Documentation", href: "/docs" },
+    { name: "FAQ", href: "/faq" },
     { name: "License Information", href: "/license" },
     { name: "Terms of Service", href: "/terms" },
     { name: "Privacy Policy", href: "/privacy" },

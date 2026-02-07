@@ -31,22 +31,24 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-gray-200 shadow-lg`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-gray-10 shadow-sm`}
+      style={{ height: '64px' }}
     >
-      <nav className="container-custom flex items-center justify-between py-3">
+      <nav className="container-custom flex items-center justify-between h-full px-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2 group">
+        <Link href="/" className="flex items-center group" style={{paddingTop: '8px', paddingBottom: '8px' }}>
           <Image
             src="/images/companylogowithname.png"
             alt="Athian Games"
-            width={180}
-            height={45}
-            className="transition-transform group-hover:scale-105 h-auto"
+            width={280}
+            height={170}
+            className="transition-transform group-hover:scale-105"
+            style={{ height: '60px', width: 'auto', objectFit: 'contain' }}
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center space-x-6">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -54,13 +56,13 @@ export function Header() {
               className="text-sm font-medium text-black hover:text-gray-600 transition-colors relative group"
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300" />
+              <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300" />
             </Link>
           ))}
         </div>
 
         {/* CTA Buttons */}
-        <div className="hidden lg:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-3">
           <Link
             href="https://www.fab.com/sellers/Athian%20Games"
             target="_blank"
@@ -73,7 +75,7 @@ export function Header() {
             href="https://youtube.com/@athiangames"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-lg text-black hover:text-red-500 hover:bg-red-500/10 transition-colors"
+            className="p-1.5 rounded-lg text-black hover:text-red-500 hover:bg-red-500/10 transition-colors"
             title="YouTube Channel"
           >
             <Youtube className="h-5 w-5" />
@@ -83,7 +85,7 @@ export function Header() {
         {/* Mobile menu button */}
         <button
           type="button"
-          className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors text-black"
+          className="lg:hidden p-1.5 rounded-lg hover:bg-gray-100 transition-colors text-black"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (

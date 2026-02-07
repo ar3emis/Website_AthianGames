@@ -1,55 +1,25 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Youtube } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { TrailerCarousel } from "./TrailerCarousel";
 import { defaultSiteConfig } from "@/lib/config/siteConfig";
+import { productDetails } from "@/lib/products/productData";
+
+// Get 4 latest products for the carousel
+const latestProductSlides = Object.values(productDetails)
+  .slice(0, 4)
+  .map((product: any) => ({
+    type: "product" as const,
+    productSlug: product.slug,
+    imageUrl: product.thumbnail || product.bannerImage,
+    title: product.name,
+    description: product.summary,
+    videoId: product.videoId,
+  }));
 
 export function HeroSection() {
-  const [youtubeStats, setYoutubeStats] = useState({
-    subscribers: "5.2K+",
-    isLive: false
-  });
-  const [productCount, setProductCount] = useState(10);
-
-  // Fetch YouTube subscribers
-  useEffect(() => {
-    const fetchYoutubeStats = async () => {
-      try {
-        const response = await fetch('/api/youtube/subscribers');
-        const data = await response.json();
-        setYoutubeStats({
-          subscribers: data.subscribers,
-          isLive: data.isLive
-        });
-      } catch (error) {
-        console.error('Failed to fetch YouTube stats:', error);
-      }
-    };
-
-    fetchYoutubeStats();
-    // Refresh every 5 minutes
-    const interval = setInterval(fetchYoutubeStats, 300000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Fetch product count
-  useEffect(() => {
-    const fetchProductCount = async () => {
-      try {
-        const response = await fetch('/api/products/count');
-        const data = await response.json();
-        setProductCount(data.count);
-      } catch (error) {
-        console.error('Failed to fetch product count:', error);
-      }
-    };
-
-    fetchProductCount();
-  }, []);
-
   return (
     <section className="relative pt-32 pb-24 overflow-hidden bg-black">
       {/* Animated background */}
@@ -110,32 +80,14 @@ export function HeroSection() {
               </Link>
             </div>
 
-            {/* Quick stats */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center gap-2">
-                  <Youtube className="w-6 h-6 text-red-500" />
-                  <div className="text-3xl font-bold text-white">{youtubeStats.subscribers}</div>
-                </div>
-                <div className="text-sm text-gray-400">
-                  YouTube Subscribers
-                  {youtubeStats.isLive && (
-                    <span className="ml-2 inline-flex items-center">
-                      <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                    </span>
-                  )}
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="text-3xl font-bold text-white">{productCount}+</div>
-                <div className="text-sm text-gray-400">Published Tools</div>
-              </div>
-            </div>
           </div>
 
           {/* Right Section - Carousel */}
           <div className="lg:col-span-7">
-            <TrailerCarousel trailerVideoId={defaultSiteConfig.trailer.videoId} />
+            <TrailerCarousel 
+              trailerVideoId={defaultSiteConfig.trailer.videoId} 
+              slides={latestProductSlides}
+            />
           </div>
         </div>
       </div>

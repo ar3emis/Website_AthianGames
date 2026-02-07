@@ -501,35 +501,28 @@ Features include dynamic day/night cycles, customizable star fields, procedural 
     engineVersions: ["UE 5.0+"],
     externalUrl: "https://www.fab.com/sellers/Athian%20Games",
     videoId: "",
-    thumbnail: "/images/products/procedural-skybox/thumbnail.jpg",
-    bannerImage: "/images/products/procedural-skybox/thumbnail.jpg",
-    gallery: [
-      "/images/products/procedural-skybox/media_01.jpg",
-      "/images/products/procedural-skybox/media_02.jpg",
-      "/images/products/procedural-skybox/feature_01.jpg",
-      "/images/products/procedural-skybox/feature_02.jpg",
-      "/images/products/procedural-skybox/feature_03.jpg"
-    ],
+    thumbnail: "/images/products/procedural-skybox/cs_screenshot02.jpg",
+    bannerImage: "/images/products/procedural-skybox/cs_screenshot02.jpg",
     features: [
       {
         title: "Fully Procedural Generation",
         description: "All sky elements are generated procedurally - no baked textures required.",
-        image: "/images/products/procedural-skybox/feature_01.jpg"
+        image: "/images/products/procedural-skybox/cs_screenshot02.jpg"
       },
       {
         title: "Day/Night Cycle",
         description: "Built-in time of day system with smooth transitions between day, sunset, night, and sunrise.",
-        image: "/images/products/procedural-skybox/feature_02.jpg"
+        image: "/images/products/procedural-skybox/cs_screenshot02.jpg"
       },
       {
         title: "Procedural Clouds",
         description: "Customizable cloud layers with density, coverage, and animation controls.",
-        image: "/images/products/procedural-skybox/feature_03.jpg"
+        image: "/images/products/procedural-skybox/cs_screenshot02.jpg"
       },
       {
         title: "Atmospheric Scattering",
         description: "Physically-based atmospheric scattering for realistic horizon colors and sky gradients.",
-        image: "/images/products/procedural-skybox/media_01.jpg"
+        image: "/images/products/procedural-skybox/cs_screenshot02.jpg"
       }
     ]
   },
@@ -548,41 +541,28 @@ Ideal for sci-fi games, educational applications, and any project that needs to 
     engineVersions: ["UE 5.0+"],
     externalUrl: "https://www.fab.com/sellers/Athian%20Games",
     videoId: "",
-    thumbnail: "/images/products/volumetric-black-hole/thumbnail.jpg",
-    bannerImage: "/images/products/volumetric-black-hole/thumbnail.jpg",
-    gallery: [
-      "/images/products/volumetric-black-hole/media_01.jpg",
-      "/images/products/volumetric-black-hole/media_02.jpg",
-      "/images/products/volumetric-black-hole/media_03.jpg",
-      "/images/products/volumetric-black-hole/media_04.jpg",
-      "/images/products/volumetric-black-hole/media_05.jpg",
-      "/images/products/volumetric-black-hole/media_06.jpg",
-      "/images/products/volumetric-black-hole/media_07.jpg",
-      "/images/products/volumetric-black-hole/media_08.jpg",
-      "/images/products/volumetric-black-hole/media_09.jpg",
-      "/images/products/volumetric-black-hole/media_10.jpg",
-      "/images/products/volumetric-black-hole/media_11.jpg"
-    ],
+    thumbnail: "/images/products/volumetric-black-hole/HighresScreenshot00006.png",
+    bannerImage: "/images/products/volumetric-black-hole/HighresScreenshot00006.png",
     features: [
       {
         title: "Accretion Disk",
         description: "Glowing accretion disk with customizable colors, intensity, and rotation speed.",
-        image: "/images/products/volumetric-black-hole/media_01.jpg"
+        image: "/images/products/volumetric-black-hole/HighresScreenshot00006.png"
       },
       {
         title: "Gravitational Lensing",
         description: "Screen-space distortion simulating the light-bending effect of extreme gravity.",
-        image: "/images/products/volumetric-black-hole/media_02.jpg"
+        image: "/images/products/volumetric-black-hole/HighresScreenshot00006.png"
       },
       {
         title: "Event Horizon Rendering",
         description: "Realistic black sphere representing the point of no return with proper shadowing.",
-        image: "/images/products/volumetric-black-hole/media_03.jpg"
+        image: "/images/products/volumetric-black-hole/HighresScreenshot00006.png"
       },
       {
         title: "Customizable Parameters",
         description: "Full control over size, colors, distortion strength, and visual effects.",
-        image: "/images/products/volumetric-black-hole/media_04.jpg"
+        image: "/images/products/volumetric-black-hole/HighresScreenshot00006.png"
       }
     ]
   },
@@ -601,44 +581,28 @@ Perfect for space games, galaxy maps, loading screens, and any project requiring
     engineVersions: ["UE 5.0+"],
     externalUrl: "https://www.fab.com/sellers/Athian%20Games",
     videoId: "",
-    thumbnail: "/images/products/procedural-galaxy-system/thumbnail.jpg",
-    bannerImage: "/images/products/procedural-galaxy-system/thumbnail.jpg",
-    gallery: [
-      "/images/products/procedural-galaxy-system/media_01.jpg",
-      "/images/products/procedural-galaxy-system/media_02.jpg",
-      "/images/products/procedural-galaxy-system/media_03.jpg",
-      "/images/products/procedural-galaxy-system/media_04.jpg",
-      "/images/products/procedural-galaxy-system/media_05.jpg",
-      "/images/products/procedural-galaxy-system/media_06.jpg",
-      "/images/products/procedural-galaxy-system/media_07.jpg",
-      "/images/products/procedural-galaxy-system/media_08.jpg",
-      "/images/products/procedural-galaxy-system/media_09.jpg",
-      "/images/products/procedural-galaxy-system/media_10.jpg",
-      "/images/products/procedural-galaxy-system/media_11.jpg",
-      "/images/products/procedural-galaxy-system/media_12.jpg",
-      "/images/products/procedural-galaxy-system/media_13.jpg",
-      "/images/products/procedural-galaxy-system/media_14.jpg"
-    ],
+    thumbnail: "/images/products/procedural-galaxy-system/cs_screenshot05.jpg",
+    bannerImage: "/images/products/procedural-galaxy-system/cs_screenshot05.jpg",
     features: [
       {
         title: "Spiral Arm Generation",
         description: "Customizable spiral arm count, tightness, and star distribution patterns.",
-        image: "/images/products/procedural-galaxy-system/media_01.jpg"
+        image: "/images/products/procedural-galaxy-system/cs_screenshot05.jpg"
       },
       {
         title: "Star Cluster Simulation",
         description: "Dense star clusters and globular formations with realistic density falloff.",
-        image: "/images/products/procedural-galaxy-system/media_02.jpg"
+        image: "/images/products/procedural-galaxy-system/cs_screenshot05.jpg"
       },
       {
         title: "Cosmic Dust and Nebulae",
         description: "Integrated dust lanes and nebular regions for added visual depth.",
-        image: "/images/products/procedural-galaxy-system/media_03.jpg"
+        image: "/images/products/procedural-galaxy-system/cs_screenshot05.jpg"
       },
       {
         title: "High Performance",
         description: "Optimized Niagara particles handle millions of stars with minimal performance impact.",
-        image: "/images/products/procedural-galaxy-system/media_04.jpg"
+        image: "/images/products/procedural-galaxy-system/cs_screenshot05.jpg"
       }
     ]
   },

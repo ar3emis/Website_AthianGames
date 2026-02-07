@@ -9,6 +9,7 @@ import { getProductBySlug } from "@/lib/products/productData";
 import { getDocumentation } from "@/lib/docs/docsData";
 import { BuyButton } from "@/components/products/BuyButton";
 import { ProductGallery } from "@/components/products/ProductGallery";
+import { generateProductStructuredData } from "@/lib/utils/structuredData";
 
 interface ProductPageProps {
   params: Promise<{
@@ -32,9 +33,60 @@ export async function generateMetadata({
     };
   }
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://athiangames.com';
+  const productUrl = `${baseUrl}/products/${product.slug}`;
+  const images = (product as any).gallery?.map((img: string) => `${baseUrl}${img}`) || 
+                 ((product as any).thumbnail ? [`${baseUrl}${(product as any).thumbnail}`] : []);
+
   return {
-    title: product.name,
+    title: `${product.name} | Athian Games`,
     description: product.description,
+    keywords: [
+      product.name,
+      'Unreal Engine',
+      'UE5',
+      product.category,
+      'game development',
+      'Athian Games',
+      ...(product.engineVersions || []),
+    ],
+    authors: [{ name: 'Athian Games' }],
+    creator: 'Athian Games',
+    publisher: 'Athian Games',
+    openGraph: {
+      title: product.name,
+      description: product.summary,
+      url: productUrl,
+      siteName: 'Athian Games',
+      images: images.map((img: string) => ({
+        url: img,
+        width: 1200,
+        height: 630,
+        alt: product.name,
+      })),
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: product.name,
+      description: product.summary,
+      images: images,
+    },
+    alternates: {
+      canonical: productUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
   };
 }
 
@@ -49,8 +101,26 @@ export default async function ProductPage({ params }: ProductPageProps) {
   // Check if documentation exists for this product
   const hasDocumentation = getDocumentation(slug) !== null;
 
+  // Generate structured data for SEO and AI
+  const productStructuredData = generateProductStructuredData({
+    name: product.name,
+    description: product.description,
+    thumbnail: (product as any).thumbnail,
+    gallery: (product as any).gallery,
+    price: (product as any).price,
+    externalUrl: (product as any).externalUrl,
+  });
+
   return (
     <div className="min-h-screen pt-24 pb-16">
+      {/* JSON-LD Structured Data for SEO and AI */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productStructuredData),
+        }}
+      />
+
       <div className="container-custom">
         {/* Back button */}
         <Link

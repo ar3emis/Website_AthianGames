@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { AuthProvider } from "@/components/providers/AuthProvider";
 import { headers } from "next/headers";
 
 const inter = Inter({
@@ -16,12 +17,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000"),
   title: {
     default: "Athian Games - Professional Unreal Engine Tools & Assets",
     template: "%s | Athian Games",
   },
   description:
-    "High-quality Unreal Engine plugins, tools, and assets for serious creators. Production-ready solutions for game development, VFX, and procedural systems.",
+    "High-quality Unreal Engine plugins, tools, and assets for serious creators. Production-ready solutions for game development, VFX, and procedural systems. Discover premium UE5 assets, blueprints, and materials.",
   keywords: [
     "Unreal Engine",
     "UE5",
@@ -31,13 +33,29 @@ export const metadata: Metadata = {
     "VFX",
     "procedural generation",
     "Athian Games",
+    "blueprints",
+    "materials",
+    "Niagara",
+    "post-process effects",
+    "shaders",
+    "tools",
+    "Unreal Engine marketplace",
+    "FAB marketplace",
+    "indie game development",
   ],
-  authors: [{ name: "Athian Games" }],
+  authors: [{ name: "Athian Games", url: "https://athiangames.com" }],
   creator: "Athian Games",
+  publisher: "Athian Games",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: "/images/companylogo.png",
+    shortcut: "/images/companylogo.png",
+    apple: "/images/companylogo.png",
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000"),
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -45,13 +63,13 @@ export const metadata: Metadata = {
     siteName: "Athian Games",
     title: "Athian Games - Professional Unreal Engine Tools & Assets",
     description:
-      "High-quality Unreal Engine plugins, tools, and assets for serious creators.",
+      "High-quality Unreal Engine plugins, tools, and assets for serious creators. Production-ready solutions for game development, VFX, and procedural systems.",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Athian Games",
+        alt: "Athian Games - Professional Unreal Engine Tools",
       },
     ],
   },
@@ -61,18 +79,31 @@ export const metadata: Metadata = {
     description:
       "High-quality Unreal Engine plugins, tools, and assets for serious creators.",
     images: ["/images/twitter-image.jpg"],
+    creator: "@athiangames",
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
+  alternates: {
+    canonical: "/",
+    types: {
+      'application/rss+xml': '/rss.xml',
+    },
+  },
+  category: 'technology',
 };
 
 export default async function RootLayout({
@@ -89,9 +120,11 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body>
-        {!isCreatorSubdomain && <Header />}
-        <main className="min-h-screen">{children}</main>
-        {!isCreatorSubdomain && <Footer />}
+        <AuthProvider>
+          {!isCreatorSubdomain && <Header />}
+          <main className="min-h-screen">{children}</main>
+          {!isCreatorSubdomain && <Footer />}
+        </AuthProvider>
       </body>
     </html>
   );

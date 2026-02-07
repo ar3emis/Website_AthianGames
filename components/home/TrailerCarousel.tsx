@@ -1,16 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight, Youtube, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 
 interface Slide {
-  type: "video" | "image";
+  type: "video" | "image" | "product";
   videoId?: string;
   imageUrl?: string;
   title: string;
   description?: string;
   thumbnail?: string;
+  productSlug?: string;
 }
 
 interface TrailerCarouselProps {
@@ -20,7 +22,7 @@ interface TrailerCarouselProps {
 
 export function TrailerCarousel({ trailerVideoId, slides = [] }: TrailerCarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [showVideoPopup, setShowVideoPopup] = useState(false);
 
   // Default slides with trailer as first
   const allSlides: Slide[] = [
@@ -36,29 +38,26 @@ export function TrailerCarousel({ trailerVideoId, slides = [] }: TrailerCarousel
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % allSlides.length);
-    setIsPlaying(false);
   };
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + allSlides.length) % allSlides.length);
-    setIsPlaying(false);
   };
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
-    setIsPlaying(false);
   };
 
-  // Auto-play carousel (skip if video is playing)
+  // Auto-rotate carousel for product slides only
   useEffect(() => {
-    if (isPlaying || allSlides[currentSlide].type === "video") return;
+    if (allSlides[currentSlide].type === "video") return;
 
     const timer = setInterval(() => {
       nextSlide();
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [currentSlide, isPlaying]);
+  }, [currentSlide]);
 
   const currentSlideData = allSlides[currentSlide];
 
@@ -71,7 +70,6 @@ export function TrailerCarousel({ trailerVideoId, slides = [] }: TrailerCarousel
       return Array.from({ length: totalSlides }, (_, i) => i);
     }
 
-    // Center the current slide in the thumbnail view
     const start = Math.max(0, currentSlide - Math.floor(thumbsToShow / 2));
     const end = Math.min(totalSlides, start + thumbsToShow);
     
@@ -86,81 +84,132 @@ export function TrailerCarousel({ trailerVideoId, slides = [] }: TrailerCarousel
 
   return (
     <div className="w-full">
+      {/* Video Popup Modal */}
+      {showVideoPopup && currentSlideData.type === "video" && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setShowVideoPopup(false)}
+        >
+          <div 
+            className="relative w-full max-w-5xl aspect-video"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowVideoPopup(false)}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 text-lg font-medium"
+            >
+              Close ✕
+            </button>
+            <iframe
+              src={`https://www.youtube.com/embed/${currentSlideData.videoId}?autoplay=1&rel=0`}
+              title={currentSlideData.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full rounded-lg"
+            />
+          </div>
+        </div>
+      )}
+
       {/* Main Carousel */}
       <div className="relative w-full bg-black rounded-lg overflow-hidden group" style={{ aspectRatio: "16/9" }}>
         {/* Slide content */}
         <div className="relative w-full h-full">
           {currentSlideData.type === "video" ? (
+            // Showreel slide with autoplay background video
             <div className="relative w-full h-full bg-black">
-              {!isPlaying ? (
-                // Video thumbnail
-                <div className="relative w-full h-full">
-                  <img
-                    src={`https://img.youtube.com/vi/${currentSlideData.videoId}/maxresdefault.jpg`}
-                    alt={currentSlideData.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <Button
-                      size="lg"
-                      onClick={() => setIsPlaying(true)}
-                      className="w-24 h-24 rounded-full bg-white hover:bg-gray-100 text-black hover:scale-110 transition-all shadow-lg"
-                    >
-                      <Play className="w-12 h-12 ml-1" fill="currentColor" />
-                    </Button>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
+              {/* Background autoplay video (muted) */}
+              <iframe
+                src={`https://www.youtube.com/embed/${currentSlideData.videoId}?autoplay=1&mute=1&loop=1&playlist=${currentSlideData.videoId}&controls=0&showinfo=0&rel=0&modestbranding=1`}
+                title={currentSlideData.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                className="absolute inset-0 w-full h-full pointer-events-none scale-125"
+                style={{ border: 'none' }}
+              />
+              
+              {/* Overlay with content */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex items-center">
+                <div className="p-8 max-w-md">
+                  <h3 className="text-3xl font-bold text-white mb-3">{currentSlideData.title}</h3>
+                  {currentSlideData.description && (
+                    <p className="text-white/80 text-base mb-6">{currentSlideData.description}</p>
+                  )}
+                  
+                  {/* Large YouTube button */}
+                  <Button
+                    size="lg"
+                    onClick={() => setShowVideoPopup(true)}
+                    className="bg-red-600 hover:bg-red-700 text-white gap-3 px-6"
+                  >
+                    <Youtube className="w-6 h-6" />
+                    Watch Showreel
+                  </Button>
+                </div>
+              </div>
+            </div>
+          ) : currentSlideData.type === "product" ? (
+            // Product slide with image background
+            <Link href={`/products/${currentSlideData.productSlug}`} className="block w-full h-full">
+              <div className="relative w-full h-full bg-black cursor-pointer">
+                {/* Background image */}
+                <img
+                  src={currentSlideData.imageUrl || `https://img.youtube.com/vi/${currentSlideData.videoId}/maxresdefault.jpg`}
+                  alt={currentSlideData.title}
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Overlay with product info */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent flex items-center">
+                  <div className="p-8 max-w-md">
                     <h3 className="text-2xl font-bold text-white mb-2">{currentSlideData.title}</h3>
                     {currentSlideData.description && (
-                      <p className="text-white/80 text-sm">{currentSlideData.description}</p>
+                      <p className="text-white/80 text-sm mb-4 line-clamp-2">{currentSlideData.description}</p>
                     )}
+                    
+                    <span className="inline-flex items-center gap-2 text-purple-400 font-medium group-hover:text-purple-300 transition-colors">
+                      View Product
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
                   </div>
                 </div>
-              ) : (
-                // Playing video
-                <iframe
-                  src={`https://www.youtube.com/embed/${currentSlideData.videoId}?autoplay=1&rel=0`}
-                  title={currentSlideData.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-              )}
-            </div>
+              </div>
+            </Link>
           ) : (
-            // Image slide
+            // Image slide fallback
             <div className="relative w-full h-full">
               <img
                 src={currentSlideData.imageUrl}
                 alt={currentSlideData.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
-                <h3 className="text-2xl font-bold text-white mb-2">{currentSlideData.title}</h3>
-                {currentSlideData.description && (
-                  <p className="text-white/80 text-sm">{currentSlideData.description}</p>
-                )}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent flex items-center">
+                <div className="p-8 max-w-md">
+                  <h3 className="text-2xl font-bold text-white mb-2">{currentSlideData.title}</h3>
+                  {currentSlideData.description && (
+                    <p className="text-white/80 text-sm">{currentSlideData.description}</p>
+                  )}
+                </div>
               </div>
             </div>
           )}
         </div>
 
         {/* Navigation arrows */}
-        {allSlides.length > 1 && !isPlaying && (
+        {allSlides.length > 1 && (
           <>
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"
               aria-label="Previous slide"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"
               aria-label="Next slide"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5" />
             </button>
           </>
         )}
@@ -168,34 +217,37 @@ export function TrailerCarousel({ trailerVideoId, slides = [] }: TrailerCarousel
 
       {/* Thumbnail Navigation */}
       {allSlides.length > 1 && (
-        <div className="flex gap-3 mt-6 overflow-x-auto pb-2">
-          {visibleThumbnailIndices.map((index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`flex-shrink-0 relative rounded-lg overflow-hidden transition-all duration-300 ${
-                index === currentSlide
-                  ? "ring-2 ring-purple-500 h-20 w-24"
-                  : "h-16 w-20 hover:ring-2 hover:ring-purple-400 opacity-60 hover:opacity-100"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            >
-              <img
-                src={
-                  allSlides[index].type === "video"
-                    ? `https://img.youtube.com/vi/${allSlides[index].videoId}/mqdefault.jpg`
-                    : allSlides[index].imageUrl
-                }
-                alt={allSlides[index].title}
-                className="w-full h-full object-cover"
-              />
-              {allSlides[index].type === "video" && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-                  <Play className="w-4 h-4 text-white fill-white" />
-                </div>
-              )}
-            </button>
-          ))}
+        <div className="flex gap-3 mt-4 overflow-x-auto pb-2">
+          {visibleThumbnailIndices.map((index) => {
+            const slide = allSlides[index];
+            const thumbnailSrc = slide.type === "video" 
+              ? `https://img.youtube.com/vi/${slide.videoId}/mqdefault.jpg`
+              : slide.imageUrl || `https://img.youtube.com/vi/${slide.videoId}/mqdefault.jpg`;
+            
+            return (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`flex-shrink-0 relative rounded-lg overflow-hidden transition-all duration-300 ${
+                  index === currentSlide
+                    ? "ring-2 ring-purple-500 h-16 w-24"
+                    : "h-14 w-20 hover:ring-2 hover:ring-purple-400 opacity-60 hover:opacity-100"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              >
+                <img
+                  src={thumbnailSrc}
+                  alt={slide.title}
+                  className="w-full h-full object-cover"
+                />
+                {slide.type === "video" && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                    <Youtube className="w-4 h-4 text-red-500" />
+                  </div>
+                )}
+              </button>
+            );
+          })}
         </div>
       )}
     </div>
