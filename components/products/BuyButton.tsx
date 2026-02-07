@@ -44,6 +44,14 @@ export function BuyButton({ productSlug, productName, price }: BuyButtonProps) {
         throw new Error(data.error || "Checkout failed");
       }
 
+      // Check if it's a FREE testing purchase
+      if (data.free && data.redirectUrl) {
+        // Show success message and redirect to library
+        setError(""); // Clear any errors
+        router.push(data.redirectUrl);
+        return;
+      }
+
       if (data.approvalUrl) {
         window.location.href = data.approvalUrl;
       } else {

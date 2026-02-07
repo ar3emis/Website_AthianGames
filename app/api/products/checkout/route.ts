@@ -1,11 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/authOptions";
+import { prisma } from "@/lib/prisma";
+import { getProductBySlug } from "@/lib/products/productData";
 
 const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID;
 const PAYPAL_CLIENT_SECRET = process.env.PAYPAL_CLIENT_SECRET;
 const PAYPAL_MODE = process.env.PAYPAL_MODE || "sandbox";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
+// Testing account - gets everything FREE
+const FREE_TESTING_EMAIL = "sameek.kundu@athiangames.com";
 
 function getPayPalBaseUrl(): string {
   return PAYPAL_MODE === "live"
@@ -45,6 +50,70 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
+
+    // ============================================
+    // FREE TESTING MODE for sameek.kundu@athiangames.com
+    // ============================================
+    if (session.user.email === FREE_TESTING_EMAIL) {
+      console.log(`🎉 FREE PURCHASE for testing account: ${session.user.email}`);
+      
+      try {
+        // Get product data to retrieve downloadUrl
+        const product = getProductBySlug(productSlug);
+        
+        // Check if purchase already exists
+        const existingPurchase = await prisma.purchase.findFirst({
+          where: {
+            userId: session.user.id,
+            productSlug: productSlug,
+          },
+        });
+
+        if (existingPurchase) {
+          console.log(`✅ Purchase already exists, redirecting to library`);
+          return NextResponse.json({
+            success: true,
+            free: true,
+            message: "Product already in your library!",
+            redirectUrl: "/library",
+          });
+        }
+
+        // Create FREE purchase for testing
+        await prisma.purchase.create({
+          data: {
+            userId: session.user.id,
+            productSlug: productSlug,
+            productName: productName,
+            price: 0, // FREE for testing
+            currency: currency,
+            transactionId: `FREE-TEST-${Date.now()}`,
+            status: "completed",
+            downloadUrl: (product as any)?.downloadUrl || null,
+            downloadCount: 0,
+            maxDownloads: 999, // Unlimited downloads for testing
+          },
+        });
+
+        console.log(`✅ FREE purchase created for: ${productName}`);
+
+        return NextResponse.json({
+          success: true,
+          free: true,
+          message: "FREE testing purchase completed!",
+          redirectUrl: "/library",
+        });
+      } catch (error) {
+        console.error("Failed to create free purchase:", error);
+        return NextResponse.json(
+          { error: "Failed to create test purchase" },
+          { status: 500 }
+        );
+      }
+    }
+    // ============================================
+    // END FREE TESTING MODE
+    // ============================================
 
     if (!PAYPAL_CLIENT_ID || !PAYPAL_CLIENT_SECRET) {
       return NextResponse.json(

@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe/server";
+import { prisma } from "@/lib/prisma";
+import { getProductBySlug } from "@/lib/products/productData";
 import Stripe from "stripe";
 
 export async function POST(request: NextRequest) {
@@ -34,10 +36,40 @@ export async function POST(request: NextRequest) {
     case "checkout.session.completed":
       const session = event.data.object as Stripe.Checkout.Session;
 
-      // TODO: Fulfill the purchase
-      // - Send download link via email
-      // - Add to user's library if you have user accounts
-      // - Update database with purchase record
+      // Get product details
+      const productSlug = session.metadata?.productSlug;
+      const userId = session.metadata?.userId;
+
+      if (productSlug && userId) {
+        try {
+          // Get product data to retrieve downloadUrl
+          const product = getProductBySlug(productSlug);
+          
+          // Create purchase record
+          await prisma.purchase.create({
+            data: {
+              userId: userId,
+              productSlug: productSlug,
+              productName: session.metadata?.productName || "Unknown Product",
+              price: (session.amount_total || 0) / 100, // Convert from cents
+              currency: session.currency?.toUpperCase() || "USD",
+              transactionId: session.payment_intent as string,
+              status: "completed",
+              downloadUrl: (product as any)?.downloadUrl || null,
+              downloadCount: 0,
+              maxDownloads: 5,
+            },
+          });
+
+          console.log("Purchase created:", {
+            productSlug,
+            userId,
+            downloadUrl: (product as any)?.downloadUrl,
+          });
+        } catch (error) {
+          console.error("Failed to create purchase:", error);
+        }
+      }
 
       console.log("Payment successful:", {
         sessionId: session.id,

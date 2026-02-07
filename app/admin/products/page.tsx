@@ -180,9 +180,16 @@ export default function AdminProductsPage() {
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex-1">
                     <h3 className="font-bold text-lg mb-1">{product.name}</h3>
-                    <Badge variant="secondary" className="mb-2">
-                      {product.category}
-                    </Badge>
+                    <div className="flex items-center gap-2 mb-2">
+                      <Badge variant="secondary">
+                        {product.category}
+                      </Badge>
+                      {product.price !== undefined && product.price !== null && (
+                        <Badge variant="primary">
+                          ${product.price.toFixed(2)}
+                        </Badge>
+                      )}
+                    </div>
                   </div>
                 </div>
 

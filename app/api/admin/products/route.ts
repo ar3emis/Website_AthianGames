@@ -26,6 +26,7 @@ export async function GET(req: NextRequest) {
       name: product.name,
       slug: product.slug,
       category: product.category,
+      price: (product as any).price,
       isExternal: product.externalUrl ? true : false,
       externalUrl: product.externalUrl,
       isFeatured: (product as any).isMegapack || false,
