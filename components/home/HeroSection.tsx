@@ -8,7 +8,7 @@ import { defaultSiteConfig } from "@/lib/config/siteConfig";
 import { productDetails } from "@/lib/products/productData";
 
 // Get 4 latest products for the carousel, but replace minimap with FabricAI
-const productOrder = [
+const productOrder: (keyof typeof productDetails)[] = [
   "fabric-ai",
   "procedural-vortex-tunnel",
   "art-of-shader-distortion-and-glitches",
@@ -18,13 +18,13 @@ const productOrder = [
 const latestProductSlides = productOrder
   .map((slug) => productDetails[slug])
   .filter(Boolean)
-  .map((product: any) => ({
+  .map((product) => ({
     type: "product" as const,
     productSlug: product.slug,
-    imageUrl: product.thumbnail || product.bannerImage,
+    imageUrl: product.thumbnail,
     title: product.name,
     description: product.summary,
-    videoId: product.videoId,
+    videoId: (product as any).videoId || "",
   }));
 
 export function HeroSection() {
