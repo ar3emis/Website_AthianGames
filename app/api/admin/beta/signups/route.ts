@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { jsonStorage } from "@/lib/storage/jsonStorage";
 
 // Helper to check if request is from localhost
 function isLocalhost(req: NextRequest) {
@@ -26,12 +27,20 @@ export async function GET(req: NextRequest) {
     if (productSlug) where.productSlug = productSlug;
     if (status) where.status = status;
 
-    const signups = await prisma.betaSignup.findMany({
-      where,
-      orderBy: {
-        createdAt: "desc",
-      },
-    });
+    let signups;
+    try {
+      // Try Prisma first
+      signups = await prisma.betaSignup.findMany({
+        where,
+        orderBy: {
+          createdAt: "desc",
+        },
+      });
+    } catch (dbError) {
+      // Fallback to JSON storage
+      console.warn("Prisma failed, using JSON storage fallback:", dbError);
+      signups = await jsonStorage.findMany(where);
+    }
 
     // Group by product
     const byProduct: Record<string, any> = {};
@@ -95,15 +104,33 @@ export async function PUT(req: NextRequest) {
 
     const data: any = { status };
     if (status === "invited") {
-      data.invitedAt = new Date();
+      data.invitedAt = new Date().toISOString();
     } else if (status === "accepted") {
-      data.acceptedAt = new Date();
+      data.acceptedAt = new Date().toISOString();
     }
 
-    const updated = await prisma.betaSignup.update({
-      where: { id },
-      data,
-    });
+    let updated;
+    try {
+      // Try Prisma first
+      updated = await prisma.betaSignup.update({
+        where: { id },
+        data,
+      });
+    } catch (dbError) {
+      // Fallback to JSON storage
+      console.warn("Prisma failed, using JSON storage fallback:", dbError);
+      updated = await jsonStorage.update({
+        where: { id },
+        data,
+      });
+      
+      if (!updated) {
+        return NextResponse.json(
+          { error: "Signup not found" },
+          { status: 404 }
+        );
+      }
+    }
 
     console.log(`✅ Beta signup ${id} updated to: ${status}`);
 
@@ -137,9 +164,23 @@ export async function DELETE(req: NextRequest) {
       );
     }
 
-    await prisma.betaSignup.delete({
-      where: { id },
-    });
+    try {
+      // Try Prisma first
+      await prisma.betaSignup.delete({
+        where: { id },
+      });
+    } catch (dbError) {
+      // Fallback to JSON storage
+      console.warn("Prisma failed, using JSON storage fallback:", dbError);
+      const deleted = await jsonStorage.delete({ id });
+      
+      if (!deleted) {
+        return NextResponse.json(
+          { error: "Signup not found" },
+          { status: 404 }
+        );
+      }
+    }
 
     console.log(`✅ Beta signup ${id} deleted`);
 

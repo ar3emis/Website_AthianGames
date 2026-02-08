@@ -8,6 +8,8 @@ generator client {
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
+  // For Turso (production), add directUrl
+  // directUrl = env("DIRECT_DATABASE_URL")
 }
 
 // NextAuth.js models

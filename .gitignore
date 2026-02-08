@@ -37,4 +37,7 @@ yarn-error.log*
 # Payload
 /media
 
+# User data (not committed for privacy)
+/data/beta-signups.json
+
 /lib/generated/prisma

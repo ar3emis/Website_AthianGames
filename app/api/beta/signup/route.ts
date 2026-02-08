@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { jsonStorage } from "@/lib/storage/jsonStorage";
 
 // POST - Sign up for beta
 export async function POST(req: NextRequest) {
@@ -23,36 +24,72 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Check if already signed up
-    const existing = await prisma.betaSignup.findUnique({
-      where: {
+    let existing, signup;
+    let usedFallback = false;
+
+    try {
+      // Try Prisma first
+      existing = await prisma.betaSignup.findUnique({
+        where: {
+          email_productSlug: {
+            email: email.toLowerCase(),
+            productSlug,
+          },
+        },
+      });
+
+      if (existing) {
+        return NextResponse.json(
+          { error: "You're already signed up for this beta!" },
+          { status: 409 }
+        );
+      }
+
+      // Create beta signup
+      signup = await prisma.betaSignup.create({
+        data: {
+          email: email.toLowerCase(),
+          name: name || null,
+          productSlug,
+          productName,
+          message: message || null,
+          status: "pending",
+        },
+      });
+    } catch (dbError) {
+      // Fallback to JSON storage if Prisma fails
+      console.warn("Prisma failed, using JSON storage fallback:", dbError);
+      usedFallback = true;
+
+      existing = await jsonStorage.findUnique({
         email_productSlug: {
           email: email.toLowerCase(),
           productSlug,
         },
-      },
-    });
+      });
 
-    if (existing) {
-      return NextResponse.json(
-        { error: "You're already signed up for this beta!" },
-        { status: 409 }
-      );
+      if (existing) {
+        return NextResponse.json(
+          { error: "You're already signed up for this beta!" },
+          { status: 409 }
+        );
+      }
+
+      signup = await jsonStorage.create({
+        data: {
+          email: email.toLowerCase(),
+          name: name || null,
+          productSlug,
+          productName,
+          message: message || null,
+          status: "pending",
+          invitedAt: null,
+          acceptedAt: null,
+        },
+      });
     }
 
-    // Create beta signup
-    const signup = await prisma.betaSignup.create({
-      data: {
-        email: email.toLowerCase(),
-        name: name || null,
-        productSlug,
-        productName,
-        message: message || null,
-        status: "pending",
-      },
-    });
-
-    console.log(`✅ Beta signup created: ${email} for ${productName}`);
+    console.log(`✅ Beta signup created: ${email} for ${productName}${usedFallback ? ' (JSON storage)' : ''}`);
 
     return NextResponse.json({
       success: true,
@@ -70,14 +107,7 @@ export async function POST(req: NextRequest) {
     let errorMessage = "Failed to sign up for beta. Please try again later.";
     
     if (error instanceof Error) {
-      // Check for specific Prisma errors
-      if (error.message.includes("Unique constraint")) {
-        errorMessage = "You're already signed up for this beta!";
-      } else if (error.message.includes("connect")) {
-        errorMessage = "Database connection error. Please contact support.";
-      } else {
-        errorMessage = `Error: ${error.message}`;
-      }
+      errorMessage = `Error: ${error.message}`;
     }
     
     return NextResponse.json(
