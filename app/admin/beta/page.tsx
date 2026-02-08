@@ -49,6 +49,13 @@ export default function BetaSignupsPage() {
   const [byProduct, setByProduct] = useState<ProductGroup[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
   const [updating, setUpdating] = useState<string | null>(null);
+  const [sendingInvites, setSendingInvites] = useState(false);
+  const [inviteResult, setInviteResult] = useState<{
+    success: boolean;
+    message: string;
+    sent?: number;
+    failed?: number;
+  } | null>(null);
 
   const fetchSignups = async () => {
     try {
@@ -145,6 +152,49 @@ export default function BetaSignupsPage() {
     a.href = url;
     a.download = `beta-signups-${productSlug || "all"}-${new Date().toISOString().split("T")[0]}.csv`;
     a.click();
+  };
+
+  const sendInvites = async (productSlug: string) => {
+    if (!confirm(`Send beta invites to all pending signups for ${productSlug}?`)) {
+      return;
+    }
+
+    try {
+      setSendingInvites(true);
+      setInviteResult(null);
+
+      const response = await fetch("/api/admin/beta/send-invites", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ productSlug }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setInviteResult({
+          success: true,
+          message: data.message,
+          sent: data.results.sent,
+          failed: data.results.failed,
+        });
+        // Refresh signups to show updated status
+        await fetchSignups();
+      } else {
+        setInviteResult({
+          success: false,
+          message: data.error || "Failed to send invites",
+        });
+      }
+    } catch (error) {
+      console.error("Failed to send invites:", error);
+      setInviteResult({
+        success: false,
+        message: "Failed to send invites. Check console for details.",
+      });
+    } finally {
+      setSendingInvites(false);
+    }
   };
 
   const getStatusBadge = (status: string) => {
@@ -272,8 +322,8 @@ export default function BetaSignupsPage() {
         ))}
       </div>
 
-      {/* Export Buttons */}
-      <div className="mb-6 flex gap-2">
+      {/* Export and Action Buttons */}
+      <div className="mb-6 flex gap-2 flex-wrap">
         <Button
           variant="outline"
           onClick={() => exportEmails(selectedProduct || undefined)}
@@ -288,7 +338,36 @@ export default function BetaSignupsPage() {
           <Download className="w-4 h-4 mr-2" />
           Export CSV
         </Button>
+        
+        {selectedProduct && byProduct.find((p) => p.productSlug === selectedProduct)?.stats.pending > 0 && (
+          <Button
+            variant="primary"
+            onClick={() => sendInvites(selectedProduct)}
+            disabled={sendingInvites}
+          >
+            <Mail className="w-4 h-4 mr-2" />
+            {sendingInvites ? "Sending..." : `Send Invites to ${byProduct.find((p) => p.productSlug === selectedProduct)?.stats.pending} Pending`}
+          </Button>
+        )}
       </div>
+
+      {/* Invite Result Banner */}
+      {inviteResult && (
+        <div className={`mb-4 p-4 rounded-lg ${inviteResult.success ? "bg-green-50" : "bg-red-50"}`}>
+          <div className="flex items-center justify-between">
+            <p className="text-sm font-medium text-muted-foreground">
+              {inviteResult.message} {inviteResult.sent !== undefined && `(${inviteResult.sent} sent, ${inviteResult.failed} failed)`}
+            </p>
+            <Button
+              variant="link"
+              onClick={() => setInviteResult(null)}
+              className="text-muted-foreground"
+            >
+              <XCircle className="w-4 h-4" />
+            </Button>
+          </div>
+        </div>
+      )}
 
       {/* Signups List */}
       <Card>
