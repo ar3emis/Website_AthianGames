@@ -17,7 +17,7 @@ export interface SiteConfig {
 export const defaultSiteConfig: SiteConfig = {
   youtube: {
     channelId: "UCgJwbyzi0jrX5BuwLS_pJ1A", // Replace with actual channel ID
-    channelHandle: "@athiangames"
+    channelHandle: "@athiangames2417"
   },
   patreon: {
     username: "athiangames",

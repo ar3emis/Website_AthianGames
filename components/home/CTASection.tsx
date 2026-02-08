@@ -70,7 +70,7 @@ export function CTASection() {
                     and technical deep-dives. No fluff.
                   </p>
                   <Link
-                    href="https://youtube.com/@athiangames"
+                    href="https://youtube.com/@athiangames2417"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -10,6 +10,7 @@ import {
   TrendingUp,
   Code,
   Sparkles,
+  Linkedin,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -94,7 +95,7 @@ export default function CreatorHubPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="https://youtube.com/@athiangames"
+                href="https://youtube.com/@athiangames2417"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -179,7 +180,7 @@ export default function CreatorHubPage() {
 
           <div className="text-center">
             <Link
-              href="https://youtube.com/@athiangames"
+              href="https://youtube.com/@athiangames2417"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -223,6 +224,32 @@ export default function CreatorHubPage() {
               <Link href="/contact?type=business">
                 <Button>Get in Touch</Button>
               </Link>
+            </div>
+
+            <div className="mt-8 pt-8 border-t border-border">
+              <h3 className="text-xl font-bold mb-4">Connect</h3>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link
+                  href="https://youtube.com/@athiangames2417"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" size="lg">
+                    <Youtube className="w-5 h-5 mr-2" />
+                    YouTube
+                  </Button>
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/sameekkundu-unrealdev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" size="lg">
+                    <Linkedin className="w-5 h-5 mr-2" />
+                    LinkedIn
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

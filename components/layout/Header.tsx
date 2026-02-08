@@ -72,7 +72,7 @@ export function Header() {
             FAB Marketplace
           </Link>
           <Link
-            href="https://youtube.com/@athiangames"
+            href="https://youtube.com/@athiangames2417"
             target="_blank"
             rel="noopener noreferrer"
             className="p-1.5 rounded-lg text-black hover:text-red-500 hover:bg-red-500/10 transition-colors"
@@ -120,7 +120,7 @@ export function Header() {
                 FAB Marketplace
               </Link>
               <Link
-                href="https://youtube.com/@athiangames"
+                href="https://youtube.com/@athiangames2417"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 py-2 text-base font-medium text-black hover:text-red-500 transition-colors"

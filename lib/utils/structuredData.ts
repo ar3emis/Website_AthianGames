@@ -86,7 +86,7 @@ export function generateOrganizationStructuredData(): OrganizationStructuredData
     url: baseUrl,
     logo: `${baseUrl}/images/companylogowithname.png`,
     sameAs: [
-      'https://youtube.com/@athiangames',
+      'https://youtube.com/@athiangames2417',
       'https://www.fab.com/sellers/Athian%20Games',
       'https://www.unrealengine.com/marketplace/en-US/profile/Athian+Games',
     ],

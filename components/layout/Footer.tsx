@@ -20,7 +20,7 @@ const footerLinks = {
     { name: "Privacy Policy", href: "/privacy" },
   ],
   creator: [
-    { name: "YouTube Channel", href: "https://youtube.com/@athiangames" },
+    { name: "YouTube Channel", href: "https://youtube.com/@athiangames2417" },
     { name: "Support on Patreon", href: "https://patreon.com/athiangames" },
     { name: "Discord Community", href: "https://discord.gg/athiangames" },
   ],
@@ -29,7 +29,7 @@ const footerLinks = {
 const socialLinks = [
   {
     name: "YouTube",
-    href: "https://youtube.com/@athiangames",
+    href: "https://youtube.com/@athiangames2417",
     icon: Youtube,
   },
   {
