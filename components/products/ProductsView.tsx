@@ -15,6 +15,7 @@ const categories = [
 	{ id: "vfx", name: "VFX" },
 	{ id: "materials", name: "Materials" },
 	{ id: "blueprints", name: "Blueprints" },
+	{ id: "wip", name: "Work In Progress", badge: true },
 ];
 
 // Athian Games Products - from your marketplace
@@ -25,7 +26,7 @@ const allProducts = [
 		name: "Minimap, Map and Navigation System",
 		shortDescription:
 			"Build a fully customized and texture based Minimap, Map and Navigation System for your next big title",
-		price: null, // Check Fab/Marketplace for current price
+		price: null,
 		category: "plugins",
 		engineVersions: ["UE 4.27", "UE 5.0+"],
 		isExternal: true,
@@ -227,6 +228,20 @@ const allProducts = [
 		isFeatured: true,
 		thumbnail: "/images/products/art-of-shader-megapack/aos_dg_thumb.jpg",
 	},
+	{
+		id: "17",
+		slug: "fabric-ai",
+		name: "FabricAI",
+		shortDescription: "Cross-language runtime asset generation and automation for Unreal Engine",
+		price: 79.99,
+		category: "wip",
+		engineVersions: ["UE 5.7+"],
+		isExternal: false,
+		externalUrl: "",
+		platform: "athian-games",
+		isFeatured: true,
+		thumbnail: "/images/products/fabric-ai/thumbnail.jpg",
+	},
 ];
 
 export function ProductsView() {
@@ -234,7 +249,7 @@ export function ProductsView() {
 
 	const filteredProducts =
 		selectedCategory === "all"
-			? allProducts
+			? allProducts.filter((p) => p.category !== "wip")
 			: allProducts.filter((p) => p.category === selectedCategory);
 
 	return (
@@ -246,13 +261,18 @@ export function ProductsView() {
 						<button
 							key={category.id}
 							onClick={() => setSelectedCategory(category.id)}
-							className={`px-4 py-3 font-medium text-sm transition-colors border-b-2 ${
+							className={`px-4 py-3 font-medium text-sm transition-colors border-b-2 flex items-center gap-2 ${
 								selectedCategory === category.id
 									? "border-primary text-primary"
 									: "border-transparent text-muted-foreground hover:text-foreground hover:border-border"
 							}`}
 						>
 							{category.name}
+							{category.badge && (
+								<Badge variant="secondary" className="text-xs">
+									WIP
+								</Badge>
+							)}
 						</button>
 					))}
 				</div>
@@ -307,14 +327,6 @@ export function ProductsView() {
 											product.category}
 									</Badge>
 								</div>
-								{/* Price badge on thumbnail */}
-								<div className="absolute bottom-3 right-3">
-									<span className="bg-primary text-primary-foreground px-3 py-1.5 rounded-md text-sm font-bold shadow-lg">
-										{product.price
-											? `$${product.price}`
-											: "View Price"}
-									</span>
-								</div>
 							</div>
 
 							<CardHeader className="pb-3">
@@ -341,3 +353,4 @@ export function ProductsView() {
 		</div>
 	);
 }
+

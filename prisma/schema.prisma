@@ -83,3 +83,23 @@ model Purchase {
   @@index([userId])
   @@index([productSlug])
 }
+
+// Beta signups for Work In Progress products
+model BetaSignup {
+  id              String   @id @default(cuid())
+  email           String
+  name            String?
+  productSlug     String
+  productName     String
+  message         String?  // Optional message from user
+  status          String   @default("pending") // pending, invited, accepted, declined
+  invitedAt       DateTime?
+  acceptedAt      DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@unique([email, productSlug]) // One signup per email per product
+  @@index([productSlug])
+  @@index([status])
+}
+

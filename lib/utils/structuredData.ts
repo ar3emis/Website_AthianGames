@@ -93,7 +93,7 @@ export function generateOrganizationStructuredData(): OrganizationStructuredData
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
-      email: 'business@athiangames.com',
+      email: 'sameek.kundu@athiangames.com',
     },
   };
 }

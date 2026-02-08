@@ -21,7 +21,7 @@ const faqs = [
       },
       {
         q: "Do you offer refunds?",
-        a: "Refund policies vary by marketplace. For products on FAB or Unreal Marketplace, please refer to their respective refund policies. For direct purchases, contact us at business@athiangames.com.",
+        a: "Refund policies vary by marketplace. For products on FAB or Unreal Marketplace, please refer to their respective refund policies. For direct purchases, contact us at sameek.kundu@athiangames.com.",
       },
       {
         q: "How do I access product documentation?",
@@ -34,7 +34,7 @@ const faqs = [
     questions: [
       {
         q: "Where can I get technical support?",
-        a: "You can reach our support team at business@athiangames.com. We typically respond within 24-48 hours on business days.",
+        a: "You can reach our support team at sameek.kundu@athiangames.com. We typically respond within 24-48 hours on business days.",
       },
       {
         q: "Do you provide custom development services?",
@@ -173,7 +173,7 @@ export default function FAQPage() {
                 Can't find the answer you're looking for? We're here to help!
               </p>
               <a
-                href="mailto:business@athiangames.com"
+                href="mailto:sameek.kundu@athiangames.com"
                 className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-semibold"
               >
                 Contact Support

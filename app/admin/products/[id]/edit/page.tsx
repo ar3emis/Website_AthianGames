@@ -16,12 +16,19 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { ImageUpload } from "@/components/admin/ImageUpload";
+import { GoogleDrivePicker } from "@/components/admin/GoogleDrivePicker";
 
 interface ProductFeature {
   title: string;
   description: string;
   image?: string;
   learnMoreUrl?: string;
+}
+
+interface DownloadFile {
+  id: string;
+  name: string;
+  downloadUrl: string;
 }
 
 interface ProductFormData {
@@ -34,6 +41,7 @@ interface ProductFormData {
   category: string;
   price?: number;
   downloadUrl?: string;
+  downloadUrls?: DownloadFile[];
   engineVersions: string[];
   externalUrl?: string;
   documentationUrl?: string;
@@ -70,6 +78,7 @@ export default function EditProductPage() {
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
   const [newEngineVersion, setNewEngineVersion] = useState("");
+  const [showGooglePicker, setShowGooglePicker] = useState(false);
 
   useEffect(() => {
     if (productId && productId !== "new") {
@@ -396,40 +405,128 @@ export default function EditProductPage() {
           </CardContent>
         </Card>
 
-        {/* Media */}
+        {/* External Links & Downloads */}
         <Card>
           <CardHeader>
-            <h2 className="text-2xl font-bold">Media</h2>
+            <h2 className="text-2xl font-bold">External Links & Downloads</h2>
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
               <label className="block text-sm font-medium mb-2">
-                YouTube Video ID
+                Download URL
               </label>
               <input
-                type="text"
-                value={formData.videoId || ""}
+                type="url"
+                value={formData.downloadUrl || ""}
                 onChange={(e) =>
-                  setFormData({ ...formData, videoId: e.target.value })
+                  setFormData({ ...formData, downloadUrl: e.target.value })
                 }
                 className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
-                placeholder="zTLjtnlbFjU"
+                placeholder="https://drive.google.com/file/d/.../view or https://yourdomain.com/files/product.zip"
+              />
+              <p className="text-xs text-muted-foreground mt-1">
+                Provide a direct download link for purchasers. Can be Google Drive, Dropbox, or your own server.
+              </p>
+            </div>
+
+            {/* Google Drive File Picker */}
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Multiple Download Files (Google Drive)
+              </label>
+              {!showGooglePicker ? (
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => setShowGooglePicker(true)}
+                  className="w-full"
+                >
+                  <Plus className="w-4 h-4 mr-2" />
+                  Add Files from Google Drive
+                </Button>
+              ) : (
+                <div className="space-y-4">
+                  <GoogleDrivePicker
+                    onFilesSelected={(files) => {
+                      setFormData({
+                        ...formData,
+                        downloadUrls: files,
+                      });
+                      setShowGooglePicker(false);
+                    }}
+                    selectedFiles={formData.downloadUrls || []}
+                    defaultFolderId="1EjjZTlg8f8KkPjS8QnMXXxal8waqXk4O"
+                    defaultFolderName="Product Downloads"
+                  />
+                </div>
+              )}
+
+              {/* Display selected files */}
+              {formData.downloadUrls && formData.downloadUrls.length > 0 && (
+                <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
+                  <h4 className="font-semibold text-green-900 mb-2">
+                    Selected Download Files ({formData.downloadUrls.length})
+                  </h4>
+                  <div className="space-y-2">
+                    {formData.downloadUrls.map((file, idx) => (
+                      <div
+                        key={file.id}
+                        className="flex items-center justify-between p-2 bg-white rounded border border-green-200"
+                      >
+                        <div className="flex-1 min-w-0">
+                          <p className="font-medium text-sm">{file.name}</p>
+                          <p className="text-xs text-muted-foreground truncate">
+                            {file.downloadUrl}
+                          </p>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const updated = formData.downloadUrls?.filter(
+                              (_, i) => i !== idx
+                            );
+                            setFormData({ ...formData, downloadUrls: updated });
+                          }}
+                          className="ml-2 text-red-500 hover:text-red-700"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                External URL (Marketplace)
+              </label>
+              <input
+                type="url"
+                value={formData.externalUrl || ""}
+                onChange={(e) =>
+                  setFormData({ ...formData, externalUrl: e.target.value })
+                }
+                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
+                placeholder="https://www.unrealengine.com/marketplace/..."
               />
             </div>
 
-            <ImageUpload
-              label="Thumbnail Image"
-              value={formData.thumbnail}
-              onChange={(url) => setFormData({ ...formData, thumbnail: url })}
-              aspectRatio="video"
-            />
-
-            <ImageUpload
-              label="Banner Image"
-              value={formData.bannerImage}
-              onChange={(url) => setFormData({ ...formData, bannerImage: url })}
-              aspectRatio="video"
-            />
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Documentation URL
+              </label>
+              <input
+                type="url"
+                value={formData.documentationUrl || ""}
+                onChange={(e) =>
+                  setFormData({ ...formData, documentationUrl: e.target.value })
+                }
+                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
+                placeholder="https://docs.athiangames.com/..."
+              />
+            </div>
           </CardContent>
         </Card>
 
@@ -467,62 +564,6 @@ export default function EditProductPage() {
                   </button>
                 </Badge>
               ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Links */}
-        <Card>
-          <CardHeader>
-            <h2 className="text-2xl font-bold">External Links & Downloads</h2>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium mb-2">
-                Download URL
-              </label>
-              <input
-                type="url"
-                value={formData.downloadUrl || ""}
-                onChange={(e) =>
-                  setFormData({ ...formData, downloadUrl: e.target.value })
-                }
-                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
-                placeholder="https://drive.google.com/file/d/.../view or https://yourdomain.com/files/product.zip"
-              />
-              <p className="text-xs text-muted-foreground mt-1">
-                Provide a direct download link for purchasers. Can be Google Drive, Dropbox, or your own server.
-              </p>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium mb-2">
-                External URL (Marketplace)
-              </label>
-              <input
-                type="url"
-                value={formData.externalUrl || ""}
-                onChange={(e) =>
-                  setFormData({ ...formData, externalUrl: e.target.value })
-                }
-                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
-                placeholder="https://www.unrealengine.com/marketplace/..."
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium mb-2">
-                Documentation URL
-              </label>
-              <input
-                type="url"
-                value={formData.documentationUrl || ""}
-                onChange={(e) =>
-                  setFormData({ ...formData, documentationUrl: e.target.value })
-                }
-                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
-                placeholder="https://docs.athiangames.com/..."
-              />
             </div>
           </CardContent>
         </Card>
@@ -593,6 +634,45 @@ export default function EditProductPage() {
                 No features added yet. Click "Add Feature" to get started.
               </p>
             )}
+          </CardContent>
+        </Card>
+
+        {/* Media - Compact Size */}
+        <Card>
+          <CardHeader>
+            <h2 className="text-lg font-bold">Media</h2>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                YouTube Video ID
+              </label>
+              <input
+                type="text"
+                value={formData.videoId || ""}
+                onChange={(e) =>
+                  setFormData({ ...formData, videoId: e.target.value })
+                }
+                className="w-full px-3 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none text-sm"
+                placeholder="zTLjtnlbFjU"
+              />
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              <ImageUpload
+                label="Thumbnail"
+                value={formData.thumbnail}
+                onChange={(url) => setFormData({ ...formData, thumbnail: url })}
+                aspectRatio="video"
+              />
+
+              <ImageUpload
+                label="Banner"
+                value={formData.bannerImage}
+                onChange={(url) => setFormData({ ...formData, bannerImage: url })}
+                aspectRatio="video"
+              />
+            </div>
           </CardContent>
         </Card>
 

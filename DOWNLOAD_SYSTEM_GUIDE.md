@@ -396,7 +396,7 @@ await prisma.purchase.create({
 When user reaches download limit:
 
 1. **User contacts support:**
-   - Email: business@athiangames.com
+   - Email: sameek.kundu@athiangames.com
    - Provides: purchase ID or email
 
 2. **Admin verifies purchase:**

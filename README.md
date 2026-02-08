@@ -107,7 +107,7 @@ SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your-email@gmail.com
 SMTP_PASS=your-app-password
-CONTACT_EMAIL=business@athiangames.com
+CONTACT_EMAIL=sameek.kundu@athiangames.com
 ```
 
 3. **Run development server**
@@ -366,7 +366,7 @@ npm install @next/third-parties
 ## 🤝 Support
 
 For issues or questions:
-- Email: business@athiangames.com
+- Email: sameek.kundu@athiangames.com
 - GitHub Issues (if open source)
 
 ## 📄 License

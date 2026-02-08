@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { productDetails, getProductById } from "@/lib/products/productData";
+import fs from "fs";
+import path from "path";
 
 export const dynamic = 'force-dynamic';
 
@@ -11,6 +13,37 @@ function isLocalhost(req: NextRequest) {
     hostname.includes("127.0.0.1") ||
     hostname.startsWith("192.168.")
   );
+}
+
+// Path to product overrides JSON file
+const OVERRIDES_PATH = path.join(process.cwd(), "data", "product-overrides.json");
+
+// Load product overrides
+function loadOverrides() {
+  try {
+    if (fs.existsSync(OVERRIDES_PATH)) {
+      const data = fs.readFileSync(OVERRIDES_PATH, "utf-8");
+      return JSON.parse(data);
+    }
+  } catch (error) {
+    console.error("Failed to load product overrides:", error);
+  }
+  return { products: {} };
+}
+
+// Save product overrides
+function saveOverrides(overrides: any) {
+  try {
+    const dir = path.dirname(OVERRIDES_PATH);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(OVERRIDES_PATH, JSON.stringify(overrides, null, 2));
+    return true;
+  } catch (error) {
+    console.error("Failed to save product overrides:", error);
+    return false;
+  }
 }
 
 // GET single product
@@ -34,8 +67,16 @@ export async function GET(
       return NextResponse.json({ error: "Product not found" }, { status: 404 });
     }
 
-    console.log("Product found:", product.name);
-    return NextResponse.json({ success: true, product });
+    // Load overrides and merge with base product data
+    const overrides = loadOverrides();
+    const productSlug = product.slug;
+    const mergedProduct = {
+      ...product,
+      ...(overrides.products[productSlug] || {}),
+    };
+
+    console.log("Product found:", mergedProduct.name);
+    return NextResponse.json({ success: true, product: mergedProduct });
   } catch (error) {
     console.error("Error fetching product:", error);
     return NextResponse.json(
@@ -65,14 +106,38 @@ export async function PUT(
       return NextResponse.json({ error: "Product not found" }, { status: 404 });
     }
 
-    // In a real implementation, you would update in MongoDB via PayloadCMS
-    // For now, we'll return success and document that manual productData.ts update is needed
+    // Load current overrides
+    const overrides = loadOverrides();
+    const productSlug = product.slug;
+
+    // Save only the fields that can be edited in admin
+    // This creates/updates an override entry for this product
+    overrides.products[productSlug] = {
+      ...(overrides.products[productSlug] || {}),
+      downloadUrl: data.downloadUrl,
+      downloadUrls: data.downloadUrls, // Save Google Drive selected files
+      price: data.price,
+      externalUrl: data.externalUrl,
+      documentationUrl: data.documentationUrl,
+      // Add any other fields you want to be editable
+    };
+
+    // Save to file
+    const saved = saveOverrides(overrides);
+
+    if (!saved) {
+      return NextResponse.json(
+        { error: "Failed to save changes" },
+        { status: 500 }
+      );
+    }
+
+    console.log(`✅ Product updated: ${productSlug}`, overrides.products[productSlug]);
 
     return NextResponse.json({
       success: true,
-      message:
-        "Product structure validated. To persist, update in lib/products/productData.ts",
-      product: data,
+      message: "Product updated successfully! Changes are now live.",
+      product: { ...product, ...overrides.products[productSlug] },
     });
   } catch (error) {
     console.error("Error updating product:", error);

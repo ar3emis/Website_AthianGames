@@ -26,7 +26,7 @@ Athian Games is a professional Unreal Engine tools and assets studio specializin
 - Engine Versions: UE 4.27, UE 5.0+
 - Platforms: All Unreal Engine supported platforms
 - Documentation: Comprehensive docs available at docs.athiangames.com
-- Support: Professional support via business@athiangames.com
+- Support: Professional support via sameek.kundu@athiangames.com
 
 ## Marketplace Presence
 - **FAB Marketplace**: https://www.fab.com/sellers/Athian%20Games
@@ -68,6 +68,6 @@ Athian Games is a professional Unreal Engine tools and assets studio specializin
 Unreal Engine, UE5, plugins, assets, VFX, Niagara, blueprints, materials, shaders, post-process, procedural generation, game development tools, minimap system, black hole effect, galaxy system, vortex tunnel, Art of Shader, runtime import, FAB marketplace
 
 ## Contact Information
-- Email: business@athiangames.com
+- Email: sameek.kundu@athiangames.com
 - Website: https://athiangames.com
 - YouTube: https://youtube.com/@athiangames

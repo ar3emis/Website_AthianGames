@@ -722,7 +722,7 @@ This bundle includes all features from every individual pack, giving you the ult
     features: []
   },
   "tile-variation-material": {
-    id: "12",
+    id: "15",
     slug: "tile-variation-material",
     name: "Tile Variation Material",
     topText: "Tile Variation Material",
@@ -754,7 +754,7 @@ Perfect for large outdoor environments, interior floors, walls, and any surface 
     ]
   },
   "runtime-asset-import": {
-    id: "13",
+    id: "16",
     slug: "runtime-asset-import",
     name: "Runtime Asset Import",
     topText: "Runtime Asset Import",
@@ -784,15 +784,133 @@ Ideal for applications like architectural visualization, product configurators, 
         image: "/images/products/runtime-asset-import/assetimportcover.jpg"
       }
     ]
+  },
+  "fabric-ai": {
+    id: "17",
+    slug: "fabric-ai",
+    name: "FabricAI",
+    topText: "FabricAI",
+    bottomText: "Cross-language runtime asset generation and automation for Unreal Engine",
+    summary: "A powerful cross-language Unreal Engine plugin that generates, applies, and customizes assets at runtime, featuring AI-powered automation and seamless Python integration.",
+    description: `FabricAI is a next-generation Unreal Engine plugin that revolutionizes asset creation and management through intelligent runtime generation and cross-language automation. This powerful tool bridges the gap between Python's flexibility and Unreal Engine's robustness, enabling developers to generate materials, spawn objects, and automate complex pipelines without leaving the editor.
+
+Built with modern game development workflows in mind, FabricAI provides a comprehensive suite of tools for runtime asset manipulation, including parameterized material creation, dynamic instance generation, and automated object spawning. The plugin features deep Python integration, allowing developers to leverage Python's extensive ecosystem for procedural content generation, batch processing, and custom tooling.
+
+Whether you're building procedural worlds, implementing dynamic customization systems, or automating repetitive tasks, FabricAI provides the flexibility and power you need. With detailed logging, robust error handling, and an intuitive API, FabricAI streamlines your development process and unlocks new creative possibilities.`,
+    category: "wip",
+    price: 79.99,
+    engineVersions: ["UE 5.7+"],
+    externalUrl: "",
+    documentationUrl: "",
+    videoId: "",
+    demoVideos: [
+      // Add demo video IDs here - these will be YouTube video IDs
+      // Example: "dQw4w9WgXcQ"
+    ],
+    thumbnail: "/images/products/fabric-ai/thumbnail.jpg",
+    bannerImage: "/images/products/fabric-ai/thumbnail.jpg",
+    logo: "/images/products/fabric-ai/logo.png",
+    gallery: [
+      "/images/products/fabric-ai/logo.png",
+      "/images/products/fabric-ai/thumbnail.jpg"
+    ],
+    features: [
+      {
+        title: "Runtime Asset Generation",
+        description: "Generate and apply materials, textures, and other assets dynamically at runtime without pre-baking. Perfect for procedural content generation, user customization systems, and dynamic worlds.",
+        image: "/images/products/fabric-ai/feature-runtime-generation.jpg"
+      },
+      {
+        title: "Parameterized Material System",
+        description: "Create materials with customizable color parameters and dynamic instances. Change colors, properties, and textures on the fly with full support for material instance dynamics.",
+        image: "/images/products/fabric-ai/feature-material-creation.jpg"
+      },
+      {
+        title: "Cross-Language Python Integration",
+        description: "Seamlessly integrate Python scripts with Unreal Engine. Leverage Python's powerful libraries for AI, procedural generation, data processing, and automation directly within your project.",
+        image: "/images/products/fabric-ai/feature-python-integration.jpg"
+      },
+      {
+        title: "Automated Object Spawning",
+        description: "Automate object placement and spawning with intelligent algorithms. Create procedural environments, populate scenes, and implement complex spawning patterns with minimal code.",
+        image: "/images/products/fabric-ai/feature-automation.jpg"
+      },
+      {
+        title: "In-Editor Pipeline Automation",
+        description: "Automate repetitive tasks and streamline your workflow with custom pipelines. Batch process assets, generate variations, and execute complex operations without manual intervention.",
+        image: "/images/products/fabric-ai/feature-automation.jpg"
+      },
+      {
+        title: "Comprehensive Logging & Error Handling",
+        description: "Built-in detailed logging system and robust error handling ensure smooth development. Track operations, debug issues quickly, and maintain full visibility into plugin operations.",
+        image: "/images/products/fabric-ai/feature-logging.jpg"
+      },
+      {
+        title: "Blueprint & C++ Support",
+        description: "Full support for both Blueprint and C++ workflows. Use visual scripting for rapid prototyping or dive into C++ for performance-critical operations.",
+        image: "/images/products/fabric-ai/feature-runtime-generation.jpg"
+      },
+      {
+        title: "AI-Powered Automation",
+        description: "Leverage AI algorithms for intelligent asset generation and optimization. Let FabricAI analyze your needs and automatically generate appropriate assets and configurations.",
+        image: "/images/products/fabric-ai/feature-python-integration.jpg"
+      },
+      {
+        title: "Dynamic Asset Customization",
+        description: "Enable player-driven customization with runtime asset modification. Perfect for character creators, vehicle customization, base building, and user-generated content.",
+        image: "/images/products/fabric-ai/feature-material-creation.jpg"
+      },
+      {
+        title: "Performance Optimized",
+        description: "Efficient algorithms and optimized code ensure minimal runtime overhead. Generate thousands of assets without impacting game performance.",
+        image: "/images/products/fabric-ai/feature-automation.jpg"
+      }
+    ],
+    isExternal: false,
+    isFeatured: true
   }
 };
 
+// Load product overrides from JSON file (admin edits)
+function loadProductOverrides() {
+  if (typeof window === 'undefined') {
+    // Server-side: load from file
+    try {
+      const fs = require('fs');
+      const path = require('path');
+      const overridesPath = path.join(process.cwd(), 'data', 'product-overrides.json');
+      
+      if (fs.existsSync(overridesPath)) {
+        const data = fs.readFileSync(overridesPath, 'utf-8');
+        return JSON.parse(data);
+      }
+    } catch (error) {
+      console.error('Failed to load product overrides:', error);
+    }
+  }
+  return { products: {} };
+}
+
+// Merge base product data with admin overrides
+function mergeProductWithOverrides(product: any) {
+  const overrides = loadProductOverrides();
+  const productOverride = overrides.products?.[product.slug];
+  
+  if (productOverride) {
+    return { ...product, ...productOverride };
+  }
+  
+  return product;
+}
+
 // Helper function to get product by slug
 export function getProductBySlug(slug: string) {
-  return productDetails[slug as keyof typeof productDetails] || null;
+  const product = productDetails[slug as keyof typeof productDetails] || null;
+  return product ? mergeProductWithOverrides(product) : null;
 }
 
 // Helper function to get product by ID
 export function getProductById(id: string) {
-  return Object.values(productDetails).find((product) => product.id === id) || null;
+  const product = Object.values(productDetails).find((p) => p.id === id) || null;
+  return product ? mergeProductWithOverrides(product) : null;
 }

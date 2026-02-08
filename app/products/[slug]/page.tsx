@@ -7,9 +7,11 @@ import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 import { ArrowLeft, ExternalLink, FileText, Play } from "lucide-react";
 import { getProductBySlug } from "@/lib/products/productData";
 import { getDocumentation } from "@/lib/docs/docsData";
-import { BuyButton } from "@/components/products/BuyButton";
+
+import { BetaSignupForm } from "@/components/products/BetaSignupForm";
 import { ProductGallery } from "@/components/products/ProductGallery";
 import { generateProductStructuredData } from "@/lib/utils/structuredData";
+import { FabricAIHero } from "@/components/products/FabricAIHero";
 
 interface ProductPageProps {
   params: Promise<{
@@ -112,7 +114,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   });
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen">
       {/* JSON-LD Structured Data for SEO and AI */}
       <script
         type="application/ld+json"
@@ -121,26 +123,84 @@ export default async function ProductPage({ params }: ProductPageProps) {
         }}
       />
 
-      <div className="container-custom">
-        {/* Back button */}
-        <Link
-          href="/products"
-          className="inline-flex items-center text-muted-foreground hover:text-foreground mb-8 transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Products
-        </Link>
-
-        {/* Hero Section */}
-        <div className="mb-12">
-          <Badge variant="primary" className="mb-4">
-            {product.category}
-          </Badge>
-          <h1 className="mb-4">{product.name}</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl">
-            {product.summary}
-          </p>
+      {/* Cover Image with Title Overlay - Special WebGL hero for FabricAI */}
+      {slug === "fabric-ai" ? (
+        <div className="relative">
+          <FabricAIHero />
+          {/* Title Overlay */}
+          <div className="absolute inset-0 flex items-end pointer-events-none">
+            <div className="container-custom pb-12 w-full pointer-events-auto select-none">
+              <Link
+                href="/products"
+                className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors select-none"
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Products
+              </Link>
+              <div className="flex items-center gap-3 mb-4">
+                <Badge variant="secondary" className="text-sm select-none">
+                  Work In Progress
+                </Badge>
+                <Badge variant="outline" className="text-xs bg-black/30 border-white/20 text-white select-none">
+                  UE 5.7+
+                </Badge>
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white drop-shadow-lg select-none">
+                {product.name}
+              </h1>
+              <p className="text-lg md:text-xl text-white/90 max-w-3xl drop-shadow-md select-none">
+                {product.summary}
+              </p>
+            </div>
+          </div>
         </div>
+      ) : (
+        <div className="relative h-[60vh] min-h-[400px] w-full overflow-hidden">
+          {(product as any).bannerImage || (product as any).thumbnail ? (
+            <>
+              <img
+                src={(product as any).bannerImage || (product as any).thumbnail}
+                alt={product.name}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+            </>
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/20 to-primary/30" />
+          )}
+          
+          {/* Title Overlay */}
+          <div className="absolute inset-0 flex items-end">
+            <div className="container-custom pb-12 w-full select-none">
+              <Link
+                href="/products"
+                className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors select-none"
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Products
+              </Link>
+              <div className="flex items-center gap-3 mb-4">
+                <Badge variant={product.category === "wip" ? "secondary" : "primary"} className="text-sm select-none">
+                  {product.category === "wip" ? "Work In Progress" : product.category}
+                </Badge>
+                {product.category === "wip" && product.engineVersions.map((version) => (
+                  <Badge key={version} variant="outline" className="text-xs bg-black/30 border-white/20 text-white select-none">
+                    {version}
+                  </Badge>
+                ))}
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white drop-shadow-lg select-none">
+                {product.name}
+              </h1>
+              <p className="text-lg md:text-xl text-white/90 max-w-3xl drop-shadow-md select-none">
+                {product.summary}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="container-custom py-16">
 
         {/* Video Section */}
         {(product as any).videoId && (
@@ -162,23 +222,18 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
         {/* CTA Buttons */}
         <div className="flex flex-wrap gap-4 mb-16">
-          {/* Buy Button - for products with prices (sold directly on site) */}
-          {(product as any).price && (
-            <BuyButton
-              productSlug={product.slug}
-              productName={product.name}
-              price={(product as any).price}
-            />
-          )}
-          
-          {/* Marketplace Link */}
-          {product.externalUrl && (
-            <Link href={product.externalUrl} target="_blank" rel="noopener noreferrer">
-              <Button variant={(product as any).price ? "secondary" : "primary"} size="lg">
-                <ExternalLink className="w-5 h-5 mr-2" />
-                {(product as any).price ? "View on Marketplace" : "Get It on Marketplace"}
-              </Button>
-            </Link>
+          {product.category !== "wip" && (
+            <>
+              {/* Marketplace Link */}
+              {product.externalUrl && (
+                <Link href={product.externalUrl} target="_blank" rel="noopener noreferrer">
+                  <Button variant="primary" size="lg">
+                    <ExternalLink className="w-5 h-5 mr-2" />
+                    Get It on Marketplace
+                  </Button>
+                </Link>
+              )}
+            </>
           )}
           
           {hasDocumentation ? (
@@ -254,116 +309,66 @@ export default async function ProductPage({ params }: ProductPageProps) {
         ) : (
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-8">Features</h2>
-            <div className="space-y-12">
-              {product.features.map((feature, index) => (
-                <div
-                  key={index}
-                  className={`grid lg:grid-cols-2 gap-8 items-center ${
-                    index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                  }`}
-                >
-                  {/* Image */}
-                  <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                    <div className="aspect-video bg-muted rounded-xl overflow-hidden">
-                      {feature.image ? (
-                        <img
-                          src={feature.image}
-                          alt={feature.title}
-                          className="w-full h-full object-cover"
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {product.features.map((feature: any, index: number) => (
+                <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+                  <div className="flex items-start gap-4">
+                    {/* Icon */}
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className="w-6 h-6 text-primary" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke="currentColor"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M5 13l4 4L19 7" 
                         />
-                      ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                          <span className="text-muted-foreground text-sm">
-                            Feature Image
-                          </span>
-                        </div>
+                      </svg>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
+                      {feature.description && (
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {feature.description}
+                        </p>
                       )}
                     </div>
                   </div>
-
-                  {/* Content */}
-                  <div className={`${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                    <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-                    {feature.description && (
-                      <p className="text-muted-foreground leading-relaxed mb-4">
-                        {feature.description}
-                      </p>
-                    )}
-                    {(feature as any).learnMoreUrl && (
-                      <Link
-                        href={(feature as any).learnMoreUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-primary hover:underline"
-                      >
-                        Learn more
-                        <ExternalLink className="w-4 h-4 ml-1" />
-                      </Link>
-                    )}
-                  </div>
-                </div>
+                </Card>
               ))}
             </div>
           </div>
         )}
 
-        {/* Gallery Section */}
-        {(product as any).gallery && (product as any).gallery.length > 0 && (
-          <ProductGallery 
-            images={(product as any).gallery} 
-            productName={product.name} 
-          />
-        )}
-
-        {/* FAQ Section */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <Card>
-              <CardHeader>
-                <h3 className="text-lg font-semibold">What engine versions are supported?</h3>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  This product supports {product.engineVersions.join(", ")}. Check the marketplace page for the most up-to-date compatibility information.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <h3 className="text-lg font-semibold">Can I use this in commercial projects?</h3>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Yes! All our products include commercial licensing. You can use them in both personal and commercial projects without additional fees.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <h3 className="text-lg font-semibold">Do you provide technical support?</h3>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Absolutely! We offer dedicated technical support for all our products. You can reach us via email, Discord, or by creating a support ticket below.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <h3 className="text-lg font-semibold">Is documentation available?</h3>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Yes, comprehensive documentation is available for this product. {hasDocumentation ? "Click the Documentation button above to access it." : (product as any).documentationUrl ? "Access the documentation through the link above." : "Documentation links are provided with your purchase."}
-                </p>
-              </CardContent>
-            </Card>
+        {/* Demonstration Section - Show demo videos if available */}
+        {(product as any).demoVideos && (product as any).demoVideos.length > 0 && (
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold mb-8">Demonstrations</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {(product as any).demoVideos.map((videoId: string, index: number) => (
+                <div key={index} className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${videoId}`}
+                    title={`${product.name} Demo ${index + 1}`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Support Section */}
         <div className="mb-16">
@@ -383,7 +388,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   
                   <div className="grid md:grid-cols-3 gap-4">
                     <a 
-                      href={`mailto:business@athiangames.com?subject=Support Request: ${product.name}`}
+                      href={`mailto:sameek.kundu@athiangames.com?subject=Support Request: ${product.name}`}
                       className="flex items-center gap-3 p-4 bg-background rounded-lg border border-border hover:border-primary transition-colors group"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -410,10 +415,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
                       </div>
                     </Link>
 
-                    <a 
-                      href={`https://github.com/athiangames/support/issues/new?title=${encodeURIComponent(`[${product.name}] Issue Title`)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link 
+                      href="/contact"
                       className="flex items-center gap-3 p-4 bg-background rounded-lg border border-border hover:border-primary transition-colors group"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -423,7 +426,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                         <div className="font-semibold text-sm group-hover:text-primary">Report Issue</div>
                         <div className="text-xs text-muted-foreground">Bug reports & tickets</div>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -431,19 +434,31 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </Card>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center p-8 bg-gradient-to-br from-primary/10 to-accent/5 rounded-xl border border-primary/20">
-          <h2 className="text-2xl font-bold mb-4">Ready to get started?</h2>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Get this product now from the Unreal Engine Marketplace
-          </p>
-          <Link href={product.externalUrl} target="_blank" rel="noopener noreferrer">
-            <Button size="lg">
-              <ExternalLink className="w-5 h-5 mr-2" />
-              View on Marketplace
-            </Button>
-          </Link>
-        </div>
+        {/* Beta Signup - at the end for WIP products */}
+        {product.category === "wip" && (
+          <div className="mb-16">
+            <BetaSignupForm 
+              productSlug={product.slug} 
+              productName={product.name} 
+            />
+          </div>
+        )}
+
+        {/* Bottom CTA - only for non-WIP products */}
+        {product.category !== "wip" && product.externalUrl && (
+          <div className="text-center p-8 bg-gradient-to-br from-primary/10 to-accent/5 rounded-xl border border-primary/20">
+            <h2 className="text-2xl font-bold mb-4">Ready to get started?</h2>
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Get this product now from the Unreal Engine Marketplace
+            </p>
+            <Link href={product.externalUrl} target="_blank" rel="noopener noreferrer">
+              <Button size="lg">
+                <ExternalLink className="w-5 h-5 mr-2" />
+                View on Marketplace
+              </Button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

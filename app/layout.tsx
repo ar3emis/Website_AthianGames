@@ -118,8 +118,8 @@ export default async function RootLayout({
   const isCreatorSubdomain = host.includes("sameekkundu.");
 
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <AuthProvider>
           {!isCreatorSubdomain && <Header />}
           <main className="min-h-screen">{children}</main>

@@ -1,15 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\content",
-    "\\content\\product",
-    "\\static",
-    "\\static\\img",
-    "\\static\\img\\banners",
-    "\\themes",
-    "\\theme_files",
-    "\\theme_files\\files"
+    "\\components",
+    "\\components\\layout",
+    "\\products\\art-of-shader-megapack"
   ],
-  "SelectedNode": "\\content\\product\\procedural-vortex-tunnel.md",
   "PreviewInSolutionExplorer": false
 }

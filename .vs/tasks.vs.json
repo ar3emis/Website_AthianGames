@@ -1,0 +1,14 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-athian-games",
+      "appliesTo": "/",
+      "type": "launch",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "cwd": "${projectDir}",
+      "isDefault": true
+    }
+  ]
+}

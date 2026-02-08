@@ -48,10 +48,10 @@ export default function ContactPage() {
               Have a question or want to work together? Fill out the form below
               or email directly at{" "}
               <a
-                href="mailto:business@athiangames.com"
+                href="mailto:sameek.kundu@athiangames.com"
                 className="text-primary hover:underline"
               >
-                business@athiangames.com
+                sameek.kundu@athiangames.com
               </a>
             </p>
           </div>

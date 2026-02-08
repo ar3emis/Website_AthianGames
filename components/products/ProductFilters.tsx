@@ -12,6 +12,7 @@ const categories = [
   { id: "vfx", name: "VFX" },
   { id: "materials", name: "Materials" },
   { id: "blueprints", name: "Blueprints" },
+  { id: "wip", name: "Work In Progress", badge: "WIP" },
 ];
 
 const engineVersions = [

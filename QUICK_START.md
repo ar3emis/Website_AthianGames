@@ -275,7 +275,7 @@ npm run lint            # Run linter
 - Check `README.md` for detailed documentation
 - Review `SITE_ARCHITECTURE.md` for technical details
 - See `DEPLOYMENT.md` for production setup
-- Contact: business@athiangames.com
+- Contact: sameek.kundu@athiangames.com
 
 ---
 
