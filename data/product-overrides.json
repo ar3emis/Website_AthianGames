@@ -3,6 +3,9 @@
     "volumetric-black-hole": {
       "price": 34.99,
       "externalUrl": "https://www.fab.com/sellers/Athian%20Games"
+    },
+    "tile-variation-material": {
+      "isDeleted": true
     }
   }
 }

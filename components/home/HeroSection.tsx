@@ -7,9 +7,17 @@ import { TrailerCarousel } from "./TrailerCarousel";
 import { defaultSiteConfig } from "@/lib/config/siteConfig";
 import { productDetails } from "@/lib/products/productData";
 
-// Get 4 latest products for the carousel
-const latestProductSlides = Object.values(productDetails)
-  .slice(0, 4)
+// Get 4 latest products for the carousel, but replace minimap with FabricAI
+const productOrder = [
+  "fabric-ai",
+  "procedural-vortex-tunnel",
+  "art-of-shader-distortion-and-glitches",
+  "art-of-shader-advanced-distortion",
+];
+
+const latestProductSlides = productOrder
+  .map((slug) => productDetails[slug])
+  .filter(Boolean)
   .map((product: any) => ({
     type: "product" as const,
     productSlug: product.slug,

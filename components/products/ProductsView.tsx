@@ -244,13 +244,19 @@ const allProducts = [
 	},
 ];
 
-export function ProductsView() {
+interface ProductsViewProps {
+	initialProducts?: typeof allProducts;
+}
+
+export function ProductsView({ initialProducts }: ProductsViewProps) {
 	const [selectedCategory, setSelectedCategory] = useState("all");
+	// Use initialProducts if provided (server-filtered), otherwise use hardcoded list
+	const products = initialProducts || allProducts;
 
 	const filteredProducts =
 		selectedCategory === "all"
-			? allProducts.filter((p) => p.category !== "wip")
-			: allProducts.filter((p) => p.category === selectedCategory);
+			? products.filter((p) => p.category !== "wip")
+			: products.filter((p) => p.category === selectedCategory);
 
 	return (
 		<div>

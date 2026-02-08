@@ -65,8 +65,23 @@ export async function POST(req: NextRequest) {
     });
   } catch (error) {
     console.error("Beta signup error:", error);
+    
+    // Provide more specific error messages
+    let errorMessage = "Failed to sign up for beta. Please try again later.";
+    
+    if (error instanceof Error) {
+      // Check for specific Prisma errors
+      if (error.message.includes("Unique constraint")) {
+        errorMessage = "You're already signed up for this beta!";
+      } else if (error.message.includes("connect")) {
+        errorMessage = "Database connection error. Please contact support.";
+      } else {
+        errorMessage = `Error: ${error.message}`;
+      }
+    }
+    
     return NextResponse.json(
-      { error: "Failed to sign up for beta" },
+      { error: errorMessage },
       { status: 500 }
     );
   }

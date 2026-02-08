@@ -119,6 +119,8 @@ export async function PUT(
       price: data.price,
       externalUrl: data.externalUrl,
       documentationUrl: data.documentationUrl,
+      discordUrl: data.discordUrl,
+      videoTutorialUrl: data.videoTutorialUrl,
       // Add any other fields you want to be editable
     };
 
@@ -167,13 +169,31 @@ export async function DELETE(
       return NextResponse.json({ error: "Product not found" }, { status: 404 });
     }
 
-    // In a real implementation, you would delete from MongoDB via PayloadCMS
-    // For now, we'll return success and document that manual productData.ts update is needed
+    // Load current overrides
+    const overrides = loadOverrides();
+    const productSlug = product.slug;
+
+    // Mark product as deleted in overrides
+    overrides.products[productSlug] = {
+      ...(overrides.products[productSlug] || {}),
+      isDeleted: true,
+    };
+
+    // Save to file
+    const saved = saveOverrides(overrides);
+
+    if (!saved) {
+      return NextResponse.json(
+        { error: "Failed to delete product" },
+        { status: 500 }
+      );
+    }
+
+    console.log(`✅ Product deleted: ${productSlug}`);
 
     return NextResponse.json({
       success: true,
-      message:
-        "Product marked for deletion. To persist, remove from lib/products/productData.ts",
+      message: "Product deleted successfully!",
     });
   } catch (error) {
     console.error("Error deleting product:", error);

@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { productDetails, getProductBySlug } from "@/lib/products/productData";
+import fs from "fs";
+import path from "path";
 
 export const dynamic = 'force-dynamic';
 
@@ -13,6 +15,22 @@ function isLocalhost(req: NextRequest) {
   );
 }
 
+// Path to product overrides JSON file
+const OVERRIDES_PATH = path.join(process.cwd(), "data", "product-overrides.json");
+
+// Load product overrides
+function loadOverrides() {
+  try {
+    if (fs.existsSync(OVERRIDES_PATH)) {
+      const data = fs.readFileSync(OVERRIDES_PATH, "utf-8");
+      return JSON.parse(data);
+    }
+  } catch (error) {
+    console.error("Failed to load product overrides:", error);
+  }
+  return { products: {} };
+}
+
 // GET all products
 export async function GET(req: NextRequest) {
   if (!isLocalhost(req)) {
@@ -20,20 +38,29 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    // Convert productDetails object to array
-    const products = Object.entries(productDetails).map(([slug, product]) => ({
-      id: product.id,
-      name: product.name,
-      slug: product.slug,
-      category: product.category,
-      price: (product as any).price,
-      isExternal: product.externalUrl ? true : false,
-      externalUrl: product.externalUrl,
-      isFeatured: (product as any).isMegapack || false,
-      thumbnail: product.thumbnail,
-      shortDescription: product.summary,
-      engineVersions: product.engineVersions,
-    }));
+    // Load overrides to check for deleted products
+    const overrides = loadOverrides();
+
+    // Convert productDetails object to array and filter out deleted products
+    const products = Object.entries(productDetails)
+      .filter(([slug, product]) => {
+        // Check if product is marked as deleted in overrides
+        const override = overrides.products?.[slug];
+        return !override?.isDeleted;
+      })
+      .map(([slug, product]) => ({
+        id: product.id,
+        name: product.name,
+        slug: product.slug,
+        category: product.category,
+        price: (product as any).price,
+        isExternal: product.externalUrl ? true : false,
+        externalUrl: product.externalUrl,
+        isFeatured: (product as any).isMegapack || false,
+        thumbnail: product.thumbnail,
+        shortDescription: product.summary,
+        engineVersions: product.engineVersions,
+      }));
 
     return NextResponse.json({ success: true, products });
   } catch (error) {

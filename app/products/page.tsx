@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { ProductsView } from "@/components/products/ProductsView";
+import { getAllProducts } from "@/lib/products/productData";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -7,6 +8,27 @@ export const metadata: Metadata = {
 };
 
 export default function ProductsPage() {
+  // Get all non-deleted products server-side
+  const allProducts = getAllProducts();
+
+  // Transform to the format ProductsView expects
+  const products = allProducts.map((product: any) => ({
+    id: product.id,
+    slug: product.slug,
+    name: product.name,
+    shortDescription: product.summary,
+    price: product.price || null,
+    category: product.category,
+    engineVersions: product.engineVersions,
+    isExternal: !!product.externalUrl,
+    externalUrl: product.externalUrl || "",
+    platform: product.externalUrl?.includes('fab.com') ? 'fab' : 
+              product.externalUrl?.includes('marketplace') ? 'unreal-marketplace' : 
+              'athian-games',
+    isFeatured: product.isFeatured || false,
+    thumbnail: product.thumbnail,
+  }));
+
   return (
     <div className="min-h-screen pt-24 pb-16">
       <div className="container-custom">
@@ -20,7 +42,7 @@ export default function ProductsPage() {
         </div>
 
         {/* Products with category navigation */}
-        <ProductsView />
+        <ProductsView initialProducts={products} />
       </div>
     </div>
   );

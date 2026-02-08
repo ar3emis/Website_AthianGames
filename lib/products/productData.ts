@@ -459,30 +459,30 @@ Perfect for sci-fi games, space simulators, and cinematic projects that require 
     category: "vfx",
     price: 39.99,
     engineVersions: ["UE 5.0+"],
-    externalUrl: "https://www.fab.com/sellers/Athian%20Games",
+    externalUrl: "https://www.fab.com/listings/3c902769-c907-4901-bb98-dfd9e1c5cf53",
     videoId: "",
-    thumbnail: "/images/products/volumetric-clouds-nebula/cs_screenshot01.jpg",
-    bannerImage: "/images/products/volumetric-clouds-nebula/cs_screenshot01.jpg",
+    thumbnail: "/images/products/volumetric-clouds-nebula/thumbnail.jpg",
+    bannerImage: "/images/products/volumetric-clouds-nebula/thumbnail.jpg",
     features: [
       {
         title: "Volumetric Raymarching",
         description: "Advanced raymarching technique for realistic volumetric rendering of clouds and nebulae.",
-        image: "/images/products/volumetric-clouds-nebula/cs_screenshot01.jpg"
+        image: "/images/products/volumetric-clouds-nebula/thumbnail.jpg"
       },
       {
         title: "Customizable Colors and Density",
         description: "Full control over color gradients, density distribution, and opacity for unique visual effects.",
-        image: "/images/products/volumetric-clouds-nebula/cs_screenshot01.jpg"
+        image: "/images/products/volumetric-clouds-nebula/thumbnail.jpg"
       },
       {
         title: "Dynamic Lighting Integration",
         description: "Realistic light scattering and absorption for authentic volumetric lighting effects.",
-        image: "/images/products/volumetric-clouds-nebula/cs_screenshot01.jpg"
+        image: "/images/products/volumetric-clouds-nebula/thumbnail.jpg"
       },
       {
         title: "Animation Controls",
         description: "Built-in animation parameters for flowing, swirling nebula movements.",
-        image: "/images/products/volumetric-clouds-nebula/cs_screenshot01.jpg"
+        image: "/images/products/volumetric-clouds-nebula/thumbnail.jpg"
       }
     ]
   },
@@ -802,6 +802,7 @@ Whether you're building procedural worlds, implementing dynamic customization sy
     engineVersions: ["UE 5.7+"],
     externalUrl: "",
     documentationUrl: "",
+    discordUrl: "https://discord.gg/MYwThQd4",
     videoId: "",
     demoVideos: [
       // Add demo video IDs here - these will be YouTube video IDs
@@ -816,54 +817,28 @@ Whether you're building procedural worlds, implementing dynamic customization sy
     ],
     features: [
       {
-        title: "Runtime Asset Generation",
-        description: "Generate and apply materials, textures, and other assets dynamically at runtime without pre-baking. Perfect for procedural content generation, user customization systems, and dynamic worlds.",
-        image: "/images/products/fabric-ai/feature-runtime-generation.jpg"
-      },
-      {
-        title: "Parameterized Material System",
-        description: "Create materials with customizable color parameters and dynamic instances. Change colors, properties, and textures on the fly with full support for material instance dynamics.",
-        image: "/images/products/fabric-ai/feature-material-creation.jpg"
-      },
-      {
-        title: "Cross-Language Python Integration",
-        description: "Seamlessly integrate Python scripts with Unreal Engine. Leverage Python's powerful libraries for AI, procedural generation, data processing, and automation directly within your project.",
-        image: "/images/products/fabric-ai/feature-python-integration.jpg"
-      },
-      {
-        title: "Automated Object Spawning",
-        description: "Automate object placement and spawning with intelligent algorithms. Create procedural environments, populate scenes, and implement complex spawning patterns with minimal code.",
-        image: "/images/products/fabric-ai/feature-automation.jpg"
-      },
-      {
-        title: "In-Editor Pipeline Automation",
-        description: "Automate repetitive tasks and streamline your workflow with custom pipelines. Batch process assets, generate variations, and execute complex operations without manual intervention.",
-        image: "/images/products/fabric-ai/feature-automation.jpg"
-      },
-      {
-        title: "Comprehensive Logging & Error Handling",
-        description: "Built-in detailed logging system and robust error handling ensure smooth development. Track operations, debug issues quickly, and maintain full visibility into plugin operations.",
-        image: "/images/products/fabric-ai/feature-logging.jpg"
-      },
-      {
-        title: "Blueprint & C++ Support",
-        description: "Full support for both Blueprint and C++ workflows. Use visual scripting for rapid prototyping or dive into C++ for performance-critical operations.",
-        image: "/images/products/fabric-ai/feature-runtime-generation.jpg"
+        title: "Automatic Layout Generation",
+        description: "Intelligently generates and arranges UI layouts, level structures, and spatial configurations automatically. The system analyzes your design requirements and creates optimized layouts that adapt to different contexts, saving hours of manual placement and arrangement work.",
       },
       {
         title: "AI-Powered Automation",
-        description: "Leverage AI algorithms for intelligent asset generation and optimization. Let FabricAI analyze your needs and automatically generate appropriate assets and configurations.",
-        image: "/images/products/fabric-ai/feature-python-integration.jpg"
+        description: "Harness the power of artificial intelligence to automate complex development workflows. From intelligent asset selection to predictive behavior patterns, FabricAI learns from your projects and suggests optimizations, handles repetitive tasks, and accelerates your creative process through smart automation.",
       },
       {
-        title: "Dynamic Asset Customization",
-        description: "Enable player-driven customization with runtime asset modification. Perfect for character creators, vehicle customization, base building, and user-generated content.",
-        image: "/images/products/fabric-ai/feature-material-creation.jpg"
+        title: "Cross-Language Python Integration",
+        description: "Seamlessly bridge Unreal Engine with Python's vast ecosystem. Execute Python scripts directly within your project, leverage powerful libraries for data processing, machine learning, and procedural generation, all while maintaining full access to Unreal's C++ and Blueprint functionality.",
       },
       {
-        title: "Performance Optimized",
-        description: "Efficient algorithms and optimized code ensure minimal runtime overhead. Generate thousands of assets without impacting game performance.",
-        image: "/images/products/fabric-ai/feature-automation.jpg"
+        title: "Automated Object Spawning",
+        description: "Deploy sophisticated object spawning systems with minimal setup. Define rules, patterns, and constraints, then let FabricAI handle the placement logic. Perfect for populating vast environments, creating dynamic encounters, or building procedurally generated worlds that feel handcrafted.",
+      },
+      {
+        title: "Pipeline Automation",
+        description: "Transform your development pipeline with end-to-end automation. From asset import and processing to build preparation and deployment, create custom automated workflows that eliminate manual steps. Chain operations together, set up triggers, and watch your pipeline handle the busywork while you focus on creativity.",
+      },
+      {
+        title: "Multiple Language Model Support",
+        description: "Choose from industry-leading AI models including Claude, OpenRouter, and GitHub Copilot. Switch between models based on your needs - use Claude for complex reasoning, OpenRouter for diverse model access, or GitHub Copilot for code generation. Each integration is optimized for Unreal Engine workflows, providing intelligent suggestions and automation tailored to game development.",
       }
     ],
     isExternal: false,
@@ -896,6 +871,11 @@ function mergeProductWithOverrides(product: any) {
   const overrides = loadProductOverrides();
   const productOverride = overrides.products?.[product.slug];
   
+  // If product is marked as deleted, return null
+  if (productOverride?.isDeleted) {
+    return null;
+  }
+  
   if (productOverride) {
     return { ...product, ...productOverride };
   }
@@ -906,11 +886,36 @@ function mergeProductWithOverrides(product: any) {
 // Helper function to get product by slug
 export function getProductBySlug(slug: string) {
   const product = productDetails[slug as keyof typeof productDetails] || null;
-  return product ? mergeProductWithOverrides(product) : null;
+  if (!product) return null;
+  
+  const mergedProduct = mergeProductWithOverrides(product);
+  return mergedProduct;
 }
 
 // Helper function to get product by ID
 export function getProductById(id: string) {
   const product = Object.values(productDetails).find((p) => p.id === id) || null;
-  return product ? mergeProductWithOverrides(product) : null;
+  if (!product) return null;
+  
+  const mergedProduct = mergeProductWithOverrides(product);
+  return mergedProduct;
+}
+
+// Helper function to get all non-deleted products
+export function getAllProducts() {
+  const overrides = loadProductOverrides();
+  
+  return Object.values(productDetails)
+    .map(product => {
+      const productOverride = overrides.products?.[product.slug];
+      
+      // Skip deleted products
+      if (productOverride?.isDeleted) {
+        return null;
+      }
+      
+      // Merge with overrides
+      return productOverride ? { ...product, ...productOverride } : product;
+    })
+    .filter(Boolean); // Remove null values
 }

@@ -46,6 +46,8 @@ interface ProductFormData {
   engineVersions: string[];
   externalUrl?: string;
   documentationUrl?: string;
+  discordUrl?: string;
+  videoTutorialUrl?: string;
   videoId?: string;
   bannerImage?: string;
   thumbnail?: string;
@@ -527,6 +529,39 @@ export default function EditProductPage() {
                 className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
                 placeholder="https://docs.athiangames.com/..."
               />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Discord URL
+              </label>
+              <input
+                type="url"
+                value={formData.discordUrl || ""}
+                onChange={(e) =>
+                  setFormData({ ...formData, discordUrl: e.target.value })
+                }
+                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
+                placeholder="https://discord.gg/yourserver"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Video Tutorial URL
+              </label>
+              <input
+                type="url"
+                value={formData.videoTutorialUrl || ""}
+                onChange={(e) =>
+                  setFormData({ ...formData, videoTutorialUrl: e.target.value })
+                }
+                className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
+                placeholder="https://youtube.com/watch?v=..."
+              />
+              <p className="text-xs text-muted-foreground mt-1">
+                Link to video tutorial or walkthrough for this product.
+              </p>
             </div>
           </CardContent>
         </Card>
