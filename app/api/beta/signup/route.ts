@@ -29,6 +29,7 @@ export async function POST(req: NextRequest) {
 
     try {
       // Try Prisma first
+      console.log(`🔍 Attempting Prisma signup for: ${email}`);
       existing = await prisma.betaSignup.findUnique({
         where: {
           email_productSlug: {
@@ -39,6 +40,7 @@ export async function POST(req: NextRequest) {
       });
 
       if (existing) {
+        console.log(`⚠️  User already exists in Prisma: ${email}`);
         return NextResponse.json(
           { error: "You're already signed up for this beta!" },
           { status: 409 }
@@ -56,9 +58,10 @@ export async function POST(req: NextRequest) {
           status: "pending",
         },
       });
+      console.log(`✅ Prisma signup successful: ${signup.id}`);
     } catch (dbError) {
       // Fallback to JSON storage if Prisma fails
-      console.warn("Prisma failed, using JSON storage fallback:", dbError);
+      console.warn("❌ Prisma failed, using JSON storage fallback:", dbError);
       usedFallback = true;
 
       existing = await jsonStorage.findUnique({
@@ -69,6 +72,7 @@ export async function POST(req: NextRequest) {
       });
 
       if (existing) {
+        console.log(`⚠️  User already exists in JSON: ${email}`);
         return NextResponse.json(
           { error: "You're already signed up for this beta!" },
           { status: 409 }
@@ -87,9 +91,10 @@ export async function POST(req: NextRequest) {
           acceptedAt: null,
         },
       });
+      console.log(`✅ JSON storage signup successful: ${signup.id}`);
     }
 
-    console.log(`✅ Beta signup created: ${email} for ${productName}${usedFallback ? ' (JSON storage)' : ''}`);
+    console.log(`✅ Beta signup created: ${email} for ${productName}${usedFallback ? ' (JSON storage)' : ' (Prisma)'}`);
 
     return NextResponse.json({
       success: true,

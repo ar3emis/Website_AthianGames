@@ -2,22 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { jsonStorage } from "@/lib/storage/jsonStorage";
 
-// Helper to check if request is from localhost
-function isLocalhost(req: NextRequest) {
-  const hostname = req.headers.get("host") || "";
-  return (
-    hostname.includes("localhost") ||
-    hostname.includes("127.0.0.1") ||
-    hostname.startsWith("192.168.")
-  );
-}
-
 // GET - List all beta signups
 export async function GET(req: NextRequest) {
-  if (!isLocalhost(req)) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
-  }
-
   try {
     const { searchParams } = new URL(req.url);
     const productSlug = searchParams.get("productSlug");
@@ -28,19 +14,26 @@ export async function GET(req: NextRequest) {
     if (status) where.status = status;
 
     let signups;
+    let source = "prisma";
     try {
       // Try Prisma first
+      console.log("🔍 Trying to fetch from Prisma...");
       signups = await prisma.betaSignup.findMany({
         where,
         orderBy: {
           createdAt: "desc",
         },
       });
+      console.log(`✅ Prisma returned ${signups.length} signups`);
     } catch (dbError) {
       // Fallback to JSON storage
-      console.warn("Prisma failed, using JSON storage fallback:", dbError);
+      console.warn("❌ Prisma failed, using JSON storage fallback:", dbError);
+      source = "json";
       signups = await jsonStorage.findMany(where);
+      console.log(`✅ JSON storage returned ${signups.length} signups`);
     }
+
+    console.log(`📊 Total signups: ${signups.length} (source: ${source})`);
 
     // Group by product
     const byProduct: Record<string, any> = {};
@@ -80,10 +73,6 @@ export async function GET(req: NextRequest) {
 
 // PUT - Update beta signup status
 export async function PUT(req: NextRequest) {
-  if (!isLocalhost(req)) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
-  }
-
   try {
     const { id, status } = await req.json();
 
@@ -149,9 +138,6 @@ export async function PUT(req: NextRequest) {
 
 // DELETE - Remove beta signup
 export async function DELETE(req: NextRequest) {
-  if (!isLocalhost(req)) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
-  }
 
   try {
     const { searchParams } = new URL(req.url);
