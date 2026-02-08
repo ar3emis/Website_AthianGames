@@ -49,6 +49,7 @@ export function GoogleDrivePicker({
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [files, setFiles] = useState<GoogleDriveFile[]>([]);
   const [loading, setLoading] = useState(false);
+  const [currentFolderId, setCurrentFolderId] = useState<string>(defaultFolderId);
   const [folderPath, setFolderPath] = useState<Array<{ id: string; name: string }>>([
     { id: defaultFolderId, name: defaultFolderName },
   ]);

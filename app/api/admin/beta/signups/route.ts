@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
+import { prisma } from "@/lib/prisma";
 
 // Helper to check if request is from localhost
 function isLocalhost(req: NextRequest) {
@@ -35,7 +35,7 @@ export async function GET(req: NextRequest) {
 
     // Group by product
     const byProduct: Record<string, any> = {};
-    signups.forEach((signup) => {
+    signups.forEach((signup: any) => {
       if (!byProduct[signup.productSlug]) {
         byProduct[signup.productSlug] = {
           productSlug: signup.productSlug,

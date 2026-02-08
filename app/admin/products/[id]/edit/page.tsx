@@ -29,6 +29,7 @@ interface DownloadFile {
   id: string;
   name: string;
   downloadUrl: string;
+  mimeType: string;
 }
 
 interface ProductFormData {

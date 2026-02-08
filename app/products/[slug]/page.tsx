@@ -183,7 +183,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 <Badge variant={product.category === "wip" ? "secondary" : "primary"} className="text-sm select-none">
                   {product.category === "wip" ? "Work In Progress" : product.category}
                 </Badge>
-                {product.category === "wip" && product.engineVersions.map((version) => (
+                {product.category === "wip" && product.engineVersions.map((version: string) => (
                   <Badge key={version} variant="outline" className="text-xs bg-black/30 border-white/20 text-white select-none">
                     {version}
                   </Badge>
