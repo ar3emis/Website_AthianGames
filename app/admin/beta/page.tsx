@@ -59,6 +59,7 @@ export default function BetaSignupsPage() {
   } | null>(null);
   const [syncing, setSyncing] = useState(false);
   const [syncResult, setSyncResult] = useState<{ success: boolean; message: string } | null>(null);
+  const [fetchError, setFetchError] = useState<string | null>(null);
   const [serverUrl, setServerUrl] = useState(
     typeof window !== "undefined"
       ? localStorage.getItem("adminServerUrl") || "https://athiangames.com"
@@ -68,37 +69,37 @@ export default function BetaSignupsPage() {
   const fetchSignups = async () => {
     try {
       setLoading(true);
+      setFetchError(null);
       const response = await fetch("/api/admin/beta/signups");
-      
-      // Check if response is OK
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      // Check if response is JSON
-      const contentType = response.headers.get("content-type");
-      if (!contentType || !contentType.includes("application/json")) {
+
+      // Try to parse JSON regardless of status code so we can show the real error
+      let data: any = null;
+      const contentType = response.headers.get("content-type") || "";
+      if (contentType.includes("application/json")) {
+        data = await response.json();
+      } else {
         const text = await response.text();
-        console.error("Received non-JSON response:", text.substring(0, 200));
-        throw new Error("Server returned non-JSON response. Are you accessing from localhost?");
+        console.error("Non-JSON response:", text.substring(0, 400));
+        setFetchError(`Server returned HTTP ${response.status} with non-JSON body. Check the terminal for details.`);
+        return;
       }
-      
-      const data = await response.json();
+
+      if (!response.ok) {
+        const msg = data?.error || `HTTP ${response.status}`;
+        console.error("API error:", msg);
+        setFetchError(`API error: ${msg}`);
+        return;
+      }
 
       if (data.success) {
         setSignups(data.signups);
         setByProduct(data.byProduct);
       } else {
-        console.error("API returned error:", data.error);
-        alert(`Error: ${data.error || "Failed to fetch signups"}`);
+        setFetchError(data.error || "Unknown error from API");
       }
     } catch (error) {
       console.error("Failed to fetch signups:", error);
-      alert(
-        error instanceof Error 
-          ? error.message 
-          : "Failed to fetch signups. Check console for details."
-      );
+      setFetchError(error instanceof Error ? error.message : "Network error — check the terminal.");
     } finally {
       setLoading(false);
     }
@@ -278,6 +279,25 @@ export default function BetaSignupsPage() {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
+
+  if (fetchError) {
+    return (
+      <div className="container mx-auto p-6 max-w-3xl">
+        <div className="p-6 border border-red-400 rounded-lg bg-red-50 text-red-800">
+          <h2 className="text-xl font-bold mb-2">Failed to load beta signups</h2>
+          <p className="text-sm mb-4">{fetchError}</p>
+          <p className="text-xs text-red-600 mb-4">
+            Make sure the dev server is running and you are accessing this page from <strong>localhost</strong>.
+            Check the terminal for the full server-side error.
+          </p>
+          <Button onClick={fetchSignups} variant="outline">
+            <RefreshCw className="w-4 h-4 mr-2" />
+            Retry
+          </Button>
+        </div>
       </div>
     );
   }
