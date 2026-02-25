@@ -111,14 +111,6 @@ export default function ContactPage() {
                     → Join our Discord community
                   </a>
                   <a
-                    href="https://twitter.com/athiangames"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    → Follow on Twitter
-                  </a>
-                  <a
                     href="https://youtube.com/@athiangames2417"
                     target="_blank"
                     rel="noopener noreferrer"

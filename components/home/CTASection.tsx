@@ -31,32 +31,7 @@ export function CTASection() {
           </div>
 
           {/* Support CTAs */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Patreon */}
-            <div className="p-8 rounded-xl bg-card border border-border hover:border-primary/50 transition-all group">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Heart className="w-6 h-6 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold mb-2">Support on Patreon</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Fund independent development. Get early access to tools,
-                    exclusive tutorials, and direct support.
-                  </p>
-                  <Link
-                    href="https://patreon.com/athiangames"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button variant="outline" size="sm">
-                      Become a Supporter
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
+          <div className="grid md:grid-cols-1 gap-6 max-w-2xl mx-auto">
             {/* YouTube */}
             <div className="p-8 rounded-xl bg-card border border-border hover:border-accent/50 transition-all group">
               <div className="flex items-start space-x-4">

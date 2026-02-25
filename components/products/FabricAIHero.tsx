@@ -319,17 +319,6 @@ export function FabricAIHero() {
         }
       }
 
-      // Draw instruction text with better styling
-      ctx.save();
-      ctx.globalAlpha = 0.6 + Math.sin(time * 0.05) * 0.2;
-      ctx.font = "bold 16px sans-serif";
-      ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
-      ctx.textAlign = "center";
-      ctx.shadowBlur = 10;
-      ctx.shadowColor = "rgba(139, 92, 246, 0.8)";
-      ctx.fillText("✨ Click and drag to generate assets in real-time ✨", width / 2, height - 30);
-      ctx.restore();
-
       animationId = requestAnimationFrame(animate);
     };
 

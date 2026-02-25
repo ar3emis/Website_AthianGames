@@ -135,13 +135,12 @@ export function TrailerCarousel({ trailerVideoId, slides = [] }: TrailerCarousel
                     <p className="text-white/80 text-base mb-6">{currentSlideData.description}</p>
                   )}
                   
-                  {/* Large YouTube button */}
+                  {/* Watch Showreel button - text only, no icon (updated) */}
                   <Button
                     size="lg"
                     onClick={() => setShowVideoPopup(true)}
-                    className="bg-red-600 hover:bg-red-700 text-white gap-3 px-6"
+                    className="bg-red-600 hover:bg-red-700 text-white px-8 font-semibold"
                   >
-                    <Youtube className="w-6 h-6" />
                     Watch Showreel
                   </Button>
                 </div>

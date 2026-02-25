@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Youtube, Twitter, Github } from "lucide-react";
+import { Youtube, Github } from "lucide-react";
 
 const footerLinks = {
   products: [
@@ -31,11 +31,6 @@ const socialLinks = [
     name: "YouTube",
     href: "https://youtube.com/@athiangames2417",
     icon: Youtube,
-  },
-  {
-    name: "Twitter",
-    href: "https://twitter.com/athiangames",
-    icon: Twitter,
   },
   {
     name: "GitHub",

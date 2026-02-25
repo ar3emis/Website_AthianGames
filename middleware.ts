@@ -5,6 +5,15 @@ export function middleware(request: NextRequest) {
   const hostname = request.headers.get('host') || '';
   const url = request.nextUrl;
 
+  // Skip middleware for API routes, static files, and other Next.js internals
+  if (
+    url.pathname.startsWith('/api/') ||
+    url.pathname.startsWith('/_next/') ||
+    url.pathname.startsWith('/favicon.ico')
+  ) {
+    return NextResponse.next();
+  }
+
   // Check if the request is coming from the docs subdomain
   if (hostname.startsWith('docs.')) {
     // Extract the product slug from the path
@@ -21,11 +30,10 @@ export const config = {
   matcher: [
     /*
      * Match all request paths except for the ones starting with:
-     * - api (API routes)
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      */
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    '/((?!_next/static|_next/image|favicon.ico).*)',
   ],
 };

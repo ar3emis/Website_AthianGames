@@ -1,9 +1,14 @@
-import { NextRequest, NextResponse } from "next/server";
+ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { jsonStorage } from "@/lib/storage/jsonStorage";
+import { requireLocalhost } from "@/lib/auth/adminAuth";
 
 // GET - List all beta signups
 export async function GET(req: NextRequest) {
+  // Check localhost access
+  const localhostCheck = requireLocalhost(req);
+  if (localhostCheck) return localhostCheck;
+
   try {
     const { searchParams } = new URL(req.url);
     const productSlug = searchParams.get("productSlug");
@@ -73,6 +78,10 @@ export async function GET(req: NextRequest) {
 
 // PUT - Update beta signup status
 export async function PUT(req: NextRequest) {
+  // Check localhost access
+  const localhostCheck = requireLocalhost(req);
+  if (localhostCheck) return localhostCheck;
+
   try {
     const { id, status } = await req.json();
 
@@ -138,6 +147,9 @@ export async function PUT(req: NextRequest) {
 
 // DELETE - Remove beta signup
 export async function DELETE(req: NextRequest) {
+  // Check localhost access
+  const localhostCheck = requireLocalhost(req);
+  if (localhostCheck) return localhostCheck;
 
   try {
     const { searchParams } = new URL(req.url);

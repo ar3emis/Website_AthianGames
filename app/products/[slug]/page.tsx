@@ -12,6 +12,7 @@ import { BetaSignupForm } from "@/components/products/BetaSignupForm";
 import { ProductGallery } from "@/components/products/ProductGallery";
 import { generateProductStructuredData } from "@/lib/utils/structuredData";
 import { FabricAIHero } from "@/components/products/FabricAIHero";
+import { FabricAITabs } from "@/components/products/FabricAITabs";
 
 interface ProductPageProps {
   params: Promise<{
@@ -202,8 +203,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <div className="container-custom py-16">
 
-        {/* Video Section */}
-        {(product as any).videoId && (
+        {/* Video Section - Skip for FabricAI as it's in tabs */}
+        {(product as any).videoId && slug !== "fabric-ai" && (
           <div className="mb-16">
             <div className="aspect-video bg-muted rounded-xl overflow-hidden">
               <iframe
@@ -270,8 +271,50 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </Card>
         </div>
 
-        {/* Features or Sub-Products Grid */}
-        {(product as any).isMegapack && (product as any).subProducts ? (
+        {/* FabricAI: Special tabbed interface */}
+        {slug === "fabric-ai" ? (
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold mb-8">Core Features</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+              {product.features.map((feature: any, index: number) => (
+                <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+                  <div className="flex items-start gap-4">
+                    {/* Icon */}
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className="w-6 h-6 text-primary" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke="currentColor"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M5 13l4 4L19 7" 
+                        />
+                      </svg>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
+                      {feature.description && (
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {feature.description}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+
+            {/* Tabbed Interface */}
+            <FabricAITabs product={product as any} />
+          </div>
+        ) : (product as any).isMegapack && (product as any).subProducts ? (
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-8">Included Products</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -364,7 +407,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 ))}
               </div>
             ) : (
-              // Layout for FabricAI (NO images - simple grid with icons)
+              // Layout for products without images
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {product.features.map((feature: any, index: number) => (
                   <Card key={index} className="p-6 hover:shadow-lg transition-shadow">

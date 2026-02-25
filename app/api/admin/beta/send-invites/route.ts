@@ -3,11 +3,16 @@ import { prisma } from "@/lib/prisma";
 import { jsonStorage } from "@/lib/storage/jsonStorage";
 import { sendBulkBetaInvites } from "@/lib/email/emailService";
 import { getProductBySlug } from "@/lib/products/productData";
+import { requireLocalhost } from "@/lib/auth/adminAuth";
 
 export const maxDuration = 60; // Allow up to 60 seconds for bulk emails
 
 // POST - Send beta invites to pending signups
 export async function POST(req: NextRequest) {
+  // Check localhost access
+  const localhostCheck = requireLocalhost(req);
+  if (localhostCheck) return localhostCheck;
+
   try {
     const { productSlug, signupIds } = await req.json();
 

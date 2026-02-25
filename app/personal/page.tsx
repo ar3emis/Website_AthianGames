@@ -35,7 +35,7 @@ const socialLinks = [
   },
   {
     label: "Twitter",
-    url: "https://twitter.com/Sameek_Kundu",
+    url: "https://x.com/Sameek_Kundu",
     icon: Twitter,
   },
   {

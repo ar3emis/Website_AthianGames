@@ -82,6 +82,13 @@ export default function AdminPage() {
       color: "text-blue-500",
     },
     {
+      title: "Beta Signups",
+      description: "View and manage beta program signups",
+      icon: FileText,
+      href: "/admin/beta",
+      color: "text-green-500",
+    },
+    {
       title: "Booking Availability",
       description: "Set available days, times, and block dates",
       icon: Calendar,

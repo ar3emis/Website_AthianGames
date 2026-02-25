@@ -16,6 +16,7 @@ import {
   XCircle,
   Trash2,
   RefreshCw,
+  CloudDownload,
 } from "lucide-react";
 
 interface BetaSignup {
@@ -56,19 +57,48 @@ export default function BetaSignupsPage() {
     sent?: number;
     failed?: number;
   } | null>(null);
+  const [syncing, setSyncing] = useState(false);
+  const [syncResult, setSyncResult] = useState<{ success: boolean; message: string } | null>(null);
+  const [serverUrl, setServerUrl] = useState(
+    typeof window !== "undefined"
+      ? localStorage.getItem("adminServerUrl") || "https://athiangames.com"
+      : "https://athiangames.com"
+  );
 
   const fetchSignups = async () => {
     try {
       setLoading(true);
       const response = await fetch("/api/admin/beta/signups");
+      
+      // Check if response is OK
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      // Check if response is JSON
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        const text = await response.text();
+        console.error("Received non-JSON response:", text.substring(0, 200));
+        throw new Error("Server returned non-JSON response. Are you accessing from localhost?");
+      }
+      
       const data = await response.json();
 
       if (data.success) {
         setSignups(data.signups);
         setByProduct(data.byProduct);
+      } else {
+        console.error("API returned error:", data.error);
+        alert(`Error: ${data.error || "Failed to fetch signups"}`);
       }
     } catch (error) {
       console.error("Failed to fetch signups:", error);
+      alert(
+        error instanceof Error 
+          ? error.message 
+          : "Failed to fetch signups. Check console for details."
+      );
     } finally {
       setLoading(false);
     }
@@ -197,6 +227,34 @@ export default function BetaSignupsPage() {
     }
   };
 
+  const syncFromServer = async () => {
+    if (!serverUrl.trim()) {
+      alert("Please enter your deployed server URL.");
+      return;
+    }
+    try {
+      setSyncing(true);
+      setSyncResult(null);
+      localStorage.setItem("adminServerUrl", serverUrl.trim());
+      const res = await fetch("/api/admin/beta/sync-from-server", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ serverUrl: serverUrl.trim() }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSyncResult({ success: true, message: data.message });
+        await fetchSignups();
+      } else {
+        setSyncResult({ success: false, message: data.error || data.detail || "Sync failed" });
+      }
+    } catch (err) {
+      setSyncResult({ success: false, message: String(err) });
+    } finally {
+      setSyncing(false);
+    }
+  };
+
   const getStatusBadge = (status: string) => {
     const variants: Record<string, any> = {
       pending: { variant: "secondary", icon: Clock, text: "Pending" },
@@ -243,6 +301,35 @@ export default function BetaSignupsPage() {
             <RefreshCw className="w-4 h-4 mr-2" />
             Refresh
           </Button>
+        </div>
+
+        {/* Sync from deployed server */}
+        <div className="mb-4 p-4 border border-border rounded-lg bg-muted/30">
+          <p className="text-sm font-medium mb-2 flex items-center gap-2">
+            <CloudDownload className="w-4 h-4" />
+            Sync signups from deployed server
+          </p>
+          <div className="flex gap-2 flex-wrap items-center">
+            <input
+              type="url"
+              value={serverUrl}
+              onChange={(e) => setServerUrl(e.target.value)}
+              placeholder="https://yoursite.netlify.app"
+              className="flex-1 min-w-[260px] px-3 py-2 bg-background border border-border rounded-lg text-sm"
+            />
+            <Button onClick={syncFromServer} disabled={syncing} variant="outline">
+              <CloudDownload className="w-4 h-4 mr-2" />
+              {syncing ? "Syncing…" : "Sync from Server"}
+            </Button>
+          </div>
+          {syncResult && (
+            <p className={`mt-2 text-sm ${syncResult.success ? "text-green-600" : "text-red-600"}`}>
+              {syncResult.message}
+            </p>
+          )}
+          <p className="mt-1 text-xs text-muted-foreground">
+            Pulls signups saved on the Netlify deployment into local storage so you can view &amp; manage them here.
+          </p>
         </div>
 
         {/* Stats Cards */}
@@ -339,7 +426,7 @@ export default function BetaSignupsPage() {
           Export CSV
         </Button>
         
-        {selectedProduct && byProduct.find((p) => p.productSlug === selectedProduct)?.stats.pending > 0 && (
+        {selectedProduct && (byProduct.find((p) => p.productSlug === selectedProduct)?.stats.pending ?? 0) > 0 && (
           <Button
             variant="primary"
             onClick={() => sendInvites(selectedProduct)}
@@ -359,7 +446,7 @@ export default function BetaSignupsPage() {
               {inviteResult.message} {inviteResult.sent !== undefined && `(${inviteResult.sent} sent, ${inviteResult.failed} failed)`}
             </p>
             <Button
-              variant="link"
+              variant="ghost"
               onClick={() => setInviteResult(null)}
               className="text-muted-foreground"
             >
