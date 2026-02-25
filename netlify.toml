@@ -5,6 +5,7 @@
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
+  ENABLE_COREPACK = "false"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
@@ -12,3 +13,4 @@
 [context.production.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
+  ENABLE_COREPACK = "false"
