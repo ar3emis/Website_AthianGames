@@ -1,16 +1,13 @@
 [build]
   command = "npm run build"
+  install = "corepack disable && npm install --legacy-peer-deps"
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
-  NPM_FLAGS = "--legacy-peer-deps"
-  ENABLE_COREPACK = "false"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [context.production.environment]
   NODE_VERSION = "20"
-  NPM_FLAGS = "--legacy-peer-deps"
-  ENABLE_COREPACK = "false"
