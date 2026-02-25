@@ -334,7 +334,7 @@ export default function BetaSignupsPage() {
               type="url"
               value={serverUrl}
               onChange={(e) => setServerUrl(e.target.value)}
-              placeholder="https://yoursite.netlify.app"
+              placeholder="https://athiangames.com"
               className="flex-1 min-w-[260px] px-3 py-2 bg-background border border-border rounded-lg text-sm"
             />
             <Button onClick={syncFromServer} disabled={syncing} variant="outline">
@@ -349,6 +349,7 @@ export default function BetaSignupsPage() {
           )}
           <p className="mt-1 text-xs text-muted-foreground">
             Pulls signups saved on the Netlify deployment into local storage so you can view &amp; manage them here.
+            Requires <code className="bg-muted px-1 rounded">ADMIN_SYNC_SECRET</code> to be set in both your <code className="bg-muted px-1 rounded">.env</code> and in Netlify → Site settings → Environment variables.
           </p>
         </div>
 

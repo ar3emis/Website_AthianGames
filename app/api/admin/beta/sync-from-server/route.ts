@@ -32,21 +32,21 @@ export async function POST(req: NextRequest) {
 
     // Strip trailing slash
     const base = serverUrl.replace(/\/$/, "");
-    const remoteUrl = `${base}/api/admin/beta/signups`;
+    const syncSecret = process.env.ADMIN_SYNC_SECRET;
+    if (!syncSecret) {
+      return NextResponse.json(
+        { error: "ADMIN_SYNC_SECRET is not set in your local .env file" },
+        { status: 500 }
+      );
+    }
+    // Use the /export endpoint which is protected by token, not localhost check
+    const remoteUrl = `${base}/api/admin/beta/export?token=${encodeURIComponent(syncSecret)}`;
 
     let remoteSignups: BetaSignup[] = [];
 
     try {
       const res = await fetch(remoteUrl, {
-        headers: {
-          // Spoof localhost so requireLocalhost passes on the remote side
-          // (works when the remote allows localhost header override — Netlify won't
-          //  block it since the API checks the Host header, not IP)
-          Host: "localhost",
-          "x-forwarded-host": "localhost",
-          Accept: "application/json",
-        },
-        // Don't follow infinite redirects
+        headers: { Accept: "application/json" },
         redirect: "follow",
       });
 
