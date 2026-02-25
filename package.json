@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate || true && next build",
+    "build": "node -e \"try{require('child_process').execSync('npx prisma generate',{stdio:'inherit'})}catch(e){}\" && next build",
     "start": "next start",
     "lint": "next lint",
     "payload": "cross-env PAYLOAD_CONFIG_PATH=payload.config.ts payload",
@@ -20,7 +20,7 @@
     "@payloadcms/db-mongodb": "^3.0.0",
     "@payloadcms/next": "^3.0.0",
     "@payloadcms/richtext-lexical": "^3.0.0",
-    "@prisma/client": "^7.3.0",
+    "@prisma/client": "^6.19.2",
     "@radix-ui/react-tabs": "^1.1.13",
     "@stripe/stripe-js": "^3.0.0",
     "bcryptjs": "^3.0.3",
@@ -34,7 +34,7 @@
     "nodemailer": "^7.0.13",
     "payload": "^3.0.0",
     "postcss": "^8.5.6",
-    "prisma": "^7.3.0",
+    "prisma": "^6.19.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sharp": "^0.33.0",
@@ -58,6 +58,5 @@
     "eslint-config-next": "^15.4.10",
     "puppeteer": "^24.37.0",
     "typescript": "^5.3.0"
-  },
-  "packageManager": "npm@10.8.2"
+  }
 }
