@@ -17,6 +17,7 @@
     "@auth/prisma-adapter": "^2.11.1",
     "@libsql/client": "^0.17.0",
     "@netlify/blobs": "^10.6.0",
+    "@next-auth/prisma-adapter": "^1.0.7",
     "@payloadcms/db-mongodb": "^3.0.0",
     "@payloadcms/next": "^3.0.0",
     "@payloadcms/richtext-lexical": "^3.0.0",

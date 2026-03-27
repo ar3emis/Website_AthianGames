@@ -145,14 +145,23 @@ export default async function DocsPage({ params }: DocsPageProps) {
                   Quick Actions
                 </h4>
                 <div className="space-y-2">
+                  {product.externalUrl && (
+                    <Link
+                      href={product.externalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      <span>View on Marketplace</span>
+                    </Link>
+                  )}
                   <Link
-                    href={product.externalUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/support"
                     className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
                   >
-                    <ExternalLink className="h-4 w-4" />
-                    <span>View on Marketplace</span>
+                    <Book className="h-4 w-4" />
+                    <span>Support Center</span>
                   </Link>
                 </div>
               </div>
@@ -217,7 +226,20 @@ export default async function DocsPage({ params }: DocsPageProps) {
                 [&_.callout-warning]:bg-yellow-500/10 [&_.callout-warning]:border-l-4 [&_.callout-warning]:border-yellow-500 [&_.callout-warning]:p-4 [&_.callout-warning]:rounded-r-lg [&_.callout-warning]:my-6
                 [&_.callout-tip]:bg-green-500/10 [&_.callout-tip]:border-l-4 [&_.callout-tip]:border-green-500 [&_.callout-tip]:p-4 [&_.callout-tip]:rounded-r-lg [&_.callout-tip]:my-6
                 [&_.feature-grid]:grid [&_.feature-grid]:md:grid-cols-2 [&_.feature-grid]:gap-4 [&_.feature-grid]:my-8
-                [&_.feature-card]:bg-muted/50 [&_.feature-card]:p-4 [&_.feature-card]:rounded-lg [&_.feature-card]:border [&_.feature-card]:border-border/50"
+                [&_.feature-card]:bg-muted/50 [&_.feature-card]:p-4 [&_.feature-card]:rounded-lg [&_.feature-card]:border [&_.feature-card]:border-border/50
+                [&_.feature-card_.fc-icon]:text-2xl [&_.feature-card_.fc-icon]:mb-2
+                [&_.feature-card_h4]:text-base [&_.feature-card_h4]:font-semibold [&_.feature-card_h4]:text-primary [&_.feature-card_h4]:mt-0 [&_.feature-card_h4]:mb-1
+                [&_.feature-card_p]:text-sm [&_.feature-card_p]:text-foreground/60 [&_.feature-card_p]:mb-0
+                [&_.workflow]:flex [&_.workflow]:items-center [&_.workflow]:gap-0 [&_.workflow]:my-8 [&_.workflow]:overflow-x-auto [&_.workflow]:pb-2
+                [&_.wf-step]:bg-muted/50 [&_.wf-step]:border [&_.wf-step]:border-border/50 [&_.wf-step]:rounded-lg [&_.wf-step]:p-4 [&_.wf-step]:min-w-[130px] [&_.wf-step]:text-center [&_.wf-step]:shrink-0
+                [&_.wf-num]:w-7 [&_.wf-num]:h-7 [&_.wf-num]:bg-primary [&_.wf-num]:rounded-full [&_.wf-num]:text-xs [&_.wf-num]:font-bold [&_.wf-num]:text-primary-foreground [&_.wf-num]:flex [&_.wf-num]:items-center [&_.wf-num]:justify-center [&_.wf-num]:mx-auto [&_.wf-num]:mb-2
+                [&_.wf-step_p]:text-xs [&_.wf-step_p]:text-foreground/60 [&_.wf-step_p]:mb-0 [&_.wf-step_p]:leading-snug
+                [&_.wf-arrow]:text-foreground/20 [&_.wf-arrow]:text-xl [&_.wf-arrow]:px-1 [&_.wf-arrow]:shrink-0
+                [&_.pill]:inline-block [&_.pill]:text-[11px] [&_.pill]:font-bold [&_.pill]:px-2.5 [&_.pill]:py-0.5 [&_.pill]:rounded-full [&_.pill]:uppercase [&_.pill]:tracking-wide
+                [&_.pill-green]:bg-green-500/15 [&_.pill-green]:text-green-400
+                [&_.pill-orange]:bg-orange-500/15 [&_.pill-orange]:text-orange-400
+                [&_.pill-blue]:bg-blue-500/15 [&_.pill-blue]:text-blue-400
+                [&_kbd]:px-2 [&_kbd]:py-0.5 [&_kbd]:rounded [&_kbd]:bg-muted [&_kbd]:border [&_kbd]:border-border [&_kbd]:text-xs [&_kbd]:font-mono [&_kbd]:text-foreground/80 [&_kbd]:shadow-sm"
               dangerouslySetInnerHTML={{ __html: currentSection.content }}
             />
 
@@ -265,6 +287,7 @@ function DocsIndex() {
   const productsWithDocs = [
     { slug: "minimap-map-and-navigation-system", name: "Minimap, Map and Navigation System", description: "Complete guide for the minimap plugin", icon: "🗺️" },
     { slug: "art-of-shader-distortion-and-glitches", name: "Art Of Shader - Distortion And Glitches", description: "Shader effects and post-process materials", icon: "✨" },
+    { slug: "dynamic-mesh-occluder", name: "Dynamic Mesh Occluder", description: "Strip hidden body geometry under clothing for better GPU performance", icon: "👗" },
   ];
 
   return (

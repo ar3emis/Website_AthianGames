@@ -6,6 +6,9 @@
     },
     "tile-variation-material": {
       "isDeleted": true
+    },
+    "runtime-asset-import": {
+      "isDeleted": true
     }
   }
 }

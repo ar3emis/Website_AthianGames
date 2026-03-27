@@ -119,7 +119,6 @@ export async function PUT(
       price: data.price,
       externalUrl: data.externalUrl,
       documentationUrl: data.documentationUrl,
-      discordUrl: data.discordUrl,
       videoTutorialUrl: data.videoTutorialUrl,
       // Add any other fields you want to be editable
     };

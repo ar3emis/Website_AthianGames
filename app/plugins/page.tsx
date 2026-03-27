@@ -15,6 +15,28 @@ export const metadata: Metadata = {
 const plugins = [
   {
     id: "1",
+    slug: "dynamic-mesh-occluder",
+    name: "Dynamic Mesh Occluder",
+    tagline: "Strip hidden body geometry under clothing — zero overdraw, zero runtime cost",
+    description:
+      "Automatically detect and bake away body mesh triangles hidden under clothing. An editor tool with a live 3D viewport, 13 tunable detection parameters, paint-override mode, and a Blueprint runtime component that swaps the occluded mesh automatically.",
+    thumbnail: "/images/products/dynamic-mesh-occluder/thumbnail.jpg",
+    category: "Character Tools",
+    engineVersions: ["UE 5.7"],
+    features: [
+      "Auto occlusion detection (raycasting)",
+      "Manual paint override mode",
+      "Multiple outfits in one mapping table",
+      "Blueprint runtime component",
+    ],
+    hasStore: false,
+    storeSlug: null,
+    githubUrl: null,
+    docsUrl: "/docs/dynamic-mesh-occluder",
+    productUrl: "/products/dynamic-mesh-occluder",
+  },
+  {
+    id: "2",
     slug: "volumetric-nebula",
     name: "Volumetric Nebula System",
     tagline: "Production-ready space environment generation",
@@ -172,9 +194,18 @@ export default function PluginsPage() {
 
                   {/* Actions */}
                   <div className="flex flex-wrap gap-3">
+                    {(plugin as any).productUrl && (
+                      <Link href={(plugin as any).productUrl}>
+                        <Button>
+                          View Product
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Button>
+                      </Link>
+                    )}
+
                     {plugin.hasStore && (
                       <Link href={`/store/${plugin.storeSlug}`}>
-                        <Button>
+                        <Button variant={(plugin as any).productUrl ? "secondary" : "primary"}>
                           View in Store
                           <ArrowRight className="w-4 h-4 ml-2" />
                         </Button>
@@ -187,7 +218,7 @@ export default function PluginsPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <Button variant={plugin.hasStore ? "secondary" : "primary"}>
+                        <Button variant={plugin.hasStore || (plugin as any).productUrl ? "secondary" : "primary"}>
                           <Github className="w-4 h-4 mr-2" />
                           View on GitHub
                         </Button>

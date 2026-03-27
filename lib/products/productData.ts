@@ -785,6 +785,56 @@ Ideal for applications like architectural visualization, product configurators, 
       }
     ]
   },
+  "dynamic-mesh-occluder": {
+    id: "18",
+    slug: "dynamic-mesh-occluder",
+    name: "Dynamic Mesh Occluder",
+    topText: "Dynamic Mesh Occluder",
+    bottomText: "Strip hidden body geometry under clothing in one click — zero overdraw, zero runtime cost.",
+    summary: "Automatically detect and bake away body mesh triangles hidden under clothing, then swap the body mesh at runtime to eliminate GPU overdraw.",
+    description: `Dynamic Mesh Occluder is an editor tool that removes body geometry hidden inside clothing — improving rendering performance without any complicated setup at runtime.
+
+When a character wears clothing, the body underneath is still rendered by the GPU even though the player never sees it. This plugin lets you detect and bake away those hidden triangles in the editor, then automatically swap the body mesh at runtime to the trimmed version — so the GPU never has to render what isn't visible.
+
+The tool ships with a standalone editor window, a live 3D preview viewport, fully tunable detection settings, a paint-over mode for manual corrections, and a runtime Blueprint component that handles automatic mesh swapping via a mapping table. Multiple outfit combinations can be stored in a single data asset — one asset covers your whole character.`,
+    category: "plugins",
+    engineVersions: ["UE 5.7"],
+    externalUrl: "",
+    documentationUrl: "/docs/dynamic-mesh-occluder",
+    thumbnail: "/images/products/dynamic-mesh-occluder/thumbnail.jpg",
+    bannerImage: "/images/products/dynamic-mesh-occluder/thumbnail.jpg",
+    gallery: [
+      "/images/products/dynamic-mesh-occluder/thumbnail.jpg",
+    ],
+    features: [
+      {
+        title: "Auto Occlusion Detection",
+        description: "Multi-angle raycasting with Fibonacci sphere sampling automatically detects which body triangles are hidden under clothing. Fully tunable settings let you dial in the result for any character and outfit combination.",
+      },
+      {
+        title: "Manual Paint Override",
+        description: "LMB to paint triangles hidden, Shift+LMB to restore them visible. Full undo/redo, brush radius control, invert and clear — correct edge artifacts in seconds without re-running detection.",
+      },
+      {
+        title: "Multiple Outfits in One Asset",
+        description: "Every save run appends a new entry to the same mapping table. One DA_BodyOcclusionMap covers your whole character — the runtime component picks the right occluded mesh automatically based on what the character is wearing.",
+      },
+      {
+        title: "Blueprint-Ready Runtime Component",
+        description: "Add UDynamicMeshOccluderComponent to your character, assign the mapping table, and call one Blueprint node when clothing changes. The plugin swaps the body mesh automatically — no manual mesh management needed.",
+      },
+      {
+        title: "Live 3D Preview Viewport",
+        description: "Inspect the body and clothing meshes together in a dockable 3D viewport. Toggle the hidden/visible mask overlay instantly. Clothing automatically matches the body skeleton pose for an accurate preview.",
+      },
+      {
+        title: "Non-Destructive Workflow",
+        description: "Your original skeletal mesh assets are never modified. The tool generates a new trimmed mesh asset and a separate mapping table, leaving your source data completely intact.",
+      },
+    ],
+    isExternal: false,
+    isFeatured: false,
+  },
   "fabric-ai": {
     id: "17",
     slug: "fabric-ai",
