@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import { ProductsView } from "@/components/products/ProductsView";
 import { getAllProducts } from "@/lib/products/productData";
 
+// Re-read overrides on every request so admin changes appear immediately
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Products",
   description: "Browse all Unreal Engine tools, plugins, assets, and resources from Athian Games",

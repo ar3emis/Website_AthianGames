@@ -46,7 +46,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ticket }, { status: 201 });
   } catch (error) {
     console.error("[support/tickets POST]", error);
-    return NextResponse.json({ error: "Failed to create ticket." }, { status: 500 });
+    const message =
+      process.env.NODE_ENV === "development" && error instanceof Error
+        ? error.message
+        : "Failed to create ticket. Please try again.";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
 

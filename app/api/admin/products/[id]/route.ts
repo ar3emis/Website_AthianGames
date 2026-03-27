@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { productDetails, getProductById } from "@/lib/products/productData";
+import { getProductById } from "@/lib/products/productData";
 import fs from "fs";
 import path from "path";
 
@@ -110,17 +110,46 @@ export async function PUT(
     const overrides = loadOverrides();
     const productSlug = product.slug;
 
-    // Save only the fields that can be edited in admin
-    // This creates/updates an override entry for this product
+    // Helper: only include key in override when value is not undefined
+    const defined = (v: any) => v !== undefined;
+
+    // Build the override entry — all fields editable via the admin form
+    const incoming: Record<string, any> = {};
+
+    // Text / identity fields
+    if (defined(data.name))             incoming.name             = data.name;
+    if (defined(data.topText))          incoming.topText          = data.topText;
+    if (defined(data.bottomText))       incoming.bottomText       = data.bottomText;
+    if (defined(data.summary))          incoming.summary          = data.summary;
+    if (defined(data.description))      incoming.description      = data.description;
+    if (defined(data.category))         incoming.category         = data.category;
+
+    // Media
+    if (defined(data.thumbnail))        incoming.thumbnail        = data.thumbnail;
+    if (defined(data.bannerImage))      incoming.bannerImage      = data.bannerImage;
+    if (defined(data.videoThumbnail))   incoming.videoThumbnail   = data.videoThumbnail;
+    if (defined(data.videoId))          incoming.videoId          = data.videoId;
+
+    // Links
+    if (defined(data.externalUrl))      incoming.externalUrl      = data.externalUrl;
+    if (defined(data.documentationUrl)) incoming.documentationUrl = data.documentationUrl;
+    if (defined(data.videoTutorialUrl)) incoming.videoTutorialUrl = data.videoTutorialUrl;
+    if (defined(data.downloadUrl))      incoming.downloadUrl      = data.downloadUrl;
+    if (defined(data.downloadUrls))     incoming.downloadUrls     = data.downloadUrls;
+
+    // Pricing / flags
+    if (defined(data.price))            incoming.price            = data.price;
+    if (defined(data.isExternal))       incoming.isExternal       = data.isExternal;
+    if (defined(data.isFeatured))       incoming.isFeatured       = data.isFeatured;
+
+    // Engine versions & features
+    if (defined(data.engineVersions))   incoming.engineVersions   = data.engineVersions;
+    if (defined(data.features))         incoming.features         = data.features;
+
+    // Merge with any existing override (preserving isDeleted etc.)
     overrides.products[productSlug] = {
       ...(overrides.products[productSlug] || {}),
-      downloadUrl: data.downloadUrl,
-      downloadUrls: data.downloadUrls, // Save Google Drive selected files
-      price: data.price,
-      externalUrl: data.externalUrl,
-      documentationUrl: data.documentationUrl,
-      videoTutorialUrl: data.videoTutorialUrl,
-      // Add any other fields you want to be editable
+      ...incoming,
     };
 
     // Save to file

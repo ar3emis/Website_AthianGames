@@ -9,6 +9,10 @@
     },
     "runtime-asset-import": {
       "isDeleted": true
+    },
+    "dynamic-mesh-occluder": {
+      "externalUrl": "",
+      "documentationUrl": "/docs/dynamic-mesh-occluder"
     }
   }
 }

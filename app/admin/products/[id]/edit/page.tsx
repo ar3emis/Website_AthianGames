@@ -419,7 +419,7 @@ export default function EditProductPage() {
                 Download URL
               </label>
               <input
-                type="url"
+                type="text"
                 value={formData.downloadUrl || ""}
                 onChange={(e) =>
                   setFormData({ ...formData, downloadUrl: e.target.value })
@@ -506,7 +506,7 @@ export default function EditProductPage() {
                 External URL (Marketplace)
               </label>
               <input
-                type="url"
+                type="text"
                 value={formData.externalUrl || ""}
                 onChange={(e) =>
                   setFormData({ ...formData, externalUrl: e.target.value })
@@ -521,7 +521,7 @@ export default function EditProductPage() {
                 Documentation URL
               </label>
               <input
-                type="url"
+                type="text"
                 value={formData.documentationUrl || ""}
                 onChange={(e) =>
                   setFormData({ ...formData, documentationUrl: e.target.value })
@@ -536,7 +536,7 @@ export default function EditProductPage() {
                 Video Tutorial URL
               </label>
               <input
-                type="url"
+                type="text"
                 value={formData.videoTutorialUrl || ""}
                 onChange={(e) =>
                   setFormData({ ...formData, videoTutorialUrl: e.target.value })
