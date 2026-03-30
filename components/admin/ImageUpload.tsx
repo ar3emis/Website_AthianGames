@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, DragEvent, ChangeEvent } from "react";
+import { useState, useRef, useEffect, DragEvent, ChangeEvent } from "react";
 import { Upload, X, Loader2, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
@@ -24,6 +24,13 @@ export function ImageUpload({
   const [error, setError] = useState<string | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(value || null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Sync previewUrl when parent value changes (e.g., product data loads)
+  useEffect(() => {
+    if (value !== undefined) {
+      setPreviewUrl(value || null);
+    }
+  }, [value]);
 
   const aspectClasses = {
     video: "aspect-video",

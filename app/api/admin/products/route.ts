@@ -48,19 +48,23 @@ export async function GET(req: NextRequest) {
         const override = overrides.products?.[slug];
         return !override?.isDeleted;
       })
-      .map(([slug, product]) => ({
-        id: product.id,
-        name: product.name,
-        slug: product.slug,
-        category: product.category,
-        price: (product as any).price,
-        isExternal: product.externalUrl ? true : false,
-        externalUrl: product.externalUrl,
-        isFeatured: (product as any).isMegapack || false,
-        thumbnail: product.thumbnail,
-        shortDescription: product.summary,
-        engineVersions: product.engineVersions,
-      }));
+      .map(([slug, product]) => {
+        // Merge overrides so admin-edited fields (thumbnail, name, etc.) appear
+        const merged = { ...product, ...(overrides.products?.[slug] || {}) };
+        return {
+          id: merged.id,
+          name: merged.name,
+          slug: merged.slug,
+          category: merged.category,
+          price: (merged as any).price,
+          isExternal: merged.externalUrl ? true : false,
+          externalUrl: merged.externalUrl,
+          isFeatured: (merged as any).isFeatured || (merged as any).isMegapack || false,
+          thumbnail: merged.thumbnail,
+          shortDescription: merged.summary,
+          engineVersions: merged.engineVersions,
+        };
+      });
 
     return NextResponse.json({ success: true, products });
   } catch (error) {

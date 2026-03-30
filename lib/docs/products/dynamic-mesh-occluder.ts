@@ -19,7 +19,7 @@ const dynamicMeshOccluderDocs: ProductDocumentation = {
             <div class="feature-card"><div class="fc-icon">⚡</div><h4>Auto Detect Occlusion</h4><p>Automatically detect and remove triangles from the base skeletal mesh, based on clothing assets.</p></div>
             <div class="feature-card"><div class="fc-icon">🎨</div><h4>Manual Paint Override</h4><p>Paint individual triangles as hidden or visible to fine-tune the result with Brush, Select, or Lasso tools.</p></div>
             <div class="feature-card"><div class="fc-icon">👗</div><h4>Multiple Outfits</h4><p>Store different clothing combinations in one mapping table — one asset covers your whole character.</p></div>
-            <div class="feature-card"><div class="fc-icon">🔷</div><h4>Runtime Mesh Swap</h4><p>A lightweight data asset maps clothing to pre-baked meshes — swap the body at runtime with a single Blueprint call.</p></div>
+            <div class="feature-card"><div class="fc-icon">🔷</div><h4>Runtime Mesh Swap</h4><p>A lightweight mapping table maps clothing to pre-baked meshes — swap the body at runtime with a single Blueprint call.</p></div>
           </div>
         </section>
         <section>
@@ -108,7 +108,7 @@ const dynamicMeshOccluderDocs: ProductDocumentation = {
         <section>
           <h3>Opening the Tool</h3>
           <div class="callout-info">
-            <strong>ℹ️ How to open:</strong> Content Browser → right-click any <strong>Skeletal Mesh</strong> → <strong>Character Tools → Create Body Occlusion Mapping Data…</strong>. This is the only way to open the editor.
+            <strong>ℹ️ How to open:</strong> Content Browser → right-click any <strong>Skeletal Mesh</strong> → <strong>Character Tools → Create Body Occlusion Mapping Data…</strong>. This is the only way to open the editor — the tool is not a data asset and cannot be launched by double-clicking an asset.
           </div>
         </section>
         <section>
@@ -135,7 +135,7 @@ const dynamicMeshOccluderDocs: ProductDocumentation = {
             <div class="feature-card"><div class="fc-icon">🔍</div><h4>Detect Occlusion</h4><p>Runs the full detection pass and updates the viewport. Can also refresh the baseline during Paint Mode without losing paint strokes.</p></div>
             <div class="feature-card"><div class="fc-icon">🧹</div><h4>Clear Detection</h4><p>Resets the detection baseline to fully visible. Manually painted strokes are preserved.</p></div>
             <div class="feature-card"><div class="fc-icon">👁️</div><h4>Toggle Preview</h4><p>Hides clothing meshes in the viewport to inspect the body with occluded regions highlighted.</p></div>
-            <div class="feature-card"><div class="fc-icon">💾</div><h4>Save Occluded Mesh</h4><p>Saves the trimmed mesh, updates the runtime mapping table, and saves the editor data asset.</p></div>
+            <div class="feature-card"><div class="fc-icon">💾</div><h4>Save Occluded Mesh</h4><p>Saves the trimmed mesh and updates the runtime mapping table.</p></div>
           </div>
         </section>
         <section>

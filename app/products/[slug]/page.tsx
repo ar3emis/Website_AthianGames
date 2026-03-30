@@ -203,23 +203,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <div className="container-custom py-16">
 
-        {/* Video Section - Skip for FabricAI as it's in tabs */}
-        {(product as any).videoId && slug !== "fabric-ai" && (
-          <div className="mb-16">
-            <div className="aspect-video bg-muted rounded-xl overflow-hidden">
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${(product as any).videoId}`}
-                title={product.name}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
-            </div>
-          </div>
-        )}
 
         {/* CTA Buttons */}
         <div className="flex flex-wrap gap-4 mb-16">
@@ -273,6 +256,25 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </CardContent>
           </Card>
         </div>
+
+        {/* Video Section - Show YouTube embed when videoId exists (skip for FabricAI as it's in tabs) */}
+        {(product as any).videoId && slug !== "fabric-ai" && (
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold mb-6">Video</h2>
+            <div className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${(product as any).videoId}`}
+                title={product.name}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+          </div>
+        )}
 
         {/* FabricAI: Special tabbed interface */}
         {slug === "fabric-ai" ? (

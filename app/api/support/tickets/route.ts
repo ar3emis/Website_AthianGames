@@ -3,8 +3,15 @@ import { prisma } from "@/lib/prisma";
 
 // Generate next ticket number like TKT-0001
 async function generateTicketNumber(): Promise<string> {
-  const count = await prisma.supportTicket.count();
-  return `TKT-${String(count + 1).padStart(4, "0")}`;
+  const latest = await prisma.supportTicket.findFirst({
+    orderBy: { ticketNumber: "desc" },
+    select: { ticketNumber: true },
+  });
+
+  if (!latest) return "TKT-0001";
+
+  const num = parseInt(latest.ticketNumber.replace("TKT-", ""), 10);
+  return `TKT-${String((isNaN(num) ? 0 : num) + 1).padStart(4, "0")}`;
 }
 
 // POST /api/support/tickets — create a new ticket
@@ -47,7 +54,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error("[support/tickets POST]", error);
     const message =
-      process.env.NODE_ENV === "development" && error instanceof Error
+      error instanceof Error
         ? error.message
         : "Failed to create ticket. Please try again.";
     return NextResponse.json({ error: message }, { status: 500 });
