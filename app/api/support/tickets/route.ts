@@ -1,17 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-// Generate next ticket number like TKT-0001
+// Generate next ticket number like TKT-0001 (uses count for reliability)
 async function generateTicketNumber(): Promise<string> {
-  const latest = await prisma.supportTicket.findFirst({
-    orderBy: { ticketNumber: "desc" },
-    select: { ticketNumber: true },
-  });
-
-  if (!latest) return "TKT-0001";
-
-  const num = parseInt(latest.ticketNumber.replace("TKT-", ""), 10);
-  return `TKT-${String((isNaN(num) ? 0 : num) + 1).padStart(4, "0")}`;
+  const count = await prisma.supportTicket.count();
+  return `TKT-${String(count + 1).padStart(4, "0")}`;
 }
 
 // POST /api/support/tickets — create a new ticket
@@ -27,37 +20,60 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const ticketNumber = await generateTicketNumber();
+    // Retry up to 3 times in case of unique constraint collision on ticketNumber
+    let ticket = null;
+    let lastError: unknown = null;
 
-    const ticket = await prisma.supportTicket.create({
-      data: {
-        ticketNumber,
-        name: name.trim(),
-        email: email.trim().toLowerCase(),
-        subject: subject.trim(),
-        description: description.trim(),
-        product: product || "general",
-        priority: priority || "normal",
-        status: "open",
-        messages: {
-          create: {
-            sender: "user",
-            senderName: name.trim(),
-            content: description.trim(),
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        const ticketNumber = await generateTicketNumber();
+
+        ticket = await prisma.supportTicket.create({
+          data: {
+            ticketNumber,
+            name: name.trim(),
+            email: email.trim().toLowerCase(),
+            subject: subject.trim(),
+            description: description.trim(),
+            product: product || "general",
+            priority: priority || "normal",
+            status: "open",
+            messages: {
+              create: {
+                sender: "user",
+                senderName: name.trim(),
+                content: description.trim(),
+              },
+            },
           },
-        },
-      },
-      include: { messages: true },
-    });
+          include: { messages: true },
+        });
+        break; // success
+      } catch (err: any) {
+        lastError = err;
+        // P2002 = unique constraint violation — retry with a new ticket number
+        if (err?.code === "P2002") {
+          continue;
+        }
+        throw err; // non-retryable error
+      }
+    }
+
+    if (!ticket) {
+      console.error("[support/tickets POST] All retries failed:", lastError);
+      return NextResponse.json(
+        { error: "Failed to create ticket. Please try again." },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({ ticket }, { status: 201 });
   } catch (error) {
     console.error("[support/tickets POST]", error);
-    const message =
-      error instanceof Error
-        ? error.message
-        : "Failed to create ticket. Please try again.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to create ticket. Please try again." },
+      { status: 500 }
+    );
   }
 }
 
