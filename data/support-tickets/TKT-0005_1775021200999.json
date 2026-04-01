@@ -1,0 +1,24 @@
+{
+  "id": "cmnflsk3r0008u8bw3ivod82l",
+  "ticketNumber": "TKT-0005",
+  "name": "Ticket Test",
+  "email": "user@test.com",
+  "subject": "Clean test",
+  "description": "Testing the clean single-attempt flow",
+  "product": "general",
+  "priority": "normal",
+  "status": "open",
+  "createdAt": "2026-04-01T05:26:40.839Z",
+  "updatedAt": "2026-04-01T05:26:40.839Z",
+  "messages": [
+    {
+      "id": "cmnflsk3r0009u8bwevgz8fh1",
+      "ticketId": "cmnflsk3r0008u8bw3ivod82l",
+      "sender": "user",
+      "senderName": "Ticket Test",
+      "content": "Testing the clean single-attempt flow",
+      "createdAt": "2026-04-01T05:26:40.839Z"
+    }
+  ],
+  "source": "database"
+}

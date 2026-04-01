@@ -1,0 +1,24 @@
+{
+  "id": "cmnfn14db000gu8bw4ue67np0",
+  "ticketNumber": "TKT-0009",
+  "name": "Sk",
+  "email": "sameek4@gmail.com",
+  "subject": "sdsd",
+  "description": "fdfdf",
+  "product": "dynamic-mesh-occluder",
+  "priority": "normal",
+  "status": "open",
+  "createdAt": "2026-04-01T06:01:19.967Z",
+  "updatedAt": "2026-04-01T06:01:19.967Z",
+  "messages": [
+    {
+      "id": "cmnfn14db000hu8bw9sw8y3ia",
+      "ticketId": "cmnfn14db000gu8bw4ue67np0",
+      "sender": "user",
+      "senderName": "Sk",
+      "content": "fdfdf",
+      "createdAt": "2026-04-01T06:01:19.967Z"
+    }
+  ],
+  "source": "database"
+}

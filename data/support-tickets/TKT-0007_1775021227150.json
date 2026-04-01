@@ -1,0 +1,24 @@
+{
+  "id": "cmnflt49q000cu8bwcetows4j",
+  "ticketNumber": "TKT-0007",
+  "name": "Test",
+  "email": "a@b.com",
+  "subject": "Hi",
+  "description": "Desc",
+  "product": "general",
+  "priority": "normal",
+  "status": "open",
+  "createdAt": "2026-04-01T05:27:06.975Z",
+  "updatedAt": "2026-04-01T05:27:06.975Z",
+  "messages": [
+    {
+      "id": "cmnflt49q000du8bwdhk4qdg8",
+      "ticketId": "cmnflt49q000cu8bwcetows4j",
+      "sender": "user",
+      "senderName": "Test",
+      "content": "Desc",
+      "createdAt": "2026-04-01T05:27:06.975Z"
+    }
+  ],
+  "source": "database"
+}

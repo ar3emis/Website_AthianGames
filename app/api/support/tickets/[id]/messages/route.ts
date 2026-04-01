@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { notifyUserAdminReply } from "@/lib/email/supportEmail";
 
 interface RouteParams {
   params: Promise<{ id: string }>;
@@ -53,6 +54,11 @@ export async function POST(req: NextRequest, { params }: RouteParams) {
       },
     }),
   ]);
+
+  // Notify the user by email whenever support posts a reply (non-blocking)
+  if (isAdminRequest) {
+    notifyUserAdminReply(ticket, content.trim());
+  }
 
   return NextResponse.json({ message }, { status: 201 });
 }

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { notifyUserStatusChange } from "@/lib/email/supportEmail";
 
 interface RouteParams {
   params: Promise<{ id: string }>;
@@ -50,6 +51,11 @@ export async function PATCH(req: NextRequest, { params }: RouteParams) {
     },
     include: { messages: { orderBy: { createdAt: "asc" } } },
   });
+
+  // Notify user if the ticket was resolved or closed (non-blocking)
+  if (status === "resolved" || status === "closed") {
+    notifyUserStatusChange(ticket);
+  }
 
   return NextResponse.json({ ticket });
 }

@@ -1,0 +1,24 @@
+{
+  "id": "cmnfmwpzl000eu8bwv0msr1fr",
+  "ticketNumber": "TKT-0008",
+  "name": "s",
+  "email": "sf@g",
+  "subject": "ff",
+  "description": "sdsd",
+  "product": "dynamic-mesh-occluder",
+  "priority": "normal",
+  "status": "open",
+  "createdAt": "2026-04-01T05:57:54.706Z",
+  "updatedAt": "2026-04-01T05:57:54.706Z",
+  "messages": [
+    {
+      "id": "cmnfmwpzl000fu8bwdk2so418",
+      "ticketId": "cmnfmwpzl000eu8bwv0msr1fr",
+      "sender": "user",
+      "senderName": "s",
+      "content": "sdsd",
+      "createdAt": "2026-04-01T05:57:54.706Z"
+    }
+  ],
+  "source": "database"
+}
