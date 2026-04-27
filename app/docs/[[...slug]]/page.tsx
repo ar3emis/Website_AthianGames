@@ -9,6 +9,20 @@ interface DocsPageProps {
   params: Promise<{ slug?: string[] }>;
 }
 
+const LEGACY_SECTION_SLUGS: Record<string, Record<string, string>> = {
+  "runtime-fbx-import": {
+    "import-function": "getting-started",
+  },
+};
+
+function resolveSectionSlug(productSlug: string, sectionSlug?: string) {
+  if (!sectionSlug) {
+    return null;
+  }
+
+  return LEGACY_SECTION_SLUGS[productSlug]?.[sectionSlug] ?? sectionSlug;
+}
+
 export async function generateMetadata({ params }: DocsPageProps): Promise<Metadata> {
   const { slug } = await params;
   const productSlug = slug?.[0];
@@ -42,9 +56,14 @@ export default async function DocsPage({ params }: DocsPageProps) {
   const docs = getDocumentation(productSlug);
   if (!docs) notFound();
 
+  const resolvedSectionSlug = resolveSectionSlug(productSlug, sectionSlug);
   const currentSection =
-    (sectionSlug ? docs.sections.find((s) => s.slug === sectionSlug) : null) ??
-    docs.sections[0];
+    (resolvedSectionSlug ? docs.sections.find((s) => s.slug === resolvedSectionSlug) : null) ??
+    (sectionSlug ? null : docs.sections[0]);
+
+  if (!currentSection) {
+    notFound();
+  }
 
   return (
     <DocLayout

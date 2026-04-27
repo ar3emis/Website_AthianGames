@@ -1,49 +1,63 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import nodemailer from "nodemailer";
-import fs from "fs";
-import path from "path";
+import { notifyUserTicketCreated } from "@/lib/email/supportEmail";
+import { buildSupportTicketAccessUrl } from "@/lib/support/ticketAccess";
+import {
+  getSupportTicketsFromBackupByEmail,
+  mergeSupportTickets,
+  readSupportTicketBackups,
+  saveSupportTicketBackup,
+  serializeSupportTicket,
+  SUPPORT_TICKET_DETAIL_INCLUDE,
+} from "@/lib/support/ticketBackup";
 
 const SUPPORT_EMAIL = process.env.CONTACT_EMAIL || "sameek.kundu@athiangames.com";
-const BACKUP_DIR = path.join(process.cwd(), "data", "support-tickets");
 
 // ── helpers ──────────────────────────────────────────────────────────
 
 /** Next sequential ticket number based on the highest existing one. */
 async function generateTicketNumber(): Promise<string> {
-  const latest = await prisma.supportTicket.findFirst({
-    orderBy: { ticketNumber: "desc" },
+  const existingTickets = await prisma.supportTicket.findMany({
     select: { ticketNumber: true },
   });
 
   let nextNum = 1;
-  if (latest?.ticketNumber) {
-    const match = latest.ticketNumber.match(/TKT-(\d+)/);
-    if (match) nextNum = parseInt(match[1], 10) + 1;
+  for (const ticket of existingTickets) {
+    const match = ticket.ticketNumber.match(/^TKT-(\d+)$/);
+    if (!match) {
+      continue;
+    }
+
+    nextNum = Math.max(nextNum, parseInt(match[1], 10) + 1);
   }
+
   return `TKT-${String(nextNum).padStart(4, "0")}`;
 }
 
-/** Save ticket JSON to data/support-tickets/ as a fallback. */
-function saveTicketToFile(ticket: Record<string, unknown>) {
-  try {
-    if (!fs.existsSync(BACKUP_DIR)) {
-      fs.mkdirSync(BACKUP_DIR, { recursive: true });
-    }
-    const filename = `${ticket.ticketNumber || "UNKNOWN"}_${Date.now()}.json`;
-    fs.writeFileSync(
-      path.join(BACKUP_DIR, filename),
-      JSON.stringify(ticket, null, 2),
-      "utf-8"
-    );
-    console.log(`[support] Ticket backed up to ${filename}`);
-  } catch (err) {
-    console.error("[support] File backup also failed:", err);
-  }
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 /** Send email notification about a new support ticket. */
-async function notifySupport(ticket: Record<string, unknown>, source: "database" | "file-only") {
+async function notifySupport(
+  ticket: {
+    id: string;
+    ticketNumber: string;
+    subject: string;
+    name: string;
+    email: string;
+    product: string;
+    priority: string;
+    description: string;
+  },
+  source: "database" | "file-only"
+) {
   try {
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST || "smtp.gmail.com",
@@ -60,17 +74,20 @@ async function notifySupport(ticket: Record<string, unknown>, source: "database"
     await transporter.sendMail({
       from: `"Athian Games Support" <${process.env.SMTP_USER}>`,
       to: SUPPORT_EMAIL,
-      subject: `[${(ticket.priority as string || "normal").toUpperCase()}] New Ticket ${ticket.ticketNumber}: ${ticket.subject}`,
+      subject: `[${(ticket.priority || "normal").toUpperCase()}] New Ticket ${ticket.ticketNumber}: ${ticket.subject}`,
       html: `
         <div style="font-family:system-ui,sans-serif;max-width:600px;margin:auto;padding:24px;background:#111;color:#eee;border-radius:12px;">
           ${badge}
-          <h2 style="margin:0 0 16px;">🎫 ${ticket.ticketNumber} — ${ticket.subject}</h2>
+          <h2 style="margin:0 0 16px;">🎫 ${escapeHtml(ticket.ticketNumber)} — ${escapeHtml(ticket.subject)}</h2>
           <table style="width:100%;border-collapse:collapse;font-size:14px;">
-            <tr><td style="padding:6px 12px;color:#999;">From</td>    <td style="padding:6px 12px;">${ticket.name} &lt;${ticket.email}&gt;</td></tr>
-            <tr><td style="padding:6px 12px;color:#999;">Product</td> <td style="padding:6px 12px;">${ticket.product}</td></tr>
-            <tr><td style="padding:6px 12px;color:#999;">Priority</td><td style="padding:6px 12px;">${ticket.priority}</td></tr>
+            <tr><td style="padding:6px 12px;color:#999;">From</td>    <td style="padding:6px 12px;">${escapeHtml(ticket.name)} &lt;${escapeHtml(ticket.email)}&gt;</td></tr>
+            <tr><td style="padding:6px 12px;color:#999;">Product</td> <td style="padding:6px 12px;">${escapeHtml(ticket.product)}</td></tr>
+            <tr><td style="padding:6px 12px;color:#999;">Priority</td><td style="padding:6px 12px;">${escapeHtml(ticket.priority)}</td></tr>
           </table>
-          <div style="margin-top:16px;padding:16px;background:#1a1a1a;border-radius:8px;white-space:pre-wrap;">${ticket.description}</div>
+          <div style="margin-top:16px;padding:16px;background:#1a1a1a;border-radius:8px;white-space:pre-wrap;">${escapeHtml(ticket.description)}</div>
+          <div style="margin-top:24px;">
+            <a href="${buildSupportTicketAccessUrl(ticket.id, ticket.email)}" style="display:inline-block;padding:10px 18px;background:#818cf8;color:#fff;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;">Open Ticket</a>
+          </div>
         </div>
       `,
     });
@@ -121,41 +138,58 @@ export async function POST(req: NextRequest) {
             },
           },
         },
-        include: { messages: true },
+        include: SUPPORT_TICKET_DETAIL_INCLUDE,
+      });
+
+      const normalizedTicket = serializeSupportTicket(ticket);
+      const accessUrl = buildSupportTicketAccessUrl(normalizedTicket.id, normalizedTicket.email, {
+        created: true,
       });
 
       // Always keep a file backup + notify via email (non-blocking)
-      saveTicketToFile({ ...ticket, source: "database" });
-      notifySupport({ ...ticket }, "database");
+      await saveSupportTicketBackup(normalizedTicket);
+      void notifySupport(normalizedTicket, "database");
+      void notifyUserTicketCreated(normalizedTicket);
 
-      return NextResponse.json({ ticket }, { status: 201 });
+      return NextResponse.json({ ticket: { ...normalizedTicket, accessUrl } }, { status: 201 });
     } catch (dbError: any) {
       // ── Database failed — fall back to file storage ──
       console.error("[support] DB insert failed, falling back to file:", dbError?.message || dbError);
 
+      const fallbackId = `TKT-FB-${Date.now()}`;
+      const createdAt = new Date().toISOString();
+
       const fallbackTicket = {
-        ticketNumber: `TKT-FB-${Date.now()}`,
+        id: fallbackId,
+        ticketNumber: fallbackId,
         ...trimmed,
         status: "open",
-        createdAt: new Date().toISOString(),
+        createdAt,
+        updatedAt: createdAt,
+        messages: [
+          {
+            id: `msg-${Date.now()}`,
+            ticketId: fallbackId,
+            sender: "user",
+            senderName: trimmed.name,
+            content: trimmed.description,
+            createdAt,
+            attachments: [],
+          },
+        ],
+        source: "file-only" as const,
       };
 
-      saveTicketToFile({ ...fallbackTicket, source: "file-fallback", dbError: dbError?.message });
-      notifySupport(fallbackTicket, "file-only");
+      const normalizedFallbackTicket = serializeSupportTicket(fallbackTicket);
+      const accessUrl = buildSupportTicketAccessUrl(normalizedFallbackTicket.id, normalizedFallbackTicket.email, {
+        created: true,
+      });
 
-      return NextResponse.json(
-        {
-          ticket: {
-            id: fallbackTicket.ticketNumber,
-            ticketNumber: fallbackTicket.ticketNumber,
-            ...trimmed,
-            status: "open",
-            createdAt: fallbackTicket.createdAt,
-            messages: [],
-          },
-        },
-        { status: 201 }
-      );
+      await saveSupportTicketBackup(normalizedFallbackTicket);
+      void notifySupport(normalizedFallbackTicket, "file-only");
+      void notifyUserTicketCreated(normalizedFallbackTicket);
+
+      return NextResponse.json({ ticket: { ...normalizedFallbackTicket, accessUrl } }, { status: 201 });
     }
   } catch (error: any) {
     console.error("[support/tickets POST] Unexpected error:", error?.message || error);
@@ -169,38 +203,56 @@ export async function POST(req: NextRequest) {
 // GET /api/support/tickets?email=xxx  — tickets for a given email (user portal)
 // GET /api/support/tickets?admin=1    — all tickets (admin only, checks secret header)
 export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const email = searchParams.get("email");
-  const admin = searchParams.get("admin");
+  try {
+    const { searchParams } = new URL(req.url);
+    const email = searchParams.get("email")?.trim().toLowerCase();
+    const admin = searchParams.get("admin");
 
-  if (admin === "1") {
-    const secret = req.headers.get("x-admin-secret");
-    if (secret !== process.env.ADMIN_SYNC_SECRET) {
-      return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
+    if (admin === "1") {
+      const secret = req.headers.get("x-admin-secret");
+      if (secret !== process.env.ADMIN_SYNC_SECRET) {
+        return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
+      }
+
+      let databaseTickets = [] as ReturnType<typeof serializeSupportTicket>[];
+      try {
+        const tickets = await prisma.supportTicket.findMany({
+          orderBy: { createdAt: "desc" },
+          include: SUPPORT_TICKET_DETAIL_INCLUDE,
+        });
+        databaseTickets = tickets.map(serializeSupportTicket);
+      } catch (dbError) {
+        console.error("[support/tickets GET admin] Database lookup failed:", dbError);
+      }
+
+      const backupTickets = await readSupportTicketBackups();
+      return NextResponse.json({ tickets: mergeSupportTickets(databaseTickets, backupTickets) });
     }
 
-    const tickets = await prisma.supportTicket.findMany({
-      orderBy: { createdAt: "desc" },
-      include: {
-        messages: { orderBy: { createdAt: "asc" } },
-        _count: { select: { messages: true } },
-      },
-    });
-    return NextResponse.json({ tickets });
+    if (!email) {
+      return NextResponse.json({ error: "Email is required." }, { status: 400 });
+    }
+
+    let databaseTickets = [] as ReturnType<typeof serializeSupportTicket>[];
+    try {
+      const tickets = await prisma.supportTicket.findMany({
+        where: { email },
+        orderBy: { updatedAt: "desc" },
+        include: SUPPORT_TICKET_DETAIL_INCLUDE,
+      });
+      databaseTickets = tickets.map(serializeSupportTicket);
+    } catch (dbError) {
+      console.error("[support/tickets GET user] Database lookup failed:", dbError);
+    }
+
+    const backupTickets = await getSupportTicketsFromBackupByEmail(email);
+    return NextResponse.json({ tickets: mergeSupportTickets(databaseTickets, backupTickets) });
+  } catch (error: any) {
+    console.error("[support/tickets GET] Unexpected error:", error?.message || error);
+    return NextResponse.json(
+      { error: "Failed to load tickets right now. Please try again in a moment." },
+      { status: 500 }
+    );
   }
-
-  if (!email) {
-    return NextResponse.json({ error: "Email is required." }, { status: 400 });
-  }
-
-  const tickets = await prisma.supportTicket.findMany({
-    where: { email: email.toLowerCase() },
-    orderBy: { updatedAt: "desc" },
-    include: {
-      messages: { orderBy: { createdAt: "asc" } },
-    },
-  });
-
-  return NextResponse.json({ tickets });
 }
 

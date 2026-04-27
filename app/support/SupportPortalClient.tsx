@@ -1,25 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { TicketForm } from "@/components/support/TicketForm";
 import { TicketTracker } from "@/components/support/TicketTracker";
-import { CheckCircle, Ticket, Search, ArrowLeft } from "lucide-react";
+import { Ticket, Search, ArrowLeft } from "lucide-react";
 
 type View = "home" | "submit" | "track";
 
-interface SuccessInfo {
-  ticketNumber: string;
-  id: string;
-  email: string;
-}
-
 export default function SupportPortalClient() {
+  const router = useRouter();
   const [view, setView] = useState<View>("home");
-  const [success, setSuccess] = useState<SuccessInfo | null>(null);
 
-  function handleSuccess(info: SuccessInfo) {
-    setSuccess(info);
-    setView("home");
+  function handleSuccess(info: { accessUrl: string }) {
+    router.push(info.accessUrl);
   }
 
   return (
@@ -27,7 +21,7 @@ export default function SupportPortalClient() {
       <div className="container-custom max-w-3xl">
 
         {/* Back nav */}
-        {view !== "home" && !success && (
+        {view !== "home" && (
           <button
             onClick={() => setView("home")}
             className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
@@ -45,36 +39,8 @@ export default function SupportPortalClient() {
           </p>
         </div>
 
-        {/* Success state */}
-        {success && (
-          <div className="rounded-2xl border border-green-500/30 bg-green-500/10 p-8 text-center mb-8">
-            <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
-            <h2 className="text-xl font-bold mb-1">Ticket Submitted!</h2>
-            <p className="text-muted-foreground mb-2">
-              Your ticket <span className="font-mono font-semibold text-foreground">{success.ticketNumber}</span> has been created.
-            </p>
-            <p className="text-sm text-muted-foreground mb-6">
-              We'll get back to you at <strong>{success.email}</strong>. You can track updates below.
-            </p>
-            <div className="flex justify-center gap-3 flex-wrap">
-              <button
-                onClick={() => { setSuccess(null); setView("track"); }}
-                className="px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
-              >
-                Track My Tickets
-              </button>
-              <button
-                onClick={() => { setSuccess(null); setView("home"); }}
-                className="px-5 py-2.5 rounded-lg border border-border text-sm font-medium hover:bg-muted transition-colors"
-              >
-                Back to Home
-              </button>
-            </div>
-          </div>
-        )}
-
         {/* Home — two cards */}
-        {view === "home" && !success && (
+        {view === "home" && (
           <div className="grid sm:grid-cols-2 gap-5">
             <button
               onClick={() => setView("submit")}
@@ -105,7 +71,7 @@ export default function SupportPortalClient() {
         )}
 
         {/* Submit view */}
-        {view === "submit" && !success && (
+        {view === "submit" && (
           <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-muted/30 to-transparent p-7">
             <h2 className="text-xl font-bold mb-6">New Support Ticket</h2>
             <TicketForm onSuccess={handleSuccess} />
@@ -113,7 +79,7 @@ export default function SupportPortalClient() {
         )}
 
         {/* Track view */}
-        {view === "track" && !success && (
+        {view === "track" && (
           <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-muted/30 to-transparent p-7">
             <h2 className="text-xl font-bold mb-6">Track Your Tickets</h2>
             <TicketTracker />
@@ -121,7 +87,7 @@ export default function SupportPortalClient() {
         )}
 
         {/* Footer note */}
-        {view === "home" && !success && (
+        {view === "home" && (
           <p className="text-center text-xs text-muted-foreground mt-10">
             You can also email us directly at{" "}
             <a href="mailto:sameek.kundu@athiangames.com" className="text-primary hover:underline">

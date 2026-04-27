@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { getResponseError, readJsonResponse } from "@/lib/support/http";
 
 interface TicketFormProps {
-  onSuccess: (ticket: { ticketNumber: string; id: string; email: string }) => void;
+  onSuccess: (ticket: { ticketNumber: string; id: string; email: string; accessUrl: string }) => void;
 }
 
 const PRIORITIES = [
@@ -38,12 +39,16 @@ export function TicketForm({ onSuccess }: TicketFormProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Failed to submit ticket.");
+      const data = await readJsonResponse<{ error?: string; ticket?: { ticketNumber: string; id: string; accessUrl: string } }>(res);
+      if (!res.ok || !data?.ticket) {
+        throw new Error(getResponseError(res, data, "Failed to submit ticket."));
+      }
+
       onSuccess({
         ticketNumber: data.ticket.ticketNumber,
         id: data.ticket.id,
         email: form.email,
+        accessUrl: data.ticket.accessUrl,
       });
     } catch (err: any) {
       setError(err.message);

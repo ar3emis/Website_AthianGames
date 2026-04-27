@@ -1,7 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
-import { ArrowLeft, Send } from "lucide-react";
+import { ArrowLeft, Paperclip, Send } from "lucide-react";
+import {
+  SUPPORT_ATTACHMENT_ACCEPT,
+  SUPPORT_ATTACHMENT_LIMIT_TEXT,
+} from "@/lib/support/attachmentConfig";
+import { getResponseError, readJsonResponse } from "@/lib/support/http";
+import type { SupportTicket } from "@/types/support";
 
 const STATUS_STYLES: Record<string, string> = {
   open:        "bg-blue-500/15 text-blue-400 border-blue-500/30",
@@ -19,36 +26,26 @@ const STATUS_LABELS: Record<string, string> = {
   closed:      "Closed",
 };
 
-interface Message {
-  id: string;
-  sender: string;
-  senderName: string;
-  content: string;
-  createdAt: string;
-}
-
-interface Ticket {
-  id: string;
-  ticketNumber: string;
-  subject: string;
-  product: string;
-  priority: string;
-  status: string;
-  name: string;
-  createdAt: string;
-  updatedAt: string;
-  messages: Message[];
-}
-
 interface TicketDetailProps {
-  ticket: Ticket;
-  email: string;
-  onBack: () => void;
-  onUpdated: (ticket: Ticket) => void;
+  ticket: SupportTicket;
+  email?: string;
+  accessToken?: string;
+  backHref?: string;
+  backLabel?: string;
+  onUpdated: (ticket: SupportTicket) => void;
 }
 
-export function TicketDetail({ ticket, email, onBack, onUpdated }: TicketDetailProps) {
+export function TicketDetail({
+  ticket,
+  email,
+  accessToken,
+  backHref = "/support",
+  backLabel = "Back to support",
+  onUpdated,
+}: TicketDetailProps) {
   const [reply, setReply] = useState("");
+  const [files, setFiles] = useState<File[]>([]);
+  const [fileInputKey, setFileInputKey] = useState(0);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
 
@@ -58,25 +55,35 @@ export function TicketDetail({ ticket, email, onBack, onUpdated }: TicketDetailP
     setError("");
     setSending(true);
     try {
+      const formData = new FormData();
+      formData.append("content", reply);
+      formData.append("senderName", ticket.name);
+
+      if (email) {
+        formData.append("email", email);
+      }
+
+      if (accessToken) {
+        formData.append("accessToken", accessToken);
+      }
+
+      for (const file of files) {
+        formData.append("attachments", file);
+      }
+
       const res = await fetch(`/api/support/tickets/${ticket.id}/messages`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          content: reply,
-          senderName: ticket.name,
-          email,
-        }),
+        body: formData,
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Failed to send reply.");
+      const data = await readJsonResponse<{ error?: string; ticket?: SupportTicket }>(res);
+      if (!res.ok || !data?.ticket) {
+        throw new Error(getResponseError(res, data, "Failed to send reply."));
+      }
 
-      // Refresh ticket
-      const ticketRes = await fetch(
-        `/api/support/tickets/${ticket.id}?email=${encodeURIComponent(email)}`
-      );
-      const ticketData = await ticketRes.json();
-      if (ticketRes.ok) onUpdated(ticketData.ticket);
+      onUpdated(data.ticket);
       setReply("");
+      setFiles([]);
+      setFileInputKey((value) => value + 1);
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -84,19 +91,17 @@ export function TicketDetail({ ticket, email, onBack, onUpdated }: TicketDetailP
     }
   }
 
-  const isClosed = ticket.status === "closed";
-
   return (
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <button
-          onClick={onBack}
-          className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
+        <Link
+          href={backHref}
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to all tickets
-        </button>
+          {backLabel}
+        </Link>
 
         <div className="flex items-start justify-between gap-3 flex-wrap">
           <div>
@@ -140,6 +145,25 @@ export function TicketDetail({ ticket, email, onBack, onUpdated }: TicketDetailP
                     : "bg-muted border border-border text-foreground"
                 }`}>
                   <p className="whitespace-pre-wrap">{msg.content}</p>
+                  {msg.attachments.length > 0 && (
+                    <div className="mt-3 space-y-2">
+                      {msg.attachments.map((attachment) => (
+                        <a
+                          key={attachment.id}
+                          href={attachment.fileUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex items-center gap-2 rounded-lg border border-border/70 bg-background/80 px-3 py-2 text-xs hover:border-primary/50 hover:text-primary transition-colors"
+                        >
+                          <Paperclip className="w-3.5 h-3.5" />
+                          <span className="truncate">{attachment.fileName}</span>
+                          <span className="ml-auto text-[11px] text-muted-foreground">
+                            {(attachment.fileSize / 1024 / 1024).toFixed(2)} MB
+                          </span>
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <p className="text-xs text-muted-foreground mt-1 px-1">
                   <strong>{isSupport ? "Athian Games Support" : msg.senderName}</strong>
@@ -155,35 +179,56 @@ export function TicketDetail({ ticket, email, onBack, onUpdated }: TicketDetailP
       </div>
 
       {/* Reply box */}
-      {!isClosed ? (
-        <form onSubmit={sendReply} className="border-t border-border pt-5 space-y-3">
+      <form onSubmit={sendReply} className="border-t border-border pt-5 space-y-3">
+        <div className="flex items-center justify-between gap-3 flex-wrap">
           <label className="block text-sm font-medium">Add a follow-up</label>
-          <textarea
-            rows={4}
-            value={reply}
-            onChange={(e) => setReply(e.target.value)}
-            placeholder="Describe any additional details, updates, or questions…"
-            className="w-full px-3 py-2.5 rounded-lg border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary resize-none"
-          />
-          {error && (
-            <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-500 text-sm">
-              {error}
-            </div>
+          {(ticket.status === "resolved" || ticket.status === "closed") && (
+            <span className="text-xs text-muted-foreground">
+              Sending a new message will reopen this ticket.
+            </span>
           )}
-          <button
-            type="submit"
-            disabled={sending || !reply.trim()}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity disabled:opacity-50"
-          >
-            <Send className="w-4 h-4" />
-            {sending ? "Sending…" : "Send Reply"}
-          </button>
-        </form>
-      ) : (
-        <div className="border-t border-border pt-5 text-sm text-muted-foreground">
-          This ticket is closed. <button onClick={() => setReply(" ")} className="text-primary hover:underline">Re-open with a new message</button>
         </div>
-      )}
+        <textarea
+          rows={4}
+          value={reply}
+          onChange={(e) => setReply(e.target.value)}
+          placeholder="Describe any additional details, updates, or questions…"
+          className="w-full px-3 py-2.5 rounded-lg border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary resize-none"
+        />
+        <div className="space-y-2">
+          <input
+            key={fileInputKey}
+            type="file"
+            multiple
+            accept={SUPPORT_ATTACHMENT_ACCEPT}
+            onChange={(e) => setFiles(Array.from(e.target.files || []))}
+            className="block w-full text-sm text-muted-foreground file:mr-3 file:rounded-lg file:border-0 file:bg-primary/10 file:px-3 file:py-2 file:text-sm file:font-medium file:text-primary hover:file:bg-primary/15"
+          />
+          <p className="text-xs text-muted-foreground">{SUPPORT_ATTACHMENT_LIMIT_TEXT}</p>
+          {files.length > 0 && (
+            <ul className="space-y-1 text-xs text-muted-foreground">
+              {files.map((file) => (
+                <li key={`${file.name}-${file.size}`} className="truncate">
+                  {file.name} · {(file.size / 1024 / 1024).toFixed(2)} MB
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        {error && (
+          <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-500 text-sm">
+            {error}
+          </div>
+        )}
+        <button
+          type="submit"
+          disabled={sending || !reply.trim()}
+          className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity disabled:opacity-50"
+        >
+          <Send className="w-4 h-4" />
+          {sending ? "Sending…" : "Send Reply"}
+        </button>
+      </form>
     </div>
   );
 }

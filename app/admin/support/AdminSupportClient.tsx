@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { Send, RefreshCw, ChevronDown } from "lucide-react";
+import { Send, RefreshCw, ChevronDown, Paperclip } from "lucide-react";
+import { getResponseError, readJsonResponse } from "@/lib/support/http";
 
 const STATUS_OPTIONS = ["open", "in_progress", "waiting", "resolved", "closed"];
 
@@ -34,6 +35,12 @@ interface Message {
   senderName: string;
   content: string;
   createdAt: string;
+  attachments: {
+    id: string;
+    fileName: string;
+    fileUrl: string;
+    fileSize: number;
+  }[];
 }
 
 interface Ticket {
@@ -67,8 +74,10 @@ export default function AdminSupportClient() {
       const res = await fetch("/api/support/tickets?admin=1", {
         headers: { "x-admin-secret": adminSecret },
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error);
+      const data = await readJsonResponse<{ error?: string; tickets?: Ticket[] }>(res);
+      if (!res.ok || !data?.tickets) {
+        throw new Error(getResponseError(res, data, "Failed to load tickets."));
+      }
       setTickets(data.tickets);
     } catch {
       setTickets([]);
@@ -83,12 +92,12 @@ export default function AdminSupportClient() {
     const res = await fetch("/api/support/tickets?admin=1", {
       headers: { "x-admin-secret": secret },
     });
-    if (res.ok) {
-      const data = await res.json();
+    const data = await readJsonResponse<{ error?: string; tickets?: Ticket[] }>(res);
+    if (res.ok && data?.tickets) {
       setTickets(data.tickets);
       setAuthed(true);
     } else {
-      setAuthError("Invalid admin secret.");
+      setAuthError(getResponseError(res, data, "Invalid admin secret."));
     }
     setLoading(false);
   }
@@ -107,21 +116,20 @@ export default function AdminSupportClient() {
     e.preventDefault();
     if (!selected || !reply.trim()) return;
     setSending(true);
-    await fetch(`/api/support/tickets/${selected.id}/messages`, {
+    const res = await fetch(`/api/support/tickets/${selected.id}/messages`, {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-admin-secret": secret },
       body: JSON.stringify({ content: reply, senderName: "Athian Games Support" }),
     });
+    const data = await readJsonResponse<{ error?: string; ticket?: Ticket }>(res);
     setReply("");
     setSending(false);
-    // Refresh
-    const res = await fetch(`/api/support/tickets/${selected.id}?email=admin`, {
-      headers: { "x-admin-secret": secret },
-    });
-    const data = await res.json();
-    if (res.ok) {
-      setSelected(data.ticket);
-      setTickets((prev) => prev.map((t) => t.id === data.ticket.id ? data.ticket : t));
+    if (res.ok && data?.ticket) {
+      const updatedTicket = data.ticket;
+      setSelected(updatedTicket);
+      setTickets((prev) => prev.map((t) => (t.id === updatedTicket.id ? updatedTicket : t)));
+    } else {
+      fetchTickets(secret);
     }
   }
 
@@ -272,6 +280,25 @@ export default function AdminSupportClient() {
                             isSupport ? "bg-primary/10 border border-primary/20" : "bg-muted border border-border"
                           }`}>
                             <p className="whitespace-pre-wrap">{msg.content}</p>
+                            {msg.attachments.length > 0 && (
+                              <div className="mt-3 space-y-2">
+                                {msg.attachments.map((attachment) => (
+                                  <a
+                                    key={attachment.id}
+                                    href={attachment.fileUrl}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="flex items-center gap-2 rounded-lg border border-border/70 bg-background/80 px-3 py-2 text-xs hover:border-primary/50 hover:text-primary transition-colors"
+                                  >
+                                    <Paperclip className="w-3.5 h-3.5" />
+                                    <span className="truncate">{attachment.fileName}</span>
+                                    <span className="ml-auto text-[11px] text-muted-foreground">
+                                      {(attachment.fileSize / 1024 / 1024).toFixed(2)} MB
+                                    </span>
+                                  </a>
+                                ))}
+                              </div>
+                            )}
                           </div>
                           <p className="text-xs text-muted-foreground mt-1 px-1">
                             {isSupport ? "You (Support)" : msg.senderName}

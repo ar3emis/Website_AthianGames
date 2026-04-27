@@ -22,12 +22,7 @@ export async function GET(req: NextRequest) {
 
   try {
     const docs = [];
-    
-    // Get products that have documentation
-    const productsWithDocs = [
-      "minimap-map-and-navigation-system",
-      "art-of-shader-distortion-and-glitches",
-    ];
+    const productsWithDocs = getAllDocumentation().map((doc) => doc.productSlug);
     
     for (const slug of productsWithDocs) {
       const product = productDetails[slug as keyof typeof productDetails];

@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { TicketDetail } from "@/components/support/TicketDetail";
+import { useRouter } from "next/navigation";
+import { getResponseError, readJsonResponse } from "@/lib/support/http";
+import type { SupportTicket } from "@/types/support";
 
 const STATUS_STYLES: Record<string, string> = {
   open:        "bg-blue-500/15 text-blue-400 border-blue-500/30",
@@ -26,60 +28,33 @@ const PRIORITY_STYLES: Record<string, string> = {
   urgent: "bg-red-500/15 text-red-400",
 };
 
-interface Ticket {
-  id: string;
-  ticketNumber: string;
-  name: string;
-  subject: string;
-  product: string;
-  priority: string;
-  status: string;
-  createdAt: string;
-  updatedAt: string;
-  messages: { id: string; sender: string; senderName: string; content: string; createdAt: string }[];
-}
-
 export function TicketTracker() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
-  const [tickets, setTickets] = useState<Ticket[]>([]);
+  const [tickets, setTickets] = useState<SupportTicket[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [selected, setSelected] = useState<Ticket | null>(null);
 
   async function fetchTickets(e: React.FormEvent) {
     e.preventDefault();
     setError("");
     setLoading(true);
     setLoaded(false);
-    setSelected(null);
     try {
       const res = await fetch(`/api/support/tickets?email=${encodeURIComponent(email)}`);
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Failed to load tickets.");
-      setTickets(data.tickets);
+      const data = await readJsonResponse<{ error?: string; tickets?: SupportTicket[] }>(res);
+      if (!res.ok) {
+        throw new Error(getResponseError(res, data, "Failed to load tickets."));
+      }
+
+      setTickets(data?.tickets || []);
       setLoaded(true);
     } catch (err: any) {
       setError(err.message);
     } finally {
       setLoading(false);
     }
-  }
-
-  function onTicketUpdated(updated: Ticket) {
-    setTickets((prev) => prev.map((t) => (t.id === updated.id ? updated : t)));
-    setSelected(updated);
-  }
-
-  if (selected) {
-    return (
-      <TicketDetail
-        ticket={selected}
-        email={email}
-        onBack={() => setSelected(null)}
-        onUpdated={onTicketUpdated}
-      />
-    );
   }
 
   return (
@@ -121,7 +96,11 @@ export function TicketTracker() {
           {tickets.map((ticket) => (
             <button
               key={ticket.id}
-              onClick={() => setSelected(ticket)}
+              onClick={() =>
+                router.push(
+                  `/support/tickets/${ticket.id}?email=${encodeURIComponent(email.trim().toLowerCase())}`
+                )
+              }
               className="w-full text-left p-4 rounded-xl border border-border/60 hover:border-primary/50 hover:bg-primary/5 transition-all group"
             >
               <div className="flex items-start justify-between gap-3 mb-2">

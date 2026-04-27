@@ -250,7 +250,7 @@ With the Asset Pack, you'll have access to a range of Niagara FX that are ready 
     category: "tools",
     engineVersions: ["UE 4.27", "UE 5.0+"],
     externalUrl: "https://www.unrealengine.com/marketplace/en-US/slug/runtime-fbx-import-asynchronous",
-    documentationUrl: "https://docs.athiangames.com/doc_fbximport",
+    documentationUrl: "/docs/runtime-fbx-import",
     videoId: "qrB7rDunSrM",
     thumbnail: "/images/products/runtime-fbx-import/fbximport.png",
     features: [

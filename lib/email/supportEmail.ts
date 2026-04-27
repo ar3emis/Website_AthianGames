@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { buildSupportTicketAccessUrl } from "@/lib/support/ticketAccess";
 
 function createTransporter() {
   return nodemailer.createTransport({
@@ -10,6 +11,48 @@ function createTransporter() {
 }
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://athiangames.com";
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function buildTicketButton(ticket: { id: string; email: string }, label: string) {
+  return `<a href="${buildSupportTicketAccessUrl(ticket.id, ticket.email)}" style="display:inline-block;padding:12px 22px;background:#818cf8;color:#fff;border-radius:10px;text-decoration:none;font-size:14px;font-weight:700;">${label}</a>`;
+}
+
+export async function notifyUserTicketCreated(ticket: {
+  id: string;
+  ticketNumber: string;
+  subject: string;
+  email: string;
+  name: string;
+  status: string;
+}) {
+  await send({
+    from: `"Athian Games Support" <${process.env.SMTP_USER}>`,
+    to: ticket.email,
+    subject: `[${ticket.ticketNumber}] Your support ticket has been created`,
+    html: `
+      <div style="font-family:system-ui,sans-serif;max-width:600px;margin:auto;padding:32px;background:#0f0f0f;color:#e5e5e5;border-radius:14px;">
+        <div style="margin-bottom:24px;">
+          <span style="background:#22c55e;color:#fff;padding:4px 12px;border-radius:999px;font-size:13px;font-weight:600;">Ticket Created</span>
+        </div>
+        <h2 style="margin:0 0 8px;font-size:20px;">Ticket ${escapeHtml(ticket.ticketNumber)}</h2>
+        <p style="margin:0 0 8px;color:#a1a1aa;font-size:15px;">${escapeHtml(ticket.subject)}</p>
+        <p style="line-height:1.7;color:#d4d4d8;">Hi ${escapeHtml(ticket.name)}, your support request is now in our queue. You can track status updates, add follow-up comments, and upload attachments from your dedicated ticket page.</p>
+        <div style="margin-top:28px;">${buildTicketButton(ticket, "Track My Ticket")}</div>
+        <div style="margin-top:24px;border-top:1px solid #27272a;padding-top:16px;font-size:12px;color:#71717a;">
+          Need anything else? Visit <a href="${SITE_URL}/support" style="color:#818cf8;text-decoration:none;">${SITE_URL}/support</a>.
+        </div>
+      </div>
+    `,
+  });
+}
 
 // ── shared wrapper — never throws, just logs ─────────────────────────
 async function send(opts: Parameters<ReturnType<typeof createTransporter>["sendMail"]>[0]) {
@@ -25,6 +68,7 @@ async function send(opts: Parameters<ReturnType<typeof createTransporter>["sendM
 // ── notifyUserStatusChange ────────────────────────────────────────────
 // Called when admin marks a ticket resolved / closed (or any status change)
 export async function notifyUserStatusChange(ticket: {
+  id: string;
   ticketNumber: string;
   subject: string;
   email: string;
@@ -52,12 +96,13 @@ export async function notifyUserStatusChange(ticket: {
           <span style="background:${accentColor};color:#fff;padding:4px 12px;border-radius:999px;font-size:13px;font-weight:600;">${label}</span>
         </div>
         <h2 style="margin:0 0 8px;font-size:20px;">Ticket ${ticket.ticketNumber}</h2>
-        <p style="margin:0 0 24px;color:#a1a1aa;font-size:15px;">${ticket.subject}</p>
-        <p style="line-height:1.7;color:#d4d4d8;">${blurb}</p>
+        <p style="margin:0 0 24px;color:#a1a1aa;font-size:15px;">${escapeHtml(ticket.subject)}</p>
+        <p style="line-height:1.7;color:#d4d4d8;">${escapeHtml(blurb)}</p>
+        <div style="margin-top:28px;">${buildTicketButton(ticket, "Track This Ticket")}</div>
         <div style="margin-top:28px;border-top:1px solid #27272a;padding-top:20px;font-size:13px;color:#71717a;">
           Still need help?
           <a href="${SITE_URL}/support" style="color:#818cf8;text-decoration:none;">Open a new ticket</a>
-          &nbsp;or reply to this email.
+          &nbsp;or continue the conversation from your ticket page.
         </div>
       </div>
     `,
@@ -83,14 +128,14 @@ export async function notifyUserAdminReply(ticket: {
           <span style="background:#818cf8;color:#fff;padding:4px 12px;border-radius:999px;font-size:13px;font-weight:600;">New Reply</span>
         </div>
         <h2 style="margin:0 0 8px;font-size:20px;">Ticket ${ticket.ticketNumber}</h2>
-        <p style="margin:0 0 20px;color:#a1a1aa;font-size:15px;">${ticket.subject}</p>
+        <p style="margin:0 0 20px;color:#a1a1aa;font-size:15px;">${escapeHtml(ticket.subject)}</p>
         <p style="margin:0 0 8px;color:#71717a;font-size:13px;">Support team replied:</p>
-        <div style="padding:16px;background:#1c1c1e;border-radius:10px;border-left:3px solid #818cf8;white-space:pre-wrap;line-height:1.7;font-size:14px;">${replyContent}</div>
+        <div style="padding:16px;background:#1c1c1e;border-radius:10px;border-left:3px solid #818cf8;white-space:pre-wrap;line-height:1.7;font-size:14px;">${escapeHtml(replyContent)}</div>
         <div style="margin-top:28px;">
-          <a href="${SITE_URL}/support" style="display:inline-block;padding:10px 20px;background:#818cf8;color:#fff;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;">View &amp; Reply</a>
+          ${buildTicketButton(ticket, "View & Reply")}
         </div>
         <div style="margin-top:24px;border-top:1px solid #27272a;padding-top:16px;font-size:12px;color:#71717a;">
-          Ticket ID: ${ticket.ticketNumber} · Hi ${ticket.name}, you can track all your tickets at ${SITE_URL}/support
+          Ticket ID: ${escapeHtml(ticket.ticketNumber)} · Hi ${escapeHtml(ticket.name)}, you can track all your tickets at ${SITE_URL}/support
         </div>
       </div>
     `,
