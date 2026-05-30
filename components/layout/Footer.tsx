@@ -12,6 +12,7 @@ const footerLinks = {
   ],
   company: [
     { name: "About Athian Games", href: "/about" },
+    { name: "Games", href: "/games" },
     { name: "Personal", href: "/personal" },
     { name: "Contact", href: "/contact" },
   ],
@@ -186,7 +187,7 @@ export function Footer() {
         {/* Tagline */}
         <div className="mt-8 text-center">
           <p className="text-sm text-muted-foreground font-mono">
-            Serious tools for serious creators.
+            Original games, cinematic worlds, and Unreal Engine production products.
           </p>
         </div>
       </div>

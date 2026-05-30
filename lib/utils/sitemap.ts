@@ -32,6 +32,18 @@ export function generateSitemapUrls(): SitemapUrl[] {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/games`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/games/a-tale-of-miss-valentina`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.86,
+    },
+    {
       url: `${baseUrl}/unreal-engine`,
       lastModified: now,
       changeFrequency: 'weekly',

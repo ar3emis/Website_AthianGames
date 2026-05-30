@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Sameek Kundu - Creator Hub",
   description:
-    "Unreal Engine developer and founder of Athian Games. Product showcases, tools, and technical updates for serious creators.",
+    "Unreal Engine game developer and founder of Athian Games. Studio updates, product showcases, and technical production notes.",
 };
 
 const stats = [
@@ -71,7 +71,7 @@ export default function CreatorHubPage() {
             <h1 className="mb-4">Sameek Kundu</h1>
 
             <p className="text-xl text-muted-foreground mb-4">
-              Unreal Engine Developer • Tool Builder • Founder of Athian Games
+              Unreal Engine Game Developer - Studio Founder - Athian Games
             </p>
 
             <div className="flex flex-wrap justify-center gap-2 mb-8">
@@ -88,9 +88,9 @@ export default function CreatorHubPage() {
             </div>
 
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Building professional Unreal Engine tools, plugins, and product
-              workflows. Founder of Athian Games. No fluff, just production-tested
-              development.
+              Building original games, cinematic worlds, Unreal Engine plugins,
+              and product workflows through Athian Games. Production-tested
+              development, without fluff.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -200,8 +200,8 @@ export default function CreatorHubPage() {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 I'm Sameek Kundu, an Unreal Engine developer and the founder of
-                Athian Games. I build professional tools and product workflows
-                for game developers.
+                Athian Games. I build original games, Unreal Engine products,
+                and production workflows for developers and technical artists.
               </p>
               <p>
                 My focus is on production-ready solutions: procedural generation
@@ -211,7 +211,7 @@ export default function CreatorHubPage() {
               </p>
               <p>
                 This isn't a hobby. It's a sustainable, creator-funded studio
-                building tools that solve real problems in professional pipelines.
+                creating games and products that solve real production problems.
               </p>
             </div>
 
@@ -263,7 +263,7 @@ export default function CreatorHubPage() {
               <Heart className="w-16 h-16 text-primary mx-auto mb-4" />
               <h2 className="text-3xl font-bold mb-4">Support the Work</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                Patreon supporters get early access to tools, product updates,
+                Patreon supporters get early access to products, studio updates,
                 direct Discord access, and priority support. Help fund independent
                 development.
               </p>
@@ -286,7 +286,7 @@ export default function CreatorHubPage() {
       <footer className="py-8 border-t border-border">
         <div className="container-custom text-center">
           <p className="text-sm text-muted-foreground">
-            Looking for Athian Games tools and assets?{" "}
+            Looking for Athian Games products and studio updates?{" "}
             <Link href="/" className="text-primary hover:underline">
               Visit the main site
             </Link>

@@ -21,12 +21,14 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: "Athian Games - Unreal Engine Plugins, Blueprints, Shaders and VFX",
+    default: "Athian Games - Unreal Engine Game Development Studio",
     template: "%s | Athian Games",
   },
   description:
-    "Production-ready Unreal Engine plugins, Blueprint systems, shaders, VFX, MetaHuman assets, runtime tools, and game development products from Athian Games.",
+    "Athian Games is an Unreal Engine game development studio creating original games, cinematic worlds, plugins, Blueprint systems, shaders, VFX, MetaHuman assets, and runtime products.",
   keywords: [
+    "game development studio",
+    "original games",
     "Unreal Engine",
     "plugins",
     "blueprints",
@@ -40,6 +42,7 @@ export const metadata: Metadata = {
     "Unreal Engine marketplace",
     "Fab marketplace",
     "indie game development",
+    "A Tale of Miss Valentina",
   ],
   authors: [{ name: "Athian Games", url: "https://athiangames.com" }],
   creator: "Athian Games",
@@ -59,23 +62,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: "Athian Games",
-    title: "Athian Games - Unreal Engine Plugins, Blueprints, Shaders and VFX",
+    title: "Athian Games - Unreal Engine Game Development Studio",
     description:
-      "Production-ready Unreal Engine plugins, Blueprint systems, shaders, VFX, MetaHuman assets, runtime tools, and game development products from Athian Games.",
+      "Athian Games creates original games, cinematic worlds, Unreal Engine products, Blueprint systems, shaders, VFX, MetaHuman assets, and runtime tools.",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Athian Games Unreal Engine products",
+        alt: "Athian Games game development studio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Athian Games - Professional Unreal Engine Tools & Assets",
+    title: "Athian Games - Unreal Engine Game Development Studio",
     description:
-      "High-quality Unreal Engine game development plugins, tools, VFX, shaders, and assets for developers and studios.",
+      "Original games and Unreal Engine production products from Athian Games.",
     images: ["/images/twitter-image.jpg"],
     creator: "@Sameek_Kundu",
     site: "@Sameek_Kundu",

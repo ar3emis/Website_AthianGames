@@ -15,8 +15,8 @@ export function CTASection() {
           <div className="text-center mb-16">
             <h2 className="mb-6">Ready to Build Better?</h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Get access to professional-grade Unreal Engine tools.
-              Start with free resources or dive into premium assets.
+              Explore original game projects, professional Unreal Engine
+              products, and production workflows from Athian Games.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/products">
@@ -41,8 +41,8 @@ export function CTASection() {
                 <div className="flex-1">
                   <h3 className="text-xl font-bold mb-2">Watch Product Videos</h3>
                   <p className="text-muted-foreground mb-4">
-                    Unreal Engine product showcases, plugin breakdowns,
-                    and technical updates. No fluff.
+                    Studio updates, Unreal Engine product showcases, plugin
+                    breakdowns, and technical notes.
                   </p>
                   <Link
                     href="https://youtube.com/@athiangames2417"

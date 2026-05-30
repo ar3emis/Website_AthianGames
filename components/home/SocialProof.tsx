@@ -23,8 +23,8 @@ const stats = [
   {
     icon: Code,
     value: "15+",
-    label: "Published Tools",
-    description: "Production-ready plugins & assets",
+    label: "Published Products",
+    description: "Games, plugins, and assets",
   },
 ];
 
@@ -39,7 +39,7 @@ export function SocialProof() {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="mb-4">Trusted by Creators</h2>
           <p className="text-lg text-muted-foreground">
-            Independent studio building tools that ship. No marketing hype.
+            Independent studio creating original games and production products.
           </p>
         </div>
 
@@ -75,8 +75,8 @@ export function SocialProof() {
               <div className="text-4xl text-primary mb-4">"</div>
               <blockquote className="text-lg md:text-xl text-foreground mb-6">
                 Built by developers who understand production pipelines.
-                These aren't hobby projects—they're tools designed to solve
-                real problems in professional workflows.
+                These aren't hobby projects. They are games, plugins, and
+                systems designed for real production workflows.
               </blockquote>
               <div className="text-sm text-muted-foreground">
                 — Athian Games Philosophy

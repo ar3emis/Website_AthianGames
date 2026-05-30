@@ -7,6 +7,7 @@ import { Linkedin, Menu, X, Youtube } from "lucide-react";
 import { socialProfiles } from "@/lib/config/socialLinks";
 
 const baseNavigation = [
+  { name: "Games", href: "/games" },
   { name: "Products", href: "/products" },
   { name: "Services", href: "/services" },
   { name: "Personal", href: "/personal" },

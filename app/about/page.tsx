@@ -7,7 +7,7 @@ import { Code, Sparkles, Zap, Target, ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Athian Games - an independent Unreal Engine studio building professional tools for serious creators",
+    "Learn about Athian Games - an independent Unreal Engine game development studio creating original games, cinematic worlds, and production products.",
 };
 
 const principles = [
@@ -15,7 +15,7 @@ const principles = [
     icon: Code,
     title: "Production-First",
     description:
-      "Every tool is built with production pipelines in mind. No hobby projects. No prototypes shipped as products.",
+      "Every game, system, and product is built from real production needs. No hobby prototypes shipped as finished work.",
   },
   {
     icon: Target,
@@ -42,7 +42,7 @@ const timeline = [
     year: "2020",
     title: "Foundation",
     description:
-      "Started building Unreal Engine tools and open-source utilities while working on commercial projects.",
+      "Started building Unreal Engine systems and open-source utilities while working on commercial projects.",
   },
   {
     year: "2021",
@@ -54,7 +54,7 @@ const timeline = [
     year: "2023",
     title: "Studio Formation",
     description:
-      "Established Athian Games as an independent studio focused on Unreal Engine tooling and marketplace products.",
+      "Established Athian Games as an independent studio focused on original games, Unreal Engine production systems, and marketplace products.",
   },
   {
     year: "2024",
@@ -66,7 +66,7 @@ const timeline = [
     year: "2025",
     title: "Current Focus",
     description:
-      "15+ professional tools shipped. Active product development, YouTube showcases, and support for 200+ Patreon members.",
+      "Original game development, active product releases, YouTube showcases, and support for 200+ Patreon members.",
   },
 ];
 
@@ -78,9 +78,9 @@ export default function AboutPage() {
         <div className="max-w-4xl">
           <h1 className="mb-6">About Athian Games</h1>
           <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-            Independent Unreal Engine studio building professional tools for
-            serious creators. Founded by developers who understand production
-            pipelines. No corporate fluff. No marketing hype.
+            Independent Unreal Engine game development studio creating original
+            games, cinematic worlds, and production-ready marketplace products.
+            Founded by developers who understand production pipelines.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
             Athian Games exists to solve real problems in game development and
@@ -131,7 +131,7 @@ export default function AboutPage() {
         <div className="mb-12">
           <h2 className="mb-4">Journey</h2>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            From experiments to professional tooling
+            From experiments to a game development studio
           </p>
         </div>
 
@@ -175,8 +175,8 @@ export default function AboutPage() {
               </p>
               <p>
                 <strong className="text-foreground">Documentation matters.</strong>{" "}
-                If it's not documented, it's not done. Every tool ships with
-                complete technical documentation.
+                If a product needs setup, it gets clear documentation for real
+                users and production teams.
               </p>
               <p>
                 <strong className="text-foreground">Support the community.</strong>{" "}
@@ -186,7 +186,8 @@ export default function AboutPage() {
               <p>
                 <strong className="text-foreground">Stay independent.</strong>{" "}
                 No investors. No corporate oversight. Just sustainable,
-                creator-funded development of tools that solve real problems.
+                creator-funded development of games and products that solve real
+                production problems.
               </p>
             </div>
           </CardContent>

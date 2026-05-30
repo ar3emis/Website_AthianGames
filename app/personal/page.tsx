@@ -21,7 +21,7 @@ import { socialProfiles } from "@/lib/config/socialLinks";
 export const metadata: Metadata = {
   title: "Sameek Kundu - Personal",
   description:
-    "Sameek Kundu - software engineer, game developer, Unreal Engine tool developer, and founder of Athian Games.",
+    "Sameek Kundu - software engineer, game developer, Unreal Engine product developer, and founder of Athian Games.",
 };
 
 const socialLinks = [
@@ -116,8 +116,8 @@ export default function PersonalPage() {
           </div>
 
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Founder of Athian Games. Building professional Unreal Engine tools,
-            plugins, and templates for game developers and technical artists.
+            Founder of Athian Games. Building original games, Unreal Engine
+            plugins, cinematic systems, and production products.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -183,7 +183,7 @@ export default function PersonalPage() {
           <div className="mb-12 text-center">
             <h2 className="mb-4">Featured Work</h2>
             <p className="text-lg text-muted-foreground">
-              Selected projects and tools built for the Unreal Engine community
+              Selected games, products, and systems built for Unreal Engine
             </p>
           </div>
 
@@ -228,20 +228,20 @@ export default function PersonalPage() {
             <p>
               Having been actively involved in the industry since the early modern Unreal Engine era,
               Sameek has gained extensive expertise in developing plugins and templates for the Unreal Marketplace. 
-              His work focuses on delivering high-quality, production-ready tools and marketplace products for
-              developers using Unreal Engine.
+              His work focuses on delivering original games, production-ready plugins, and marketplace products
+              for developers using Unreal Engine.
             </p>
             <p>
               Sameek is passionate about using technology to create immersive and engaging experiences for players, 
               and he has dedicated his career to developing gameplay systems and tools that push the boundaries 
               of what is possible. His expertise and leadership have been instrumental in the success of 
-              Athian Games, helping the company become one of the leading players in game development tools.
+              Athian Games as a game development studio creating original games and Unreal Engine production products.
             </p>
             <p>
               In addition to his technical skills, Sameek is also a strong communicator and problem-solver. 
               He excels at working with clients and team members to understand their needs and goals, 
               and is adept at finding creative solutions to complex challenges in game development,
-              plugin architecture, tools, and real-time production workflows.
+              plugin architecture, systems, and real-time production workflows.
             </p>
           </div>
         </div>
@@ -254,7 +254,7 @@ export default function PersonalPage() {
             <Heart className="w-16 h-16 text-primary mx-auto mb-4" />
             <h2 className="text-3xl font-bold mb-4">Support the Work</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Patreon supporters get early access to tools, direct Discord
+              Patreon supporters get early access to products, direct Discord
               access, product updates, and priority support. Help fund
               independent development.
             </p>

@@ -184,7 +184,7 @@ export function generateOrganizationStructuredData(): OrganizationStructuredData
     '@id': `${baseUrl}/#organization`,
     name: 'Athian Games',
     description:
-      'Athian Games creates Unreal Engine plugins, Blueprint systems, shaders, VFX, MetaHuman characters, UMG tools, volumetric products, and runtime workflow tools for game developers.',
+      'Athian Games is an Unreal Engine game development studio creating original games, cinematic worlds, plugins, Blueprint systems, shaders, VFX, MetaHuman characters, UMG products, volumetric products, and runtime workflow systems.',
     url: baseUrl,
     logo: `${baseUrl}/images/companylogowithname.png`,
     sameAs: organizationSameAs,
@@ -196,6 +196,8 @@ export function generateOrganizationStructuredData(): OrganizationStructuredData
     },
     knowsAbout: [
       'Unreal Engine plugins',
+      'original game development',
+      'narrative games',
       'Blueprint systems',
       'Fab marketplace products',
       'Niagara VFX',
@@ -204,7 +206,7 @@ export function generateOrganizationStructuredData(): OrganizationStructuredData
       'UMG widgets',
       'runtime database plugins',
       'runtime FBX import',
-      'game development tools',
+      'game production',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -238,7 +240,7 @@ export function generateWebsiteStructuredData(): WebsiteStructuredData {
     '@type': 'WebSite',
     name: 'Athian Games',
     description:
-      'Professional Unreal Engine game development tools, plugins, shaders, VFX, Blueprint systems, MetaHuman assets, and runtime products from Athian Games.',
+      'Athian Games is an Unreal Engine game development studio creating original games, cinematic worlds, plugins, shaders, VFX, Blueprint systems, MetaHuman assets, and runtime products.',
     url: baseUrl,
     potentialAction: {
       '@type': 'SearchAction',
@@ -259,7 +261,7 @@ export function generateFounderStructuredData() {
     '@type': 'Person',
     name: 'Sameek Kundu',
     url: `${baseUrl}/personal`,
-    jobTitle: 'Founder and Unreal Engine Developer',
+    jobTitle: 'Founder and Unreal Engine Game Developer',
     worksFor: {
       '@type': 'Organization',
       name: 'Athian Games',

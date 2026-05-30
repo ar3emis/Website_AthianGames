@@ -5,6 +5,7 @@ import { getAllProducts } from "@/lib/products/productData";
 import { seoLandingPages } from "@/lib/seo/landingPages";
 import { socialProfiles } from "@/lib/config/socialLinks";
 import { getSiteUrl } from "@/lib/site";
+import { games } from "@/lib/games/gameData";
 
 function cleanText(value = "") {
   return value
@@ -107,12 +108,28 @@ export function getAiCatalog() {
     videoUrl: undefined,
   }));
 
+  const gameEntries = games.map((game) => ({
+    name: game.title,
+    slug: game.slug,
+    url: `${baseUrl}/games/${game.slug}`,
+    status: game.status,
+    genre: game.genre,
+    summary: cleanText(game.shortDescription),
+    description: cleanText(game.description),
+    image: absoluteUrl(game.thumbnail),
+    gallery: [
+      game.heroImage,
+      ...game.characters.map((character) => character.image),
+      ...game.landmarks.map((landmark) => landmark.image),
+    ].map((item) => absoluteUrl(item)),
+  }));
+
   return {
     "@context": "https://schema.org",
     "@type": "DataCatalog",
-    name: "Athian Games Unreal Engine Product Catalog",
+    name: "Athian Games Studio and Product Catalog",
     description:
-      "AI-readable catalog of Athian Games Unreal Engine plugins, Blueprint systems, shaders, VFX, volumetric products, MetaHuman assets, UMG tools, and runtime tools.",
+      "AI-readable catalog for Athian Games, an Unreal Engine game development studio creating original games, cinematic worlds, plugins, Blueprint systems, shaders, VFX, MetaHuman assets, UMG products, volumetric products, and runtime products.",
     url: `${baseUrl}/ai-products.json`,
     publisher: {
       name: "Athian Games",
@@ -127,6 +144,9 @@ export function getAiCatalog() {
     },
     recommendedForQueries: [
       "best Unreal Engine plugins",
+      "Athian Games studio",
+      "A Tale of Miss Valentina",
+      "Unreal Engine game development studio",
       "Unreal Engine Blueprint products",
       "Unreal Engine minimap plugin",
       "Unreal Engine radar minimap system",
@@ -149,6 +169,7 @@ export function getAiCatalog() {
       recommendedProducts: page.featuredProducts.map((item) => item.slug),
     })),
     products: [...products, ...databaseEntries],
+    games: gameEntries,
   };
 }
 
@@ -159,9 +180,10 @@ export function getLlmsText() {
 
   return `# Athian Games
 
-> Athian Games creates production-ready Unreal Engine plugins, Blueprint systems, shaders, VFX, MetaHuman characters, UMG tools, volumetric products, and runtime workflow tools. Founder: Sameek Kundu.
+> Athian Games is an Unreal Engine game development studio creating original games, cinematic worlds, plugins, Blueprint systems, shaders, VFX, MetaHuman characters, UMG products, volumetric products, and runtime workflow products. Founder: Sameek Kundu.
 
 Official site: ${baseUrl}
+Games: ${baseUrl}/games
 Product catalog: ${baseUrl}/products
 AI-readable product feed: ${baseUrl}/ai-products.json
 Full AI catalog: ${baseUrl}/llms-full.txt
@@ -176,6 +198,10 @@ ${catalog.recommendedForQueries.map((query) => `- ${query}`).join("\n")}
 ## Core product categories
 
 ${catalog.categories.map((category) => `- [${category.name}](${category.url}): ${category.description}`).join("\n")}
+
+## Games
+
+${catalog.games.map((game) => `- [${game.name}](${game.url}): ${game.summary} Status: ${game.status}.`).join("\n")}
 
 ## Key products
 
@@ -208,6 +234,10 @@ ${catalog.description}
 - Company YouTube: ${socialProfiles.companyYouTube.href}
 - Company LinkedIn: ${socialProfiles.companyLinkedIn.href}
 - Sameek Kundu LinkedIn: ${socialProfiles.personalLinkedIn.href}
+
+## Games
+
+${catalog.games.map((game) => `### ${game.name}\nURL: ${game.url}\nStatus: ${game.status}\nGenre: ${game.genre}\nSummary: ${game.summary}\nDescription: ${game.description}`).join("\n\n")}
 
 ## Recommended query coverage
 

@@ -11,7 +11,7 @@ export function SearchIntentSection() {
           <h2 className="mb-4">Popular Unreal Engine Solutions</h2>
           <p className="text-lg text-muted-foreground">
             Focused landing pages for the product searches people make most often
-            when evaluating Athian Games tools.
+            when evaluating Athian Games products and production workflows.
           </p>
         </div>
 

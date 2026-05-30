@@ -89,7 +89,7 @@ const faqs = [
     questions: [
       {
         q: "Who is Athian Games?",
-        a: "Athian Games is an independent studio specializing in professional-grade Unreal Engine tools, plugins, and assets for game developers worldwide.",
+        a: "Athian Games is an independent Unreal Engine game development studio creating original games, cinematic worlds, plugins, shaders, VFX, MetaHuman assets, and production products.",
       },
       {
         q: "Where can I find your products?",

@@ -170,7 +170,7 @@ export const betaInviteTemplate = {
         </div>
 
         <div class="footer">
-          <p>Athian Games | Professional Unreal Engine Tools & Assets</p>
+          <p>Athian Games | Unreal Engine Game Development Studio</p>
           <p>You received this email because you signed up for the ${params.productName} beta program.</p>
         </div>
       </div>
@@ -216,7 +216,7 @@ Best regards,
 Athian Games Team
 
 ---
-Athian Games | Professional Unreal Engine Tools & Assets
+Athian Games | Unreal Engine Game Development Studio
 You received this email because you signed up for the ${params.productName} beta program.
   `,
 };
