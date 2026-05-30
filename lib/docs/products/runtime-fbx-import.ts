@@ -11,7 +11,7 @@ const runtimeFbxImportDocs: ProductDocumentation = {
         <section>
           <h3>What is Runtime FBX Import?</h3>
           <p><strong>Runtime FBX Import</strong> is a plugin for Unreal Engine that lets players or users load any <code>.fbx</code> file from disk while your game or app is running. No editor required. The plugin reads the FBX scene, builds Procedural Mesh Components for every node, auto-imports textures, sets up materials, handles skeletal mesh skinning, imports animations, and spawns a Blueprint-ready <strong>FBX Mesh Actor</strong> in your level — all without blocking the game thread.</p>
-          <p>Supported platforms: <strong>Win64, Mac</strong>. Compatible with <strong>UE 4.27</strong> and <strong>UE 5.x</strong>.</p>
+          <p>Supported platforms: <strong>Win64, Mac</strong>. Compatible with supported <strong>Unreal Engine</strong> projects.</p>
         </section>
         <section>
           <h3>Key Features</h3>

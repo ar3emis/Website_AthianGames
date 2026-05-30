@@ -2,17 +2,23 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 import { ArrowLeft, ExternalLink, FileText, Play } from "lucide-react";
-import { getProductBySlug } from "@/lib/products/productData";
+import { getCategoryHref, getProductCategory } from "@/lib/products/categories";
+import { getAllProducts, getProductBySlug } from "@/lib/products/productData";
 import { getDocumentation } from "@/lib/docs/docsData";
+import { getSiteUrl } from "@/lib/site";
 
 import { BetaSignupForm } from "@/components/products/BetaSignupForm";
 import { ProductGallery } from "@/components/products/ProductGallery";
-import { generateProductStructuredData } from "@/lib/utils/structuredData";
+import { ProductVideo } from "@/components/products/ProductVideo";
+import {
+  generateBreadcrumbStructuredData,
+  generateProductStructuredData,
+} from "@/lib/utils/structuredData";
 import { FabricAIHero } from "@/components/products/FabricAIHero";
 import { FabricAITabs } from "@/components/products/FabricAITabs";
+import { DatabaseProductSelector } from "@/components/products/DatabaseProductSelector";
 
 interface ProductPageProps {
   params: Promise<{
@@ -36,7 +42,7 @@ export async function generateMetadata({
     };
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://athiangames.com';
+  const baseUrl = getSiteUrl();
   const productUrl = `${baseUrl}/products/${product.slug}`;
   const images = (product as any).gallery?.map((img: string) => `${baseUrl}${img}`) || 
                  ((product as any).thumbnail ? [`${baseUrl}${(product as any).thumbnail}`] : []);
@@ -47,11 +53,9 @@ export async function generateMetadata({
     keywords: [
       product.name,
       'Unreal Engine',
-      'UE5',
       product.category,
       'game development',
       'Athian Games',
-      ...(product.engineVersions || []),
     ],
     authors: [{ name: 'Athian Games' }],
     creator: 'Athian Games',
@@ -103,15 +107,45 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   // Check if documentation exists for this product
   const hasDocumentation = getDocumentation(slug) !== null;
+  const isDatabaseProduct = slug === "databases";
+  const baseUrl = getSiteUrl();
+  const categoryInfo = getProductCategory(product.category);
+  const breadcrumbStructuredData = generateBreadcrumbStructuredData([
+    { name: "Home", url: baseUrl },
+    { name: "Products", url: `${baseUrl}/products` },
+    ...(categoryInfo
+      ? [
+          {
+            name: categoryInfo.name,
+            url: `${baseUrl}${getCategoryHref(categoryInfo.id)}`,
+          },
+        ]
+      : []),
+    { name: product.name },
+  ]);
+  const relatedProducts = getAllProducts()
+    .filter((entry: any) => entry.slug !== product.slug && entry.category === product.category)
+    .slice(0, 3);
 
   // Generate structured data for SEO and AI
   const productStructuredData = generateProductStructuredData({
     name: product.name,
     description: product.description,
+    summary: product.summary,
+    url: `${baseUrl}/products/${product.slug}`,
+    category: categoryInfo?.name ?? product.category,
     thumbnail: (product as any).thumbnail,
     gallery: (product as any).gallery,
     price: (product as any).price,
     externalUrl: (product as any).externalUrl,
+    documentationUrl: hasDocumentation
+      ? `${baseUrl}/docs/${slug}`
+      : (product as any).documentationUrl,
+    supportUrl: (product as any).discordUrl || "https://discord.gg/uBmnnxjahv",
+    videoUrl: (product as any).videoId
+      ? `https://www.youtube.com/watch?v=${(product as any).videoId}`
+      : (product as any).videoTutorialUrl,
+    features: (product as any).features,
   });
 
   return (
@@ -121,6 +155,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(productStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbStructuredData),
         }}
       />
 
@@ -138,14 +178,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Products
               </Link>
-              <div className="flex items-center gap-3 mb-4">
-                <Badge variant="secondary" className="text-sm select-none">
-                  Work In Progress
-                </Badge>
-                <Badge variant="outline" className="text-xs bg-black/30 border-white/20 text-white select-none">
-                  UE 5.7+
-                </Badge>
-              </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white drop-shadow-lg select-none">
                 {product.name}
               </h1>
@@ -180,16 +212,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Products
               </Link>
-              <div className="flex items-center gap-3 mb-4">
-                <Badge variant={product.category === "wip" ? "secondary" : "primary"} className="text-sm select-none">
-                  {product.category === "wip" ? "Work In Progress" : product.category}
-                </Badge>
-                {product.category === "wip" && product.engineVersions.map((version: string) => (
-                  <Badge key={version} variant="outline" className="text-xs bg-black/30 border-white/20 text-white select-none">
-                    {version}
-                  </Badge>
-                ))}
-              </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white drop-shadow-lg select-none">
                 {product.name}
               </h1>
@@ -205,45 +227,44 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
 
         {/* CTA Buttons */}
-        <div className="flex flex-wrap gap-4 mb-16">
-          {product.category !== "wip" && (
-            <>
-              {/* Marketplace Link */}
-              {product.externalUrl && (
-                <Link href={product.externalUrl} target="_blank" rel="noopener noreferrer">
-                  <Button variant="primary" size="lg">
-                    <ExternalLink className="w-5 h-5 mr-2" />
-                    Get It on Marketplace
-                  </Button>
-                </Link>
-              )}
-            </>
-          )}
-          
-          {hasDocumentation ? (
-            <Link href={`/docs/${slug}`}>
-              <Button variant="secondary" size="lg">
-                <FileText className="w-5 h-5 mr-2" />
-                Documentation
-              </Button>
-            </Link>
-          ) : (product as any).documentationUrl && (
-            <Link href={(product as any).documentationUrl} target="_blank" rel="noopener noreferrer">
-              <Button variant="secondary" size="lg">
-                <FileText className="w-5 h-5 mr-2" />
-                Documentation
-              </Button>
-            </Link>
-          )}
-          {(product as any).videoTutorialUrl && (
-            <Link href={(product as any).videoTutorialUrl} target="_blank" rel="noopener noreferrer">
-              <Button variant="secondary" size="lg">
-                <Play className="w-5 h-5 mr-2" />
-                Video Tutorial
-              </Button>
-            </Link>
-          )}
-        </div>
+        {!isDatabaseProduct && (
+          <div className="flex flex-wrap gap-4 mb-16">
+            {product.category !== "wip" && product.externalUrl && (
+              <Link href={product.externalUrl} target="_blank" rel="noopener noreferrer">
+                <Button variant="primary" size="lg">
+                  <ExternalLink className="w-5 h-5 mr-2" />
+                  Get It on Marketplace
+                </Button>
+              </Link>
+            )}
+
+            {hasDocumentation ? (
+              <Link href={`/docs/${slug}`}>
+                <Button variant="secondary" size="lg">
+                  <FileText className="w-5 h-5 mr-2" />
+                  Documentation
+                </Button>
+              </Link>
+            ) : (product as any).documentationUrl && (
+              <Link href={(product as any).documentationUrl} target="_blank" rel="noopener noreferrer">
+                <Button variant="secondary" size="lg">
+                  <FileText className="w-5 h-5 mr-2" />
+                  Documentation
+                </Button>
+              </Link>
+            )}
+            {(product as any).videoTutorialUrl && (
+              <Link href={(product as any).videoTutorialUrl} target="_blank" rel="noopener noreferrer">
+                <Button variant="secondary" size="lg">
+                  <Play className="w-5 h-5 mr-2" />
+                  Video Walkthrough
+                </Button>
+              </Link>
+            )}
+          </div>
+        )}
+
+        {isDatabaseProduct && <DatabaseProductSelector />}
 
         {/* Description */}
         <div className="mb-16">
@@ -261,23 +282,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
         {(product as any).videoId && slug !== "fabric-ai" && (
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-6">Video</h2>
-            <div className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${(product as any).videoId}`}
-                title={product.name}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="w-full h-full"
-              />
-            </div>
+            <ProductVideo
+              videoId={(product as any).videoId}
+              title={product.name}
+              fallbackImage={(product as any).videoThumbnail || product.thumbnail || product.bannerImage}
+            />
           </div>
         )}
 
         {/* FabricAI: Special tabbed interface */}
-        {slug === "fabric-ai" ? (
+        {isDatabaseProduct ? null : slug === "fabric-ai" ? (
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-8">Core Features</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
@@ -366,11 +380,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   <div key={index} className={`grid lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                     {/* Feature Image */}
                     <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                      <div className="aspect-video bg-muted rounded-xl overflow-hidden">
+                      <div className="aspect-video rounded-xl border border-border/60 bg-muted/40 p-3 overflow-hidden">
                         <img
                           src={feature.image}
                           alt={feature.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full rounded-lg object-contain"
+                          loading="lazy"
                         />
                       </div>
                     </div>
@@ -458,18 +473,65 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <h2 className="text-3xl font-bold mb-8">Demonstrations</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {(product as any).demoVideos.map((videoId: string, index: number) => (
-                <div key={index} className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src={`https://www.youtube.com/embed/${videoId}`}
-                    title={`${product.name} Demo ${index + 1}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    className="w-full h-full"
-                  />
-                </div>
+                <ProductVideo
+                  key={index}
+                  videoId={videoId}
+                  title={`${product.name} Demo ${index + 1}`}
+                  fallbackImage={(product as any).videoThumbnail || product.thumbnail || product.bannerImage}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {relatedProducts.length > 0 && (
+          <div className="mb-16">
+            <div className="mb-8 flex items-end justify-between gap-4">
+              <div>
+                <h2 className="text-3xl font-bold">Related Products</h2>
+                {categoryInfo && (
+                  <p className="mt-2 text-muted-foreground">
+                    More {categoryInfo.shortName} from Athian Games.
+                  </p>
+                )}
+              </div>
+              {categoryInfo && (
+                <Link
+                  href={getCategoryHref(categoryInfo.id)}
+                  className="text-sm text-primary transition-colors hover:underline"
+                >
+                  View all {categoryInfo.name.toLowerCase()}
+                </Link>
+              )}
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {relatedProducts.map((related: any) => (
+                <Link key={related.slug} href={`/products/${related.slug}`}>
+                  <Card hover className="h-full group cursor-pointer">
+                    <div className="aspect-video overflow-hidden bg-muted">
+                      {related.thumbnail ? (
+                        <img
+                          src={related.thumbnail}
+                          alt={related.name}
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/15 to-accent/10 text-sm text-muted-foreground">
+                          Product Preview
+                        </div>
+                      )}
+                    </div>
+                    <CardHeader>
+                      <h3 className="mb-2 text-lg font-bold transition-colors group-hover:text-primary">
+                        {related.name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground line-clamp-2">
+                        {related.summary}
+                      </p>
+                    </CardHeader>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
@@ -505,7 +567,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                       </div>
                     </a>
 
-                    {/* Video Tutorial link - only show if URL exists */}
+                    {/* Video walkthrough link - only show if URL exists */}
                     {(product as any).videoTutorialUrl && (
                       <Link
                         href={(product as any).videoTutorialUrl}
@@ -515,14 +577,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
                       >
                         <Play className="w-5 h-5 text-primary" />
                         <div>
-                          <div className="font-semibold text-sm group-hover:text-primary">Video Tutorial</div>
-                          <div className="text-xs text-muted-foreground">Watch step-by-step guide</div>
+                          <div className="font-semibold text-sm group-hover:text-primary">Video Walkthrough</div>
+                          <div className="text-xs text-muted-foreground">Watch product workflow</div>
                         </div>
                       </Link>
                     )}
 
                     <a
-                      href="https://discord.gg/uBmnnxjahv"
+                      href={(product as any).discordUrl || "https://discord.gg/uBmnnxjahv"}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 p-4 bg-background rounded-lg border border-border hover:border-primary transition-colors group"
@@ -570,7 +632,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <div className="text-center p-8 bg-gradient-to-br from-primary/10 to-accent/5 rounded-xl border border-primary/20">
             <h2 className="text-2xl font-bold mb-4">Ready to get started?</h2>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Get this product now from the Unreal Engine Marketplace
+              Get this product now from the marketplace
             </p>
             <Link href={product.externalUrl} target="_blank" rel="noopener noreferrer">
               <Button size="lg">

@@ -39,10 +39,10 @@ export function CTASection() {
                   <Youtube className="w-6 h-6 text-accent" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold mb-2">Watch Tutorials</h3>
+                  <h3 className="text-xl font-bold mb-2">Watch Product Videos</h3>
                   <p className="text-muted-foreground mb-4">
-                    Free Unreal Engine tutorials, plugin breakdowns,
-                    and technical deep-dives. No fluff.
+                    Unreal Engine product showcases, plugin breakdowns,
+                    and technical updates. No fluff.
                   </p>
                   <Link
                     href="https://youtube.com/@athiangames2417"

@@ -199,19 +199,6 @@ export default function AdminProductsPage() {
                   </p>
                 )}
 
-                {product.engineVersions && product.engineVersions.length > 0 && (
-                  <div className="flex flex-wrap gap-1 mb-3">
-                    {product.engineVersions.map((version, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs px-2 py-1 bg-muted rounded"
-                      >
-                        {version}
-                      </span>
-                    ))}
-                  </div>
-                )}
-
                 <div className="flex items-center gap-2 pt-3 border-t border-border">
                   <Link
                     href={`/admin/products/${product.id}/edit`}

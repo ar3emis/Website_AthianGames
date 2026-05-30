@@ -20,8 +20,8 @@ export const defaultSiteConfig: SiteConfig = {
     channelHandle: "@athiangames2417"
   },
   patreon: {
-    username: "athiangames",
-    url: "https://patreon.com/athiangames"
+    username: "SameekKundu",
+    url: "https://www.patreon.com/c/SameekKundu"
   },
   trailer: {
     videoId: "zTLjtnlbFjU", // Default to minimap video, replace with actual trailer

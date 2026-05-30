@@ -61,9 +61,10 @@ export function HeroSection() {
 
             {/* Subheading */}
             <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-xl">
-              Production-ready plugins, procedural systems, and VFX tools
-              for serious creators. No corporate fluff. Just credible,
-              technically sound solutions.
+              Production-ready plugins, procedural systems, Blueprint tools,
+              VFX, shaders, and character assets for Unreal Engine game
+              development. Built for developers, technical artists, and studios
+              shipping real projects.
             </p>
 
             {/* CTA Buttons */}

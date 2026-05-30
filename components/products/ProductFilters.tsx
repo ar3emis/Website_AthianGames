@@ -2,26 +2,7 @@
 
 import { useState } from "react";
 import { Card, CardHeader, CardContent } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
-
-const categories = [
-  { id: "all", name: "All Products" },
-  { id: "plugins", name: "Plugins" },
-  { id: "assets", name: "Assets" },
-  { id: "tools", name: "Tools" },
-  { id: "vfx", name: "VFX" },
-  { id: "materials", name: "Materials" },
-  { id: "blueprints", name: "Blueprints" },
-  { id: "wip", name: "Work In Progress", badge: "WIP" },
-];
-
-const engineVersions = [
-  "UE 5.3",
-  "UE 5.2",
-  "UE 5.1",
-  "UE 5.0",
-  "UE 4.27",
-];
+import { productCategoriesWithAll } from "@/lib/products/categories";
 
 const priceRanges = [
   { id: "free", name: "Free", min: 0, max: 0 },
@@ -33,26 +14,16 @@ const priceRanges = [
 
 export function ProductFilters() {
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [selectedVersions, setSelectedVersions] = useState<string[]>([]);
   const [selectedPriceRange, setSelectedPriceRange] = useState<string | null>(null);
-
-  const toggleVersion = (version: string) => {
-    setSelectedVersions((prev) =>
-      prev.includes(version)
-        ? prev.filter((v) => v !== version)
-        : [...prev, version]
-    );
-  };
 
   return (
     <div className="space-y-6">
-      {/* Category filter */}
       <Card>
         <CardHeader>
-          <h3 className="text-lg font-semibold">Category</h3>
+          <h3 className="text-lg font-semibold">Product Type</h3>
         </CardHeader>
         <CardContent className="space-y-2">
-          {categories.map((category) => (
+          {productCategoriesWithAll.map((category) => (
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
@@ -68,32 +39,6 @@ export function ProductFilters() {
         </CardContent>
       </Card>
 
-      {/* Engine version filter */}
-      <Card>
-        <CardHeader>
-          <h3 className="text-lg font-semibold">Engine Version</h3>
-        </CardHeader>
-        <CardContent className="space-y-2">
-          {engineVersions.map((version) => (
-            <label
-              key={version}
-              className="flex items-center space-x-2 cursor-pointer group"
-            >
-              <input
-                type="checkbox"
-                checked={selectedVersions.includes(version)}
-                onChange={() => toggleVersion(version)}
-                className="w-4 h-4 rounded border-border bg-background text-primary focus:ring-2 focus:ring-primary"
-              />
-              <span className="text-sm text-muted-foreground group-hover:text-foreground">
-                {version}
-              </span>
-            </label>
-          ))}
-        </CardContent>
-      </Card>
-
-      {/* Price range filter */}
       <Card>
         <CardHeader>
           <h3 className="text-lg font-semibold">Price Range</h3>
@@ -119,34 +64,18 @@ export function ProductFilters() {
         </CardContent>
       </Card>
 
-      {/* Active filters */}
-      {(selectedVersions.length > 0 || selectedPriceRange) && (
+      {selectedPriceRange && (
         <Card>
           <CardHeader>
             <h3 className="text-lg font-semibold">Active Filters</h3>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-wrap gap-2">
-              {selectedVersions.map((version) => (
-                <Badge
-                  key={version}
-                  variant="primary"
-                  className="cursor-pointer"
-                  onClick={() => toggleVersion(version)}
-                >
-                  {version} ×
-                </Badge>
-              ))}
-              {selectedPriceRange && (
-                <Badge
-                  variant="primary"
-                  className="cursor-pointer"
-                  onClick={() => setSelectedPriceRange(null)}
-                >
-                  {priceRanges.find((r) => r.id === selectedPriceRange)?.name} ×
-                </Badge>
-              )}
-            </div>
+            <button
+              className="rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground"
+              onClick={() => setSelectedPriceRange(null)}
+            >
+              {priceRanges.find((r) => r.id === selectedPriceRange)?.name} x
+            </button>
           </CardContent>
         </Card>
       )}

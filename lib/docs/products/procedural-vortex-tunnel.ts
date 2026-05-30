@@ -26,7 +26,7 @@ const proceduralVortexTunnelDocs: ProductDocumentation = {
         <section>
           <h3>System Requirements</h3>
           <ul>
-            <li>Unreal Engine 4.27 or 5.0+</li>
+            <li>Unreal Engine or 5.0+</li>
             <li>Understanding of spline components</li>
             <li>Basic material knowledge</li>
             <li>Niagara system familiarity (optional — pre-built systems included)</li>

@@ -6,37 +6,33 @@ const minimapDocs: ProductDocumentation = {
     {
       slug: "overview",
       title: "Overview",
-      description: "Learn about the Minimap, Map and Navigation System and its core capabilities",
+      description: "Texture-based minimap, map, POI, and navigation workflow",
       content: `
         <section>
           <h3>Introduction</h3>
-          <p>The <strong>Minimap, Map and Navigation System</strong> is a comprehensive plugin designed to create customizable and optimized texture-based minimaps and maps for your games.</p>
-          <p>This system eliminates the performance overhead of RenderTargets while providing extensive customization options for any type of project.</p>
-          <div class="callout-tip">
-            <strong>💡 Pro Tip:</strong> This plugin is optimized for Open World RPGs but works great for any genre — from archviz to RTS games!
-          </div>
+          <p><strong>Minimap, Map and Navigation System</strong> is built around texture-based maps, so your HUD does not need a live scene capture for the minimap. You prepare or capture a map texture, assign it to a MapBounds actor, then let Blueprint-friendly widgets display the player, POIs, navigation targets, and map regions.</p>
+          <p>The same system can be used for open worlds, indoor areas, RTS-style maps, archviz walkthroughs, and gameplay HUDs that need many icons without a heavy render target setup.</p>
+          <img src="/images/products/minimap/feature-texture-based.png" alt="Runtime minimap showing player and POI markers during gameplay" />
         </section>
         <section>
-          <h3>Key Features</h3>
+          <h3>Core Features</h3>
           <div class="feature-grid">
-            <div class="feature-card"><div class="fc-icon">🗺️</div><h4>Texture-Based System</h4><p>No RenderTarget overhead. Map is a static or dynamic texture you control.</p></div>
-            <div class="feature-card"><div class="fc-icon">📍</div><h4>Datatable-Driven POIs</h4><p>Define Points of Interest in a datatable — no code changes needed to add new types.</p></div>
-            <div class="feature-card"><div class="fc-icon">🔄</div><h4>Auto Rotate</h4><p>Circular and rectangular minimap shapes with optional auto-rotate to follow the camera.</p></div>
-            <div class="feature-card"><div class="fc-icon">🧭</div><h4>Navigation System</h4><p>Waypoints, direction arrows, distance display, and out-of-bounds indicators.</p></div>
-            <div class="feature-card"><div class="fc-icon">🌍</div><h4>Multiple Regions</h4><p>Multiple MapBounds actors in one level — system switches regions based on player position.</p></div>
-            <div class="feature-card"><div class="fc-icon">🔍</div><h4>Interactive Map</h4><p>Full-screen map with zoom, pan, and click-to-navigate support.</p></div>
+            <div class="feature-card"><h4>Texture-Based Minimap</h4><p>Use a map texture or top-down screenshot instead of a live render target.</p></div>
+            <div class="feature-card"><h4>MapBounds Regions</h4><p>Switch maps automatically when the player enters a different area.</p></div>
+            <div class="feature-card"><h4>POI Datatable</h4><p>Define icon, pointer, display range, static/dynamic behavior, and map interaction from rows.</p></div>
+            <div class="feature-card"><h4>Circle or Rectangle</h4><p>Choose the minimap shape and keep markers clamped correctly.</p></div>
+            <div class="feature-card"><h4>Texture Masks</h4><p>Support non-rectangular interiors, caves, rooms, and custom map silhouettes.</p></div>
+            <div class="feature-card"><h4>Navigation Markers</h4><p>Show destination pointers, distance, and out-of-bounds indicators.</p></div>
           </div>
         </section>
         <section>
-          <h3>System Requirements</h3>
+          <h3>What You Need</h3>
           <ul>
-            <li>Unreal Engine 4.27 or 5.0+</li>
-            <li>Basic knowledge of UMG and Blueprints</li>
-            <li>Understanding of Actor components</li>
+            <li>A project with UMG and Blueprint support.</li>
+            <li>A player pawn or character that can own the minimap widget.</li>
+            <li>A map texture, top-down screenshot, or custom map art for each region.</li>
+            <li>One or more MapBounds actors placed around the playable areas.</li>
           </ul>
-          <div class="callout-info">
-            <strong>ℹ️ Note:</strong> Compatible with both Blueprint and C++ projects.
-          </div>
         </section>
       `,
       next: { slug: "getting-started", title: "Getting Started" },
@@ -44,43 +40,28 @@ const minimapDocs: ProductDocumentation = {
     {
       slug: "getting-started",
       title: "Getting Started",
-      description: "Installation and initial setup",
+      description: "Install, enable, and place the first working minimap",
       content: `
         <section>
-          <h3>Installation</h3>
-          <p>After purchasing from the Unreal Engine Marketplace, install through your Epic Games Launcher:</p>
+          <h3>Enable the Plugin</h3>
           <ol>
-            <li>Open the <strong>Epic Games Launcher</strong></li>
-            <li>Navigate to your <strong>Library</strong></li>
-            <li>Find <code>Minimap, Map and Navigation System</code> in your Vault</li>
-            <li>Click <strong>"Install to Engine"</strong> and select your engine version</li>
+            <li>Add the product to your project from the launcher or marketplace vault.</li>
+            <li>Open the project and go to <strong>Edit > Plugins</strong>.</li>
+            <li>Search for the minimap/navigation plugin and enable it.</li>
+            <li>Restart the editor if the plugin prompt asks for it.</li>
           </ol>
-        </section>
-        <section>
-          <h3>Enabling the Plugin</h3>
-          <ol>
-            <li>Open your Unreal Engine project</li>
-            <li>Go to <strong>Edit → Plugins</strong></li>
-            <li>Search for <code>Minimap Map Navigation</code></li>
-            <li>Check the <strong>"Enabled"</strong> box</li>
-            <li>Restart the editor when prompted</li>
-          </ol>
-          <div class="callout-warning">
-            <strong>⚠️ Important:</strong> Make sure to restart the editor after enabling the plugin.
-          </div>
         </section>
         <section>
           <h3>Quick Setup</h3>
           <ol>
-            <li>Create a new level or open an existing one</li>
-            <li>Place a <code>MapBoundsActor</code> in your level (plugin content folder)</li>
-            <li>Configure the bounds to match your level area</li>
-            <li>Add the Minimap widget to your player's HUD</li>
-            <li>Configure your POI datatable</li>
+            <li>Open your gameplay level.</li>
+            <li>Place the MapBounds actor from the plugin content folder.</li>
+            <li>Scale the bounds so it covers the exact area represented by the map texture.</li>
+            <li>Assign your minimap texture in the MapBounds actor settings.</li>
+            <li>Add the minimap widget to your HUD or player widget.</li>
+            <li>Assign the POI datatable and test in Play mode.</li>
           </ol>
-          <div class="callout-tip">
-            <strong>💡 Quick Start:</strong> Check out the example level included with the plugin for a working implementation!
-          </div>
+          <img src="/images/products/minimap/feature-mapbounds-actor.png" alt="MapBounds Actor selected in the editor with bounds dimensions and minimap texture settings" />
         </section>
       `,
       prev: { slug: "overview", title: "Overview" },
@@ -89,56 +70,41 @@ const minimapDocs: ProductDocumentation = {
     {
       slug: "mapbounds-actor",
       title: "MapBounds Actor",
-      description: "Configure and use the MapBounds Actor for minimap regions",
+      description: "Configure the area represented by each minimap texture",
       content: `
         <section>
-          <h3>What is MapBounds Actor?</h3>
-          <p>The <strong>MapBounds Actor</strong> represents the boundaries of your minimap. It defines the area visible on your minimap and handles texture mapping.</p>
-          <div class="callout-info">
-            <strong>ℹ️ Core Concept:</strong> Each MapBounds Actor corresponds to one minimap region. You can have multiple regions in a single level!
-          </div>
+          <h3>What the Actor Does</h3>
+          <p>The MapBounds actor defines the world area that a minimap texture represents. The system uses the actor location, scale, and texture settings to convert world positions into map positions.</p>
+          <img src="/images/products/minimap/feature-mapbounds-actor.png" alt="MapBounds actor in an editor scene with its Details panel visible" />
         </section>
         <section>
-          <h3>Placing MapBounds Actor</h3>
+          <h3>Place a MapBounds Actor</h3>
           <ol>
-            <li>Find <code>BP_MapBounds</code> in the plugin's content folder</li>
-            <li>Drag it into your level</li>
-            <li>Position it to cover your desired map area</li>
-            <li>Scale it to match the boundaries of your playable area</li>
+            <li>Find the MapBounds actor in the plugin content.</li>
+            <li>Drag it into the level.</li>
+            <li>Move it to the center of the area represented by your map texture.</li>
+            <li>Scale X and Y until the bounds match the playable space.</li>
+            <li>Set Z high enough to include the relevant vertical range for the player.</li>
           </ol>
         </section>
         <section>
-          <h3>Configuration Properties</h3>
+          <h3>Main Settings</h3>
           <table>
-            <thead><tr><th>Property</th><th>Description</th></tr></thead>
+            <thead><tr><th>Setting</th><th>Use</th></tr></thead>
             <tbody>
-              <tr><td><strong>Map Texture</strong></td><td>The texture representing your map (screenshot or custom design)</td></tr>
-              <tr><td><strong>Bounds Size</strong></td><td>X and Y dimensions of your map area</td></tr>
-              <tr><td><strong>Texture Mask</strong></td><td>Optional mask for non-rectangular map areas</td></tr>
-              <tr><td><strong>Region Name</strong></td><td>Identifier for this map region</td></tr>
+              <tr><td><strong>Level Bounds X / Y / Z</strong></td><td>Controls the world area that maps into the minimap texture.</td></tr>
+              <tr><td><strong>Mini Map Texture</strong></td><td>The texture shown in the minimap widget.</td></tr>
+              <tr><td><strong>Mini Map Mask Texture</strong></td><td>Optional black-white mask for irregular map shapes.</td></tr>
+              <tr><td><strong>Minimap Element Size Ratio</strong></td><td>Adjusts marker scale for this bounds region.</td></tr>
+              <tr><td><strong>Local Map</strong></td><td>Use when a region needs its own local map behavior.</td></tr>
+              <tr><td><strong>Navigation Exit Actors</strong></td><td>Optional exits used by navigation and region transitions.</td></tr>
             </tbody>
           </table>
         </section>
         <section>
-          <h3>Multiple Map Regions</h3>
-          <p>The system automatically switches between MapBounds actors based on the player's position. Useful for:</p>
-          <ul>
-            <li><strong>Interior locations</strong> — caves, buildings, dungeons</li>
-            <li><strong>Vertical spaces</strong> — different floors of a structure</li>
-            <li><strong>Open world zones</strong> — separate areas with distinct maps</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Creating Your Map Texture</h3>
-          <ol>
-            <li>Position your camera above your level for a <strong>top-down view</strong></li>
-            <li>Take a <strong>high-resolution screenshot</strong></li>
-            <li>Import the image into your project</li>
-            <li>Assign it to the MapBounds actor's <code>Map Texture</code> property</li>
-          </ol>
-          <div class="callout-tip">
-            <strong>💡 Pro Tip:</strong> Use a higher resolution than you need, then let the engine scale it down for better quality.
-          </div>
+          <h3>Multiple Regions</h3>
+          <p>Use multiple MapBounds actors when your project has caves, interiors, multi-floor areas, or separate zones. When the player moves into a different bounds actor, the minimap can switch to that region's texture and marker rules.</p>
+          <img src="/images/products/minimap/feature-opacity-mask.png" alt="Player entering an interior while the minimap shows a masked local region" />
         </section>
       `,
       prev: { slug: "getting-started", title: "Getting Started" },
@@ -146,39 +112,29 @@ const minimapDocs: ProductDocumentation = {
     },
     {
       slug: "poi-system",
-      title: "Points of Interest (POI)",
-      description: "Configure and manage Points of Interest on your minimap",
+      title: "Points of Interest",
+      description: "Configure static and dynamic markers shown on the minimap and map",
       content: `
         <section>
           <h3>POI Overview</h3>
-          <p><strong>Points of Interest (POI)</strong> are actors that appear as icons on your minimap. They can represent enemies, pickups, NPCs, quest markers, or any other important location.</p>
-          <div class="callout-info">
-            <strong>ℹ️ Flexibility:</strong> The POI system is datatable-driven — add, modify, and manage types without changing code.
-          </div>
+          <p>Points of Interest are the actors shown as icons on your minimap or full map. They can represent enemies, pickups, NPCs, quest locations, exits, fast travel points, or custom gameplay objects.</p>
+          <img src="/images/products/minimap/feature-poi-datatable.png" alt="POIElement datatable with icon and pointer settings" />
         </section>
         <section>
-          <h3>POI Properties Reference</h3>
-          <table>
-            <thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead>
-            <tbody>
-              <tr><td><code>Actor Class</code></td><td>Class</td><td>The class of actors to represent as POI</td></tr>
-              <tr><td><code>Icon Texture</code></td><td>Texture</td><td>The icon displayed on the minimap</td></tr>
-              <tr><td><code>Icon Size</code></td><td>Vector2D</td><td>Size of the icon</td></tr>
-              <tr><td><code>Icon Color</code></td><td>Color</td><td>Tint color for the icon</td></tr>
-              <tr><td><code>Is Dynamic</code></td><td>Boolean</td><td>Whether the POI updates position in real-time</td></tr>
-              <tr><td><code>Distance Range</code></td><td>Float</td><td>Maximum distance to show this POI</td></tr>
-            </tbody>
-          </table>
+          <h3>Configure a POI Row</h3>
+          <ol>
+            <li>Open the POI datatable.</li>
+            <li>Add or duplicate a row for the actor class you want to display.</li>
+            <li>Set whether it appears on the full map, minimap, or both.</li>
+            <li>Assign the minimap icon and pointer icon textures.</li>
+            <li>Choose if the POI is static or dynamic.</li>
+            <li>Set visibility range, hover behavior, navigation behavior, and icon size.</li>
+          </ol>
         </section>
         <section>
-          <h3>Static vs Dynamic POI</h3>
-          <h4>Static POI</h4>
-          <p>Fixed location markers — perfect for treasure chests, landmarks, fast travel points, quest objectives.</p>
-          <h4>Dynamic POI</h4>
-          <p>Moving markers that update in real-time — ideal for enemies, NPCs, vehicles, multiplayer players.</p>
-          <div class="callout-warning">
-            <strong>⚠️ Performance Note:</strong> Dynamic POIs have a slight overhead. Use static POIs when possible.
-          </div>
+          <h3>Static vs Dynamic</h3>
+          <p><strong>Static POIs</strong> are best for fixed landmarks, pickups, quest locations, and fast travel points. <strong>Dynamic POIs</strong> update during play and are useful for enemies, NPCs, vehicles, or multiplayer characters.</p>
+          <img src="/images/products/minimap/feature-dynamic-poi.png" alt="Gameplay view with moving POI markers updating on the minimap" />
         </section>
       `,
       prev: { slug: "mapbounds-actor", title: "MapBounds Actor" },
@@ -187,37 +143,27 @@ const minimapDocs: ProductDocumentation = {
     {
       slug: "minimap-widget",
       title: "Minimap Widget",
-      description: "The UMG widget that displays the minimap on the player's HUD",
+      description: "Add and customize the UMG minimap display",
       content: `
         <section>
-          <h3>Adding to HUD</h3>
+          <h3>Add the Widget</h3>
           <ol>
-            <li>Open your player HUD widget</li>
-            <li>Add the Minimap widget blueprint from the plugin</li>
-            <li>Position it on your screen (typically top-right or bottom-left)</li>
-            <li>Configure the widget properties</li>
+            <li>Open your HUD or player UI widget.</li>
+            <li>Add the minimap widget from the plugin content.</li>
+            <li>Position it in your layout.</li>
+            <li>Assign the player reference and POI datatable if required by your setup.</li>
+            <li>Play the level and confirm the player marker appears inside the bounds.</li>
           </ol>
         </section>
         <section>
-          <h3>Widget Properties</h3>
-          <table>
-            <thead><tr><th>Property</th><th>Description</th></tr></thead>
-            <tbody>
-              <tr><td><strong>Minimap Size</strong></td><td>Dimensions of the minimap display</td></tr>
-              <tr><td><strong>Allow Circle Mask</strong></td><td>Enable circular minimap shape</td></tr>
-              <tr><td><strong>Auto Rotate</strong></td><td>Rotate minimap with player camera</td></tr>
-              <tr><td><strong>Zoom Level</strong></td><td>Default zoom level</td></tr>
-              <tr><td><strong>POI Datatable</strong></td><td>Reference to your POI configuration</td></tr>
-              <tr><td><strong>Player Icon</strong></td><td>Icon representing the player</td></tr>
-              <tr><td><strong>Border Style</strong></td><td>Visual styling for the minimap border</td></tr>
-            </tbody>
-          </table>
+          <h3>Shape and Rotation</h3>
+          <p>Use the widget settings to choose between circular and rectangular minimap presentation. When auto-rotate is enabled, the map can rotate with the camera while keeping the player marker centered.</p>
+          <img src="/images/products/minimap/feature-circular-rectangular.png" alt="Circular and rectangular minimap examples with player and pointer icons" />
         </section>
         <section>
-          <h3>Circular vs Rectangular</h3>
-          <p>The <code>AllowCircleMask</code> parameter controls the shape. <strong>Circular</strong> uses an opacity mask and adjusts POI positions to stay within bounds. <strong>Rectangular</strong> is the standard square display.</p>
-          <h3>Auto Rotate</h3>
-          <p>When enabled, the minimap rotates to match the player's camera direction. The player icon stays centered while the map rotates around it.</p>
+          <h3>Zoom</h3>
+          <p>Zoom settings decide how much of the MapBounds area is visible around the player. Larger areas show more context, while tighter zoom makes nearby POIs easier to read.</p>
+          <img src="/images/products/minimap/feature-zoom-levels.png" alt="Two minimap zoom examples showing different visible area sizes" />
         </section>
       `,
       prev: { slug: "poi-system", title: "Points of Interest" },
@@ -226,31 +172,22 @@ const minimapDocs: ProductDocumentation = {
     {
       slug: "navigation-system",
       title: "Navigation System",
-      description: "Waypoints, direction arrows, and distance display",
+      description: "Waypoints, direction pointers, distance, and out-of-bounds markers",
       content: `
         <section>
           <h3>Overview</h3>
-          <p>The navigation system allows players to set waypoints and markers in the world, with visual indicators showing direction and distance to destinations.</p>
+          <p>The navigation system helps players understand where to go. You can set a world target, show direction pointers, display distance, and show a custom indicator when the target is outside the current view.</p>
+          <img src="/images/products/minimap/feature-navigation-waypoints.png" alt="Navigation waypoint Blueprint setup used for in-bounds and out-of-bounds marker behavior" />
         </section>
         <section>
-          <h3>Navigation Features</h3>
-          <div class="feature-grid">
-            <div class="feature-card"><div class="fc-icon">📌</div><h4>World Markers</h4><p>3D markers placed at the destination in world space.</p></div>
-            <div class="feature-card"><div class="fc-icon">🧭</div><h4>Direction Arrow</h4><p>On-screen arrow pointing toward the destination at all times.</p></div>
-            <div class="feature-card"><div class="fc-icon">📏</div><h4>Distance Display</h4><p>Shows distance to target in meters, km, or custom units.</p></div>
-            <div class="feature-card"><div class="fc-icon">↗️</div><h4>Out of Bounds</h4><p>Edge indicator when the target is off-screen.</p></div>
-          </div>
-        </section>
-        <section>
-          <h3>Blueprint API</h3>
-          <pre><code>// Set a navigation target
-Set Navigation Target
-  - Target Location: Vector (X, Y, Z)
-  - Marker Icon: Texture 2D
-  - Show Distance: Boolean
-
-// Clear navigation
-Clear Navigation Target</code></pre>
+          <h3>Basic Flow</h3>
+          <ol>
+            <li>Create or choose the destination actor or world location.</li>
+            <li>Call the navigation setup event or function from Blueprint.</li>
+            <li>Assign the marker icon or pointer icon.</li>
+            <li>Enable distance display if your HUD needs it.</li>
+            <li>Clear the navigation marker when the objective is complete.</li>
+          </ol>
         </section>
       `,
       prev: { slug: "minimap-widget", title: "Minimap Widget" },
@@ -259,34 +196,21 @@ Clear Navigation Target</code></pre>
     {
       slug: "advanced-features",
       title: "Advanced Features",
-      description: "Texture masking, interactive map, multi-level support",
+      description: "Texture masks, interactive maps, and multi-level support",
       content: `
         <section>
           <h3>Texture Masking</h3>
-          <p>For non-rectangular map areas, create a black-and-white mask texture (white = visible, black = hidden) and assign it to the MapBounds actor.</p>
+          <p>For non-rectangular maps, create a mask texture where white is visible and black is hidden. Assign it to the MapBounds actor so rooms, caves, and interiors can have custom map shapes.</p>
+          <img src="/images/products/minimap/feature-texture-masking.png" alt="Map texture and black-white mask assigned on the MapBounds actor" />
         </section>
         <section>
           <h3>Interactive Map</h3>
-          <p>The full map view supports:</p>
-          <ul>
-            <li><strong>Zoom:</strong> Mouse wheel or pinch gestures</li>
-            <li><strong>Pan:</strong> Click and drag</li>
-            <li><strong>Click to Navigate:</strong> Set waypoints by clicking on the map</li>
-            <li><strong>POI Details:</strong> Hover over POIs to see information</li>
-          </ul>
+          <p>The full map can support zoom, pan, click-to-navigate, POI hover behavior, and marker selection depending on how you configure the widgets and POI rows.</p>
+          <img src="/images/products/minimap/feature-interactive-map.png" alt="Interactive map view with POI markers and a waypoint pointer" />
         </section>
         <section>
           <h3>Multi-Level Support</h3>
-          <p>Each level can have its own MapBounds actors. POI datatables can reference actors across levels, and the system automatically handles level streaming.</p>
-        </section>
-        <section>
-          <h3>Integration Ideas</h3>
-          <ul>
-            <li><strong>Quest System</strong> — Show quest objectives as dynamic POIs</li>
-            <li><strong>Fast Travel</strong> — Click map locations to fast travel</li>
-            <li><strong>Fog of War</strong> — Reveal map areas as the player explores</li>
-            <li><strong>Team Markers</strong> — Show party members in multiplayer</li>
-          </ul>
+          <p>Use separate MapBounds actors and textures for interiors, floors, or streamed areas. Keep the POI datatable consistent, then let the bounds setup control which map is shown.</p>
         </section>
       `,
       prev: { slug: "navigation-system", title: "Navigation System" },
@@ -295,24 +219,24 @@ Clear Navigation Target</code></pre>
     {
       slug: "troubleshooting",
       title: "Troubleshooting",
-      description: "Common issues and how to fix them",
+      description: "Common setup issues and fixes",
       content: `
         <section>
           <h3>Common Issues</h3>
           <table>
-            <thead><tr><th>Problem</th><th>Solution</th></tr></thead>
+            <thead><tr><th>Problem</th><th>What to Check</th></tr></thead>
             <tbody>
-              <tr><td><strong>Minimap not showing</strong></td><td>Verify MapBounds actor is placed, Map Texture is assigned, minimap widget is in HUD, and player is within MapBounds area.</td></tr>
-              <tr><td><strong>POIs not appearing</strong></td><td>Check POI datatable reference, verify actor classes match, ensure actors exist in level and are within distance range.</td></tr>
-              <tr><td><strong>Performance issues</strong></td><td>Reduce dynamic POIs, increase POI update interval, use distance culling, optimise map texture resolution.</td></tr>
-              <tr><td><strong>Map texture misaligned</strong></td><td>Verify MapBounds actor position/scale, check texture dimensions match bounds aspect ratio, ensure texture is oriented correctly (north = up).</td></tr>
-              <tr><td><strong>Circular minimap issues</strong></td><td>Enable AllowCircleMask, check opacity mask material is applied, and verify POI positions are adjusted for circular bounds.</td></tr>
+              <tr><td><strong>Minimap not showing</strong></td><td>Confirm the widget is added to the HUD, the MapBounds actor exists, and the player is inside the bounds.</td></tr>
+              <tr><td><strong>Map texture is offset</strong></td><td>Check MapBounds location, X/Y scale, texture orientation, and whether north/up matches your intended map direction.</td></tr>
+              <tr><td><strong>POIs not appearing</strong></td><td>Check the POI datatable reference, actor class row, visibility range, and whether the actor exists in the current level.</td></tr>
+              <tr><td><strong>Circle map clips markers</strong></td><td>Confirm circular mode is enabled and the widget is using the intended mask/material setup.</td></tr>
+              <tr><td><strong>Too many dynamic markers</strong></td><td>Use static rows where possible and reduce update frequency or visibility distance for moving actors.</td></tr>
             </tbody>
           </table>
         </section>
         <section>
           <h3>Support</h3>
-          <p>For additional help, <a href="/support">open a support ticket</a>, join our Discord community, or check the example maps included with the plugin.</p>
+          <p>For more help, open a support ticket, use the Discord support link, or compare your setup with the example content included with the plugin.</p>
         </section>
       `,
       prev: { slug: "advanced-features", title: "Advanced Features" },
@@ -321,4 +245,3 @@ Clear Navigation Target</code></pre>
 };
 
 export default minimapDocs;
-

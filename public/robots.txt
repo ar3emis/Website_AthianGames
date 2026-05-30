@@ -1,14 +1,36 @@
 # Athian Games - Robots.txt
-# Allow all search engines to crawl the site
+# Crawl policy for search engines and AI answer engines
 
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/admin/
+Disallow: /api/support/
 
-# Allow OpenAI GPTBot for ChatGPT
+# Allow OpenAI GPTBot
 User-agent: GPTBot
 Allow: /
+Disallow: /admin/
+Disallow: /api/admin/
+Disallow: /api/support/
 
-# Allow Google-Extended for Bard/Gemini
+# Allow OpenAI search crawlers
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/admin/
+Disallow: /api/support/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin/
+Disallow: /api/admin/
+Disallow: /api/support/
+
+User-agent: OAI-AdsBot
+Allow: /
+
+# Allow Google-Extended for Gemini
 User-agent: Google-Extended
 Allow: /
 
@@ -16,16 +38,40 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/admin/
+Disallow: /api/support/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/admin/
+Disallow: /api/support/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/admin/
+Disallow: /api/support/
+
 # Allow CCBot (Common Crawl)
 User-agent: CCBot
 Allow: /
 
 # Priority crawl paths
 Allow: /products/
+Allow: /products/category/
+Allow: /products/databases/
+Allow: /docs/
+Allow: /unreal-engine/
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /ai-products.json
 Allow: /services/
 Allow: /about
 Allow: /contact
 
 # Sitemap location
 Sitemap: https://athiangames.com/sitemap.xml
-Sitemap: https://athiangames.com/sitemap-products.xml

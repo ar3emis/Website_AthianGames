@@ -13,7 +13,7 @@ const faqs = [
     questions: [
       {
         q: "What engine versions do your products support?",
-        a: "Most of our products support UE 4.27 and UE 5.0+. Specific version compatibility is listed on each product page.",
+        a: "Most of our products support Unreal Engine. Specific version compatibility is listed on each product page.",
       },
       {
         q: "Can I use these products in commercial projects?",
@@ -25,7 +25,7 @@ const faqs = [
       },
       {
         q: "How do I access product documentation?",
-        a: "Comprehensive documentation is available at docs.athiangames.com for all our products. Each product page also links to its specific documentation.",
+        a: "Documentation is available in the Documentation section of this site. Each product page also links to its specific documentation when a local guide is available.",
       },
     ],
   },
@@ -96,8 +96,8 @@ const faqs = [
         a: "Our products are available on the FAB Marketplace, Unreal Marketplace, and directly through our website.",
       },
       {
-        q: "Do you have tutorial videos?",
-        a: "Yes! Visit our YouTube channel @athiangames for tutorials, showcases, and development updates.",
+        q: "Do you have product videos?",
+        a: "Yes. Visit our YouTube channel @athiangames for product showcases, plugin breakdowns, and development updates.",
       },
       {
         q: "How can I stay updated on new releases?",

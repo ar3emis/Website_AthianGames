@@ -12,7 +12,6 @@ interface ProductInfoProps {
     name: string;
     description: string;
     price: number;
-    category: string;
     tags: string[];
   };
 }
@@ -64,11 +63,6 @@ export function ProductInfo({ product }: ProductInfoProps) {
 
   return (
     <div className="space-y-6">
-      {/* Category badge */}
-      <div>
-        <Badge variant="primary">{product.category}</Badge>
-      </div>
-
       {/* Title */}
       <h1 className="text-4xl font-bold">{product.name}</h1>
 

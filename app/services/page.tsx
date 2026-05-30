@@ -37,7 +37,7 @@ const consultationTypes = [
     name: "Standard Consultation",
     duration: "1 hour",
     price: 50,
-    description: "In-depth discussion for architecture planning, complex debugging, or learning sessions.",
+    description: "In-depth discussion for architecture planning, complex debugging, or implementation review.",
     features: [
       "60-minute 1-on-1 video call",
       "Screen sharing & live coding",
@@ -53,7 +53,7 @@ const consultationTypes = [
     name: "Extended Session",
     duration: "2 hours",
     price: 90,
-    description: "Comprehensive session for project planning, in-depth tutorials, or multiple topics.",
+    description: "Comprehensive session for project planning, technical review, or multiple implementation topics.",
     features: [
       "2-hour 1-on-1 video call",
       "Screen sharing & live coding",
@@ -85,7 +85,7 @@ export default function ServicesPage() {
           <p className="text-xl text-muted-foreground mb-8">
             Get personalized help with your Unreal Engine projects. From quick
             debugging sessions to in-depth architecture planning, I'm here to
-            help you succeed.
+            help you move the project forward.
           </p>
           <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">

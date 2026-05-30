@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AuthProvider } from "@/components/providers/AuthProvider";
+import { getSiteUrl } from "@/lib/site";
+import { socialProfiles } from "@/lib/config/socialLinks";
 import { headers } from "next/headers";
 
 const inter = Inter({
@@ -17,30 +19,26 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000"),
+  metadataBase: new URL(getSiteUrl()),
   title: {
-    default: "Athian Games - Professional Unreal Engine Tools & Assets",
+    default: "Athian Games - Unreal Engine Plugins, Blueprints, Shaders and VFX",
     template: "%s | Athian Games",
   },
   description:
-    "High-quality Unreal Engine plugins, tools, and assets for serious creators. Production-ready solutions for game development, VFX, and procedural systems. Discover premium UE5 assets, blueprints, and materials.",
+    "Production-ready Unreal Engine plugins, Blueprint systems, shaders, VFX, MetaHuman assets, runtime tools, and game development products from Athian Games.",
   keywords: [
     "Unreal Engine",
-    "UE5",
     "plugins",
-    "assets",
-    "game development",
-    "VFX",
-    "procedural generation",
-    "Athian Games",
     "blueprints",
-    "materials",
+    "shaders",
+    "VFX",
+    "MetaHuman",
+    "game development",
+    "Athian Games",
     "Niagara",
     "post-process effects",
-    "shaders",
-    "tools",
     "Unreal Engine marketplace",
-    "FAB marketplace",
+    "Fab marketplace",
     "indie game development",
   ],
   authors: [{ name: "Athian Games", url: "https://athiangames.com" }],
@@ -61,15 +59,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: "Athian Games",
-    title: "Athian Games - Professional Unreal Engine Tools & Assets",
+    title: "Athian Games - Unreal Engine Plugins, Blueprints, Shaders and VFX",
     description:
-      "High-quality Unreal Engine plugins, tools, and assets for serious creators. Production-ready solutions for game development, VFX, and procedural systems.",
+      "Production-ready Unreal Engine plugins, Blueprint systems, shaders, VFX, MetaHuman assets, runtime tools, and game development products from Athian Games.",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Athian Games - Professional Unreal Engine Tools",
+        alt: "Athian Games Unreal Engine products",
       },
     ],
   },
@@ -77,9 +75,17 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Athian Games - Professional Unreal Engine Tools & Assets",
     description:
-      "High-quality Unreal Engine plugins, tools, and assets for serious creators.",
+      "High-quality Unreal Engine game development plugins, tools, VFX, shaders, and assets for developers and studios.",
     images: ["/images/twitter-image.jpg"],
-    creator: "@athiangames",
+    creator: "@Sameek_Kundu",
+    site: "@Sameek_Kundu",
+  },
+  other: {
+    "profile:company_youtube": socialProfiles.companyYouTube.href,
+    "profile:personal_youtube": socialProfiles.personalYouTube.href,
+    "profile:linkedin": socialProfiles.companyLinkedIn.href,
+    "profile:x": socialProfiles.x.href,
+    "profile:instagram": socialProfiles.instagram.href,
   },
   robots: {
     index: true,
@@ -101,6 +107,8 @@ export const metadata: Metadata = {
     canonical: "/",
     types: {
       'application/rss+xml': '/rss.xml',
+      'text/plain': '/llms.txt',
+      'application/json': '/ai-products.json',
     },
   },
   category: 'technology',

@@ -6,7 +6,7 @@ const stats = [
     icon: Youtube,
     value: "5.2K",
     label: "YouTube Subscribers",
-    description: "Learning from professional tutorials",
+    description: "Following product showcases",
   },
   {
     icon: Download,

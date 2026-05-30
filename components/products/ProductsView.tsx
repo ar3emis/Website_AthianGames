@@ -2,21 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Card, CardHeader } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
-
-// Product categories
-const categories = [
-	{ id: "all", name: "All Products" },
-	{ id: "plugins", name: "Plugins" },
-	{ id: "assets", name: "Assets" },
-	{ id: "tools", name: "Tools" },
-	{ id: "vfx", name: "VFX" },
-	{ id: "materials", name: "Materials" },
-	{ id: "blueprints", name: "Blueprints" },
-	{ id: "wip", name: "Work In Progress", badge: true },
-];
+import { getCategoryHref, productCategoriesWithAll } from "@/lib/products/categories";
 
 // Athian Games Products - from your marketplace
 const allProducts = [
@@ -28,13 +16,13 @@ const allProducts = [
 			"Build a fully customized and texture based Minimap, Map and Navigation System for your next big title",
 		price: null,
 		category: "plugins",
-		engineVersions: ["UE 4.27", "UE 5.0+"],
+		engineVersions: [],
 		isExternal: true,
 		externalUrl:
 			"https://www.unrealengine.com/marketplace/en-US/product/minimap-map-and-navigation-system",
 		platform: "unreal-marketplace",
 		isFeatured: true,
-		thumbnail: "/images/products/minimap/minimap_thumb.jpg",
+		thumbnail: "/images/products/minimap/thumbnail_recreated.png",
 	},
 	{
 		id: "2",
@@ -43,8 +31,8 @@ const allProducts = [
 		shortDescription:
 			"Redefine your imagination with this highly customizable Material Driven Vortex System along a given spline path",
 		price: null,
-		category: "tools",
-		engineVersions: ["UE 4.27", "UE 5.0+"],
+		category: "shaders",
+		engineVersions: [],
 		isExternal: true,
 		externalUrl:
 			"https://www.unrealengine.com/marketplace/en-US/product/a35f1131e36843f28df349d8f63b6660",
@@ -53,20 +41,50 @@ const allProducts = [
 		thumbnail: "/images/products/procedural-vortex-tunnel/pvt_thumb.jpg",
 	},
 	{
+		id: "23",
+		slug: "radar-system-with-minimap",
+		name: "Radar System with Minimap",
+		shortDescription:
+			"Blueprint radar and minimap system for tracking actors, markers, and navigation targets",
+		price: null,
+		category: "blueprints",
+		engineVersions: [],
+		isExternal: true,
+		externalUrl:
+			"https://www.fab.com/listings/77159867-e5d9-43c0-b7d2-4fa78ffdca81",
+		platform: "fab",
+		thumbnail: "/images/products/radar-system-with-minimap/thumbnail_refined.png",
+	},
+	{
+		id: "24",
+		slug: "treeview-for-umg",
+		name: "TreeView for UMG",
+		shortDescription:
+			"Blueprint-ready tree view widget with custom rows, nested nodes, selection, and expansion events",
+		price: null,
+		category: "umg",
+		engineVersions: [],
+		isExternal: true,
+		externalUrl:
+			"https://www.fab.com/listings/86b5e8eb-03a6-4b56-84b7-5853e2d8f16e",
+		platform: "fab",
+		thumbnail: "/images/products/treeview-for-umg/thumbnail.png",
+	},
+	{
 		id: "3",
 		slug: "art-of-shader-distortion-and-glitches",
 		name: "Art Of Shader - Distortion And Glitches",
 		shortDescription:
 			"A series of customizable Shaders and Niagara FX that gives distorted and glitched effects to your actors and scenes",
 		price: null,
-		category: "vfx",
-		engineVersions: ["UE 4.27", "UE 5.0+"],
+		category: "shaders",
+		engineVersions: [],
 		isExternal: true,
 		externalUrl:
-			"https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-stylized-post-process-pack",
-		platform: "unreal-marketplace",
+			"https://www.fab.com/listings/0223faf6-76e1-4049-ae3a-82ea1daa296f",
+		platform: "fab",
 		isFeatured: true,
-		thumbnail: "/images/products/art-of-shader-distortion-glitches/aos_dg_thumb.jpg",
+		thumbnail: "/images/products/art-of-shader-distortion-glitches/aos_dg_thumbnail_clean.png",
 	},
 	{
 		id: "4",
@@ -75,13 +93,13 @@ const allProducts = [
 		shortDescription:
 			"Advanced distortion effects and post-process shaders for stunning visual effects",
 		price: null,
-		category: "vfx",
-		engineVersions: ["UE 4.27", "UE 5.0+"],
+		category: "shaders",
+		engineVersions: [],
 		isExternal: true,
 		externalUrl:
-			"https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-advanced-distortion",
-		platform: "unreal-marketplace",
-		thumbnail: "/images/products/art-of-shader-advanced-distortion/aos_ad_thumbnail.png",
+			"https://www.fab.com/listings/3546d4b0-84f7-494d-9f21-867ca5cea3e9",
+		platform: "fab",
+		thumbnail: "/images/products/art-of-shader-advanced-distortion/aos_ad_thumbnail_clean.png",
 	},
 	{
 		id: "5",
@@ -89,13 +107,13 @@ const allProducts = [
 		name: "Art Of Shader - Film And Special Effects",
 		shortDescription: "Professional film-grade post-process effects and shaders",
 		price: null,
-		category: "vfx",
-		engineVersions: ["UE 4.27", "UE 5.0+"],
+		category: "shaders",
+		engineVersions: [],
 		isExternal: true,
 		externalUrl:
-			"https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-film-and-special-effects",
-		platform: "unreal-marketplace",
-		thumbnail: "/images/products/art-of-shader-film-special-effects/aos_fse_thumb.png",
+			"https://www.fab.com/listings/a494f18d-6db0-4b51-8525-bfeaf6efb749",
+		platform: "fab",
+		thumbnail: "/images/products/art-of-shader-film-special-effects/aos_fse_thumbnail_clean.png",
 	},
 	{
 		id: "6",
@@ -103,13 +121,13 @@ const allProducts = [
 		name: "Art Of Shader - Stylized Post Process",
 		shortDescription: "Stylized post-process effects for artistic game visuals",
 		price: null,
-		category: "vfx",
-		engineVersions: ["UE 4.27", "UE 5.0+"],
+		category: "shaders",
+		engineVersions: [],
 		isExternal: true,
 		externalUrl:
-			"https://www.unrealengine.com/marketplace/en-US/product/art-of-shader-stylized-post-process",
-		platform: "unreal-marketplace",
-		thumbnail: "/images/products/art-of-shader-stylized-post-process/aos_stylizedpostprocess_thumb.png",
+			"https://www.fab.com/listings/2a90a4b2-44d1-4150-be68-2b4cd53b869d",
+		platform: "fab",
+		thumbnail: "/images/products/art-of-shader-stylized-post-process/aos_spp_thumbnail_recreated.png",
 	},
 	{
 		id: "7",
@@ -119,12 +137,12 @@ const allProducts = [
 			"Elevate your VFX to the next level with this pack of customizable geometrical shapes",
 		price: null,
 		category: "vfx",
-		engineVersions: ["UE 5.0+"],
+		engineVersions: [],
 		isExternal: true,
 		externalUrl:
-			"https://www.unrealengine.com/marketplace/en-US/product/d967bdcc8ff94010acb5b84e9b82cce5",
-		platform: "unreal-marketplace",
-		thumbnail: "/images/products/niagara-curves-surfaces/curvesandsurfaces_thumb.jpg",
+			"https://www.fab.com/listings/51e915a1-7046-4737-8fde-3cf98d777401",
+		platform: "fab",
+		thumbnail: "/images/products/niagara-curves-surfaces/thumbnail_refined.png",
 	},
 	{
 		id: "8",
@@ -132,13 +150,13 @@ const allProducts = [
 		name: "Runtime FBX Import for Unreal Engine",
 		shortDescription: "Asynchronously Import FBX files in your Unreal projects, in runtime",
 		price: null,
-		category: "tools",
-		engineVersions: ["UE 4.27", "UE 5.0+"],
+		category: "plugins",
+		engineVersions: [],
 		isExternal: true,
 		externalUrl:
-			"https://www.unrealengine.com/marketplace/en-US/slug/runtime-fbx-import-asynchronous",
-		platform: "unreal-marketplace",
-		thumbnail: "/images/products/runtime-fbx-import/fbximport.png",
+			"https://www.fab.com/listings/45f2d0d9-ecdf-45ff-871d-85b16bc14ca7",
+		platform: "fab",
+		thumbnail: "/images/products/runtime-fbx-import/thumbnail_recreated.png",
 	},
 	{
 		id: "9",
@@ -147,12 +165,13 @@ const allProducts = [
 		shortDescription:
 			"Create stunning volumetric clouds and nebula effects with this highly customizable system",
 		price: 39.99,
-		category: "vfx",
-		engineVersions: ["UE 5.0+"],
+		category: "volumetric",
+		engineVersions: [],
 		isExternal: true,
-		externalUrl: "https://www.fab.com/sellers/Athian%20Games",
+		externalUrl:
+			"https://www.fab.com/listings/3c902769-c907-4901-bb98-dfd9e1c5cf53",
 		platform: "fab",
-		thumbnail: "/images/products/volumetric-clouds-nebula/cs_screenshot01.jpg",
+		thumbnail: "/images/products/volumetric-clouds-nebula/thumbnail_refined.png",
 	},
 	{
 		id: "12",
@@ -161,8 +180,8 @@ const allProducts = [
 		shortDescription:
 			"Fully procedural and customizable skybox system with day/night cycle support",
 		price: 29.99,
-		category: "vfx",
-		engineVersions: ["UE 5.0+"],
+		category: "shaders",
+		engineVersions: [],
 		isExternal: true,
 		externalUrl:
 			"https://www.fab.com/listings/a232fdfe-f5d0-4527-8ea1-21994d4500ff",
@@ -176,13 +195,13 @@ const allProducts = [
 		shortDescription:
 			"Realistic volumetric black hole effect with accretion disk, gravitational lensing and distortion",
 		price: 34.99,
-		category: "vfx",
-		engineVersions: ["UE 5.0+"],
+		category: "volumetric",
+		engineVersions: [],
 		isExternal: true,
 		externalUrl:
 			"https://www.fab.com/listings/5696e48e-ad7f-4455-9679-187dfaff62d0",
 		platform: "fab",
-		thumbnail: "/images/products/volumetric-black-hole/thumbnail.jpg",
+		thumbnail: "/images/products/volumetric-black-hole/thumbnail_recreated.png",
 	},
 	{
 		id: "14",
@@ -192,13 +211,13 @@ const allProducts = [
 			"Generate stunning procedural galaxies with spiral arms, star clusters and cosmic dust",
 		price: 49.99,
 		category: "vfx",
-		engineVersions: ["UE 5.0+"],
+		engineVersions: [],
 		isExternal: true,
 		externalUrl:
 			"https://www.fab.com/listings/fc525aa7-eb3d-4e69-8d85-30eca12988d9",
 		platform: "fab",
 		isFeatured: true,
-		thumbnail: "/images/products/procedural-galaxy-system/thumbnail.jpg",
+		thumbnail: "/images/products/procedural-galaxy-system/thumbnail_recreated.png",
 	},
 	{
 		id: "10",
@@ -206,12 +225,12 @@ const allProducts = [
 		name: "AOS Toons",
 		shortDescription: "Stylized toon shading and cel-shaded effects",
 		price: null,
-		category: "materials",
-		engineVersions: ["UE 4.27", "UE 5.0+"],
+		category: "shaders",
+		engineVersions: [],
 		isExternal: true,
-		externalUrl: "https://www.unrealengine.com/marketplace/en-US/product/aos-toons",
-		platform: "unreal-marketplace",
-		thumbnail: "/images/products/aos-toons/aos_toons_thumb.png",
+		externalUrl: "https://www.fab.com/listings/328c9a79-1d07-4f91-b961-21e8b990fc46",
+		platform: "fab",
+		thumbnail: "/images/products/aos-toons/aos_toons_thumbnail_clean.png",
 	},
 	{
 		id: "11",
@@ -220,13 +239,13 @@ const allProducts = [
 		shortDescription:
 			"Complete collection of all Art of Shader packs - over 150 post-process materials and VFX",
 		price: null,
-		category: "vfx",
-		engineVersions: ["UE 4.27", "UE 5.0+"],
-		isExternal: false,
-		externalUrl: "",
-		platform: "unreal-marketplace",
+		category: "shaders",
+		engineVersions: [],
+		isExternal: true,
+		externalUrl: "https://www.fab.com/listings/9ff6c455-fd2a-44fc-a9b3-f55660ed90ad",
+		platform: "fab",
 		isFeatured: true,
-		thumbnail: "/images/products/art-of-shader-megapack/aos_dg_thumb.jpg",
+		thumbnail: "/images/products/art-of-shader-megapack/aos_megapack_thumbnail_clean.png",
 	},
 	{
 		id: "17",
@@ -235,7 +254,7 @@ const allProducts = [
 		shortDescription: "Cross-language runtime asset generation and automation for Unreal Engine",
 		price: 79.99,
 		category: "wip",
-		engineVersions: ["UE 5.7+"],
+		engineVersions: [],
 		isExternal: false,
 		externalUrl: "",
 		platform: "athian-games",
@@ -246,24 +265,62 @@ const allProducts = [
 
 interface ProductsViewProps {
 	initialProducts?: typeof allProducts;
+	initialCategory?: string;
 }
 
-export function ProductsView({ initialProducts }: ProductsViewProps) {
-	const [selectedCategory, setSelectedCategory] = useState("all");
+export function ProductsView({ initialProducts, initialCategory = "all" }: ProductsViewProps) {
+	const [selectedCategory, setSelectedCategory] = useState(initialCategory);
 	// Use initialProducts if provided (server-filtered), otherwise use hardcoded list
-	const products = initialProducts || allProducts;
+	type ProductCardItem = (typeof allProducts)[number] & { href?: string };
+	const products = (initialProducts || allProducts) as ProductCardItem[];
+	const metahumanCollectionCard: ProductCardItem = {
+		id: "metahuman-category-card",
+		slug: "metahuman",
+		name: "Metahumans",
+		shortDescription:
+			"Browse all Athian Games MetaHuman character packs from a single entry point.",
+		price: null,
+		category: "metahuman",
+		engineVersions: [],
+		isExternal: false,
+		externalUrl: "",
+		platform: "athian-games",
+		isFeatured: false,
+		thumbnail: "/images/products/metahuman-category/thumbnail_ai.webp",
+		href: getCategoryHref("metahuman"),
+	};
 
 	const filteredProducts =
 		selectedCategory === "all"
 			? products.filter((p) => p.category !== "wip")
 			: products.filter((p) => p.category === selectedCategory);
 
+	const displayedProducts: ProductCardItem[] =
+		selectedCategory === "all"
+			? (() => {
+					let metahumanInserted = false;
+
+					return filteredProducts.flatMap((product) => {
+						if (product.category !== "metahuman") {
+							return [product];
+						}
+
+						if (metahumanInserted) {
+							return [];
+						}
+
+						metahumanInserted = true;
+						return [metahumanCollectionCard];
+					});
+				})()
+			: filteredProducts;
+
 	return (
 		<div>
 			{/* Category tabs */}
 			<div className="mb-8 border-b border-border overflow-x-auto">
 				<div className="flex space-x-1 min-w-max">
-					{categories.map((category) => (
+					{productCategoriesWithAll.map((category) => (
 						<button
 							key={category.id}
 							onClick={() => setSelectedCategory(category.id)}
@@ -289,27 +346,32 @@ export function ProductsView({ initialProducts }: ProductsViewProps) {
 				<p className="text-muted-foreground">
 					Showing{" "}
 					<span className="font-semibold text-foreground">
-						{filteredProducts.length}
+						{displayedProducts.length}
 					</span>{" "}
 					{selectedCategory === "all"
 						? "products"
-						: categories.find((c) => c.id === selectedCategory)?.name.toLowerCase()}
+						: productCategoriesWithAll.find((c) => c.id === selectedCategory)?.name.toLowerCase()}
 				</p>
 			</div>
 
 			{/* Products grid */}
 			<div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-				{filteredProducts.map((product) => (
-					<Link key={product.id} href={`/products/${product.slug}`}>
+				{displayedProducts.map((product) => (
+					<Link key={product.id} href={product.href || `/products/${product.slug}`}>
 						<Card hover className="h-full group cursor-pointer">
 							<div className="aspect-video relative bg-muted overflow-hidden">
 								{product.thumbnail ? (
 									<>
-										<Image
+										<img
 											src={product.thumbnail}
 											alt={product.name}
-											fill
-											className="object-cover transition-transform duration-300 group-hover:scale-105"
+											className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+											onError={(event) => {
+												event.currentTarget.onerror = null;
+												event.currentTarget.src = "/images/companylogo.png";
+												event.currentTarget.className =
+													"h-full w-full object-contain bg-muted p-8 transition-transform duration-300 group-hover:scale-105";
+											}}
 										/>
 										{/* Hover crosshair effect */}
 										<div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
@@ -327,12 +389,6 @@ export function ProductsView({ initialProducts }: ProductsViewProps) {
 										</span>
 									</div>
 								)}
-								<div className="absolute top-3 left-3">
-									<Badge variant="primary" className="text-xs">
-										{categories.find((c) => c.id === product.category)?.name ||
-											product.category}
-									</Badge>
-								</div>
 							</div>
 
 							<CardHeader className="pb-3">
@@ -349,7 +405,7 @@ export function ProductsView({ initialProducts }: ProductsViewProps) {
 			</div>
 
 			{/* Empty state */}
-			{filteredProducts.length === 0 && (
+			{displayedProducts.length === 0 && (
 				<div className="text-center py-16">
 					<p className="text-muted-foreground text-lg">
 						No products found in this category yet.

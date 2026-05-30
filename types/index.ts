@@ -34,12 +34,14 @@ export interface ProductVideo {
 }
 
 export type ProductCategory =
-  | 'assets'
   | 'plugins'
-  | 'tools'
+  | 'volumetric'
+  | 'umg'
+  | 'metahuman'
   | 'blueprints'
-  | 'materials'
-  | 'vfx';
+  | 'vfx'
+  | 'shaders'
+  | 'wip';
 
 export type LicenseType =
   | 'single-project'

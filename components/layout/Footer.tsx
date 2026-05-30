@@ -1,11 +1,14 @@
 import Link from "next/link";
-import { Youtube, Github } from "lucide-react";
+import { Github, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
+import { socialProfiles } from "@/lib/config/socialLinks";
 
 const footerLinks = {
   products: [
     { name: "All Products", href: "/products" },
-    { name: "Plugins", href: "/products?category=plugins" },
-    { name: "Assets", href: "/products?category=assets" },
+    { name: "Code Plugins", href: "/products/category/plugins" },
+    { name: "Volumetric", href: "/products/category/volumetric" },
+    { name: "Metahuman", href: "/products/category/metahuman" },
+    { name: "Shaders", href: "/products/category/shaders" },
   ],
   company: [
     { name: "About Athian Games", href: "/about" },
@@ -14,27 +17,53 @@ const footerLinks = {
   ],
   support: [
     { name: "Documentation", href: "/docs" },
+    { name: "Unreal Engine Solutions", href: "/unreal-engine" },
     { name: "FAQ", href: "/faq" },
     { name: "License Information", href: "/license" },
     { name: "Terms of Service", href: "/terms" },
     { name: "Privacy Policy", href: "/privacy" },
   ],
   creator: [
-    { name: "YouTube Channel", href: "https://youtube.com/@athiangames2417" },
-    { name: "Support on Patreon", href: "https://patreon.com/athiangames" },
-    { name: "Discord Community", href: "https://discord.gg/athiangames" },
+    { name: "Company YouTube", href: socialProfiles.companyYouTube.href },
+    { name: "Personal YouTube", href: socialProfiles.personalYouTube.href },
+    { name: "LinkedIn Page", href: socialProfiles.companyLinkedIn.href },
+    { name: "Sameek LinkedIn", href: socialProfiles.personalLinkedIn.href },
+    { name: "X Account", href: socialProfiles.x.href },
+    { name: "Instagram", href: socialProfiles.instagram.href },
+    { name: "Support on Patreon", href: socialProfiles.patreon.href },
+    { name: "Discord Community", href: socialProfiles.discord.href },
   ],
 };
 
 const socialLinks = [
   {
-    name: "YouTube",
-    href: "https://youtube.com/@athiangames2417",
+    name: "Company YouTube",
+    href: socialProfiles.companyYouTube.href,
     icon: Youtube,
   },
   {
+    name: "Personal YouTube",
+    href: socialProfiles.personalYouTube.href,
+    icon: Youtube,
+  },
+  {
+    name: "LinkedIn",
+    href: socialProfiles.companyLinkedIn.href,
+    icon: Linkedin,
+  },
+  {
+    name: "X",
+    href: socialProfiles.x.href,
+    icon: Twitter,
+  },
+  {
+    name: "Instagram",
+    href: socialProfiles.instagram.href,
+    icon: Instagram,
+  },
+  {
     name: "GitHub",
-    href: "https://github.com/athiangames",
+    href: socialProfiles.github.href,
     icon: Github,
   },
 ];

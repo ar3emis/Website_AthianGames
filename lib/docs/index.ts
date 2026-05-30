@@ -5,6 +5,12 @@ import proceduralVortexTunnelDocs from "./products/procedural-vortex-tunnel";
 import runtimeFbxImportDocs from "./products/runtime-fbx-import";
 import artOfShaderDocs from "./products/art-of-shader";
 import dynamicMeshOccluderDocs from "./products/dynamic-mesh-occluder";
+import ultimateLevelDesignKitDocs from "./products/ultimate-level-design-kit";
+import elevenLabsVoiceStudioDocs from "./products/elevenlabs-voice-studio";
+import ultimateAIMeshGeneratorDocs from "./products/ultimate-ai-mesh-generator";
+import databasesDocs from "./products/databases";
+import treeViewForUmgDocs from "./products/treeview-for-umg";
+import proceduralSkyboxDocs from "./products/procedural-skybox";
 
 export type { DocSection, ProductDocumentation } from "./types";
 
@@ -16,6 +22,12 @@ const registry: Record<string, ProductDocumentation> = {
   "runtime-fbx-import": runtimeFbxImportDocs,
   "art-of-shader": artOfShaderDocs,
   "dynamic-mesh-occluder": dynamicMeshOccluderDocs,
+  "ultimate-level-design-kit": ultimateLevelDesignKitDocs,
+  "elevenlabs-voice-studio": elevenLabsVoiceStudioDocs,
+  "ultimate-ai-mesh-generator": ultimateAIMeshGeneratorDocs,
+  "databases": databasesDocs,
+  "treeview-for-umg": treeViewForUmgDocs,
+  "procedural-skybox": proceduralSkyboxDocs,
 };
 
 // AOS product family — all route to the shared AOS docs

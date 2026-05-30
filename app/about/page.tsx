@@ -42,7 +42,7 @@ const timeline = [
     year: "2020",
     title: "Foundation",
     description:
-      "Started creating Unreal Engine tutorials and open-source tools while working on commercial projects.",
+      "Started building Unreal Engine tools and open-source utilities while working on commercial projects.",
   },
   {
     year: "2021",
@@ -54,7 +54,7 @@ const timeline = [
     year: "2023",
     title: "Studio Formation",
     description:
-      "Established Athian Games as an independent studio. Focused entirely on Unreal Engine tooling and education.",
+      "Established Athian Games as an independent studio focused on Unreal Engine tooling and marketplace products.",
   },
   {
     year: "2024",
@@ -66,7 +66,7 @@ const timeline = [
     year: "2025",
     title: "Current Focus",
     description:
-      "15+ professional tools shipped. Active YouTube education. Supporting 200+ Patreon members. Building the next generation of Unreal Engine solutions.",
+      "15+ professional tools shipped. Active product development, YouTube showcases, and support for 200+ Patreon members.",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function AboutPage() {
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
             Athian Games exists to solve real problems in game development and
-            real-time 3D production. Every plugin, every asset, every tutorial
+            real-time 3D production. Every plugin, every asset, every product update
             comes from hands-on experience with Unreal Engine in professional
             settings.
           </p>
@@ -131,7 +131,7 @@ export default function AboutPage() {
         <div className="mb-12">
           <h2 className="mb-4">Journey</h2>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            From tutorials to professional tooling
+            From experiments to professional tooling
           </p>
         </div>
 
@@ -180,7 +180,7 @@ export default function AboutPage() {
               </p>
               <p>
                 <strong className="text-foreground">Support the community.</strong>{" "}
-                Free tutorials, open-source utilities, and direct developer access.
+                Open-source utilities, product updates, and direct developer access.
                 Success is measured by creators shipping projects.
               </p>
               <p>

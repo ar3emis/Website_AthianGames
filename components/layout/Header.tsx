@@ -3,7 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X, Youtube } from "lucide-react";
+import { Linkedin, Menu, X, Youtube } from "lucide-react";
+import { socialProfiles } from "@/lib/config/socialLinks";
 
 const baseNavigation = [
   { name: "Products", href: "/products" },
@@ -11,6 +12,21 @@ const baseNavigation = [
   { name: "Personal", href: "/personal" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
+];
+
+const headerSocialLinks = [
+  {
+    name: "Company YouTube",
+    href: socialProfiles.companyYouTube.href,
+    icon: Youtube,
+    hoverClassName: "hover:text-red-500 hover:bg-red-500/10",
+  },
+  {
+    name: "Company LinkedIn",
+    href: socialProfiles.companyLinkedIn.href,
+    icon: Linkedin,
+    hoverClassName: "hover:text-blue-600 hover:bg-blue-600/10",
+  },
 ];
 
 export function Header() {
@@ -64,22 +80,30 @@ export function Header() {
         {/* CTA Buttons */}
         <div className="hidden lg:flex items-center space-x-3">
           <Link
-            href="https://www.fab.com/sellers/Athian%20Games"
+            href={socialProfiles.fab.href}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium text-black hover:text-gray-600 transition-colors"
           >
             FAB Marketplace
           </Link>
-          <Link
-            href="https://youtube.com/@athiangames2417"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-1.5 rounded-lg text-black hover:text-red-500 hover:bg-red-500/10 transition-colors"
-            title="YouTube Channel"
-          >
-            <Youtube className="h-5 w-5" />
-          </Link>
+          {headerSocialLinks.map((social) => {
+            const Icon = social.icon;
+
+            return (
+              <Link
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`p-1.5 rounded-lg text-black transition-colors ${social.hoverClassName}`}
+                title={social.name}
+                aria-label={social.name}
+              >
+                <Icon className="h-5 w-5" />
+              </Link>
+            );
+          })}
         </div>
 
         {/* Mobile menu button */}
@@ -112,22 +136,29 @@ export function Header() {
             ))}
             <div className="pt-4 space-y-3 border-t border-gray-200">
               <Link
-                href="https://www.fab.com/sellers/Athian%20Games"
+                href={socialProfiles.fab.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block py-2 text-base font-medium text-black hover:text-gray-600 transition-colors"
               >
                 FAB Marketplace
               </Link>
-              <Link
-                href="https://youtube.com/@athiangames2417"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 py-2 text-base font-medium text-black hover:text-red-500 transition-colors"
-              >
-                <Youtube className="h-5 w-5" />
-                YouTube
-              </Link>
+              {headerSocialLinks.map((social) => {
+                const Icon = social.icon;
+
+                return (
+                  <Link
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 py-2 text-base font-medium text-black hover:text-gray-600 transition-colors"
+                  >
+                    <Icon className="h-5 w-5" />
+                    {social.name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>

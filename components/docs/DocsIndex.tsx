@@ -32,6 +32,18 @@ const PRODUCTS_WITH_DOCS = [
     description: "Strip hidden body geometry under clothing in the editor — zero GPU overdraw at runtime.",
     icon: "👗",
   },
+  {
+    slug: "databases",
+    name: "DataBases",
+    description: "PostgreSQL, MySQL, and Microsoft SQL Server runtime database access for Unreal Engine.",
+    icon: "DB",
+  },
+  {
+    slug: "treeview-for-umg",
+    name: "TreeView for UMG",
+    description: "Blueprint-ready nested tree view widget with custom rows, events, and styling controls.",
+    icon: "UI",
+  },
 ];
 
 export default function DocsIndex() {

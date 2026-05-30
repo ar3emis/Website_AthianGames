@@ -11,7 +11,7 @@
       "isDeleted": true
     },
     "dynamic-mesh-occluder": {
-      "externalUrl": "",
+      "externalUrl": "https://www.fab.com/listings/74734a8d-f8d3-4474-810b-f4577cdb769b",
       "documentationUrl": "/docs/dynamic-mesh-occluder",
       "name": "Dynamic Mesh Occluder",
       "topText": "Dynamic Mesh Occluder",
@@ -19,13 +19,11 @@
       "summary": "Automatically detect and bake away body mesh triangles hidden under clothing, then swap the body mesh at runtime to eliminate GPU overdraw.",
       "description": "Dynamic Mesh Occluder is an editor tool that removes body geometry hidden inside clothing — improving rendering performance without any complicated setup at runtime.\n\nWhen a character wears clothing, the body underneath is still rendered by the GPU even though the player never sees it. This plugin lets you detect and bake away those hidden triangles in the editor, then automatically swap the body mesh at runtime to the trimmed version — so the GPU never has to render what isn't visible.\n\nThe tool ships with a standalone editor window, a live 3D preview viewport, fully tunable detection settings, a paint-over mode for manual corrections, and a runtime Blueprint component that handles automatic mesh swapping via a mapping table. Multiple outfit combinations can be stored in a single data asset — one asset covers your whole character.",
       "category": "plugins",
-      "thumbnail": "/images/uploads/1774893616437_Thumbnail.jpg",
-      "bannerImage": "/images/uploads/1774893621831_Thumbnail.jpg",
+      "thumbnail": "/images/products/dynamic-mesh-occluder/thumbnail_no_text.png",
+      "bannerImage": "/images/products/dynamic-mesh-occluder/fab_01.jpg",
       "isExternal": false,
       "isFeatured": false,
-      "engineVersions": [
-        "UE 5.7"
-      ],
+      "engineVersions": [],
       "features": [
         {
           "title": "Auto Occlusion Detection",

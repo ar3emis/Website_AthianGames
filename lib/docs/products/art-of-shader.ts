@@ -31,7 +31,7 @@ const artOfShaderDocs: ProductDocumentation = {
             <li><strong>Object space and screen space localization</strong> — apply effects to specific objects or regions</li>
             <li><strong>Niagara FX integration</strong> for particle-driven effects</li>
             <li><strong>Runtime UMG controls</strong> — colour wheels, sliders, preset switchers</li>
-            <li>Compatible with Unreal Engine 4.27 and 5.0+</li>
+            <li>Compatible with Unreal Engine and 5.0+</li>
           </ul>
         </section>
         <section>

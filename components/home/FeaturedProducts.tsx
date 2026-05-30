@@ -1,108 +1,177 @@
 import Link from "next/link";
-import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
-import { ExternalLink, ShoppingCart } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Card, CardHeader } from "@/components/ui/Card";
 import { productDetails } from "@/lib/products/productData";
+import { cn } from "@/lib/utils/cn";
 
-// Get featured products from the actual product data
-const featuredProducts = Object.values(productDetails)
-  .filter((product: any) => product.isFeatured || product.thumbnail)
-  .slice(0, 6)
-  .map((product: any) => ({
-    id: product.id,
-    slug: product.slug,
-    name: product.name,
-    shortDescription: product.summary,
-    image: product.thumbnail || product.bannerImage,
-    category: product.category,
-    engineVersions: product.engineVersions || [],
-    isExternal: product.isExternal || false,
-    externalUrl: product.externalUrl,
-  }));
+const featuredProductSlugs = [
+  "minimap-map-and-navigation-system",
+  "radar-system-with-minimap",
+  "databases",
+  "procedural-galaxy-system",
+  "volumetric-black-hole",
+  "art-of-shader-megapack",
+];
+
+const metahumanSlugs = [
+  "metahuman-children",
+  "metahuman-ghost-children",
+  "metahuman-aerin-toddler",
+  "metahuman-arya-creepy-doll",
+  "metahuman-grace-little-girl",
+  "metahuman-ghoul",
+];
+
+type ShowcaseProduct = {
+  id: string;
+  slug: string;
+  name: string;
+  summary?: string;
+  thumbnail?: string;
+  bannerImage?: string;
+};
+
+function getProducts(slugs: string[]) {
+  return slugs
+    .map((slug) => productDetails[slug as keyof typeof productDetails])
+    .filter(Boolean)
+    .slice(0, 6) as ShowcaseProduct[];
+}
+
+function ShowcaseCard({
+  product,
+  index,
+}: {
+  product: ShowcaseProduct;
+  index: number;
+}) {
+  const isLarge = index === 0 || index === 5;
+  const image = product.thumbnail || product.bannerImage;
+
+  return (
+    <Link
+      href={`/products/${product.slug}`}
+      className={cn("group block", isLarge && "lg:col-span-2")}
+    >
+      <Card hover className="h-full bg-card/90">
+        <div
+          className={cn(
+            "relative overflow-hidden bg-muted",
+            isLarge ? "min-h-[320px] lg:min-h-[430px]" : "min-h-[220px] lg:min-h-[260px]"
+          )}
+        >
+          {image ? (
+            <img
+              src={image}
+              alt={product.name}
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20" />
+          )}
+          {isLarge ? (
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+          ) : null}
+          {isLarge ? (
+            <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8">
+              <h3 className="max-w-2xl text-2xl font-bold text-white lg:text-3xl">
+                {product.name}
+              </h3>
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-white/78 line-clamp-2">
+                {product.summary}
+              </p>
+              <span className="mt-5 inline-flex items-center text-sm font-semibold text-primary">
+                View product
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </span>
+            </div>
+          ) : null}
+        </div>
+
+        {!isLarge ? (
+          <CardHeader className="min-h-[150px]">
+            <h3 className="text-lg font-bold line-clamp-1">{product.name}</h3>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground line-clamp-2">
+              {product.summary}
+            </p>
+            <span className="mt-4 inline-flex items-center text-sm font-semibold text-primary">
+              View product
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </span>
+          </CardHeader>
+        ) : null}
+      </Card>
+    </Link>
+  );
+}
+
+function ProductShowcase({
+  eyebrow,
+  title,
+  description,
+  products,
+  ctaHref,
+  ctaLabel,
+}: {
+  eyebrow: string;
+  title: string;
+  description: string;
+  products: ShowcaseProduct[];
+  ctaHref: string;
+  ctaLabel: string;
+}) {
+  return (
+    <div className="mb-24 last:mb-0">
+      <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="max-w-3xl">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+            {eyebrow}
+          </p>
+          <h2 className="mb-4">{title}</h2>
+          <p className="text-lg text-muted-foreground">{description}</p>
+        </div>
+        <Link
+          href={ctaHref}
+          className="inline-flex items-center text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+        >
+          {ctaLabel}
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </Link>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {products.map((product, index) => (
+          <ShowcaseCard key={product.slug} product={product} index={index} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function FeaturedProducts() {
+  const featuredProducts = getProducts(featuredProductSlugs);
+  const metahumans = getProducts(metahumanSlugs);
+
   return (
     <section className="section-padding bg-background relative">
       <div className="container-custom">
-        {/* Section header */}
-        <div className="max-w-3xl mb-16">
-          <h2 className="mb-4">Featured Products</h2>
-          <p className="text-lg text-muted-foreground">
-            Production-tested tools and assets. No bloat, no compromise.
-          </p>
-        </div>
+        <ProductShowcase
+          eyebrow="Featured"
+          title="Featured Products"
+          description="Six production-focused Athian Games products with a stronger visual layout for quick browsing."
+          products={featuredProducts}
+          ctaHref="/products"
+          ctaLabel="Browse all products"
+        />
 
-        {/* Products grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {featuredProducts.map((product) => (
-            <Card key={product.id} hover>
-              <div className="aspect-video relative bg-muted overflow-hidden">
-                {product.image ? (
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                    <span className="text-muted-foreground text-sm">
-                      Product Image
-                    </span>
-                  </div>
-                )}
-                <div className="absolute top-4 right-4">
-                  <Badge variant="primary">{product.category}</Badge>
-                </div>
-              </div>
-
-              <CardHeader>
-                <h3 className="text-xl font-bold mb-2">{product.name}</h3>
-                <p className="text-sm text-muted-foreground line-clamp-2">
-                  {product.shortDescription}
-                </p>
-              </CardHeader>
-
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {product.engineVersions.slice(0, 3).map((version: string) => (
-                    <Badge key={version} variant="outline">
-                      {version}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-
-              <CardFooter className="flex gap-2">
-                {product.isExternal && product.externalUrl ? (
-                  <a href={product.externalUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
-                    <Button className="w-full" size="sm">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      View on Marketplace
-                    </Button>
-                  </a>
-                ) : (
-                  <Link href={`/products/${product.slug}`} className="flex-1">
-                    <Button className="w-full" size="sm">
-                      <ShoppingCart className="w-4 h-4 mr-2" />
-                      View Details
-                    </Button>
-                  </Link>
-                )}
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-
-        {/* View all CTA */}
-        <div className="text-center">
-          <Link href="/products">
-            <Button variant="secondary" size="lg">
-              Browse All Products
-              <ExternalLink className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
-        </div>
+        <ProductShowcase
+          eyebrow="Characters"
+          title="Featured MetaHumans"
+          description="Six character packs with thumbnail-safe previews, built for fast visual comparison."
+          products={metahumans}
+          ctaHref="/products/category/metahuman"
+          ctaLabel="Browse MetaHumans"
+        />
       </div>
     </section>
   );

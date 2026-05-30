@@ -40,7 +40,7 @@ const artOfShaderDistortionDocs: ProductDocumentation = {
         <section>
           <h3>System Requirements</h3>
           <ul>
-            <li>Unreal Engine 4.27 or 5.0+</li>
+            <li>Unreal Engine or 5.0+</li>
             <li>Basic knowledge of post-process materials and material instances</li>
           </ul>
         </section>

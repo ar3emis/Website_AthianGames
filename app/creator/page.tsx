@@ -16,37 +16,37 @@ import {
 export const metadata: Metadata = {
   title: "Sameek Kundu - Creator Hub",
   description:
-    "Unreal Engine developer, educator, and founder of Athian Games. Tutorials, tools, and technical content for serious creators.",
+    "Unreal Engine developer and founder of Athian Games. Product showcases, tools, and technical updates for serious creators.",
 };
 
 const stats = [
   { label: "YouTube Subscribers", value: "5.2K+", icon: Youtube },
   { label: "Patreon Supporters", value: "200+", icon: Heart },
-  { label: "Tutorial Videos", value: "80+", icon: Play },
+  { label: "Product Videos", value: "80+", icon: Play },
   { label: "Products Released", value: "15+", icon: Code },
 ];
 
 const recentVideos = [
   {
     id: "1",
-    title: "Building Volumetric Nebula Systems in UE5",
-    description: "Deep dive into procedural volumetric rendering",
-    thumbnail: "/images/videos/nebula-tutorial.jpg",
+    title: "Volumetric Nebula System Showcase",
+    description: "Procedural volumetric rendering product preview",
+    thumbnail: "/images/videos/nebula-showcase.jpg",
     duration: "28:45",
     views: "12K",
   },
   {
     id: "2",
-    title: "Advanced Blueprint Optimization Techniques",
-    description: "Performance profiling and optimization strategies",
+    title: "Blueprint Workflow Breakdown",
+    description: "Production-focused Blueprint tooling and workflow notes",
     thumbnail: "/images/videos/blueprint-opt.jpg",
     duration: "35:12",
     views: "8.5K",
   },
   {
     id: "3",
-    title: "Creating Production-Ready Plugins",
-    description: "C++ plugin development workflow and best practices",
+    title: "Production-Ready Plugin Showcase",
+    description: "C++ plugin development workflow and product overview",
     thumbnail: "/images/videos/plugin-dev.jpg",
     duration: "42:30",
     views: "15K",
@@ -71,7 +71,7 @@ export default function CreatorHubPage() {
             <h1 className="mb-4">Sameek Kundu</h1>
 
             <p className="text-xl text-muted-foreground mb-4">
-              Unreal Engine Developer • Educator • Tool Builder
+              Unreal Engine Developer • Tool Builder • Founder of Athian Games
             </p>
 
             <div className="flex flex-wrap justify-center gap-2 mb-8">
@@ -88,9 +88,9 @@ export default function CreatorHubPage() {
             </div>
 
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Building professional Unreal Engine tools and teaching technical
+              Building professional Unreal Engine tools, plugins, and product
               workflows. Founder of Athian Games. No fluff, just production-tested
-              knowledge.
+              development.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -105,7 +105,7 @@ export default function CreatorHubPage() {
                 </Button>
               </Link>
               <Link
-                href="https://patreon.com/athiangames"
+                href="https://www.patreon.com/c/SameekKundu"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -145,9 +145,9 @@ export default function CreatorHubPage() {
       <section className="section-padding">
         <div className="container-custom">
           <div className="mb-12">
-            <h2 className="mb-4">Recent Tutorials</h2>
+            <h2 className="mb-4">Recent Product Videos</h2>
             <p className="text-lg text-muted-foreground">
-              Technical deep-dives and production workflows
+              Product showcases, technical breakdowns, and production workflows
             </p>
           </div>
 
@@ -200,14 +200,14 @@ export default function CreatorHubPage() {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 I'm Sameek Kundu, an Unreal Engine developer and the founder of
-                Athian Games. I build professional tools for game developers and
-                teach technical workflows through YouTube tutorials.
+                Athian Games. I build professional tools and product workflows
+                for game developers.
               </p>
               <p>
                 My focus is on production-ready solutions: procedural generation
                 systems, VFX pipelines, performance optimization, and plugin
-                development. I've shipped 15+ commercial products and helped
-                thousands of developers level up their Unreal Engine skills.
+                development. I've shipped 15+ commercial products for Unreal
+                Engine developers and production teams.
               </p>
               <p>
                 This isn't a hobby. It's a sustainable, creator-funded studio
@@ -263,12 +263,12 @@ export default function CreatorHubPage() {
               <Heart className="w-16 h-16 text-primary mx-auto mb-4" />
               <h2 className="text-3xl font-bold mb-4">Support the Work</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                Patreon supporters get early access to tools, exclusive tutorials,
+                Patreon supporters get early access to tools, product updates,
                 direct Discord access, and priority support. Help fund independent
                 development.
               </p>
               <Link
-                href="https://patreon.com/athiangames"
+                href="https://www.patreon.com/c/SameekKundu"
                 target="_blank"
                 rel="noopener noreferrer"
               >

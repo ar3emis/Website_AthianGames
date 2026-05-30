@@ -4,6 +4,8 @@ import { getProductBySlug } from "@/lib/products/productData";
 import { getDocumentation } from "@/lib/docs/docsData";
 import DocLayout from "@/components/docs/DocLayout";
 import DocsIndex from "@/components/docs/DocsIndex";
+import { getSiteUrl } from "@/lib/site";
+import { generateBreadcrumbStructuredData } from "@/lib/utils/structuredData";
 
 interface DocsPageProps {
   params: Promise<{ slug?: string[] }>;
@@ -26,20 +28,33 @@ function resolveSectionSlug(productSlug: string, sectionSlug?: string) {
 export async function generateMetadata({ params }: DocsPageProps): Promise<Metadata> {
   const { slug } = await params;
   const productSlug = slug?.[0];
+  const sectionSlug = slug?.[1];
 
   if (!productSlug) {
     return {
       title: "Documentation - Athian Games",
       description: "Browse documentation for all Athian Games products",
+      alternates: {
+        canonical: "/docs",
+      },
     };
   }
 
   const product = getProductBySlug(productSlug);
   if (!product) return { title: "Documentation Not Found" };
+  const docs = getDocumentation(productSlug);
+  const section = docs?.sections.find((entry) => entry.slug === resolveSectionSlug(productSlug, sectionSlug));
+  const title = section ? `${product.name} - ${section.title}` : `${product.name} - Documentation`;
+  const description = section
+    ? `${section.title} documentation for ${product.name}`
+    : `Complete documentation for ${product.name}`;
 
   return {
-    title: `${product.name} - Documentation`,
-    description: `Complete documentation for ${product.name}`,
+    title,
+    description,
+    alternates: {
+      canonical: sectionSlug ? `/docs/${productSlug}/${resolveSectionSlug(productSlug, sectionSlug)}` : `/docs/${productSlug}`,
+    },
   };
 }
 
@@ -65,11 +80,27 @@ export default async function DocsPage({ params }: DocsPageProps) {
     notFound();
   }
 
+  const baseUrl = getSiteUrl();
+  const breadcrumbStructuredData = generateBreadcrumbStructuredData([
+    { name: "Home", url: baseUrl },
+    { name: "Documentation", url: `${baseUrl}/docs` },
+    { name: product.name, url: `${baseUrl}/docs/${productSlug}` },
+    ...(resolvedSectionSlug ? [{ name: currentSection.title }] : []),
+  ]);
+
   return (
-    <DocLayout
-      product={{ name: product.name, slug: productSlug, externalUrl: product.externalUrl }}
-      docs={docs}
-      currentSection={currentSection}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbStructuredData),
+        }}
+      />
+      <DocLayout
+        product={{ name: product.name, slug: productSlug, externalUrl: product.externalUrl }}
+        docs={docs}
+        currentSection={currentSection}
+      />
+    </>
   );
 }

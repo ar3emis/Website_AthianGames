@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import { Users, Zap, BookOpen, Play, Mail, BarChart3 } from "lucide-react";
+import { ProductVideo } from "@/components/products/ProductVideo";
 
 interface Product {
   name: string;
@@ -250,18 +251,7 @@ const DemonstrationContent = ({ demoVideos }: { demoVideos?: string[] }) => {
       <div className="grid md:grid-cols-2 gap-6">
         {demoVideos.map((videoId: string, index: number) => (
           <div key={index} className="space-y-3">
-            <div className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${videoId}`}
-                title={`FabricAI Demo ${index + 1}`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="w-full h-full"
-              />
-            </div>
+            <ProductVideo videoId={videoId} title={`FabricAI Demo ${index + 1}`} />
             <p className="text-sm text-muted-foreground text-center">
               Demonstration {index + 1}
             </p>

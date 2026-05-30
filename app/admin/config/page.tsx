@@ -165,7 +165,7 @@ export default function AdminConfigPage() {
                 })
               }
               className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
-              placeholder="https://patreon.com/athiangames"
+              placeholder="https://www.patreon.com/c/SameekKundu"
             />
           </div>
         </CardContent>

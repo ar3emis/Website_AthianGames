@@ -10,33 +10,45 @@ import {
   Code,
   Sparkles,
   ExternalLink,
-  GraduationCap,
   Gamepad2,
   Twitter,
   Facebook,
+  Instagram,
+  Linkedin,
 } from "lucide-react";
+import { socialProfiles } from "@/lib/config/socialLinks";
 
 export const metadata: Metadata = {
   title: "Sameek Kundu - Personal",
   description:
-    "Sameek Kundu - Software engineer, game developer, Unreal Engine expert, and Unreal Authorized Instructor Partner. Founder of Athian Games.",
+    "Sameek Kundu - software engineer, game developer, Unreal Engine tool developer, and founder of Athian Games.",
 };
 
 const socialLinks = [
   {
     label: "YouTube",
-    url: "https://www.youtube.com/channel/UC2meclFXB1GjiFB--vXLRBA",
+    url: socialProfiles.personalYouTube.href,
     icon: Youtube,
   },
   {
     label: "Patreon",
-    url: "https://www.patreon.com/c/SameekKundu",
+    url: socialProfiles.personalPatreon.href,
     icon: Heart,
   },
   {
-    label: "Twitter",
-    url: "https://x.com/Sameek_Kundu",
+    label: "X",
+    url: socialProfiles.x.href,
     icon: Twitter,
+  },
+  {
+    label: "Instagram",
+    url: socialProfiles.instagram.href,
+    icon: Instagram,
+  },
+  {
+    label: "LinkedIn",
+    url: socialProfiles.personalLinkedIn.href,
+    icon: Linkedin,
   },
   {
     label: "Facebook",
@@ -85,7 +97,7 @@ export default function PersonalPage() {
           <h1 className="mb-4">Sameek Kundu</h1>
 
           <p className="text-xl text-muted-foreground mb-4">
-            Software Engineer • Game Developer • Unreal Authorized Instructor Partner
+            Software Engineer • Game Developer • Unreal Engine Tool Developer
           </p>
 
           <div className="flex flex-wrap justify-center gap-2 mb-8">
@@ -101,21 +113,16 @@ export default function PersonalPage() {
               <Gamepad2 className="w-3 h-3 mr-1" />
               Plugin Development
             </Badge>
-            <Badge variant="primary">
-              <GraduationCap className="w-3 h-3 mr-1" />
-              Instructor Partner
-            </Badge>
           </div>
 
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             Founder of Athian Games. Building professional Unreal Engine tools,
-            plugins, and templates while sharing technical knowledge with the
-            game development community.
+            plugins, and templates for game developers and technical artists.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="https://www.youtube.com/channel/UC2meclFXB1GjiFB--vXLRBA"
+              href={socialProfiles.personalYouTube.href}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -125,7 +132,7 @@ export default function PersonalPage() {
               </Button>
             </Link>
             <Link
-              href="https://www.patreon.com/c/SameekKundu"
+              href={socialProfiles.personalPatreon.href}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -219,11 +226,10 @@ export default function PersonalPage() {
               of the platform and its capabilities.
             </p>
             <p>
-              Having been actively involved in the industry since Unreal Engine 4 was released in March 2014, 
+              Having been actively involved in the industry since the early modern Unreal Engine era,
               Sameek has gained extensive expertise in developing plugins and templates for the Unreal Marketplace. 
-              His strong track record of delivering high-quality, cutting-edge projects has earned him the 
-              distinction of being an Unreal Authorized Instructor Partner, enabling him to share his knowledge 
-              and expertise with others in the industry.
+              His work focuses on delivering high-quality, production-ready tools and marketplace products for
+              developers using Unreal Engine.
             </p>
             <p>
               Sameek is passionate about using technology to create immersive and engaging experiences for players, 
@@ -234,9 +240,8 @@ export default function PersonalPage() {
             <p>
               In addition to his technical skills, Sameek is also a strong communicator and problem-solver. 
               He excels at working with clients and team members to understand their needs and goals, 
-              and is adept at finding creative solutions to complex challenges. Whether leading workshops 
-              or providing one-on-one coaching, he is dedicated to helping others learn and grow in the 
-              field of game development.
+              and is adept at finding creative solutions to complex challenges in game development,
+              plugin architecture, tools, and real-time production workflows.
             </p>
           </div>
         </div>
@@ -249,13 +254,13 @@ export default function PersonalPage() {
             <Heart className="w-16 h-16 text-primary mx-auto mb-4" />
             <h2 className="text-3xl font-bold mb-4">Support the Work</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Patreon supporters get early access to tools, exclusive
-              tutorials, direct Discord access, and priority support. Help
-              fund independent development.
+              Patreon supporters get early access to tools, direct Discord
+              access, product updates, and priority support. Help fund
+              independent development.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="https://www.patreon.com/c/SameekKundu"
+                href={socialProfiles.personalPatreon.href}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -265,13 +270,13 @@ export default function PersonalPage() {
                 </Button>
               </Link>
               <Link
-                href="https://www.youtube.com/channel/UC2meclFXB1GjiFB--vXLRBA"
+                href={socialProfiles.personalYouTube.href}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button variant="secondary" size="lg">
                   <Youtube className="w-5 h-5 mr-2" />
-                  Watch Tutorials
+                  Watch Product Videos
                 </Button>
               </Link>
             </div>

@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import { Card, CardHeader, CardContent } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import {
   Save,
   X,
@@ -80,7 +79,6 @@ export default function EditProductPage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
-  const [newEngineVersion, setNewEngineVersion] = useState("");
   const [showGooglePicker, setShowGooglePicker] = useState(false);
 
   useEffect(() => {
@@ -117,23 +115,6 @@ export default function EditProductPage() {
       ...formData,
       name,
       slug: generateSlug(name),
-    });
-  };
-
-  const addEngineVersion = () => {
-    if (newEngineVersion && !formData.engineVersions.includes(newEngineVersion)) {
-      setFormData({
-        ...formData,
-        engineVersions: [...formData.engineVersions, newEngineVersion],
-      });
-      setNewEngineVersion("");
-    }
-  };
-
-  const removeEngineVersion = (version: string) => {
-    setFormData({
-      ...formData,
-      engineVersions: formData.engineVersions.filter((v) => v !== version),
     });
   };
 
@@ -268,7 +249,7 @@ export default function EditProductPage() {
 
             <div>
               <label className="block text-sm font-medium mb-2">
-                Category *
+                Product Type *
               </label>
               <select
                 required
@@ -278,12 +259,14 @@ export default function EditProductPage() {
                 }
                 className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
               >
-                <option value="plugins">Plugins</option>
-                <option value="tools">Tools</option>
+                <option value="plugins">Code Plugins</option>
+                <option value="volumetric">Volumetric</option>
+                <option value="umg">UMG</option>
+                <option value="metahuman">Metahuman</option>
                 <option value="vfx">VFX</option>
-                <option value="materials">Materials</option>
+                <option value="shaders">Shaders</option>
                 <option value="blueprints">Blueprints</option>
-                <option value="assets">Assets</option>
+                <option value="wip">Work In Progress</option>
               </select>
             </div>
 
@@ -527,13 +510,13 @@ export default function EditProductPage() {
                   setFormData({ ...formData, documentationUrl: e.target.value })
                 }
                 className="w-full px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
-                placeholder="https://docs.athiangames.com/..."
+                placeholder="/docs/product-slug"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium mb-2">
-                Video Tutorial URL
+                Video Walkthrough URL
               </label>
               <input
                 type="text"
@@ -545,46 +528,8 @@ export default function EditProductPage() {
                 placeholder="https://youtube.com/watch?v=..."
               />
               <p className="text-xs text-muted-foreground mt-1">
-                Link to video tutorial or walkthrough for this product.
+                Link to video walkthrough or product demo.
               </p>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Engine Versions */}
-        <Card>
-          <CardHeader>
-            <h2 className="text-2xl font-bold">Engine Compatibility</h2>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={newEngineVersion}
-                onChange={(e) => setNewEngineVersion(e.target.value)}
-                onKeyPress={(e) => e.key === "Enter" && (e.preventDefault(), addEngineVersion())}
-                className="flex-1 px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary focus:outline-none"
-                placeholder="e.g., UE 5.3+"
-              />
-              <Button type="button" onClick={addEngineVersion}>
-                <Plus className="w-4 h-4 mr-2" />
-                Add
-              </Button>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              {formData.engineVersions.map((version, idx) => (
-                <Badge key={idx} variant="secondary" className="flex items-center gap-2">
-                  {version}
-                  <button
-                    type="button"
-                    onClick={() => removeEngineVersion(version)}
-                    className="hover:text-destructive"
-                  >
-                    <X className="w-3 h-3" />
-                  </button>
-                </Badge>
-              ))}
             </div>
           </CardContent>
         </Card>
