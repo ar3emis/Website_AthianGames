@@ -5,9 +5,9 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Linkedin, Menu, X, Youtube } from "lucide-react";
 import { socialProfiles } from "@/lib/config/socialLinks";
+import { games } from "@/lib/games/gameData";
 
 const baseNavigation = [
-  { name: "Games", href: "/games" },
   { name: "Products", href: "/products" },
   { name: "Services", href: "/services" },
   { name: "Personal", href: "/personal" },
@@ -66,6 +66,29 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center space-x-6">
+          <div className="relative group py-5">
+            <button
+              type="button"
+              className="text-sm font-medium text-black hover:text-gray-600 transition-colors relative"
+            >
+              Games
+              <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300" />
+            </button>
+            <div className="invisible absolute left-1/2 top-full w-72 -translate-x-1/2 rounded-lg border border-gray-200 bg-white p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
+              {games.map((game) => (
+                <Link
+                  key={game.slug}
+                  href={`/games/${game.slug}`}
+                  className="block rounded-md px-4 py-3 text-sm font-medium text-black transition hover:bg-gray-100"
+                >
+                  <span className="block">{game.title}</span>
+                  <span className="mt-1 block text-xs font-normal text-gray-500">
+                    {game.genre}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -125,6 +148,21 @@ export function Header() {
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-xl">
           <div className="container-custom py-4 space-y-3">
+            <div>
+              <div className="py-2 text-base font-semibold text-black">Games</div>
+              <div className="ml-4 space-y-2 border-l border-gray-200 pl-4">
+                {games.map((game) => (
+                  <Link
+                    key={game.slug}
+                    href={`/games/${game.slug}`}
+                    className="block py-1 text-sm font-medium text-black hover:text-gray-600 transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {game.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
             {navigation.map((item) => (
               <Link
                 key={item.name}

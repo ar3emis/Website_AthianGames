@@ -12,7 +12,7 @@ const footerLinks = {
   ],
   company: [
     { name: "About Athian Games", href: "/about" },
-    { name: "Games", href: "/games" },
+    { name: "A Tale of Miss Valentina", href: "/games/a-tale-of-miss-valentina" },
     { name: "Personal", href: "/personal" },
     { name: "Contact", href: "/contact" },
   ],

@@ -2,9 +2,7 @@ export interface GameCharacter {
   name: string;
   role: string;
   description: string;
-  image?: string;
-  monogram: string;
-  accent: string;
+  image: string;
 }
 
 export interface GameLocation {
@@ -40,6 +38,7 @@ export interface GameEntry {
   features: GameFeature[];
   characters: GameCharacter[];
   locations: GameLocation[];
+  showcaseShots: GameLocation[];
   mystery: GameMystery;
 }
 
@@ -47,107 +46,125 @@ export const games: GameEntry[] = [
   {
     slug: "a-tale-of-miss-valentina",
     title: "A Tale of Miss Valentina",
-    tagline: "Some doors should stay closed. Adrian is about to open every one of them.",
-    status: "In Development",
-    genre: "Atmospheric mystery adventure",
-    perspective: "Third-person, story-driven exploration",
-    platform: "PC — more platforms to be announced",
+    tagline:
+      "A recurring dream leads Adrian to Eldenmere, a beautiful town hiding one night that never ended.",
+    status: "Coming Soon",
+    genre: "Horror action-adventure",
+    perspective: "Third-person mystery and exploration",
+    platform: "PC",
     setting:
-      "MissTown — a gas-lit Victorian town caught in an endless dusk, watched over by the manor on the hill.",
+      "Eldenmere, a European town built around Piazza della Voce, where a photograph from 1947 matches the plaza Adrian has been seeing in his dreams.",
     shortDescription:
-      "A gothic mystery adventure. Step into MissTown, a fog-bound town frozen between night and morning, and uncover the truth about Miss Valentina, the manor on the hill, and the family secret that pulled Adrian here.",
+      "Follow Adrian and Clara into Eldenmere, trace Vincent's last steps, and uncover why the lady in the red hat still walks through the same dream.",
     overview: [
-      "MissTown slipped off the maps three generations ago. Inside it, the clocks have stopped, the fog never fully lifts, and it is always the quiet hour before nightfall. Adrian arrives chasing a single question: what happened to his great-grandfather, Vincent, who walked into this town decades ago and never walked back out.",
-      "All Adrian has are Vincent's old letters and a key to a house that should not still exist. Guided by Clara — a townswoman who seems to have been waiting for him — he follows that trail through lamplit squares and shuttered streets toward the woman every resident speaks of only in a whisper: Miss Valentina, the mistress of the manor on the hill.",
-      "The closer Adrian gets to the truth, the less the town wants to give it up. Something walks the streets after dark. The stopped clocks begin to matter. And the further he climbs toward the manor, the more his own family's past starts to unravel around him.",
+      "For three months Adrian has seen the same plaza in his dreams: wet cobblestones, a clock tower, a fountain, and a woman in a red hat walking away before he can reach her.",
+      "The dream becomes real when an old family photograph points him to Eldenmere and to Piazza della Voce, the exact place he has been drawing again and again in his notebook.",
+      "Clara helps Adrian follow the trail through archives, letters, and Vincent's unfinished journal. The deeper they search, the more the town slips between modern daylight and the night of November 12th, 1947.",
+      "At the center of everything is Miss Valentina, never quite seen, never fully gone, and tied to the silence Vincent carried for the rest of his life.",
     ],
-    heroImage: "/images/games/a-tale-of-miss-valentina/hero-key-art.png",
-    thumbnail: "/images/games/a-tale-of-miss-valentina/hero-key-art.png",
+    heroImage: "/images/games/a-tale-of-miss-valentina/miss-valentina-red-hat.png",
+    thumbnail: "/images/games/a-tale-of-miss-valentina/miss-valentina-red-hat.png",
     features: [
       {
-        title: "Explore a town with a memory",
+        title: "Investigate Eldenmere",
         description:
-          "Wander MissTown's squares, back-alleys and shuttered houses at your own pace. Every lamplit corner holds a fragment of the story, and the town slowly opens up the deeper you're willing to look.",
+          "Search apartments, archives, streets, cafes, and old family rooms for photographs, letters, sketches, and clues that connect Adrian's dreams to a real place.",
       },
       {
-        title: "Unravel the mystery",
+        title: "Cross between present day and 1947",
         description:
-          "Read Vincent's letters, listen to the people who stayed, and piece together what really happened on the hill. Clues connect across the town — the answers are there if you pay attention.",
+          "The plaza changes around you. A clock face, a lamp, or a doorway can pull the town from modern daylight into the night Vincent never escaped.",
       },
       {
-        title: "A living, breathing world",
+        title: "Survive the Unspoken",
         description:
-          "Rolling fog, shifting weather and a perpetual dusk-into-night lighting set the mood, while townsfolk go about their lives around you and the manor watches from above.",
+          "Something without a voice walks the plaza after dark. It does not rush. It does not stop. It only gets closer while fear takes hold of Adrian's body.",
       },
       {
-        title: "Get close to Miss Valentina",
+        title: "Listen instead of fighting everything",
         description:
-          "At the heart of it all is Valentina herself — gracious, magnetic and impossible to read. How you approach her, and what you choose to believe, shapes how her story unfolds.",
+          "Not every spirit is an enemy. Some are trapped by grief, memory, or unfinished words, and understanding them can matter more than a weapon.",
       },
       {
-        title: "Cinematic, character-led storytelling",
+        title: "Follow the red hat",
         description:
-          "Voiced encounters and dream sequences drive an intimate, slow-burn narrative built around the people of MissTown rather than spectacle.",
+          "Miss Valentina is seen in fragments: a brim, a silhouette, a dark coat crossing the plaza. Reaching her means understanding what Vincent refused to say.",
       },
     ],
     characters: [
       {
         name: "Adrian",
-        role: "The newcomer — you",
+        role: "The dreamer",
         description:
-          "The great-grandson of Vincent, and the first stranger MissTown has seen in years. Adrian came for answers about his family and stayed for the questions no one will answer. You see the town through his eyes.",
-        monogram: "A",
-        accent: "from-cyan-500/25 to-blue-500/10",
+          "Adrian is pulled into Eldenmere by a dream he cannot explain and a photograph that proves the dream is real. He is observant, tired, and stubborn enough to follow Vincent's trail even when the town starts answering back.",
+        image: "/images/games/a-tale-of-miss-valentina/adrian-concept.png",
       },
       {
         name: "Clara",
-        role: "Your guide in MissTown",
+        role: "The researcher",
         description:
-          "A townswoman who knows MissTown's streets, its unspoken rules, and far more about Adrian's family than she first lets on. She offers a way in — and her own reasons for helping are part of the mystery.",
-        monogram: "C",
-        accent: "from-emerald-500/25 to-teal-500/10",
+          "Clara knows how to read the town's records, but the case becomes personal when the documents begin pointing toward something she cannot file away as history. She helps Adrian connect the clues and challenges what he thinks he knows.",
+        image: "/images/games/a-tale-of-miss-valentina/clara-concept.png",
       },
       {
         name: "Miss Valentina",
-        role: "Mistress of the manor",
+        role: "The lady in the red hat",
         description:
-          "The elegant, ageless figure at the centre of MissTown's story. Every resident speaks her name softly. Charming and unreadable in equal measure, she is the reason the town is the way it is — and the reason Adrian can't leave.",
-        image: "/images/games/a-tale-of-miss-valentina/miss-valentina-concept.png",
-        monogram: "V",
-        accent: "from-rose-500/25 to-purple-500/10",
+          "Valentina is the figure Adrian keeps seeing at the edge of the dream. Elegant, distant, and impossible to fully read, she is the key to the stopped night and the person everyone in Eldenmere is afraid to name.",
+        image: "/images/games/a-tale-of-miss-valentina/miss-valentina-red-hat.png",
       },
       {
         name: "Vincent",
-        role: "The one who came before",
+        role: "Adrian's great-grandfather",
         description:
-          "Adrian's great-grandfather. His letters, his choices and his disappearance set everything in motion. Retracing his last days in MissTown is the thread Adrian follows all the way up the hill.",
-        monogram: "V",
-        accent: "from-amber-500/25 to-orange-500/10",
+          "Vincent visited Eldenmere in 1947 and returned home changed, carrying a silence that lasted the rest of his life. His journal, photograph, and final unfinished entry are the path Adrian follows into the truth.",
+        image: "/images/games/a-tale-of-miss-valentina/vincent-concept.png",
       },
     ],
     locations: [
       {
-        name: "MissTown Square",
+        name: "Piazza della Voce",
         description:
-          "The heart of town — cobbled streets, warm windows and a clock tower stopped at an hour no one will explain. Where every road, and every rumour, eventually leads.",
-        image: "/images/games/a-tale-of-miss-valentina/misstown-square.png",
+          "The plaza from Adrian's dream, ordinary by day and impossible by night. Its clock tower, fountain, and red door hold the shape of the mystery.",
+        image: "/images/games/a-tale-of-miss-valentina/dream-plaza-wide.png",
       },
       {
-        name: "Valentina Manor",
+        name: "Vincent's Ancestral Home",
         description:
-          "The estate on the hill, lit against the dusk and looking down on everything below. Vincent's trail ends at its gates, and so must Adrian's.",
-        image: "/images/games/a-tale-of-miss-valentina/valentina-manor.png",
+          "The old rural estate where Vincent kept his study, his journals, and the silence that shaped Adrian's family for generations.",
+        image: "/images/games/a-tale-of-miss-valentina/vincent-concept.png",
       },
       {
-        name: "The Forest Crossing",
+        name: "The Red Door",
         description:
-          "A fog-wrapped bridge on the old road out of town — the boundary between MissTown and whatever lies beyond it. Few who cross it remember the way back.",
-        image: "/images/games/a-tale-of-miss-valentina/forest-crossing.png",
+          "A door in the east wall of the plaza, the same red as Valentina's hat. It waits like an answer to a question Adrian has not learned how to ask.",
+        image: "/images/games/a-tale-of-miss-valentina/dream-plaza-red-door.png",
+      },
+    ],
+    showcaseShots: [
+      {
+        name: "Dream Plaza",
+        description:
+          "A floating memory of Piazza della Voce: fountain, statues, trees, lamps, and an open sky that feels too calm to trust.",
+        image: "/images/games/a-tale-of-miss-valentina/dream-plaza-wide.png",
+      },
+      {
+        name: "Inside the Gate",
+        description:
+          "The fountain view from inside the plaza gate, where the dream first looks beautiful before the wrong details begin to appear.",
+        image: "/images/games/a-tale-of-miss-valentina/dream-plaza-fountain.png",
+      },
+      {
+        name: "The Red Door",
+        description:
+          "The night version of the plaza, with one red door pulling the eye through the dark.",
+        image: "/images/games/a-tale-of-miss-valentina/dream-plaza-red-door.png",
       },
     ],
     mystery: {
-      heading: "The figure in the fog",
-      body: "When the lamps gutter and the streets empty, something moves through MissTown. The residents lock their doors, draw their curtains, and pretend not to know its name. Adrian won't have that luxury for long.",
+      heading: "The Unspoken",
+      body:
+        "When Eldenmere slips into 1947, the plaza is no longer empty. The Unspoken walks slowly, without a mouth and without a voice, turning fear itself into part of the chase.",
       image: "/images/games/a-tale-of-miss-valentina/shadowwalker-concept.png",
     },
   },

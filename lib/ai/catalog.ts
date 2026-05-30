@@ -119,10 +119,9 @@ export function getAiCatalog() {
     image: absoluteUrl(game.thumbnail),
     gallery: [
       game.heroImage,
-      ...game.characters
-        .map((character) => character.image)
-        .filter((image): image is string => Boolean(image)),
+      ...game.characters.map((character) => character.image),
       ...game.locations.map((location) => location.image),
+      ...game.showcaseShots.map((shot) => shot.image),
     ].map((item) => absoluteUrl(item)),
   }));
 
@@ -185,7 +184,7 @@ export function getLlmsText() {
 > Athian Games is an Unreal Engine game development studio creating original games, cinematic worlds, plugins, Blueprint systems, shaders, VFX, MetaHuman characters, UMG products, volumetric products, and runtime workflow products. Founder: Sameek Kundu.
 
 Official site: ${baseUrl}
-Games: ${baseUrl}/games
+Game page: ${baseUrl}/games/a-tale-of-miss-valentina
 Product catalog: ${baseUrl}/products
 AI-readable product feed: ${baseUrl}/ai-products.json
 Full AI catalog: ${baseUrl}/llms-full.txt

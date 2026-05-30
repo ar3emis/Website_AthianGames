@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, BookOpen, Compass, Gamepad2, MapPinned, Moon, Sparkles } from "lucide-react";
+import { ArrowLeft, BookOpen, Camera, Compass, Gamepad2, MapPinned, Moon, Sparkles } from "lucide-react";
 import { games, getGameBySlug, type GameCharacter } from "@/lib/games/gameData";
 
 interface GamePageProps {
@@ -38,18 +38,12 @@ function CharacterCard({ character }: { character: GameCharacter }) {
   return (
     <article className="group overflow-hidden rounded-lg border border-white/10 bg-black">
       <div className="relative aspect-[16/11]">
-        {character.image ? (
-          <Image
-            src={character.image}
-            alt={character.name}
-            fill
-            className="object-cover transition duration-500 group-hover:scale-[1.03]"
-          />
-        ) : (
-          <div className={`flex h-full w-full items-center justify-center bg-gradient-to-br ${character.accent}`}>
-            <span className="text-7xl font-bold text-white/70">{character.monogram}</span>
-          </div>
-        )}
+        <Image
+          src={character.image}
+          alt={character.name}
+          fill
+          className="object-cover transition duration-500 group-hover:scale-[1.03]"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
         <div className="absolute bottom-4 left-5">
           <p className="text-sm text-cyan-300">{character.role}</p>
@@ -88,11 +82,11 @@ export default async function GamePage({ params }: GamePageProps) {
         <div className="container-custom relative z-10 flex min-h-[82vh] items-end pb-16">
           <div className="max-w-3xl">
             <Link
-              href="/games"
+              href="/"
               className="mb-8 inline-flex items-center text-sm text-white/70 transition hover:text-white"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Games
+              Back to Home
             </Link>
             <div className="mb-6 flex flex-wrap gap-3">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/80 backdrop-blur">
@@ -182,7 +176,7 @@ export default async function GamePage({ params }: GamePageProps) {
             <h2 className="mb-3 text-3xl font-bold">Who You&apos;ll Meet</h2>
             <p className="leading-relaxed text-white/55">
               Four lives tangled together by the same town. Their choices made
-              MissTown what it is — and yours will decide how its story ends.
+              Eldenmere what it is, and yours will decide how its story ends.
             </p>
           </div>
 
@@ -200,10 +194,10 @@ export default async function GamePage({ params }: GamePageProps) {
           <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-amber-500/15 text-amber-300">
             <MapPinned className="h-6 w-6" />
           </div>
-          <h2 className="mb-3 text-3xl font-bold">The World of MissTown</h2>
+          <h2 className="mb-3 text-3xl font-bold">The World of Eldenmere</h2>
           <p className="leading-relaxed text-white/55">
-            A handful of places, each holding a piece of the truth. Everything
-            below the manor leads up to it.
+            A town of records, locked doors, stopped clocks, and places that
+            remember more than the people inside them want to say.
           </p>
         </div>
 
@@ -227,8 +221,43 @@ export default async function GamePage({ params }: GamePageProps) {
         </div>
       </section>
 
-      {/* What you'll do */}
+      {/* Rendered shots */}
       <section className="border-t border-white/10 bg-white/[0.03] py-20">
+        <div className="container-custom">
+          <div className="mb-10 max-w-2xl">
+            <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-300">
+              <Camera className="h-6 w-6" />
+            </div>
+            <h2 className="mb-3 text-3xl font-bold">Dream Sequence Plaza</h2>
+            <p className="leading-relaxed text-white/55">
+              Rendered concept shots for Piazza della Voce, the plaza Adrian
+              sees before he ever reaches Eldenmere.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {game.showcaseShots.map((shot) => (
+              <article key={shot.name} className="overflow-hidden rounded-lg border border-white/10 bg-black">
+                <div className="relative aspect-[16/9]">
+                  <Image
+                    src={shot.image}
+                    alt={shot.name}
+                    fill
+                    className="object-cover transition duration-500 hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="mb-2 text-xl font-bold">{shot.name}</h3>
+                  <p className="leading-relaxed text-white/65">{shot.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What you'll do */}
+      <section className="border-t border-white/10 bg-black py-20">
         <div className="container-custom">
           <div className="mb-10 max-w-2xl">
             <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500/15 text-purple-300">
