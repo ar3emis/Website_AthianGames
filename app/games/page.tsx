@@ -31,14 +31,11 @@ export default function GamesPage() {
               <Gamepad2 className="h-4 w-4" />
               Athian Games
             </div>
-            <h1 className="mb-6 text-5xl font-bold leading-tight md:text-7xl">
-              Worlds Worth Getting Lost In
+            <h1 className="mb-4 text-5xl font-bold leading-tight md:text-7xl">
+              Games
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-white/75 md:text-xl">
-              Atmospheric, story-driven games built around places you want to
-              explore and people you can't stop thinking about. Start with{" "}
-              <span className="text-white">A Tale of Miss Valentina</span> — a
-              gothic mystery set in the fog-bound town of MissTown.
+            <p className="text-lg text-white/60">
+              Story-driven worlds from Athian Games.
             </p>
           </div>
         </div>
