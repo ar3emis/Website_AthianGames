@@ -228,10 +228,10 @@ export default async function GamePage({ params }: GamePageProps) {
             <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-300">
               <Camera className="h-6 w-6" />
             </div>
-            <h2 className="mb-3 text-3xl font-bold">Dream Sequence Plaza</h2>
+            <h2 className="mb-3 text-3xl font-bold">Rendered Shots</h2>
             <p className="leading-relaxed text-white/55">
-              Rendered concept shots for Piazza della Voce, the plaza Adrian
-              sees before he ever reaches Eldenmere.
+              Current-era Eldenmere and dream-space renders that show how the
+              ordinary city and Piazza della Voce begin to mirror each other.
             </p>
           </div>
 

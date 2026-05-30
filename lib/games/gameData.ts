@@ -57,7 +57,8 @@ export const games: GameEntry[] = [
     shortDescription:
       "Follow Adrian and Clara into Eldenmere, trace Vincent's last steps, and uncover why the lady in the red hat still walks through the same dream.",
     overview: [
-      "For three months Adrian has seen the same plaza in his dreams: wet cobblestones, a clock tower, a fountain, and a woman in a red hat walking away before he can reach her.",
+      "Adrian's life begins in current-era Eldenmere: apartment blocks, old civic streets, a clock tower above the town, and the ordinary routine he is trying to keep together. Then the same dream starts returning every night.",
+      "For three months he sees the same impossible plaza: wet cobblestones, a clock tower on a distant platform, a fountain, and a woman in a red hat walking away before he can reach her.",
       "The dream becomes real when an old family photograph points him to Eldenmere and to Piazza della Voce, the exact place he has been drawing again and again in his notebook.",
       "Clara helps Adrian follow the trail through archives, letters, and Vincent's unfinished journal. The deeper they search, the more the town slips between modern daylight and the night of November 12th, 1947.",
       "At the center of everything is Miss Valentina, never quite seen, never fully gone, and tied to the silence Vincent carried for the rest of his life.",
@@ -123,10 +124,16 @@ export const games: GameEntry[] = [
     ],
     locations: [
       {
+        name: "Eldenmere",
+        description:
+          "The current-era city where Adrian lives before the dream takes over: residential blocks, old civic streets, a clock tower, and a town layout that hides older history under everyday life.",
+        image: "/images/games/a-tale-of-miss-valentina/eldenmere-current-era-city.png",
+      },
+      {
         name: "Piazza della Voce",
         description:
-          "The plaza from Adrian's dream, ordinary by day and impossible by night. Its clock tower, fountain, and red door hold the shape of the mystery.",
-        image: "/images/games/a-tale-of-miss-valentina/dream-plaza-wide.png",
+          "The plaza from Adrian's dream, floating above the clouds while the clocktower waits on another platform in the distance.",
+        image: "/images/games/a-tale-of-miss-valentina/dream-plaza-floating-platforms.png",
       },
       {
         name: "Vincent's Ancestral Home",
@@ -143,10 +150,16 @@ export const games: GameEntry[] = [
     ],
     showcaseShots: [
       {
+        name: "Eldenmere - Current Era",
+        description:
+          "The city where the story begins, before Adrian understands why its streets and clocktower keep appearing in his dreams.",
+        image: "/images/games/a-tale-of-miss-valentina/eldenmere-current-era-city.png",
+      },
+      {
         name: "Dream Plaza",
         description:
-          "A floating memory of Piazza della Voce: fountain, statues, trees, lamps, and an open sky that feels too calm to trust.",
-        image: "/images/games/a-tale-of-miss-valentina/dream-plaza-wide.png",
+          "A floating memory of Piazza della Voce, with the fountain platform, a distant clocktower island, and other fragments drifting through the clouds.",
+        image: "/images/games/a-tale-of-miss-valentina/dream-plaza-floating-platforms.png",
       },
       {
         name: "Inside the Gate",
