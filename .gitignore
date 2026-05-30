@@ -41,3 +41,6 @@ yarn-error.log*
 /data/beta-signups.json
 
 /lib/generated/prisma
+
+# Local Netlify folder
+.netlify
