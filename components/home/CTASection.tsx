@@ -13,18 +13,18 @@ export function CTASection() {
         <div className="max-w-4xl mx-auto">
           {/* Primary CTA */}
           <div className="text-center mb-16">
-            <h2 className="mb-6">Ready to Build Better?</h2>
+            <h2 className="mb-6">Play, Build, or Both</h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Explore original game projects, professional Unreal Engine
-              products, and production workflows from Athian Games.
+              Step into the worlds of Athian Games, or pick up the same tools and
+              systems we use to build them and bring them into your own projects.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/products">
-                <Button size="lg">Browse Products</Button>
+              <Link href="/games">
+                <Button size="lg">Explore Our Games</Button>
               </Link>
-              <Link href="/personal">
+              <Link href="/products">
                 <Button variant="secondary" size="lg">
-                  Learn More
+                  Browse Tools &amp; Products
                 </Button>
               </Link>
             </div>

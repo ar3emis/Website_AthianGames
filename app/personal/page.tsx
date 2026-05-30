@@ -21,7 +21,7 @@ import { socialProfiles } from "@/lib/config/socialLinks";
 export const metadata: Metadata = {
   title: "Sameek Kundu - Personal",
   description:
-    "Sameek Kundu - software engineer, game developer, Unreal Engine product developer, and founder of Athian Games.",
+    "Sameek Kundu - software engineer, game developer, and founder of Athian Games, creator of A Tale of Miss Valentina and a wide range of Unreal Engine tools.",
 };
 
 const socialLinks = [
@@ -116,8 +116,9 @@ export default function PersonalPage() {
           </div>
 
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Founder of Athian Games. Building original games, Unreal Engine
-            plugins, cinematic systems, and production products.
+            Founder of Athian Games. Creator of A Tale of Miss Valentina, and a
+            library of Unreal Engine plugins, shaders, and cinematic systems used
+            by developers worldwide.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -220,28 +221,29 @@ export default function PersonalPage() {
           <h2 className="mb-6">About</h2>
           <div className="space-y-4 text-muted-foreground">
             <p>
-              Sameek Kundu is a software engineer and game developer by both profession and passion, 
-              with proven skills and strong analytical abilities in coding across various languages. 
-              He has been working with Unreal Engine since its release and possesses a deep understanding 
-              of the platform and its capabilities.
+              Sameek Kundu is a software engineer and game developer who has been
+              building with Unreal Engine since its early days. He founded Athian
+              Games to do two things he loves: craft atmospheric, story-driven
+              games, and build the kind of tools that make those games possible.
             </p>
             <p>
-              Having been actively involved in the industry since the early modern Unreal Engine era,
-              Sameek has gained extensive expertise in developing plugins and templates for the Unreal Marketplace. 
-              His work focuses on delivering original games, production-ready plugins, and marketplace products
-              for developers using Unreal Engine.
+              His current focus is <span className="text-foreground font-medium">A Tale of Miss Valentina</span>,
+              a gothic mystery set in the fog-bound town of MissTown. Alongside it,
+              he develops and ships a growing catalogue of Unreal Engine plugins,
+              shaders, VFX, and MetaHuman packs — the same systems used in his own
+              projects, refined and packaged so other developers can pick them up
+              and run.
             </p>
             <p>
-              Sameek is passionate about using technology to create immersive and engaging experiences for players, 
-              and he has dedicated his career to developing gameplay systems and tools that push the boundaries 
-              of what is possible. His expertise and leadership have been instrumental in the success of 
-              Athian Games as a game development studio creating original games and Unreal Engine production products.
+              Sameek cares about the details that make a world feel alive: lighting
+              and weather, cinematic moments, characters you remember, and gameplay
+              systems that hold up under real use. His work spans C++ and Blueprints,
+              procedural generation, and real-time rendering.
             </p>
             <p>
-              In addition to his technical skills, Sameek is also a strong communicator and problem-solver. 
-              He excels at working with clients and team members to understand their needs and goals, 
-              and is adept at finding creative solutions to complex challenges in game development,
-              plugin architecture, systems, and real-time production workflows.
+              He&apos;s also a clear communicator and a practical problem-solver —
+              happy digging into a tricky technical challenge, and just as happy
+              helping other developers get unstuck with the tools he builds.
             </p>
           </div>
         </div>

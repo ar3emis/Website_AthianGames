@@ -30,7 +30,7 @@ export function TrailerCarousel({ trailerVideoId, slides = [] }: TrailerCarousel
       type: "video",
       videoId: trailerVideoId,
       title: "Athian Games Showreel",
-      description: "Explore original games, cinematic worlds, and Unreal Engine production products",
+      description: "Story-driven games and the Unreal Engine tools built alongside them",
       thumbnail: `https://img.youtube.com/vi/${trailerVideoId}/maxresdefault.jpg`
     },
     ...slides

@@ -7,7 +7,7 @@ import { games } from "@/lib/games/gameData";
 export const metadata: Metadata = {
   title: "Games",
   description:
-    "Original games from Athian Games, including projects in concept, production, and release planning.",
+    "Games from Athian Games — including A Tale of Miss Valentina, a gothic mystery adventure set in the fog-bound town of MissTown.",
 };
 
 export default function GamesPage() {
@@ -29,16 +29,16 @@ export default function GamesPage() {
           <div className="max-w-3xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/80">
               <Gamepad2 className="h-4 w-4" />
-              Athian Games Studio
+              Athian Games
             </div>
             <h1 className="mb-6 text-5xl font-bold leading-tight md:text-7xl">
-              Original Games
+              Worlds Worth Getting Lost In
             </h1>
             <p className="max-w-2xl text-lg leading-relaxed text-white/75 md:text-xl">
-              Athian Games is a game development studio building original
-              interactive worlds alongside its Unreal Engine product work.
-              This section collects studio game projects from concept through
-              production.
+              Atmospheric, story-driven games built around places you want to
+              explore and people you can't stop thinking about. Start with{" "}
+              <span className="text-white">A Tale of Miss Valentina</span> — a
+              gothic mystery set in the fog-bound town of MissTown.
             </p>
           </div>
         </div>

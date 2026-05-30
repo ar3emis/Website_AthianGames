@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Compass, Gamepad2, MapPinned, Sparkles } from "lucide-react";
-import { games, getGameBySlug } from "@/lib/games/gameData";
+import { ArrowLeft, BookOpen, Compass, Gamepad2, MapPinned, Moon, Sparkles } from "lucide-react";
+import { games, getGameBySlug, type GameCharacter } from "@/lib/games/gameData";
 
 interface GamePageProps {
   params: Promise<{ slug: string }>;
@@ -34,6 +34,35 @@ export async function generateMetadata({ params }: GamePageProps): Promise<Metad
   };
 }
 
+function CharacterCard({ character }: { character: GameCharacter }) {
+  return (
+    <article className="group overflow-hidden rounded-lg border border-white/10 bg-black">
+      <div className="relative aspect-[16/11]">
+        {character.image ? (
+          <Image
+            src={character.image}
+            alt={character.name}
+            fill
+            className="object-cover transition duration-500 group-hover:scale-[1.03]"
+          />
+        ) : (
+          <div className={`flex h-full w-full items-center justify-center bg-gradient-to-br ${character.accent}`}>
+            <span className="text-7xl font-bold text-white/70">{character.monogram}</span>
+          </div>
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+        <div className="absolute bottom-4 left-5">
+          <p className="text-sm text-cyan-300">{character.role}</p>
+          <h3 className="text-2xl font-bold text-white">{character.name}</h3>
+        </div>
+      </div>
+      <div className="p-6">
+        <p className="leading-relaxed text-white/70">{character.description}</p>
+      </div>
+    </article>
+  );
+}
+
 export default async function GamePage({ params }: GamePageProps) {
   const { slug } = await params;
   const game = getGameBySlug(slug);
@@ -44,7 +73,8 @@ export default async function GamePage({ params }: GamePageProps) {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <section className="relative min-h-[78vh] overflow-hidden pt-24">
+      {/* Hero */}
+      <section className="relative min-h-[82vh] overflow-hidden pt-24">
         <Image
           src={game.heroImage}
           alt={game.title}
@@ -55,7 +85,7 @@ export default async function GamePage({ params }: GamePageProps) {
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/65 to-black/10" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
 
-        <div className="container-custom relative z-10 flex min-h-[78vh] items-end pb-16">
+        <div className="container-custom relative z-10 flex min-h-[82vh] items-end pb-16">
           <div className="max-w-3xl">
             <Link
               href="/games"
@@ -73,25 +103,26 @@ export default async function GamePage({ params }: GamePageProps) {
                 {game.genre}
               </span>
             </div>
-            <h1 className="mb-6 text-5xl font-bold leading-tight md:text-7xl">
+            <h1 className="mb-5 text-5xl font-bold leading-tight md:text-7xl">
               {game.title}
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-white/80 md:text-xl">
-              {game.description}
+            <p className="max-w-2xl text-xl font-medium leading-relaxed text-white/90 md:text-2xl">
+              {game.tagline}
             </p>
           </div>
         </div>
       </section>
 
+      {/* Quick facts */}
       <section className="border-y border-white/10 bg-white/[0.03]">
         <div className="container-custom grid gap-8 py-10 md:grid-cols-3">
           <div>
-            <p className="text-sm uppercase tracking-[0.25em] text-white/45">Status</p>
-            <p className="mt-2 text-lg font-semibold">{game.status}</p>
-          </div>
-          <div>
             <p className="text-sm uppercase tracking-[0.25em] text-white/45">Genre</p>
             <p className="mt-2 text-lg font-semibold">{game.genre}</p>
+          </div>
+          <div>
+            <p className="text-sm uppercase tracking-[0.25em] text-white/45">Perspective</p>
+            <p className="mt-2 text-lg font-semibold">{game.perspective}</p>
           </div>
           <div>
             <p className="text-sm uppercase tracking-[0.25em] text-white/45">Platform</p>
@@ -100,108 +131,117 @@ export default async function GamePage({ params }: GamePageProps) {
         </div>
       </section>
 
+      {/* The Story */}
       <section className="container-custom py-20">
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
             <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500/15 text-purple-300">
-              <Sparkles className="h-6 w-6" />
+              <BookOpen className="h-6 w-6" />
             </div>
-            <h2 className="mb-4 text-3xl font-bold">Production Direction</h2>
-            <p className="leading-relaxed text-white/65">
-              This page is intentionally framed as an early-production game page.
-              The goal is to present the tone, world, characters, and landmarks
-              clearly while the project moves toward playable production.
-            </p>
+            <h2 className="mb-4 text-3xl font-bold">The Story</h2>
+            <p className="leading-relaxed text-white/55">{game.setting}</p>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
-            {game.pillars.map((pillar) => (
-              <div key={pillar} className="rounded-lg border border-white/10 bg-white/[0.04] p-5">
-                <p className="leading-relaxed text-white/75">{pillar}</p>
-              </div>
+          <div className="space-y-5">
+            {game.overview.map((paragraph) => (
+              <p key={paragraph.slice(0, 32)} className="text-lg leading-relaxed text-white/75">
+                {paragraph}
+              </p>
             ))}
           </div>
         </div>
       </section>
 
+      {/* The figure in the fog */}
+      <section className="relative overflow-hidden border-y border-white/10">
+        <Image
+          src={game.mystery.image}
+          alt={game.mystery.heading}
+          fill
+          className="object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/30" />
+        <div className="container-custom relative z-10 py-24">
+          <div className="max-w-xl">
+            <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-white">
+              <Moon className="h-6 w-6" />
+            </div>
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">{game.mystery.heading}</h2>
+            <p className="text-lg leading-relaxed text-white/75">{game.mystery.body}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Characters */}
       <section className="bg-white/[0.03] py-20">
         <div className="container-custom">
-          <div className="mb-10 flex items-end justify-between gap-6">
-            <div>
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-300">
-                <Compass className="h-6 w-6" />
-              </div>
-              <h2 className="text-3xl font-bold">Main Characters</h2>
+          <div className="mb-10 max-w-2xl">
+            <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-300">
+              <Compass className="h-6 w-6" />
             </div>
-            <p className="max-w-xl text-sm leading-relaxed text-white/55">
-              Placeholder concept art for the website. Final character designs
-              may change during production.
+            <h2 className="mb-3 text-3xl font-bold">Who You&apos;ll Meet</h2>
+            <p className="leading-relaxed text-white/55">
+              Four lives tangled together by the same town. Their choices made
+              MissTown what it is — and yours will decide how its story ends.
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
             {game.characters.map((character) => (
-              <article key={character.name} className="overflow-hidden rounded-lg border border-white/10 bg-black">
-                <div className="relative aspect-[16/10]">
-                  <Image
-                    src={character.image}
-                    alt={character.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <p className="mb-2 text-sm text-cyan-300">{character.role}</p>
-                  <h3 className="mb-3 text-2xl font-bold">{character.name}</h3>
-                  <p className="leading-relaxed text-white/65">{character.description}</p>
-                </div>
-              </article>
+              <CharacterCard key={character.name} character={character} />
             ))}
           </div>
         </div>
       </section>
 
+      {/* World */}
       <section className="container-custom py-20">
-        <div className="mb-10 flex items-end justify-between gap-6">
-          <div>
-            <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-amber-500/15 text-amber-300">
-              <MapPinned className="h-6 w-6" />
-            </div>
-            <h2 className="text-3xl font-bold">Landmarks and World Targets</h2>
+        <div className="mb-10 max-w-2xl">
+          <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-amber-500/15 text-amber-300">
+            <MapPinned className="h-6 w-6" />
           </div>
-          <p className="max-w-xl text-sm leading-relaxed text-white/55">
-            These images are visual targets for tone and layout. They are not
-            final in-game captures.
+          <h2 className="mb-3 text-3xl font-bold">The World of MissTown</h2>
+          <p className="leading-relaxed text-white/55">
+            A handful of places, each holding a piece of the truth. Everything
+            below the manor leads up to it.
           </p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
-          {game.landmarks.map((landmark) => (
-            <article key={landmark.name} className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.04]">
+          {game.locations.map((location) => (
+            <article key={location.name} className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.04]">
               <div className="relative aspect-[16/10]">
                 <Image
-                  src={landmark.image}
-                  alt={landmark.name}
+                  src={location.image}
+                  alt={location.name}
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="p-5">
-                <h3 className="mb-3 text-xl font-bold">{landmark.name}</h3>
-                <p className="leading-relaxed text-white/65">{landmark.description}</p>
+                <h3 className="mb-3 text-xl font-bold">{location.name}</h3>
+                <p className="leading-relaxed text-white/65">{location.description}</p>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-white/[0.03] py-16">
+      {/* What you'll do */}
+      <section className="border-t border-white/10 bg-white/[0.03] py-20">
         <div className="container-custom">
-          <h2 className="mb-6 text-3xl font-bold">Current Production Notes</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            {game.productionNotes.map((note) => (
-              <div key={note} className="rounded-lg border border-white/10 bg-black/40 p-5">
-                <p className="leading-relaxed text-white/70">{note}</p>
+          <div className="mb-10 max-w-2xl">
+            <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-purple-500/15 text-purple-300">
+              <Sparkles className="h-6 w-6" />
+            </div>
+            <h2 className="mb-3 text-3xl font-bold">What You&apos;ll Do</h2>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {game.features.map((feature) => (
+              <div key={feature.title} className="rounded-lg border border-white/10 bg-black/40 p-6">
+                <h3 className="mb-2 text-lg font-bold text-white">{feature.title}</h3>
+                <p className="leading-relaxed text-white/65">{feature.description}</p>
               </div>
             ))}
           </div>

@@ -115,12 +115,14 @@ export function getAiCatalog() {
     status: game.status,
     genre: game.genre,
     summary: cleanText(game.shortDescription),
-    description: cleanText(game.description),
+    description: cleanText(game.overview.join(" ")),
     image: absoluteUrl(game.thumbnail),
     gallery: [
       game.heroImage,
-      ...game.characters.map((character) => character.image),
-      ...game.landmarks.map((landmark) => landmark.image),
+      ...game.characters
+        .map((character) => character.image)
+        .filter((image): image is string => Boolean(image)),
+      ...game.locations.map((location) => location.image),
     ].map((item) => absoluteUrl(item)),
   }));
 
