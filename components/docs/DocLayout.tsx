@@ -4,6 +4,7 @@ import type { ProductDocumentation, DocSection } from "@/lib/docs/types";
 
 // All doc prose + component styles in one place — shared by every product
 const ARTICLE_CLASSNAME = [
+  "[&_details]:rounded-xl [&_details]:border [&_details]:border-border [&_details]:p-5 [&_details]:my-4 [&_summary]:cursor-pointer [&_summary]:font-semibold [&_summary]:text-foreground [&_summary]:focus-visible:outline-primary [&_figcaption]:text-sm [&_figcaption]:text-muted-foreground [&_figcaption]:mt-3",
   "prose prose-slate dark:prose-invert max-w-none text-foreground/90",
   "[&_h2]:text-3xl [&_h2]:font-bold [&_h2]:tracking-tight [&_h2]:text-foreground [&_h2]:border-b [&_h2]:border-border [&_h2]:pb-4 [&_h2]:mb-8 [&_h2]:mt-14 [&_h2]:scroll-mt-24",
   "[&_h3]:text-2xl [&_h3]:font-bold [&_h3]:tracking-tight [&_h3]:text-foreground [&_h3]:mb-5 [&_h3]:mt-10 [&_h3]:flex [&_h3]:items-center [&_h3]:gap-3 [&_h3]:scroll-mt-24",

@@ -11,11 +11,13 @@ import ultimateAIMeshGeneratorDocs from "./products/ultimate-ai-mesh-generator";
 import databasesDocs from "./products/databases";
 import treeViewForUmgDocs from "./products/treeview-for-umg";
 import proceduralSkyboxDocs from "./products/procedural-skybox";
+import ultimatePostProcessDocs from "./products/art-of-shader-ultimate-post-process";
 
 export type { DocSection, ProductDocumentation } from "./types";
 
 // Registry: product slug → documentation
 const registry: Record<string, ProductDocumentation> = {
+  "art-of-shader-ultimate-post-process": ultimatePostProcessDocs,
   "minimap-map-and-navigation-system": minimapDocs,
   "art-of-shader-distortion-and-glitches": artOfShaderDistortionDocs,
   "procedural-vortex-tunnel": proceduralVortexTunnelDocs,

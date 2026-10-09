@@ -1,0 +1,1551 @@
+[
+  {
+    "id": "Barrel",
+    "name": "Prism Panels",
+    "category": "Distortion & Glitch",
+    "description": "Transform scene sampling or add procedural analog and digital image damage.",
+    "note": "Animated damage and flicker can be reduced with their amount and speed controls.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/DistortionGlitch/Instances/MI_PP_Barrel",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Barrel_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Barrel_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Barrel.webp",
+    "controls": [
+      "Animation Speed",
+      "Prism Panels Panels",
+      "Prism Panels Pixels",
+      "Prism Panels Dispersion"
+    ]
+  },
+  {
+    "id": "BlockGlitch",
+    "name": "Codec Macroblocks",
+    "category": "Distortion & Glitch",
+    "description": "Transform scene sampling or add procedural analog and digital image damage.",
+    "note": "Animated damage and flicker can be reduced with their amount and speed controls.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/DistortionGlitch/Instances/MI_PP_BlockGlitch",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/BlockGlitch_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/BlockGlitch_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/BlockGlitch.webp",
+    "controls": [
+      "Animation Speed",
+      "Macroblocks Block Size",
+      "Macroblocks Density",
+      "Macroblocks Rate"
+    ]
+  },
+  {
+    "id": "CRT",
+    "name": "Phosphor CRT",
+    "category": "Distortion & Glitch",
+    "description": "Transform scene sampling or add procedural analog and digital image damage.",
+    "note": "Animated damage and flicker can be reduced with their amount and speed controls.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/DistortionGlitch/Instances/MI_PP_CRT",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/CRT_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/CRT_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/CRT.webp",
+    "controls": [
+      "Animation Speed",
+      "Distortion Curvature",
+      "Distortion Zoom",
+      "CRTPhosphor Pitch",
+      "CRTPhosphor Strength",
+      "CRTPhosphor Scan"
+    ]
+  },
+  {
+    "id": "Fisheye",
+    "name": "Circular Fisheye",
+    "category": "Distortion & Glitch",
+    "description": "Transform scene sampling or add procedural analog and digital image damage.",
+    "note": "Animated damage and flicker can be reduced with their amount and speed controls.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/DistortionGlitch/Instances/MI_PP_Fisheye",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Fisheye_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Fisheye_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Fisheye.webp",
+    "controls": [
+      "Animation Speed",
+      "Circular Fisheye Field Of View",
+      "Circular Fisheye Radius"
+    ]
+  },
+  {
+    "id": "HeatHaze",
+    "name": "Convective Heat Haze",
+    "category": "Distortion & Glitch",
+    "description": "Time-driven distortion offsets scene samples to suggest hot air.",
+    "note": "Animated damage and flicker can be reduced with their amount and speed controls.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/DistortionGlitch/Instances/MI_PP_HeatHaze",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/HeatHaze_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/HeatHaze_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/HeatHaze.webp",
+    "controls": [
+      "Animation Speed",
+      "Distortion Pixels",
+      "Distortion Scale",
+      "Distortion Speed",
+      "Grade Saturation",
+      "Grade Contrast"
+    ]
+  },
+  {
+    "id": "Kaleidoscope",
+    "name": "Kaleidoscope",
+    "category": "Distortion & Glitch",
+    "description": "Transform scene sampling or add procedural analog and digital image damage.",
+    "note": "Animated damage and flicker can be reduced with their amount and speed controls.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/DistortionGlitch/Instances/MI_PP_Kaleidoscope",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Kaleidoscope_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Kaleidoscope_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Kaleidoscope.webp",
+    "controls": [
+      "Animation Speed",
+      "Distortion Segments",
+      "Distortion Rotation Speed",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift"
+    ]
+  },
+  {
+    "id": "RGBSplit",
+    "name": "Pixel Sorting",
+    "category": "Distortion & Glitch",
+    "description": "Transform scene sampling or add procedural analog and digital image damage.",
+    "note": "Animated damage and flicker can be reduced with their amount and speed controls.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/DistortionGlitch/Instances/MI_PP_RGBSplit",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/RGBSplit_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/RGBSplit_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/RGBSplit.webp",
+    "controls": [
+      "Animation Speed",
+      "Pixel Sort Span",
+      "Pixel Sort Row Height",
+      "Pixel Sort Amount"
+    ]
+  },
+  {
+    "id": "Shockwave",
+    "name": "Shockwave Lens",
+    "category": "Distortion & Glitch",
+    "description": "Transform scene sampling or add procedural analog and digital image damage.",
+    "note": "Animated damage and flicker can be reduced with their amount and speed controls.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/DistortionGlitch/Instances/MI_PP_Shockwave",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Shockwave_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Shockwave_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Shockwave.webp",
+    "controls": [
+      "Animation Speed",
+      "Distortion Pixels",
+      "Distortion Frequency",
+      "Distortion Speed",
+      "Distortion Pulse",
+      "Chromatic Pixels"
+    ]
+  },
+  {
+    "id": "VHS",
+    "name": "Analog Tape Chroma",
+    "category": "Distortion & Glitch",
+    "description": "Transform scene sampling or add procedural analog and digital image damage.",
+    "note": "Animated damage and flicker can be reduced with their amount and speed controls.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/DistortionGlitch/Instances/MI_PP_VHS",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/VHS_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/VHS_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/VHS.webp",
+    "controls": [
+      "Animation Speed",
+      "Distortion Pixels",
+      "Distortion Speed",
+      "Tape Chroma Bleed",
+      "Tape Chroma Noise",
+      "Scanlines Amount"
+    ]
+  },
+  {
+    "id": "WaterRipple",
+    "name": "Rain on Glass",
+    "category": "Distortion & Glitch",
+    "description": "Transform scene sampling or add procedural analog and digital image damage.",
+    "note": "Animated damage and flicker can be reduced with their amount and speed controls.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/DistortionGlitch/Instances/MI_PP_WaterRipple",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/WaterRipple_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/WaterRipple_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/WaterRipple.webp",
+    "controls": [
+      "Animation Speed",
+      "Rain Glass Size",
+      "Rain Glass Refraction",
+      "Rain Glass Speed"
+    ]
+  },
+  {
+    "id": "Anamorphic",
+    "name": "Anamorphic Optics",
+    "category": "Film",
+    "description": "Grade and texture the rendered image with a photographic or optical treatment.",
+    "note": "Profile multi-sample optical filters at your target output resolution.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Film/Instances/MI_PP_Anamorphic",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Anamorphic_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Anamorphic_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Anamorphic.webp",
+    "controls": [
+      "Animation Speed",
+      "Anamorphic Optics Length",
+      "Anamorphic Optics Amount",
+      "Anamorphic Optics Threshold",
+      "Anamorphic Optics Letterbox",
+      "Grade Saturation"
+    ]
+  },
+  {
+    "id": "BleachBypass",
+    "name": "Bleach Bypass",
+    "category": "Film",
+    "description": "Grade and texture the rendered image with a photographic or optical treatment.",
+    "note": "Profile multi-sample optical filters at your target output resolution.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Film/Instances/MI_PP_BleachBypass",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/BleachBypass_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/BleachBypass_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/BleachBypass.webp",
+    "controls": [
+      "Animation Speed",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift",
+      "Grade Gamma",
+      "Bleach Amount"
+    ]
+  },
+  {
+    "id": "CrossProcess",
+    "name": "Split Diopter",
+    "category": "Film",
+    "description": "Grade and texture the rendered image with a photographic or optical treatment.",
+    "note": "Profile multi-sample optical filters at your target output resolution.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Film/Instances/MI_PP_CrossProcess",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/CrossProcess_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/CrossProcess_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/CrossProcess.webp",
+    "controls": [
+      "Animation Speed",
+      "Split Diopter Near Focus",
+      "Split Diopter Far Focus",
+      "Split Diopter Aperture",
+      "Split Diopter Split Position",
+      "Grade Saturation"
+    ]
+  },
+  {
+    "id": "DreamDiffusion",
+    "name": "Dream Diffusion",
+    "category": "Film",
+    "description": "Grade and texture the rendered image with a photographic or optical treatment.",
+    "note": "Profile multi-sample optical filters at your target output resolution.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Film/Instances/MI_PP_DreamDiffusion",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/DreamDiffusion_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/DreamDiffusion_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/DreamDiffusion.webp",
+    "controls": [
+      "Animation Speed",
+      "Blur9 Radius",
+      "Blur9 Mix Amount",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift"
+    ]
+  },
+  {
+    "id": "Negative",
+    "name": "Color Negative",
+    "category": "Film",
+    "description": "Grade and texture the rendered image with a photographic or optical treatment.",
+    "note": "Profile multi-sample optical filters at your target output resolution.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Film/Instances/MI_PP_Negative",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Negative_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Negative_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Negative.webp",
+    "controls": [
+      "Animation Speed",
+      "Invert Amount",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift",
+      "Grade Gamma"
+    ]
+  },
+  {
+    "id": "SepiaArchive",
+    "name": "Damaged Archive",
+    "category": "Film",
+    "description": "Grade and texture the rendered image with a photographic or optical treatment.",
+    "note": "Profile multi-sample optical filters at your target output resolution.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Film/Instances/MI_PP_SepiaArchive",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/SepiaArchive_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/SepiaArchive_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/SepiaArchive.webp",
+    "controls": [
+      "Animation Speed",
+      "Palette Midpoint",
+      "Film Damage Scratches",
+      "Film Damage Dust",
+      "Film Damage Flicker",
+      "Film Gate Inset"
+    ]
+  },
+  {
+    "id": "SilverGelatin",
+    "name": "Silver Gelatin",
+    "category": "Film",
+    "description": "Grade and texture the rendered image with a photographic or optical treatment.",
+    "note": "Profile multi-sample optical filters at your target output resolution.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Film/Instances/MI_PP_SilverGelatin",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/SilverGelatin_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/SilverGelatin_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/SilverGelatin.webp",
+    "controls": [
+      "Animation Speed",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift",
+      "Grade Gamma",
+      "Grain Amount"
+    ]
+  },
+  {
+    "id": "Super8",
+    "name": "Super 8 Halation",
+    "category": "Film",
+    "description": "Grade and texture the rendered image with a photographic or optical treatment.",
+    "note": "Profile multi-sample optical filters at your target output resolution.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Film/Instances/MI_PP_Super8",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Super8_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Super8_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Super8.webp",
+    "controls": [
+      "Animation Speed",
+      "Distortion Pixels",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift",
+      "Grade Gamma"
+    ]
+  },
+  {
+    "id": "TealOrange",
+    "name": "Teal / Amber",
+    "category": "Film",
+    "description": "Grade and texture the rendered image with a photographic or optical treatment.",
+    "note": "Profile multi-sample optical filters at your target output resolution.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Film/Instances/MI_PP_TealOrange",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/TealOrange_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/TealOrange_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/TealOrange.webp",
+    "controls": [
+      "Animation Speed",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift",
+      "Grade Gamma",
+      "Split Tone Amount"
+    ]
+  },
+  {
+    "id": "Technicolor",
+    "name": "Three Strip Color",
+    "category": "Film",
+    "description": "Grade and texture the rendered image with a photographic or optical treatment.",
+    "note": "Profile multi-sample optical filters at your target output resolution.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Film/Instances/MI_PP_Technicolor",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Technicolor_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Technicolor_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Technicolor.webp",
+    "controls": [
+      "Animation Speed",
+      "Technicolor Amount",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift",
+      "Grade Gamma"
+    ]
+  },
+  {
+    "id": "BoxExclude",
+    "name": "Oriented Box Exclude",
+    "category": "Localized",
+    "description": "Include or exclude visible surfaces with a configurable world-space or object-stencil mask.",
+    "note": "Custom stencil requires the project stencil pass and matching IDs on the target meshes.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Localized/Instances/MI_PP_BoxExclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/BoxExclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/BoxExclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/BoxExclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Radius",
+      "Local Feather",
+      "Local Shape",
+      "Local Mode",
+      "Local Stencil ID"
+    ]
+  },
+  {
+    "id": "BoxInclude",
+    "name": "Oriented Box Include",
+    "category": "Localized",
+    "description": "Include or exclude visible surfaces with a configurable world-space or object-stencil mask.",
+    "note": "Custom stencil requires the project stencil pass and matching IDs on the target meshes.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Localized/Instances/MI_PP_BoxInclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/BoxInclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/BoxInclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/BoxInclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Radius",
+      "Local Feather",
+      "Local Shape",
+      "Local Mode",
+      "Local Stencil ID"
+    ]
+  },
+  {
+    "id": "SphereExclude",
+    "name": "Sphere Exclude",
+    "category": "Localized",
+    "description": "Include or exclude visible surfaces with a configurable world-space or object-stencil mask.",
+    "note": "Custom stencil requires the project stencil pass and matching IDs on the target meshes.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Localized/Instances/MI_PP_SphereExclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/SphereExclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/SphereExclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/SphereExclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Radius",
+      "Local Feather",
+      "Local Shape",
+      "Local Mode",
+      "Local Stencil ID"
+    ]
+  },
+  {
+    "id": "SphereInclude",
+    "name": "Sphere Include",
+    "category": "Localized",
+    "description": "Include or exclude visible surfaces with a configurable world-space or object-stencil mask.",
+    "note": "Custom stencil requires the project stencil pass and matching IDs on the target meshes.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Localized/Instances/MI_PP_SphereInclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/SphereInclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/SphereInclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/SphereInclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Radius",
+      "Local Feather",
+      "Local Shape",
+      "Local Mode",
+      "Local Stencil ID"
+    ]
+  },
+  {
+    "id": "StencilExclude",
+    "name": "Object Stencil Exclude",
+    "category": "Localized",
+    "description": "Include or exclude visible surfaces with a configurable world-space or object-stencil mask.",
+    "note": "Custom stencil requires the project stencil pass and matching IDs on the target meshes.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Localized/Instances/MI_PP_StencilExclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/StencilExclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/StencilExclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/StencilExclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Radius",
+      "Local Feather",
+      "Local Shape",
+      "Local Mode",
+      "Local Stencil ID"
+    ]
+  },
+  {
+    "id": "StencilInclude",
+    "name": "Object Stencil Include",
+    "category": "Localized",
+    "description": "Include or exclude visible surfaces with a configurable world-space or object-stencil mask.",
+    "note": "Custom stencil requires the project stencil pass and matching IDs on the target meshes.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Localized/Instances/MI_PP_StencilInclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/StencilInclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/StencilInclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/StencilInclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Radius",
+      "Local Feather",
+      "Local Shape",
+      "Local Mode",
+      "Local Stencil ID"
+    ]
+  },
+  {
+    "id": "ObjectBoxExclude",
+    "name": "Object Box Exclude",
+    "category": "Object & Screen Masks",
+    "description": "A localization preset with scalar controls suitable for Blueprint and runtime UI.",
+    "note": "Object masks use world units; screen masks use normalized UV units. Configure the center for the scene.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/LocalizedRuntime/Instances/MI_PP_ObjectBoxExclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ObjectBoxExclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ObjectBoxExclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ObjectBoxExclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Center X",
+      "Local Center Y",
+      "Local Center Z",
+      "Local Extents X",
+      "Local Extents Y"
+    ]
+  },
+  {
+    "id": "ObjectBoxInclude",
+    "name": "Object Box Include",
+    "category": "Object & Screen Masks",
+    "description": "A localization preset with scalar controls suitable for Blueprint and runtime UI.",
+    "note": "Object masks use world units; screen masks use normalized UV units. Configure the center for the scene.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/LocalizedRuntime/Instances/MI_PP_ObjectBoxInclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ObjectBoxInclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ObjectBoxInclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ObjectBoxInclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Center X",
+      "Local Center Y",
+      "Local Center Z",
+      "Local Extents X",
+      "Local Extents Y"
+    ]
+  },
+  {
+    "id": "ObjectSphereExclude",
+    "name": "Object Sphere Exclude",
+    "category": "Object & Screen Masks",
+    "description": "A localization preset with scalar controls suitable for Blueprint and runtime UI.",
+    "note": "Object masks use world units; screen masks use normalized UV units. Configure the center for the scene.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/LocalizedRuntime/Instances/MI_PP_ObjectSphereExclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ObjectSphereExclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ObjectSphereExclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ObjectSphereExclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Center X",
+      "Local Center Y",
+      "Local Center Z",
+      "Local Extents X",
+      "Local Extents Y"
+    ]
+  },
+  {
+    "id": "ObjectSphereInclude",
+    "name": "Object Sphere Include",
+    "category": "Object & Screen Masks",
+    "description": "A localization preset with scalar controls suitable for Blueprint and runtime UI.",
+    "note": "Object masks use world units; screen masks use normalized UV units. Configure the center for the scene.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/LocalizedRuntime/Instances/MI_PP_ObjectSphereInclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ObjectSphereInclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ObjectSphereInclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ObjectSphereInclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Center X",
+      "Local Center Y",
+      "Local Center Z",
+      "Local Extents X",
+      "Local Extents Y"
+    ]
+  },
+  {
+    "id": "ObjectStencilExclude",
+    "name": "Object Stencil Exclude",
+    "category": "Object & Screen Masks",
+    "description": "A localization preset with scalar controls suitable for Blueprint and runtime UI.",
+    "note": "Object masks use world units; screen masks use normalized UV units. Configure the center for the scene.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/LocalizedRuntime/Instances/MI_PP_ObjectStencilExclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ObjectStencilExclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ObjectStencilExclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ObjectStencilExclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Center X",
+      "Local Center Y",
+      "Local Center Z",
+      "Local Extents X",
+      "Local Extents Y"
+    ]
+  },
+  {
+    "id": "ObjectStencilInclude",
+    "name": "Object Stencil Include",
+    "category": "Object & Screen Masks",
+    "description": "A localization preset with scalar controls suitable for Blueprint and runtime UI.",
+    "note": "Object masks use world units; screen masks use normalized UV units. Configure the center for the scene.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/LocalizedRuntime/Instances/MI_PP_ObjectStencilInclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ObjectStencilInclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ObjectStencilInclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ObjectStencilInclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Center X",
+      "Local Center Y",
+      "Local Center Z",
+      "Local Extents X",
+      "Local Extents Y"
+    ]
+  },
+  {
+    "id": "ScreenBoxExclude",
+    "name": "Screen Box Exclude",
+    "category": "Object & Screen Masks",
+    "description": "A localization preset with scalar controls suitable for Blueprint and runtime UI.",
+    "note": "Object masks use world units; screen masks use normalized UV units. Configure the center for the scene.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/LocalizedRuntime/Instances/MI_PP_ScreenBoxExclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ScreenBoxExclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ScreenBoxExclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ScreenBoxExclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Center X",
+      "Local Center Y",
+      "Local Radius",
+      "Local Half Width",
+      "Local Half Height"
+    ]
+  },
+  {
+    "id": "ScreenBoxInclude",
+    "name": "Screen Box Include",
+    "category": "Object & Screen Masks",
+    "description": "A localization preset with scalar controls suitable for Blueprint and runtime UI.",
+    "note": "Object masks use world units; screen masks use normalized UV units. Configure the center for the scene.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/LocalizedRuntime/Instances/MI_PP_ScreenBoxInclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ScreenBoxInclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ScreenBoxInclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ScreenBoxInclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Center X",
+      "Local Center Y",
+      "Local Radius",
+      "Local Half Width",
+      "Local Half Height"
+    ]
+  },
+  {
+    "id": "ScreenCircleExclude",
+    "name": "Screen Circle Exclude",
+    "category": "Object & Screen Masks",
+    "description": "A localization preset with scalar controls suitable for Blueprint and runtime UI.",
+    "note": "Object masks use world units; screen masks use normalized UV units. Configure the center for the scene.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/LocalizedRuntime/Instances/MI_PP_ScreenCircleExclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ScreenCircleExclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ScreenCircleExclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ScreenCircleExclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Center X",
+      "Local Center Y",
+      "Local Radius",
+      "Local Half Width",
+      "Local Half Height"
+    ]
+  },
+  {
+    "id": "ScreenCircleInclude",
+    "name": "Screen Circle Include",
+    "category": "Object & Screen Masks",
+    "description": "A localization preset with scalar controls suitable for Blueprint and runtime UI.",
+    "note": "Object masks use world units; screen masks use normalized UV units. Configure the center for the scene.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/LocalizedRuntime/Instances/MI_PP_ScreenCircleInclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ScreenCircleInclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ScreenCircleInclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ScreenCircleInclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Center X",
+      "Local Center Y",
+      "Local Radius",
+      "Local Half Width",
+      "Local Half Height"
+    ]
+  },
+  {
+    "id": "ScreenWipeExclude",
+    "name": "Screen Wipe Exclude",
+    "category": "Object & Screen Masks",
+    "description": "A localization preset with scalar controls suitable for Blueprint and runtime UI.",
+    "note": "Object masks use world units; screen masks use normalized UV units. Configure the center for the scene.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/LocalizedRuntime/Instances/MI_PP_ScreenWipeExclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ScreenWipeExclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ScreenWipeExclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ScreenWipeExclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Center X",
+      "Local Center Y",
+      "Local Radius",
+      "Local Half Width",
+      "Local Half Height"
+    ]
+  },
+  {
+    "id": "ScreenWipeInclude",
+    "name": "Screen Wipe Include",
+    "category": "Object & Screen Masks",
+    "description": "A localization preset with scalar controls suitable for Blueprint and runtime UI.",
+    "note": "Object masks use world units; screen masks use normalized UV units. Configure the center for the scene.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/LocalizedRuntime/Instances/MI_PP_ScreenWipeInclude",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ScreenWipeInclude_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ScreenWipeInclude_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ScreenWipeInclude.webp",
+    "controls": [
+      "Animation Speed",
+      "Local Center X",
+      "Local Center Y",
+      "Local Radius",
+      "Local Half Width",
+      "Local Half Height"
+    ]
+  },
+  {
+    "id": "CinematicNoir",
+    "name": "Cinematic Noir",
+    "category": "Combined Recipes",
+    "description": "A monochrome cinematic recipe with film texture and a shaped vignette.",
+    "note": "Stage order is authored inside the recipe; individual controls remain editable.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Recipes/Instances/MI_PP_CinematicNoir",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/CinematicNoir_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/CinematicNoir_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/CinematicNoir.webp",
+    "controls": [
+      "Animation Speed",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift",
+      "Grade Gamma",
+      "Bleach Amount"
+    ]
+  },
+  {
+    "id": "PrintedComic",
+    "name": "Printed Comic",
+    "category": "Combined Recipes",
+    "description": "Cel bands, ink edges, halftone dots, and paper texture combine into one printed comic look.",
+    "note": "Stage order is authored inside the recipe; individual controls remain editable.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Recipes/Instances/MI_PP_PrintedComic",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/PrintedComic_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/PrintedComic_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/PrintedComic.webp",
+    "controls": [
+      "Animation Speed",
+      "Bands Steps",
+      "Bands Softness",
+      "Halftone Size",
+      "Halftone Amount",
+      "Outline Width"
+    ]
+  },
+  {
+    "id": "RetroConsole",
+    "name": "Retro Console",
+    "category": "Combined Recipes",
+    "description": "Ordered pixel treatment combined with retro display texture.",
+    "note": "Stage order is authored inside the recipe; individual controls remain editable.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Recipes/Instances/MI_PP_RetroConsole",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/RetroConsole_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/RetroConsole_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/RetroConsole.webp",
+    "controls": [
+      "Animation Speed",
+      "Distortion Pixels",
+      "Bands Steps",
+      "Bands Softness",
+      "Scanlines Amount",
+      "Scanlines Pitch"
+    ]
+  },
+  {
+    "id": "SecurityMonitor",
+    "name": "Security Monitor",
+    "category": "Combined Recipes",
+    "description": "A combined surveillance-camera treatment with scanline and image-damage controls.",
+    "note": "Stage order is authored inside the recipe; individual controls remain editable.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Recipes/Instances/MI_PP_SecurityMonitor",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/SecurityMonitor_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/SecurityMonitor_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/SecurityMonitor.webp",
+    "controls": [
+      "Animation Speed",
+      "Distortion Pixels",
+      "Distortion Speed",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift"
+    ]
+  },
+  {
+    "id": "SubmergedCamera",
+    "name": "Submerged Camera",
+    "category": "Combined Recipes",
+    "description": "A combined underwater camera treatment with editable water and image controls.",
+    "note": "Stage order is authored inside the recipe; individual controls remain editable.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Recipes/Instances/MI_PP_SubmergedCamera",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/SubmergedCamera_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/SubmergedCamera_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/SubmergedCamera.webp",
+    "controls": [
+      "Animation Speed",
+      "Distortion Pixels",
+      "Distortion Frequency",
+      "Distortion Speed",
+      "Grade Saturation",
+      "Grade Contrast"
+    ]
+  },
+  {
+    "id": "ThermalRecon",
+    "name": "Thermal Recon",
+    "category": "Combined Recipes",
+    "description": "A reconnaissance recipe with depth/luminance false color and display texture.",
+    "note": "Stage order is authored inside the recipe; individual controls remain editable.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Recipes/Instances/MI_PP_ThermalRecon",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ThermalRecon_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ThermalRecon_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ThermalRecon.webp",
+    "controls": [
+      "Animation Speed",
+      "Thermal Ramp Range",
+      "Thermal Ramp Amount",
+      "Outline Width",
+      "Outline Depth Sensitivity",
+      "Outline Luma Sensitivity"
+    ]
+  },
+  {
+    "id": "BoxScan",
+    "name": "Box Volume Scan",
+    "category": "Scan",
+    "description": "Visualize a configurable scan field on the surfaces visible to the camera.",
+    "note": "Scans do not reveal hidden geometry. Place the world-space origin for your scene; Depth Gate uses camera-relative depth.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Scan/Instances/MI_PP_BoxScan",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/BoxScan_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/BoxScan_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/BoxScan.webp",
+    "controls": [
+      "Animation Speed",
+      "Scan Range",
+      "Scan Width",
+      "Scan Speed",
+      "Outline Width",
+      "Outline Depth Sensitivity"
+    ]
+  },
+  {
+    "id": "DepthGate",
+    "name": "Depth Gate",
+    "category": "Scan",
+    "description": "Visualize a configurable scan field on the surfaces visible to the camera.",
+    "note": "Scans do not reveal hidden geometry. Place the world-space origin for your scene; Depth Gate uses camera-relative depth.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Scan/Instances/MI_PP_DepthGate",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/DepthGate_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/DepthGate_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/DepthGate.webp",
+    "controls": [
+      "Animation Speed",
+      "Scan Range",
+      "Scan Width",
+      "Scan Speed",
+      "Outline Width",
+      "Outline Depth Sensitivity"
+    ]
+  },
+  {
+    "id": "HeightSlices",
+    "name": "Height Contours",
+    "category": "Scan",
+    "description": "Anti-aliased horizontal height contours are positioned in world space.",
+    "note": "Scans do not reveal hidden geometry. Place the world-space origin for your scene; Depth Gate uses camera-relative depth.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Scan/Instances/MI_PP_HeightSlices",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/HeightSlices_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/HeightSlices_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/HeightSlices.webp",
+    "controls": [
+      "Animation Speed",
+      "Scan Range",
+      "Scan Width",
+      "Scan Speed",
+      "Scan Spacing",
+      "Outline Width"
+    ]
+  },
+  {
+    "id": "LaserSweep",
+    "name": "Planar Laser Sweep",
+    "category": "Scan",
+    "description": "Visualize a configurable scan field on the surfaces visible to the camera.",
+    "note": "Scans do not reveal hidden geometry. Place the world-space origin for your scene; Depth Gate uses camera-relative depth.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Scan/Instances/MI_PP_LaserSweep",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/LaserSweep_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/LaserSweep_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/LaserSweep.webp",
+    "controls": [
+      "Animation Speed",
+      "Scan Range",
+      "Scan Width",
+      "Scan Speed",
+      "Outline Width",
+      "Outline Depth Sensitivity"
+    ]
+  },
+  {
+    "id": "LidarCloud",
+    "name": "LIDAR Point Cloud",
+    "category": "Scan",
+    "description": "Visualize a configurable scan field on the surfaces visible to the camera.",
+    "note": "Scans do not reveal hidden geometry. Place the world-space origin for your scene; Depth Gate uses camera-relative depth.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Scan/Instances/MI_PP_LidarCloud",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/LidarCloud_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/LidarCloud_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/LidarCloud.webp",
+    "controls": [
+      "Animation Speed",
+      "Scan Lidar Cell",
+      "Scan Lidar Speed",
+      "Scan Lidar Range"
+    ]
+  },
+  {
+    "id": "SectorSweep",
+    "name": "Rotating Sector",
+    "category": "Scan",
+    "description": "Visualize a configurable scan field on the surfaces visible to the camera.",
+    "note": "Scans do not reveal hidden geometry. Place the world-space origin for your scene; Depth Gate uses camera-relative depth.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Scan/Instances/MI_PP_SectorSweep",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/SectorSweep_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/SectorSweep_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/SectorSweep.webp",
+    "controls": [
+      "Animation Speed",
+      "Scan Range",
+      "Scan Width",
+      "Scan Speed",
+      "Outline Width",
+      "Outline Depth Sensitivity"
+    ]
+  },
+  {
+    "id": "SonarPulse",
+    "name": "Spherical Sonar",
+    "category": "Scan",
+    "description": "An expanding spherical band highlights visible surfaces around Scan_Origin.",
+    "note": "Scans do not reveal hidden geometry. Place the world-space origin for your scene; Depth Gate uses camera-relative depth.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Scan/Instances/MI_PP_SonarPulse",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/SonarPulse_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/SonarPulse_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/SonarPulse.webp",
+    "controls": [
+      "Animation Speed",
+      "Scan Range",
+      "Scan Width",
+      "Scan Speed",
+      "Outline Width",
+      "Outline Depth Sensitivity"
+    ]
+  },
+  {
+    "id": "SurfaceGrid",
+    "name": "Surface Analysis",
+    "category": "Scan",
+    "description": "Visualize a configurable scan field on the surfaces visible to the camera.",
+    "note": "Scans do not reveal hidden geometry. Place the world-space origin for your scene; Depth Gate uses camera-relative depth.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Scan/Instances/MI_PP_SurfaceGrid",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/SurfaceGrid_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/SurfaceGrid_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/SurfaceGrid.webp",
+    "controls": [
+      "Animation Speed",
+      "Scan Grid Cell"
+    ]
+  },
+  {
+    "id": "TargetScan",
+    "name": "Target Acquisition",
+    "category": "Scan",
+    "description": "A depth-tested target mask adds restrained contours and scan bands to tagged visible objects.",
+    "note": "Scans do not reveal hidden geometry. Place the world-space origin for your scene; Depth Gate uses camera-relative depth.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Scan/Instances/MI_PP_TargetScan",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/TargetScan_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/TargetScan_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/TargetScan.webp",
+    "controls": [
+      "Animation Speed",
+      "Scan Range",
+      "Scan Width",
+      "Scan Speed",
+      "Outline Width",
+      "Outline Depth Sensitivity"
+    ]
+  },
+  {
+    "id": "VoxelReveal",
+    "name": "Voxel Reconstruction",
+    "category": "Scan",
+    "description": "Visualize a configurable scan field on the surfaces visible to the camera.",
+    "note": "Scans do not reveal hidden geometry. Place the world-space origin for your scene; Depth Gate uses camera-relative depth.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Scan/Instances/MI_PP_VoxelReveal",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/VoxelReveal_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/VoxelReveal_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/VoxelReveal.webp",
+    "controls": [
+      "Animation Speed",
+      "Scan Voxel Cell",
+      "Scan Voxel Range",
+      "Scan Voxel Speed"
+    ]
+  },
+  {
+    "id": "DepthFog",
+    "name": "Depth Atmosphere",
+    "category": "Special Effects",
+    "description": "Create a camera or visible-surface treatment for gameplay and cinematic effects.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/SpecialFX/Instances/MI_PP_DepthFog",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/DepthFog_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/DepthFog_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/DepthFog.webp",
+    "controls": [
+      "Animation Speed",
+      "Depth Fog Start",
+      "Depth Fog Distance",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift"
+    ]
+  },
+  {
+    "id": "Dissolve",
+    "name": "Heat Damage Vignette",
+    "category": "Special Effects",
+    "description": "Create a camera or visible-surface treatment for gameplay and cinematic effects.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/SpecialFX/Instances/MI_PP_Dissolve",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Dissolve_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Dissolve_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Dissolve.webp",
+    "controls": [
+      "Animation Speed",
+      "Organic Burn Amount",
+      "Organic Burn Speed",
+      "Organic Burn Scale"
+    ]
+  },
+  {
+    "id": "ForceField",
+    "name": "Hex Energy Shield",
+    "category": "Special Effects",
+    "description": "Create a camera or visible-surface treatment for gameplay and cinematic effects.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/SpecialFX/Instances/MI_PP_ForceField",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ForceField_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ForceField_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ForceField.webp",
+    "controls": [
+      "Animation Speed",
+      "Hex Shield Cell Size",
+      "Hex Shield Amount",
+      "Hex Shield Speed"
+    ]
+  },
+  {
+    "id": "Hologram",
+    "name": "Dot Matrix Hologram",
+    "category": "Special Effects",
+    "description": "Create a camera or visible-surface treatment for gameplay and cinematic effects.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/SpecialFX/Instances/MI_PP_Hologram",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Hologram_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Hologram_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Hologram.webp",
+    "controls": [
+      "Animation Speed",
+      "Outline Width",
+      "Outline Depth Sensitivity",
+      "Outline Luma Sensitivity",
+      "Holo Matrix Pitch",
+      "Holo Matrix Speed"
+    ]
+  },
+  {
+    "id": "NightVision",
+    "name": "Binocular Night Vision",
+    "category": "Special Effects",
+    "description": "Create a camera or visible-surface treatment for gameplay and cinematic effects.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/SpecialFX/Instances/MI_PP_NightVision",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/NightVision_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/NightVision_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/NightVision.webp",
+    "controls": [
+      "Animation Speed",
+      "Palette Midpoint",
+      "Grain Amount",
+      "Grain Scale",
+      "Grain Animate",
+      "Night Scope Radius"
+    ]
+  },
+  {
+    "id": "Radar",
+    "name": "Phosphor Radar Scope",
+    "category": "Special Effects",
+    "description": "Create a camera or visible-surface treatment for gameplay and cinematic effects.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/SpecialFX/Instances/MI_PP_Radar",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Radar_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Radar_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Radar.webp",
+    "controls": [
+      "Animation Speed",
+      "Outline Width",
+      "Outline Depth Sensitivity",
+      "Outline Luma Sensitivity",
+      "Radar Scope Speed",
+      "Radar Scope Radius"
+    ]
+  },
+  {
+    "id": "SpeedFocus",
+    "name": "Velocity Focus",
+    "category": "Special Effects",
+    "description": "Create a camera or visible-surface treatment for gameplay and cinematic effects.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/SpecialFX/Instances/MI_PP_SpeedFocus",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/SpeedFocus_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/SpeedFocus_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/SpeedFocus.webp",
+    "controls": [
+      "Animation Speed",
+      "Radial Blur Amount",
+      "Radial Blur Radius",
+      "Chromatic Pixels",
+      "Chromatic Radial",
+      "Vignette Amount"
+    ]
+  },
+  {
+    "id": "Thermal",
+    "name": "Thermal Imaging",
+    "category": "Special Effects",
+    "description": "Depth and luminance are mapped into a configurable false-color thermal-style palette.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/SpecialFX/Instances/MI_PP_Thermal",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Thermal_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Thermal_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Thermal.webp",
+    "controls": [
+      "Animation Speed",
+      "Thermal Ramp Range",
+      "Thermal Ramp Amount",
+      "Scanlines Amount",
+      "Scanlines Pitch",
+      "Scanlines Speed"
+    ]
+  },
+  {
+    "id": "Underwater",
+    "name": "Underwater Caustics",
+    "category": "Special Effects",
+    "description": "Create a camera or visible-surface treatment for gameplay and cinematic effects.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/SpecialFX/Instances/MI_PP_Underwater",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Underwater_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Underwater_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Underwater.webp",
+    "controls": [
+      "Animation Speed",
+      "Distortion Pixels",
+      "Distortion Frequency",
+      "Distortion Speed",
+      "Depth Fog Start",
+      "Depth Fog Distance"
+    ]
+  },
+  {
+    "id": "XRay",
+    "name": "Depth Tomography",
+    "category": "Special Effects",
+    "description": "Create a camera or visible-surface treatment for gameplay and cinematic effects.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/SpecialFX/Instances/MI_PP_XRay",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/XRay_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/XRay_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/XRay.webp",
+    "controls": [
+      "Animation Speed",
+      "Tomography Spacing",
+      "Tomography Width",
+      "Tomography Speed"
+    ]
+  },
+  {
+    "id": "Blueprint",
+    "name": "Technical Blueprint",
+    "category": "Stylized",
+    "description": "Reshape the scene with an editable print, drawing, painting, or patterned treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Stylized/Instances/MI_PP_Blueprint",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Blueprint_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Blueprint_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Blueprint.webp",
+    "controls": [
+      "Animation Speed",
+      "Outline Width",
+      "Outline Depth Sensitivity",
+      "Outline Luma Sensitivity",
+      "Draft Plate Grid Size"
+    ]
+  },
+  {
+    "id": "Charcoal",
+    "name": "Ink Stippling",
+    "category": "Stylized",
+    "description": "Reshape the scene with an editable print, drawing, painting, or patterned treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Stylized/Instances/MI_PP_Charcoal",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Charcoal_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Charcoal_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Charcoal.webp",
+    "controls": [
+      "Animation Speed",
+      "Stipple Spacing",
+      "Stipple Dot Size"
+    ]
+  },
+  {
+    "id": "Duotone",
+    "name": "Duotone Print",
+    "category": "Stylized",
+    "description": "Reshape the scene with an editable print, drawing, painting, or patterned treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Stylized/Instances/MI_PP_Duotone",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Duotone_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Duotone_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Duotone.webp",
+    "controls": [
+      "Animation Speed",
+      "Palette Midpoint",
+      "Paper Amount",
+      "Paper Scale"
+    ]
+  },
+  {
+    "id": "Mosaic",
+    "name": "Ceramic Mosaic",
+    "category": "Stylized",
+    "description": "Reshape the scene with an editable print, drawing, painting, or patterned treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Stylized/Instances/MI_PP_Mosaic",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Mosaic_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Mosaic_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Mosaic.webp",
+    "controls": [
+      "Animation Speed",
+      "Distortion Pixels",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift",
+      "Grade Gamma"
+    ]
+  },
+  {
+    "id": "OilDaubs",
+    "name": "Bristle Oil Daubs",
+    "category": "Stylized",
+    "description": "Reshape the scene with an editable print, drawing, painting, or patterned treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Stylized/Instances/MI_PP_OilDaubs",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/OilDaubs_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/OilDaubs_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/OilDaubs.webp",
+    "controls": [
+      "Animation Speed",
+      "Brush Daubs Size",
+      "Brush Daubs Bristles",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift"
+    ]
+  },
+  {
+    "id": "Pencil",
+    "name": "Graphite Drawing",
+    "category": "Stylized",
+    "description": "Reshape the scene with an editable print, drawing, painting, or patterned treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Stylized/Instances/MI_PP_Pencil",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Pencil_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Pencil_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Pencil.webp",
+    "controls": [
+      "Animation Speed",
+      "Graphite Dodge Radius",
+      "Graphite Dodge Pressure",
+      "Paper Amount",
+      "Paper Scale"
+    ]
+  },
+  {
+    "id": "RetroPixel",
+    "name": "Ordered Pixel Dither",
+    "category": "Stylized",
+    "description": "Reshape the scene with an editable print, drawing, painting, or patterned treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Stylized/Instances/MI_PP_RetroPixel",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/RetroPixel_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/RetroPixel_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/RetroPixel.webp",
+    "controls": [
+      "Animation Speed",
+      "Distortion Pixels",
+      "Ordered Dither Pixel Size",
+      "Ordered Dither Levels",
+      "Ordered Dither Amount"
+    ]
+  },
+  {
+    "id": "Risograph",
+    "name": "Misregistered Riso",
+    "category": "Stylized",
+    "description": "Reshape the scene with an editable print, drawing, painting, or patterned treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Stylized/Instances/MI_PP_Risograph",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Risograph_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Risograph_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Risograph.webp",
+    "controls": [
+      "Animation Speed",
+      "Riso Plates Size",
+      "Riso Plates Registration",
+      "Paper Amount",
+      "Paper Scale"
+    ]
+  },
+  {
+    "id": "StainedGlass",
+    "name": "Leaded Glass",
+    "category": "Stylized",
+    "description": "Reshape the scene with an editable print, drawing, painting, or patterned treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Stylized/Instances/MI_PP_StainedGlass",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/StainedGlass_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/StainedGlass_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/StainedGlass.webp",
+    "controls": [
+      "Animation Speed",
+      "Voronoi Glass Cell Size",
+      "Voronoi Glass Lead Width",
+      "Voronoi Glass Saturation",
+      "Voronoi Glass Relief"
+    ]
+  },
+  {
+    "id": "Watercolor",
+    "name": "Wet Watercolor",
+    "category": "Stylized",
+    "description": "A Kuwahara scene filter combines with editable watercolor and paper treatments.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Stylized/Instances/MI_PP_Watercolor",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Watercolor_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Watercolor_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Watercolor.webp",
+    "controls": [
+      "Animation Speed",
+      "Kuwahara Radius",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift",
+      "Grade Gamma"
+    ]
+  },
+  {
+    "id": "BoldInk",
+    "name": "Paper Cutout",
+    "category": "Toon",
+    "description": "Combine tone shaping with an editable illustration, contour, or surface-pattern treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Toon/Instances/MI_PP_BoldInk",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/BoldInk_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/BoldInk_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/BoldInk.webp",
+    "controls": [
+      "Animation Speed",
+      "Paper Cutout Colors",
+      "Paper Cutout Shadow Offset",
+      "Paper Cutout Shadow Amount",
+      "Paper Amount",
+      "Paper Scale"
+    ]
+  },
+  {
+    "id": "CleanCel",
+    "name": "Clean Cel",
+    "category": "Toon",
+    "description": "Combine tone shaping with an editable illustration, contour, or surface-pattern treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Toon/Instances/MI_PP_CleanCel",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/CleanCel_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/CleanCel_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/CleanCel.webp",
+    "controls": [
+      "Animation Speed",
+      "Bands Steps",
+      "Bands Softness",
+      "Outline Width",
+      "Outline Depth Sensitivity",
+      "Outline Luma Sensitivity"
+    ]
+  },
+  {
+    "id": "ColoredInk",
+    "name": "Triangular Facets",
+    "category": "Toon",
+    "description": "Combine tone shaping with an editable illustration, contour, or surface-pattern treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Toon/Instances/MI_PP_ColoredInk",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ColoredInk_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ColoredInk_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ColoredInk.webp",
+    "controls": [
+      "Animation Speed",
+      "Triangle Facets Size",
+      "Triangle Facets Relief"
+    ]
+  },
+  {
+    "id": "ComicDots",
+    "name": "CMYK Comic Print",
+    "category": "Toon",
+    "description": "Combine tone shaping with an editable illustration, contour, or surface-pattern treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Toon/Instances/MI_PP_ComicDots",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/ComicDots_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/ComicDots_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/ComicDots.webp",
+    "controls": [
+      "Animation Speed",
+      "CMYKScreen Size",
+      "CMYKScreen Registration",
+      "CMYKScreen Dot Gain",
+      "Outline Width",
+      "Outline Depth Sensitivity"
+    ]
+  },
+  {
+    "id": "Crosshatch",
+    "name": "Contour Engraving",
+    "category": "Toon",
+    "description": "Combine tone shaping with an editable illustration, contour, or surface-pattern treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Toon/Instances/MI_PP_Crosshatch",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Crosshatch_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Crosshatch_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Crosshatch.webp",
+    "controls": [
+      "Animation Speed",
+      "Blur9 Radius",
+      "Contour Engraving Lines",
+      "Contour Engraving Width"
+    ]
+  },
+  {
+    "id": "LuminousInk",
+    "name": "Neon Contours",
+    "category": "Toon",
+    "description": "Combine tone shaping with an editable illustration, contour, or surface-pattern treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Toon/Instances/MI_PP_LuminousInk",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/LuminousInk_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/LuminousInk_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/LuminousInk.webp",
+    "controls": [
+      "Animation Speed",
+      "Neon Contours Width",
+      "Neon Contours Glow"
+    ]
+  },
+  {
+    "id": "Manga",
+    "name": "Manga Screen Tone",
+    "category": "Toon",
+    "description": "Combine tone shaping with an editable illustration, contour, or surface-pattern treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Toon/Instances/MI_PP_Manga",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Manga_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Manga_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Manga.webp",
+    "controls": [
+      "Animation Speed",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift",
+      "Grade Gamma",
+      "Halftone Size"
+    ]
+  },
+  {
+    "id": "Noir",
+    "name": "Two Tone Noir",
+    "category": "Toon",
+    "description": "Combine tone shaping with an editable illustration, contour, or surface-pattern treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Toon/Instances/MI_PP_Noir",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/Noir_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/Noir_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/Noir.webp",
+    "controls": [
+      "Animation Speed",
+      "Grade Saturation",
+      "Grade Contrast",
+      "Grade Lift",
+      "Grade Gamma",
+      "Bands Steps"
+    ]
+  },
+  {
+    "id": "PopArt",
+    "name": "Pop Art",
+    "category": "Toon",
+    "description": "Combine tone shaping with an editable illustration, contour, or surface-pattern treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Toon/Instances/MI_PP_PopArt",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/PopArt_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/PopArt_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/PopArt.webp",
+    "controls": [
+      "Animation Speed",
+      "Bands Steps",
+      "Bands Softness",
+      "Palette Midpoint",
+      "Halftone Size",
+      "Halftone Amount"
+    ]
+  },
+  {
+    "id": "SoftCel",
+    "name": "Clay Relief",
+    "category": "Toon",
+    "description": "Combine tone shaping with an editable illustration, contour, or surface-pattern treatment.",
+    "note": "Duplicate the instance to preserve the shipped preset while customizing.",
+    "asset": "/ArtOfShaderUltimatePostProcess/Looks/Toon/Instances/MI_PP_SoftCel",
+    "before": "/images/products/art-of-shader-ultimate-post-process/comparisons/SoftCel_before.jpg",
+    "after": "/images/products/art-of-shader-ultimate-post-process/comparisons/SoftCel_after.jpg",
+    "thumbnail": "/images/products/art-of-shader-ultimate-post-process/thumbnails/SoftCel.webp",
+    "controls": [
+      "Animation Speed",
+      "Clay Relief Rim"
+    ]
+  }
+]

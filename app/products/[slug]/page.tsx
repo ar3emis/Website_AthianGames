@@ -19,6 +19,7 @@ import {
 import { FabricAIHero } from "@/components/products/FabricAIHero";
 import { FabricAITabs } from "@/components/products/FabricAITabs";
 import { DatabaseProductSelector } from "@/components/products/DatabaseProductSelector";
+import { ShaderExplorer } from "@/components/products/ShaderExplorer";
 
 interface ProductPageProps {
   params: Promise<{
@@ -229,6 +230,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
         {/* CTA Buttons */}
         {!isDatabaseProduct && (
           <div className="flex flex-wrap gap-4 mb-16">
+            {slug === "art-of-shader-ultimate-post-process" && (<>
+              <a href="#shader-explorer"><Button variant="primary" size="lg">Explore the shaders</Button></a>
+              <span className="self-center rounded-full border border-border px-4 py-2 text-sm text-muted-foreground">Coming to Fab · in preparation</span>
+            </>)}
             {product.category !== "wip" && product.externalUrl && (
               <Link href={product.externalUrl} target="_blank" rel="noopener noreferrer">
                 <Button variant="primary" size="lg">
@@ -265,6 +270,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
         )}
 
         {isDatabaseProduct && <DatabaseProductSelector />}
+
+        {slug === "art-of-shader-ultimate-post-process" && <ShaderExplorer />}
 
         {/* Description */}
         <div className="mb-16">

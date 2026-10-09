@@ -1,4 +1,5 @@
 ﻿// Complete product data with all features from your existing site
+import { ultimatePostProcessProduct } from "./ultimatePostProcess";
 export const productDetails = {
   "minimap-map-and-navigation-system": {
     id: "1",
@@ -1920,6 +1921,8 @@ It is designed as an editor workflow first: set up credentials once, generate fr
     isFeatured: false,
   },
 });
+
+Object.assign(productDetails, { "art-of-shader-ultimate-post-process": ultimatePostProcessProduct });
 
 // Load product overrides from JSON file (admin edits)
 function loadProductOverrides() {
