@@ -7,22 +7,28 @@ const sharp = require('sharp');
 const root = path.resolve(__dirname, '..');
 const catalog = require('../lib/products/ultimatePostProcessCatalog.json');
 const params = require('../lib/products/ultimatePostProcessParameters.json');
+const bundledShaders = require('../lib/products/ultimatePostProcessShaders.json');
 const output = ts.transpileModule(fs.readFileSync(path.join(root, 'lib/products/shaderPlayground.ts'), 'utf8'), { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2017, esModuleInterop: true } }).outputText;
 const exportsForTest = {};
 new Function('exports', 'require', output)(exportsForTest, (id) => {
   assert.equal(id, './ultimatePostProcessParameters.json'); return params;
 });
 const { initialValues, exportSettings, colorFromHex } = exportsForTest;
+const sceneModule = {};
+const sceneSource = ts.transpileModule(fs.readFileSync(path.join(root, 'lib/products/shaderScene.ts'), 'utf8'), { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2017 } }).outputText;
+new Function('exports', sceneSource)(sceneModule);
 
 test('every advertised preset has a complete shader and bounded finite controls', () => {
   assert.equal(catalog.length, 84);
   assert.deepEqual(Object.keys(params).sort(), catalog.map((p) => p.id).sort());
+  assert.deepEqual(Object.keys(bundledShaders).sort(), catalog.map((p) => p.id).sort());
   for (const look of catalog) {
     const preset = params[look.id];
     const values = initialValues(look.id);
     assert(preset.parameters.length <= 64);
     assert.equal(new Set(preset.parameters.map((p) => p.name)).size, preset.parameters.length);
     const shader = fs.readFileSync(path.join(root, 'public/shaders/ultimate-post-process', look.id + '.frag'), 'utf8');
+    assert.equal(bundledShaders[look.id], shader.replace(/\r\n/g, '\n'), look.id + ': bundled recipe must match the compiled shader');
     assert(shader.startsWith('#version 300 es'));
     assert(shader.includes('uniform type_Parameters'));
     for (const parameter of preset.parameters) {
@@ -73,4 +79,34 @@ test('scene textures are aligned, contain real depth and normals, and expose two
   const camera = JSON.parse(fs.readFileSync(path.join(folder, 'camera.json'), 'utf8'));
   assert(camera.fov > 0 && camera.fov < 180);
   for (const axis of ['forward', 'right', 'up']) assert(Math.abs(Math.hypot(...camera[axis]) - 1) < .0001);
+});
+
+test('preset changes reuse the loaded scene when the server goes offline', async () => {
+  let calls = 0, offline = false;
+  const load = sceneModule.createSceneLoader(async (url) => {
+    calls++;
+    if (offline) throw new TypeError('Failed to fetch');
+    return new Response(url.endsWith('.json') ? JSON.stringify({ fov: 70 }) : 'texture');
+  });
+  const first = load();
+  assert.equal(load(), first, 'concurrent canvases share the in-flight request');
+  const scene = await first;
+  assert.equal(calls, 5);
+  assert.equal(scene.images.length, 4);
+  offline = true;
+  for (let preset = 0; preset < 84; preset++) assert.equal(await load(), scene);
+  assert.equal(calls, 5, 'switching presets does not fetch scene assets again');
+});
+
+test('a failed scene download is evicted so Retry can recover', async () => {
+  let failing = true, calls = 0;
+  const load = sceneModule.createSceneLoader(async (url) => {
+    calls++;
+    if (failing && url.endsWith('camera.json')) return new Response('', { status: 503 });
+    return new Response(url.endsWith('.json') ? JSON.stringify({ fov: 70 }) : 'texture');
+  });
+  await assert.rejects(load(), /camera.json: HTTP 503/);
+  failing = false;
+  assert.equal((await load()).camera.fov, 70);
+  assert.equal(calls, 10);
 });

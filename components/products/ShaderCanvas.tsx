@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { ShaderValues, shaderPresets } from "@/lib/products/shaderPlayground";
+import shaderSources from "@/lib/products/ultimatePostProcessShaders.json";
+import { loadShaderScene, ShaderCamera } from "@/lib/products/shaderScene";
 
-const assets = "/images/products/art-of-shader-ultimate-post-process/playground";
 const vertex = `#version 300 es
 out vec2 in_var_TEXCOORD0;
 void main() {
@@ -10,8 +11,14 @@ void main() {
  in_var_TEXCOORD0=vec2(p.x,1.-p.y);
  gl_Position=vec4(p*2.-1.,0.,1.);
 }`;
-type Camera = { location: number[]; forward: number[]; right: number[]; up: number[]; fov: number };
 type Props = { id: string; name: string; values: ShaderValues; position: number; playing: boolean; onStatus: (status: "loading" | "ready" | "error") => void };
+type Failure = "webgl" | "assets" | "shader" | "context";
+const failureMessages: Record<Failure, string> = {
+  webgl: "The browser could not start WebGL 2. Check that graphics acceleration is available, then retry.",
+  assets: "The scene could not be downloaded. Check your connection or that the preview server is running, then retry.",
+  shader: "This effect could not be prepared. Try another shader or retry this preview.",
+  context: "The graphics connection was interrupted. The preview will recover when the browser restores it, or you can retry now.",
+};
 
 function compile(gl: WebGL2RenderingContext, type: number, source: string) {
   const shader = gl.createShader(type);
@@ -28,15 +35,14 @@ export function ShaderCanvas(props: Props) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const latest = useRef(props); latest.current = props;
   const [retry, setRetry] = useState(0);
-  const [failure, setFailure] = useState(false);
+  const [failure, setFailure] = useState<Failure | null>(null);
   const controller = useRef<{ select: (id: string) => void } | null>(null);
   useEffect(() => {
     const element = canvas.current!;
     const gl = element.getContext("webgl2", { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: "low-power" });
-    if (!gl) { setFailure(true); latest.current.onStatus("error"); return; }
+    if (!gl) { setFailure("webgl"); latest.current.onStatus("error"); return; }
     let disposed = false, lost = false, program: WebGLProgram | null = null, frameId = 0, request = 0, activeId = "";
-    let visible = true, camera: Camera, lastTime = 0, time = 1.5, lastDraw = 0, lastValues: ShaderValues | null = null, lastPosition = -1;
-    const abort = new AbortController();
+    let visible = true, camera: ShaderCamera, lastTime = 0, time = 1.5, lastDraw = 0, lastValues: ShaderValues | null = null, lastPosition = -1;
     const textures: WebGLTexture[] = [];
     const buffer = gl.createBuffer();
     const vao = gl.createVertexArray();
@@ -46,14 +52,13 @@ export function ShaderCanvas(props: Props) {
     gl.bindBufferBase(gl.UNIFORM_BUFFER, 0, buffer);
     gl.bindVertexArray(vao);
     gl.viewport(0, 0, 1280, 720);
-    setFailure(false);
+    setFailure(null);
     latest.current.onStatus("loading");
-    const loading = Promise.all([
-      fetch(`${assets}/camera.json`, { signal: abort.signal }).then((r) => { if (!r.ok) throw new Error("Camera unavailable"); return r.json() as Promise<Camera>; }).then((value) => { camera = value; }),
-      ...["color", "depth", "normal", "custom"].map(async (name, unit) => {
-        const response = await fetch(`${assets}/${name}.png`, { signal: abort.signal });
-        if (!response.ok) throw new Error("Scene unavailable");
-        const bitmap = await createImageBitmap(await response.blob(), { colorSpaceConversion: "none", premultiplyAlpha: "none" });
+    const loading = loadShaderScene().then(async (scene) => {
+      if (disposed || lost) return;
+      camera = scene.camera;
+      await Promise.all(scene.images.map(async (blob, unit) => {
+        const bitmap = await createImageBitmap(blob, { colorSpaceConversion: "none", premultiplyAlpha: "none" });
         if (disposed || lost) { bitmap.close(); return; }
         const texture = gl.createTexture();
         if (!texture) { bitmap.close(); throw new Error("Texture allocation failed"); }
@@ -65,18 +70,22 @@ export function ShaderCanvas(props: Props) {
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
         gl.texImage2D(gl.TEXTURE_2D, 0, unit === 0 ? gl.SRGB8_ALPHA8 : gl.RGBA8, gl.RGBA, gl.UNSIGNED_BYTE, bitmap);
         bitmap.close();
-      }),
-    ]);
+      }));
+    });
     // Attach rejection handling immediately, including when a user leaves while loading.
     loading.catch(() => {});
     const select = async (id: string) => {
       const token = ++request;
       latest.current.onStatus("loading");
+      let phase: Failure = "assets";
       try {
-        const response = await fetch(`/shaders/ultimate-post-process/${encodeURIComponent(id)}.frag`, { signal: abort.signal });
-        if (!response.ok) throw new Error("Shader unavailable");
-        const source = await response.text(); await loading;
+        await loading;
         if (disposed || lost || token !== request) return;
+        phase = "shader";
+        // Keep every recipe with the renderer: switching shaders must not depend
+        // on another network request after the preview has loaded.
+        const source = (shaderSources as Record<string, string>)[id];
+        if (!source) throw new Error(`Shader recipe missing: ${id}`);
         const shaders: WebGLShader[] = []; let next: WebGLProgram | null = null;
         try {
           shaders.push(compile(gl, gl.VERTEX_SHADER, vertex));
@@ -92,11 +101,11 @@ export function ShaderCanvas(props: Props) {
         if (block !== gl.INVALID_INDEX) gl.uniformBlockBinding(program!, block, 0);
         ["sceneTexturelinearSampler", "depthTexturepointSampler", "normalTexturepointSampler", "customTexturepointSampler"].forEach((name, unit) => gl.uniform1i(gl.getUniformLocation(program!, `SPIRV_Cross_Combined${name}`), unit));
         time = 1.5; lastValues = null; lastTime = 0;
-        setFailure(false); latest.current.onStatus("ready");
+        setFailure(null); latest.current.onStatus("ready");
       } catch (error) {
-        if (disposed || token !== request) return;
-        console.warn("Shader playground could not load", id, error);
-        setFailure(true); latest.current.onStatus("error");
+        if (disposed || lost || token !== request) return;
+        console.warn("Shader playground could not load", { id, phase }, error);
+        setFailure(phase); latest.current.onStatus("error");
       }
     };
     controller.current = { select };
@@ -127,11 +136,14 @@ export function ShaderCanvas(props: Props) {
       lastValues = p.values; lastPosition = p.position; lastDraw = now;
     };
     frameId = requestAnimationFrame(render);
-    const onLost = (event: Event) => { event.preventDefault(); lost = true; setFailure(true); latest.current.onStatus("error"); };
+    const onLost = (event: Event) => { event.preventDefault(); lost = true; setFailure("context"); latest.current.onStatus("error"); };
+    const onRestored = () => { if (!disposed) setRetry((value) => value + 1); };
     element.addEventListener("webglcontextlost", onLost);
+    element.addEventListener("webglcontextrestored", onRestored);
     return () => {
-      disposed = true; controller.current = null; abort.abort(); observer.disconnect(); cancelAnimationFrame(frameId);
+      disposed = true; controller.current = null; observer.disconnect(); cancelAnimationFrame(frameId);
       element.removeEventListener("webglcontextlost", onLost);
+      element.removeEventListener("webglcontextrestored", onRestored);
       textures.forEach((texture) => gl.deleteTexture(texture));
       if (program) gl.deleteProgram(program); gl.deleteBuffer(buffer); gl.deleteVertexArray(vao);
       // Release GPU contexts when switching presets, without breaking a retry
@@ -142,6 +154,6 @@ export function ShaderCanvas(props: Props) {
   useEffect(() => { controller.current?.select(props.id); }, [props.id]);
   return <>
     <canvas key={retry} ref={canvas} width={1280} height={720} aria-label={`${props.name} interactive shader preview`} className="absolute inset-0 h-full w-full" />
-    {failure && <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-3 bg-slate-950/95 p-6 text-center text-sm text-slate-200"><p>Live preview is unavailable on this browser.<br />You can still view the Unreal captures.</p><button type="button" onClick={() => setRetry((value) => value + 1)} className="rounded-full border border-white/30 px-4 py-2 hover:bg-white/10">Retry preview</button></div>}
+    {failure && <div role="alert" className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-3 bg-slate-950/95 p-6 text-center text-sm text-slate-200"><p>{failureMessages[failure]}</p><button type="button" onClick={() => setRetry((value) => value + 1)} className="rounded-full border border-white/30 px-4 py-2 hover:bg-white/10">Retry preview</button></div>}
   </>;
 }

@@ -2,8 +2,11 @@
 
 The product explorer has two views: original Unreal comparisons and an interactive
 WebGL 2 preview. All 84 fragment shaders are compiled from the pack's HLSL recipe
-definitions. Visitors download the selected fragment shader and four shared scene
-textures; no compiler or Unreal runtime is bundled into the website.
+definitions. All shader recipes are bundled with the renderer; switching presets
+does not make a new network request. Scene downloads are cached across canvas
+mounts, so the initialized playground keeps working during a connection loss.
+Failed downloads time out and are evicted to allow a fresh retry.
+No compiler or Unreal runtime is bundled into the website.
 
 ## Sources and regeneration
 
@@ -16,7 +19,8 @@ no asset-building code is run. Missing named parameters fail generation.
 Run its `--help` for compiler arguments. Generation used Microsoft DXC
 v1.9.2609 and Khronos SPIRV-Cross commit aa217ae. Both are build-time tools only.
 The generated files are committed under `public/shaders/ultimate-post-process/`
-and `lib/products/ultimatePostProcessParameters.json`.
+and `lib/products/ultimatePostProcessParameters.json`. The generator also writes
+`lib/products/ultimatePostProcessShaders.json`, which must match the `.frag` files.
 
 The SM5 CMYK float4 indexing repair is also applied before WebGL compilation.
 The original material's ordered function chain, global strength, split, stencil,
@@ -52,5 +56,7 @@ controls, animation, and the mobile layout.
 
 The canvas redraws static effects on changes, caps animation at roughly 30 FPS,
 and stops rendering outside the viewport or in a hidden tab. Reduced-motion
-preferences pause animation initially. Failed loading or unavailable WebGL displays
-a retry action and keeps the original Unreal comparisons accessible.
+preferences pause animation initially. Errors distinguish scene downloads,
+shader compilation, graphics interruptions, and unavailable WebGL instead of
+misreporting every failure as browser incompatibility. A restored graphics context
+reinitializes the canvas while retaining the user's parameter values.
