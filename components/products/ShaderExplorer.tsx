@@ -2,12 +2,14 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeftRight, ChevronLeft, ChevronRight, Search } from "lucide-react";
 import catalog from "@/lib/products/ultimatePostProcessCatalog.json";
+import { ShaderPlayground } from "./ShaderPlayground";
 
 export function ShaderExplorer() {
   const [selectedId, setSelectedId] = useState("PrintedComic");
   const [category, setCategory] = useState("All");
   const [query, setQuery] = useState("");
   const [position, setPosition] = useState(50);
+  const [customizing, setCustomizing] = useState(true);
   const [loaded, setLoaded] = useState<string[]>([]);
   const [failed, setFailed] = useState<string[]>([]);
   const beforeImage = useRef<HTMLImageElement>(null);
@@ -40,13 +42,13 @@ export function ShaderExplorer() {
       <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-primary">The shader library</p>
-          <h2 id="shader-explorer-title" className="text-3xl font-semibold tracking-tight md:text-4xl">See the difference.</h2>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">Choose a look, then drag across the image. Every comparison uses the same Unreal camera and scene.</p>
+          <h2 id="shader-explorer-title" className="text-3xl font-semibold tracking-tight md:text-4xl">Find your look. Make it yours.</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">Pick a shader, explore its parameters, and see your changes live. Compare your look with the original scene or browse the Unreal captures.</p>
         </div>
         <span className="rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-xs text-primary">66 core looks · 18 additional presets</span>
       </div>
       <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-xl shadow-black/10">
-        <div className="grid lg:grid-cols-[290px_minmax(0,1fr)]">
+        <div className="grid lg:grid-cols-[220px_minmax(0,1fr)]">
           <aside className="border-b border-border p-4 lg:border-b-0 lg:border-r" aria-label="Choose a shader">
             <label className="relative block">
               <Search aria-hidden="true" className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
@@ -58,11 +60,15 @@ export function ShaderExplorer() {
               </select>
             </label>
             <p className="my-3 text-xs text-muted-foreground" aria-live="polite">{filtered.length} {filtered.length === 1 ? "look" : "looks"}</p>
-            <div className="max-h-[245px] space-y-1.5 overflow-y-auto pr-1 lg:max-h-[570px]" role="group" aria-label="Shader presets">
+            <select aria-label="Choose shader preset" value={filtered.some((look) => look.id === selectedId) ? selectedId : ""} onChange={(e) => select(e.target.value)} className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm focus:ring-2 focus:ring-primary lg:hidden">
+              <option value="" disabled>{filtered.length ? "Choose a matching look" : "No matching looks"}</option>
+              {filtered.map((look) => <option key={look.id} value={look.id}>{look.name}</option>)}
+            </select>
+            <div className="hidden max-h-[570px] space-y-1.5 overflow-y-auto pr-1 lg:block" role="group" aria-label="Shader presets">
               {filtered.map((look) => (
                 <button key={look.id} type="button" aria-pressed={look.id === selectedId} onClick={() => select(look.id)} className={`flex w-full items-center gap-3 rounded-lg border p-2 text-left transition-colors focus-visible:ring-2 focus-visible:ring-primary ${look.id === selectedId ? "border-primary/40 bg-primary/10" : "border-transparent hover:bg-muted/70"}`}>
-                  <img src={look.thumbnail} alt="" width="64" height="36" loading="lazy" decoding="async" className="aspect-video w-16 rounded object-cover" />
-                  <span><span className="block text-sm font-medium">{look.name}</span><span className="block text-[11px] text-muted-foreground">{look.category}</span></span>
+                  <img src={look.thumbnail} alt="" width="48" height="27" loading="lazy" decoding="async" className="aspect-video w-12 shrink-0 rounded object-cover" />
+                  <span className="min-w-0 break-words"><span className="block text-sm font-medium">{look.name}</span><span className="block text-[11px] text-muted-foreground">{look.category}</span></span>
                 </button>
               ))}
               {!filtered.length && <p className="rounded-lg bg-muted/50 p-4 text-sm text-muted-foreground">No matching looks. Try another collection or search.</p>}
@@ -76,6 +82,15 @@ export function ShaderExplorer() {
                 <button type="button" onClick={() => move(1)} disabled={!filtered.length} aria-label="Next shader" className="rounded-full border border-border p-2 hover:bg-muted focus-visible:ring-2 focus-visible:ring-primary"><ChevronRight className="h-4 w-4" /></button>
               </div>
             </div>
+            <div className="flex flex-wrap items-center justify-between gap-2 px-5 py-3">
+              <div className="inline-flex gap-1 rounded-full border border-border bg-background p-1" role="group" aria-label="Preview mode">
+                <button type="button" aria-pressed={customizing} onClick={() => setCustomizing(true)} className={`rounded-full px-4 py-2 text-xs font-medium ${customizing ? "bg-primary/15 text-primary" : "text-muted-foreground hover:text-foreground"}`}>Customize</button>
+                <button type="button" aria-pressed={!customizing} onClick={() => setCustomizing(false)} className={`rounded-full px-4 py-2 text-xs font-medium ${!customizing ? "bg-primary/15 text-primary" : "text-muted-foreground hover:text-foreground"}`}>Unreal captures</button>
+              </div>
+              <a href={`/docs/art-of-shader-ultimate-post-process/shader-reference#${selected.id}`} className="text-[11px] font-medium text-primary hover:underline">Parameter reference ↗</a>
+            </div>
+            <div hidden={!customizing}><ShaderPlayground key={selected.id} id={selected.id} name={selected.name} asset={selected.asset} after={selected.after} /></div>
+            <div hidden={customizing}>
             <figure className="relative aspect-video overflow-hidden bg-slate-950" aria-label={`${selected.name} before and after comparison`}>
               <img key={`${selected.id}-after`} ref={afterImage} src={selected.after} alt={`${selected.name} applied in Unreal Engine`} width="1920" height="1080" decoding="async" onLoad={() => imageLoaded(selected.after)} onError={() => imageFailed(selected.after)} className="absolute inset-0 h-full w-full object-contain" />
               <img key={`${selected.id}-before`} ref={beforeImage} src={selected.before} alt="The same scene without the effect" width="1920" height="1080" decoding="async" onLoad={() => imageLoaded(selected.before)} onError={() => imageFailed(selected.before)} style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }} className="absolute inset-0 h-full w-full object-contain" />
@@ -97,10 +112,11 @@ export function ShaderExplorer() {
               <div className="mt-4 flex flex-wrap gap-1.5">{selected.controls.map((name) => <span key={name} className="rounded-md border border-border bg-muted/40 px-2 py-1 text-[11px] text-muted-foreground">{name}</span>)}</div>
               <div className="mt-4 flex flex-wrap justify-between gap-2 border-t border-border pt-3"><code className="break-all text-[10px] text-muted-foreground">{selected.asset}</code><a href={`/docs/art-of-shader-ultimate-post-process/shader-reference#${selected.id}`} className="text-xs font-medium text-primary hover:underline">Parameter reference →</a></div>
             </div>
+            </div>
           </div>
         </div>
       </div>
-      <p className="mt-3 text-xs leading-5 text-muted-foreground">Actual Unreal captures from the included example scene. No AI-generated imagery.</p>
+      <p className="mt-3 text-xs leading-5 text-muted-foreground">Scene imagery and surface data captured in Unreal. Customize uses a browser adaptation; Unreal captures show the original engine renders. No AI-generated imagery.</p>
     </section>
   );
 }

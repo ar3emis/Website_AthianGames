@@ -9,7 +9,7 @@ export const ultimatePostProcessProduct = {
 
 Drag BP_AOSPostProcess into your level, add materials to its layer stack, and drag the independent weights to mix their contributions. Preview changes in the editor, then drive the same actor with Blueprint during play. Duplicate material instances to build your own palettes, outlines, lenses, grain, scan fields, and mask shapes.
 
-The plugin includes reusable material functions, an overview gallery, practical example scenes, runtime parameter exhibits, four GPU Niagara scene-color lenses, and source code for the layer actor. Use the interactive library below to inspect every ready-made post-process preset against its original scene.
+The plugin includes reusable material functions, an overview gallery, practical example scenes, runtime parameter exhibits, four GPU Niagara scene-color lenses, and source code for the layer actor. Use the interactive library to customize every post-process preset with live parameters, compare the result, and copy the named settings for your Unreal setup.
 
 Build your own combinations with fully editable materials, functions, Blueprints, and the included C++ layer actor.`,
   category: "shaders", price: null, engineVersions: ["5.7"], externalUrl: "",

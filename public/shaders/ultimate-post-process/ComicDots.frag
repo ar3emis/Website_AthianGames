@@ -1,0 +1,111 @@
+#version 300 es
+precision mediump float;
+precision highp int;
+
+layout(std140) uniform type_Parameters
+{
+    highp vec4 values[64];
+    highp vec4 frame;
+    highp vec4 cameraPosition;
+    highp vec4 cameraForward;
+    highp vec4 cameraRight;
+    highp vec4 cameraUp;
+} Parameters;
+
+uniform highp sampler2D SPIRV_Cross_CombinedsceneTexturelinearSampler;
+uniform highp sampler2D SPIRV_Cross_CombineddepthTexturepointSampler;
+uniform highp sampler2D SPIRV_Cross_CombinedcustomTexturepointSampler;
+
+in highp vec2 in_var_TEXCOORD0;
+layout(location = 0) out highp vec4 out_var_SV_Target;
+
+void main()
+{
+    highp vec3 _140 = textureLod(SPIRV_Cross_CombinedsceneTexturelinearSampler, in_var_TEXCOORD0, 0.0).xyz;
+    highp float _148 = dot(roundEven(textureLod(SPIRV_Cross_CombineddepthTexturepointSampler, in_var_TEXCOORD0, 0.0).xy * 255.0), vec2(1.0, 256.0));
+    highp vec4 _152 = textureLod(SPIRV_Cross_CombinedcustomTexturepointSampler, in_var_TEXCOORD0, 0.0);
+    highp vec2 _166 = in_var_TEXCOORD0 * vec2(1280.0, 720.0);
+    highp float _168 = isnan(3.0) ? Parameters.values[1].x : (isnan(Parameters.values[1].x) ? 3.0 : max(Parameters.values[1].x, 3.0));
+    highp vec2 _169 = vec2(_168);
+    highp vec2 _170 = (_166 * mat2(vec2(0.9659259319305419921875, -0.258818686008453369140625), vec2(0.258818686008453369140625, 0.9659259319305419921875))) / _169;
+    highp vec3 _185 = pow(clamp(textureLod(SPIRV_Cross_CombinedsceneTexturelinearSampler, clamp(clamp(clamp((((floor(_170) + vec2(0.5)) * _168) * mat2(vec2(0.9659259319305419921875, 0.258818686008453369140625), vec2(-0.258818686008453369140625, 0.9659259319305419921875))) * vec2(0.0007812500116415321826934814453125, 0.001388888922519981861114501953125), vec2(0.0), vec2(1.0)), vec2(0.0), vec2(1.0)), vec2(0.0), vec2(1.0)), 0.0).xyz, vec3(0.0), vec3(1.0)), vec3(0.64999997615814208984375));
+    highp float _186 = _185.x;
+    highp float _187 = _185.y;
+    highp float _188 = _185.z;
+    highp float _189 = isnan(_188) ? _187 : (isnan(_187) ? _188 : max(_187, _188));
+    highp float _190 = isnan(_189) ? _186 : (isnan(_186) ? _189 : max(_186, _189));
+    highp float _202 = length(fract(_170) - vec2(0.5));
+    highp float _206 = sqrt(clamp(clamp(((vec3(1.0) - _185) - vec3(1.0 - _190)) / vec3(isnan(0.00999999977648258209228515625) ? _190 : (isnan(_190) ? 0.00999999977648258209228515625 : max(_190, 0.00999999977648258209228515625))), vec3(0.0), vec3(1.0)).x + Parameters.values[3].x, 0.0, 1.0)) * 0.64999997615814208984375;
+    highp float _207 = fwidth(_202);
+    highp float _208 = isnan(0.0199999995529651641845703125) ? _207 : (isnan(_207) ? 0.0199999995529651641845703125 : max(_207, 0.0199999995529651641845703125));
+    highp vec2 _217 = ((_166 + vec2(Parameters.values[2].x, (-1.0) * Parameters.values[2].x)) * mat2(vec2(0.2588189542293548583984375, -0.965925872325897216796875), vec2(0.965925872325897216796875, 0.2588189542293548583984375))) / _169;
+    highp vec3 _232 = pow(clamp(textureLod(SPIRV_Cross_CombinedsceneTexturelinearSampler, clamp(clamp(clamp((((floor(_217) + vec2(0.5)) * _168) * mat2(vec2(0.2588189542293548583984375, 0.965925872325897216796875), vec2(-0.965925872325897216796875, 0.2588189542293548583984375))) * vec2(0.0007812500116415321826934814453125, 0.001388888922519981861114501953125), vec2(0.0), vec2(1.0)), vec2(0.0), vec2(1.0)), vec2(0.0), vec2(1.0)), 0.0).xyz, vec3(0.0), vec3(1.0)), vec3(0.64999997615814208984375));
+    highp float _233 = _232.x;
+    highp float _234 = _232.y;
+    highp float _235 = _232.z;
+    highp float _236 = isnan(_235) ? _234 : (isnan(_234) ? _235 : max(_234, _235));
+    highp float _237 = isnan(_236) ? _233 : (isnan(_233) ? _236 : max(_233, _236));
+    highp float _249 = length(fract(_217) - vec2(0.5));
+    highp float _253 = sqrt(clamp(clamp(((vec3(1.0) - _232) - vec3(1.0 - _237)) / vec3(isnan(0.00999999977648258209228515625) ? _237 : (isnan(_237) ? 0.00999999977648258209228515625 : max(_237, 0.00999999977648258209228515625))), vec3(0.0), vec3(1.0)).y + Parameters.values[3].x, 0.0, 1.0)) * 0.64999997615814208984375;
+    highp float _254 = fwidth(_249);
+    highp float _255 = isnan(0.0199999995529651641845703125) ? _254 : (isnan(_254) ? 0.0199999995529651641845703125 : max(_254, 0.0199999995529651641845703125));
+    highp vec2 _265 = ((_166 + vec2(2.0 * Parameters.values[2].x, (-2.0) * Parameters.values[2].x)) * mat2(vec2(1.0, -0.0), vec2(0.0, 1.0))) / _169;
+    highp vec3 _280 = pow(clamp(textureLod(SPIRV_Cross_CombinedsceneTexturelinearSampler, clamp(clamp(clamp((((floor(_265) + vec2(0.5)) * _168) * mat2(vec2(1.0, 0.0), vec2(-0.0, 1.0))) * vec2(0.0007812500116415321826934814453125, 0.001388888922519981861114501953125), vec2(0.0), vec2(1.0)), vec2(0.0), vec2(1.0)), vec2(0.0), vec2(1.0)), 0.0).xyz, vec3(0.0), vec3(1.0)), vec3(0.64999997615814208984375));
+    highp float _281 = _280.x;
+    highp float _282 = _280.y;
+    highp float _283 = _280.z;
+    highp float _284 = isnan(_283) ? _282 : (isnan(_282) ? _283 : max(_282, _283));
+    highp float _285 = isnan(_284) ? _281 : (isnan(_281) ? _284 : max(_281, _284));
+    highp float _297 = length(fract(_265) - vec2(0.5));
+    highp float _301 = sqrt(clamp(clamp(((vec3(1.0) - _280) - vec3(1.0 - _285)) / vec3(isnan(0.00999999977648258209228515625) ? _285 : (isnan(_285) ? 0.00999999977648258209228515625 : max(_285, 0.00999999977648258209228515625))), vec3(0.0), vec3(1.0)).z + Parameters.values[3].x, 0.0, 1.0)) * 0.64999997615814208984375;
+    highp float _302 = fwidth(_297);
+    highp float _303 = isnan(0.0199999995529651641845703125) ? _302 : (isnan(_302) ? 0.0199999995529651641845703125 : max(_302, 0.0199999995529651641845703125));
+    highp vec2 _313 = ((_166 + vec2(3.0 * Parameters.values[2].x, (-3.0) * Parameters.values[2].x)) * mat2(vec2(0.707106888294219970703125, -0.707106649875640869140625), vec2(0.707106649875640869140625, 0.707106888294219970703125))) / _169;
+    highp vec3 _328 = pow(clamp(textureLod(SPIRV_Cross_CombinedsceneTexturelinearSampler, clamp(clamp(clamp((((floor(_313) + vec2(0.5)) * _168) * mat2(vec2(0.707106888294219970703125, 0.707106649875640869140625), vec2(-0.707106649875640869140625, 0.707106888294219970703125))) * vec2(0.0007812500116415321826934814453125, 0.001388888922519981861114501953125), vec2(0.0), vec2(1.0)), vec2(0.0), vec2(1.0)), vec2(0.0), vec2(1.0)), 0.0).xyz, vec3(0.0), vec3(1.0)), vec3(0.64999997615814208984375));
+    highp float _329 = _328.x;
+    highp float _330 = _328.y;
+    highp float _331 = _328.z;
+    highp float _332 = isnan(_331) ? _330 : (isnan(_330) ? _331 : max(_330, _331));
+    highp float _337 = length(fract(_313) - vec2(0.5));
+    highp float _341 = sqrt(clamp((1.0 - (isnan(_332) ? _329 : (isnan(_329) ? _332 : max(_329, _332)))) + Parameters.values[3].x, 0.0, 1.0)) * 0.64999997615814208984375;
+    highp float _342 = fwidth(_337);
+    highp float _343 = isnan(0.0199999995529651641845703125) ? _342 : (isnan(_342) ? 0.0199999995529651641845703125 : max(_342, 0.0199999995529651641845703125));
+    highp float _347 = 1.0 - smoothstep(_341 - _343, _341 + _343, _337);
+    highp vec2 _362 = vec2(0.0007812500116415321826934814453125, 0.001388888922519981861114501953125) * (isnan(0.25) ? Parameters.values[4].x : (isnan(Parameters.values[4].x) ? 0.25 : max(Parameters.values[4].x, 0.25)));
+    highp float _371 = dot(roundEven(textureLod(SPIRV_Cross_CombineddepthTexturepointSampler, clamp(in_var_TEXCOORD0, vec2(0.0), vec2(1.0)), 0.0).xy * 255.0), vec2(1.0, 256.0));
+    highp float _372 = dot(_140, vec3(0.2125999927520751953125, 0.715200006961822509765625, 0.072200000286102294921875));
+    highp vec2 _378 = clamp(clamp(in_var_TEXCOORD0 + (vec2(1.0, 0.0) * _362), vec2(0.0), vec2(1.0)), vec2(0.0), vec2(1.0));
+    highp float _393 = isnan(1.0) ? _371 : (isnan(_371) ? 1.0 : max(_371, 1.0));
+    highp float _396 = ((abs(dot(roundEven(textureLod(SPIRV_Cross_CombineddepthTexturepointSampler, _378, 0.0).xy * 255.0), vec2(1.0, 256.0)) - _371) / _393) * Parameters.values[5].x) * 12.0;
+    highp float _397 = isnan(_396) ? 0.0 : (isnan(0.0) ? _396 : max(0.0, _396));
+    highp float _402 = (abs(dot(textureLod(SPIRV_Cross_CombinedsceneTexturelinearSampler, clamp(_378, vec2(0.0), vec2(1.0)), 0.0).xyz, vec3(0.2125999927520751953125, 0.715200006961822509765625, 0.072200000286102294921875)) - _372) * Parameters.values[6].x) * 3.0;
+    highp float _403 = isnan(_402) ? _397 : (isnan(_397) ? _402 : max(_397, _402));
+    highp vec2 _409 = clamp(clamp(in_var_TEXCOORD0 + (vec2(-1.0, 0.0) * _362), vec2(0.0), vec2(1.0)), vec2(0.0), vec2(1.0));
+    highp float _426 = ((abs(dot(roundEven(textureLod(SPIRV_Cross_CombineddepthTexturepointSampler, _409, 0.0).xy * 255.0), vec2(1.0, 256.0)) - _371) / _393) * Parameters.values[5].x) * 12.0;
+    highp float _427 = isnan(_426) ? _403 : (isnan(_403) ? _426 : max(_403, _426));
+    highp float _432 = (abs(dot(textureLod(SPIRV_Cross_CombinedsceneTexturelinearSampler, clamp(_409, vec2(0.0), vec2(1.0)), 0.0).xyz, vec3(0.2125999927520751953125, 0.715200006961822509765625, 0.072200000286102294921875)) - _372) * Parameters.values[6].x) * 3.0;
+    highp float _433 = isnan(_432) ? _427 : (isnan(_427) ? _432 : max(_427, _432));
+    highp vec2 _439 = clamp(clamp(in_var_TEXCOORD0 + (vec2(0.0, 1.0) * _362), vec2(0.0), vec2(1.0)), vec2(0.0), vec2(1.0));
+    highp float _456 = ((abs(dot(roundEven(textureLod(SPIRV_Cross_CombineddepthTexturepointSampler, _439, 0.0).xy * 255.0), vec2(1.0, 256.0)) - _371) / _393) * Parameters.values[5].x) * 12.0;
+    highp float _457 = isnan(_456) ? _433 : (isnan(_433) ? _456 : max(_433, _456));
+    highp float _462 = (abs(dot(textureLod(SPIRV_Cross_CombinedsceneTexturelinearSampler, clamp(_439, vec2(0.0), vec2(1.0)), 0.0).xyz, vec3(0.2125999927520751953125, 0.715200006961822509765625, 0.072200000286102294921875)) - _372) * Parameters.values[6].x) * 3.0;
+    highp float _463 = isnan(_462) ? _457 : (isnan(_457) ? _462 : max(_457, _462));
+    highp vec2 _469 = clamp(clamp(in_var_TEXCOORD0 + (vec2(0.0, -1.0) * _362), vec2(0.0), vec2(1.0)), vec2(0.0), vec2(1.0));
+    highp float _486 = ((abs(dot(roundEven(textureLod(SPIRV_Cross_CombineddepthTexturepointSampler, _469, 0.0).xy * 255.0), vec2(1.0, 256.0)) - _371) / _393) * Parameters.values[5].x) * 12.0;
+    highp float _487 = isnan(_486) ? _463 : (isnan(_463) ? _486 : max(_463, _486));
+    highp float _492 = (abs(dot(textureLod(SPIRV_Cross_CombinedsceneTexturelinearSampler, clamp(_469, vec2(0.0), vec2(1.0)), 0.0).xyz, vec3(0.2125999927520751953125, 0.715200006961822509765625, 0.072200000286102294921875)) - _372) * Parameters.values[6].x) * 3.0;
+    highp vec3 _503 = mix((vec3(0.980000019073486328125, 0.97500002384185791015625, 0.939999997615814208984375) * (vec3(1.0) - vec4(1.0 - smoothstep(_206 - _208, _206 + _208, _202), 1.0 - smoothstep(_253 - _255, _253 + _255, _249), 1.0 - smoothstep(_301 - _303, _301 + _303, _297), _347).xyz)) * (1.0 - (_347 * 0.939999997615814208984375)), Parameters.values[16].xyz, vec3(clamp(smoothstep(0.07999999821186065673828125, 0.449999988079071044921875, isnan(_492) ? _487 : (isnan(_487) ? _492 : max(_487, _492))) * Parameters.values[7].x, 0.0, 1.0)));
+    highp vec3 _521 = mix(mix(_503, _140 * _503, vec3(Parameters.values[14].x)), mix((_140 * 2.0) * _503, vec3(1.0) - (((vec3(1.0) - _140) * 2.0) * (vec3(1.0) - _503)), step(vec3(0.5), _140)), vec3(Parameters.values[15].x));
+    highp float _539 = _148 * 0.001000000047497451305389404296875;
+    bvec3 _714 = isnan(_521);
+    bvec3 _715 = isnan(vec3(0.0));
+    highp vec3 _716 = max(_521, vec3(0.0));
+    highp vec3 _717 = vec3(_714.x ? vec3(0.0).x : _716.x, _714.y ? vec3(0.0).y : _716.y, _714.z ? vec3(0.0).z : _716.z);
+    highp vec3 _560 = mix(mix(_140, vec3(_715.x ? _521.x : _717.x, _715.y ? _521.y : _717.y, _715.z ? _521.z : _717.z), vec3((clamp(Parameters.values[8].x * Parameters.values[13].x, 0.0, 1.0) * mix(1.0, step(Parameters.values[10].x, in_var_TEXCOORD0.x), clamp(Parameters.values[9].x, 0.0, 1.0))) * mix(1.0, (1.0 - step(0.5, abs(roundEven(_152.z * 255.0) - Parameters.values[11].x))) * step(dot(roundEven(_152.xy * 255.0), vec2(1.0, 256.0)), _148 + (isnan(_539) ? 1.0 : (isnan(1.0) ? _539 : max(1.0, _539)))), clamp(Parameters.values[12].x, 0.0, 1.0)))), _140, vec3(step(in_var_TEXCOORD0.x, Parameters.frame.y)));
+    bvec3 _719 = isnan(_560);
+    bvec3 _720 = isnan(vec3(0.0));
+    highp vec3 _721 = max(_560, vec3(0.0));
+    highp vec3 _722 = vec3(_719.x ? vec3(0.0).x : _721.x, _719.y ? vec3(0.0).y : _721.y, _719.z ? vec3(0.0).z : _721.z);
+    highp vec3 _567 = mix(_560 * 12.9200000762939453125, (pow(vec3(_720.x ? _560.x : _722.x, _720.y ? _560.y : _722.y, _720.z ? _560.z : _722.z), vec3(0.4166666567325592041015625)) * 1.05499994754791259765625) - vec3(0.054999999701976776123046875), step(vec3(0.003130800090730190277099609375), _560));
+    out_var_SV_Target = vec4(_567, 1.0);
+}
