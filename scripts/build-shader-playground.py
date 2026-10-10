@@ -159,4 +159,6 @@ float4 main(float4 position : SV_Position, float2 uv : TEXCOORD0) : SV_Target {
 (root/'lib/products/ultimatePostProcessParameters.json').write_text(json.dumps(allmeta,indent=2)+'\n')
 if failures:
  print('\n'.join(name+': '+err[:4000] for name,err in failures));sys.exit(1)
+# Ship shader code in the renderer bundle so preset changes also work offline.
+(root/'lib/products/ultimatePostProcessShaders.json').write_text(json.dumps({name:(out/(name+'.frag')).read_text() for name in allmeta},indent=2)+'\n')
 print('Compiled',len(allmeta),'recipes')
